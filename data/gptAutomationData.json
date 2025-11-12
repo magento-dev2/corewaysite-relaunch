@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Automation via GPT, APIs & Workflow Tools",
+    "subtitle": "Build intelligent automation workflows that combine GPT models, external APIs, and workflow orchestration to eliminate manual tasks, accelerate processes, and scale operations efficiently.",
+    "buttons": [
+      { "label": "Start Automating", "link": "#features" },
+      { "label": "View Examples", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Intelligent Workflow Automation",
+    "content": "We design and implement intelligent automation systems that leverage GPT models for decision-making, integrate with hundreds of APIs for data exchange, and orchestrate complex workflows across your entire tech stack. From customer support automation to document processing pipelines, our solutions handle repetitive tasks at scale while maintaining human-level quality and adaptability.",
+    "image": "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg"
+  },
+  "features": {
+    "title": "Automation Capabilities",
+    "items": [
+      {
+        "id": "gpt-workflows",
+        "title": "GPT-Powered Workflows",
+        "desc": "Intelligent decision-making, content generation, and analysis using GPT-4 in workflows."
+      },
+      {
+        "id": "api-integration",
+        "title": "API Integration",
+        "desc": "Connect to any REST, GraphQL, or webhook API for seamless data exchange."
+      },
+      {
+        "id": "orchestration",
+        "title": "Workflow Orchestration",
+        "desc": "Design complex multi-step workflows with conditional logic and error handling."
+      },
+      {
+        "id": "triggers",
+        "title": "Smart Triggers",
+        "desc": "Automate workflows based on events, schedules, webhooks, and AI predictions."
+      },
+      {
+        "id": "data-transform",
+        "title": "Data Transformation",
+        "desc": "Clean, enrich, and transform data between systems with custom logic."
+      },
+      {
+        "id": "monitoring",
+        "title": "Monitoring & Alerts",
+        "desc": "Track workflow performance, success rates, and receive real-time alerts."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Automation Stack",
+    "description": "Built on industry-leading automation and integration platforms.",
+    "items": [
+      { "name": "GPT-4", "id": "gpt4" },
+      { "name": "Make.com", "id": "make" },
+      { "name": "Zapier", "id": "zapier" },
+      { "name": "n8n", "id": "n8n" },
+      { "name": "Temporal", "id": "temporal" },
+      { "name": "Airflow", "id": "airflow" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Automation Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Customer Support AI",
+        "image": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+        "description": "Automated 70% of support tickets using GPT-4 and API integrations"
+      },
+      {
+        "id": "2",
+        "title": "Invoice Processing",
+        "image": "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
+        "description": "Reduced invoice processing time from 3 days to 5 minutes with automation"
+      },
+      {
+        "id": "3",
+        "title": "Content Publishing",
+        "image": "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg",
+        "description": "Automated content creation and multi-platform publishing for 50+ channels"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Automation Process",
+    "description": "Systematic approach to building reliable automation workflows.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Process Discovery",
+        "description": "Identify automation opportunities, map current workflows, and define requirements"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Workflow Design",
+        "description": "Design intelligent workflows with GPT integration and API connections"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Development & Testing",
+        "description": "Build, test, and validate automation workflows with error handling"
+      },
+      {
+        "id": "deployment",
+        "number": "04",
+        "title": "Deployment & Training",
+        "description": "Deploy workflows and train teams on monitoring and management"
+      },
+      {
+        "id": "optimization",
+        "number": "05",
+        "title": "Optimization & Scaling",
+        "description": "Monitor performance, optimize costs, and scale automation across organization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Self-Optimizing Workflows",
+    "description": "Our automation platform learns from every execution, automatically adjusting workflows based on success rates, performance metrics, and changing business rules. With built-in AI monitoring and predictive scaling, workflows continuously improve and adapt to handle growing volumes and new scenarios.",
+    "features": [
+      "Automatic error recovery and retries",
+      "Predictive scaling based on workload",
+      "Self-healing workflows with AI diagnostics",
+      "Cost optimization through intelligent routing"
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "hero": {
+    "title": "eCommerce & Virtual Product Stores",
+    "subtitle": "Build high-converting online stores with AI-powered personalization, seamless checkout experiences, and omnichannel integration. From Shopify to headless commerce, we create digital storefronts that drive sales and delight customers.",
+    "buttons": [
+      { "label": "Start Your Store", "link": "#features" },
+      { "label": "View Portfolio", "link": "#showcase" }
+    ]
+  },
+  "overview": {
+    "title": "Next-Generation Online Retail",
+    "content": "We design and develop powerful eCommerce platforms that combine beautiful UX with high-performance architecture. Our solutions integrate payment gateways, inventory management, customer analytics, and marketing automation. Whether you're launching a D2C brand, marketplace, or B2B portal, we build stores that scale from startup to enterprise, handling everything from product catalogs to complex checkout flows.",
+    "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+  },
+  "features": {
+    "title": "eCommerce Platform Features",
+    "items": [
+      {
+        "id": "catalog",
+        "title": "Smart Product Catalog",
+        "desc": "Dynamic catalogs with AI-powered recommendations and intelligent search."
+      },
+      {
+        "id": "checkout",
+        "title": "Seamless Checkout",
+        "desc": "One-click checkout, multiple payment options, and cart recovery automation."
+      },
+      {
+        "id": "personalization",
+        "title": "AI Personalization",
+        "desc": "Personalized shopping experiences based on behavior and preferences."
+      },
+      {
+        "id": "inventory",
+        "title": "Inventory Management",
+        "desc": "Real-time stock tracking, automated reordering, and multi-warehouse support."
+      },
+      {
+        "id": "analytics",
+        "title": "Sales Analytics",
+        "desc": "Deep insights into customer behavior, conversion funnels, and ROI."
+      },
+      {
+        "id": "mobile",
+        "title": "Mobile-First Design",
+        "desc": "Responsive designs optimized for mobile shopping and PWA support."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "eCommerce Technologies",
+    "description": "Built with leading platforms and frameworks.",
+    "items": [
+      { "name": "Shopify", "id": "shopify" },
+      { "name": "WooCommerce", "id": "woocommerce" },
+      { "name": "Magento", "id": "magento" },
+      { "name": "Next.js", "id": "nextjs" },
+      { "name": "Stripe", "id": "stripe" },
+      { "name": "PayPal", "id": "paypal" }
+    ]
+  },
+  "showcase": {
+    "title": "Featured Store Launches",
+    "stores": [
+      {
+        "id": "1",
+        "name": "Fashion Boutique",
+        "image": "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg",
+        "description": "Luxury fashion brand with 300% revenue increase in first year",
+        "metrics": { "conversion": "+45%", "revenue": "$2.5M", "orders": "15K+" }
+      },
+      {
+        "id": "2",
+        "name": "Tech Gadgets Store",
+        "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg",
+        "description": "Electronics marketplace handling 50K products with real-time inventory",
+        "metrics": { "conversion": "+60%", "revenue": "$8M", "orders": "45K+" }
+      },
+      {
+        "id": "3",
+        "name": "Beauty & Cosmetics",
+        "image": "https://images.pexels.com/photos/3373727/pexels-photo-3373727.jpeg",
+        "description": "D2C beauty brand with AI-powered product recommendations",
+        "metrics": { "conversion": "+70%", "revenue": "$1.2M", "orders": "8K+" }
+      }
+    ]
+  },
+  "process": {
+    "title": "Store Development Process",
+    "description": "From concept to launch in weeks, not months.",
+    "steps": [
+      {
+        "id": "strategy",
+        "number": "01",
+        "title": "Commerce Strategy",
+        "description": "Define your target audience, product positioning, and go-to-market plan"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "UX/UI Design",
+        "description": "Create conversion-optimized designs with seamless shopping flows"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Platform Development",
+        "description": "Build your store with payment integration, inventory, and analytics"
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "System Integration",
+        "description": "Connect CRM, email marketing, shipping, and fulfillment systems"
+      },
+      {
+        "id": "launch",
+        "number": "05",
+        "title": "Launch & Optimize",
+        "description": "Go live with A/B testing, conversion optimization, and ongoing support"
+      }
+    ]
+  },
+  "integrations": {
+    "title": "Seamless Integrations",
+    "description": "Connect your store with essential business tools and services.",
+    "categories": [
+      {
+        "name": "Payments",
+        "tools": ["Stripe", "PayPal", "Square", "Klarna", "Afterpay"]
+      },
+      {
+        "name": "Shipping",
+        "tools": ["ShipStation", "EasyPost", "Shippo", "FedEx", "UPS"]
+      },
+      {
+        "name": "Marketing",
+        "tools": ["Mailchimp", "Klaviyo", "Google Analytics", "Facebook Pixel", "TikTok Ads"]
+      },
+      {
+        "name": "Customer Support",
+        "tools": ["Zendesk", "Intercom", "Gorgias", "LiveChat", "Tidio"]
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Our eCommerce Solutions",
+    "items": [
+      {
+        "metric": "2-4 weeks",
+        "description": "Average time to launch a fully functional store",
+        "icon": "⚡"
+      },
+      {
+        "metric": "45% avg",
+        "description": "Conversion rate increase with our optimized designs",
+        "icon": "📈"
+      },
+      {
+        "metric": "99.9%",
+        "description": "Uptime guarantee for mission-critical sales periods",
+        "icon": "✓"
+      },
+      {
+        "metric": "24/7",
+        "description": "Support and monitoring for your online business",
+        "icon": "🛡️"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "AWS S3 Architecture & Cost Optimization",
+    "subtitle": "Design scalable S3 architectures, optimize storage costs by up to 70%, and implement best practices for performance, security, and data lifecycle management.",
+    "buttons": [
+      { "label": "Optimize Storage", "link": "#features" },
+      { "label": "Get Audit", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise S3 Solutions",
+    "content": "We architect and optimize AWS S3 infrastructure for enterprises managing petabytes of data. Our solutions reduce storage costs through intelligent tiering, lifecycle policies, and compression strategies while improving performance with CloudFront integration, cross-region replication, and optimized bucket configurations. From security hardening to disaster recovery, we ensure your S3 architecture is scalable, secure, and cost-effective.",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
+  },
+  "features": {
+    "title": "S3 Optimization Services",
+    "items": [
+      {
+        "id": "architecture",
+        "title": "Architecture Design",
+        "desc": "Design scalable S3 bucket structures, naming conventions, and organizational strategies."
+      },
+      {
+        "id": "cost",
+        "title": "Cost Optimization",
+        "desc": "Reduce storage costs by 70% through intelligent tiering and lifecycle management."
+      },
+      {
+        "id": "performance",
+        "title": "Performance Tuning",
+        "desc": "Optimize throughput with CloudFront, transfer acceleration, and multipart uploads."
+      },
+      {
+        "id": "security",
+        "title": "Security & Compliance",
+        "desc": "Implement encryption, IAM policies, bucket policies, and access logging."
+      },
+      {
+        "id": "lifecycle",
+        "title": "Lifecycle Management",
+        "desc": "Automate data transitions between storage classes and expiration policies."
+      },
+      {
+        "id": "migration",
+        "title": "Data Migration",
+        "desc": "Seamlessly migrate petabytes of data to S3 with zero downtime strategies."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AWS S3 Technologies",
+    "description": "Comprehensive AWS ecosystem integration and tools.",
+    "items": [
+      { "name": "S3 Standard", "id": "s3-standard" },
+      { "name": "S3 Glacier", "id": "s3-glacier" },
+      { "name": "CloudFront", "id": "cloudfront" },
+      { "name": "Lambda", "id": "lambda" },
+      { "name": "IAM", "id": "iam" },
+      { "name": "CloudWatch", "id": "cloudwatch" }
+    ]
+  },
+  "caseStudies": {
+    "title": "S3 Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Media Company Storage",
+        "image": "https://images.pexels.com/photos/1152854/pexels-photo-1152854.jpeg",
+        "description": "Reduced S3 costs by 65% managing 5PB of video content with intelligent tiering"
+      },
+      {
+        "id": "2",
+        "title": "Healthcare Data Archive",
+        "image": "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg",
+        "description": "Implemented HIPAA-compliant S3 architecture with automated lifecycle policies"
+      },
+      {
+        "id": "3",
+        "title": "E-commerce CDN",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+        "description": "Improved global delivery speed by 80% with S3 + CloudFront optimization"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our S3 Optimization Process",
+    "description": "Comprehensive approach to AWS S3 architecture and cost reduction.",
+    "steps": [
+      {
+        "id": "audit",
+        "number": "01",
+        "title": "Storage Audit",
+        "description": "Analyze current S3 usage, costs, access patterns, and identify optimization opportunities"
+      },
+      {
+        "id": "strategy",
+        "number": "02",
+        "title": "Optimization Strategy",
+        "description": "Design tailored cost reduction and performance improvement strategies"
+      },
+      {
+        "id": "implementation",
+        "number": "03",
+        "title": "Implementation",
+        "description": "Deploy lifecycle policies, intelligent tiering, and security configurations"
+      },
+      {
+        "id": "migration",
+        "number": "04",
+        "title": "Data Migration",
+        "description": "Seamlessly migrate data to optimized storage classes and configurations"
+      },
+      {
+        "id": "monitoring",
+        "number": "05",
+        "title": "Monitoring & Reporting",
+        "description": "Continuous cost tracking, performance monitoring, and optimization recommendations"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Intelligent Cost Management",
+    "description": "Our S3 optimization platform uses machine learning to analyze access patterns, predict storage needs, and automatically adjust lifecycle policies. With intelligent monitoring and automated tiering, we continuously optimize your S3 costs while maintaining performance and compliance requirements.",
+    "features": [
+      "Automated lifecycle policy management",
+      "Real-time cost analysis and alerts",
+      "Intelligent storage class recommendations",
+      "Predictive capacity planning and forecasting"
+    ]
+  }
+}

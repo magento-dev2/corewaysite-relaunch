@@ -1,0 +1,13 @@
+{
+  "title": "Tech Stack Expertise",
+  "logos": [
+    "/assets/logos/tech/react.svg",
+    "/assets/logos/tech/nodejs.svg",
+    "/assets/logos/tech/python.svg",
+    "/assets/logos/tech/flutter.svg",
+    "/assets/logos/tech/aws.svg",
+    "/assets/logos/tech/firebase.svg",
+    "/assets/logos/tech/mongodb.svg",
+    "/assets/logos/tech/nextjs.svg"
+  ]
+}

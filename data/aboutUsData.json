@@ -1,0 +1,66 @@
+{
+  "companyOverview": {
+    "title": "Company Overview",
+    "subtitle": "Our Journey and Vision",
+    "description": "At Coreway Solution, we believe in the transformative power of automation. Founded with a mission to eliminate repetitive tasks and empower teams to focus on what truly matters, we have grown from a small startup to a trusted partner for thousands of businesses worldwide. Our platform connects the tools you love, automates complex workflows, and scales with your business needs. We are committed to innovation, security, and delivering exceptional value to every customer.",
+    "mission": "To democratize workflow automation and make it accessible to businesses of all sizes, enabling teams to work smarter, faster, and more efficiently.",
+    "vision": "A world where technology seamlessly handles the mundane, freeing human potential to focus on creativity, strategy, and meaningful work.",
+    "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+  },
+  "teamMembers": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "role": "CEO & Founder",
+      "bio": "Visionary leader with 15+ years in automation and enterprise software. Passionate about building tools that empower teams.",
+      "imageUrl": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": "https://twitter.com"
+    },
+    {
+      "id": "2",
+      "name": "Michael Chen",
+      "role": "CTO",
+      "bio": "Technical architect and automation expert. Previously led engineering teams at major tech companies.",
+      "imageUrl": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": null
+    },
+    {
+      "id": "3",
+      "name": "Emily Rodriguez",
+      "role": "Head of Product",
+      "bio": "Product strategist focused on user experience and customer success. Champion of intuitive design.",
+      "imageUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": "https://twitter.com"
+    },
+    {
+      "id": "4",
+      "name": "David Kim",
+      "role": "VP of Engineering",
+      "bio": "Engineering leader passionate about scalable systems and developer productivity.",
+      "imageUrl": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": null
+    },
+    {
+      "id": "5",
+      "name": "Jessica Taylor",
+      "role": "Head of Marketing",
+      "bio": "Marketing strategist with expertise in growth and brand building in the SaaS space.",
+      "imageUrl": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": "https://twitter.com"
+    },
+    {
+      "id": "6",
+      "name": "Alex Martinez",
+      "role": "Head of Customer Success",
+      "bio": "Customer advocate ensuring every client achieves their automation goals.",
+      "imageUrl": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+      "linkedinUrl": "https://linkedin.com",
+      "twitterUrl": null
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Metadata Extraction using GPT & Vision AI",
+    "subtitle": "Automatically extract, classify, and enrich metadata from documents, images, and videos using advanced GPT-4 and Vision AI models. Transform unstructured data into actionable insights at scale.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Get Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Intelligent Metadata Intelligence",
+    "content": "We build AI-powered metadata extraction systems that process millions of documents, images, and videos to automatically extract, classify, and enrich metadata. Using GPT-4, Vision AI, and custom ML models, our solutions understand context, detect objects, extract text, identify entities, and generate rich metadata that powers search, recommendations, and compliance workflows.",
+    "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+  },
+  "features": {
+    "title": "AI Extraction Capabilities",
+    "items": [
+      {
+        "id": "vision",
+        "title": "Vision AI Analysis",
+        "desc": "Extract objects, text, faces, and scenes from images and videos using advanced computer vision."
+      },
+      {
+        "id": "document",
+        "title": "Document Processing",
+        "desc": "Extract text, tables, forms, and structured data from PDFs, invoices, and contracts."
+      },
+      {
+        "id": "gpt",
+        "title": "GPT-4 Intelligence",
+        "desc": "Generate summaries, classifications, tags, and insights using large language models."
+      },
+      {
+        "id": "entity",
+        "title": "Entity Recognition",
+        "desc": "Identify people, places, organizations, dates, and custom entities from content."
+      },
+      {
+        "id": "classification",
+        "title": "Auto-Classification",
+        "desc": "Automatically categorize and tag content based on learned patterns and rules."
+      },
+      {
+        "id": "enrichment",
+        "title": "Data Enrichment",
+        "desc": "Enhance metadata with external data sources, translations, and contextual information."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AI Technologies",
+    "description": "Powered by leading AI and ML platforms.",
+    "items": [
+      { "name": "GPT-4", "id": "gpt4" },
+      { "name": "Vision AI", "id": "vision-ai" },
+      { "name": "Azure AI", "id": "azure-ai" },
+      { "name": "TensorFlow", "id": "tensorflow" },
+      { "name": "OpenAI", "id": "openai" },
+      { "name": "Tesseract", "id": "tesseract" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Extraction Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Media Asset Management",
+        "image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
+        "description": "Processed 10M+ images with 95% accuracy in object detection and tagging"
+      },
+      {
+        "id": "2",
+        "title": "Legal Document Analysis",
+        "image": "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg",
+        "description": "Extracted key clauses from 500K contracts reducing review time by 80%"
+      },
+      {
+        "id": "3",
+        "title": "E-commerce Catalog",
+        "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
+        "description": "Auto-generated product descriptions for 1M+ SKUs using GPT-4"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Extraction Process",
+    "description": "End-to-end AI-powered metadata extraction pipeline.",
+    "steps": [
+      {
+        "id": "ingestion",
+        "number": "01",
+        "title": "Data Ingestion",
+        "description": "Collect and normalize documents, images, and videos from multiple sources"
+      },
+      {
+        "id": "preprocessing",
+        "number": "02",
+        "title": "AI Preprocessing",
+        "description": "Clean, enhance, and prepare data for optimal AI model performance"
+      },
+      {
+        "id": "extraction",
+        "number": "03",
+        "title": "Multi-Model Extraction",
+        "description": "Apply GPT-4, Vision AI, and custom models to extract comprehensive metadata"
+      },
+      {
+        "id": "validation",
+        "number": "04",
+        "title": "Quality Validation",
+        "description": "Verify accuracy, resolve conflicts, and ensure metadata quality"
+      },
+      {
+        "id": "delivery",
+        "number": "05",
+        "title": "Delivery & Integration",
+        "description": "Export enriched metadata to databases, search engines, and applications"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Automation",
+    "description": "Our extraction platform processes millions of assets daily with 95%+ accuracy. Using ensemble AI models, intelligent routing, and continuous learning, the system automatically adapts to new content types and improves extraction quality over time without manual intervention.",
+    "features": [
+      "Real-time processing with sub-second latency",
+      "95%+ accuracy across all content types",
+      "Automatic model selection and optimization",
+      "Continuous learning from corrections"
+    ]
+  }
+}

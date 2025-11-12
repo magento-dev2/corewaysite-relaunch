@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "title": "Building Tomorrow's Technology Today",
+    "subtitle": "Coreway Solution is a global technology partner specializing in AI-powered solutions, custom software development, and digital transformation. From startups to enterprise, we turn ambitious ideas into scalable realities.",
+    "buttons": [
+      { "label": "Our Story", "link": "#story" },
+      { "label": "Meet the Team", "link": "#team" }
+    ]
+  },
+  "story": {
+    "title": "Our Story",
+    "content": "Founded with a vision to democratize enterprise-grade technology, Coreway Solution has evolved from a boutique development shop into a full-service technology partner. We've delivered 200+ projects across 30+ countries, helping businesses leverage cutting-edge technologies like AI, cloud infrastructure, and data analytics. Our journey is defined by our commitment to innovation, quality, and long-term partnerships.",
+    "stats": [
+      { "value": "200+", "label": "Projects Delivered", "icon": "📊" },
+      { "value": "30+", "label": "Countries Served", "icon": "🌍" },
+      { "value": "50+", "label": "Expert Team", "icon": "👥" },
+      { "value": "98%", "label": "Client Satisfaction", "icon": "⭐" }
+    ]
+  },
+  "mission": {
+    "title": "Mission & Vision",
+    "mission": {
+      "title": "Our Mission",
+      "content": "To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage. We believe in building software that not only meets today's needs but anticipates tomorrow's challenges."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To be the most trusted technology partner for businesses worldwide, known for delivering exceptional results through innovation, expertise, and unwavering commitment to client success."
+    }
+  },
+  "values": {
+    "title": "Our Core Values",
+    "items": [
+      {
+        "id": "innovation",
+        "title": "Innovation First",
+        "desc": "We constantly explore new technologies and methodologies to deliver cutting-edge solutions."
+      },
+      {
+        "id": "quality",
+        "title": "Quality Excellence",
+        "desc": "Every line of code, every design decision reflects our commitment to exceptional quality."
+      },
+      {
+        "id": "partnership",
+        "title": "True Partnership",
+        "desc": "We're not just vendors - we're long-term partners invested in your success."
+      },
+      {
+        "id": "transparency",
+        "title": "Radical Transparency",
+        "desc": "Clear communication, honest timelines, and complete visibility into every project."
+      },
+      {
+        "id": "agility",
+        "title": "Agile Mindset",
+        "desc": "We adapt quickly to changing requirements and embrace iterative improvement."
+      },
+      {
+        "id": "impact",
+        "title": "Measurable Impact",
+        "desc": "Success means delivering tangible business results and ROI for our clients."
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Areas of Expertise",
+    "categories": [
+      {
+        "name": "AI & Machine Learning",
+        "technologies": ["TensorFlow", "PyTorch", "GPT-4", "OpenAI", "LangChain"]
+      },
+      {
+        "name": "Cloud & Infrastructure",
+        "technologies": ["AWS", "Azure", "GCP", "Kubernetes", "Terraform"]
+      },
+      {
+        "name": "Web & Mobile",
+        "technologies": ["React", "Next.js", "React Native", "Flutter", "Node.js"]
+      },
+      {
+        "name": "Data & Analytics",
+        "technologies": ["Python", "Pandas", "Apache Spark", "Tableau", "PowerBI"]
+      }
+    ]
+  },
+  "locations": {
+    "title": "Global Presence",
+    "description": "While headquartered in the heart of innovation, our team operates globally, providing 24/7 support and local expertise across multiple time zones.",
+    "offices": [
+      { "city": "San Francisco", "country": "USA", "type": "HQ" },
+      { "city": "London", "country": "UK", "type": "Office" },
+      { "city": "Bangalore", "country": "India", "type": "Development Center" },
+      { "city": "Singapore", "country": "Singapore", "type": "APAC Hub" }
+    ]
+  }
+}

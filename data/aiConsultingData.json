@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Transform Your Business with AI Consulting Expertise",
+    "subtitle": "Strategic AI implementation and machine learning solutions that deliver measurable business value.",
+    "buttons": [
+      { "label": "Start AI Journey", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Strategic AI Solutions for Modern Enterprises",
+    "content": "We help businesses leverage artificial intelligence and machine learning to solve complex challenges, automate processes, and unlock new opportunities. Our AI consulting services combine technical expertise with business strategy to deliver solutions that drive real ROI and competitive advantage.",
+    "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+  },
+  "features": {
+    "title": "AI Consulting Services",
+    "items": [
+      {
+        "id": "strategy",
+        "title": "AI Strategy & Roadmap",
+        "desc": "Define AI vision, identify use cases, and create implementation roadmaps."
+      },
+      {
+        "id": "ml-models",
+        "title": "Custom ML Models",
+        "desc": "Build and deploy custom machine learning models for your specific needs."
+      },
+      {
+        "id": "nlp",
+        "title": "NLP & Conversational AI",
+        "desc": "Implement chatbots, virtual assistants, and text analytics solutions."
+      },
+      {
+        "id": "computer-vision",
+        "title": "Computer Vision",
+        "desc": "Image recognition, object detection, and visual analytics systems."
+      },
+      {
+        "id": "data-science",
+        "title": "Data Science & Analytics",
+        "desc": "Advanced analytics, predictive modeling, and business intelligence."
+      },
+      {
+        "id": "ai-ops",
+        "title": "AI Operations (MLOps)",
+        "desc": "Deploy, monitor, and maintain AI models in production environments."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AI Technologies & Frameworks",
+    "description": "Cutting-edge AI platforms and machine learning frameworks.",
+    "items": [
+      { "name": "TensorFlow", "id": "tensorflow" },
+      { "name": "PyTorch", "id": "pytorch" },
+      { "name": "OpenAI", "id": "openai" },
+      { "name": "Hugging Face", "id": "huggingface" },
+      { "name": "LangChain", "id": "langchain" },
+      { "name": "Azure AI", "id": "azureai" }
+    ]
+  },
+  "caseStudies": {
+    "title": "AI Transformation Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Predictive Maintenance AI",
+        "image": "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
+        "description": "Reduced equipment downtime by 40% with ML-powered predictions"
+      },
+      {
+        "id": "2",
+        "title": "Customer Service Automation",
+        "image": "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg",
+        "description": "AI chatbot handling 70% of customer inquiries with 95% accuracy"
+      },
+      {
+        "id": "3",
+        "title": "Document Processing AI",
+        "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+        "description": "Automated document classification saving 100+ hours weekly"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our AI Consulting Methodology",
+    "description": "Data-driven approach to AI implementation and deployment.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Discovery & Assessment",
+        "description": "Analyze business needs and identify AI opportunities"
+      },
+      {
+        "id": "strategy",
+        "number": "02",
+        "title": "Strategy Development",
+        "description": "Create AI roadmap aligned with business objectives"
+      },
+      {
+        "id": "prototype",
+        "number": "03",
+        "title": "Proof of Concept",
+        "description": "Build and validate AI prototypes with real data"
+      },
+      {
+        "id": "deployment",
+        "number": "04",
+        "title": "Model Development",
+        "description": "Develop, train, and optimize production-ready AI models"
+      },
+      {
+        "id": "integration",
+        "number": "05",
+        "title": "Integration & Scale",
+        "description": "Deploy AI solutions and scale across organization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Business Transformation",
+    "description": "Unlock the full potential of artificial intelligence to transform your operations. Our AI consulting services help you automate complex tasks, gain deeper insights from data, and create intelligent systems that learn and improve over time.",
+    "features": [
+      "Automated decision-making processes",
+      "Real-time predictive analytics",
+      "Intelligent process automation",
+      "Natural language understanding"
+    ]
+  }
+}

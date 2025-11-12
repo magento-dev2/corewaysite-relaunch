@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Secure Infrastructure Automation with AI",
+    "subtitle": "Build self-healing, AI-powered infrastructure with automated security controls, threat detection, and compliance monitoring. Deploy bulletproof systems that scale securely across cloud environments.",
+    "buttons": [
+      { "label": "Secure Your Infrastructure", "link": "#features" },
+      { "label": "Get Assessment", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise Security Infrastructure",
+    "content": "We design and implement secure, automated infrastructure solutions that combine AI-powered threat detection, zero-trust architecture, and automated compliance monitoring. From Kubernetes security hardening to automated incident response, our solutions protect your infrastructure while maintaining agility. Built on Infrastructure-as-Code principles with continuous security validation, we ensure your systems remain secure at scale.",
+    "image": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg"
+  },
+  "features": {
+    "title": "Security Automation Features",
+    "items": [
+      {
+        "id": "threat-detection",
+        "title": "AI Threat Detection",
+        "desc": "Real-time threat identification using machine learning and behavioral analysis."
+      },
+      {
+        "id": "zero-trust",
+        "title": "Zero-Trust Architecture",
+        "desc": "Implement comprehensive identity verification and least-privilege access controls."
+      },
+      {
+        "id": "automated-response",
+        "title": "Automated Response",
+        "desc": "Self-healing infrastructure that automatically responds to security incidents."
+      },
+      {
+        "id": "compliance",
+        "title": "Compliance Automation",
+        "desc": "Continuous monitoring and reporting for SOC2, HIPAA, PCI-DSS, and GDPR."
+      },
+      {
+        "id": "vulnerability",
+        "title": "Vulnerability Scanning",
+        "desc": "Automated security scanning and patching across all infrastructure layers."
+      },
+      {
+        "id": "encryption",
+        "title": "End-to-End Encryption",
+        "desc": "Data encryption at rest and in transit with automated key rotation."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Security Technologies",
+    "description": "Built with enterprise-grade security and automation tools.",
+    "items": [
+      { "name": "Kubernetes", "id": "kubernetes" },
+      { "name": "Terraform", "id": "terraform" },
+      { "name": "Vault", "id": "vault" },
+      { "name": "Falco", "id": "falco" },
+      { "name": "OPA", "id": "opa" },
+      { "name": "Istio", "id": "istio" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Security Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Financial Services Platform",
+        "image": "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg",
+        "description": "Zero-trust infrastructure handling $10B+ transactions with 99.99% uptime"
+      },
+      {
+        "id": "2",
+        "title": "Healthcare Data Security",
+        "image": "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg",
+        "description": "HIPAA-compliant infrastructure protecting 5M+ patient records"
+      },
+      {
+        "id": "3",
+        "title": "E-commerce Security",
+        "image": "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg",
+        "description": "Automated threat response blocking 10K+ attacks daily"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Security Process",
+    "description": "Systematic approach to building secure, automated infrastructure.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Security Assessment",
+        "description": "Comprehensive audit of current infrastructure and security posture"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Architecture Design",
+        "description": "Design zero-trust infrastructure with defense-in-depth strategies"
+      },
+      {
+        "id": "implementation",
+        "number": "03",
+        "title": "Secure Implementation",
+        "description": "Deploy infrastructure with automated security controls and monitoring"
+      },
+      {
+        "id": "automation",
+        "number": "04",
+        "title": "Automation & AI",
+        "description": "Implement AI-powered threat detection and automated response systems"
+      },
+      {
+        "id": "monitoring",
+        "number": "05",
+        "title": "Continuous Monitoring",
+        "description": "24/7 security monitoring with real-time alerts and compliance reporting"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Security Operations",
+    "description": "Our security platform uses machine learning to detect anomalies, predict threats, and automatically respond to incidents. With behavioral analysis and pattern recognition, the system identifies zero-day threats and adapts to evolving attack vectors. Self-healing capabilities automatically isolate compromised systems and restore security posture within seconds.",
+    "features": [
+      "ML-based anomaly detection with 99.9% accuracy",
+      "Automated incident response in under 10 seconds",
+      "Predictive threat intelligence and prevention",
+      "Self-healing infrastructure with zero downtime"
+    ]
+  }
+}

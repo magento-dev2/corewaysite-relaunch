@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Why Choose Coreway Solution?",
+    "subtitle": "We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation, expertise, and proven methodologies that drive real business outcomes.",
+    "buttons": [
+      { "label": "See Our Advantages", "link": "#advantages" },
+      { "label": "View Case Studies", "link": "#results" }
+    ]
+  },
+  "advantages": {
+    "title": "The Coreway Advantage",
+    "items": [
+      {
+        "id": "expertise",
+        "title": "Deep Technical Expertise",
+        "desc": "Our team comprises senior engineers, AI specialists, and cloud architects with decades of combined experience across industries.",
+        "icon": "brain"
+      },
+      {
+        "id": "proven",
+        "title": "Proven Track Record",
+        "desc": "200+ successful projects delivered for startups, enterprises, and everything in between. Our work speaks for itself.",
+        "icon": "trophy"
+      },
+      {
+        "id": "agile",
+        "title": "Agile & Adaptive",
+        "desc": "We embrace change and iterate quickly. Our agile methodology ensures you see results fast and can pivot when needed.",
+        "icon": "refresh"
+      },
+      {
+        "id": "support",
+        "title": "24/7 Support",
+        "desc": "Global team means round-the-clock support. We're there when you need us, across all time zones.",
+        "icon": "headphones"
+      },
+      {
+        "id": "innovation",
+        "title": "Innovation Focus",
+        "desc": "We stay ahead of the curve with AI, ML, cloud-native architecture, and emerging technologies.",
+        "icon": "rocket"
+      },
+      {
+        "id": "transparency",
+        "title": "Complete Transparency",
+        "desc": "Regular updates, clear communication, and full visibility into progress, timelines, and budgets.",
+        "icon": "eye"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Proven Process",
+    "description": "A systematic approach that delivers results consistently.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Strategy",
+        "description": "We dive deep into your business, goals, and challenges to craft the perfect solution strategy."
+      },
+      {
+        "number": "02",
+        "title": "Design & Architecture",
+        "description": "Our architects design scalable, secure systems while designers create intuitive experiences."
+      },
+      {
+        "number": "03",
+        "title": "Agile Development",
+        "description": "Iterative development with regular demos, feedback cycles, and continuous integration."
+      },
+      {
+        "number": "04",
+        "title": "Quality Assurance",
+        "description": "Rigorous testing, security audits, and performance optimization before launch."
+      },
+      {
+        "number": "05",
+        "title": "Launch & Support",
+        "description": "Smooth deployment, user training, and ongoing maintenance with 24/7 support."
+      }
+    ]
+  },
+  "results": {
+    "title": "Real Results That Matter",
+    "cases": [
+      {
+        "metric": "10x",
+        "description": "Average ROI increase for clients within first year",
+        "category": "Business Impact"
+      },
+      {
+        "metric": "85%",
+        "description": "Reduction in operational costs through automation",
+        "category": "Efficiency"
+      },
+      {
+        "metric": "99.9%",
+        "description": "Uptime across all mission-critical systems",
+        "category": "Reliability"
+      },
+      {
+        "metric": "3 months",
+        "description": "Average time to market for MVP launches",
+        "category": "Speed"
+      }
+    ]
+  },
+  "comparison": {
+    "title": "Coreway vs. Others",
+    "features": [
+      {
+        "feature": "Senior-Level Team",
+        "coreway": true,
+        "others": false,
+        "description": "All engineers have 5+ years experience"
+      },
+      {
+        "feature": "AI/ML Expertise",
+        "coreway": true,
+        "others": false,
+        "description": "Dedicated AI team with production experience"
+      },
+      {
+        "feature": "Fixed-Price Options",
+        "coreway": true,
+        "others": false,
+        "description": "Flexible engagement models"
+      },
+      {
+        "feature": "24/7 Support",
+        "coreway": true,
+        "others": false,
+        "description": "Global team across all time zones"
+      },
+      {
+        "feature": "Code Ownership",
+        "coreway": true,
+        "others": true,
+        "description": "You own 100% of the code"
+      },
+      {
+        "feature": "Post-Launch Support",
+        "coreway": true,
+        "others": false,
+        "description": "Free 30-day support included"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "quote": "Coreway transformed our legacy system into a modern, AI-powered platform. The results exceeded our expectations.",
+        "author": "Sarah Johnson",
+        "position": "CTO, TechCorp",
+        "company": "TechCorp Inc."
+      },
+      {
+        "quote": "Their expertise in cloud infrastructure and DevOps helped us scale from 10K to 1M users seamlessly.",
+        "author": "Michael Chen",
+        "position": "VP Engineering",
+        "company": "GrowthStartup"
+      },
+      {
+        "quote": "Best development partner we've worked with. Professional, transparent, and delivers on time.",
+        "author": "Emma Williams",
+        "position": "Product Director",
+        "company": "InnovateNow"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "description": "Join 200+ companies who chose Coreway as their technology partner. Let's build something amazing together.",
+    "buttons": [
+      { "label": "Schedule Consultation", "link": "#contact" },
+      { "label": "View Portfolio", "link": "/portfolio" }
+    ]
+  }
+}

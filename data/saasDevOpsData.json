@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Build Scalable SaaS Infrastructure with Modern DevOps",
+    "subtitle": "Enterprise-grade cloud infrastructure and DevOps automation for rapid deployment and continuous delivery.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Schedule Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Transform Your Infrastructure with Cloud-Native Solutions",
+    "content": "We architect and deploy robust SaaS infrastructure with modern DevOps practices. Our solutions enable automated deployments, continuous integration, infrastructure as code, and scalable cloud architectures that grow with your business needs.",
+    "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
+  },
+  "features": {
+    "title": "SaaS & DevOps Capabilities",
+    "items": [
+      {
+        "id": "ci-cd",
+        "title": "CI/CD Pipelines",
+        "desc": "Automated build, test, and deployment pipelines for faster releases."
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infrastructure as Code",
+        "desc": "Version-controlled infrastructure with Terraform and CloudFormation."
+      },
+      {
+        "id": "containers",
+        "title": "Container Orchestration",
+        "desc": "Kubernetes and Docker for scalable microservices architecture."
+      },
+      {
+        "id": "monitoring",
+        "title": "Monitoring & Observability",
+        "desc": "Real-time monitoring, logging, and alerting for system health."
+      },
+      {
+        "id": "security",
+        "title": "DevSecOps",
+        "desc": "Security automation integrated throughout the development lifecycle."
+      },
+      {
+        "id": "scaling",
+        "title": "Auto-Scaling",
+        "desc": "Dynamic resource allocation based on demand and traffic patterns."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Cloud & DevOps Technologies",
+    "description": "Industry-leading platforms and tools for modern infrastructure.",
+    "items": [
+      { "name": "AWS", "id": "aws" },
+      { "name": "Azure", "id": "azure" },
+      { "name": "Kubernetes", "id": "kubernetes" },
+      { "name": "Docker", "id": "docker" },
+      { "name": "Terraform", "id": "terraform" },
+      { "name": "Jenkins", "id": "jenkins" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Infrastructure Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Multi-Cloud SaaS Platform",
+        "image": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg",
+        "description": "Migrated legacy monolith to microservices with 99.99% uptime"
+      },
+      {
+        "id": "2",
+        "title": "Automated DevOps Pipeline",
+        "image": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
+        "description": "Reduced deployment time from hours to minutes with CI/CD"
+      },
+      {
+        "id": "3",
+        "title": "Enterprise Kubernetes Migration",
+        "image": "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg",
+        "description": "Containerized 50+ services with zero-downtime deployment"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our DevOps Implementation Process",
+    "description": "Structured approach to building reliable infrastructure.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Infrastructure Assessment",
+        "description": "Analyze current systems and define architecture requirements"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Architecture Design",
+        "description": "Design scalable, secure cloud-native infrastructure"
+      },
+      {
+        "id": "automation",
+        "number": "03",
+        "title": "Automation Setup",
+        "description": "Implement CI/CD pipelines and infrastructure as code"
+      },
+      {
+        "id": "migration",
+        "number": "04",
+        "title": "Migration & Deployment",
+        "description": "Seamless migration with zero-downtime strategies"
+      },
+      {
+        "id": "optimization",
+        "number": "05",
+        "title": "Monitoring & Optimization",
+        "description": "Continuous monitoring and performance optimization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "DevOps Automation at Scale",
+    "description": "Accelerate your development velocity with automated workflows. Our DevOps solutions eliminate manual processes, reduce deployment risks, and enable your teams to ship features faster with confidence and reliability.",
+    "features": [
+      "Automated testing and quality gates",
+      "Infrastructure provisioning in minutes",
+      "Self-healing systems and auto-recovery",
+      "Continuous monitoring and alerting"
+    ]
+  }
+}

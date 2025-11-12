@@ -1,0 +1,5 @@
+{
+  "title": "Our Product Development Process",
+  "steps": ["Ideate", "Design", "Develop", "Validate", "Scale"],
+  "diagram": "/assets/diagrams/startup-process.png"
+}

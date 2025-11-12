@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Enterprise Dataset Management & Delivery Systems",
+    "subtitle": "Build scalable data pipelines, manage massive datasets, and deliver real-time insights with intelligent data infrastructure and AI-powered analytics.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Get Started", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Intelligent Data Infrastructure",
+    "content": "We design and build enterprise-grade data management systems that handle petabyte-scale datasets with ease. From data ingestion and transformation to real-time delivery and analytics, our solutions leverage cutting-edge technologies including data lakes, streaming pipelines, and AI-powered processing to turn your data into actionable insights.",
+    "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg"
+  },
+  "features": {
+    "title": "Data Management Capabilities",
+    "items": [
+      {
+        "id": "pipeline",
+        "title": "Data Pipeline Engineering",
+        "desc": "Build automated ETL/ELT pipelines for seamless data ingestion and transformation."
+      },
+      {
+        "id": "lakes",
+        "title": "Data Lakes & Warehouses",
+        "desc": "Design scalable data lakes and warehouses optimized for analytics and ML workloads."
+      },
+      {
+        "id": "streaming",
+        "title": "Real-Time Data Streaming",
+        "desc": "Implement streaming data pipelines for real-time analytics and event processing."
+      },
+      {
+        "id": "governance",
+        "title": "Data Governance",
+        "desc": "Ensure data quality, security, and compliance with robust governance frameworks."
+      },
+      {
+        "id": "analytics",
+        "title": "Advanced Analytics",
+        "desc": "Deploy AI/ML models and analytics tools for predictive insights and intelligence."
+      },
+      {
+        "id": "delivery",
+        "title": "Data Delivery APIs",
+        "desc": "Create high-performance APIs for delivering data to applications and services."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Data Technologies",
+    "description": "Powered by industry-leading data platforms and tools.",
+    "items": [
+      { "name": "Snowflake", "id": "snowflake" },
+      { "name": "Apache Spark", "id": "spark" },
+      { "name": "Kafka", "id": "kafka" },
+      { "name": "Databricks", "id": "databricks" },
+      { "name": "BigQuery", "id": "bigquery" },
+      { "name": "Airflow", "id": "airflow" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Data Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "E-commerce Analytics Platform",
+        "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
+        "description": "Processed 10TB+ daily data with real-time analytics for 1M+ users"
+      },
+      {
+        "id": "2",
+        "title": "Financial Data Pipeline",
+        "image": "https://images.pexels.com/photos/187041/pexels-photo-187041.jpeg",
+        "description": "Built streaming pipeline handling 1M+ transactions per second"
+      },
+      {
+        "id": "3",
+        "title": "Healthcare Data Lake",
+        "image": "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg",
+        "description": "Centralized 50PB of medical data with HIPAA-compliant governance"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Data Engineering Process",
+    "description": "Systematic approach to building robust data infrastructure.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Data Discovery & Analysis",
+        "description": "Map data sources, analyze requirements, and design architecture blueprint"
+      },
+      {
+        "id": "architecture",
+        "number": "02",
+        "title": "Architecture Design",
+        "description": "Design scalable data architecture with optimal storage and processing strategies"
+      },
+      {
+        "id": "pipeline",
+        "number": "03",
+        "title": "Pipeline Development",
+        "description": "Build automated data pipelines with monitoring and error handling"
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "Integration & Testing",
+        "description": "Integrate data sources and perform comprehensive quality testing"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Optimization",
+        "description": "Deploy infrastructure and continuously optimize for performance"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Intelligent Data Processing",
+    "description": "Our data management platform leverages AI and machine learning to automatically optimize data pipelines, detect anomalies, and ensure data quality. With intelligent routing, auto-scaling, and predictive maintenance, your data infrastructure operates at peak efficiency 24/7.",
+    "features": [
+      "Automated data quality monitoring and validation",
+      "AI-powered data transformation and enrichment",
+      "Real-time anomaly detection and alerting",
+      "Intelligent data lifecycle management"
+    ]
+  }
+}

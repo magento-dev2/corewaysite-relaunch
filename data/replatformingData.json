@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Seamless Platform Migration & Replatforming Services",
+    "subtitle": "Modernize your technology stack with zero downtime. Expert migration services for e-commerce, SaaS, and enterprise applications.",
+    "buttons": [
+      { "label": "Start Migration", "link": "#features" },
+      { "label": "Get Assessment", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise-Grade Migration Solutions",
+    "content": "We help businesses migrate and replatform their applications with minimal disruption. Our proven methodology ensures data integrity, zero downtime, and improved performance. Whether you're moving to cloud, upgrading platforms, or consolidating systems, we deliver seamless transitions that accelerate your digital transformation.",
+    "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
+  },
+  "features": {
+    "title": "Migration & Replatforming Services",
+    "items": [
+      {
+        "id": "cloud-migration",
+        "title": "Cloud Migration",
+        "desc": "Migrate applications and data to AWS, Azure, or Google Cloud with zero downtime."
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-commerce Replatforming",
+        "desc": "Seamlessly transition between Magento, Shopify, BigCommerce, and custom platforms."
+      },
+      {
+        "id": "database",
+        "title": "Database Migration",
+        "desc": "Move from legacy databases to modern solutions while preserving data integrity."
+      },
+      {
+        "id": "modernization",
+        "title": "Legacy Modernization",
+        "desc": "Transform monolithic applications into modern microservices architecture."
+      },
+      {
+        "id": "consolidation",
+        "title": "System Consolidation",
+        "desc": "Merge multiple systems into unified platforms for better efficiency."
+      },
+      {
+        "id": "saas",
+        "title": "SaaS Platform Migration",
+        "desc": "Transition to modern SaaS solutions with complete data and workflow migration."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Platform Expertise",
+    "description": "Experienced with all major platforms and cloud providers.",
+    "items": [
+      { "name": "AWS", "id": "aws" },
+      { "name": "Azure", "id": "azure" },
+      { "name": "Google Cloud", "id": "gcp" },
+      { "name": "Shopify", "id": "shopify" },
+      { "name": "Magento", "id": "magento" },
+      { "name": "Salesforce", "id": "salesforce" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Successful Migration Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "E-commerce Platform Migration",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+        "description": "Migrated 500K products from Magento to Shopify Plus with zero downtime"
+      },
+      {
+        "id": "2",
+        "title": "Cloud Infrastructure Migration",
+        "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg",
+        "description": "Moved enterprise application to AWS, reducing costs by 40%"
+      },
+      {
+        "id": "3",
+        "title": "Legacy System Modernization",
+        "image": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
+        "description": "Transformed 15-year-old system to modern microservices architecture"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Migration Methodology",
+    "description": "Proven 5-phase approach ensuring successful migrations every time.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Assessment & Planning",
+        "description": "Analyze current systems, identify risks, and create detailed migration roadmap"
+      },
+      {
+        "id": "preparation",
+        "number": "02",
+        "title": "Environment Preparation",
+        "description": "Set up target environment, configure infrastructure, and prepare data pipelines"
+      },
+      {
+        "id": "migration",
+        "number": "03",
+        "title": "Data Migration",
+        "description": "Execute phased data transfer with validation and integrity checks"
+      },
+      {
+        "id": "testing",
+        "number": "04",
+        "title": "Testing & Validation",
+        "description": "Comprehensive testing to ensure functionality, performance, and data accuracy"
+      },
+      {
+        "id": "cutover",
+        "number": "05",
+        "title": "Cutover & Support",
+        "description": "Execute final cutover and provide post-migration support and optimization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Zero-Downtime Migration Excellence",
+    "description": "Our advanced migration techniques and automated tools ensure your business continues operating smoothly throughout the entire migration process. We handle complex data transformations, maintain data integrity, and deliver improved performance on the new platform.",
+    "features": [
+      "Automated data validation and integrity checks",
+      "Real-time synchronization during migration",
+      "Rollback capabilities for risk mitigation",
+      "Performance optimization post-migration"
+    ]
+  }
+}

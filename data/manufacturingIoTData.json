@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "title": "Manufacturing & Industrial IoT",
+    "subtitle": "Transform your factory floor with smart sensors, predictive maintenance, and real-time production monitoring. From legacy equipment to Industry 4.0, we connect your machines, optimize operations, and maximize output with IoT solutions that deliver measurable ROI.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "View Case Studies", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Smart Factory Transformation",
+    "content": "We implement end-to-end Industrial IoT solutions that connect machines, collect real-time data, and provide actionable insights. Our platforms integrate with existing equipment through sensors and edge devices, enabling predictive maintenance, quality control, and production optimization. Whether you're retrofitting legacy machinery or building a greenfield smart factory, we deliver IoT systems that reduce downtime, improve efficiency, and boost profitability.",
+    "image": "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg"
+  },
+  "features": {
+    "title": "Industrial IoT Capabilities",
+    "items": [
+      {
+        "id": "monitoring",
+        "title": "Real-Time Monitoring",
+        "desc": "Live dashboards showing production status, machine health, and KPIs across all facilities."
+      },
+      {
+        "id": "predictive",
+        "title": "Predictive Maintenance",
+        "desc": "AI-powered analytics predict equipment failures before they happen, reducing downtime by 40%."
+      },
+      {
+        "id": "automation",
+        "title": "Process Automation",
+        "desc": "Automated workflows and smart controls optimize production and reduce manual intervention."
+      },
+      {
+        "id": "quality",
+        "title": "Quality Control",
+        "desc": "Computer vision and sensors detect defects in real-time, ensuring product quality."
+      },
+      {
+        "id": "energy",
+        "title": "Energy Management",
+        "desc": "Monitor and optimize energy consumption across facilities for cost savings."
+      },
+      {
+        "id": "supply",
+        "title": "Supply Chain Integration",
+        "desc": "Connect production data with inventory, logistics, and ERP systems."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "IoT Technology Stack",
+    "description": "Built with industrial-grade hardware and software.",
+    "categories": [
+      {
+        "name": "Sensors & Devices",
+        "items": ["Temperature Sensors", "Vibration Monitors", "Pressure Gauges", "Flow Meters", "PLCs"]
+      },
+      {
+        "name": "Connectivity",
+        "items": ["MQTT", "OPC-UA", "Modbus", "LoRaWAN", "5G/LTE"]
+      },
+      {
+        "name": "Edge Computing",
+        "items": ["AWS IoT Greengrass", "Azure IoT Edge", "EdgeX Foundry", "KubeEdge"]
+      },
+      {
+        "name": "Cloud Platforms",
+        "items": ["AWS IoT Core", "Azure IoT Hub", "Google Cloud IoT", "ThingsBoard"]
+      }
+    ]
+  },
+  "cases": {
+    "title": "Manufacturing Success Stories",
+    "items": [
+      {
+        "id": "automotive",
+        "company": "Automotive Parts Manufacturer",
+        "challenge": "Frequent unplanned downtime costing $50K per hour",
+        "solution": "Deployed 500+ sensors with predictive maintenance AI",
+        "results": {
+          "downtime": "-45%",
+          "efficiency": "+32%",
+          "savings": "$2.5M/year"
+        }
+      },
+      {
+        "id": "food",
+        "company": "Food Processing Plant",
+        "challenge": "Quality issues and compliance tracking difficulties",
+        "solution": "IoT-enabled quality monitoring and traceability system",
+        "results": {
+          "defects": "-65%",
+          "compliance": "100%",
+          "waste": "-28%"
+        }
+      },
+      {
+        "id": "pharma",
+        "company": "Pharmaceutical Facility",
+        "challenge": "Manual data collection and regulatory compliance burden",
+        "solution": "Automated data capture with real-time monitoring and reporting",
+        "results": {
+          "compliance": "100%",
+          "efficiency": "+40%",
+          "costs": "-35%"
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": "IIoT Implementation Process",
+    "description": "From assessment to optimization in a proven 5-phase approach.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Factory Assessment",
+        "description": "Analyze existing equipment, processes, and identify IoT opportunities"
+      },
+      {
+        "id": "architecture",
+        "number": "02",
+        "title": "Solution Architecture",
+        "description": "Design sensor networks, edge computing, and cloud infrastructure"
+      },
+      {
+        "id": "pilot",
+        "number": "03",
+        "title": "Pilot Deployment",
+        "description": "Start with critical machines to prove ROI and refine approach"
+      },
+      {
+        "id": "rollout",
+        "number": "04",
+        "title": "Full Rollout",
+        "description": "Scale across facility with sensors, connectivity, and dashboards"
+      },
+      {
+        "id": "optimize",
+        "number": "05",
+        "title": "Continuous Optimization",
+        "description": "Refine algorithms, add capabilities, and maximize value"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "ROI-Driven Results",
+    "items": [
+      {
+        "metric": "40-50%",
+        "description": "Reduction in unplanned downtime with predictive maintenance",
+        "icon": "⚙️"
+      },
+      {
+        "metric": "25-35%",
+        "description": "Improvement in overall equipment effectiveness (OEE)",
+        "icon": "📊"
+      },
+      {
+        "metric": "15-25%",
+        "description": "Energy cost savings through optimization",
+        "icon": "⚡"
+      },
+      {
+        "metric": "6-12 months",
+        "description": "Average time to positive ROI",
+        "icon": "💰"
+      }
+    ]
+  },
+  "sensors": {
+    "title": "Sensor Types We Deploy",
+    "items": [
+      { "name": "Temperature", "icon": "🌡️", "use": "Monitor heat levels in equipment and processes" },
+      { "name": "Vibration", "icon": "📳", "use": "Detect bearing wear and mechanical issues" },
+      { "name": "Pressure", "icon": "🔧", "use": "Track hydraulic and pneumatic systems" },
+      { "name": "Flow", "icon": "💧", "use": "Measure liquid and gas flow rates" },
+      { "name": "Vision", "icon": "👁️", "use": "Quality inspection and defect detection" },
+      { "name": "Energy", "icon": "⚡", "use": "Monitor power consumption and efficiency" }
+    ]
+  }
+}

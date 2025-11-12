@@ -1,0 +1,9 @@
+{
+  "title": "From Idea to MVP — Build Fast, Scale Smart",
+  "subtitle": "Accelerate your startup journey with agile, scalable product development.",
+  "buttons": [
+    { "label": "Explore Services", "link": "/solutions" },
+    { "label": "Talk to Experts", "link": "/contact" }
+  ],
+  "illustration": "/assets/images/hero-startup-illustration.svg"
+}

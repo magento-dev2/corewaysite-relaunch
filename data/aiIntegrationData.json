@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Seamless AI Integration Services",
+    "subtitle": "Connect artificial intelligence with your existing systems for enhanced automation and intelligent workflows.",
+    "buttons": [
+      { "label": "Explore Integration", "link": "#features" },
+      { "label": "Get Started", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise AI Integration Solutions",
+    "content": "We specialize in integrating cutting-edge AI capabilities into your existing business systems. From connecting AI APIs to building custom integrations, we ensure your organization leverages AI without disrupting current operations. Our solutions enable seamless data flow, automated processes, and intelligent decision-making across your tech stack.",
+    "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+  },
+  "features": {
+    "title": "AI Integration Capabilities",
+    "items": [
+      {
+        "id": "api-integration",
+        "title": "AI API Integration",
+        "desc": "Connect OpenAI, Google AI, AWS AI services seamlessly with your applications."
+      },
+      {
+        "id": "workflow",
+        "title": "Intelligent Workflow Automation",
+        "desc": "Automate complex business processes with AI-powered decision engines."
+      },
+      {
+        "id": "data-pipeline",
+        "title": "AI Data Pipelines",
+        "desc": "Build scalable data pipelines for training and inference workflows."
+      },
+      {
+        "id": "chatbot",
+        "title": "Chatbot Integration",
+        "desc": "Deploy AI chatbots across web, mobile, and messaging platforms."
+      },
+      {
+        "id": "legacy",
+        "title": "Legacy System AI Enhancement",
+        "desc": "Add AI capabilities to existing enterprise applications without rebuilding."
+      },
+      {
+        "id": "monitoring",
+        "title": "AI Performance Monitoring",
+        "desc": "Track AI model performance, usage, and ROI with real-time dashboards."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AI Platform Integrations",
+    "description": "Expert integration with leading AI platforms and services.",
+    "items": [
+      { "name": "OpenAI", "id": "openai" },
+      { "name": "Google AI", "id": "google-ai" },
+      { "name": "AWS AI", "id": "aws-ai" },
+      { "name": "Azure AI", "id": "azure-ai" },
+      { "name": "Anthropic", "id": "anthropic" },
+      { "name": "Cohere", "id": "cohere" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Integration Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "CRM AI Integration",
+        "image": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+        "description": "Integrated AI-powered lead scoring with Salesforce CRM"
+      },
+      {
+        "id": "2",
+        "title": "E-commerce Personalization",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+        "description": "AI recommendation engine integrated with Shopify platform"
+      },
+      {
+        "id": "3",
+        "title": "Support Automation",
+        "image": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+        "description": "AI chatbot integrated with Zendesk for 24/7 support"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Integration Process",
+    "description": "Systematic approach to seamless AI integration.",
+    "steps": [
+      {
+        "id": "analysis",
+        "number": "01",
+        "title": "System Analysis",
+        "description": "Audit existing systems and identify integration points"
+      },
+      {
+        "id": "planning",
+        "number": "02",
+        "title": "Integration Planning",
+        "description": "Design integration architecture and data flow"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Development & Testing",
+        "description": "Build and test integrations in staging environments"
+      },
+      {
+        "id": "deployment",
+        "number": "04",
+        "title": "Deployment",
+        "description": "Roll out AI integrations with zero downtime"
+      },
+      {
+        "id": "support",
+        "number": "05",
+        "title": "Support & Optimization",
+        "description": "Monitor, maintain, and optimize AI integrations"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Transform Operations with AI Integration",
+    "description": "Unlock the power of AI without replacing your existing systems. Our integration services connect intelligent capabilities with your current infrastructure, enabling automation, insights, and efficiency gains while preserving your technology investments.",
+    "features": [
+      "Zero-downtime integration deployment",
+      "Real-time AI data synchronization",
+      "Enterprise-grade security and compliance",
+      "Scalable integration architecture"
+    ]
+  }
+}

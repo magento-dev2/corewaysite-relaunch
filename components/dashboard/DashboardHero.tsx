@@ -1,0 +1,215 @@
+import { useEffect, useRef, useState } from 'react';
+import { BarChart3, ArrowRight } from 'lucide-react';
+
+interface DashboardHeroProps {
+  title: string;
+  subtitle: string;
+  buttons: { label: string; link: string }[];
+}
+
+export default function DashboardHero({ title, subtitle, buttons }: DashboardHeroProps) {
+  const [chartBars, setChartBars] = useState<Array<{ id: number; height: number; color: string }>>([]);
+  const [metrics, setMetrics] = useState({ users: 0, queries: 0, uptime: 0 });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const colors = ['#a855f7', '#8b5cf6', '#7c3aed', '#6d28d9'];
+    const bars = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      height: 20 + Math.random() * 60,
+      color: colors[i % colors.length]
+    }));
+    setChartBars(bars);
+
+    const metricsInterval = setInterval(() => {
+      setMetrics({
+        users: Math.floor(1000 + Math.random() * 500),
+        queries: Math.floor(50000 + Math.random() * 10000),
+        uptime: 99.9 + Math.random() * 0.09
+      });
+    }, 2000);
+
+    const barsInterval = setInterval(() => {
+      setChartBars(prev => prev.map(bar => ({
+        ...bar,
+        height: 20 + Math.random() * 60
+      })));
+    }, 1500);
+
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const drawGrid = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.strokeStyle = 'rgba(168, 85, 247, 0.1)';
+          ctx.lineWidth = 1;
+
+          for (let i = 0; i <= 10; i++) {
+            const y = (canvas.height / 10) * i;
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            ctx.stroke();
+          }
+
+          requestAnimationFrame(drawGrid);
+        };
+
+        drawGrid();
+      }
+    }
+
+    return () => {
+      clearInterval(metricsInterval);
+      clearInterval(barsInterval);
+    };
+  }, []);
+
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0E0918] via-[#1a1325] to-[#0E0918]">
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-20" />
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-around px-8 pb-20 opacity-20">
+          {chartBars.map((bar) => (
+            <div
+              key={bar.id}
+              className="transition-all duration-1000 ease-out rounded-t-sm"
+              style={{
+                width: '3%',
+                height: `${bar.height}%`,
+                backgroundColor: bar.color,
+                boxShadow: `0 0 20px ${bar.color}40`
+              }}
+            />
+          ))}
+        </div>
+
+        <svg className="absolute inset-0 w-full h-full opacity-10">
+          <defs>
+            <pattern id="dashboardGrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <circle cx="30" cy="30" r="1.5" fill="#a855f7" />
+              <line x1="30" y1="0" x2="30" y2="60" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" />
+              <line x1="0" y1="30" x2="60" y2="30" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dashboardGrid)" />
+        </svg>
+
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-pulse-slow"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: `${30 + (i % 3) * 20}%`,
+              animationDelay: `${i * 0.4}s`
+            }}
+          >
+            <div className="w-16 h-16 border-2 border-purple-500/30 rounded-lg backdrop-blur-sm flex items-center justify-center">
+              <BarChart3 className="text-purple-500/40" size={32} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-8 animate-slideDown">
+          <BarChart3 className="text-purple-500 animate-pulse" size={16} />
+          <span className="text-gray-300 text-sm font-mono">Dashboard Solutions</span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+          {title}
+        </h1>
+
+        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+          {subtitle}
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+          {buttons.map((button, index) => (
+            <a
+              key={index}
+              href={button.link}
+              className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${
+                index === 0
+                  ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                  : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+              }`}
+            >
+              <span>{button.label}</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          {[
+            { label: 'Active Users', value: metrics.users.toLocaleString(), icon: '👥' },
+            { label: 'Queries/min', value: metrics.queries.toLocaleString(), icon: '⚡' },
+            { label: 'Uptime', value: `${metrics.uptime.toFixed(2)}%`, icon: '✓' }
+          ].map((metric, i) => (
+            <div
+              key={i}
+              className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-xl px-4 py-3"
+            >
+              <div className="text-2xl mb-1">{metric.icon}</div>
+              <div className="text-2xl font-bold text-purple-400 font-mono">{metric.value}</div>
+              <div className="text-xs text-gray-400 font-mono">{metric.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+
+      <style>{`
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.05);
+          }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.8s ease-out forwards;
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
+    </section>
+  );
+}

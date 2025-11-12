@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Reimagine Your Commerce with Intelligent Transformation",
+    "subtitle": "Headless, AI-driven, and composable commerce solutions.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Our Approach to Modern Commerce",
+    "content": "We combine cutting-edge headless technology with strategic business insight to deliver scalable, composable commerce ecosystems. Our solutions empower brands to create exceptional digital experiences while maintaining flexibility, performance, and scalability at every touchpoint.",
+    "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+  },
+  "features": {
+    "title": "Our Digital Commerce Capabilities",
+    "items": [
+      {
+        "id": "headless",
+        "title": "Headless Commerce",
+        "desc": "Build composable frontends that connect seamlessly with your backend."
+      },
+      {
+        "id": "magento",
+        "title": "Magento / Adobe Commerce",
+        "desc": "Custom, scalable commerce development on Adobe stack."
+      },
+      {
+        "id": "api",
+        "title": "Custom APIs & Integrations",
+        "desc": "Integrate third-party tools, ERP, and analytics systems effortlessly."
+      },
+      {
+        "id": "marketplace",
+        "title": "Marketplace Solutions",
+        "desc": "Enable multi-vendor capabilities with custom marketplace setups."
+      },
+      {
+        "id": "cloud",
+        "title": "Cloud & DevOps Enablement",
+        "desc": "Deploy and scale with modern cloud-native infrastructure."
+      },
+      {
+        "id": "ai",
+        "title": "AI-Powered Product Search",
+        "desc": "Deliver intelligent product recommendations using AI models."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Platform Expertise",
+    "description": "Our technology foundation powers scalable digital commerce.",
+    "items": [
+      { "name": "Magento", "id": "magento" },
+      { "name": "Shopify", "id": "shopify" },
+      { "name": "React", "id": "react" },
+      { "name": "Vue", "id": "vue" },
+      { "name": "GraphQL", "id": "graphql" },
+      { "name": "AWS", "id": "aws" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Recent Commerce Projects",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Magento Marketplace for Luxury Decor",
+        "image": "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg",
+        "description": "Multi-vendor marketplace with custom payment gateway"
+      },
+      {
+        "id": "2",
+        "title": "Composable Fashion Storefront",
+        "image": "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg",
+        "description": "Headless architecture with AI recommendations"
+      },
+      {
+        "id": "3",
+        "title": "B2B Electronics Platform",
+        "image": "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg",
+        "description": "Enterprise commerce with ERP integration"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Commerce Transformation Process",
+    "description": "A five-step journey to build smarter digital ecosystems.",
+    "steps": [
+      {
+        "id": "strategy",
+        "number": "01",
+        "title": "Strategy",
+        "description": "Analyze your business goals and define a commerce roadmap"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Design",
+        "description": "Create user-centric experiences and architecture blueprints"
+      },
+      {
+        "id": "build",
+        "number": "03",
+        "title": "Build",
+        "description": "Develop scalable, performant commerce solutions"
+      },
+      {
+        "id": "integrate",
+        "number": "04",
+        "title": "Integrate",
+        "description": "Connect systems, payment gateways, and third-party services"
+      },
+      {
+        "id": "scale",
+        "number": "05",
+        "title": "Scale",
+        "description": "Optimize performance and grow with your business"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Automation in Commerce",
+    "description": "Enhance customer experience through intelligent automation. From order tracking to inventory management, our automation solutions streamline operations and improve customer satisfaction.",
+    "features": [
+      "Automated order tracking and notifications",
+      "Smart inventory management",
+      "AI-powered customer support chatbots",
+      "Personalized marketing automation"
+    ]
+  }
+}

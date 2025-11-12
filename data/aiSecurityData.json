@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "AI-Powered Infrastructure Security Solutions",
+    "subtitle": "Protect your infrastructure with intelligent threat detection, automated response, and predictive security analytics powered by artificial intelligence.",
+    "buttons": [
+      { "label": "Secure Your Systems", "link": "#features" },
+      { "label": "Get Assessment", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Next-Generation AI Security",
+    "content": "Our AI-powered security solutions combine machine learning, behavioral analysis, and real-time threat intelligence to protect your infrastructure 24/7. From anomaly detection to automated incident response, we deploy advanced AI models that learn, adapt, and defend against evolving cyber threats before they impact your business.",
+    "image": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg"
+  },
+  "features": {
+    "title": "AI Security Capabilities",
+    "items": [
+      {
+        "id": "threat-detection",
+        "title": "AI Threat Detection",
+        "desc": "Real-time threat identification using machine learning models that detect anomalies and suspicious behavior."
+      },
+      {
+        "id": "auto-response",
+        "title": "Automated Response",
+        "desc": "Instant AI-driven incident response that isolates threats and mitigates attacks automatically."
+      },
+      {
+        "id": "predictive",
+        "title": "Predictive Analytics",
+        "desc": "Forecast potential vulnerabilities and security risks before they can be exploited."
+      },
+      {
+        "id": "behavioral",
+        "title": "Behavioral Analysis",
+        "desc": "AI monitors user and system behavior to identify deviations and potential insider threats."
+      },
+      {
+        "id": "vulnerability",
+        "title": "Vulnerability Scanning",
+        "desc": "Continuous AI-powered scanning to identify and prioritize security weaknesses."
+      },
+      {
+        "id": "compliance",
+        "title": "Compliance Monitoring",
+        "desc": "Automated compliance tracking and reporting for SOC2, HIPAA, GDPR, and more."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AI Security Technologies",
+    "description": "Powered by cutting-edge AI and security platforms.",
+    "items": [
+      { "name": "TensorFlow", "id": "tensorflow" },
+      { "name": "AWS Security", "id": "aws-security" },
+      { "name": "Azure Security", "id": "azure-security" },
+      { "name": "Crowdstrike", "id": "crowdstrike" },
+      { "name": "Splunk", "id": "splunk" },
+      { "name": "Palo Alto", "id": "palo-alto" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Security Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Financial Services Protection",
+        "image": "https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg",
+        "description": "Blocked 10,000+ threats monthly with 99.9% accuracy using AI threat detection"
+      },
+      {
+        "id": "2",
+        "title": "Healthcare Data Security",
+        "image": "https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg",
+        "description": "HIPAA-compliant AI security protecting 5M+ patient records"
+      },
+      {
+        "id": "3",
+        "title": "E-commerce Infrastructure",
+        "image": "https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg",
+        "description": "Zero-day attack prevention with AI-powered behavioral analysis"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our AI Security Implementation",
+    "description": "Comprehensive approach to deploying AI-powered security solutions.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Security Assessment",
+        "description": "Comprehensive evaluation of current infrastructure, vulnerabilities, and threat landscape"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "AI Model Design",
+        "description": "Design custom AI models tailored to your specific security requirements and risk profile"
+      },
+      {
+        "id": "deployment",
+        "number": "03",
+        "title": "Deployment & Integration",
+        "description": "Seamless integration of AI security tools across your infrastructure"
+      },
+      {
+        "id": "training",
+        "number": "04",
+        "title": "Model Training",
+        "description": "Train AI models on your data to recognize patterns and detect anomalies"
+      },
+      {
+        "id": "monitoring",
+        "number": "05",
+        "title": "24/7 Monitoring",
+        "description": "Continuous AI-powered monitoring with real-time alerts and automated responses"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Intelligent Security Automation",
+    "description": "Our AI security platform operates autonomously, learning from every interaction and continuously improving its threat detection capabilities. With advanced machine learning algorithms and neural networks, we provide enterprise-grade protection that scales with your business while reducing false positives by 95%.",
+    "features": [
+      "Real-time anomaly detection with ML models",
+      "Automated threat response and containment",
+      "Zero-trust architecture implementation",
+      "Continuous security posture assessment"
+    ]
+  }
+}

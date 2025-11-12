@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Build Connected IoT Applications for the Future",
+    "subtitle": "End-to-end IoT solutions from devices to cloud platforms.",
+    "buttons": [
+      { "label": "Explore IoT Solutions", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Our Approach to IoT Development",
+    "content": "We design and deploy comprehensive IoT ecosystems that connect physical devices to powerful cloud platforms. Our solutions enable real-time monitoring, predictive maintenance, and intelligent automation across industries, transforming how businesses operate and interact with their physical assets.",
+    "image": "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg"
+  },
+  "features": {
+    "title": "IoT Application Capabilities",
+    "items": [
+      {
+        "id": "device",
+        "title": "Device Connectivity",
+        "desc": "Connect and manage thousands of IoT devices with secure protocols."
+      },
+      {
+        "id": "realtime",
+        "title": "Real-Time Data Processing",
+        "desc": "Stream and analyze sensor data in real-time for instant insights."
+      },
+      {
+        "id": "edge",
+        "title": "Edge Computing",
+        "desc": "Process data at the edge for reduced latency and bandwidth."
+      },
+      {
+        "id": "analytics",
+        "title": "IoT Analytics",
+        "desc": "Extract actionable insights from massive IoT data streams."
+      },
+      {
+        "id": "security",
+        "title": "Security & Compliance",
+        "desc": "End-to-end encryption and security for IoT deployments."
+      },
+      {
+        "id": "integration",
+        "title": "Enterprise Integration",
+        "desc": "Seamlessly integrate IoT data with existing business systems."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "IoT Technology Stack",
+    "description": "Our IoT solutions leverage industry-leading platforms and protocols.",
+    "items": [
+      { "name": "AWS IoT", "id": "aws" },
+      { "name": "Azure IoT", "id": "azure" },
+      { "name": "MQTT", "id": "mqtt" },
+      { "name": "LoRaWAN", "id": "lorawan" },
+      { "name": "Raspberry Pi", "id": "raspberrypi" },
+      { "name": "Arduino", "id": "arduino" }
+    ]
+  },
+  "caseStudies": {
+    "title": "IoT Implementation Projects",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Smart Factory Monitoring System",
+        "image": "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+        "description": "Real-time equipment monitoring with predictive maintenance for manufacturing"
+      },
+      {
+        "id": "2",
+        "title": "Connected Agriculture Platform",
+        "image": "https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg",
+        "description": "IoT sensors for soil monitoring and automated irrigation systems"
+      },
+      {
+        "id": "3",
+        "title": "Smart Building Management",
+        "image": "https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg",
+        "description": "Centralized control of HVAC, lighting, and security systems"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our IoT Development Process",
+    "description": "A proven methodology for building scalable IoT solutions.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Assessment",
+        "description": "Evaluate your IoT needs and define device requirements"
+      },
+      {
+        "id": "architecture",
+        "number": "02",
+        "title": "Architecture",
+        "description": "Design scalable IoT infrastructure and data pipelines"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Development",
+        "description": "Build device firmware, gateways, and cloud applications"
+      },
+      {
+        "id": "deployment",
+        "number": "04",
+        "title": "Deployment",
+        "description": "Deploy and configure IoT devices across your locations"
+      },
+      {
+        "id": "monitoring",
+        "number": "05",
+        "title": "Monitoring",
+        "description": "Continuous monitoring, updates, and optimization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "IoT-Driven Automation",
+    "description": "Transform operations with intelligent IoT automation. From predictive maintenance to automated workflows, our IoT solutions enhance efficiency, reduce downtime, and enable data-driven decision making across your organization.",
+    "features": [
+      "Automated alerts and notifications",
+      "Predictive maintenance scheduling",
+      "Remote device control and configuration",
+      "Automated data collection and reporting"
+    ]
+  }
+}

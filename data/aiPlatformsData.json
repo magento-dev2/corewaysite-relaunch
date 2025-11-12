@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Build Intelligent Applications with AI-Powered Platforms",
+    "subtitle": "Transform your business with scalable, AI-driven application platforms.",
+    "buttons": [
+      { "label": "Explore AI Solutions", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Our Approach to AI-Powered Applications",
+    "content": "We architect and deploy intelligent application platforms that leverage cutting-edge AI, machine learning, and cloud-native technologies. Our solutions enable businesses to build adaptive, self-learning systems that scale with your growth while delivering personalized experiences and actionable insights.",
+    "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+  },
+  "features": {
+    "title": "AI Application Platform Capabilities",
+    "items": [
+      {
+        "id": "ml",
+        "title": "Machine Learning Integration",
+        "desc": "Embed predictive models and ML workflows directly into your applications."
+      },
+      {
+        "id": "nlp",
+        "title": "Natural Language Processing",
+        "desc": "Build conversational AI, sentiment analysis, and intelligent chatbots."
+      },
+      {
+        "id": "vision",
+        "title": "Computer Vision Solutions",
+        "desc": "Implement image recognition, object detection, and visual analytics."
+      },
+      {
+        "id": "data",
+        "title": "Real-Time Data Processing",
+        "desc": "Process and analyze streaming data with AI-powered insights."
+      },
+      {
+        "id": "automation",
+        "title": "Intelligent Automation",
+        "desc": "Automate complex workflows with AI-driven decision-making."
+      },
+      {
+        "id": "personalization",
+        "title": "AI-Driven Personalization",
+        "desc": "Deliver tailored experiences using advanced recommendation engines."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "AI & Cloud Technologies",
+    "description": "Our technology stack powers intelligent, scalable applications.",
+    "items": [
+      { "name": "OpenAI", "id": "openai" },
+      { "name": "TensorFlow", "id": "tensorflow" },
+      { "name": "PyTorch", "id": "pytorch" },
+      { "name": "AWS AI", "id": "aws" },
+      { "name": "Azure AI", "id": "azure" },
+      { "name": "Anthropic", "id": "anthropic" }
+    ]
+  },
+  "caseStudies": {
+    "title": "AI Platform Projects",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Intelligent Document Processing System",
+        "image": "https://images.pexels.com/photos/5668838/pexels-photo-5668838.jpeg",
+        "description": "AI-powered document extraction and classification for enterprise"
+      },
+      {
+        "id": "2",
+        "title": "Predictive Analytics Platform",
+        "image": "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg",
+        "description": "ML-driven forecasting system for retail inventory optimization"
+      },
+      {
+        "id": "3",
+        "title": "Conversational AI Assistant",
+        "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg",
+        "description": "Multi-language customer support chatbot with NLP capabilities"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our AI Platform Development Process",
+    "description": "A structured approach to building intelligent applications.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Discovery",
+        "description": "Identify AI use cases and define success metrics for your platform"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Architecture",
+        "description": "Design scalable AI infrastructure and data pipelines"
+      },
+      {
+        "id": "model",
+        "number": "03",
+        "title": "Model Development",
+        "description": "Train, test, and optimize AI models for your specific needs"
+      },
+      {
+        "id": "integrate",
+        "number": "04",
+        "title": "Integration",
+        "description": "Deploy AI services and integrate with existing systems"
+      },
+      {
+        "id": "optimize",
+        "number": "05",
+        "title": "Monitor & Optimize",
+        "description": "Continuously improve model performance and scale infrastructure"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Automation",
+    "description": "Transform business processes with intelligent automation. From predictive maintenance to automated customer insights, our AI solutions enhance operational efficiency and drive data-driven decision making.",
+    "features": [
+      "Automated data analysis and reporting",
+      "Intelligent workflow optimization",
+      "Predictive maintenance and alerts",
+      "Smart resource allocation and scheduling"
+    ]
+  }
+}

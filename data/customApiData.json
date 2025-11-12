@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Custom API & Systems Integration Solutions",
+    "subtitle": "Connect your business systems seamlessly. Expert API development, third-party integrations, and custom middleware solutions.",
+    "buttons": [
+      { "label": "Explore Services", "link": "#features" },
+      { "label": "Get Started", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise API Integration Expertise",
+    "content": "We build robust API architectures and seamless integrations that connect your business systems, automate workflows, and enable real-time data synchronization. From RESTful APIs to GraphQL endpoints, webhooks to microservices, we deliver scalable integration solutions that power modern businesses.",
+    "image": "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg"
+  },
+  "features": {
+    "title": "API & Integration Services",
+    "items": [
+      {
+        "id": "rest-api",
+        "title": "RESTful API Development",
+        "desc": "Design and build secure, scalable REST APIs with comprehensive documentation."
+      },
+      {
+        "id": "graphql",
+        "title": "GraphQL Implementation",
+        "desc": "Flexible GraphQL APIs for efficient data fetching and real-time updates."
+      },
+      {
+        "id": "third-party",
+        "title": "Third-Party Integration",
+        "desc": "Connect with payment gateways, CRMs, ERPs, and external services seamlessly."
+      },
+      {
+        "id": "webhooks",
+        "title": "Webhook Architecture",
+        "desc": "Real-time event-driven integrations with reliable webhook systems."
+      },
+      {
+        "id": "middleware",
+        "title": "Custom Middleware",
+        "desc": "Build integration layers that bridge legacy systems with modern applications."
+      },
+      {
+        "id": "microservices",
+        "title": "Microservices Integration",
+        "desc": "Design and implement service mesh architectures for distributed systems."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Integration Technologies",
+    "description": "Expert integration with modern APIs and enterprise systems.",
+    "items": [
+      { "name": "REST API", "id": "rest" },
+      { "name": "GraphQL", "id": "graphql" },
+      { "name": "Webhooks", "id": "webhooks" },
+      { "name": "Stripe", "id": "stripe" },
+      { "name": "Salesforce", "id": "salesforce" },
+      { "name": "Zapier", "id": "zapier" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Integration Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Payment Gateway Integration",
+        "image": "https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg",
+        "description": "Integrated Stripe, PayPal, and custom payment solutions for e-commerce platform"
+      },
+      {
+        "id": "2",
+        "title": "CRM & ERP Sync",
+        "image": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+        "description": "Real-time data synchronization between Salesforce CRM and SAP ERP"
+      },
+      {
+        "id": "3",
+        "title": "Microservices Architecture",
+        "image": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+        "description": "Built scalable API gateway connecting 20+ microservices"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Integration Approach",
+    "description": "Strategic methodology for successful API and systems integration.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Discovery & Analysis",
+        "description": "Map existing systems, identify integration points, and define requirements"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "API Design & Architecture",
+        "description": "Design scalable API architecture with security and performance in mind"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Development & Testing",
+        "description": "Build APIs with comprehensive testing and detailed documentation"
+      },
+      {
+        "id": "deployment",
+        "number": "04",
+        "title": "Deployment & Monitoring",
+        "description": "Deploy with CI/CD pipelines and implement monitoring solutions"
+      },
+      {
+        "id": "maintenance",
+        "number": "05",
+        "title": "Support & Optimization",
+        "description": "Ongoing maintenance, performance tuning, and feature enhancements"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Real-Time Integration Excellence",
+    "description": "Our API solutions enable seamless data flow across your entire technology ecosystem. We implement secure authentication, handle error recovery gracefully, and ensure your integrations perform at scale with enterprise-grade reliability.",
+    "features": [
+      "OAuth 2.0 and JWT authentication",
+      "Rate limiting and API throttling",
+      "Automatic retry and error handling",
+      "Real-time monitoring and analytics"
+    ]
+  }
+}

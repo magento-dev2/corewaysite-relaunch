@@ -1,0 +1,11 @@
+{
+  "title": "Startup-Focused Services",
+  "features": [
+    { "icon": "/assets/icons/mvp.svg", "title": "MVP Development", "desc": "Validate fast with functional MVPs built for investor demos." },
+    { "icon": "/assets/icons/uiux.svg", "title": "UI/UX Design for Startups", "desc": "User-first wireframes and rapid prototypes." },
+    { "icon": "/assets/icons/fullstack.svg", "title": "Full-Stack Engineering", "desc": "End-to-end product engineering with testable sprints." },
+    { "icon": "/assets/icons/scale.svg", "title": "Product Scaling & Cloud Setup", "desc": "Deploy to cloud with auto-scaling and observability." },
+    { "icon": "/assets/icons/prototype.svg", "title": "Prototype to Production", "desc": "Seamless path from click-through to production app." },
+    { "icon": "/assets/icons/consult.svg", "title": "Tech Consulting & Mentorship", "desc": "Guidance for technical roadmaps and fundraising tech due-diligence." }
+  ]
+}

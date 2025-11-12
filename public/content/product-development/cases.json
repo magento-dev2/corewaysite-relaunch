@@ -1,0 +1,8 @@
+{
+  "title": "Startup Success Stories",
+  "cases": [
+    { "title": "AI-Powered Health App MVP", "image": "/assets/images/case-startup-1.jpg", "summary": "From prototype to 10k MAU within 3 months." },
+    { "title": "Fintech Dashboard for Early-Stage Startup", "image": "/assets/images/case-startup-2.jpg", "summary": "Secure analytics and live reporting for investors." },
+    { "title": "E-Learning Platform Built from Scratch", "image": "/assets/images/case-startup-3.jpg", "summary": "Scalable learning engine and content pipelines." }
+  ]
+}

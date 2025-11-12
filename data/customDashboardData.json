@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Custom Data Dashboards & Access Portals",
+    "subtitle": "Build interactive, real-time data dashboards and secure access portals that transform complex datasets into actionable insights. Empower your team with custom visualizations, drill-down analytics, and role-based data access.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "View Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise Dashboard Solutions",
+    "content": "We design and develop custom data dashboards and access portals that consolidate data from multiple sources into unified, interactive interfaces. From executive dashboards to customer-facing analytics portals, our solutions provide real-time insights, advanced visualizations, and granular access controls. Built with modern frameworks and optimized for performance, our dashboards handle millions of data points while maintaining sub-second response times.",
+    "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg"
+  },
+  "features": {
+    "title": "Dashboard Capabilities",
+    "items": [
+      {
+        "id": "realtime",
+        "title": "Real-Time Updates",
+        "desc": "Live data synchronization with WebSocket connections for instant dashboard updates."
+      },
+      {
+        "id": "visualizations",
+        "title": "Advanced Visualizations",
+        "desc": "Interactive charts, maps, graphs, and custom visualizations for complex data."
+      },
+      {
+        "id": "access-control",
+        "title": "Role-Based Access",
+        "desc": "Granular permissions and data filtering based on user roles and attributes."
+      },
+      {
+        "id": "multi-source",
+        "title": "Multi-Source Integration",
+        "desc": "Aggregate data from databases, APIs, files, and third-party services."
+      },
+      {
+        "id": "responsive",
+        "title": "Responsive Design",
+        "desc": "Mobile-optimized dashboards that work seamlessly across all devices."
+      },
+      {
+        "id": "exports",
+        "title": "Export & Sharing",
+        "desc": "PDF reports, CSV exports, scheduled emails, and embeddable widgets."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Dashboard Technologies",
+    "description": "Built with modern frameworks for performance and scalability.",
+    "items": [
+      { "name": "React", "id": "react" },
+      { "name": "D3.js", "id": "d3js" },
+      { "name": "Tableau", "id": "tableau" },
+      { "name": "Power BI", "id": "powerbi" },
+      { "name": "Grafana", "id": "grafana" },
+      { "name": "Superset", "id": "superset" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Dashboard Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Executive Analytics Portal",
+        "image": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg",
+        "description": "Real-time KPI dashboard aggregating data from 15+ sources for C-suite"
+      },
+      {
+        "id": "2",
+        "title": "Customer Self-Service Portal",
+        "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
+        "description": "Secure portal serving 50K+ users with personalized data access"
+      },
+      {
+        "id": "3",
+        "title": "IoT Monitoring Dashboard",
+        "image": "https://images.pexels.com/photos/159201/circuit-circuit-board-resistor-computer-159201.jpeg",
+        "description": "Real-time monitoring of 10K+ IoT devices with predictive alerts"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Dashboard Development Process",
+    "description": "Systematic approach to building powerful data interfaces.",
+    "steps": [
+      {
+        "id": "requirements",
+        "number": "01",
+        "title": "Requirements & Discovery",
+        "description": "Understand user needs, data sources, and key metrics to visualize"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "UX/UI Design",
+        "description": "Design intuitive interfaces with wireframes, mockups, and prototypes"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Development & Integration",
+        "description": "Build dashboards, integrate data sources, and implement visualizations"
+      },
+      {
+        "id": "security",
+        "number": "04",
+        "title": "Security & Access Control",
+        "description": "Implement authentication, authorization, and data security measures"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Training",
+        "description": "Launch dashboards, train users, and provide ongoing support"
+      }
+    ]
+  },
+  "automation": {
+    "title": "Intelligent Dashboard Insights",
+    "description": "Our dashboards go beyond visualization with AI-powered anomaly detection, predictive analytics, and automated alerts. Smart caching and query optimization ensure sub-second load times even with millions of data points. Adaptive interfaces learn user preferences and automatically highlight relevant insights.",
+    "features": [
+      "AI-powered anomaly detection and alerts",
+      "Predictive analytics and forecasting",
+      "Smart caching for instant load times",
+      "Adaptive UI based on user behavior"
+    ]
+  }
+}
