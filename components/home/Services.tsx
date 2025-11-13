@@ -66,23 +66,52 @@ export default function Services() {
 
       <div className="relative z-10 max-w-1440 mx-auto px-6 md:px-12 w-full">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
-            <span className="text-sm font-medium text-gray-300">What We Do</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Services
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
-          </p>
-        </motion.div>
+     <div className="grid md:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side: Heading + Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <span className="text-sm font-medium text-gray-300">What We Do</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Our Services
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed max-w-md">
+              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
+            </p>
+          </motion.div>
+
+          {/* Right Side: Additional Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            {/* Example: 3 service cards */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-2">Strategy</h3>
+              <p className="text-gray-300">We craft solutions that fit your business goals and scale intelligently.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-2">Automation</h3>
+              <p className="text-gray-300">We streamline processes to reduce manual work and increase efficiency.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-2">Analytics</h3>
+              <p className="text-gray-300">Data-driven insights to make smarter business decisions quickly.</p>
+            </div>
+          </motion.div>
+
+        </div>
+      
 
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

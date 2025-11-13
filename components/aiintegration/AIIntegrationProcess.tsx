@@ -68,7 +68,7 @@ export default function AIIntegrationProcess({ title, description, steps }: AIIn
             <div className="w-full h-full bg-gradient-to-b from-purple-500/50 via-violet-500/50 to-purple-500/50 animate-pulse"></div>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-4">
             {steps.map((step, index) => {
               const Icon = stepIcons[step.id] || Search;
               const isVisible = visibleSteps.includes(step.id);
@@ -131,16 +131,11 @@ export default function AIIntegrationProcess({ title, description, steps }: AIIn
                       <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/0 to-violet-500/0 group-hover:from-purple-500/20 group-hover:to-violet-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                     </div>
                   </div>
-
-                  <div
-                    className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full items-center justify-center z-10 border-4 border-[#0E0918] shadow-lg shadow-purple-500/50 hover:scale-125 transition-transform duration-300"
-                    style={{
-                      transform: 'translateX(-50%) translateZ(100px)',
-                      transformStyle: 'preserve-3d'
-                    }}
-                  >
-                    <Icon className="text-white" size={28} />
-                  </div>
+  <div
+            className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full items-center justify-center z-20 border-4 border-[#0E0918] shadow-lg shadow-purple-500/50 hover:scale-125 transition-transform duration-300"
+          >
+            <Icon className="text-white" size={28} />
+          </div>
 
                   <div className="hidden lg:block w-5/12"></div>
                 </div>

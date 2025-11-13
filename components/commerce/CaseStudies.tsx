@@ -101,7 +101,7 @@ export default function CaseStudies({ title, cases }: CaseStudiesProps) {
           </p>
         </div>
 
-        <div ref={cardsRef} className="space-y-12 lg:space-y-16">
+        <div ref={cardsRef} className="space-y-12 lg:space-y-4">
           {cases.map((caseStudy, index) => (
             <article
               key={caseStudy.id}

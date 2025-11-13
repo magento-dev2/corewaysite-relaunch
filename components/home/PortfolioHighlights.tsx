@@ -101,7 +101,7 @@ export default function CaseStudies() {
           <ChevronLeft className="w-6 h-6" />
         </button>
         {/* Section title */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,7 +114,50 @@ export default function CaseStudies() {
           <p className="text-base text-gray-400 max-w-2xl mx-auto">
             Discover how we deliver measurable results for our clients
           </p>
-        </motion.div>
+        </motion.div> */}
+
+
+         <div className="">
+        <div className="grid md:grid-cols-2  items-start mb-18">
+
+          {/* Left Side: Heading + Text */}
+          <motion.div
+            // ref={headerRef}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            // className="space-y-6"
+          >
+            {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+              <span className="text-sm font-medium text-gray-300">What We Do</span>
+            </div> */}
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                     Case Studies
+            </h2>
+            {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
+              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
+            </p> */}
+          </motion.div>
+
+          {/* Right Side: Animated Text Lines */}
+          <div className=" ">
+            
+              <motion.p
+                // key={index}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                // transition={{ duration: 0.8, delay: index * 0.3 }}
+                className="text-gray-300 text-lg"
+              >
+                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
+              </motion.p>
+            
+          </div>
+
+        </div>
+      </div>
 
         {/* Main content */}
         <AnimatePresence mode="wait">

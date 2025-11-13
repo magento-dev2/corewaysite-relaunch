@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen bg-[#0E0918] overflow-x-hidden">
+        <div className="min-h-screen bg-[#0E0918] ">
           <Navbar />
           {children}
           <Footer />
@@ -37,3 +37,4 @@ export default function RootLayout({
     </html>
   );
 }
+

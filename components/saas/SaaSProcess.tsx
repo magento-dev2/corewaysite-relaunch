@@ -65,7 +65,7 @@ export default function SaaSProcess({ title, description, steps }: SaaSProcessPr
         <div className="relative">
           <div className="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500/50 via-violet-500/50 to-purple-500/50"></div>
 
-          <div className="space-y-16">
+          <div className="space-y-4">
             {steps.map((step, index) => {
               const Icon = stepIcons[step.id] || Search;
               const isVisible = visibleSteps.includes(step.id);

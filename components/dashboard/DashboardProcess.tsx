@@ -68,7 +68,7 @@ export default function DashboardProcess({ title, description, steps }: Dashboar
             <div className="w-full h-full bg-gradient-to-b from-purple-500/50 via-violet-500/50 to-purple-500/50 animate-pulse"></div>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-4">
             {steps.map((step, index) => {
               const Icon = stepIcons[step.id] || Search;
               const isVisible = visibleSteps.includes(step.id);

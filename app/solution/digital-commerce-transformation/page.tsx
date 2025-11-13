@@ -105,11 +105,11 @@ export default function DigitalCommerce() {
             description={commerceData.platforms.description}
             items={commerceData.platforms.items}
           />
-
+{/* 
           <CaseStudies
             title={commerceData.caseStudies.title}
             cases={commerceData.caseStudies.cases}
-          />
+          /> */}
 
           <ProcessDiagram
             title={commerceData.process.title}

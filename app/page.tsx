@@ -10,10 +10,11 @@ import Testimonials from '../components/home/Testimonials';
 import PageCTA from '../components/PageCTA';
 import PortfolioHighlights from '../components/home/PortfolioHighlights';
 import { ScrollFadeIn, ScrollScale, ScrollParallax } from '../components/home/ScrollAnimations';
+import Expertise2 from '@/components/home/Expertise2';
 
 export default function Home() {
   return (
-    <div >
+    <div className='overflow-hidden' >
       <Hero />
 
       <ScrollFadeIn direction="up">
@@ -26,11 +27,9 @@ export default function Home() {
 
       <ServicesGSAP />
 
-      <ScrollParallax speed={0.3}>
-        <ScrollFadeIn direction="right" duration={1.2}>
-          <Expertise />
-        </ScrollFadeIn>
-      </ScrollParallax>
+      <Expertise />
+      {/* <Expertise2 /> */}
+
 
       <ScrollScale delay={0.2}>
         <PortfolioHighlights />

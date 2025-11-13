@@ -147,7 +147,7 @@ export default function ContactHero() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-[#0E0918] to-[#1a1325] py-24  pb-16 overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-gradient-to-b from-[#0E0918] to-[#1a1325] py-24 pb-16 overflow-hidden min-h-screen flex items-center">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none z-0"
@@ -204,7 +204,7 @@ export default function ContactHero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-start.">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

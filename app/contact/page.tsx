@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ContactHero from "@/components/contact/ContactHero";
 import FAQSection from "@/components/contact/FAQSection";
 import PageCTA from "@/components/PageCTA";
+import ContactSection from "@/components/contact/Contactsectio";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,6 +72,8 @@ export default function ContactPage() {
       <div ref={faqRef}>
         <FAQSection />
       </div>
+
+      <ContactSection/>
 
       {/* CTA Section */}
       <div ref={ctaRef}>

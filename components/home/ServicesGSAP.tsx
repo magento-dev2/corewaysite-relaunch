@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+
 import AnimatedIcon from "./AnimatedIcon";
 
 if (typeof window !== 'undefined') {
@@ -124,6 +126,11 @@ export default function ServicesGSAP() {
     return () => ctx.revert();
   }, []);
 
+   const lines = [
+    "Strategy — We craft solutions that fit your business goals.",
+    "Automation — We streamline processes to reduce manual work.",
+    "Analytics — Data-driven insights to make smarter business decisions."
+  ];
   return (
     <section
       ref={sectionRef}
@@ -135,7 +142,7 @@ export default function ServicesGSAP() {
       </div>
 
       <div className="relative z-10 max-w-1440 mx-auto px-6 md:px-12 w-full">
-        <div ref={headerRef} className="text-center mb-16">
+        {/* <div ref={headerRef} className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
             <span className="text-sm font-medium text-gray-300">What We Do</span>
           </div>
@@ -145,7 +152,49 @@ export default function ServicesGSAP() {
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
             From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
           </p>
+        </div> */}
+
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="grid md:grid-cols-2  items-start mb-18">
+
+          {/* Left Side: Heading + Text */}
+          <motion.div
+            ref={headerRef}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            // className="space-y-6"
+          >
+            {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+              <span className="text-sm font-medium text-gray-300">What We Do</span>
+            </div> */}
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Services
+            </h2>
+            {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
+              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
+            </p> */}
+          </motion.div>
+
+          {/* Right Side: Animated Text Lines */}
+          <div className=" ">
+            
+              <motion.p
+                // key={index}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                // transition={{ duration: 0.8, delay: index * 0.3 }}
+                className="text-gray-300 text-lg"
+              >
+                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
+              </motion.p>
+            
+          </div>
+
         </div>
+      </div>
 
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
