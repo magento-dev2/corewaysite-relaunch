@@ -10,7 +10,7 @@ export default function Hero() {
 
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-    const textRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
 
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function Hero() {
       }
     }
   }, []);
-   
+
 
 
 
@@ -120,7 +120,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] ">
-        <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-30" />
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-30" />
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((particle) => (
@@ -184,8 +184,8 @@ export default function Hero() {
         </div>
       </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-<style>{`
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+      <style>{`
         @keyframes company-float {
           0%, 100% {
             transform: translateY(0) translateX(0);

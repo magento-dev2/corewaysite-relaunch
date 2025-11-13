@@ -26,17 +26,22 @@ export default function MagicalNumbersElegant() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text max-w-[780px] mx-auto  mb-12"
         >
-          <div className="inline-block px-3 py-1.5 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full mb-4">
+          {/* <div className="inline-block text-center px-3 py-1.5 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full mb-4">
             <span className="text-xs font-medium text-slate-300">Why Choose Coreway</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-white">
-            Transforming Ideas Into Digital Excellence
-          </h2>
+          </div> */}
+          <h2 className="text-3xl text-center md:text-4xl font-bold leading-tight mb-3 text-white">
+            Who We are - Coreway Solution     </h2>
           <p className="text-base text-slate-400 leading-relaxed">
-            An AI-led Digital Experience Agency empowering enterprises to scale globally through intelligent solutions.
+            At Coreway Solution, we help businesses architect, build, and automate modern digital platforms that scale. With over a decade of experience, we specialize in product development, AI-driven applications, IoT dashboards, and cloud infrastructure engineering. Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.We partner with startups, SMBs, and enterprises across the world—delivering technology that drives growth, efficiency, and long-term impact.
+
           </p>
+          {/* <p className="text-base text-slate-400 leading-relaxed">
+            Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.          </p>
+
+          <p className="text-base text-slate-400 leading-relaxed">
+            We partner with startups, SMBs, and enterprises across the world—delivering technology that drives growth, efficiency, and long-term impact.          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
