@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,107 +10,106 @@ const industries = [
   {
     icon: '🏥',
     title: 'Healthcare',
-    description: 'We develop industry-specific software solutions for healthcare, helping medical institutions tackle unique challenges with custom-built technology and secure platforms.'
+    description: 'Custom healthcare solutions'
   },
   {
     icon: '🛍️',
     title: 'Retail',
-    description: 'Scalable e-commerce platforms and retail management systems that drive sales, optimize inventory, and deliver exceptional customer experiences.'
+    description: 'E-commerce platforms'
   },
   {
     icon: '🏦',
     title: 'Finance',
-    description: 'Secure fintech solutions with advanced encryption, compliance features, and seamless payment integrations for modern financial services.'
+    description: 'Secure fintech solutions'
   },
   {
     icon: '🎓',
     title: 'Education',
-    description: 'Comprehensive learning management systems and educational platforms that enhance student engagement and streamline administrative processes.'
+    description: 'Learning management systems'
   },
   {
     icon: '🤝',
     title: 'Real-estate',
-    description: 'Property management tools and real estate platforms that simplify listings, transactions, and client relationship management.'
+    description: 'Property management tools'
   },
   {
     icon: '🏭',
     title: 'Manufacturing',
-    description: 'IoT-enabled manufacturing solutions with real-time monitoring, predictive maintenance, and workflow automation for operational excellence.'
+    description: 'IoT and automation'
   },
   {
     icon: '🚚',
     title: 'Transportation',
-    description: 'Logistics optimization platforms with route planning, fleet management, and real-time tracking for efficient supply chain operations.'
+    description: 'Logistics optimization'
   },
   {
     icon: '🎬',
     title: 'Entertainment',
-    description: 'Media platforms and content delivery systems that engage audiences with seamless streaming and interactive experiences.'
+    description: 'Media platforms'
   },
   {
     icon: '🍽️',
     title: 'Hospitality',
-    description: 'Booking and management systems for hotels and restaurants, featuring reservation handling, guest services, and operational efficiency.'
+    description: 'Booking and management'
   },
   {
     icon: '✈️',
     title: 'Travel',
-    description: 'Travel planning systems with booking engines, itinerary management, and customer support tools for seamless travel experiences.'
+    description: 'Travel planning systems'
   },
   {
     icon: '⚖️',
     title: 'Legal',
-    description: 'Case management tools and legal workflow systems that streamline documentation, client communication, and regulatory compliance.'
+    description: 'Case management tools'
   },
   {
     icon: '🏗️',
     title: 'Construction',
-    description: 'Project management platforms for construction with scheduling, resource allocation, and progress tracking capabilities.'
+    description: 'Project management'
   }
 ];
 
 export default function IndustriesWeServe() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const leftSideRef = useRef<HTMLDivElement>(null);
-  const rightSideRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const leftSide = leftSideRef.current;
-    const rightSide = rightSideRef.current;
+    const cards = cardsRef.current;
 
-    if (!section || !leftSide || !rightSide) return;
+    if (!section) return;
 
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      end: () => `+=${rightSide.offsetHeight - window.innerHeight + 200}`,
-      pin: leftSide,
-      pinSpacing: false,
-      anticipatePin: 1,
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      }
     });
 
-    const cards = rightSide.querySelectorAll(".industry-card");
-    cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        {
+    tl.from('.industries-header', {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+
+    cards.forEach((card, index) => {
+      if (card) {
+        tl.from(card, {
           opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
+          y: 60,
+          scale: 0.8,
+          duration: 0.6,
+          ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          }
+        }, index * 0.08);
+      }
     });
 
     return () => {
@@ -120,64 +118,48 @@ export default function IndustriesWeServe() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] overflow-hidden"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <section ref={sectionRef} className="py-24 px-6 bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03),transparent_70%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div ref={leftSideRef} className="md:sticky md:top-24">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Industries We Serve
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                We develop industry-specific software solutions for healthcare, fintech, logistics,
-                retail, and more, helping businesses tackle unique challenges with custom-built
-                technology.
-              </p>
-
-              <div className="pt-6">
-                <button className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors border border-slate-600">
-                  View All Industries
-                </button>
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-[400px_1fr] gap-12 items-start">
+          <div className="industries-header lg:sticky lg:top-32">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+              Industries We Serve
+            </h2>
+            <p className="text-lg text-slate-400 leading-relaxed">
+              We develop industry-specific software solutions for healthcare, fintech, logistics,
+              retail, and more, helping businesses tackle unique challenges with custom-built
+              technology.
+            </p>
           </div>
 
-          <div ref={rightSideRef} className="space-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, index) => (
               <div
-                key={index}
-                className="industry-card group"
+                key={industry.title}
+                ref={(el) => {
+                  if (el) cardsRef.current[index] = el;
+                }}
+                className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:shadow-xl hover:shadow-slate-900/20 transition-all duration-500 cursor-pointer overflow-hidden"
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-slate-700/40 to-slate-800/40 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-3xl">{industry.icon}</span>
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-slate-200 transition-colors">
-                      {industry.title}
-                    </h3>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-700/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-5 border border-slate-700 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-slate-700 transition-all duration-500">
+                    <span className="text-3xl">{industry.icon}</span>
                   </div>
 
-                  <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-slate-200 transition-colors duration-300">
+                    {industry.title}
+                  </h3>
+
+                  <p className="text-slate-400 text-sm leading-relaxed">
                     {industry.description}
                   </p>
-
-                  <a
-                    href="#"
-                    className="group/link inline-flex items-center gap-2 text-slate-400 hover:text-slate-300 font-medium transition-all text-sm"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
-                  </a>
                 </div>
+
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-slate-500 to-slate-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
             ))}
           </div>
