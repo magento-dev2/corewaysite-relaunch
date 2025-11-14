@@ -120,16 +120,18 @@ export default function BlogSection() {
   const regularPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} className="py-24 px-6 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03),transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div ref={headerRef} className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-slate-300 rounded-full text-sm font-medium mb-4">
             Latest Insights
           </span>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
             From Our Blog
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Stay updated with the latest trends, best practices, and insights from our team of experts
           </p>
         </div>
@@ -140,30 +142,30 @@ export default function BlogSection() {
             className="mb-12 group cursor-pointer"
           >
             <Link href={`/blog/${featuredPost.id}`}>
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 shadow-2xl shadow-slate-900/20">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative h-80 lg:h-auto overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
                       style={{ backgroundImage: `url(${featuredPost.image})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent" />
                   </div>
 
                   <div className="p-10 lg:p-12 flex flex-col justify-center relative z-10">
-                    <span className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-semibold mb-4 w-fit">
+                    <span className="inline-block px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold mb-4 w-fit border border-slate-600">
                       {featuredPost.category}
                     </span>
 
-                    <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-slate-200 transition-colors duration-300">
                       {featuredPost.title}
                     </h3>
 
-                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                    <p className="text-slate-300 text-lg mb-6 leading-relaxed">
                       {featuredPost.excerpt}
                     </p>
 
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-4 text-sm text-slate-400">
                       <span className="font-medium text-white">{featuredPost.author}</span>
                       <span>•</span>
                       <span>{featuredPost.date}</span>
@@ -171,7 +173,7 @@ export default function BlogSection() {
                       <span>{featuredPost.readTime}</span>
                     </div>
 
-                    <div className="mt-6 inline-flex items-center gap-2 text-blue-400 font-semibold group-hover:gap-4 transition-all duration-300">
+                    <div className="mt-6 inline-flex items-center gap-2 text-slate-300 font-semibold group-hover:gap-4 transition-all duration-300">
                       Read Article
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -194,40 +196,40 @@ export default function BlogSection() {
               className="group cursor-pointer"
             >
               <Link href={`/blog/${post.id}`}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
+                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 border border-slate-700/50 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
                       style={{ backgroundImage: `url(${post.image})` }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-xs font-semibold">
+                      <span className="inline-block px-3 py-1 bg-slate-800/90 backdrop-blur-sm text-slate-300 rounded-full text-xs font-semibold border border-slate-700">
                         {post.category}
                       </span>
                     </div>
                   </div>
 
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-slate-200 transition-colors duration-300 line-clamp-2">
                       {post.title}
                     </h3>
 
-                    <p className="text-gray-600 mb-4 flex-1 line-clamp-3">
+                    <p className="text-slate-400 mb-4 flex-1 line-clamp-3">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-700">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <div className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-slate-300 font-semibold text-sm border border-slate-600">
                           {post.author.split(' ').map(n => n[0]).join('')}
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-gray-900">{post.author}</p>
-                          <p className="text-xs text-gray-500">{post.date}</p>
+                          <p className="text-sm font-medium text-slate-300">{post.author}</p>
+                          <p className="text-xs text-slate-500">{post.date}</p>
                         </div>
                       </div>
 
-                      <span className="text-xs text-gray-500">{post.readTime}</span>
+                      <span className="text-xs text-slate-500">{post.readTime}</span>
                     </div>
                   </div>
                 </div>
@@ -239,7 +241,7 @@ export default function BlogSection() {
         <div className="text-center mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full font-semibold hover:bg-blue-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-full font-semibold border border-slate-700 hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Articles
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
