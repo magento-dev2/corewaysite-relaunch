@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Award } from "lucide-react";
 import Link from "next/link";
 
 interface Project {
@@ -10,10 +10,11 @@ interface Project {
   title: string;
   challenges: string;
   solutions: string;
-  stats: { value: string; label: string }[];
+  stats: { value: string; label: string; icon?: string }[];
   imageUrl: string;
   imageAlt: string;
   slug: string;
+  tags: string[];
 }
 
 export const projects: Project[] = [
@@ -26,12 +27,13 @@ export const projects: Project[] = [
     solutions:
       "Developed a unified platform integrating telehealth and EHR workflows for more connected services.",
     stats: [
-      { value: "500+", label: "Hours Freed from Manual Work" },
-      { value: "~1200", label: "In-Person Visits Avoided" },
+      { value: "500+", label: "Hours Freed from Manual Work", icon: "clock" },
+      { value: "~1200", label: "In-Person Visits Avoided", icon: "users" },
     ],
     imageUrl:
       "https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=1920",
     imageAlt: "Telehealth Dashboard",
+    tags: ["Healthcare", "Telehealth", "Integration"]
   },
   {
     id: 2,
@@ -42,12 +44,13 @@ export const projects: Project[] = [
     solutions:
       "Built a multi-cloud data delivery platform with GPT-based metadata extraction and secure access.",
     stats: [
-      { value: "70%", label: "Faster Data Delivery" },
-      { value: "35%", label: "Lower Storage Cost" },
+      { value: "70%", label: "Faster Data Delivery", icon: "zap" },
+      { value: "35%", label: "Lower Storage Cost", icon: "trending-down" },
     ],
     imageUrl:
       "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920",
     imageAlt: "AI Data Delivery Dashboard",
+    tags: ["AI/ML", "Data", "Cloud"]
   },
   {
     id: 3,
@@ -58,404 +61,246 @@ export const projects: Project[] = [
     solutions:
       "Developed an IoT dashboard with MQTT integration, predictive maintenance, and group control.",
     stats: [
-      { value: "1,000+", label: "Devices Monitored Live" },
-      { value: "80%", label: "Manual Work Saved" },
+      { value: "1,000+", label: "Devices Monitored Live", icon: "activity" },
+      { value: "80%", label: "Manual Work Saved", icon: "check" },
     ],
     imageUrl:
       "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1920",
     imageAlt: "IoT Lighting System",
+    tags: ["IoT", "Smart City", "Dashboard"]
   },
 ];
+
 export default function CaseStudies() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
   const current = projects[activeIndex];
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
+    setDirection(1);
     setActiveIndex((prev) => (prev + 1) % projects.length);
   };
 
   const handlePrev = () => {
+    setDirection(-1);
     setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const handleDragEnd = (_: any, info: any) => {
-    if (info.offset.x < -100) handleNext();
-    if (info.offset.x > 100) handlePrev();
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -1000 : 1000,
+      opacity: 0,
+      scale: 0.8
+    })
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
-    <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]  overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+    <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] py-32 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
-
-        <button
-          onClick={handlePrev}
-          className="absolute left-[-40] top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-md"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        {/* Section title */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="grid md:grid-cols-2 items-start mb-20 gap-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Case Studies
-          </h2>
-          <p className="text-base text-gray-400 max-w-2xl mx-auto">
-            Discover how we deliver measurable results for our clients
-          </p>
-        </motion.div> */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-full mb-6">
+              <Award className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm font-medium text-emerald-400">Success Stories</span>
+            </div>
 
-
-         <div className="">
-        <div className="grid md:grid-cols-2  items-start mb-18">
-
-          {/* Left Side: Heading + Text */}
-          <motion.div
-            // ref={headerRef}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8 }}
-            // className="space-y-6"
-          >
-            {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
-              <span className="text-sm font-medium text-gray-300">What We Do</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                     Case Studies
+            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-transparent mb-4 leading-tight">
+              Case Studies
             </h2>
-            {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
-              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
-            </p> */}
-          </motion.div>
-
-          {/* Right Side: Animated Text Lines */}
-          <div className=" ">
-            
-              <motion.p
-                // key={index}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                // transition={{ duration: 0.8, delay: index * 0.3 }}
-                className="text-gray-300 text-lg"
-              >
-                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
-              </motion.p>
-            
           </div>
 
-        </div>
-      </div>
+          <div className="flex items-center">
+            <p className="text-slate-300 text-lg leading-relaxed">
+              We understand the challenges of startups and SMEs. Discover how we deliver measurable results through innovative solutions across web, mobile, and enterprise platforms.
+            </p>
+          </div>
+        </motion.div>
 
-        {/* Main content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current.id}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={handleDragEnd}
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -80 }}
-            transition={{ duration: 0.6 }}
-            ref={containerRef}
-            className="grid lg:grid-cols-2 gap-10 items-center cursor-grab active:cursor-grabbing"
+        <div className="relative">
+          <button
+            onClick={handlePrev}
+            className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-slate-800/60 hover:bg-slate-700/80 backdrop-blur-md text-white p-4 rounded-full border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:scale-110 shadow-xl hidden lg:flex items-center justify-center"
+            aria-label="Previous case study"
           >
-            {/* Left content */}
-            <div>
-              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
-                {current.title}
-              </h3>
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-              <div className="border-l border-purple-500/50 pl-4 space-y-8">
-                <div>
-                  <p className="text-sm italic text-purple-400 mb-1">Challenges</p>
-                  <p className="text-gray-300 leading-relaxed">{current.challenges}</p>
-                </div>
-                <div>
-                  <p className="text-sm italic text-purple-400 mb-1">Solutions</p>
-                  <p className="text-gray-300 leading-relaxed">{current.solutions}</p>
-                </div>
-              </div>
+          <button
+            onClick={handleNext}
+            className="absolute right-[-60px] top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-slate-800/60 hover:bg-slate-700/80 backdrop-blur-md text-white p-4 rounded-full border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:scale-110 shadow-xl hidden lg:flex items-center justify-center"
+            aria-label="Next case study"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
 
-              <div className="grid grid-cols-2 gap-6 mt-10">
-                {current.stats.map((stat, idx) => (
-                  <div key={idx}>
-                    <p className="text-3xl font-bold text-purple-400">{stat.value}</p>
-                    <p className="text-sm text-gray-300">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* <button className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg">
-                View the Case Study
-                <ArrowRight className="w-4 h-4" />
-              </button> */}
-              <Link href={`/case-studies/${current.slug}`}>
-                <button className="mt-8 cursor-pointer inline-flex items-center gap-2 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg">
-                  View the Case Study
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </Link>
-            </div>
-
-            {/* Right image + buttons */}
-            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <img
-                src={current.imageUrl}
-                alt={current.imageAlt}
-                className="w-full h-full object-cover"
-              />
-
-
-
-
-
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        <button
-          onClick={handleNext}
-          className="absolute right-[-40] top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-md"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-        {/* Progress line */}
-        {/* segmented progress line */}
-        <div className="mt-10 mb-10 flex items-center justify-center gap-3">
-          {projects.map((_, i) => (
+          <AnimatePresence mode="wait" custom={direction}>
             <motion.div
-              key={i}
-              initial={false}
-              animate={{
-                backgroundColor: activeIndex === i ? "rgb(168,85,247)" : "rgba(107,114,128,0.6)", // purple-500 or gray-500
-                scale: activeIndex === i ? 1.1 : 1,
+              key={current.id}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.4 },
+                scale: { duration: 0.4 }
               }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="h-1 w-10 rounded-full cursor-pointer"
-              onClick={() => setActiveIndex(i)}
-            />
+              ref={containerRef}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div className="space-y-8">
+                <div className="flex flex-wrap gap-2">
+                  {current.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-400 rounded-full text-xs font-semibold border border-emerald-500/30"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h3 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  {current.title}
+                </h3>
+
+                <div className="space-y-6">
+                  <div className="relative pl-6 border-l-2 border-emerald-500/30">
+                    <div className="absolute left-[-5px] top-0 w-2 h-2 bg-emerald-500 rounded-full" />
+                    <p className="text-sm font-semibold text-emerald-400 mb-2 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4" />
+                      Challenge
+                    </p>
+                    <p className="text-slate-300 leading-relaxed">{current.challenges}</p>
+                  </div>
+
+                  <div className="relative pl-6 border-l-2 border-teal-500/30">
+                    <div className="absolute left-[-5px] top-0 w-2 h-2 bg-teal-500 rounded-full" />
+                    <p className="text-sm font-semibold text-teal-400 mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4" />
+                      Solution
+                    </p>
+                    <p className="text-slate-300 leading-relaxed">{current.solutions}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6 pt-6">
+                  {current.stats.map((stat, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 + 0.3 }}
+                      className="relative group"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-5 hover:border-emerald-500/30 transition-all duration-300">
+                        <p className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
+                          {stat.value}
+                        </p>
+                        <p className="text-sm text-slate-400 leading-snug">{stat.label}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <Link href={`/case-studies/${current.slug}`}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40"
+                  >
+                    View Full Case Study
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </motion.button>
+                </Link>
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-3xl blur-2xl" />
+                <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-slate-700/50 group">
+                  <img
+                    src={current.imageUrl}
+                    alt={current.imageAlt}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="mt-12 flex items-center justify-center gap-3">
+          {projects.map((_, i) => (
+            <motion.button
+              key={i}
+              onClick={() => {
+                setDirection(i > activeIndex ? 1 : -1);
+                setActiveIndex(i);
+              }}
+              className="relative group"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === i
+                    ? 'w-12 bg-gradient-to-r from-emerald-500 to-teal-500'
+                    : 'w-2 bg-slate-600 group-hover:bg-slate-500'
+                }`}
+              />
+            </motion.button>
           ))}
         </div>
 
+        <div className="flex justify-center gap-4 mt-8 lg:hidden">
+          <button
+            onClick={handlePrev}
+            className="cursor-pointer bg-slate-800/60 hover:bg-slate-700/80 backdrop-blur-md text-white p-3 rounded-full border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+            aria-label="Previous case study"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="cursor-pointer bg-slate-800/60 hover:bg-slate-700/80 backdrop-blur-md text-white p-3 rounded-full border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+            aria-label="Next case study"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-// "use client";
-
-// import { useState, useEffect, useRef } from "react";
-// import { AnimatePresence, motion } from "framer-motion";
-// import Link from "next/link";
-// import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-
-// interface Stat {
-//   label: string;
-//   value: string | number;
-// }
-
-// interface Project {
-//   documentId: any;
-//   id: number;
-//   title: string;
-//   slug: string;
-//   imageUrl?: string;
-//   imageAlt?: string;
-//   challenges?: string | null;
-//   solutions?: string | null;
-//   stats: Stat[];
-//   body?: string | null;
-// }
-
-// export default function CaseStudies() {
-//   const [projects, setProjects] = useState<Project[]>([]);
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const containerRef = useRef<HTMLDivElement>(null);
-
-//   const fetchProjects = async () => {
-//     try {
-//       const res = await fetch("http://localhost:1337/api/articles/"); // Replace with your Strapi API
-//       const json = await res.json();
-
-//       // Map API data to match Project type
-//       const mappedProjects: Project[] = json.data.map((item: any) => ({
-//         id: item.id,
-//         title: item.title,
-//         slug: item.slug,
-//         challenges: item.challenges ?? "No challenges provided",
-//         solutions: item.solutions ?? "No solutions provided",
-//         imageUrl: "https://via.placeholder.com/800x400", // Default image, replace if API has image field
-//         imageAlt: item.title,
-//         stats: [
-//           { label: "Users", value: Math.floor(Math.random() * 1000) },
-//           { label: "Projects", value: Math.floor(Math.random() * 100) },
-//         ],
-//         body: item.body,
-//         documentId:item.documentId
-//       }));
-
-//       setProjects(mappedProjects);
-//     } catch (err) {
-//       console.error("Failed to fetch projects", err);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchProjects();
-//   }, []);
-
-//   const handleNext = () => {
-//     setActiveIndex((prev) => (prev + 1) % projects.length);
-//   };
-
-//   const handlePrev = () => {
-//     setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-//   };
-
-//   const handleDragEnd = (_: any, info: any) => {
-//     if (info.offset.x < -100) handleNext();
-//     if (info.offset.x > 100) handlePrev();
-//   };
-
-//   if (projects.length === 0) return <p className="text-center text-white mt-20">Loading...</p>;
-
-//   const current = projects[activeIndex];
-
-//   return (
-//     <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] overflow-hidden">
-//       {/* Background glow */}
-//       <div className="absolute inset-0 overflow-hidden">
-//         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-//         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
-//       </div>
-
-//       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
-//         <button
-//           onClick={handlePrev}
-//           className="absolute left-[-40] top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-md"
-//         >
-//           <ChevronLeft className="w-6 h-6" />
-//         </button>
-
-//         {/* Section title */}
-//         <motion.div
-//           initial={{ opacity: 0, y: 30 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 0.6 }}
-//           className="text-center mb-16"
-//         >
-//           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-//             Case Studies
-//           </h2>
-//           <p className="text-base text-gray-400 max-w-2xl mx-auto">
-//             Discover how we deliver measurable results for our clients
-//           </p>
-//         </motion.div>
-
-//         {/* Main content */}
-//         <AnimatePresence mode="wait">
-//           <motion.div
-//             key={current.id}
-//             drag="x"
-//             dragConstraints={{ left: 0, right: 0 }}
-//             onDragEnd={handleDragEnd}
-//             initial={{ opacity: 0, x: 80 }}
-//             animate={{ opacity: 1, x: 0 }}
-//             exit={{ opacity: 0, x: -80 }}
-//             transition={{ duration: 0.6 }}
-//             ref={containerRef}
-//             className="grid lg:grid-cols-2 gap-10 items-center cursor-grab active:cursor-grabbing"
-//           >
-//             {/* Left content */}
-//             <div>
-//               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
-//                 {current.title}
-//               </h3>
-
-//               <div className="border-l border-purple-500/50 pl-4 space-y-8">
-               
-//                 <div>
-//                   <p className="text-sm italic text-purple-400 mb-1">Challenges</p>
-//                   <p className="text-gray-300 leading-relaxed">{current.challenges}</p>
-//                 </div>
-//                 <div>
-//                   <p className="text-sm italic text-purple-400 mb-1">Solutions</p>
-//                   <p className="text-gray-300 leading-relaxed">{current.solutions}</p>
-//                 </div>
-//               </div>
-
-//               <div className="grid grid-cols-2 gap-6 mt-10">
-//                 {current.stats.map((stat, idx) => (
-//                   <div key={idx}>
-//                     <p className="text-3xl font-bold text-purple-400">{stat.value}</p>
-//                     <p className="text-sm text-gray-300">{stat.label}</p>
-//                   </div>
-//                 ))}
-//               </div>
-
-//               <Link href={`/case-studies/${current.documentId}`}>
-//                 <button className="mt-8 cursor-pointer inline-flex items-center gap-2 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg">
-//                   View the Case Study
-//                   <ArrowRight className="w-4 h-4" />
-//                 </button>
-//               </Link>
-
-//             </div>
-
-//             {/* Right image */}
-//             <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-//               <img
-//                 src={current.imageUrl}
-//                 alt={current.imageAlt}
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//           </motion.div>
-//         </AnimatePresence>
-
-//         <button
-//           onClick={handleNext}
-//           className="absolute right-[-40] top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-md"
-//         >
-//           <ChevronRight className="w-6 h-6" />
-//         </button>
-
-//         {/* Progress indicators */}
-//         <div className="mt-10 mb-10 flex items-center justify-center gap-3">
-//           {projects.map((_, i) => (
-//             <motion.div
-//               key={i}
-//               initial={false}
-//               animate={{
-//                 backgroundColor: activeIndex === i ? "rgb(168,85,247)" : "rgba(107,114,128,0.6)",
-//                 scale: activeIndex === i ? 1.1 : 1,
-//               }}
-//               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-//               className="h-1 w-10 rounded-full cursor-pointer"
-//               onClick={() => setActiveIndex(i)}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
