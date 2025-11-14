@@ -36,37 +36,37 @@ const industries = [
     icon: '🏭',
     title: 'Manufacturing',
     description: 'IoT and automation'
+  },
+  {
+    icon: '🚚',
+    title: 'Transportation',
+    description: 'Logistics optimization'
+  },
+  {
+    icon: '🎬',
+    title: 'Entertainment',
+    description: 'Media platforms'
+  },
+  {
+    icon: '🍽️',
+    title: 'Hospitality',
+    description: 'Booking and management'
+  },
+  {
+    icon: '✈️',
+    title: 'Travel',
+    description: 'Travel planning systems'
+  },
+  {
+    icon: '⚖️',
+    title: 'Legal',
+    description: 'Case management tools'
+  },
+  {
+    icon: '🏗️',
+    title: 'Construction',
+    description: 'Project management'
   }
-  // {
-  //   icon: '🚚',
-  //   title: 'Transportation',
-  //   description: 'Logistics optimization'
-  // },
-  // {
-  //   icon: '🎬',
-  //   title: 'Entertainment',
-  //   description: 'Media platforms'
-  // },
-  // {
-  //   icon: '🍽️',
-  //   title: 'Hospitality',
-  //   description: 'Booking and management'
-  // },
-  // {
-  //   icon: '✈️',
-  //   title: 'Travel',
-  //   description: 'Travel planning systems'
-  // },
-  // {
-  //   icon: '⚖️',
-  //   title: 'Legal',
-  //   description: 'Case management tools'
-  // },
-  // {
-  //   icon: '🏗️',
-  //   title: 'Construction',
-  //   description: 'Project management'
-  // }
 ];
 
 export default function IndustriesWeServe() {
@@ -124,7 +124,7 @@ export default function IndustriesWeServe() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-[400px_1fr] gap-12 items-start">
           <div className="industries-header lg:sticky lg:top-32">
-            <h2 className="text-5xl lg:text-5xl font-bold mb-6 leading-tight text-white">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Industries We Serve
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
