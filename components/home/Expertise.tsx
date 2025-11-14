@@ -7,30 +7,61 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const iconMap = [Brain, ShoppingCart, Workflow, Smartphone, BarChart3, Cloud];
+const expertiseAreas = [
+  {
+    icon: Brain,
+    title: "AI & Data Engineering",
+    description:
+      "We create intelligent systems powered by GPT, Vision AI, and advanced data pipelines — enabling smarter analytics, automation, and decision-making.",
+    link: "#",
+    linkText: "Explore AI & Data",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Commerce Solutions",
+    description:
+      "We design scalable eCommerce and marketplace platforms — from new store development to replatforming, omnichannel growth, and system integration.",
+    link: "#",
+    linkText: "Explore Commerce",
+  },
+  {
+    icon: Workflow,
+    title: "Automation & Integration",
+    description:
+      "We automate your workflows and connect platforms — linking payments, ERP, CRM, logistics, and marketing tools into one intelligent system.",
+    link: "#",
+    linkText: "Explore Automation",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile & Web Applications",
+    description:
+      "We build high-performance mobile and web applications with intuitive UX, modern frameworks, and secure architecture tailored to your goals.",
+    link: "#",
+    linkText: "Explore App Development",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Insights",
+    description:
+      "We transform data into clarity with real-time dashboards, predictive analytics, and performance tracking to drive measurable growth.",
+    link: "#",
+    linkText: "Explore Analytics",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    description:
+      "We design reliable, automated, and secure cloud infrastructures — ensuring seamless deployment, scalability, and performance optimization.",
+    link: "#",
+    linkText: "Explore Cloud & DevOps",
+  },
+];
 
-interface ExpertiseProps {
-  t: {
-    title: string;
-    subtitle: string;
-    cta: string;
-    areas: Array<{
-      title: string;
-      description: string;
-      linkText: string;
-    }>;
-  };
-}
-
-export default function Expertise({ t }: ExpertiseProps) {
-  const expertiseAreas = t.areas.map((area, index) => ({
-    ...area,
-    icon: iconMap[index],
-    link: "#"
-  }));
-  const sectionRef = useRef<HTMLElement>(null);
-  const leftSideRef = useRef<HTMLDivElement>(null);
-  const rightSideRef = useRef<HTMLDivElement>(null);
+export default function Expertise() {
+  const sectionRef = useRef(null);
+  const leftSideRef = useRef(null);
+  const rightSideRef = useRef(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -94,16 +125,16 @@ export default function Expertise({ t }: ExpertiseProps) {
           <div ref={leftSideRef} className="md:sticky md:top-24">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                {t.title}
+                Our Expertise
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                {t.subtitle}
+                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
               </p>
               
               {/* Optional CTA or additional content */}
               <div className="pt-6">
                 <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
-                  {t.cta}
+                  View All Services
                 </button>
               </div>
             </div>

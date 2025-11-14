@@ -7,29 +7,34 @@ import DropdownMenu from './DropdownMenu';
 import navigationData from '../data/navigationData.json';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Locale, localeNames } from '@/lib/i18n/config';
+
 
 const languages = [
-  { "code": "en", "name": "English", "country": "us" },
-  { "code": "hi", "name": "हिन्दी", "country": "in" }
-];
+  { "code": "EN", "name": "English", "country": "us" },
+  { "code": "FR", "name": "Français", "country": "fr" },
+  { "code": "DE", "name": "Deutsch", "country": "de" },
+  { "code": "ES", "name": "Español", "country": "es" },
+  { "code": "IT", "name": "Italiano", "country": "it" },
+  { "code": "PT", "name": "Português", "country": "pt" },
+  { "code": "JP", "name": "日本語", "country": "jp" },
+  { "code": "IN", "name": "हिन्दी", "country": "in" }
+]
 
-export default function Navbar({ lang }: { lang: Locale }) {
+
+
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpenMenus, setMobileOpenMenus] = useState<string[]>([]);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState(languages[0]);
   const langRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
 
-  const selectedLang = languages.find(l => l.code === lang) || languages[0];
-
-  const switchLanguage = (newLang: string) => {
-    const segments = pathname.split('/');
-    segments[1] = newLang;
-    return segments.join('/');
+  const handleLangSelect = (lang: any) => {
+    // console.log(lang)
+    setSelectedLang(lang);
+    setIsLangOpen(false);
   };
 
   // Close when clicking outside
@@ -80,7 +85,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
       <div className="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href={`/${lang}`} className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/assets/logo/logo.png"
                 alt="Coreway Solution Logo"
@@ -205,35 +210,36 @@ export default function Navbar({ lang }: { lang: Locale }) {
                 </svg>
               </button>
 
+              {/* Dropdown Menu */}
               {isLangOpen && (
                 <div className="absolute right-0 mt-2 w-44 bg-[#1a1325] border border-white/10 rounded-lg shadow-lg z-50 overflow-hidden">
-                  {languages.map((language) => (
-                    <Link
-                      key={language.code}
-                      href={switchLanguage(language.code)}
-                      onClick={() => setIsLangOpen(false)}
-                      className={`w-full flex items-center cursor-pointer space-x-2 px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 transition-colors ${selectedLang.code === language.code ? "text-white font-medium" : ""
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLangSelect(lang)}
+                      className={`w-full flex items-center cursor-pointer space-x-2 px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 transition-colors ${selectedLang.code === lang.code ? "text-white font-medium" : ""
                         }`}
                     >
                       <Image
-                        src={`https://flagcdn.com/w20/${language.country}.png`}
-                        alt={language.name}
+                        src={`https://flagcdn.com/w20/${lang.country}.png`}
+                        alt={lang.name}
                         width={20}
                         height={14}
 
                       />
-                      <span>{language.name}</span>
-                    </Link>
+                      <span>{lang.name}</span>
+                    </button>
                   ))}
                 </div>
               )}
             </div>
 
+            {/* 💌 Contact Button */}
             <Link
-              href={`/${lang}/contact`}
+              href="/contact"
               className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
             >
-              {lang === 'hi' ? 'संपर्क करें' : 'Contact'}
+              Contact
             </Link>
           </div>
 
@@ -333,11 +339,11 @@ export default function Navbar({ lang }: { lang: Locale }) {
 
             <div className="pt-4 mt-4 border-t border-white/10">
               <Link
-                href={`/${lang}/contact`}
+                href="/contact"
                 className="block w-full bg-gradient-to-r from-purple-500 to-violet-600 text-white text-center px-6 py-3 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {lang === 'hi' ? 'संपर्क करें' : 'Contact'}
+                Contact
               </Link>
             </div>
           </div>
