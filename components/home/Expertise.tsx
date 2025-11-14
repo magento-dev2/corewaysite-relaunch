@@ -59,9 +59,9 @@ const expertiseAreas = [
 ];
 
 export default function Expertise() {
-  const sectionRef = useRef(null);
-  const leftSideRef = useRef(null);
-  const rightSideRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const leftSideRef = useRef<HTMLDivElement>(null);
+  const rightSideRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;

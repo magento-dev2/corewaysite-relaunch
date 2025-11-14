@@ -11,6 +11,8 @@ import PageCTA from '../components/PageCTA';
 import PortfolioHighlights from '../components/home/PortfolioHighlights';
 import { ScrollFadeIn, ScrollScale, ScrollParallax } from '../components/home/ScrollAnimations';
 import Expertise2 from '@/components/home/Expertise2';
+import IndustriesWeServe from '../components/home/IndustriesWeServe';
+import BlogSection from '../components/home/BlogSection';
 
 export default function Home() {
   return (
@@ -44,6 +46,10 @@ export default function Home() {
           <Testimonials />
         </ScrollFadeIn>
       </ScrollParallax>
+
+      <IndustriesWeServe />
+
+      <BlogSection />
 
       <ScrollScale>
         <PageCTA

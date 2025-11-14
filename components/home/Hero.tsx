@@ -62,8 +62,9 @@ export default function Hero() {
 
 
   useEffect(() => {
+    if (!textRef.current) return;
     // 🌀 Split text into individual characters
-    const split = new SplitType(textRef.current, { types: "chars, words" });
+    const split = new SplitType(textRef.current, { types: "chars,words" });
 
     // ✨ Intro animation
     gsap.from(split.chars, {
