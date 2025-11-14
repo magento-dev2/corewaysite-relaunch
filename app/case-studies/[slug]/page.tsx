@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CaseStudyDetails from "@/components/casestudy/CaseStudyDetails";
 
 interface PageProps {
   params: Promise<{ slug: string }>; // ✅ Next.js now returns params as a Promise
@@ -89,58 +90,33 @@ export default async function CaseStudyPage({ params }: PageProps) {
     );
 
   return (
-    <div className="max-w-5xl mx-auto pt-32 pb-24 px-6">
-      {/* Header Section */}
-      <header className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          {product.title}
-        </h1>
-        <p className="text-gray-400 text-lg">A Coreway Case Study</p>
-      </header>
+    <>
+      <div className="max-w-5xl mx-auto pt-32 pb-24 px-6">
+        {/* Header Section */}
+        <header className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            {product.title}
+          </h1>
+          <p className="text-gray-400 text-lg">A Coreway Case Study</p>
+        </header>
 
-      {/* Hero Image */}
-      <div className="mb-10">
-        <img
-          src={product.imageUrl}
-          alt={product.imageAlt}
-          className="w-full h-[420px] object-cover rounded-2xl shadow-lg"
-        />
+        {/* Hero Image */}
+        <div className="mb-10">
+          <img
+            src={product.imageUrl}
+            alt={product.imageAlt}
+            className="w-full h-[420px] object-cover rounded-2xl shadow-lg"
+          />
+        </div>
       </div>
 
-      {/* Content Section */}
-      <section className="space-y-10 text-gray-300">
-        <div>
-          <h2 className="text-2xl font-semibold text-purple-400 mb-3">
-            Challenges
-          </h2>
-          <p>{product.challenges}</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold text-purple-400 mb-3">
-            Solutions
-          </h2>
-          <p>{product.solutions}</p>
-        </div>
-
-        {/* Stats Section */}
-        {product.stats && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-            {product.stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-purple-400 mb-2">
-                  {stat.value}
-                </div>
-                <p className="text-gray-300">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
-    </div>
+      {/* Horizontal Scroll Animation Section */}
+      <CaseStudyDetails
+        challenges={product.challenges}
+        solutions={product.solutions}
+        stats={product.stats}
+      />
+    </>
   );
 }
 
