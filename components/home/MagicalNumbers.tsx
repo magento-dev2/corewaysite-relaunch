@@ -3,16 +3,29 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Users, Rocket, Award, Globe, Building } from "lucide-react";
 
-const highlights = [
-  { value: "200+", label: "Global Team", icon: Users },
-  { value: "20+", label: "Years of Experience", icon: TrendingUp },
-  { value: "$5B", label: "Revenue Empowered", icon: Rocket },
-  { value: "10+", label: "Industries Served", icon: Globe },
-  { value: "350+", label: "Stores / Sites Launched", icon: Building },
-  { value: "10", label: "Awards Won", icon: Award },
-];
+const iconMap = {
+  "Global Team": Users,
+  "Years of Experience": TrendingUp,
+  "Revenue Empowered": Rocket,
+  "Industries Served": Globe,
+  "Stores / Sites Launched": Building,
+  "Awards Won": Award,
+};
 
-export default function MagicalNumbersElegant() {
+interface MagicalNumbersProps {
+  t: {
+    title: string;
+    description: string;
+    stats: Array<{ value: string; label: string }>;
+    cta: string;
+  };
+}
+
+export default function MagicalNumbersElegant({ t }: MagicalNumbersProps) {
+  const highlights = t.stats.map((stat, index) => ({
+    ...stat,
+    icon: Object.values(iconMap)[index]
+  }));
   return (
     <section className="relative py-20 bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08),transparent_70%)] pointer-events-none" />
@@ -32,10 +45,10 @@ export default function MagicalNumbersElegant() {
             <span className="text-xs font-medium text-slate-300">Why Choose Coreway</span>
           </div> */}
           <h2 className="text-3xl text-center md:text-4xl font-bold leading-tight mb-3 text-white">
-            Who We are - Coreway Solution     </h2>
+            {t.title}
+          </h2>
           <p className="text-base text-slate-400 leading-relaxed">
-            At Coreway Solution, we help businesses architect, build, and automate modern digital platforms that scale. With over a decade of experience, we specialize in product development, AI-driven applications, IoT dashboards, and cloud infrastructure engineering. Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.We partner with startups, SMBs, and enterprises across the world—delivering technology that drives growth, efficiency, and long-term impact.
-
+            {t.description}
           </p>
           {/* <p className="text-base text-slate-400 leading-relaxed">
             Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.          </p>
@@ -91,7 +104,7 @@ export default function MagicalNumbersElegant() {
             href="#"
             className="group bg-white text-slate-900 px-8 py-3 rounded-lg hover:bg-slate-100 transition-all font-semibold text-base shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
           >
-            Learn More About Us
+            {t.cta}
             <TrendingUp className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

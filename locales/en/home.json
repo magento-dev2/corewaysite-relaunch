@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "title": "Automate",
+    "titleHighlight": "without limits",
+    "subtitle": "Build complex automations 10x faster without fighting APIs. Connect everything with Coreway Solution.",
+    "cta": "See what we do",
+    "imageAlt": "Hero Image"
+  },
+  "trustedBy": {
+    "badge": "Trusted by",
+    "title": "Innovative Teams Worldwide"
+  },
+  "companyOverview": {
+    "title": "Who We are - Coreway Solution",
+    "description": "At Coreway Solution, we help businesses architect, build, and automate modern digital platforms that scale. With over a decade of experience, we specialize in product development, AI-driven applications, IoT dashboards, and cloud infrastructure engineering. Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.We partner with startups, SMBs, and enterprises across the world—delivering technology that drives growth, efficiency, and long-term impact.",
+    "stats": [
+      {
+        "value": "200+",
+        "label": "Global Team"
+      },
+      {
+        "value": "20+",
+        "label": "Years of Experience"
+      },
+      {
+        "value": "$5B",
+        "label": "Revenue Empowered"
+      },
+      {
+        "value": "10+",
+        "label": "Industries Served"
+      },
+      {
+        "value": "350+",
+        "label": "Stores / Sites Launched"
+      },
+      {
+        "value": "10",
+        "label": "Awards Won"
+      }
+    ],
+    "cta": "Learn More About Us"
+  },
+  "services": {
+    "badge": "What We Do",
+    "title": "Our Services",
+    "subtitle": "From strategy to automation — we engineer complete digital ecosystems that scale intelligently.",
+    "cards": [
+      {
+        "title": "Strategy",
+        "description": "We craft solutions that fit your business goals and scale intelligently."
+      },
+      {
+        "title": "Automation",
+        "description": "We streamline processes to reduce manual work and increase efficiency."
+      },
+      {
+        "title": "Analytics",
+        "description": "Data-driven insights to make smarter business decisions quickly."
+      }
+    ],
+    "mainServices": [
+      {
+        "title": "Architect",
+        "subtitle": "Plan. Design. Strategize.",
+        "description": "We start by defining clarity — translating your business goals into system blueprints that scale.",
+        "items": [
+          "Technology & System Architecture",
+          "Digital Discovery & Consulting",
+          "Cloud & Infrastructure Strategy",
+          "API Design & Integration Planning",
+          "UI/UX Experience Blueprints"
+        ]
+      },
+      {
+        "title": "Build",
+        "subtitle": "Develop. Integrate. Deploy.",
+        "description": "We engineer reliable, scalable solutions — from intelligent apps to complete platform ecosystems.",
+        "items": [
+          "Custom Web & App Development",
+          "SaaS & Product Engineering",
+          "IoT Dashboards & Realtime Systems",
+          "eCommerce Development",
+          "CI/CD & DevOps Deployment"
+        ]
+      },
+      {
+        "title": "Automate",
+        "subtitle": "Optimize. Scale. Manage.",
+        "description": "We enable businesses to run smarter with automation, AI, and connected workflows.",
+        "items": [
+          "Workflow & Process Automation",
+          "AI & GPT-based Integrations",
+          "Data & Analytics Automation",
+          "ERP / CRM / Payment Connectors",
+          "Managed Cloud & Support"
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.",
+    "cta": "View All Services",
+    "areas": [
+      {
+        "title": "AI & Data Engineering",
+        "description": "We create intelligent systems powered by GPT, Vision AI, and advanced data pipelines — enabling smarter analytics, automation, and decision-making.",
+        "linkText": "Explore AI & Data"
+      },
+      {
+        "title": "Commerce Solutions",
+        "description": "We design scalable eCommerce and marketplace platforms — from new store development to replatforming, omnichannel growth, and system integration.",
+        "linkText": "Explore Commerce"
+      },
+      {
+        "title": "Automation & Integration",
+        "description": "We automate your workflows and connect platforms — linking payments, ERP, CRM, logistics, and marketing tools into one intelligent system.",
+        "linkText": "Explore Automation"
+      },
+      {
+        "title": "Mobile & Web Applications",
+        "description": "We build high-performance mobile and web applications with intuitive UX, modern frameworks, and secure architecture tailored to your goals.",
+        "linkText": "Explore App Development"
+      },
+      {
+        "title": "Analytics & Insights",
+        "description": "We transform data into clarity with real-time dashboards, predictive analytics, and performance tracking to drive measurable growth.",
+        "linkText": "Explore Analytics"
+      },
+      {
+        "title": "Cloud & DevOps",
+        "description": "We design reliable, automated, and secure cloud infrastructures — ensuring seamless deployment, scalability, and performance optimization.",
+        "linkText": "Explore Cloud & DevOps"
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Start automating today",
+    "title": "Ready to transform your workflows?",
+    "description": "Join thousands of teams using Coreway to automate their work and focus on what matters most. Build powerful automations in minutes, not hours.",
+    "primaryButton": "Get started for free",
+    "secondaryButton": "Talk to sales",
+    "footer": "No credit card required • Free forever for core features • Cancel anytime"
+  }
+}

@@ -111,8 +111,9 @@ export default function ContactHero() {
 
 
     useEffect(() => {
-    // 🌀 Split text into individual characters
-    const split = new SplitType(textRef.current, { types: "chars, words" });
+    if (!textRef.current) return;
+
+    const split = new SplitType(textRef.current, { types: "chars,words" });
 
     // ✨ Intro animation
     gsap.from(split.chars, {

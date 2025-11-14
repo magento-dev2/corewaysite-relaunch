@@ -15,7 +15,14 @@ const companyLogos = [
   { name: "Geliyoo", logo: "/assets/brand/geliyoologo.png" },
 ];
 
-export default function TrustedBy() {
+interface TrustedByProps {
+  t: {
+    badge: string;
+    title: string;
+  };
+}
+
+export default function TrustedBy({ t }: TrustedByProps) {
   const [offset, setOffset] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -44,10 +51,10 @@ export default function TrustedBy() {
           className="text-center mb-12"
         >
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-4">
-            <span className="text-sm font-medium text-gray-300">Trusted by</span>
+            <span className="text-sm font-medium text-gray-300">{t.badge}</span>
           </div>
           <h2 className="text-4xl font-bold text-white">
-            Innovative Teams Worldwide
+            {t.title}
           </h2>
         </motion.div>
 

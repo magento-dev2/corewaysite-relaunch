@@ -12,58 +12,44 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const services = [
+const animationData = [
   {
     animationPath: "/animations/architect.json",
     staticPath: "/animations/architect-static.svg",
     ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
-    title: "Architect",
-    subtitle: "Plan. Design. Strategize.",
-    description:
-      "We start by defining clarity — translating your business goals into system blueprints that scale.",
-    items: [
-      "Technology & System Architecture",
-      "Digital Discovery & Consulting",
-      "Cloud & Infrastructure Strategy",
-      "API Design & Integration Planning",
-      "UI/UX Experience Blueprints",
-    ],
   },
   {
     animationPath: "/animations/build.json",
     staticPath: "/animations/build-static.svg",
     ariaLabel: "Code brackets with animated lines representing software development",
-    title: "Build",
-    subtitle: "Develop. Integrate. Deploy.",
-    description:
-      "We engineer reliable, scalable solutions — from intelligent apps to complete platform ecosystems.",
-    items: [
-      "Custom Web & App Development",
-      "SaaS & Product Engineering",
-      "IoT Dashboards & Realtime Systems",
-      "eCommerce Development",
-      "CI/CD & DevOps Deployment",
-    ],
   },
   {
     animationPath: "/animations/automate.json",
     staticPath: "/animations/automate-static.svg",
     ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
-    title: "Automate",
-    subtitle: "Optimize. Scale. Manage.",
-    description:
-      "We enable businesses to run smarter with automation, AI, and connected workflows.",
-    items: [
-      "Workflow & Process Automation",
-      "AI & GPT-based Integrations",
-      "Data & Analytics Automation",
-      "ERP / CRM / Payment Connectors",
-      "Managed Cloud & Support",
-    ],
   },
 ];
 
-export default function ServicesGSAP() {
+interface ServicesGSAPProps {
+  t: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    cards: Array<{ title: string; description: string }>;
+    mainServices: Array<{
+      title: string;
+      subtitle: string;
+      description: string;
+      items: string[];
+    }>;
+  };
+}
+
+export default function ServicesGSAP({ t }: ServicesGSAPProps) {
+  const services = t.mainServices.map((service, index) => ({
+    ...service,
+    ...animationData[index]
+  }));
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -170,7 +156,7 @@ export default function ServicesGSAP() {
               <span className="text-sm font-medium text-gray-300">What We Do</span>
             </div> */}
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Services
+              {t.title}
             </h2>
             {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
               From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
@@ -188,7 +174,7 @@ export default function ServicesGSAP() {
                 // transition={{ duration: 0.8, delay: index * 0.3 }}
                 className="text-gray-300 text-lg"
               >
-                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
+                {t.subtitle}
               </motion.p>
             
           </div>
