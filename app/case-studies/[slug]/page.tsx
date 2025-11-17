@@ -61,12 +61,17 @@ export default async function CaseStudyPage({ params }: PageProps) {
         gradient={product.gradient}
       />
 
-      <CaseStudyOverview overview={product.overview} />
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <CaseStudyChallenge challenge={product.challenge} />
-          <CaseStudySolution solution={product.solution} />
+
+      <CaseStudyOverview overview={product.overview} />
+      <div className="bg-gradient-to-b from-[#0A0014] to-[#120020]" >
+
+
+        <div className="max-w-7xl mx-auto px-6 py-20 ">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <CaseStudyChallenge challenge={product.challenge} />
+            <CaseStudySolution solution={product.solution} />
+          </div>
         </div>
       </div>
 
@@ -77,12 +82,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
         results={product.results}
       />
 
-      <CaseStudyStats stats={product.stats} gradient={product.gradient} />
+      {/* <CaseStudyStats stats={product.stats} gradient={product.gradient} /> */}
 
-      <CaseStudyImpact
+      {/* <CaseStudyImpact
         impact={product.impact}
         testimonial={product.testimonial}
-      />
+      /> */}
     </div>
   );
 }

@@ -56,7 +56,7 @@ interface ProcessTimeLIne {
   steps: ProcessStep[];
 }
 
-export default function ProcessDiagram({ title, description, steps }: ProcessTimeLIne) {
+export default function ProcessTimeLIne({ title, description, steps }: ProcessTimeLIne) {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -79,7 +79,7 @@ export default function ProcessDiagram({ title, description, steps }: ProcessTim
   }, []);
 
   return (
-    <div className="min-h-[300vh] bg-gradient-to-b from-[#0E0918] to-[#1a1325] text-white py-20" ref={containerRef}>
+    <div className="min-h-[300vh] bg-black text-white py-20" ref={containerRef}>
       <div className="sticky top-20 max-w-[95vw] mx-auto px-4">
 
         <div className="text-center mb-30">
@@ -118,8 +118,8 @@ export default function ProcessDiagram({ title, description, steps }: ProcessTim
                           : "border-gray-700 bg-gray-900/20 opacity-40 scale-95"
                       }`}
                       style={{
-                        width: "200px",
-                        height: "200px",
+                        width: "280px",
+                        height: "280px",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
@@ -151,16 +151,16 @@ export default function ProcessDiagram({ title, description, steps }: ProcessTim
                         left: "50%",
                         top: arcGoesUp ? "-120px" : "auto",
                         bottom: arcGoesUp ? "auto" : "-120px",
-                        width: "240px",
-                        height: "200px",
+                        width: "320px",
+                        height: "280px",
                         pointerEvents: "none",
                         zIndex: 0,
                       }}
                     >
                       <svg
-                        width="240"
-                        height="200"
-                        viewBox="0 0 320 200"
+                        width="320"
+                        height="280"
+                        viewBox="0 0 320 280"
                         className="overflow-visible"
                       >
                         <defs>

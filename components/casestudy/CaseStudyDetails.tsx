@@ -59,14 +59,14 @@ export default function CaseStudyDetails({
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-[#0A0A0A] to-[#0E0E0E]"
+      className="py-20 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20">
-                <Code2 className="w-6 h-6 text-blue-400" />
+              <div className="p-3 bg-purple-500/10 rounded-xl border border-purple-500/20">
+                <Code2 className="w-6 h-6 text-purple-400" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Technologies Used
@@ -80,9 +80,9 @@ export default function CaseStudyDetails({
                   ref={(el) => {
                     techRef.current[index] = el;
                   }}
-                  className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-blue-500/30 transition-all group"
+                  className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-purple-500/30 transition-all group"
                 >
-                  <p className="text-gray-300 font-semibold group-hover:text-blue-400 transition-colors">
+                  <p className="text-gray-300 font-semibold group-hover:text-purple-400 transition-colors">
                     {tech}
                   </p>
                 </div>

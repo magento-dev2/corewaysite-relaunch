@@ -89,7 +89,7 @@ export default function IndustriesWeServe() {
     });
 
     tl.from('.industries-header', {
-      opacity: 0,
+      opacity: 1,
       y: 50,
       duration: 0.8,
       ease: 'power3.out'
@@ -98,7 +98,7 @@ export default function IndustriesWeServe() {
     cards.forEach((card, index) => {
       if (card) {
         tl.from(card, {
-          opacity: 0,
+          opacity: 1,
           y: 60,
           scale: 0.8,
           duration: 0.6,
