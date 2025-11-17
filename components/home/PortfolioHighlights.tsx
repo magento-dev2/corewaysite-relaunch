@@ -276,7 +276,7 @@ export default function CaseStudies() {
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
               onDragEnd={handleDragEnd}
-              className="grid lg:grid-cols-2 gap-12 items-center cursor-grab active:cursor-grabbing"
+              className="grid lg:grid-cols-2 gap-12 items-start cursor-grab active:cursor-grabbing"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -319,43 +319,9 @@ export default function CaseStudies() {
                 </motion.div>
 
                 {/* Stats Grid */}
-                <motion.div
-                  className="grid grid-cols-2 gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  {current.stats.map((stat, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="relative group"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all"></div>
-                      <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 group-hover:border-purple-500/50 transition-all">
-                        <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                          {stat.value}
-                        </p>
-                        <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
+               
 
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl overflow-hidden shadow-2xl cursor-pointer "
-                >
-                  <Link href={`/case-studies/${current.slug}`} className="relative z-10">
-                  <span className="relative z-10 cursor-pointer">View Full Case Study</span>
-                  </Link>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                  {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
-                </motion.button>
+               
               </motion.div>
 
               {/* Right Image */}
@@ -394,6 +360,46 @@ export default function CaseStudies() {
                 </motion.div>
               </motion.div>
             </motion.div>
+            
+             <motion.div
+                  className="grid grid-cols-4 gap-4 mt-2 "
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  {current.stats.map((stat, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="relative group"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all"></div>
+                      <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 group-hover:border-purple-500/50 transition-all">
+                        <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                          {stat.value}
+                        </p>
+                        <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                <div className="flex justify-center">
+                 <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl overflow-hidden shadow-2xl cursor-pointer mt-4 "
+                >
+                  <Link href={`/case-studies/${current.slug}`} className="relative z-10">
+                  <span className="relative z-10 cursor-pointer">View Full Case Study</span>
+                  </Link>
+                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
+                </motion.button>
+                </div>
           </AnimatePresence>
         </div>
 
