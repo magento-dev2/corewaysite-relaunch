@@ -1,0 +1,53 @@
+ [
+  {
+    "id": 1,
+    "slug": "geliyoo-search-engine-revolution-for-turkey",
+    "title": "Geliyoo – Search Engine Revolution",
+    "overview": "Geliyoo Bilişim is a Turkish multinational corporation specializing in Internet-related services.",
+    "challenge": "They needed a team to develop a search engine, a news portal, Geliyoo Maps, and a browser — all together. The founder searched many big companies, but they were very expensive.",
+    "solution": "Coreway held detailed discussions with the Geliyoo team, defined a clear scope of work, formed vendor associations, and found the right teams under budget.",
+    "process": [
+      "Multiple rounds of requirement gathering",
+      "Technology stack transparency",
+      "Budget estimation",
+      "Vendor identification",
+      "Quality control throughout"
+    ],
+    "impact": "Search engine, news portal, maps, and browser are now live.",
+    "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "stats": [
+      { "value": "4+", "label": "Products Launched" },
+      { "value": "50%", "label": "Cost Saved" },
+      { "value": "100K+", "label": "Active Users" },
+      { "value": "99.9%", "label": "Uptime" }
+    ],
+    "gradient": "from-violet-500 to-purple-600",
+    "icon": "search"
+  },
+  {
+    "id": 2,
+    "slug": "orabel-ecommerce-platform-for-beauty-products",
+    "title": "Orabel – Beauty E-commerce Pioneer",
+    "overview": "Orabel is a leading e-commerce webstore for beauty product lovers in Canada.",
+    "challenge": "The webstore was struggling with high traffic, slow loading pages, and a lengthy checkout process causing cart drops and high bounce rates.",
+    "solution": "Coreway migrated the platform to Magento 2, optimized brand communication, deployed powerful SEO tactics, and made calculated UI & UX improvements.",
+    "process": [
+      "Performance analysis",
+      "Platform migration to Magento 2",
+      "SEO optimization",
+      "UI/UX redesign",
+      "Checkout flow simplification"
+    ],
+    "impact": "Reduced bounce rate, improved conversion, and enhanced customer experience.",
+    "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "stats": [
+      { "value": "65%", "label": "Bounce Rate ↓" },
+      { "value": "3x", "label": "Page Speed ↑" },
+      { "value": "45%", "label": "Conversion ↑" },
+      { "value": "500K+", "label": "Monthly Visits" }
+    ],
+    "gradient": "from-pink-500 to-rose-600",
+    "icon": "trending"
+  }
+]
+ 

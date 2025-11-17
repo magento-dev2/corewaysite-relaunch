@@ -5,57 +5,7 @@ interface PageProps {
   params: Promise<{ slug: string }>; // ✅ Next.js now returns params as a Promise
 }
 
-// 🧠 Sample product data
-export const productsData = [
-  {
-    id: 1,
-    title: "Headless eCommerce Migration",
-    slug: "headless-ecommerce-migration",
-    challenges:
-      "Patients struggled with fragmented care journeys due to disconnected systems and records.",
-    solutions:
-      "Developed a unified platform integrating telehealth and EHR workflows for more connected services.",
-    stats: [
-      { value: "500+", label: "Hours Freed from Manual Work" },
-      { value: "~1200", label: "In-Person Visits Avoided" },
-    ],
-    imageUrl:
-      "https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    imageAlt: "Telehealth Dashboard",
-  },
-  {
-    id: 2,
-    title: "AI Dataset Delivery Platform for Enterprises",
-    slug: "ai-dataset-delivery-platform-for-enterprises",
-    challenges:
-      "Data teams faced long delays in preparing large-scale AI datasets securely across regions.",
-    solutions:
-      "Built a multi-cloud data delivery platform with GPT-based metadata extraction and secure access.",
-    stats: [
-      { value: "70%", label: "Faster Data Delivery" },
-      { value: "35%", label: "Lower Storage Cost" },
-    ],
-    imageUrl:
-      "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    imageAlt: "AI Data Delivery Dashboard",
-  },
-  {
-    id: 3,
-    slug: "smart-iot-lighting-dashboard",
-    title: "Smart IoT Lighting Dashboard",
-    challenges:
-      "City operators lacked unified control and insights for thousands of connected lighting devices.",
-    solutions:
-      "Developed an IoT dashboard with MQTT integration, predictive maintenance, and group control.",
-    stats: [
-      { value: "1,000+", label: "Devices Monitored Live" },
-      { value: "80%", label: "Manual Work Saved" },
-    ],
-    imageUrl:
-      "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    imageAlt: "IoT Lighting System",
-  },
-];
+import productsData from "../../../data/caseStudies.json";
 
 export async function generateMetadata({
   params,
