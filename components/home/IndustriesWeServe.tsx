@@ -37,36 +37,36 @@ const industries = [
     title: 'Manufacturing',
     description: 'IoT and automation'
   },
-  {
-    icon: '🚚',
-    title: 'Transportation',
-    description: 'Logistics optimization'
-  },
-  {
-    icon: '🎬',
-    title: 'Entertainment',
-    description: 'Media platforms'
-  },
-  {
-    icon: '🍽️',
-    title: 'Hospitality',
-    description: 'Booking and management'
-  },
-  {
-    icon: '✈️',
-    title: 'Travel',
-    description: 'Travel planning systems'
-  },
-  {
-    icon: '⚖️',
-    title: 'Legal',
-    description: 'Case management tools'
-  },
-  {
-    icon: '🏗️',
-    title: 'Construction',
-    description: 'Project management'
-  }
+  // {
+  //   icon: '🚚',
+  //   title: 'Transportation',
+  //   description: 'Logistics optimization'
+  // },
+  // {
+  //   icon: '🎬',
+  //   title: 'Entertainment',
+  //   description: 'Media platforms'
+  // },
+  // {
+  //   icon: '🍽️',
+  //   title: 'Hospitality',
+  //   description: 'Booking and management'
+  // },
+  // {
+  //   icon: '✈️',
+  //   title: 'Travel',
+  //   description: 'Travel planning systems'
+  // },
+  // {
+  //   icon: '⚖️',
+  //   title: 'Legal',
+  //   description: 'Case management tools'
+  // },
+  // {
+  //   icon: '🏗️',
+  //   title: 'Construction',
+  //   description: 'Project management'
+  // }
 ];
 
 export default function IndustriesWeServe() {
