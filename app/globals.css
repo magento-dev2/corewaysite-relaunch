@@ -28,3 +28,62 @@ body {
 .max-w-1440 {
   max-width: 1440px;
 }
+
+.prose h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.prose h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.prose p {
+  font-size: 18px;
+  line-height: 1.888;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.prose ul, .prose ol {
+  font-size: 18px;
+  line-height: 1.888;
+  color: #333;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 12px;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.prose a {
+  color: purple;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}

@@ -213,7 +213,7 @@ export function generateStaticParams() {
 export default function BlogDetailPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-black text-white py-4 px-4 sticky top-0 z-50 border-b border-gray-800">
+      {/* <div className="bg-black text-white py-4 px-4 sticky top-0 z-50 border-b border-gray-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold">
             YourBrand
@@ -225,7 +225,7 @@ export default function BlogDetailPage() {
             <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
           </nav>
         </div>
-      </div>
+      </div> */}
 
       <div className="relative bg-black text-white" style={{ minHeight: "650px" }}>
         <div className="absolute inset-0 bg-black/60 z-10" />
@@ -240,7 +240,7 @@ export default function BlogDetailPage() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-2 bg-orange-600 text-white text-sm font-semibold rounded mb-6">
+            <div className="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded mb-6">
               {blogPost.category}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" >
@@ -293,7 +293,7 @@ export default function BlogDetailPage() {
               </div>
             </div>
 
-            <div className="mt-16 bg-orange-50 border-l-4 border-orange-600 p-8 rounded-r-lg">
+            <div className="mt-16 bg-orange-50 border-l-4 border-purple-600 p-8 rounded-r-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Subscribe to Our Newsletter</h3>
               <p className="text-gray-700 mb-6">
                 Get the latest insights on e-commerce optimization, SEO strategies, and digital marketing tips delivered to your inbox.
@@ -302,9 +302,9 @@ export default function BlogDetailPage() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
+                  className="flex-1 px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none"
                 />
-                <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition-colors">
+                <button className="px-8 py-3 bg-purple-600 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors">
                   Subscribe
                 </button>
               </form>
@@ -313,14 +313,14 @@ export default function BlogDetailPage() {
 
           <aside className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
-              <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-orange-600">
+              <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-purple-600">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h3>
                 <nav className="space-y-3">
                   {tableOfContents.map((item) => (
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="block text-gray-700 hover:text-orange-600 transition-colors text-sm leading-relaxed"
+                      className="block text-gray-700 hover:text-purple-600 transition-colors text-sm leading-relaxed"
                     >
                       {item.title}
                     </a>
@@ -344,7 +344,7 @@ export default function BlogDetailPage() {
                           className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h4 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors mb-2 leading-snug">
+                      <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors mb-2 leading-snug">
                         {post.title}
                       </h4>
                       <p className="text-sm text-gray-600">{post.date}</p>
@@ -353,12 +353,12 @@ export default function BlogDetailPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-6 text-white">
+              <div className="bg-gradient-to-br from-purple-600 to-orange-700 rounded-lg p-6 text-white">
                 <h3 className="text-xl font-bold mb-3">Need Help?</h3>
                 <p className="text-orange-50 mb-4 text-sm">
                   Get expert assistance with your e-commerce audit and optimization.
                 </p>
-                <button className="w-full px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                <button className="w-full px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                   Contact Us
                 </button>
               </div>
