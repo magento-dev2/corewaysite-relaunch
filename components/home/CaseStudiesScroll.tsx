@@ -51,7 +51,7 @@ export default function CaseStudiesScroll() {
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section) return;
+    if (!section || typeof window === "undefined") return;
 
     const totalHeight = caseStudies.length * window.innerHeight;
 

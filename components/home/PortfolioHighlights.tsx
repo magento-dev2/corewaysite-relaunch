@@ -141,7 +141,7 @@ export default function CaseStudies() {
       </motion.div>
 
       {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+      {typeof window !== "undefined" && [...Array(20)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-purple-400/30 rounded-full"
