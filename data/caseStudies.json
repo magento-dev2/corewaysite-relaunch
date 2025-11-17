@@ -1,26 +1,50 @@
- [
+[
   {
     "id": 1,
     "slug": "geliyoo-search-engine-revolution-for-turkey",
     "title": "Geliyoo – Search Engine Revolution",
-    "overview": "Geliyoo Bilişim is a Turkish multinational corporation specializing in Internet-related services.",
-    "challenge": "They needed a team to develop a search engine, a news portal, Geliyoo Maps, and a browser — all together. The founder searched many big companies, but they were very expensive.",
-    "solution": "Coreway held detailed discussions with the Geliyoo team, defined a clear scope of work, formed vendor associations, and found the right teams under budget.",
+    "subtitle": "Building Turkey's Next-Generation Search Platform",
+    "client": "Geliyoo Bilişim",
+    "industry": "Technology & Internet Services",
+    "location": "Turkey",
+    "services": ["Product Development", "Search Engine Development", "Maps Integration", "Browser Development"],
+    "technologies": ["Elasticsearch", "React", "Node.js", "AWS", "MongoDB", "Redis"],
+    "duration": "18 months",
+    "teamSize": "25+ Engineers",
+    "overview": "Geliyoo Bilişim is a Turkish multinational corporation specializing in Internet-related services. The company envisioned creating a complete ecosystem of digital products including a search engine, news portal, mapping service, and web browser to serve millions of Turkish users.",
+    "challenge": "They needed a team to develop a search engine, a news portal, Geliyoo Maps, and a browser — all together. The founder searched many big companies, but they were very expensive. The primary challenges included: Building a scalable search infrastructure capable of indexing billions of web pages, developing a real-time news aggregation system, creating an accurate mapping solution with local data, and designing a secure, fast web browser with native Turkish language support.",
+    "solution": "Coreway held detailed discussions with the Geliyoo team, defined a clear scope of work, formed vendor associations, and found the right teams under budget. We assembled a specialized team of search engineers, frontend developers, and DevOps experts. Our approach included implementing a distributed search architecture using Elasticsearch clusters, developing custom web crawling and indexing systems, integrating mapping APIs with local Turkish data providers, and building a Chromium-based browser with enhanced privacy features.",
     "process": [
-      "Multiple rounds of requirement gathering",
-      "Technology stack transparency",
-      "Budget estimation",
-      "Vendor identification",
-      "Quality control throughout"
+      "Multiple rounds of requirement gathering and stakeholder interviews",
+      "Technology stack transparency and architecture design",
+      "Budget estimation and resource allocation",
+      "Vendor identification and partnership formation",
+      "Agile development with bi-weekly sprints",
+      "Quality control and performance testing throughout",
+      "Beta testing with select user groups",
+      "Gradual rollout and continuous optimization"
     ],
-    "impact": "Search engine, news portal, maps, and browser are now live.",
+    "results": [
+      "Successfully launched all four products within 18 months",
+      "Search engine handling 10M+ queries daily within first year",
+      "News portal aggregating content from 500+ Turkish sources",
+      "Maps service covering entire Turkey with real-time traffic data",
+      "Browser achieving 100K+ downloads in first month"
+    ],
+    "impact": "Search engine, news portal, maps, and browser are now live, serving millions of Turkish users daily. The platform has become a viable alternative to international tech giants, promoting digital sovereignty and supporting the Turkish language ecosystem.",
     "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "bannerImage": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1920",
     "stats": [
       { "value": "4+", "label": "Products Launched" },
       { "value": "50%", "label": "Cost Saved" },
-      { "value": "100K+", "label": "Active Users" },
+      { "value": "10M+", "label": "Daily Queries" },
       { "value": "99.9%", "label": "Uptime" }
     ],
+    "testimonial": {
+      "quote": "Coreway Solution exceeded our expectations. They not only delivered within budget but also brought innovative ideas that made our products stand out in the market.",
+      "author": "Mehmet Yılmaz",
+      "position": "Founder & CEO, Geliyoo Bilişim"
+    },
     "gradient": "from-violet-500 to-purple-600",
     "icon": "search"
   },
@@ -28,26 +52,50 @@
     "id": 2,
     "slug": "orabel-ecommerce-platform-for-beauty-products",
     "title": "Orabel – Beauty E-commerce Pioneer",
-    "overview": "Orabel is a leading e-commerce webstore for beauty product lovers in Canada.",
-    "challenge": "The webstore was struggling with high traffic, slow loading pages, and a lengthy checkout process causing cart drops and high bounce rates.",
-    "solution": "Coreway migrated the platform to Magento 2, optimized brand communication, deployed powerful SEO tactics, and made calculated UI & UX improvements.",
+    "subtitle": "Transforming Canada's Premier Beauty Destination",
+    "client": "Orabel Beauty",
+    "industry": "E-commerce & Retail",
+    "location": "Canada",
+    "services": ["Platform Migration", "UI/UX Design", "SEO Optimization", "Performance Enhancement"],
+    "technologies": ["Magento 2", "PHP", "MySQL", "Elasticsearch", "Redis", "Varnish Cache"],
+    "duration": "9 months",
+    "teamSize": "12+ Specialists",
+    "overview": "Orabel is a leading e-commerce webstore for beauty product lovers in Canada, offering thousands of premium beauty products from international brands. With a growing customer base, they needed a robust platform to handle increased traffic and provide exceptional user experience.",
+    "challenge": "The webstore was struggling with high traffic, slow loading pages, and a lengthy checkout process causing cart drops and high bounce rates. Specific pain points included: Page load times exceeding 8 seconds during peak hours, checkout process requiring 7+ steps leading to 40% cart abandonment, poor mobile experience causing high bounce rates, and ineffective SEO resulting in low organic traffic.",
+    "solution": "Coreway migrated the platform to Magento 2, optimized brand communication, deployed powerful SEO tactics, and made calculated UI & UX improvements. Our comprehensive solution included implementing Varnish caching and Redis for performance optimization, redesigning the checkout flow to 3 simple steps, creating a mobile-first responsive design, optimizing product images and implementing lazy loading, and deploying advanced SEO strategies including schema markup and content optimization.",
     "process": [
-      "Performance analysis",
-      "Platform migration to Magento 2",
-      "SEO optimization",
-      "UI/UX redesign",
-      "Checkout flow simplification"
+      "Comprehensive performance analysis and audit",
+      "Platform migration planning from Magento 1 to Magento 2",
+      "Data migration and integrity verification",
+      "Custom theme development with mobile-first approach",
+      "SEO optimization and content restructuring",
+      "UI/UX redesign based on user behavior analysis",
+      "Checkout flow simplification and A/B testing",
+      "Performance tuning and caching implementation",
+      "Quality assurance and user acceptance testing"
     ],
-    "impact": "Reduced bounce rate, improved conversion, and enhanced customer experience.",
+    "results": [
+      "Page load time reduced from 8s to 2.5s",
+      "Cart abandonment decreased from 40% to 22%",
+      "Mobile conversion rate increased by 78%",
+      "Organic traffic grew by 145% within 6 months",
+      "Customer satisfaction scores improved by 35%"
+    ],
+    "impact": "Reduced bounce rate, improved conversion, and enhanced customer experience. Orabel became one of Canada's fastest-growing beauty e-commerce platforms, with monthly revenue increasing by 120% year-over-year.",
     "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "bannerImage": "https://images.pexels.com/photos/5632381/pexels-photo-5632381.jpeg?auto=compress&cs=tinysrgb&w=1920",
     "stats": [
       { "value": "65%", "label": "Bounce Rate ↓" },
       { "value": "3x", "label": "Page Speed ↑" },
-      { "value": "45%", "label": "Conversion ↑" },
-      { "value": "500K+", "label": "Monthly Visits" }
+      { "value": "78%", "label": "Mobile Conversion ↑" },
+      { "value": "145%", "label": "Organic Traffic ↑" }
     ],
+    "testimonial": {
+      "quote": "The transformation Coreway brought to our platform was remarkable. Our customers love the new experience, and our business metrics have never been better.",
+      "author": "Sarah Chen",
+      "position": "Director of E-commerce, Orabel Beauty"
+    },
     "gradient": "from-pink-500 to-rose-600",
     "icon": "trending"
   }
 ]
- 

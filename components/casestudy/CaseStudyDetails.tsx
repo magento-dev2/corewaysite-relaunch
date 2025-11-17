@@ -3,136 +3,120 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Code2, CheckCircle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface CaseStudyDetailsProps {
-  challenges: string;
-  solutions: string;
-  stats?: { value: string; label: string }[];
+  technologies: string[];
+  results: string[];
 }
 
 export default function CaseStudyDetails({
-  challenges,
-  solutions,
-  stats = [],
+  technologies,
+  results,
 }: CaseStudyDetailsProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const techRef = useRef<(HTMLDivElement | null)[]>([]);
+  const resultRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const scrollSection = scrollRef.current;
+    if (!sectionRef.current) return;
 
-    if (!container || !scrollSection) return;
+    gsap.fromTo(
+      techRef.current,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+      }
+    );
 
-    const totalScrollWidth = scrollSection.scrollWidth;
-    const scrollDistance = totalScrollWidth - window.innerWidth;
-
-    gsap.to(scrollSection, {
-      x: () => -scrollDistance,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: () => `+=${scrollDistance}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    gsap.fromTo(
+      resultRef.current,
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+      }
+    );
   }, []);
-
-  const sections = [
-    {
-      title: "Challenges",
-      content: challenges,
-      color: "from-red-500 to-orange-500",
-    },
-    {
-      title: "Solutions",
-      content: solutions,
-      color: "from-blue-500 to-cyan-500",
-    },
-  ];
 
   return (
     <section
-      ref={containerRef}
-      className="relative bg-[#0E0918] py-32 overflow-hidden"
-      style={{
-        backgroundImage:
-          'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-[#0A0A0A] to-[#0E0E0E]"
     >
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-
-      <div className="relative z-10 text-center mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Case Study Details
-        </h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Discover the challenges we tackled and solutions we delivered
-        </p>
-      </div>
-
-      <div
-        ref={scrollRef}
-        className="flex space-x-24 px-[10vw] relative z-10 items-center"
-      >
-        {sections.map((item, i) => (
-          <div
-            key={i}
-            className={`relative flex-shrink-0 w-[40vw] h-[40vh] rounded-xl p-3 bg-gradient-to-br ${item.color}`}
-          >
-            {i !== 0 && (
-              <div className="absolute top-1/2 -left-[15vw] w-[15vw] h-[2px] bg-gradient-to-r from-white/10 to-white/0"></div>
-            )}
-
-            <div className="bg-[#0E0918]/90 h-full rounded-xl p-10 flex flex-col justify-center border border-white/10 backdrop-blur-sm shadow-xl shadow-black/20">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                {item.title}
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                {item.content}
-              </p>
-            </div>
-          </div>
-        ))}
-
-        {stats && stats.length > 0 && (
-          <div className="relative flex-shrink-0 w-[40vw] h-[40vh] rounded-xl p-3 bg-gradient-to-br from-green-500 to-emerald-500">
-            <div className="absolute top-1/2 -left-[15vw] w-[15vw] h-[2px] bg-gradient-to-r from-white/10 to-white/0"></div>
-
-            <div className="bg-[#0E0918]/90 h-full rounded-xl p-10 flex flex-col justify-center border border-white/10 backdrop-blur-sm shadow-xl shadow-black/20">
-              <h3 className="text-3xl font-bold text-white mb-6">
-                Impact & Results
-              </h3>
-              <div className="space-y-6">
-                {stats.map((stat, index) => (
-                  <div key={index}>
-                    <div className="text-4xl font-bold text-emerald-400 mb-2">
-                      {stat.value}
-                    </div>
-                    <p className="text-gray-300 text-lg">{stat.label}</p>
-                  </div>
-                ))}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16">
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                <Code2 className="w-6 h-6 text-blue-400" />
               </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Technologies Used
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {technologies.map((tech, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    techRef.current[index] = el;
+                  }}
+                  className="p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-blue-500/30 transition-all group"
+                >
+                  <p className="text-gray-300 font-semibold group-hover:text-blue-400 transition-colors">
+                    {tech}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        )}
-      </div>
 
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#0E0918] to-transparent pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#0E0918] to-transparent pointer-events-none"></div>
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 bg-green-500/10 rounded-xl border border-green-500/20">
+                <CheckCircle className="w-6 h-6 text-green-400" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Key Results
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {results.map((result, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    resultRef.current[index] = el;
+                  }}
+                  className="flex items-start gap-3 p-4 bg-gradient-to-r from-green-500/5 to-transparent border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all"
+                >
+                  <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-300 leading-relaxed">{result}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

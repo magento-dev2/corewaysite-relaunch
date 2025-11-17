@@ -6,6 +6,7 @@ import CaseStudySolution from "@/components/casestudy/CaseStudySolution";
 import CaseStudyProcess from "@/components/casestudy/CaseStudyProcess";
 import CaseStudyImpact from "@/components/casestudy/CaseStudyImpact";
 import CaseStudyStats from "@/components/casestudy/CaseStudyStats";
+import CaseStudyDetails from "@/components/casestudy/CaseStudyDetails";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -49,13 +50,20 @@ export default async function CaseStudyPage({ params }: PageProps) {
     <div className="bg-[#0A0A0A]">
       <CaseStudyHero
         title={product.title}
-        imageUrl={product.imageUrl}
+        subtitle={product.subtitle}
+        bannerImage={product.bannerImage}
+        client={product.client}
+        industry={product.industry}
+        location={product.location}
+        services={product.services}
+        duration={product.duration}
+        teamSize={product.teamSize}
         gradient={product.gradient}
       />
 
       <CaseStudyOverview overview={product.overview} />
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-16">
           <CaseStudyChallenge challenge={product.challenge} />
           <CaseStudySolution solution={product.solution} />
@@ -64,9 +72,17 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       <CaseStudyProcess process={product.process} />
 
+      <CaseStudyDetails
+        technologies={product.technologies}
+        results={product.results}
+      />
+
       <CaseStudyStats stats={product.stats} gradient={product.gradient} />
 
-      <CaseStudyImpact impact={product.impact} />
+      <CaseStudyImpact
+        impact={product.impact}
+        testimonial={product.testimonial}
+      />
     </div>
   );
 }
