@@ -85,6 +85,7 @@ export default function DigitalCommerce() {
         <main>
           <CommerceHero
             title={commerceData.hero.title}
+            title2={commerceData.hero.title2}
             subtitle={commerceData.hero.subtitle}
             buttons={commerceData.hero.buttons}
           />

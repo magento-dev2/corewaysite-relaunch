@@ -148,18 +148,18 @@ export default function ProcessDiagram({ title, description, steps }: ProcessTim
                     <div
                       className="absolute transition-all duration-700"
                       style={{
-                        left: "50%",
-                        top: arcGoesUp ? "-120px" : "auto",
-                        bottom: arcGoesUp ? "auto" : "-120px",
-                        width: "240px",
-                        height: "200px",
+                        left: "75%",
+                        top: arcGoesUp ? "-96px" : "auto",
+                        bottom: arcGoesUp ? "auto" : "-68px",
+                        width: "120px",
+                        height: "100px",
                         pointerEvents: "none",
                         zIndex: 0,
                       }}
                     >
                       <svg
-                        width="240"
-                        height="200"
+                        width="120"
+                        height="100"
                         viewBox="0 0 320 200"
                         className="overflow-visible"
                       >

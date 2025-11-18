@@ -118,7 +118,7 @@ export default function IndustriesWeServe() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] relative overflow-hidden">
+    <section ref={sectionRef} className="pb-[64px] px-6 bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">

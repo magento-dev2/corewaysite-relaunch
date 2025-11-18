@@ -1,5 +1,6 @@
 {
-  "title": "From Idea to MVP — Build Fast, Scale Smart",
+  "title": "From Idea to MVP",
+  "title2": "Build Fast",
   "subtitle": "Accelerate your startup journey with agile, scalable product development.",
   "buttons": [
     { "label": "Explore Services", "link": "/solutions" },

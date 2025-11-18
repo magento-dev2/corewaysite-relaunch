@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Reimagine Your Commerce with Intelligent Transformation",
+    "title": "Elevate Commerce",
+    "title2":"with Intelligence",
     "subtitle": "Headless, AI-driven, and composable commerce solutions.",
     "buttons": [
       { "label": "Explore Solutions", "link": "#features" },

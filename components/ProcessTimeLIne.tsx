@@ -149,8 +149,8 @@ export default function ProcessTimeLIne({ title, description, steps }: ProcessTi
                       className="absolute transition-all duration-700"
                       style={{
                         left: "50%",
-                        top: arcGoesUp ? "-120px" : "auto",
-                        bottom: arcGoesUp ? "auto" : "-120px",
+                        top: arcGoesUp ? "-183px" : "auto",
+                        bottom: arcGoesUp ? "auto" : "-183px",
                         width: "320px",
                         height: "280px",
                         pointerEvents: "none",
@@ -159,7 +159,7 @@ export default function ProcessTimeLIne({ title, description, steps }: ProcessTi
                     >
                       <svg
                         width="320"
-                        height="280"
+                        height="97px"
                         viewBox="0 0 320 280"
                         className="overflow-visible"
                       >
