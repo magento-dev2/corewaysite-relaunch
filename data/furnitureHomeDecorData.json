@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Furniture & Home Decor",
+    "title2": "Digital Commerce Solutions",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Transform your furniture business with immersive AR experiences, 3D product visualization, smart inventory management, and seamless omnichannel retail solutions.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Request Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Revolutionizing Home Furnishing Retail",
+    "content": "We empower furniture retailers, manufacturers, and interior design businesses with cutting-edge digital solutions. From augmented reality room visualization and 3D product configurators to AI-powered recommendations and virtual showrooms, our technology helps customers visualize their dream spaces while streamlining your operations. Whether you're a boutique store or large retailer, we deliver solutions that enhance customer experience, reduce returns, and drive sales growth in the modern furniture market.",
+    "image": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg"
+  },
+  "features": {
+    "title": "Furniture Technology Solutions",
+    "items": [
+      {
+        "id": "ar-visualization",
+        "title": "AR Room Visualization",
+        "desc": "Let customers see furniture in their space with augmented reality before buying."
+      },
+      {
+        "id": "3d-configurator",
+        "title": "3D Product Configurator",
+        "desc": "Interactive 3D models with real-time customization of colors, materials, and dimensions."
+      },
+      {
+        "id": "virtual-showroom",
+        "title": "Virtual Showrooms",
+        "desc": "Immersive digital showrooms with 360° product views and interactive exploration."
+      },
+      {
+        "id": "inventory-management",
+        "title": "Smart Inventory",
+        "desc": "Real-time inventory tracking across warehouses, stores, and online channels."
+      },
+      {
+        "id": "ai-recommendations",
+        "title": "AI Styling Assistant",
+        "desc": "Personalized product recommendations based on style preferences and room dimensions."
+      },
+      {
+        "id": "delivery-tracking",
+        "title": "Delivery Management",
+        "desc": "End-to-end logistics tracking with installation scheduling and customer updates."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Furniture Tech Stack",
+    "description": "Powered by leading e-commerce and visualization technologies.",
+    "items": [
+      { "name": "Shopify Plus", "id": "shopify" },
+      { "name": "Three.js", "id": "threejs" },
+      { "name": "Unity AR", "id": "unity" },
+      { "name": "BigCommerce", "id": "bigcommerce" },
+      { "name": "Adobe 3D", "id": "adobe" },
+      { "name": "Spree Commerce", "id": "spree" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Furniture Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "AR Furniture App",
+        "image": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg",
+        "description": "Built AR app for 50K+ users, increasing conversion rate by 40% and reducing returns by 35%"
+      },
+      {
+        "id": "2",
+        "title": "Virtual Showroom Platform",
+        "image": "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg",
+        "description": "Created immersive 3D showroom with 200+ products, driving 2x online engagement"
+      },
+      {
+        "id": "3",
+        "title": "Omnichannel Retail System",
+        "image": "https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg",
+        "description": "Integrated inventory across 30 stores and online, improving fulfillment by 60%"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Furniture Commerce Implementation Process",
+    "description": "Proven approach to launching modern furniture retail experiences.",
+    "steps": [
+      {
+        "id": "discovery",
+        "number": "01",
+        "title": "Product & Catalog Analysis",
+        "description": "Analyze product range, create 3D asset strategy, and plan digital experience"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "UX & Visual Design",
+        "description": "Design immersive shopping experience with AR/VR capabilities and product visualization"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Platform Development",
+        "description": "Build e-commerce platform with 3D rendering, AR features, and inventory integration"
+      },
+      {
+        "id": "content",
+        "number": "04",
+        "title": "3D Asset Creation",
+        "description": "Create photorealistic 3D models, textures, and AR-ready product assets"
+      },
+      {
+        "id": "launch",
+        "number": "05",
+        "title": "Launch & Optimization",
+        "description": "Deploy platform, train team, and continuously optimize based on analytics"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Interior Intelligence",
+    "description": "Our furniture platform uses artificial intelligence to understand customer style preferences, room dimensions, and design trends. Machine learning algorithms suggest complementary products, generate complete room designs, and predict inventory needs based on seasonal trends. Computer vision analyzes customer room photos to recommend perfectly sized and styled furniture pieces, creating a personalized shopping experience that drives satisfaction and sales.",
+    "features": [
+      "AI-powered style matching and product recommendations",
+      "Computer vision for room analysis and measurements",
+      "Automated 3D model generation from product photos",
+      "Predictive inventory management based on trends"
+    ]
+  }
+}
