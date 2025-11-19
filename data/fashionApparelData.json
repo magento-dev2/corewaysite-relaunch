@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Fashion & Apparel",
+    "title2": "E-Commerce Solutions",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Elevate your fashion brand with AI-powered personalization, virtual try-on, smart inventory forecasting, omnichannel retail experiences, and trend prediction analytics.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Schedule Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Transforming Fashion Retail Experience",
+    "content": "We empower fashion brands, apparel retailers, and clothing manufacturers with next-generation digital solutions. From AI-powered virtual fitting rooms and personalized style recommendations to real-time inventory optimization and trend forecasting, our technology helps you stay ahead in the fast-paced fashion industry. Whether you're a boutique brand or global retailer, we deliver solutions that enhance customer experience, reduce returns, optimize inventory, and drive sustainable growth in modern fashion commerce.",
+    "image": "https://images.pexels.com/photos/972995/pexels-photo-972995.jpeg"
+  },
+  "features": {
+    "title": "Fashion Technology Solutions",
+    "items": [
+      {
+        "id": "virtual-tryon",
+        "title": "Virtual Try-On",
+        "desc": "AI-powered virtual fitting rooms with body scanning and size recommendation technology."
+      },
+      {
+        "id": "style-ai",
+        "title": "AI Style Assistant",
+        "desc": "Personalized fashion recommendations based on preferences, trends, and purchase history."
+      },
+      {
+        "id": "trend-forecasting",
+        "title": "Trend Analytics",
+        "desc": "Machine learning algorithms that predict fashion trends and consumer preferences."
+      },
+      {
+        "id": "smart-inventory",
+        "title": "Smart Inventory",
+        "desc": "AI-driven demand forecasting and automated restocking for optimal inventory levels."
+      },
+      {
+        "id": "omnichannel",
+        "title": "Omnichannel Retail",
+        "desc": "Seamless shopping experience across online, mobile, and physical stores."
+      },
+      {
+        "id": "sustainability",
+        "title": "Sustainability Tracking",
+        "desc": "Track and showcase eco-friendly materials, ethical sourcing, and carbon footprint."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Fashion Tech Stack",
+    "description": "Built with leading fashion and retail technology platforms.",
+    "items": [
+      { "name": "Shopify Plus", "id": "shopify" },
+      { "name": "Magento", "id": "magento" },
+      { "name": "Vue Storefront", "id": "vue" },
+      { "name": "Salesforce Commerce", "id": "salesforce" },
+      { "name": "Algolia Search", "id": "algolia" },
+      { "name": "Klarna Payments", "id": "klarna" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Fashion Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Virtual Try-On Platform",
+        "image": "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg",
+        "description": "Launched AI-powered virtual fitting room, reducing returns by 45% and increasing conversions by 35%"
+      },
+      {
+        "id": "2",
+        "title": "Omnichannel Fashion Retail",
+        "image": "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg",
+        "description": "Unified 150+ stores with online platform, achieving 80% increase in customer engagement"
+      },
+      {
+        "id": "3",
+        "title": "AI Trend Forecasting",
+        "image": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg",
+        "description": "Implemented ML trend prediction system, improving inventory accuracy by 70%"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Fashion Commerce Implementation Process",
+    "description": "Strategic approach to launching modern fashion retail experiences.",
+    "steps": [
+      {
+        "id": "brand-analysis",
+        "number": "01",
+        "title": "Brand & Market Analysis",
+        "description": "Analyze brand identity, target audience, and market positioning for strategy"
+      },
+      {
+        "id": "experience-design",
+        "number": "02",
+        "title": "Experience Design",
+        "description": "Design intuitive shopping experience with AI features and visual storytelling"
+      },
+      {
+        "id": "platform-build",
+        "number": "03",
+        "title": "Platform Development",
+        "description": "Build scalable e-commerce with virtual try-on, personalization, and omnichannel"
+      },
+      {
+        "id": "content-production",
+        "number": "04",
+        "title": "Content Production",
+        "description": "Create stunning product photography, videos, and interactive 3D content"
+      },
+      {
+        "id": "launch-optimize",
+        "number": "05",
+        "title": "Launch & Growth",
+        "description": "Deploy platform with marketing automation and continuous optimization"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Fashion Intelligence",
+    "description": "Our fashion platform leverages artificial intelligence to understand individual style preferences, body measurements, and shopping behavior. Machine learning algorithms analyze global fashion trends, social media patterns, and sales data to predict upcoming trends and optimize inventory. Computer vision technology enables virtual try-on experiences and automated product tagging, while natural language processing powers conversational shopping assistants that help customers find their perfect style.",
+    "features": [
+      "AI-powered personalization and style matching",
+      "Computer vision for virtual try-on and fit analysis",
+      "Trend forecasting with machine learning",
+      "Automated inventory optimization and demand prediction"
+    ]
+  }
+}
