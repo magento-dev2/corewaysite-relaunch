@@ -34,15 +34,6 @@ const iconMap: Record<string, React.ReactNode> = {
   delivery: <MapPin className="w-8 h-8" />,
 };
 
-const colorMap: Record<string, string> = {
-  "supply-chain": "from-blue-500/10 to-cyan-500/5 border-blue-500/20 hover:border-blue-500/40",
-  production: "from-purple-500/10 to-pink-500/5 border-purple-500/20 hover:border-purple-500/40",
-  forecasting: "from-green-500/10 to-emerald-500/5 border-green-500/20 hover:border-green-500/40",
-  quality: "from-yellow-500/10 to-orange-500/5 border-yellow-500/20 hover:border-yellow-500/40",
-  ordering: "from-pink-500/10 to-rose-500/5 border-pink-500/20 hover:border-pink-500/40",
-  delivery: "from-cyan-500/10 to-blue-500/5 border-cyan-500/20 hover:border-cyan-500/40",
-};
-
 export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -87,9 +78,25 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325]"
+      className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325] relative"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute font-mono text-purple-500/20 text-xs animate-data-stream"
+            style={{
+              left: `${5 + (i % 10) * 10}%`,
+              animationDelay: `${i * 0.2}s`,
+              animationDuration: '5s'
+            }}
+          >
+            {['FRESH', 'QUALITY', 'SAFE', 'FAST', 'TRACK', 'ORDER'][Math.floor(Math.random() * 6)]}
+          </div>
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <h2
           ref={titleRef}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
@@ -101,14 +108,12 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
           {items.map((item) => (
             <div
               key={item.id}
-              className={`group relative bg-gradient-to-br ${
-                colorMap[item.id] || "from-gray-500/10 to-transparent border-gray-500/20"
-              } border rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden`}
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:bg-white/10 overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-2xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
 
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-purple-500/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
                   {iconMap[item.id]}
                 </div>
 
@@ -119,7 +124,7 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
                 <p className="text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
 
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
