@@ -1,238 +1,143 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ArrowUp, ArrowDown } from "lucide-react";
 
-export default function CaseStudyHero() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { MapPin, Clock, Users, Briefcase } from "lucide-react";
+
+interface CaseStudyHeroProps {
+  title: string;
+  subtitle: string;
+  bannerImage: string;
+  client: string;
+  industry: string;
+  location: string;
+  services: string[];
+  duration: string;
+  teamSize: string;
+  gradient: string;
+}
+
+export default function CaseStudyHero({
+  title,
+  subtitle,
+  bannerImage,
+  client,
+  industry,
+  location,
+  services,
+  duration,
+  teamSize,
+  gradient,
+}: CaseStudyHeroProps) {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const infoBoxRef = useRef<HTMLDivElement>(null);
-  const metricsRef = useRef<HTMLDivElement>(null);
-  
-  const [counts, setCounts] = useState({
-    users: 0,
-    orders: 0,
-    loadTime: 0
-  });
+  const infoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // Image reveal with scale
-      if (imageRef.current) {
-        tl.fromTo(
+      tl.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 1 }
+      )
+        .fromTo(
+          subtitleRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          "-=0.6"
+        )
+        .fromTo(
           imageRef.current,
-          { 
-            opacity: 0,
-            scale: 1.1,
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 1.4,
-            ease: "power3.out",
-          }
-        );
-      }
-
-      // Info box slides in from left
-      if (infoBoxRef.current) {
-        tl.fromTo(
-          infoBoxRef.current,
-          { opacity: 0, x: -80, scale: 0.95 },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 1,
-            ease: "power3.out",
-          },
+          { opacity: 0, scale: 0.95 },
+          { opacity: 1, scale: 1, duration: 1.2 },
           "-=0.8"
+        )
+        .fromTo(
+          infoRef.current?.children || [],
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 },
+          "-=0.6"
         );
-      }
-
-      // Metrics section fades in
-      if (metricsRef.current) {
-        tl.fromTo(
-          metricsRef.current,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        );
-      }
-
-      // Animate counters
-      tl.to(counts, {
-        users: 147818,
-        duration: 2.5,
-        ease: "power2.out",
-        onUpdate: function() {
-          setCounts({
-            users: Math.floor(this.targets()[0].users),
-            orders: Math.floor(this.targets()[0].orders),
-            loadTime: parseFloat(this.targets()[0].loadTime.toFixed(2))
-          });
-        }
-      }, "-=0.5");
-
-      tl.to(counts, {
-        orders: 2629,
-        duration: 2.5,
-        ease: "power2.out",
-        onUpdate: function() {
-          setCounts(prev => ({
-            ...prev,
-            orders: Math.floor(this.targets()[0].orders)
-          }));
-        }
-      }, "-=2.3");
-
-      tl.to(counts, {
-        loadTime: 1.28,
-        duration: 2,
-        ease: "power2.out",
-        onUpdate: function() {
-          setCounts(prev => ({
-            ...prev,
-            loadTime: parseFloat(this.targets()[0].loadTime.toFixed(2))
-          }));
-        }
-      }, "-=2");
-
-    }, sectionRef);
+    }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative mt-[70px]  bg-white">
-      {/* Main Hero Image with Info Overlay */}
-      <div className="relative max-w-[1200px] m-auto w-full">
-        <div 
-          ref={imageRef}
-          className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop&q=80"
-            alt="Hamleys Store Interior"
-            className="w-400px pl-[200px] h-400px object-cover"
-          />
-          
-          {/* Dark gradient overlay */}
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div> */}
+    <section ref={heroRef} className="relative pt-32 pb-16 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A0A0A]"></div>
 
-          {/* Info Box - Bottom Left Overlay */}
-          <div
-            ref={infoBoxRef}
-            className="absolute top-20 left-6 md:left-12 lg:left-16 bg-white rounded-lg shadow-2xl p-6 md:p-8 max-w-xs md:max-w-sm"
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-12">
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            {/* Logo/Header */}
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-2xl">H</span>
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Europe</p>
-                <h3 className="text-2xl font-bold text-gray-900">Hamleys</h3>
-                <p className="text-sm text-gray-600 italic mt-1">The Finest Toys in the World</p>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              {/* Solution */}
-              <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1 font-semibold">SOLUTION</p>
-                <p className="text-gray-900 font-semibold">B2C | Digital Marketing</p>
-              </div>
-              
-              {/* Services */}
-              <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">SERVICES</p>
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-700">Consulting & UX Design</p>
-                  <p className="text-sm text-gray-700">Development & Integration</p>
-                  <p className="text-sm text-gray-700">Growth Support</p>
-                </div>
-              </div>
-              
-              {/* Industry */}
-              <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1 font-semibold">INDUSTRY</p>
-                <p className="text-gray-900 font-semibold">Kids & Education</p>
-              </div>
-              
-              {/* Website Link */}
-              <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1 font-semibold">WEBSITE</p>
-                <a 
-                  href="#" 
-                  className="text-red-600 hover:text-red-700 font-semibold transition-colors inline-flex items-center gap-1"
-                >
-                  Hamleys
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-           <div className="max-w-7xl mx-auto px-6 pl-[200px] mt-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            
-            {/* Metric 1 - New Users */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center mb-4">
-                <div className="p-3 bg-emerald-50 rounded-full">
-                  <ArrowUp className="w-6 h-6 text-emerald-600" />
-                </div>
-              </div>
-              <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
-                {counts.users.toLocaleString()}
-              </div>
-              <p className="text-gray-600 font-medium text-lg">New Users</p>
-            </div>
-
-            {/* Metric 2 - New Orders */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center mb-4">
-                <div className="p-3 bg-emerald-50 rounded-full">
-                  <ArrowUp className="w-6 h-6 text-emerald-600" />
-                </div>
-              </div>
-              <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
-                {counts.orders.toLocaleString()}
-              </div>
-              <p className="text-gray-600 font-medium text-lg">New Orders</p>
-            </div>
-
-            {/* Metric 3 - Page Load Time */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center mb-4">
-                <div className="p-3 bg-red-50 rounded-full">
-                  <ArrowDown className="w-6 h-6 text-red-600" />
-                </div>
-              </div>
-              <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
-                {counts.loadTime.toFixed(2)}s
-              </div>
-              <p className="text-gray-600 font-medium text-lg">Page Load Time</p>
-            </div>
-
-          </div>
+            {title}
+          </h1>
+          <p
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto"
+          >
+            {subtitle}
+          </p>
         </div>
+
+        <div
+          ref={imageRef}
+          className="relative rounded-2xl overflow-hidden mb-16 border border-white/10 shadow-2xl"
+        >
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20`}
+          ></div>
+          <img
+            src={bannerImage}
+            alt={title}
+            className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+          />
+        </div>
+
+        <div
+          ref={infoRef}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
+        >
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-cyan-500/10 rounded-xl mb-3">
+              <Briefcase className="w-6 h-6 text-cyan-400" />
+            </div>
+            <p className="text-sm text-gray-500 mb-1">Client</p>
+            <p className="text-white font-semibold">{client}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-cyan-500/10 rounded-xl mb-3">
+              <MapPin className="w-6 h-6 text-cyan-400" />
+            </div>
+            <p className="text-sm text-gray-500 mb-1">Location</p>
+            <p className="text-white font-semibold">{location}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-cyan-500/10 rounded-xl mb-3">
+              <Clock className="w-6 h-6 text-cyan-400" />
+            </div>
+            <p className="text-sm text-gray-500 mb-1">Duration</p>
+            <p className="text-white font-semibold">{duration}</p>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-cyan-500/10 rounded-xl mb-3">
+              <Users className="w-6 h-6 text-cyan-400" />
+            </div>
+            <p className="text-sm text-gray-500 mb-1">Team Size</p>
+            <p className="text-white font-semibold">{teamSize}</p>
+          </div>
         </div>
       </div>
-
-      {/* Metrics Section */}
-      
     </section>
   );
 }
