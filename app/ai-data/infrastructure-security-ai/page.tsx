@@ -85,6 +85,7 @@ export default function InfrastructureSecurityAI() {
         <main>
           <InfraSecurityHero
             title={infrastructureSecurityData.hero.title}
+            title2={infrastructureSecurityData.hero.title2}
             subtitle={infrastructureSecurityData.hero.subtitle}
             buttons={infrastructureSecurityData.hero.buttons}
           />

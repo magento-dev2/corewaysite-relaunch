@@ -8,6 +8,7 @@ import SplitType from "split-type";
 interface HeroData {
   title: string;
   subtitle: string;
+  title2?: string;
   buttons: Array<{ label: string; link: string }>;
   illustration: string;
 }
@@ -135,7 +136,7 @@ export default function StartupHero({ data }: StartupHeroProps) {
                 {/* Left Side Text + Button */}
                 <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
                   <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight" ref={textRef} >
-                 {data.title}<span className="text-purple-500">{data.title2}</span>
+                 {data.title}<span className="text-purple-500">{data.title2 || ""}</span>
                   </h1>
                   <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
                     {data.subtitle}

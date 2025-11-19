@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface CaseStudyOverviewProps {
   overview: string;
-  sideImage: string;     // right side image
-  fullImage: string;     // bottom full-width image
+  sideImage?: string;
+  fullImage?: string;
 }
 
 export default function CaseStudyOverview({

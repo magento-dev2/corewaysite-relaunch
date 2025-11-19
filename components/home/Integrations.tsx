@@ -39,8 +39,8 @@ const integrations = [
   { name: "WhatsApp", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" },
 ];
 
-function InfiniteScroller({ items, reverse = false }) {
-  const containerRef = useRef(null);
+function InfiniteScroller({ items, reverse = false }: { items: Array<{name: string; icon: string}>; reverse?: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {

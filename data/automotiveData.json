@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Automotive Digital",
+    "title2": "Transformation Solutions",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Drive innovation in the automotive industry with connected vehicles, smart manufacturing, AI-powered diagnostics, and next-generation mobility solutions.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Schedule Demo", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Accelerating Automotive Innovation",
+    "content": "We empower automotive manufacturers, suppliers, and mobility providers with cutting-edge digital solutions. From connected vehicle platforms and autonomous driving systems to smart factory automation and predictive maintenance, our expertise spans the entire automotive value chain. Leverage IoT, AI, and cloud technologies to create intelligent, sustainable, and customer-centric automotive experiences.",
+    "image": "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg"
+  },
+  "features": {
+    "title": "Automotive Technology Solutions",
+    "items": [
+      {
+        "id": "connected",
+        "title": "Connected Vehicle Platforms",
+        "desc": "Build telematics systems, OTA updates, and vehicle-to-cloud connectivity for modern smart vehicles."
+      },
+      {
+        "id": "autonomous",
+        "title": "Autonomous Driving Systems",
+        "desc": "Develop ADAS features, sensor fusion, and AI-powered decision-making for self-driving capabilities."
+      },
+      {
+        "id": "manufacturing",
+        "title": "Smart Manufacturing",
+        "desc": "Implement Industry 4.0 solutions with robotics, IoT sensors, and real-time production monitoring."
+      },
+      {
+        "id": "diagnostics",
+        "title": "Predictive Diagnostics",
+        "desc": "Deploy AI-powered systems for predictive maintenance, fault detection, and service optimization."
+      },
+      {
+        "id": "mobility",
+        "title": "Mobility Services",
+        "desc": "Create platforms for car-sharing, ride-hailing, EV charging networks, and multi-modal transport."
+      },
+      {
+        "id": "dealership",
+        "title": "Digital Dealership",
+        "desc": "Transform sales and service with virtual showrooms, online configurators, and customer portals."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Automotive Technologies",
+    "description": "Powered by industry-leading automotive platforms and tools.",
+    "items": [
+      { "name": "AUTOSAR", "id": "autosar" },
+      { "name": "ROS", "id": "ros" },
+      { "name": "AWS IoT", "id": "aws-iot" },
+      { "name": "NVIDIA Drive", "id": "nvidia" },
+      { "name": "Azure IoT", "id": "azure-iot" },
+      { "name": "TensorFlow", "id": "tensorflow" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Automotive Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Connected Car Platform",
+        "image": "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+        "description": "Deployed IoT platform for 500K+ connected vehicles with real-time diagnostics"
+      },
+      {
+        "id": "2",
+        "title": "EV Charging Network",
+        "image": "https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg",
+        "description": "Built smart charging infrastructure managing 10K+ stations across multiple cities"
+      },
+      {
+        "id": "3",
+        "title": "Smart Factory Solution",
+        "image": "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg",
+        "description": "Automated production line with AI quality control, reducing defects by 85%"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Automotive Development Process",
+    "description": "Systematic approach to delivering automotive-grade software solutions.",
+    "steps": [
+      {
+        "id": "requirements",
+        "number": "01",
+        "title": "Requirements & Compliance",
+        "description": "Analyze automotive standards (ISO 26262, ASPICE) and define technical requirements"
+      },
+      {
+        "id": "architecture",
+        "number": "02",
+        "title": "System Architecture",
+        "description": "Design scalable vehicle architecture with security, safety, and reliability focus"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Agile Development",
+        "description": "Build features with continuous integration, simulation, and hardware-in-loop testing"
+      },
+      {
+        "id": "validation",
+        "number": "04",
+        "title": "Testing & Validation",
+        "description": "Perform rigorous testing including functional safety and cybersecurity validation"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Support",
+        "description": "Roll out solutions with OTA capabilities and provide ongoing monitoring and updates"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Automotive Intelligence",
+    "description": "Our automotive solutions leverage artificial intelligence and machine learning to enable predictive maintenance, autonomous features, and intelligent driver assistance. With computer vision, sensor fusion, and deep learning, we help vehicles make smart decisions, optimize performance, and enhance safety in real-time.",
+    "features": [
+      "AI-powered predictive maintenance and diagnostics",
+      "Computer vision for object detection and recognition",
+      "Real-time vehicle health monitoring and alerts",
+      "Intelligent route optimization and energy management"
+    ]
+  }
+}
