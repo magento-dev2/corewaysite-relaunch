@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Food & Beverage",
+    "title2": "Digital Solutions",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Transform your food and beverage operations with smart supply chain, IoT-enabled production, AI-powered demand forecasting, and seamless omnichannel experiences.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Revolutionizing Food & Beverage Industry",
+    "content": "We help food and beverage companies modernize their operations with cutting-edge digital solutions. From farm-to-fork traceability and automated production lines to AI-driven quality control and personalized customer experiences, our technology empowers you to meet evolving consumer demands, ensure food safety, optimize supply chains, and create sustainable practices. Whether you're a restaurant chain, food manufacturer, beverage producer, or delivery service, we deliver solutions that drive growth and efficiency.",
+    "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+  },
+  "features": {
+    "title": "Food & Beverage Technology Solutions",
+    "items": [
+      {
+        "id": "supply-chain",
+        "title": "Smart Supply Chain",
+        "desc": "End-to-end traceability from farm to table with blockchain, IoT sensors, and real-time tracking."
+      },
+      {
+        "id": "production",
+        "title": "Automated Production",
+        "desc": "IoT-enabled manufacturing with automated quality control, recipe management, and waste reduction."
+      },
+      {
+        "id": "forecasting",
+        "title": "Demand Forecasting",
+        "desc": "AI-powered demand prediction for inventory optimization, reducing waste and stockouts."
+      },
+      {
+        "id": "quality",
+        "title": "Quality Assurance",
+        "desc": "Computer vision and ML for automated quality inspection, contamination detection, and compliance."
+      },
+      {
+        "id": "ordering",
+        "title": "Digital Ordering Systems",
+        "desc": "Mobile apps, kiosks, and online platforms for seamless ordering and payment experiences."
+      },
+      {
+        "id": "delivery",
+        "title": "Delivery Management",
+        "desc": "Route optimization, real-time tracking, and temperature monitoring for food delivery."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Food Tech Platforms",
+    "description": "Built with specialized food and beverage technology solutions.",
+    "items": [
+      { "name": "SAP", "id": "sap" },
+      { "name": "Oracle", "id": "oracle" },
+      { "name": "AWS IoT", "id": "aws-iot" },
+      { "name": "IBM Food Trust", "id": "ibm" },
+      { "name": "Square", "id": "square" },
+      { "name": "Toast POS", "id": "toast" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Food & Beverage Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Restaurant Chain Automation",
+        "image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
+        "description": "Deployed digital ordering system across 200+ locations, increasing efficiency by 60%"
+      },
+      {
+        "id": "2",
+        "title": "Beverage Production Line",
+        "image": "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg",
+        "description": "Implemented IoT sensors and AI quality control, reducing defects by 75%"
+      },
+      {
+        "id": "3",
+        "title": "Farm-to-Table Platform",
+        "image": "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg",
+        "description": "Created blockchain traceability system connecting 500+ farms to consumers"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Food & Beverage Implementation Process",
+    "description": "Proven methodology for delivering food-grade technology solutions.",
+    "steps": [
+      {
+        "id": "assessment",
+        "number": "01",
+        "title": "Operations Assessment",
+        "description": "Analyze current processes, identify bottlenecks, and define digital transformation goals"
+      },
+      {
+        "id": "compliance",
+        "number": "02",
+        "title": "Compliance Planning",
+        "description": "Ensure solutions meet FDA, HACCP, and food safety regulatory requirements"
+      },
+      {
+        "id": "integration",
+        "number": "03",
+        "title": "System Integration",
+        "description": "Connect legacy systems, POS, inventory, and supply chain platforms seamlessly"
+      },
+      {
+        "id": "automation",
+        "number": "04",
+        "title": "Automation Deployment",
+        "description": "Implement IoT devices, sensors, and automation for production and quality control"
+      },
+      {
+        "id": "optimization",
+        "number": "05",
+        "title": "Continuous Optimization",
+        "description": "Monitor performance, gather insights, and continuously improve operations"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Food Intelligence",
+    "description": "Our food and beverage platform uses artificial intelligence to predict demand patterns, optimize recipes based on ingredient availability and cost, detect quality issues in real-time, and personalize customer experiences. Machine learning algorithms analyze millions of data points from production, sales, weather, and consumer behavior to help you make smarter decisions, reduce waste, and maximize profitability.",
+    "features": [
+      "Predictive demand forecasting with 95% accuracy",
+      "Computer vision for automated quality inspection",
+      "Dynamic pricing based on real-time demand and inventory",
+      "Personalized menu recommendations and promotions"
+    ]
+  }
+}
