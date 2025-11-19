@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Pharmaceuticals & Healthcare",
+    "title2": "Digital Solutions",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "HIPAA-compliant platforms, telemedicine integration, patient portals, prescription management, and AI-powered healthcare solutions.",
+    "buttons": [
+      { "label": "Explore Solutions", "link": "#features" },
+      { "label": "Book Consultation", "link": "#contact" }
+    ]
+  },
+  "overview": {
+    "title": "Transforming Healthcare Delivery",
+    "content": "We empower pharmaceutical companies, healthcare providers, and medical institutions with secure, compliant, and innovative digital solutions. From HIPAA-compliant patient portals and telemedicine platforms to prescription management systems and clinical trial management, our technology helps you deliver better patient outcomes while maintaining the highest standards of data security and regulatory compliance. Whether you're a pharmaceutical manufacturer, hospital network, or telehealth startup, we deliver solutions that enhance patient care, streamline operations, and drive innovation in healthcare delivery.",
+    "image": "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg"
+  },
+  "features": {
+    "title": "Healthcare Technology Solutions",
+    "items": [
+      {
+        "id": "patient-portals",
+        "title": "Patient Portals",
+        "desc": "HIPAA-compliant portals for appointment scheduling, medical records, and secure messaging."
+      },
+      {
+        "id": "telemedicine",
+        "title": "Telemedicine Platforms",
+        "desc": "Virtual consultation platforms with video conferencing, e-prescriptions, and billing."
+      },
+      {
+        "id": "prescription-mgmt",
+        "title": "Prescription Management",
+        "desc": "Digital prescription systems with pharmacy integration and refill automation."
+      },
+      {
+        "id": "ehr-integration",
+        "title": "EHR Integration",
+        "desc": "Seamless integration with Electronic Health Record systems and healthcare APIs."
+      },
+      {
+        "id": "clinical-trials",
+        "title": "Clinical Trial Management",
+        "desc": "Patient recruitment, data collection, and compliance tracking for clinical research."
+      },
+      {
+        "id": "ai-diagnostics",
+        "title": "AI Diagnostics",
+        "desc": "Machine learning models for medical imaging analysis and disease prediction."
+      }
+    ]
+  },
+  "platforms": {
+    "title": "Healthcare Tech Stack",
+    "description": "Built with secure, compliant, and scalable healthcare technologies.",
+    "items": [
+      { "name": "HL7 FHIR", "id": "fhir" },
+      { "name": "AWS Health", "id": "aws" },
+      { "name": "Azure Healthcare", "id": "azure" },
+      { "name": "Twilio Video", "id": "twilio" },
+      { "name": "Stripe Health", "id": "stripe" },
+      { "name": "TensorFlow", "id": "tensorflow" }
+    ]
+  },
+  "caseStudies": {
+    "title": "Healthcare Success Stories",
+    "cases": [
+      {
+        "id": "1",
+        "title": "Telemedicine Platform",
+        "image": "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg",
+        "description": "Built HIPAA-compliant telehealth platform serving 100K+ patients with 99.9% uptime"
+      },
+      {
+        "id": "2",
+        "title": "Patient Portal System",
+        "image": "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg",
+        "description": "Launched secure patient portal integrated with 50+ EHR systems, improving engagement by 85%"
+      },
+      {
+        "id": "3",
+        "title": "Clinical Trial Platform",
+        "image": "https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg",
+        "description": "Developed trial management system accelerating recruitment by 60% and improving compliance"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Healthcare Implementation Process",
+    "description": "Compliant, secure approach to building healthcare solutions.",
+    "steps": [
+      {
+        "id": "compliance",
+        "number": "01",
+        "title": "Compliance Assessment",
+        "description": "Evaluate HIPAA, GDPR, and healthcare regulations for your solution"
+      },
+      {
+        "id": "security-design",
+        "number": "02",
+        "title": "Security Architecture",
+        "description": "Design secure infrastructure with encryption, access controls, and audit logs"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Secure Development",
+        "description": "Build healthcare platforms with security-first development practices"
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "EHR Integration",
+        "description": "Connect with existing healthcare systems using HL7 FHIR standards"
+      },
+      {
+        "id": "validation",
+        "number": "05",
+        "title": "Validation & Launch",
+        "description": "Conduct security audits, penetration testing, and compliance certification"
+      }
+    ]
+  },
+  "automation": {
+    "title": "AI-Powered Healthcare Intelligence",
+    "description": "Our healthcare platforms leverage artificial intelligence to improve patient outcomes and operational efficiency. Machine learning algorithms analyze medical imaging for early disease detection, predict patient risks, and optimize treatment plans. Natural language processing extracts insights from medical records and clinical notes. Predictive analytics forecast patient admissions, optimize staffing, and manage inventory. Our AI solutions maintain strict HIPAA compliance while delivering actionable insights that save lives and reduce costs.",
+    "features": [
+      "AI-powered medical imaging analysis and diagnostics",
+      "Predictive analytics for patient risk assessment",
+      "Natural language processing for clinical documentation",
+      "Automated appointment scheduling and patient triage"
+    ]
+  }
+}
