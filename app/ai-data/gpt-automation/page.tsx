@@ -87,6 +87,8 @@ export default function GPTAutomation() {
             title={gptAutomationData.hero.title}
             subtitle={gptAutomationData.hero.subtitle}
             buttons={gptAutomationData.hero.buttons}
+            title2={gptAutomationData.hero.title2}
+            img={gptAutomationData.hero.img}
           />
 
           <DatasetOverview

@@ -87,6 +87,8 @@ export default function MetadataExtractionAI() {
             title={metadataExtractionData.hero.title}
             subtitle={metadataExtractionData.hero.subtitle}
             buttons={metadataExtractionData.hero.buttons}
+            title2={metadataExtractionData.hero.title2}
+            img={metadataExtractionData.hero.img}
           />
 
           <DatasetOverview

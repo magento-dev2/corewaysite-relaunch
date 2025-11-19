@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Video, Zap, Target, TrendingUp, CheckCircle2, Play, Users, Award, Clock, Star } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import PageCTA from "@/components/PageCTA";
+import { gsap } from "gsap";
+import SplitType from "split-type";
 
 const processSteps = [
   {
@@ -125,6 +127,46 @@ export default function UGCAdsPage() {
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [visibleVideos, setVisibleVideos] = useState<boolean[]>(new Array(showcaseVideos.length).fill(false));
   const showcaseRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
+
+
+
+  useEffect(() => {
+    if (!textRef.current) return;
+    // 🌀 Split text into individual characters
+    const split = new SplitType(textRef.current, { types: "chars,words" });
+
+    // ✨ Intro animation
+    gsap.from(split.chars, {
+      opacity: 0,
+      y: 40,
+      rotateX: 90,
+      stagger: 0.04,
+      duration: 1.2,
+      ease: "power4.out",
+    });
+
+    // 🎯 Cursor-based motion effect
+    const handleMouseMove = (e: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 20; // rotate limit
+      const y = (e.clientY / innerHeight - 0.5) * 20;
+
+      gsap.to(textRef.current, {
+        rotationY: x,
+        rotationX: -y,
+        transformPerspective: 800,
+        ease: "power2.out",
+        duration: 0.6,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      split.revert(); // cleanup
+    };
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -185,19 +227,19 @@ export default function UGCAdsPage() {
         </div>
       </header> */}
 
-     <section className="relative py-20 overflow-hidden">
-  {/* MAIN DARK PURPLE BACKGROUND */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#120A1F] via-[#1C0F33] to-[#0B0514]" />
+      <section className="relative py-20 overflow-hidden">
+        {/* MAIN DARK PURPLE BACKGROUND */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#120A1F] via-[#1C0F33] to-[#0B0514]" />
 
-  {/* SOFT GLOW ELEMENTS */}
-  <div className="absolute inset-0 opacity-30">
-    <div className="absolute top-10 left-10 w-[450px] h-[450px] bg-[#7A3AFF] rounded-full blur-[120px] opacity-40" />
-    <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#C084FC] rounded-full blur-[140px] opacity-30" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(130,70,255,0.25),transparent_60%)]" />
-  </div>
+        {/* SOFT GLOW ELEMENTS */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-10 w-[450px] h-[450px] bg-[#7A3AFF] rounded-full blur-[120px] opacity-40" />
+          <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#C084FC] rounded-full blur-[140px] opacity-30" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(130,70,255,0.25),transparent_60%)]" />
+        </div>
 
-  {/* CONTENT */}
-  <div className="relative max-w-7xl mx-auto px-4 text-center">
+        {/* CONTENT */}
+        {/* <div className="relative max-w-7xl mx-auto px-4 text-center">
     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20">
       <Sparkles className="w-4 h-4 text-purple-300" />
       <span className="text-sm font-semibold text-purple-100">AI-Powered UGC Ad Creation</span>
@@ -215,7 +257,6 @@ export default function UGCAdsPage() {
       Get professional-looking video ads in 24 hours — no filming required.
     </p>
 
-    {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
       <Link
         href="/contact"
@@ -231,7 +272,6 @@ export default function UGCAdsPage() {
       </button>
     </div>
 
-    {/* Stats */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
       {stats.map((stat, index) => {
         const Icon = stat.icon;
@@ -248,8 +288,63 @@ export default function UGCAdsPage() {
         );
       })}
     </div>
-  </div>
-</section>
+  </div> */}
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full">
+
+            {/* Left Side Text + Button */}
+            <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" ref={textRef}>
+
+                Powerful UGC for <span className="text-purple-500">Higher ROI</span>
+              </h1>
+              <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
+                Transform your product into compelling user-generated content using AI-powered models. Get professional-looking video ads in 24 hours — no filming required.            </p>
+
+              <div className="flex justify-center gap-3">
+                <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
+                  <span>Get Started Now</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                </button>
+                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
+                  <Play className="w-5 h-5" />
+                  Watch Demo
+                </button>
+              </div>
+
+
+            </div>
+
+            {/* Right Side Image */}
+            <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
+              <img
+                src="/assets/herosection/ugs-Photoroom.png"
+                alt="Hero Image"
+                className="w-full max-w-4xl rounded-lg shadow-lg"
+              />
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mt-8 mx-auto">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center mx-auto mb-3 border border-white/20">
+                    <Icon className="w-6 h-6 text-purple-300" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {stat.value}
+                  </div>
+                  <p className="text-sm text-gray-400">{stat.label}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
 
       <section className="py-20  bg-gradient-to-b from-[#120A1F] via-[#1C0F33] to-[#0B0514]">

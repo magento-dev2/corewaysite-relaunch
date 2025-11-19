@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Custom Data Dashboards & Access Portals",
+    "title": "Custom Data ", 
+    "title2": "Dashboards & Portals",
     "subtitle": "Build interactive, real-time data dashboards and secure access portals that transform complex datasets into actionable insights. Empower your team with custom visualizations, drill-down analytics, and role-based data access.",
     "buttons": [
       { "label": "Explore Solutions", "link": "#features" },

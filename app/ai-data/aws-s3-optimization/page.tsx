@@ -85,6 +85,7 @@ export default function AWSS3Optimization() {
         <main>
           <AWSS3Hero
             title={awsS3Data.hero.title}
+            title2={awsS3Data.hero.title2}
             subtitle={awsS3Data.hero.subtitle}
             buttons={awsS3Data.hero.buttons}
           />

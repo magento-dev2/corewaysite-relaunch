@@ -85,8 +85,10 @@ export default function DatasetManagementDelivery() {
         <main>
           <DatasetHero
             title={datasetManagementData.hero.title}
+            title2={datasetManagementData.hero.title2}
             subtitle={datasetManagementData.hero.subtitle}
             buttons={datasetManagementData.hero.buttons}
+            img={datasetManagementData.hero.img}
           />
 
           <DatasetOverview

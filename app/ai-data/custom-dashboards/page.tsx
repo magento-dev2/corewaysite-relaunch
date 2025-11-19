@@ -85,6 +85,7 @@ export default function CustomDashboards() {
         <main>
           <DashboardHero
             title={customDashboardData.hero.title}
+            title2={customDashboardData.hero.title2}
             subtitle={customDashboardData.hero.subtitle}
             buttons={customDashboardData.hero.buttons}
           />

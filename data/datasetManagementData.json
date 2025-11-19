@@ -1,6 +1,9 @@
 {
   "hero": {
-    "title": "Enterprise Dataset Management & Delivery Systems",
+    "title": "Enterprise Dataset",
+     "title2": "Management & Delivery Systems",
+         "img":"/assets/herosection/dataset-Photoroom.png",
+
     "subtitle": "Build scalable data pipelines, manage massive datasets, and deliver real-time insights with intelligent data infrastructure and AI-powered analytics.",
     "buttons": [
       { "label": "Explore Solutions", "link": "#features" },

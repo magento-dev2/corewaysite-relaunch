@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "AWS S3 Architecture & Cost Optimization",
+    "title": "AWS S3 Architecture &",
+    "title2": " Cost Optimization",
     "subtitle": "Design scalable S3 architectures, optimize storage costs by up to 70%, and implement best practices for performance, security, and data lifecycle management.",
     "buttons": [
       { "label": "Optimize Storage", "link": "#features" },
