@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "Security Tools",
+    "title2": "Fail2Ban, UFW & CrowdSec",
+    "img": "/assets/herosection/security-Photoroom.png",
+    "subtitle": "Comprehensive server security implementation with intrusion prevention, firewall configuration, and threat intelligence. Protect your infrastructure from attacks.",
+    "buttons": [
+      { "label": "Secure Your Servers", "link": "#contact" },
+      { "label": "View Solutions", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise Server Security Solutions",
+    "content": "We implement multi-layered security systems that protect your servers from intrusions, brute-force attacks, and malicious traffic. Fail2Ban monitors logs and automatically blocks suspicious IPs. UFW (Uncomplicated Firewall) provides simple yet powerful network filtering. CrowdSec offers collaborative security with real-time threat intelligence sharing across networks. Whether you're securing web servers, databases, or entire infrastructures, our security expertise ensures robust protection. We configure custom rules, set up automated responses, and integrate threat intelligence for proactive defense.",
+    "image": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg",
+    "stats": [
+      { "value": "99.9%", "label": "Attack Prevention" },
+      { "value": "1M+", "label": "Threats Blocked Daily" },
+      { "value": "<1sec", "label": "Response Time" },
+      { "value": "24/7", "label": "Active Protection" }
+    ]
+  },
+  "features": {
+    "title": "Our Security Services",
+    "items": [
+      {
+        "id": "fail2ban",
+        "title": "Fail2Ban Setup",
+        "desc": "Intrusion prevention system that bans IPs showing malicious behavior patterns.",
+        "icon": "shield"
+      },
+      {
+        "id": "ufw",
+        "title": "UFW Firewall",
+        "desc": "User-friendly firewall configuration for controlling network traffic and access.",
+        "icon": "server"
+      },
+      {
+        "id": "crowdsec",
+        "title": "CrowdSec Implementation",
+        "desc": "Collaborative security engine with community-powered threat intelligence.",
+        "icon": "cloud"
+      },
+      {
+        "id": "rules",
+        "title": "Custom Security Rules",
+        "desc": "Tailored rules for your specific applications and threat scenarios.",
+        "icon": "grid"
+      },
+      {
+        "id": "monitoring",
+        "title": "Security Monitoring",
+        "desc": "Real-time alerts, dashboards, and reporting for security incidents.",
+        "icon": "zap"
+      },
+      {
+        "id": "hardening",
+        "title": "Server Hardening",
+        "desc": "Comprehensive security hardening including SSH, ports, and services.",
+        "icon": "lock"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Security Stack We Implement",
+    "description": "Modern security tools for comprehensive server protection.",
+    "items": [
+      { "name": "Fail2Ban", "id": "fail2ban", "desc": "Intrusion prevention" },
+      { "name": "UFW", "id": "ufw", "desc": "Uncomplicated Firewall" },
+      { "name": "CrowdSec", "id": "crowdsec", "desc": "Collaborative security" },
+      { "name": "iptables", "id": "iptables", "desc": "Advanced firewall rules" },
+      { "name": "ModSecurity", "id": "modsecurity", "desc": "Web application firewall" },
+      { "name": "OSSEC", "id": "ossec", "desc": "Host intrusion detection" }
+    ]
+  },
+  "toolComparison": {
+    "title": "Security Tools Comparison",
+    "subtitle": "Understanding the security layer approach",
+    "tools": [
+      {
+        "name": "Fail2Ban",
+        "type": "Intrusion Prevention",
+        "method": "Log Analysis",
+        "features": [
+          "Monitors log files for attack patterns",
+          "Automatically bans malicious IPs",
+          "Configurable ban duration and thresholds",
+          "Email notifications for incidents",
+          "Works with SSH, HTTP, FTP, and more"
+        ],
+        "bestFor": "Brute-force protection, SSH hardening, login attempt monitoring",
+        "protection": "Application Layer (Layer 7)"
+      },
+      {
+        "name": "UFW",
+        "type": "Firewall",
+        "method": "Network Filtering",
+        "features": [
+          "Simple command-line interface",
+          "IPv4 and IPv6 support",
+          "Application profiles",
+          "Default deny with explicit allows",
+          "Integration with iptables"
+        ],
+        "bestFor": "Network access control, port filtering, service restriction",
+        "protection": "Network Layer (Layer 3-4)"
+      },
+      {
+        "name": "CrowdSec",
+        "type": "Collaborative Security",
+        "method": "Behavioral Analysis + CTI",
+        "features": [
+          "Community threat intelligence sharing",
+          "Machine learning behavior analysis",
+          "Multi-log source aggregation",
+          "Real-time threat blocking",
+          "Bouncers for various services"
+        ],
+        "bestFor": "Advanced threat detection, DDoS mitigation, zero-day protection",
+        "protection": "Multi-Layer (3-7)"
+      },
+      {
+        "name": "Combined Approach",
+        "type": "Defense in Depth",
+        "method": "Layered Security",
+        "features": [
+          "UFW blocks unauthorized network access",
+          "Fail2Ban stops brute-force attempts",
+          "CrowdSec detects advanced threats",
+          "Multiple layers of protection",
+          "Redundancy and fail-safe design"
+        ],
+        "bestFor": "Maximum security with redundant protection layers",
+        "protection": "All Layers (Complete)"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Security Implementation Scenarios",
+    "cases": [
+      {
+        "id": "web-servers",
+        "title": "Web Server Protection",
+        "description": "Secure Apache/Nginx with Fail2Ban, UFW, and CrowdSec for comprehensive defense",
+        "image": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg"
+      },
+      {
+        "id": "ssh",
+        "title": "SSH Hardening",
+        "description": "Block brute-force SSH attacks with automated IP banning and rate limiting",
+        "image": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+      },
+      {
+        "id": "database",
+        "title": "Database Security",
+        "description": "Restrict database access with firewall rules and intrusion detection",
+        "image": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infrastructure Security",
+        "description": "Enterprise-wide security with centralized monitoring and threat response",
+        "image": "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Professional Security Configuration Matters",
+    "description": "Server security is not optional—it's critical for business continuity. Improperly configured security tools create false confidence while leaving vulnerabilities exposed. We implement defense-in-depth strategies with multiple protection layers. We configure custom rules tailored to your applications and threat landscape. We set up real-time monitoring and alerting for immediate incident response. We optimize performance to ensure security doesn't impact user experience. Our security expertise has blocked millions of attacks while maintaining zero false positives for legitimate users.",
+    "features": [
+      "Multi-layer defense blocks 99.9% of attacks automatically",
+      "Custom rules eliminate false positives for legitimate users",
+      "Real-time threat intelligence stops zero-day attacks",
+      "24/7 monitoring with instant incident response"
+    ]
+  }
+}

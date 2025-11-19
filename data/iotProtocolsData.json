@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "IoT Protocols",
+    "title2": "MQTT & WebSockets",
+    "img": "/assets/herosection/iot-Photoroom.png",
+    "subtitle": "Real-time communication protocols for IoT devices, messaging systems, and live applications. Expert implementation of MQTT, WebSockets, and IoT connectivity.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Solutions", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Real-Time Communication Expertise",
+    "content": "We implement robust real-time communication systems using industry-standard protocols. MQTT powers efficient IoT device connectivity with publish-subscribe messaging optimized for unreliable networks. WebSockets enable full-duplex bidirectional communication for live applications, chat systems, and real-time dashboards. CoAP provides RESTful communication for constrained devices. Whether you're building IoT ecosystems, live collaboration tools, or real-time monitoring systems, our protocol expertise ensures reliable, efficient communication at any scale. We handle broker setup, message routing, security, and performance optimization.",
+    "image": "https://images.pexels.com/photos/8438979/pexels-photo-8438979.jpeg",
+    "stats": [
+      { "value": "1M+", "label": "Messages Per Second" },
+      { "value": "<10ms", "label": "Average Latency" },
+      { "value": "99.9%", "label": "Message Delivery" },
+      { "value": "100K+", "label": "Concurrent Connections" }
+    ]
+  },
+  "features": {
+    "title": "Our Real-Time Protocol Services",
+    "items": [
+      {
+        "id": "mqtt",
+        "title": "MQTT Implementation",
+        "desc": "Lightweight publish-subscribe protocol for IoT devices and machine-to-machine communication.",
+        "icon": "share"
+      },
+      {
+        "id": "websockets",
+        "title": "WebSocket Development",
+        "desc": "Full-duplex real-time communication for web applications, chat, and live updates.",
+        "icon": "zap"
+      },
+      {
+        "id": "coap",
+        "title": "CoAP Protocol",
+        "desc": "Constrained Application Protocol for low-power IoT devices and sensors.",
+        "icon": "server"
+      },
+      {
+        "id": "broker",
+        "title": "Message Broker Setup",
+        "desc": "Mosquitto, EMQX, or HiveMQ broker configuration with clustering and scaling.",
+        "icon": "cloud"
+      },
+      {
+        "id": "security",
+        "title": "Protocol Security",
+        "desc": "TLS encryption, authentication, and authorization for secure messaging.",
+        "icon": "shield"
+      },
+      {
+        "id": "monitoring",
+        "title": "Real-Time Monitoring",
+        "desc": "Message tracking, performance metrics, and connection health monitoring.",
+        "icon": "grid"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "IoT Protocol Stack We Use",
+    "description": "Modern tools and brokers for reliable real-time communication.",
+    "items": [
+      { "name": "MQTT 5.0", "id": "mqtt", "desc": "Enhanced pub-sub protocol" },
+      { "name": "WebSocket", "id": "websocket", "desc": "Full-duplex communication" },
+      { "name": "Mosquitto", "id": "mosquitto", "desc": "Lightweight MQTT broker" },
+      { "name": "EMQX", "id": "emqx", "desc": "Scalable MQTT platform" },
+      { "name": "Socket.IO", "id": "socketio", "desc": "WebSocket library" },
+      { "name": "Redis Pub/Sub", "id": "redis", "desc": "Message distribution" }
+    ]
+  },
+  "protocolComparison": {
+    "title": "Protocol Comparison Guide",
+    "subtitle": "Choose the right protocol for your use case",
+    "protocols": [
+      {
+        "name": "MQTT",
+        "type": "Publish-Subscribe",
+        "overhead": "Very Low (2 bytes)",
+        "features": [
+          "QoS levels (0, 1, 2) for reliability",
+          "Persistent sessions and retained messages",
+          "Last Will and Testament (LWT)",
+          "Optimized for unreliable networks",
+          "Perfect for IoT devices and sensors"
+        ],
+        "bestFor": "IoT devices, sensors, low-bandwidth scenarios, unreliable networks",
+        "latency": "~10-50ms"
+      },
+      {
+        "name": "WebSocket",
+        "type": "Full-Duplex",
+        "overhead": "Low (2-14 bytes)",
+        "features": [
+          "Bidirectional real-time communication",
+          "Works over HTTP/HTTPS (port 80/443)",
+          "Native browser support",
+          "Persistent connections",
+          "Event-driven architecture"
+        ],
+        "bestFor": "Web applications, chat, live dashboards, collaborative tools",
+        "latency": "~5-20ms"
+      },
+      {
+        "name": "CoAP",
+        "type": "Request-Response",
+        "overhead": "Very Low (4 bytes)",
+        "features": [
+          "RESTful design for constrained devices",
+          "UDP-based for minimal overhead",
+          "Built-in discovery mechanisms",
+          "Observe pattern for notifications",
+          "DTLS security support"
+        ],
+        "bestFor": "Constrained devices, battery-powered sensors, mesh networks",
+        "latency": "~20-100ms"
+      },
+      {
+        "name": "SSE",
+        "type": "Server-Push",
+        "overhead": "Medium",
+        "features": [
+          "One-way server-to-client streaming",
+          "Automatic reconnection",
+          "Simple HTTP-based protocol",
+          "Built-in event IDs",
+          "UTF-8 text only"
+        ],
+        "bestFor": "Live feeds, notifications, server-sent updates, stock tickers",
+        "latency": "~10-30ms"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Real-Time Communication Use Cases",
+    "cases": [
+      {
+        "id": "iot",
+        "title": "IoT Device Networks",
+        "description": "Connect thousands of sensors and devices with MQTT for efficient data collection",
+        "image": "https://images.pexels.com/photos/8438979/pexels-photo-8438979.jpeg"
+      },
+      {
+        "id": "chat",
+        "title": "Real-Time Chat & Messaging",
+        "description": "Build instant messaging systems with WebSocket for low-latency communication",
+        "image": "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg"
+      },
+      {
+        "id": "monitoring",
+        "title": "Live Monitoring Dashboards",
+        "description": "Stream metrics and alerts in real-time for operational visibility",
+        "image": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg"
+      },
+      {
+        "id": "smart-home",
+        "title": "Smart Home Automation",
+        "description": "Connect and control home devices with responsive MQTT-based systems",
+        "image": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Professional Protocol Implementation Matters",
+    "description": "Real-time communication protocols require expert implementation to ensure reliability and performance. Poor protocol setup leads to message loss, high latency, and connection instability. We design message routing architectures that handle millions of messages per second. We implement QoS levels and acknowledgment patterns that guarantee delivery. We configure brokers with clustering and load balancing for high availability. We secure communications with TLS encryption and authentication. Our protocol expertise ensures your real-time systems perform flawlessly under any load.",
+    "features": [
+      "Expert broker configuration handles 1M+ messages per second",
+      "Proper QoS implementation ensures 99.9% message delivery",
+      "Clustering and load balancing provide 99.99% uptime",
+      "TLS encryption and authentication secure all communications"
+    ]
+  }
+}
