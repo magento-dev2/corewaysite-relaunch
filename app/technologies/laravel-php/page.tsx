@@ -123,11 +123,11 @@ export default function LaravelPHPTechnologyPage() {
             cases={laravelData.useCases.cases}
           />
 
-          <ProcessDiagram
+          {/* <ProcessDiagram
             title={laravelData.process.title}
             description={laravelData.process.description}
             steps={laravelData.process.steps}
-          />
+          /> */}
 
           <AutomationSection
             title={laravelData.benefits.title}

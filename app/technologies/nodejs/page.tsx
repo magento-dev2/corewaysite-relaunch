@@ -120,11 +120,11 @@ export default function NodeJSTechnologyPage() {
             cases={nodeData.useCases.cases}
           />
 
-          <ProcessDiagram
+          {/* <ProcessDiagram
             title={nodeData.process.title}
             description={nodeData.process.description}
             steps={nodeData.process.steps}
-          />
+          /> */}
 
           <AutomationSection
             title={nodeData.benefits.title}

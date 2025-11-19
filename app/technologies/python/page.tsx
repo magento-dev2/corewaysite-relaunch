@@ -120,11 +120,11 @@ export default function PythonTechnologyPage() {
             cases={pythonData.useCases.cases}
           />
 
-          <ProcessDiagram
+          {/* <ProcessDiagram
             title={pythonData.process.title}
             description={pythonData.process.description}
             steps={pythonData.process.steps}
-          />
+          /> */}
 
           <AutomationSection
             title={pythonData.benefits.title}
