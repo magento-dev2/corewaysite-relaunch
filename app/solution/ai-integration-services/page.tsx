@@ -85,6 +85,7 @@ export default function AIIntegrationServices() {
         <main>
           <AIIntegrationHero
             title={aiIntegrationData.hero.title}
+            title2={aiIntegrationData.hero.title2}
             subtitle={aiIntegrationData.hero.subtitle}
             buttons={aiIntegrationData.hero.buttons}
           />

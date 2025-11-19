@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Seamless Platform Migration & Replatforming Services",
+    "title": "Seamless Platform ",
+    "title2":" Migration Services",
     "subtitle": "Modernize your technology stack with zero downtime. Expert migration services for e-commerce, SaaS, and enterprise applications.",
     "buttons": [
       { "label": "Start Migration", "link": "#features" },

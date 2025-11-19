@@ -85,6 +85,7 @@ export default function AIPoweredApplicationPlatforms() {
         <main>
           <AIPlatformsHero
             title={aiPlatformsData.hero.title}
+            title2={aiPlatformsData.hero.title2}
             subtitle={aiPlatformsData.hero.subtitle}
             buttons={aiPlatformsData.hero.buttons}
           />

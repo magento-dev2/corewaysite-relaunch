@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Seamless AI Integration Services",
+    "title": "Seamless AI ",
+    "title2":" Integration Services",
     "subtitle": "Connect artificial intelligence with your existing systems for enhanced automation and intelligent workflows.",
     "buttons": [
       { "label": "Explore Integration", "link": "#features" },

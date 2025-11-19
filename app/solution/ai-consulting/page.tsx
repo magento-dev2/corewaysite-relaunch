@@ -85,6 +85,7 @@ export default function AIConsulting() {
         <main>
           <AIConsultingHero
             title={aiConsultingData.hero.title}
+            title2={aiConsultingData.hero.title2}
             subtitle={aiConsultingData.hero.subtitle}
             buttons={aiConsultingData.hero.buttons}
           />

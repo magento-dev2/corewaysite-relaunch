@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
+import TableOfContents from "@/components/home/TableOfContents";
 
 const blogPost = {
   title: "How to Perform a Comprehensive E-commerce Audit: Performance, Code, Technical and SEO Audit Steps",
@@ -14,7 +15,7 @@ const blogPost = {
 
     <p>This guide will walk you through the essential steps of conducting a thorough e-commerce audit, covering performance optimization, code quality, technical infrastructure, and SEO best practices.</p>
 
-    <h2>Why E-commerce Audits Matter</h2>
+<h2 id="why-audits-matter">Why E-commerce Audits Matter</h2>
 
     <p>Regular audits are essential for maintaining a healthy online store. They help you:</p>
 
@@ -26,7 +27,7 @@ const blogPost = {
       <li>Stay competitive in your industry</li>
     </ul>
 
-    <h2>1. Performance Audit</h2>
+<h2 id="performance-audit">1. Performance Audit</h2>
 
     <p>Site speed directly impacts conversion rates. Studies show that a one-second delay in page load time can result in a 7% reduction in conversions.</p>
 
@@ -52,7 +53,7 @@ const blogPost = {
       <li><strong>Reduce HTTP Requests:</strong> Combine files and use sprite sheets where possible.</li>
     </ol>
 
-    <h2>2. Code Quality Audit</h2>
+<h2 id="code-quality">2. Code Quality Audit</h2>
 
     <p>Clean, maintainable code is essential for long-term success. Poor code quality leads to bugs, security vulnerabilities, and difficulty implementing new features.</p>
 
@@ -66,7 +67,7 @@ const blogPost = {
       <li>Ensure consistent coding standards</li>
     </ul>
 
-    <h2>3. Technical Infrastructure Audit</h2>
+<h2 id="technical-infrastructure">3. Technical Infrastructure Audit</h2>
 
     <p>Your technical infrastructure forms the foundation of your e-commerce site. Issues here can cause serious problems down the line.</p>
 
@@ -80,7 +81,7 @@ const blogPost = {
       <li><strong>Robots.txt:</strong> Check for proper search engine crawling directives</li>
     </ol>
 
-    <h2>4. SEO Audit</h2>
+<h2 id="seo-audit">4. SEO Audit</h2>
 
     <p>Search engine optimization drives organic traffic to your store. A thorough SEO audit reveals opportunities to improve your visibility.</p>
 
@@ -104,7 +105,7 @@ const blogPost = {
       <li>Ensure proper URL structure and hierarchy</li>
     </ol>
 
-    <h2>5. User Experience Audit</h2>
+<h2 id="ux-audit">5. User Experience Audit</h2>
 
     <p>Even with perfect technical implementation, poor user experience will hurt conversions. Evaluate your site from a customer's perspective.</p>
 
@@ -119,7 +120,7 @@ const blogPost = {
       <li>Form design and error handling</li>
     </ul>
 
-    <h2>6. Security Audit</h2>
+    <h2 id="security-audit">6. Security Audit</h2>
 
     <p>Security breaches can destroy customer trust and result in significant financial losses. Regular security audits are non-negotiable.</p>
 
@@ -134,7 +135,7 @@ const blogPost = {
       <li><strong>Security Headers:</strong> Implement CSP, HSTS, and other security headers</li>
     </ol>
 
-    <h2>Tools for E-commerce Auditing</h2>
+<h2 id="tools">Tools for E-commerce Auditing</h2>
 
     <p>Leverage these tools to streamline your audit process:</p>
 
@@ -147,7 +148,7 @@ const blogPost = {
       <li><strong>Chrome DevTools:</strong> In-depth code and network analysis</li>
     </ul>
 
-    <h2>Creating an Action Plan</h2>
+<h2 id="action-plan">Creating an Action Plan</h2>
 
     <p>After completing your audit, prioritize issues based on:</p>
 
@@ -234,7 +235,7 @@ export default function BlogDetailPage() {
           style={{ backgroundImage: `url(${blogPost.image})` }}
         />
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 flex flex-col justify-center" style={{ minHeight: "650px" }}>
-          <Link href="/blog" className="inline-flex items-center gap-2 text-white hover:text-orange-500 transition-colors mb-8 group">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-white hover:text-purple-500 transition-colors mb-8 group">
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="text-lg">Back to Blog</span>
           </Link>
@@ -269,7 +270,7 @@ export default function BlogDetailPage() {
           <article className="lg:col-span-8">
             <div
               className="prose prose-lg max-w-none text-black"
-           
+
               dangerouslySetInnerHTML={{ __html: blogPost.content }}
             />
 
@@ -315,7 +316,7 @@ export default function BlogDetailPage() {
             <div className="sticky top-24 space-y-8">
               <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-purple-600">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h3>
-                <nav className="space-y-3">
+                {/* <nav className="space-y-3">
                   {tableOfContents.map((item) => (
                     <a
                       key={item.id}
@@ -325,7 +326,8 @@ export default function BlogDetailPage() {
                       {item.title}
                     </a>
                   ))}
-                </nav>
+                </nav> */}
+                <TableOfContents tableOfContents={tableOfContents} />
               </div>
 
               <div className="bg-gray-50 rounded-lg p-6">
@@ -370,3 +372,6 @@ export default function BlogDetailPage() {
     </div>
   );
 }
+
+
+

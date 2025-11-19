@@ -85,6 +85,7 @@ export default function SaaSInfrastructureDevOps() {
         <main>
           <SaaSHero
             title={saasDevOpsData.hero.title}
+            title2={saasDevOpsData.hero.title2}
             subtitle={saasDevOpsData.hero.subtitle}
             buttons={saasDevOpsData.hero.buttons}
           />

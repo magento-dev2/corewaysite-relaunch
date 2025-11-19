@@ -85,6 +85,7 @@ export default function ReplatformingMigration() {
         <main>
           <ReplatformingHero
             title={replatformingData.hero.title}
+            title2={replatformingData.hero.title2}
             subtitle={replatformingData.hero.subtitle}
             buttons={replatformingData.hero.buttons}
           />

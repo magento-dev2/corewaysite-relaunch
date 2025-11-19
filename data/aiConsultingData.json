@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Transform Your Business with AI Consulting Expertise",
+    "title": "Smarter Decisions with ",
+    "title2" :"AI Experts",   
     "subtitle": "Strategic AI implementation and machine learning solutions that deliver measurable business value.",
     "buttons": [
       { "label": "Start AI Journey", "link": "#features" },

@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Build Connected IoT Applications for the Future",
+    "title": "Build Smart",
+    "title2":" IoT Experiences",
     "subtitle": "End-to-end IoT solutions from devices to cloud platforms.",
     "buttons": [
       { "label": "Explore IoT Solutions", "link": "#features" },

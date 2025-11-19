@@ -1,15 +1,55 @@
 import { useEffect, useRef, useState } from 'react';
 import { Zap, Link2, GitBranch, Webhook, ArrowRight } from 'lucide-react';
+import { gsap } from "gsap";
+import SplitType from "split-type";
 
 interface CustomAPIHeroProps {
   title: string;
   subtitle: string;
   buttons: { label: string; link: string }[];
+  title2: string;
 }
 
-export default function CustomAPIHero({ title, subtitle, buttons }: CustomAPIHeroProps) {
+export default function CustomAPIHero({ title, subtitle, buttons, title2 }: CustomAPIHeroProps) {
   const [apiCalls, setApiCalls] = useState<Array<{ id: number; x: number; y: number; active: boolean }>>([]);
   const [connections, setConnections] = useState<Array<{ from: number; to: number; progress: number }>>([]);
+    const textRef = useRef<HTMLHeadingElement>(null);
+    useEffect(() => {
+          if (!textRef.current) return;
+          // 🌀 Split text into individual characters
+          const split = new SplitType(textRef.current, { types: "chars,words" });
+      
+          // ✨ Intro animation
+          gsap.from(split.chars, {
+            opacity: 0,
+            y: 40,
+            rotateX: 90,
+            stagger: 0.04,
+            duration: 1.2,
+            ease: "power4.out",
+          });
+      
+          // 🎯 Cursor-based motion effect
+          const handleMouseMove = (e: MouseEvent) => {
+            const { innerWidth, innerHeight } = window;
+            const x = (e.clientX / innerWidth - 0.5) * 20; // rotate limit
+            const y = (e.clientY / innerHeight - 0.5) * 20;
+      
+            gsap.to(textRef.current, {
+              rotationY: x,
+              rotationX: -y,
+              transformPerspective: 800,
+              ease: "power2.out",
+              duration: 0.6,
+            });
+          };
+      
+          window.addEventListener("mousemove", handleMouseMove);
+          return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            split.revert(); // cleanup
+          };
+        }, []);
 
   useEffect(() => {
     const calls = Array.from({ length: 6 }, (_, i) => ({
@@ -114,7 +154,7 @@ export default function CustomAPIHero({ title, subtitle, buttons }: CustomAPIHer
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-8 animate-slideDown">
           <Link2 className="text-purple-500 animate-pulse" size={16} />
           <span className="text-gray-300 text-sm">API & Integration Solutions</span>
@@ -144,7 +184,54 @@ export default function CustomAPIHero({ title, subtitle, buttons }: CustomAPIHer
             </a>
           ))}
         </div>
-      </div>
+      </div> */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div className="flex flex-col md:flex-row items-center justify-between w-full">
+            
+                      {/* Left Side Text + Button */}
+                      <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight" ref={textRef} >
+                       {title}<span className="text-purple-500">{title2}</span>
+                        </h1>
+                        <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
+                          {subtitle}
+                        </p>
+            
+                        {/* <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
+                          <span>{button.label}</span>
+                          <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                        </button> */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                      {buttons.map((button, index) => (
+                        <a
+                          key={index}
+                          href={button.link}
+                          className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${
+                            index === 0
+                              ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                              : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                          }`}
+                        >
+                          <span>{button.label}</span>
+                          <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                        </a>
+                      ))}
+                    </div>
+            
+                      </div>
+            
+                      {/* Right Side Image */}
+                      <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
+                        <img
+                          // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
+                         src="/assets/herosection/customapi-Photoroom.png"
+                          alt="Hero Image"
+                          className="w-full max-w-4xl rounded-lg shadow-lg"
+                        />
+                      </div>
+            
+                    </div>
+                  </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
 

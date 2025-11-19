@@ -85,6 +85,7 @@ export default function CustomAPISystemsIntegration() {
         <main>
           <CustomAPIHero
             title={customApiData.hero.title}
+            title2={customApiData.hero.title2}
             subtitle={customApiData.hero.subtitle}
             buttons={customApiData.hero.buttons}
           />

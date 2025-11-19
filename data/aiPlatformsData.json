@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Build Intelligent Applications with AI-Powered Platforms",
+    "title": "Build Applications with ",
+    "title2":"AI Platforms",
     "subtitle": "Transform your business with scalable, AI-driven application platforms.",
     "buttons": [
       { "label": "Explore AI Solutions", "link": "#features" },

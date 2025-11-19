@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Build Scalable SaaS Infrastructure with Modern DevOps",
+    "title": "DevOps Infrastructure for",
+    "title2": " Modern SaaS",
     "subtitle": "Enterprise-grade cloud infrastructure and DevOps automation for rapid deployment and continuous delivery.",
     "buttons": [
       { "label": "Explore Solutions", "link": "#features" },

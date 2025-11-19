@@ -85,6 +85,7 @@ export default function IoTApplicationDevelopment() {
         <main>
           <IoTHero
             title={iotApplicationsData.hero.title}
+            title2={iotApplicationsData.hero.title2}
             subtitle={iotApplicationsData.hero.subtitle}
             buttons={iotApplicationsData.hero.buttons}
           />

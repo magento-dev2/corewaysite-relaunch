@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Custom API & Systems Integration Solutions",
+    "title": "Custom API & Systems ",
+    "title2": "Integration Solutions",
     "subtitle": "Connect your business systems seamlessly. Expert API development, third-party integrations, and custom middleware solutions.",
     "buttons": [
       { "label": "Explore Services", "link": "#features" },
