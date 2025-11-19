@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "title": "Laravel / PHP",
+    "title2": "Development",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Build elegant, powerful web applications with Laravel and PHP. Expert development for enterprise platforms, APIs, and full-stack solutions.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Portfolio", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Why Laravel/PHP for Your Project",
+    "content": "Laravel has revolutionized PHP development with its elegant syntax and powerful features. As the most popular PHP framework, Laravel combines ease of use with enterprise-grade capabilities. Whether you need robust web applications, RESTful APIs, e-commerce platforms, or SaaS solutions, our Laravel expertise ensures scalable, secure, and maintainable code. We leverage Laravel's rich ecosystem including Eloquent ORM, queue systems, broadcasting, and extensive package library to build applications that excel in performance and developer experience. PHP powers 77% of the web, and Laravel is leading its modern renaissance.",
+    "image": "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg",
+    "stats": [
+      { "value": "77%", "label": "Of Websites Use PHP" },
+      { "value": "#1", "label": "PHP Framework" },
+      { "value": "10x", "label": "Faster with Laravel" },
+      { "value": "300+", "label": "Projects Delivered" }
+    ]
+  },
+  "features": {
+    "title": "Our Laravel/PHP Development Services",
+    "items": [
+      {
+        "id": "web-apps",
+        "title": "Custom Web Applications",
+        "desc": "Full-featured web applications with Laravel's MVC architecture and Blade templating.",
+        "icon": "layout"
+      },
+      {
+        "id": "api-development",
+        "title": "RESTful API Development",
+        "desc": "Secure, scalable APIs with Laravel Sanctum and API resource transformations.",
+        "icon": "server"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce Solutions",
+        "desc": "Custom online stores with payment gateways, inventory, and order management.",
+        "icon": "smartphone"
+      },
+      {
+        "id": "cms",
+        "title": "Content Management",
+        "desc": "Custom CMS platforms with flexible content types and publishing workflows.",
+        "icon": "package"
+      },
+      {
+        "id": "saas",
+        "title": "SaaS Applications",
+        "desc": "Multi-tenant SaaS platforms with subscription billing and team management.",
+        "icon": "cloud"
+      },
+      {
+        "id": "legacy",
+        "title": "Legacy PHP Migration",
+        "desc": "Modernize legacy PHP applications to Laravel framework architecture.",
+        "icon": "refresh"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Laravel/PHP Tech Stack We Use",
+    "description": "Modern tools and packages for building robust Laravel applications.",
+    "items": [
+      { "name": "Laravel 11", "id": "laravel", "desc": "Latest framework version" },
+      { "name": "Livewire", "id": "livewire", "desc": "Dynamic UI components" },
+      { "name": "Inertia.js", "id": "inertia", "desc": "Modern monolith approach" },
+      { "name": "Eloquent ORM", "id": "eloquent", "desc": "Database abstraction" },
+      { "name": "Laravel Horizon", "id": "horizon", "desc": "Queue monitoring" },
+      { "name": "Laravel Vapor", "id": "vapor", "desc": "Serverless deployment" }
+    ]
+  },
+  "useCases": {
+    "title": "Laravel/PHP Use Cases & Applications",
+    "cases": [
+      {
+        "id": "enterprise",
+        "title": "Enterprise Platforms",
+        "description": "Large-scale business applications with complex workflows and integrations",
+        "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce Stores",
+        "description": "Full-featured online stores with payment processing and inventory",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+      },
+      {
+        "id": "saas",
+        "title": "SaaS Platforms",
+        "description": "Multi-tenant subscription-based applications with billing systems",
+        "image": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+      },
+      {
+        "id": "portals",
+        "title": "Web Portals",
+        "description": "Customer portals, dashboards, and content management systems",
+        "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Laravel Development Process",
+    "description": "Structured approach to building enterprise-grade Laravel applications.",
+    "steps": [
+      {
+        "id": "planning",
+        "number": "01",
+        "title": "Planning & Architecture",
+        "description": "Define requirements, design database schema, and plan feature modules"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "UI/UX Design",
+        "description": "Create wireframes, design interfaces, and plan user flows"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Laravel Development",
+        "description": "Build features with MVC architecture, repositories, and services"
+      },
+      {
+        "id": "testing",
+        "number": "04",
+        "title": "Testing & Security",
+        "description": "PHPUnit tests, feature tests, and security vulnerability scanning"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Support",
+        "description": "Deploy with Laravel Forge/Vapor and provide ongoing maintenance"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Laravel/PHP Development",
+    "description": "Laravel brings modern development practices to PHP with elegant syntax and powerful features. Its comprehensive ecosystem includes authentication, authorization, caching, queues, and real-time broadcasting out of the box. Eloquent ORM makes database operations intuitive. Laravel's vibrant community provides thousands of packages. Excellent documentation and learning resources. Forge and Vapor simplify deployment. Laravel combines developer happiness with enterprise capabilities, making it the perfect choice for web applications of any scale.",
+    "features": [
+      "Elegant syntax increases developer productivity by 10x",
+      "Comprehensive ecosystem with built-in authentication, queues, and more",
+      "Powers 77% of web including Facebook, Wikipedia, and WordPress",
+      "Active community with 2,000+ packages and extensive documentation"
+    ]
+  }
+}

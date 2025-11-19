@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "title": "Python Development",
+    "title2": "Services",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Build powerful, scalable applications with Python. Expert development for web APIs, data science, machine learning, and automation solutions.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Portfolio", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Why Python for Your Next Project",
+    "content": "Python has become the language of choice for modern application development, data science, and AI. With its clean syntax, extensive libraries, and versatility, Python enables rapid development of robust applications. Whether you need RESTful APIs with Flask, high-performance APIs with FastAPI, data pipelines, machine learning models, or automation scripts, our Python expertise delivers scalable, maintainable solutions. We leverage Python's rich ecosystem including Django, Flask, FastAPI, NumPy, Pandas, and TensorFlow to build applications that solve complex business problems efficiently.",
+    "image": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+    "stats": [
+      { "value": "15M+", "label": "Python Developers Worldwide" },
+      { "value": "3x", "label": "Faster Development" },
+      { "value": "#1", "label": "Language for AI/ML" },
+      { "value": "200+", "label": "Projects Delivered" }
+    ]
+  },
+  "features": {
+    "title": "Our Python Development Services",
+    "items": [
+      {
+        "id": "flask-api",
+        "title": "Flask Web Development",
+        "desc": "Lightweight, flexible web applications and RESTful APIs with Flask framework.",
+        "icon": "server"
+      },
+      {
+        "id": "fastapi",
+        "title": "FastAPI Development",
+        "desc": "High-performance async APIs with automatic documentation and validation.",
+        "icon": "zap"
+      },
+      {
+        "id": "django",
+        "title": "Django Applications",
+        "desc": "Full-featured web applications with Django's batteries-included approach.",
+        "icon": "building"
+      },
+      {
+        "id": "data-science",
+        "title": "Data Science & Analytics",
+        "desc": "Data processing pipelines, analysis, and visualization with Pandas and NumPy.",
+        "icon": "grid"
+      },
+      {
+        "id": "machine-learning",
+        "title": "Machine Learning",
+        "desc": "ML models and AI solutions using TensorFlow, PyTorch, and scikit-learn.",
+        "icon": "zap"
+      },
+      {
+        "id": "automation",
+        "title": "Automation & Scripting",
+        "desc": "Process automation, web scraping, and task scheduling solutions.",
+        "icon": "refresh"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Python Tech Stack We Use",
+    "description": "Modern frameworks and tools for building powerful Python applications.",
+    "items": [
+      { "name": "FastAPI", "id": "fastapi", "desc": "High-performance async framework" },
+      { "name": "Flask", "id": "flask", "desc": "Lightweight web framework" },
+      { "name": "Django", "id": "django", "desc": "Full-featured web framework" },
+      { "name": "SQLAlchemy", "id": "sqlalchemy", "desc": "Python SQL toolkit" },
+      { "name": "Celery", "id": "celery", "desc": "Distributed task queue" },
+      { "name": "Pandas", "id": "pandas", "desc": "Data analysis library" }
+    ]
+  },
+  "useCases": {
+    "title": "Python Use Cases & Applications",
+    "cases": [
+      {
+        "id": "api-backend",
+        "title": "RESTful API Backends",
+        "description": "Fast, scalable APIs with automatic validation and documentation",
+        "image": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg"
+      },
+      {
+        "id": "data-platform",
+        "title": "Data Platforms",
+        "description": "ETL pipelines, data warehouses, and analytics platforms",
+        "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
+      },
+      {
+        "id": "ml-systems",
+        "title": "Machine Learning Systems",
+        "description": "AI-powered applications with predictive analytics and automation",
+        "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+      },
+      {
+        "id": "automation",
+        "title": "Business Automation",
+        "description": "Automated workflows, web scraping, and process optimization",
+        "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Python Development Process",
+    "description": "Agile methodology for delivering high-quality Python applications.",
+    "steps": [
+      {
+        "id": "requirements",
+        "number": "01",
+        "title": "Requirements Analysis",
+        "description": "Define project scope, choose framework, and design architecture"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "API & Database Design",
+        "description": "Create API specifications, database models, and data flow diagrams"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Agile Development",
+        "description": "Build features iteratively with test-driven development approach"
+      },
+      {
+        "id": "testing",
+        "number": "04",
+        "title": "Testing & Quality",
+        "description": "Unit tests, integration tests, and performance optimization"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Monitoring",
+        "description": "Docker containerization, CI/CD setup, and production monitoring"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Python Development",
+    "description": "Python offers unmatched versatility and productivity for modern software development. Its readable syntax accelerates development and reduces maintenance costs. Rich ecosystem with 400,000+ packages on PyPI provides solutions for any use case. Exceptional for data science, machine learning, and AI applications. Strong typing support with type hints improves code quality. Backed by major tech companies and a massive global community ensuring long-term viability.",
+    "features": [
+      "Rapid development with clean, readable syntax saves 30-40% time",
+      "400,000+ packages available on PyPI for any functionality",
+      "Industry standard for AI/ML with TensorFlow, PyTorch, scikit-learn",
+      "Used by Google, Netflix, Spotify, and 80% of data scientists"
+    ]
+  }
+}
