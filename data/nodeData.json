@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "title": "Node.js Development",
+    "title2": "Services",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Build scalable, high-performance backend systems with Node.js. Expert development for APIs, microservices, and real-time applications.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Portfolio", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Why Node.js for Backend Development",
+    "content": "Node.js has revolutionized backend development with its non-blocking, event-driven architecture. Built on Chrome's V8 engine, Node.js delivers exceptional performance for I/O-intensive applications. Whether you need RESTful APIs, GraphQL servers, microservices, or real-time applications, our Node.js expertise ensures scalable, maintainable solutions. We leverage modern Node.js features including async/await, worker threads, and streams to build backends that handle millions of requests efficiently. With JavaScript on both frontend and backend, we deliver full-stack solutions faster.",
+    "image": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg",
+    "stats": [
+      { "value": "20M+", "label": "Node.js Developers" },
+      { "value": "2x", "label": "Faster Than Traditional" },
+      { "value": "85%", "label": "Fortune 500 Use Node" },
+      { "value": "500+", "label": "APIs Built" }
+    ]
+  },
+  "features": {
+    "title": "Our Node.js Development Services",
+    "items": [
+      {
+        "id": "rest-api",
+        "title": "RESTful API Development",
+        "desc": "Scalable, secure REST APIs with proper authentication and documentation.",
+        "icon": "server"
+      },
+      {
+        "id": "graphql",
+        "title": "GraphQL APIs",
+        "desc": "Flexible GraphQL servers for efficient data fetching and real-time updates.",
+        "icon": "share"
+      },
+      {
+        "id": "microservices",
+        "title": "Microservices Architecture",
+        "desc": "Distributed systems with independent, scalable microservices.",
+        "icon": "grid"
+      },
+      {
+        "id": "realtime",
+        "title": "Real-time Applications",
+        "desc": "WebSocket-based apps for chat, notifications, and live updates.",
+        "icon": "zap"
+      },
+      {
+        "id": "serverless",
+        "title": "Serverless Functions",
+        "desc": "AWS Lambda and serverless architectures for cost-effective scaling.",
+        "icon": "cloud"
+      },
+      {
+        "id": "integration",
+        "title": "Third-party Integration",
+        "desc": "Connect with payment gateways, CRMs, and external services seamlessly.",
+        "icon": "link"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Node.js Tech Stack We Use",
+    "description": "Modern frameworks and tools for building robust Node.js applications.",
+    "items": [
+      { "name": "Express.js", "id": "express", "desc": "Fast, minimalist web framework" },
+      { "name": "NestJS", "id": "nestjs", "desc": "Enterprise-grade framework" },
+      { "name": "PostgreSQL", "id": "postgres", "desc": "Relational database" },
+      { "name": "MongoDB", "id": "mongodb", "desc": "NoSQL database" },
+      { "name": "Redis", "id": "redis", "desc": "Caching and sessions" },
+      { "name": "Docker", "id": "docker", "desc": "Containerization" }
+    ]
+  },
+  "useCases": {
+    "title": "Node.js Use Cases & Applications",
+    "cases": [
+      {
+        "id": "api-backend",
+        "title": "API Backends",
+        "description": "High-performance REST and GraphQL APIs for web and mobile apps",
+        "image": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg"
+      },
+      {
+        "id": "streaming",
+        "title": "Streaming Services",
+        "description": "Video and audio streaming platforms with real-time data processing",
+        "image": "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg"
+      },
+      {
+        "id": "iot",
+        "title": "IoT Applications",
+        "description": "Handle millions of concurrent connections from IoT devices",
+        "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+      },
+      {
+        "id": "chat",
+        "title": "Chat & Messaging",
+        "description": "Real-time chat applications with WebSockets and message queues",
+        "image": "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Node.js Development Process",
+    "description": "Systematic approach to building scalable backend systems.",
+    "steps": [
+      {
+        "id": "architecture",
+        "number": "01",
+        "title": "System Architecture",
+        "description": "Design scalable architecture, database schema, and API structure"
+      },
+      {
+        "id": "api-design",
+        "number": "02",
+        "title": "API Design",
+        "description": "Create API specifications, documentation, and authentication strategy"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Backend Development",
+        "description": "Build APIs with proper error handling, validation, and security"
+      },
+      {
+        "id": "testing",
+        "number": "04",
+        "title": "Testing & Security",
+        "description": "Unit tests, integration tests, and security audits"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "DevOps & Scaling",
+        "description": "CI/CD pipelines, monitoring, and horizontal scaling setup"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Node.js Development",
+    "description": "Node.js excels at building fast, scalable network applications. Its event-driven architecture handles concurrent connections efficiently. JavaScript everywhere enables code sharing between frontend and backend. NPM provides access to over 1 million packages. Non-blocking I/O delivers superior performance for real-time applications. Large community and enterprise adoption ensure long-term support and continuous innovation.",
+    "features": [
+      "Event-driven architecture handles 100K+ concurrent connections",
+      "2x faster development with JavaScript full-stack capabilities",
+      "85% of Fortune 500 companies rely on Node.js",
+      "1M+ npm packages accelerate development significantly"
+    ]
+  }
+}

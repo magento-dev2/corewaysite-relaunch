@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "title": "React Development",
+    "title2": "Services",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Build lightning-fast, scalable web applications with React. Expert development for SPAs, progressive web apps, and enterprise-grade solutions.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Portfolio", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Why React for Your Next Project",
+    "content": "React has become the industry standard for building modern web applications. With its component-based architecture, virtual DOM, and massive ecosystem, React enables us to deliver high-performance applications that scale effortlessly. Whether you need a single-page application, progressive web app, or complex enterprise dashboard, our React expertise ensures your project succeeds. We leverage the latest React features including hooks, concurrent mode, and server components to build applications that are fast, maintainable, and delightful to use.",
+    "image": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
+    "stats": [
+      { "value": "10M+", "label": "React Developers Worldwide" },
+      { "value": "40%", "label": "Faster Development Time" },
+      { "value": "50%", "label": "Better Performance" },
+      { "value": "100+", "label": "Projects Delivered" }
+    ]
+  },
+  "features": {
+    "title": "Our React Development Services",
+    "items": [
+      {
+        "id": "spa-development",
+        "title": "Single Page Applications",
+        "desc": "Build fast, responsive SPAs with seamless navigation and instant updates.",
+        "icon": "layout"
+      },
+      {
+        "id": "pwa-development",
+        "title": "Progressive Web Apps",
+        "desc": "Create app-like experiences that work offline and install on any device.",
+        "icon": "smartphone"
+      },
+      {
+        "id": "enterprise-apps",
+        "title": "Enterprise Solutions",
+        "desc": "Scalable React applications for complex business requirements and workflows.",
+        "icon": "building"
+      },
+      {
+        "id": "ui-components",
+        "title": "Component Libraries",
+        "desc": "Custom reusable component systems with design consistency and documentation.",
+        "icon": "package"
+      },
+      {
+        "id": "react-native",
+        "title": "React Native Mobile",
+        "desc": "Cross-platform mobile apps sharing code with your React web application.",
+        "icon": "phone"
+      },
+      {
+        "id": "migration",
+        "title": "Legacy Migration",
+        "desc": "Migrate existing applications to modern React architecture seamlessly.",
+        "icon": "refresh"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "React Tech Stack We Use",
+    "description": "Modern tools and frameworks for building powerful React applications.",
+    "items": [
+      { "name": "Next.js", "id": "nextjs", "desc": "Server-side rendering and static generation" },
+      { "name": "TypeScript", "id": "typescript", "desc": "Type-safe development" },
+      { "name": "Redux/Zustand", "id": "redux", "desc": "State management" },
+      { "name": "React Query", "id": "reactquery", "desc": "Data fetching and caching" },
+      { "name": "Tailwind CSS", "id": "tailwind", "desc": "Utility-first styling" },
+      { "name": "Vite", "id": "vite", "desc": "Lightning-fast build tool" }
+    ]
+  },
+  "useCases": {
+    "title": "React Use Cases & Applications",
+    "cases": [
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce Platforms",
+        "description": "Fast, responsive online stores with smooth shopping experiences",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+      },
+      {
+        "id": "dashboards",
+        "title": "Admin Dashboards",
+        "description": "Real-time data visualization and complex business intelligence tools",
+        "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg"
+      },
+      {
+        "id": "saas",
+        "title": "SaaS Applications",
+        "description": "Multi-tenant platforms with advanced features and integrations",
+        "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+      },
+      {
+        "id": "social",
+        "title": "Social Platforms",
+        "description": "Interactive social networks with real-time updates and messaging",
+        "image": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg"
+      }
+    ]
+  },
+  "process": {
+    "title": "Our React Development Process",
+    "description": "Agile methodology for delivering high-quality React applications.",
+    "steps": [
+      {
+        "id": "planning",
+        "number": "01",
+        "title": "Planning & Architecture",
+        "description": "Define requirements, design component architecture, and plan tech stack"
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "UI/UX Design",
+        "description": "Create wireframes, prototypes, and design system components"
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Agile Development",
+        "description": "Build features iteratively with weekly sprints and continuous feedback"
+      },
+      {
+        "id": "testing",
+        "number": "04",
+        "title": "Testing & QA",
+        "description": "Comprehensive testing including unit, integration, and E2E tests"
+      },
+      {
+        "id": "deployment",
+        "number": "05",
+        "title": "Deployment & Support",
+        "description": "CI/CD setup, production deployment, and ongoing maintenance"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose React Development",
+    "description": "React offers unmatched benefits for modern web application development. Its component-based architecture promotes code reusability and maintainability. The virtual DOM ensures exceptional performance even with complex UIs. A massive ecosystem of libraries and tools accelerates development. SEO-friendly with server-side rendering options. Strong community support and continuous updates from Meta ensure long-term viability.",
+    "features": [
+      "Component reusability reduces development time by 40%",
+      "Virtual DOM provides 50% better performance than traditional approaches",
+      "Rich ecosystem with 200,000+ npm packages available",
+      "Backed by Meta with continuous improvements and updates"
+    ]
+  }
+}
