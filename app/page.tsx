@@ -13,6 +13,7 @@ import { ScrollFadeIn, ScrollScale, ScrollParallax } from '../components/home/Sc
 import Expertise2 from '@/components/home/Expertise2';
 import IndustriesWeServe from '../components/home/IndustriesWeServe';
 import BlogSection from '../components/home/BlogSection';
+import CTOSection from '@/components/home/CTO';
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
 
       <Expertise />
       {/* <Expertise2 /> */}
-
+<CTOSection/>
 
       <ScrollScale delay={0.2}>
         <PortfolioHighlights />

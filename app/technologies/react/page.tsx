@@ -120,11 +120,7 @@ export default function ReactTechnologyPage() {
             cases={reactData.useCases.cases}
           />
 
-          <ProcessDiagram
-            title={reactData.process.title}
-            description={reactData.process.description}
-            steps={reactData.process.steps}
-          />
+          
 
           <AutomationSection
             title={reactData.benefits.title}

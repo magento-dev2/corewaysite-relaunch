@@ -73,9 +73,9 @@
         { "label": "Automotive", "href": "/industries/automotive" },
         { "label": "Manufacturing & Industrial IoT", "href": "/industries/manufacturing-iot" },
         { "label": "Food & Beverage", "href": "/industries/food-beverage" },
-        { "label": "Furniture & Home Decor", "href": "/industries/furniture" },
-        { "label": "Fashion & Apparel", "href": "/industries/fashion" },
-        { "label": "Pharmaceuticals & Healthcare", "href": "/industries/healthcare" }
+        { "label": "Furniture & Home Decor", "href": "/industries/furniture-home-decor" },
+        { "label": "Fashion & Apparel", "href": "/industries/fashion-apparel" },
+        { "label": "Pharmaceuticals & Healthcare", "href": "/industries/pharmaceuticals-healthcare" }
       ]
     },
     {

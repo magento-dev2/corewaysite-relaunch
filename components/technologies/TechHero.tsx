@@ -1,141 +1,303 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from 'react';
+import { BarChart3, ArrowRight } from 'lucide-react';
 import { gsap } from "gsap";
 import SplitType from "split-type";
-import { ArrowRight, Code, Zap } from "lucide-react";
 
-interface TechHeroProps {
+interface DashboardHeroProps {
   title: string;
-  title2: string;
   subtitle: string;
-  buttons: Array<{ label: string; link: string }>;
+  buttons: { label: string; link: string }[];
+  title2?: string;
   img: string;
-  accentColor?: string;
 }
 
-export default function TechHero({
-  title,
-  title2,
-  subtitle,
-  buttons,
-  img,
-  accentColor = "purple",
-}: TechHeroProps) {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
+export default function TechHero({ title, subtitle, buttons, title2 ,img}: DashboardHeroProps) {
+  const [chartBars, setChartBars] = useState<Array<{ id: number; height: number; color: string }>>([]);
+  const [metrics, setMetrics] = useState({ users: 0, queries: 0, uptime: 0 });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    if (!titleRef.current) return;
+    if (!textRef.current) return;
+    // 🌀 Split text into individual characters
+    const split = new SplitType(textRef.current, { types: "chars,words" });
 
-    const split = new SplitType(titleRef.current, { types: "chars,words" });
-
+    // ✨ Intro animation
     gsap.from(split.chars, {
       opacity: 0,
-      y: 50,
-      rotateX: -90,
-      stagger: 0.02,
-      duration: 1,
-      ease: "back.out(1.7)",
+      y: 40,
+      rotateX: 90,
+      stagger: 0.04,
+      duration: 1.2,
+      ease: "power4.out",
     });
 
-    return () => split.revert();
+    // 🎯 Cursor-based motion effect
+    const handleMouseMove = (e: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 20; // rotate limit
+      const y = (e.clientY / innerHeight - 0.5) * 20;
+
+      gsap.to(textRef.current, {
+        rotationY: x,
+        rotationX: -y,
+        transformPerspective: 800,
+        ease: "power2.out",
+        duration: 0.6,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      split.revert(); // cleanup
+    };
   }, []);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, scale: 0.8, rotate: -5 },
-        { opacity: 1, scale: 1, rotate: 0, duration: 1.2, ease: "power3.out", delay: 0.5 }
-      );
-    }, heroRef);
 
-    return () => ctx.revert();
+  useEffect(() => {
+    const colors = ['#a855f7', '#8b5cf6', '#7c3aed', '#6d28d9'];
+    const bars = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      height: 20 + Math.random() * 60,
+      color: colors[i % colors.length]
+    }));
+    setChartBars(bars);
+
+    const metricsInterval = setInterval(() => {
+      setMetrics({
+        users: Math.floor(1000 + Math.random() * 500),
+        queries: Math.floor(50000 + Math.random() * 10000),
+        uptime: 99.9 + Math.random() * 0.09
+      });
+    }, 2000);
+
+    const barsInterval = setInterval(() => {
+      setChartBars(prev => prev.map(bar => ({
+        ...bar,
+        height: 20 + Math.random() * 60
+      })));
+    }, 1500);
+
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const drawGrid = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.strokeStyle = 'rgba(168, 85, 247, 0.1)';
+          ctx.lineWidth = 1;
+
+          for (let i = 0; i <= 10; i++) {
+            const y = (canvas.height / 10) * i;
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            ctx.stroke();
+          }
+
+          requestAnimationFrame(drawGrid);
+        };
+
+        drawGrid();
+      }
+    }
+
+    return () => {
+      clearInterval(metricsInterval);
+      clearInterval(barsInterval);
+    };
   }, []);
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0E0918] via-[#1a1325] to-[#0E0918]"
-    >
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.15),transparent_50%)]"></div>
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(167,139,250,0.15),transparent_50%)]"></div>
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0E0918] via-[#1a1325] to-[#0E0918]">
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-20" />
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-around px-8 pb-20 opacity-20">
+          {chartBars.map((bar) => (
+            <div
+              key={bar.id}
+              className="transition-all duration-1000 ease-out rounded-t-sm"
+              style={{
+                width: '3%',
+                height: `${bar.height}%`,
+                backgroundColor: bar.color,
+                boxShadow: `0 0 20px ${bar.color}40`
+              }}
+            />
+          ))}
+        </div>
+
+        <svg className="absolute inset-0 w-full h-full opacity-10">
+          <defs>
+            <pattern id="dashboardGrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <circle cx="30" cy="30" r="1.5" fill="#a855f7" />
+              <line x1="30" y1="0" x2="30" y2="60" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" />
+              <line x1="0" y1="30" x2="60" y2="30" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dashboardGrid)" />
+        </svg>
+
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-pulse-slow"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: `${30 + (i % 3) * 20}%`,
+              animationDelay: `${i * 0.4}s`
+            }}
+          >
+            <div className="w-16 h-16 border-2 border-purple-500/30 rounded-lg backdrop-blur-sm flex items-center justify-center">
+              <BarChart3 className="text-purple-500/40" size={32} />
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8b5cf620_1px,transparent_1px),linear-gradient(to_bottom,#8b5cf620_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      </div>
+      {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-8 animate-slideDown">
+          <BarChart3 className="text-purple-500 animate-pulse" size={16} />
+          <span className="text-gray-300 text-sm font-mono">Dashboard Solutions</span>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 rounded-full px-4 py-2">
-              <Code className="text-purple-400 w-4 h-4" />
-              <span className="text-purple-400 text-sm font-semibold">
-                Technology Expertise
-              </span>
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+          {title}
+        </h1>
+
+        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+          {subtitle}
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+          {buttons.map((button, index) => (
+            <a
+              key={index}
+              href={button.link}
+              className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${
+                index === 0
+                  ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                  : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+              }`}
+            >
+              <span>{button.label}</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          {[
+            { label: 'Active Users', value: metrics.users.toLocaleString(), icon: '👥' },
+            { label: 'Queries/min', value: metrics.queries.toLocaleString(), icon: '⚡' },
+            { label: 'Uptime', value: `${metrics.uptime.toFixed(2)}%`, icon: '✓' }
+          ].map((metric, i) => (
+            <div
+              key={i}
+              className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-xl px-4 py-3"
+            >
+              <div className="text-2xl mb-1">{metric.icon}</div>
+              <div className="text-2xl font-bold text-purple-400 font-mono">{metric.value}</div>
+              <div className="text-xs text-gray-400 font-mono">{metric.label}</div>
             </div>
+          ))}
+        </div>
+      </div> */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full">
 
-            <div>
-              <h1
-                ref={titleRef}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
-              >
-                {title}{" "}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-400 to-purple-500">
-                  {title2}
-                </span>
-              </h1>
-            </div>
-
-            <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
+          {/* Left Side Text + Button */}
+          <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight" ref={textRef} >
+              {title}<span className="text-purple-500">{title2}</span>
+            </h1>
+            <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
               {subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
+                          <span>{button.label}</span>
+                          <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                        </button> */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {buttons.map((button, index) => (
                 <a
                   key={index}
                   href={button.link}
-                  className={`group px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center space-x-2 transition-all ${
-                    index === 0
-                      ? "bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105"
-                      : "bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50"
-                  }`}
+                  className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
+                      ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                      : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                    }`}
                 >
                   <span>{button.label}</span>
-                  <ArrowRight
-                    className="group-hover:translate-x-1 transition-transform w-5 h-5"
-                  />
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </a>
               ))}
             </div>
 
-            <div className="flex items-center gap-8 pt-4">
-              <div className="flex items-center gap-2">
-                <Zap className="text-purple-400 w-5 h-5" />
-                <span className="text-gray-400 text-sm">Fast Development</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap className="text-violet-400 w-5 h-5" />
-                <span className="text-gray-400 text-sm">Scalable Solutions</span>
-              </div>
-            </div>
           </div>
 
-          <div ref={imageRef} className="relative">
-            <div className="absolute -inset-8 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-full blur-3xl"></div>
+          {/* Right Side Image */}
+          <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
             <img
+              // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
               src={img}
-              alt={`${title} ${title2}`}
-              className="relative w-full rounded-2xl shadow-2xl border border-white/10"
+              alt="Hero Image"
+              className="w-full max-w-4xl rounded-lg shadow-lg"
             />
           </div>
+
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+
+      <style>{`
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.05);
+          }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.8s ease-out forwards;
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   );
 }

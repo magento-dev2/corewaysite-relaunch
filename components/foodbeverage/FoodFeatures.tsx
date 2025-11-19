@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   TruckIcon,
-  Factory,
+  FactoryIcon,
   BrainCircuit,
   ShieldCheck,
   Smartphone,
@@ -27,7 +27,7 @@ interface FoodFeaturesProps {
 
 const iconMap: Record<string, React.ReactNode> = {
   "supply-chain": <TruckIcon className="w-8 h-8" />,
-  production: <Factory className="w-8 h-8" />,
+  production: <FactoryIcon className="w-8 h-8" />,
   forecasting: <BrainCircuit className="w-8 h-8" />,
   quality: <ShieldCheck className="w-8 h-8" />,
   ordering: <Smartphone className="w-8 h-8" />,
@@ -37,10 +37,10 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // TITLE ANIMATION
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 40 },
@@ -48,28 +48,33 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
           opacity: 1,
           y: 0,
           duration: 0.8,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
+            start: "top 80%",
           },
         }
       );
 
-      gsap.fromTo(
-        gridRef.current?.children || [],
-        { opacity: 0, y: 60, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 70%",
-          },
-        }
-      );
+      // CARD STAGGER ANIMATION
+      gsap.utils.toArray(".feature-card").forEach((card: any, i: number) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 60, scale: 0.9 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            delay: i * 0.12,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+            },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -78,23 +83,37 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325] relative"
+      className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325] relative overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute font-mono text-purple-500/20 text-xs animate-data-stream"
-            style={{
-              left: `${5 + (i % 10) * 10}%`,
-              animationDelay: `${i * 0.2}s`,
-              animationDuration: '5s'
-            }}
-          >
-            {['FRESH', 'QUALITY', 'SAFE', 'FAST', 'TRACK', 'ORDER'][Math.floor(Math.random() * 6)]}
-          </div>
-        ))}
-      </div>
+      {/* BACKGROUND ANIMATED TEXT */}
+     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+  <style>
+    {`
+      @keyframes floatWord {
+        0% { transform: translateY(0px); opacity: 0.2; }
+        50% { transform: translateY(-25px); opacity: 0.5; }
+        100% { transform: translateY(0px); opacity: 0.2; }
+      }
+    `}
+  </style>
+
+  {[...Array(40)].map((_, i) => (
+    <div
+      key={i}
+      className="absolute font-mono text-purple-500/20 text-xs"
+      style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animation: `floatWord ${3 + Math.random() * 3}s ease-in-out ${Math.random()}s infinite`,
+      }}
+    >
+      {["FRESH", "QUALITY", "SAFE", "FAST", "TRACK", "ORDER"][
+        Math.floor(Math.random() * 6)
+      ]}
+    </div>
+  ))}
+</div>
+
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <h2
@@ -104,11 +123,11 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
           {title}
         </h2>
 
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:bg-white/10 overflow-hidden"
+              className="feature-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:bg-white/10 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
 
