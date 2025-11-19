@@ -1,0 +1,173 @@
+{
+  "hero": {
+    "title": "Cloud Storage Solutions",
+    "title2": "AWS S3 & Alternatives",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Scalable, cost-effective object storage with AWS S3, Wasabi, MinIO, and Cloudflare R2. Expert implementation and optimization.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "Compare Solutions", "link": "#comparison" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise Object Storage Solutions",
+    "content": "We implement and optimize cloud storage solutions that scale infinitely while controlling costs. Whether you need AWS S3's industry-leading features, Wasabi's cost-effective hot storage, MinIO's self-hosted S3 compatibility, or Cloudflare R2's zero egress fees, we deliver the right solution for your needs. Our expertise covers architecture design, CDN integration, lifecycle policies, versioning, encryption, and access control. We help you store terabytes to petabytes of data reliably while optimizing for performance and cost efficiency.",
+    "image": "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg",
+    "stats": [
+      { "value": "5PB+", "label": "Data Stored" },
+      { "value": "80%", "label": "Cost Reduction" },
+      { "value": "99.99%", "label": "Availability" },
+      { "value": "100+", "label": "Storage Projects" }
+    ]
+  },
+  "features": {
+    "title": "Our Cloud Storage Services",
+    "items": [
+      {
+        "id": "aws-s3",
+        "title": "AWS S3 Implementation",
+        "desc": "Industry-standard object storage with advanced features and global availability.",
+        "icon": "cloud"
+      },
+      {
+        "id": "wasabi",
+        "title": "Wasabi Hot Storage",
+        "desc": "Cost-effective alternative with 80% lower costs and no egress fees.",
+        "icon": "zap"
+      },
+      {
+        "id": "minio",
+        "title": "MinIO Self-Hosted",
+        "desc": "Open-source S3-compatible storage for on-premise or private cloud.",
+        "icon": "server"
+      },
+      {
+        "id": "r2",
+        "title": "Cloudflare R2",
+        "desc": "Zero egress fees with global edge network integration.",
+        "icon": "share"
+      },
+      {
+        "id": "cdn",
+        "title": "CDN Integration",
+        "desc": "CloudFront, Cloudflare, or Fastly integration for fast global delivery.",
+        "icon": "grid"
+      },
+      {
+        "id": "migration",
+        "title": "Storage Migration",
+        "desc": "Seamless data migration between providers with zero downtime.",
+        "icon": "refresh"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Storage Technologies We Use",
+    "description": "Modern tools and platforms for scalable object storage.",
+    "items": [
+      { "name": "AWS S3", "id": "s3", "desc": "Industry-standard storage" },
+      { "name": "Wasabi", "id": "wasabi", "desc": "Cost-effective hot storage" },
+      { "name": "MinIO", "id": "minio", "desc": "Self-hosted S3 compatible" },
+      { "name": "Cloudflare R2", "id": "r2", "desc": "Zero egress fees" },
+      { "name": "CloudFront", "id": "cloudfront", "desc": "Global CDN" },
+      { "name": "Terraform", "id": "terraform", "desc": "Infrastructure as code" }
+    ]
+  },
+  "comparison": {
+    "title": "Cloud Storage Comparison",
+    "subtitle": "Choose the right storage provider for your needs",
+    "providers": [
+      {
+        "name": "AWS S3",
+        "pricing": "$0.023/GB/month",
+        "egress": "$0.09/GB",
+        "features": [
+          "Industry standard with most features",
+          "Global availability zones",
+          "Advanced lifecycle policies",
+          "Glacier for cold storage",
+          "Excellent AWS ecosystem integration"
+        ],
+        "bestFor": "Enterprise apps, AWS-native architecture, advanced features"
+      },
+      {
+        "name": "Wasabi",
+        "pricing": "$0.0059/GB/month",
+        "egress": "$0 (free)",
+        "features": [
+          "80% cheaper than S3",
+          "Free egress bandwidth",
+          "S3-compatible API",
+          "No retrieval fees",
+          "Hot storage optimized"
+        ],
+        "bestFor": "High-volume storage, frequent access, cost optimization"
+      },
+      {
+        "name": "MinIO",
+        "pricing": "Self-hosted",
+        "egress": "$0 (internal)",
+        "features": [
+          "Fully open-source",
+          "S3-compatible API",
+          "On-premise or private cloud",
+          "No vendor lock-in",
+          "High performance"
+        ],
+        "bestFor": "Data sovereignty, private cloud, compliance requirements"
+      },
+      {
+        "name": "Cloudflare R2",
+        "pricing": "$0.015/GB/month",
+        "egress": "$0 (free)",
+        "features": [
+          "Zero egress fees",
+          "S3-compatible API",
+          "Global edge network",
+          "Automatic caching",
+          "DDoS protection included"
+        ],
+        "bestFor": "Content delivery, public assets, global distribution"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Cloud Storage Use Cases",
+    "cases": [
+      {
+        "id": "media",
+        "title": "Media & Video Platforms",
+        "description": "Store and deliver images, videos, and audio with CDN integration",
+        "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
+      },
+      {
+        "id": "backup",
+        "title": "Backup & Archive",
+        "description": "Automated backup systems with lifecycle policies and versioning",
+        "image": "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg"
+      },
+      {
+        "id": "analytics",
+        "title": "Data Lakes & Analytics",
+        "description": "Store raw data for big data processing and machine learning",
+        "image": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg"
+      },
+      {
+        "id": "saas",
+        "title": "SaaS User Storage",
+        "description": "Multi-tenant file storage with secure access control and encryption",
+        "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Professional Storage Implementation Matters",
+    "description": "Cloud storage seems simple, but improper implementation costs thousands in unnecessary fees and creates performance bottlenecks. We design storage architectures that balance cost, performance, and reliability. We implement lifecycle policies that automatically move data to cheaper tiers. We set up CDN integration for global low-latency access. We configure proper encryption, access controls, and backup strategies. We help you choose between S3, Wasabi, MinIO, or R2 based on your specific usage patterns. Our expertise can reduce your storage costs by 80% while improving performance.",
+    "features": [
+      "Strategic provider selection reduces costs by up to 80%",
+      "CDN integration delivers content 10x faster globally",
+      "Lifecycle policies automate cost optimization",
+      "Proper architecture ensures 99.99% availability"
+    ]
+  }
+}

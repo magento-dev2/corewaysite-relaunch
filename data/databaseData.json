@@ -1,0 +1,153 @@
+{
+  "hero": {
+    "title": "Database Solutions",
+    "title2": "PostgreSQL & MongoDB",
+    "img": "/assets/herosection/digital.png",
+    "subtitle": "Expert database architecture, design, and optimization. Relational and NoSQL solutions for high-performance, scalable applications.",
+    "buttons": [
+      { "label": "Start Your Project", "link": "#contact" },
+      { "label": "View Portfolio", "link": "#cases" }
+    ]
+  },
+  "overview": {
+    "title": "Enterprise Database Solutions",
+    "content": "We architect, design, and optimize database systems that power mission-critical applications. Whether you need the ACID compliance and powerful querying of PostgreSQL or the flexibility and scalability of MongoDB, our database experts deliver robust solutions. We handle everything from schema design and migration to performance optimization and replication setup. Our expertise includes complex queries, indexing strategies, sharding, clustering, and ensuring data integrity at scale. Trust us to build database infrastructure that grows with your business.",
+    "image": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg",
+    "stats": [
+      { "value": "99.99%", "label": "Database Uptime" },
+      { "value": "10x", "label": "Query Performance Boost" },
+      { "value": "50+", "label": "DB Projects Delivered" },
+      { "value": "1B+", "label": "Records Managed" }
+    ]
+  },
+  "features": {
+    "title": "Our Database Services",
+    "items": [
+      {
+        "id": "postgresql",
+        "title": "PostgreSQL Development",
+        "desc": "Advanced relational database design with ACID compliance, complex queries, and JSON support.",
+        "icon": "server"
+      },
+      {
+        "id": "mongodb",
+        "title": "MongoDB Development",
+        "desc": "Flexible NoSQL document databases for unstructured data and rapid development.",
+        "icon": "database"
+      },
+      {
+        "id": "schema-design",
+        "title": "Schema Design & Modeling",
+        "desc": "Optimized data models, normalization, and relationship mapping for performance.",
+        "icon": "grid"
+      },
+      {
+        "id": "migration",
+        "title": "Database Migration",
+        "desc": "Zero-downtime migrations from legacy systems to modern database platforms.",
+        "icon": "refresh"
+      },
+      {
+        "id": "optimization",
+        "title": "Performance Optimization",
+        "desc": "Query optimization, indexing strategies, and performance tuning for speed.",
+        "icon": "zap"
+      },
+      {
+        "id": "replication",
+        "title": "Replication & Clustering",
+        "desc": "High-availability setups with master-slave replication and sharding.",
+        "icon": "cloud"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Database Technologies We Master",
+    "description": "Modern database tools and frameworks for reliable data management.",
+    "items": [
+      { "name": "PostgreSQL 16", "id": "postgres", "desc": "Advanced relational database" },
+      { "name": "MongoDB 7", "id": "mongodb", "desc": "Document-oriented NoSQL" },
+      { "name": "Redis", "id": "redis", "desc": "In-memory caching" },
+      { "name": "TimescaleDB", "id": "timescale", "desc": "Time-series data" },
+      { "name": "Prisma", "id": "prisma", "desc": "Modern ORM" },
+      { "name": "pgAdmin", "id": "pgadmin", "desc": "Database management" }
+    ]
+  },
+  "comparison": {
+    "title": "PostgreSQL vs MongoDB",
+    "subtitle": "Choosing the right database for your needs",
+    "postgresql": {
+      "name": "PostgreSQL",
+      "description": "Best for structured data with complex relationships",
+      "features": [
+        "ACID compliance for data integrity",
+        "Complex SQL queries and joins",
+        "Strong consistency guarantees",
+        "JSON/JSONB support for flexibility",
+        "Mature ecosystem and tooling"
+      ],
+      "useCases": [
+        "Financial applications",
+        "E-commerce platforms",
+        "Enterprise systems",
+        "Data warehousing"
+      ]
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "Best for flexible, scalable document storage",
+      "features": [
+        "Flexible schema for rapid development",
+        "Horizontal scaling with sharding",
+        "High write throughput",
+        "Rich query language",
+        "Built-in replication"
+      ],
+      "useCases": [
+        "Real-time analytics",
+        "Content management",
+        "IoT data storage",
+        "Mobile applications"
+      ]
+    }
+  },
+  "useCases": {
+    "title": "Database Solutions by Industry",
+    "cases": [
+      {
+        "id": "fintech",
+        "title": "Financial Applications",
+        "description": "ACID-compliant PostgreSQL for transactions, ledgers, and audit trails",
+        "image": "https://images.pexels.com/photos/210742/pexels-photo-210742.jpeg"
+      },
+      {
+        "id": "ecommerce",
+        "title": "E-Commerce Platforms",
+        "description": "Hybrid PostgreSQL and MongoDB for products, orders, and user data",
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
+      },
+      {
+        "id": "analytics",
+        "title": "Real-Time Analytics",
+        "description": "MongoDB with time-series collections for high-volume event tracking",
+        "image": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg"
+      },
+      {
+        "id": "saas",
+        "title": "SaaS Applications",
+        "description": "Multi-tenant PostgreSQL architecture with row-level security",
+        "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Professional Database Management Matters",
+    "description": "Professional database architecture and optimization is critical for application success. Poor database design leads to slow queries, data inconsistencies, and scaling challenges. Our experts design schemas that balance normalization and performance. We implement proper indexing strategies that make queries 10-100x faster. We set up replication and backup systems that ensure 99.99% uptime. We handle migrations without data loss or downtime. Whether you need PostgreSQL's reliability or MongoDB's flexibility, we deliver database solutions that perform flawlessly at scale.",
+    "features": [
+      "Expert schema design reduces technical debt by 80%",
+      "Proper indexing improves query performance 10-100x",
+      "Replication and backup ensure 99.99% uptime",
+      "Zero-downtime migrations with data integrity guaranteed"
+    ]
+  }
+}
