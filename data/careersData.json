@@ -1,0 +1,362 @@
+{
+  "hero": {
+    "title": "Join Our Team",
+    "subtitle": "Shape the Future of Technology",
+    "description": "We're looking for talented individuals who are passionate about building innovative solutions and making a real impact.",
+    "stats": [
+      { "label": "Team Members", "value": "50+" },
+      { "label": "Countries", "value": "10+" },
+      { "label": "Projects Delivered", "value": "200+" },
+      { "label": "Client Satisfaction", "value": "98%" }
+    ]
+  },
+  "culture": {
+    "title": "Our Culture",
+    "description": "At Coreway Solution, we foster a culture of innovation, collaboration, and continuous learning. We believe in empowering our team members to reach their full potential.",
+    "values": [
+      {
+        "title": "Innovation First",
+        "description": "We encourage creative thinking and experimenting with cutting-edge technologies to solve complex problems.",
+        "icon": "lightbulb"
+      },
+      {
+        "title": "Collaborative Spirit",
+        "description": "We work together as a team, sharing knowledge and supporting each other to achieve common goals.",
+        "icon": "users"
+      },
+      {
+        "title": "Continuous Learning",
+        "description": "We invest in our team's growth through training, conferences, and learning opportunities.",
+        "icon": "book"
+      },
+      {
+        "title": "Work-Life Balance",
+        "description": "We value personal time and offer flexible working arrangements to maintain a healthy work-life balance.",
+        "icon": "heart"
+      },
+      {
+        "title": "Diversity & Inclusion",
+        "description": "We celebrate diversity and create an inclusive environment where everyone feels valued and respected.",
+        "icon": "globe"
+      },
+      {
+        "title": "Impact Driven",
+        "description": "Every project we take on is an opportunity to make a meaningful impact for our clients and their users.",
+        "icon": "target"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Benefits & Perks",
+    "description": "We offer comprehensive benefits designed to support your health, happiness, and professional growth.",
+    "items": [
+      {
+        "category": "Health & Wellness",
+        "benefits": [
+          "Comprehensive health insurance",
+          "Dental and vision coverage",
+          "Mental health support programs",
+          "Gym membership reimbursement",
+          "Annual wellness allowance"
+        ]
+      },
+      {
+        "category": "Work Flexibility",
+        "benefits": [
+          "Remote work options",
+          "Flexible working hours",
+          "Unlimited PTO policy",
+          "Paid parental leave",
+          "Work from anywhere programs"
+        ]
+      },
+      {
+        "category": "Professional Development",
+        "benefits": [
+          "Annual learning budget",
+          "Conference attendance sponsorship",
+          "Online course subscriptions",
+          "Mentorship programs",
+          "Career progression pathways"
+        ]
+      },
+      {
+        "category": "Financial & Retirement",
+        "benefits": [
+          "Competitive salary packages",
+          "Performance bonuses",
+          "401(k) retirement plans",
+          "Stock options for senior roles",
+          "Annual salary reviews"
+        ]
+      },
+      {
+        "category": "Work Environment",
+        "benefits": [
+          "Latest tech equipment",
+          "Modern office spaces",
+          "Ergonomic workstations",
+          "Free snacks and beverages",
+          "Team building activities"
+        ]
+      },
+      {
+        "category": "Additional Perks",
+        "benefits": [
+          "Employee referral bonuses",
+          "Commuter benefits",
+          "Company swag",
+          "Celebration of work anniversaries",
+          "Team outings and events"
+        ]
+      }
+    ]
+  },
+  "openPositions": [
+    {
+      "id": 1,
+      "title": "Senior Full-Stack Developer",
+      "department": "Engineering",
+      "location": "Remote / Hybrid",
+      "type": "Full-Time",
+      "experience": "5+ years",
+      "description": "We're looking for an experienced full-stack developer to lead complex projects and mentor junior team members.",
+      "responsibilities": [
+        "Design and develop scalable web applications",
+        "Lead technical architecture decisions",
+        "Mentor junior developers",
+        "Collaborate with product and design teams",
+        "Write clean, maintainable code"
+      ],
+      "requirements": [
+        "5+ years of full-stack development experience",
+        "Strong proficiency in React, Node.js, and TypeScript",
+        "Experience with cloud platforms (AWS, Azure, or GCP)",
+        "Knowledge of database design and optimization",
+        "Excellent problem-solving and communication skills"
+      ],
+      "niceToHave": [
+        "Experience with Next.js and modern frontend frameworks",
+        "Knowledge of DevOps practices and CI/CD",
+        "Contributions to open-source projects",
+        "Experience leading technical teams"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "AI/ML Engineer",
+      "department": "AI & Data",
+      "location": "Remote",
+      "type": "Full-Time",
+      "experience": "3+ years",
+      "description": "Join our AI team to build intelligent solutions using machine learning and artificial intelligence technologies.",
+      "responsibilities": [
+        "Develop and deploy machine learning models",
+        "Work with large datasets and data pipelines",
+        "Implement AI-powered features",
+        "Optimize model performance and accuracy",
+        "Collaborate with data scientists and engineers"
+      ],
+      "requirements": [
+        "3+ years of ML/AI development experience",
+        "Strong Python programming skills",
+        "Experience with TensorFlow, PyTorch, or similar frameworks",
+        "Knowledge of NLP, computer vision, or recommendation systems",
+        "Understanding of MLOps and model deployment"
+      ],
+      "niceToHave": [
+        "PhD in Computer Science or related field",
+        "Experience with large language models",
+        "Published research papers",
+        "Knowledge of cloud AI services"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "DevOps Engineer",
+      "department": "Infrastructure",
+      "location": "Remote / On-site",
+      "type": "Full-Time",
+      "experience": "4+ years",
+      "description": "Help us build and maintain robust infrastructure and deployment pipelines for our growing platform.",
+      "responsibilities": [
+        "Design and manage cloud infrastructure",
+        "Implement CI/CD pipelines",
+        "Monitor system performance and reliability",
+        "Automate deployment processes",
+        "Ensure security and compliance"
+      ],
+      "requirements": [
+        "4+ years of DevOps/SRE experience",
+        "Strong knowledge of AWS, Azure, or GCP",
+        "Experience with containerization (Docker, Kubernetes)",
+        "Proficiency in scripting languages (Bash, Python)",
+        "Understanding of infrastructure as code (Terraform, CloudFormation)"
+      ],
+      "niceToHave": [
+        "Kubernetes certifications",
+        "Experience with monitoring tools (Prometheus, Grafana)",
+        "Knowledge of security best practices",
+        "Experience with multi-cloud environments"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Product Designer",
+      "department": "Design",
+      "location": "Hybrid",
+      "type": "Full-Time",
+      "experience": "3+ years",
+      "description": "Create beautiful, intuitive user experiences that delight our clients and their customers.",
+      "responsibilities": [
+        "Design user interfaces and experiences",
+        "Create wireframes, prototypes, and mockups",
+        "Conduct user research and usability testing",
+        "Collaborate with developers and product managers",
+        "Maintain design systems and guidelines"
+      ],
+      "requirements": [
+        "3+ years of product design experience",
+        "Proficiency in Figma, Sketch, or Adobe XD",
+        "Strong portfolio demonstrating UX/UI skills",
+        "Understanding of design principles and best practices",
+        "Excellent communication and collaboration skills"
+      ],
+      "niceToHave": [
+        "Experience with design systems",
+        "Knowledge of frontend development",
+        "Motion design skills",
+        "B2B SaaS product experience"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Technical Project Manager",
+      "department": "Project Management",
+      "location": "Hybrid",
+      "type": "Full-Time",
+      "experience": "5+ years",
+      "description": "Lead technical projects from conception to delivery, ensuring quality, timeline, and client satisfaction.",
+      "responsibilities": [
+        "Manage end-to-end project lifecycle",
+        "Coordinate between technical teams and clients",
+        "Define project scope, timelines, and deliverables",
+        "Identify and mitigate project risks",
+        "Ensure quality and timely delivery"
+      ],
+      "requirements": [
+        "5+ years of technical project management experience",
+        "Strong understanding of software development lifecycle",
+        "Excellent communication and leadership skills",
+        "Experience with Agile/Scrum methodologies",
+        "PMP or similar certification preferred"
+      ],
+      "niceToHave": [
+        "Technical background in software development",
+        "Experience with project management tools (Jira, Asana)",
+        "Client-facing experience",
+        "Experience managing distributed teams"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Junior Software Developer",
+      "department": "Engineering",
+      "location": "Remote",
+      "type": "Full-Time",
+      "experience": "0-2 years",
+      "description": "Start your career with us and learn from experienced developers while contributing to real-world projects.",
+      "responsibilities": [
+        "Write clean, maintainable code",
+        "Participate in code reviews",
+        "Learn and apply best practices",
+        "Collaborate with senior developers",
+        "Contribute to project documentation"
+      ],
+      "requirements": [
+        "Bachelor's degree in Computer Science or related field",
+        "Knowledge of programming fundamentals",
+        "Familiarity with web technologies (HTML, CSS, JavaScript)",
+        "Passion for learning and growth",
+        "Good problem-solving skills"
+      ],
+      "niceToHave": [
+        "Internship or project experience",
+        "Knowledge of React, Node.js, or Python",
+        "Contributions to personal or open-source projects",
+        "Understanding of Git and version control"
+      ]
+    }
+  ],
+  "hiringProcess": {
+    "title": "Our Hiring Process",
+    "description": "We've designed our hiring process to be transparent, efficient, and respectful of your time.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Application Review",
+        "description": "We review your application and resume carefully. You'll hear back from us within 1 week.",
+        "duration": "1 week"
+      },
+      {
+        "step": 2,
+        "title": "Initial Screening",
+        "description": "A brief phone or video call to discuss your background, interests, and the role.",
+        "duration": "30 minutes"
+      },
+      {
+        "step": 3,
+        "title": "Technical Assessment",
+        "description": "Complete a take-home assignment or participate in a technical interview relevant to the role.",
+        "duration": "1-3 hours"
+      },
+      {
+        "step": 4,
+        "title": "Team Interview",
+        "description": "Meet with team members to discuss your experience, approach to work, and cultural fit.",
+        "duration": "1 hour"
+      },
+      {
+        "step": 5,
+        "title": "Final Interview",
+        "description": "Conversation with leadership about your career goals and how you'll contribute to our team.",
+        "duration": "45 minutes"
+      },
+      {
+        "step": 6,
+        "title": "Offer & Onboarding",
+        "description": "Receive your offer and begin the onboarding process to join our team.",
+        "duration": "2-3 days"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "role": "Senior Full-Stack Developer",
+      "tenure": "3 years",
+      "quote": "Coreway has given me the opportunity to work on cutting-edge projects while maintaining a great work-life balance. The team is supportive, and the learning opportunities are endless.",
+      "avatar": null
+    },
+    {
+      "name": "Michael Chen",
+      "role": "AI/ML Engineer",
+      "tenure": "2 years",
+      "quote": "The culture of innovation here is real. I've been able to experiment with the latest AI technologies and contribute to meaningful projects that make a real impact.",
+      "avatar": null
+    },
+    {
+      "name": "Emily Rodriguez",
+      "role": "Product Designer",
+      "tenure": "1.5 years",
+      "quote": "As a designer, I appreciate how much my input is valued. The collaborative environment allows me to create user experiences that truly make a difference.",
+      "avatar": null
+    }
+  ],
+  "cta": {
+    "title": "Don't See a Perfect Fit?",
+    "description": "We're always looking for talented individuals. Send us your resume and let us know what you're passionate about.",
+    "buttonText": "Send General Application",
+    "email": "careers@corewaysolution.com"
+  }
+}

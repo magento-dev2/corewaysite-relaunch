@@ -1,0 +1,297 @@
+{
+  "hero": {
+    "title": "Press Kit",
+    "subtitle": "Media Resources & Company Information",
+    "description": "Download our brand assets, company information, and media resources for editorial use."
+  },
+  "companyOverview": {
+    "title": "Company Overview",
+    "description": "Coreway Solution is a leading software development and technology consulting company specializing in AI-powered solutions, custom software development, and digital transformation.",
+    "details": {
+      "founded": "2018",
+      "headquarters": "San Francisco, CA",
+      "employees": "50+",
+      "clients": "200+",
+      "industries": "E-commerce, Healthcare, Finance, Manufacturing, IoT"
+    },
+    "boilerplate": "Coreway Solution is a technology company that helps businesses build innovative software solutions and accelerate their digital transformation. With expertise in AI/ML, cloud infrastructure, IoT, and custom software development, we partner with clients across industries to deliver scalable, secure, and user-centric solutions. Our team of experienced engineers, designers, and strategists work collaboratively to turn complex challenges into elegant solutions."
+  },
+  "brandAssets": {
+    "title": "Brand Assets",
+    "description": "Download our logos, color palettes, and brand guidelines for use in publications and media.",
+    "logos": [
+      {
+        "name": "Primary Logo",
+        "description": "Full color logo for light backgrounds",
+        "formats": ["PNG", "SVG", "EPS"],
+        "file": "coreway-logo-primary.zip",
+        "preview": "/assets/logo/logo.png"
+      },
+      {
+        "name": "Logo White",
+        "description": "White logo for dark backgrounds",
+        "formats": ["PNG", "SVG", "EPS"],
+        "file": "coreway-logo-white.zip",
+        "preview": "/assets/logo/logo-white.png"
+      },
+      {
+        "name": "Logo Mark",
+        "description": "Icon only version",
+        "formats": ["PNG", "SVG", "EPS"],
+        "file": "coreway-logomark.zip",
+        "preview": "/assets/logo/logomark.png"
+      },
+      {
+        "name": "Logo Black",
+        "description": "Black logo for print materials",
+        "formats": ["PNG", "SVG", "EPS"],
+        "file": "coreway-logo-black.zip",
+        "preview": "/assets/logo/logo-black.png"
+      }
+    ],
+    "colors": {
+      "primary": [
+        { "name": "Purple", "hex": "#9333EA", "rgb": "147, 51, 234" },
+        { "name": "Blue", "hex": "#3B82F6", "rgb": "59, 130, 246" }
+      ],
+      "neutral": [
+        { "name": "Dark", "hex": "#0E0918", "rgb": "14, 9, 24" },
+        { "name": "Gray", "hex": "#1F1B29", "rgb": "31, 27, 41" },
+        { "name": "White", "hex": "#FFFFFF", "rgb": "255, 255, 255" }
+      ]
+    },
+    "typography": {
+      "primary": "Inter",
+      "weights": ["Regular 400", "Medium 500", "Semibold 600", "Bold 700"]
+    }
+  },
+  "leadership": {
+    "title": "Leadership Team",
+    "members": [
+      {
+        "name": "John Anderson",
+        "title": "Chief Executive Officer",
+        "bio": "John has over 15 years of experience in technology leadership, having previously led engineering teams at Fortune 500 companies. He founded Coreway with a vision to make cutting-edge technology accessible to businesses of all sizes.",
+        "photo": null,
+        "linkedin": "https://linkedin.com/in/johnanderson",
+        "email": "john@corewaysolution.com"
+      },
+      {
+        "name": "Sarah Chen",
+        "title": "Chief Technology Officer",
+        "bio": "Sarah is a technology innovator with expertise in AI/ML and cloud architecture. She holds a PhD in Computer Science and has published numerous papers on machine learning applications.",
+        "photo": null,
+        "linkedin": "https://linkedin.com/in/sarahchen",
+        "email": "sarah@corewaysolution.com"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "title": "Chief Operating Officer",
+        "bio": "Michael brings extensive experience in scaling technology companies and operational excellence. He has successfully led multiple organizations through rapid growth phases.",
+        "photo": null,
+        "linkedin": "https://linkedin.com/in/michaelrodriguez",
+        "email": "michael@corewaysolution.com"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Key Achievements & Milestones",
+    "items": [
+      {
+        "year": "2024",
+        "title": "200+ Projects Delivered",
+        "description": "Reached milestone of 200 successful project deliveries across 10+ countries"
+      },
+      {
+        "year": "2023",
+        "title": "AI Innovation Award",
+        "description": "Recognized for excellence in AI-powered solutions by Tech Innovation Summit"
+      },
+      {
+        "year": "2023",
+        "title": "ISO 27001 Certified",
+        "description": "Achieved ISO 27001 certification for information security management"
+      },
+      {
+        "year": "2022",
+        "title": "Expanded to 50+ Team Members",
+        "description": "Grew team to over 50 talented professionals across multiple locations"
+      },
+      {
+        "year": "2021",
+        "title": "Series A Funding",
+        "description": "Secured Series A funding to accelerate product development and market expansion"
+      },
+      {
+        "year": "2020",
+        "title": "Fortune 500 Clients",
+        "description": "Onboarded first Fortune 500 clients, expanding enterprise presence"
+      },
+      {
+        "year": "2019",
+        "title": "First International Office",
+        "description": "Opened international office to serve global clients"
+      },
+      {
+        "year": "2018",
+        "title": "Company Founded",
+        "description": "Coreway Solution was founded with a mission to democratize technology"
+      }
+    ]
+  },
+  "media": {
+    "title": "Media Coverage",
+    "coverage": [
+      {
+        "outlet": "TechCrunch",
+        "title": "How Coreway Solution is Revolutionizing AI Integration",
+        "date": "2024-10-15",
+        "link": "#",
+        "type": "Feature Article"
+      },
+      {
+        "outlet": "Forbes",
+        "title": "Top 10 Software Development Companies to Watch",
+        "date": "2024-08-22",
+        "link": "#",
+        "type": "List Feature"
+      },
+      {
+        "outlet": "VentureBeat",
+        "title": "The Future of Custom Software Development",
+        "date": "2024-06-10",
+        "link": "#",
+        "type": "Interview"
+      },
+      {
+        "outlet": "Business Insider",
+        "title": "Coreway's Approach to Digital Transformation",
+        "date": "2024-04-05",
+        "link": "#",
+        "type": "Opinion"
+      },
+      {
+        "outlet": "The Wall Street Journal",
+        "title": "Small Businesses Embrace AI with Help from Startups",
+        "date": "2024-02-18",
+        "link": "#",
+        "type": "News"
+      }
+    ]
+  },
+  "stats": {
+    "title": "Company by the Numbers",
+    "figures": [
+      { "value": "200+", "label": "Projects Completed", "icon": "check-circle" },
+      { "value": "50+", "label": "Team Members", "icon": "users" },
+      { "value": "10+", "label": "Countries Served", "icon": "globe" },
+      { "value": "98%", "label": "Client Satisfaction", "icon": "star" },
+      { "value": "15+", "label": "Industries", "icon": "briefcase" },
+      { "value": "24/7", "label": "Support Available", "icon": "headphones" }
+    ]
+  },
+  "pressReleases": [
+    {
+      "date": "2024-11-01",
+      "title": "Coreway Solution Announces New AI-Powered Development Platform",
+      "excerpt": "Revolutionary platform enables businesses to build and deploy AI applications 10x faster with intuitive tools and pre-built components.",
+      "link": "#"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "Coreway Partners with Leading Healthcare Provider for Digital Transformation",
+      "excerpt": "Multi-year partnership will modernize patient care systems and implement AI-driven diagnostic tools.",
+      "link": "#"
+    },
+    {
+      "date": "2024-07-20",
+      "title": "Coreway Expands European Presence with New Office in London",
+      "excerpt": "Strategic expansion strengthens commitment to serving European clients with local expertise and support.",
+      "link": "#"
+    },
+    {
+      "date": "2024-05-10",
+      "title": "Coreway Achieves SOC 2 Type II Compliance",
+      "excerpt": "Certification demonstrates commitment to security, availability, and confidentiality of client data.",
+      "link": "#"
+    }
+  ],
+  "downloads": {
+    "title": "Download Resources",
+    "items": [
+      {
+        "name": "Complete Brand Kit",
+        "description": "All logos, brand guidelines, and assets",
+        "fileSize": "15 MB",
+        "format": "ZIP",
+        "icon": "package"
+      },
+      {
+        "name": "Logo Package",
+        "description": "Logo variations in multiple formats",
+        "fileSize": "5 MB",
+        "format": "ZIP",
+        "icon": "image"
+      },
+      {
+        "name": "Company Fact Sheet",
+        "description": "Key company information and statistics",
+        "fileSize": "2 MB",
+        "format": "PDF",
+        "icon": "file-text"
+      },
+      {
+        "name": "Executive Photos",
+        "description": "High-resolution leadership team photos",
+        "fileSize": "8 MB",
+        "format": "ZIP",
+        "icon": "camera"
+      },
+      {
+        "name": "Product Screenshots",
+        "description": "Screenshots and demo materials",
+        "fileSize": "12 MB",
+        "format": "ZIP",
+        "icon": "monitor"
+      },
+      {
+        "name": "Brand Guidelines",
+        "description": "Complete brand usage guidelines",
+        "fileSize": "4 MB",
+        "format": "PDF",
+        "icon": "book"
+      }
+    ]
+  },
+  "mediaContact": {
+    "title": "Media Inquiries",
+    "description": "For press inquiries, interview requests, or additional information, please contact our media relations team.",
+    "contacts": [
+      {
+        "name": "Jessica Williams",
+        "title": "Director of Communications",
+        "email": "press@corewaysolution.com",
+        "phone": "+1 (555) 123-4567"
+      },
+      {
+        "name": "General Media Relations",
+        "title": "Media Team",
+        "email": "media@corewaysolution.com",
+        "phone": "+1 (555) 123-4568"
+      }
+    ],
+    "responseTime": "We typically respond to media inquiries within 24 hours during business days."
+  },
+  "guidelines": {
+    "title": "Usage Guidelines",
+    "rules": [
+      "Always use official logos and brand assets provided in this press kit",
+      "Do not alter, distort, or modify our logos in any way",
+      "Maintain proper spacing and clear space around logos",
+      "Use approved color variations only",
+      "Do not use outdated logos or create your own versions",
+      "Refer to our brand guidelines document for detailed usage rules",
+      "Contact our media team if you have questions about asset usage"
+    ]
+  }
+}

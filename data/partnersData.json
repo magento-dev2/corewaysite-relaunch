@@ -1,0 +1,241 @@
+{
+  "hero": {
+    "title": "Partner With Us",
+    "subtitle": "Build Something Great Together",
+    "description": "Join our partner ecosystem and unlock new opportunities for growth, innovation, and success."
+  },
+  "partnerTypes": {
+    "title": "Partnership Programs",
+    "description": "We offer multiple partnership programs designed to help you grow your business and deliver exceptional value to your customers.",
+    "types": [
+      {
+        "type": "Technology Partners",
+        "icon": "code",
+        "description": "Integrate your technology with our platform to create powerful solutions for mutual clients.",
+        "benefits": [
+          "Technical integration support",
+          "Co-marketing opportunities",
+          "Joint solution development",
+          "Access to our API and documentation",
+          "Priority technical support"
+        ],
+        "idealFor": "SaaS companies, tech platforms, and software vendors"
+      },
+      {
+        "type": "Agency Partners",
+        "icon": "briefcase",
+        "description": "Collaborate with us to deliver comprehensive solutions to your clients and expand your service offerings.",
+        "benefits": [
+          "White-label solutions available",
+          "Revenue sharing models",
+          "Joint client projects",
+          "Marketing and sales support",
+          "Dedicated partner manager"
+        ],
+        "idealFor": "Digital agencies, consulting firms, and system integrators"
+      },
+      {
+        "type": "Reseller Partners",
+        "icon": "shopping-cart",
+        "description": "Resell our solutions to your customer base and earn attractive commissions.",
+        "benefits": [
+          "Competitive commission structure",
+          "Sales and demo training",
+          "Marketing materials and collateral",
+          "Lead sharing opportunities",
+          "Partner portal access"
+        ],
+        "idealFor": "VARs, distributors, and technology resellers"
+      },
+      {
+        "type": "Referral Partners",
+        "icon": "users",
+        "description": "Refer clients to us and earn rewards for successful introductions.",
+        "benefits": [
+          "Generous referral fees",
+          "Simple referral process",
+          "No technical requirements",
+          "Transparent tracking",
+          "Fast commission payouts"
+        ],
+        "idealFor": "Consultants, advisors, and business professionals"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Partner With Coreway",
+    "description": "Our partners enjoy exclusive benefits and support designed to drive mutual success.",
+    "items": [
+      {
+        "title": "Expand Your Offerings",
+        "description": "Add cutting-edge technology solutions to your portfolio without building from scratch.",
+        "icon": "trending-up"
+      },
+      {
+        "title": "Increase Revenue",
+        "description": "Generate new revenue streams through commissions, reselling, or joint projects.",
+        "icon": "dollar-sign"
+      },
+      {
+        "title": "Access Expertise",
+        "description": "Leverage our technical expertise and industry knowledge to deliver better results.",
+        "icon": "award"
+      },
+      {
+        "title": "Marketing Support",
+        "description": "Benefit from co-marketing initiatives, case studies, and promotional materials.",
+        "icon": "megaphone"
+      },
+      {
+        "title": "Priority Support",
+        "description": "Get dedicated support from our partner success team whenever you need it.",
+        "icon": "headphones"
+      },
+      {
+        "title": "Community & Network",
+        "description": "Join a thriving ecosystem of partners and expand your professional network.",
+        "icon": "network"
+      }
+    ]
+  },
+  "currentPartners": {
+    "title": "Our Trusted Partners",
+    "description": "We're proud to work with industry-leading companies and innovative startups.",
+    "categories": [
+      {
+        "category": "Technology Partners",
+        "partners": [
+          { "name": "Amazon Web Services", "logo": "aws-logo.png", "description": "Cloud Infrastructure" },
+          { "name": "Google Cloud", "logo": "gcp-logo.png", "description": "Cloud Platform" },
+          { "name": "Microsoft Azure", "logo": "azure-logo.png", "description": "Cloud Services" },
+          { "name": "Supabase", "logo": "supabase-logo.png", "description": "Backend Platform" }
+        ]
+      },
+      {
+        "category": "Agency Partners",
+        "partners": [
+          { "name": "Digital Innovators", "logo": null, "description": "Digital Marketing Agency" },
+          { "name": "CreativeHub", "logo": null, "description": "Design & Development" },
+          { "name": "TechConsult Pro", "logo": null, "description": "IT Consulting" },
+          { "name": "Growth Partners", "logo": null, "description": "Business Strategy" }
+        ]
+      },
+      {
+        "category": "Integration Partners",
+        "partners": [
+          { "name": "Stripe", "logo": "stripe-logo.png", "description": "Payment Processing" },
+          { "name": "Twilio", "logo": "twilio-logo.png", "description": "Communications API" },
+          { "name": "SendGrid", "logo": "sendgrid-logo.png", "description": "Email Platform" },
+          { "name": "Auth0", "logo": "auth0-logo.png", "description": "Authentication" }
+        ]
+      }
+    ]
+  },
+  "process": {
+    "title": "Partnership Process",
+    "description": "Becoming a partner is simple and straightforward.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Apply",
+        "description": "Fill out our partnership application form and tell us about your business.",
+        "icon": "file-text"
+      },
+      {
+        "step": 2,
+        "title": "Review",
+        "description": "Our team will review your application and assess partnership fit.",
+        "icon": "search"
+      },
+      {
+        "step": 3,
+        "title": "Discussion",
+        "description": "We'll schedule a call to discuss partnership opportunities and answer questions.",
+        "icon": "phone"
+      },
+      {
+        "step": 4,
+        "title": "Agreement",
+        "description": "Sign the partnership agreement and set up your partner account.",
+        "icon": "check-circle"
+      },
+      {
+        "step": 5,
+        "title": "Onboarding",
+        "description": "Complete onboarding training and get access to partner resources.",
+        "icon": "book-open"
+      },
+      {
+        "step": 6,
+        "title": "Launch",
+        "description": "Start collaborating and building success together.",
+        "icon": "rocket"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "company": "TechConsult Pro",
+      "name": "David Martinez",
+      "role": "Managing Director",
+      "quote": "Partnering with Coreway has allowed us to offer world-class solutions to our clients. Their support and expertise have been invaluable to our growth.",
+      "logo": null
+    },
+    {
+      "company": "Digital Innovators",
+      "name": "Lisa Thompson",
+      "role": "CEO",
+      "quote": "The partnership program is well-structured and the team is incredibly responsive. We've successfully delivered multiple projects together.",
+      "logo": null
+    },
+    {
+      "company": "Growth Partners",
+      "name": "James Wilson",
+      "role": "Partner",
+      "quote": "Coreway's technical capabilities complement our business strategy services perfectly. Our clients benefit from this powerful combination.",
+      "logo": null
+    }
+  ],
+  "faq": [
+    {
+      "question": "What are the requirements to become a partner?",
+      "answer": "Requirements vary by partnership type. Generally, we look for established businesses with a track record of delivering quality services, alignment with our values, and a commitment to client success."
+    },
+    {
+      "question": "Is there a fee to join the partner program?",
+      "answer": "No, there are no upfront fees to join our partner program. We believe in mutual success and only succeed when our partners succeed."
+    },
+    {
+      "question": "How long does the application process take?",
+      "answer": "The application review typically takes 5-7 business days. Once approved, onboarding can be completed within 1-2 weeks depending on the partnership type."
+    },
+    {
+      "question": "What kind of support do partners receive?",
+      "answer": "Partners get access to a dedicated partner manager, technical support, marketing resources, training materials, and a partner portal with all necessary tools and documentation."
+    },
+    {
+      "question": "Can we co-brand solutions?",
+      "answer": "Yes, depending on the partnership tier, we offer white-label and co-branding options for certain solutions."
+    },
+    {
+      "question": "How are commissions and revenue sharing calculated?",
+      "answer": "Commission structures vary by partnership type and are clearly outlined in the partnership agreement. We offer competitive rates and transparent tracking through our partner portal."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Partner With Us?",
+    "description": "Join our partner ecosystem and let's build something amazing together.",
+    "primaryButton": {
+      "text": "Apply Now",
+      "action": "application"
+    },
+    "secondaryButton": {
+      "text": "Schedule a Call",
+      "action": "schedule"
+    },
+    "contact": {
+      "email": "partners@corewaysolution.com",
+      "phone": "+1 (555) 123-4567"
+    }
+  }
+}
