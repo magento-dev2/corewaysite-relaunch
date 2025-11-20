@@ -113,7 +113,7 @@
       "label": "Portfolio",
       "type": "dropdown",
       "items": [
-        { "label": "Case Studies", "href": "/portfolio/case-studies" },
+        { "label": "Case Studies", "href": "/case-studies" },
         { "label": "Project Snapshots", "href": "/portfolio/projects" },
         { "label": "Testimonials", "href": "/testimonials" }
       ]

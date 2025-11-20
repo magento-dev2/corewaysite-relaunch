@@ -12,7 +12,7 @@ const footerLinks = {
     { name: "Security", url: "/security" },
   ],
   Resources: [
-    { name: "Documentation", url: "/docs" },
+    { name: "Documentation", url: "/documentation" },
     { name: "API Reference", url: "/api-reference" },
     { name: "Tutorials", url: "/tutorials" },
     { name: "Blog", url: "/blog" },
