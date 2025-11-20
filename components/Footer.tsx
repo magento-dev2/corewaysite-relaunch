@@ -100,7 +100,7 @@ export default function Footer() {
             <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
               Support
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <a href="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm">
               Sitemap
             </a>
           </div>
