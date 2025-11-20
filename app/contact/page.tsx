@@ -157,7 +157,7 @@ export default function ContactSection() {
             </div>
 
             <textarea
-              rows="4"
+              rows={4}
               placeholder="Brief your Requirement *"
               className="bg-[#261C35] text-white p-3 rounded-lg border border-white/10 w-full"
             ></textarea>
