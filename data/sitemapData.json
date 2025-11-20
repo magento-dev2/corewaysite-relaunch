@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "title": "Sitemap",
+    "subtitle": "Navigate Our Website",
+    "description": "Find everything you need quickly with our comprehensive sitemap."
+  },
+  "sections": [
+    {
+      "id": "main",
+      "title": "Main Pages",
+      "icon": "home",
+      "pages": [
+        { "label": "Home", "href": "/", "description": "Welcome to Coreway Solution" },
+        { "label": "Contact", "href": "/contact", "description": "Get in touch with us" }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "About Us",
+      "icon": "users",
+      "pages": [
+        { "label": "Company Overview", "href": "/about/company-overview", "description": "Learn about our company" },
+        { "label": "Why Coreway", "href": "/about/why-coreway", "description": "What makes us different" },
+        { "label": "Careers", "href": "/careers", "description": "Join our team" },
+        { "label": "Partners", "href": "/partners", "description": "Partner ecosystem" },
+        { "label": "Press Kit", "href": "/press-kit", "description": "Media resources and brand assets" }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title": "Solutions",
+      "icon": "briefcase",
+      "subsections": [
+        {
+          "title": "Digital Solutions",
+          "pages": [
+            { "label": "Digital Commerce Transformation", "href": "/solution/digital-commerce-transformation", "description": "Transform your e-commerce platform" },
+            { "label": "Product Development for Startups", "href": "/solution/product-development-forstartups", "description": "Build your startup MVP" },
+            { "label": "AI-Powered Application Platforms", "href": "/solution/ai-powered-application-platforms", "description": "Intelligent application platforms" }
+          ]
+        },
+        {
+          "title": "Development & Integration",
+          "pages": [
+            { "label": "IoT Application Development", "href": "/solution/iot-application-development", "description": "Connected device solutions" },
+            { "label": "SaaS Infrastructure & DevOps", "href": "/solution/saas-infrastructure-devops", "description": "Scalable SaaS infrastructure" },
+            { "label": "Business Workflow Automation", "href": "/solution/business-workflow-automation", "description": "Automate your business processes" }
+          ]
+        },
+        {
+          "title": "AI & Consulting",
+          "pages": [
+            { "label": "AI Consulting", "href": "/solution/ai-consulting", "description": "Strategic AI guidance" },
+            { "label": "AI Integration Services", "href": "/solution/ai-integration-services", "description": "Integrate AI into your systems" },
+            { "label": "Replatforming & Migration", "href": "/solution/replatforming-migration", "description": "Migrate to modern platforms" },
+            { "label": "UGS Ads", "href": "/solution/ugs-ads", "description": "Advanced advertising solutions" }
+          ]
+        },
+        {
+          "title": "Infrastructure & Security",
+          "pages": [
+            { "label": "Custom API & Systems Integration", "href": "/solution/custom-api-systems-integration", "description": "Connect your systems seamlessly" },
+            { "label": "Infrastructure Security Using AI", "href": "/solution/infrastructure-security-ai", "description": "AI-powered security solutions" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-data",
+      "title": "AI & Data Engineering",
+      "icon": "cpu",
+      "pages": [
+        { "label": "Dataset Management & Delivery Systems", "href": "/ai-data/dataset-management-delivery", "description": "Efficient data management" },
+        { "label": "AWS S3 Architecture & Cost Optimization", "href": "/ai-data/aws-s3-optimization", "description": "Optimize your cloud storage" },
+        { "label": "Metadata Extraction using GPT / Vision AI", "href": "/ai-data/metadata-extraction-ai", "description": "AI-powered metadata extraction" },
+        { "label": "Automation via GPT, APIs, and Workflow Tools", "href": "/ai-data/gpt-automation", "description": "Automate with GPT" },
+        { "label": "Custom Data Dashboards & Access Portals", "href": "/ai-data/custom-dashboards", "description": "Visualize your data" },
+        { "label": "Secure Infrastructure Automation", "href": "/ai-data/infrastructure-security-ai", "description": "Automated security infrastructure" }
+      ]
+    },
+    {
+      "id": "industries",
+      "title": "Industries We Serve",
+      "icon": "building",
+      "pages": [
+        { "label": "eCommerce & Virtual Product Stores", "href": "/industries/ecommerce-stores", "description": "E-commerce solutions" },
+        { "label": "Automotive", "href": "/industries/automotive", "description": "Automotive industry solutions" },
+        { "label": "Manufacturing & Industrial IoT", "href": "/industries/manufacturing-iot", "description": "Smart manufacturing" },
+        { "label": "Food & Beverage", "href": "/industries/food-beverage", "description": "F&B industry solutions" },
+        { "label": "Furniture & Home Decor", "href": "/industries/furniture-home-decor", "description": "Furniture industry solutions" },
+        { "label": "Fashion & Apparel", "href": "/industries/fashion-apparel", "description": "Fashion tech solutions" },
+        { "label": "Pharmaceuticals & Healthcare", "href": "/industries/pharmaceuticals-healthcare", "description": "Healthcare technology" }
+      ]
+    },
+    {
+      "id": "technologies",
+      "title": "Technologies",
+      "icon": "code",
+      "subsections": [
+        {
+          "title": "Frontend & Backend",
+          "pages": [
+            { "label": "React.js", "href": "/technologies/react", "description": "Modern React development" },
+            { "label": "Node.js", "href": "/technologies/nodejs", "description": "Server-side JavaScript" },
+            { "label": "Python (Flask, FastAPI)", "href": "/technologies/python", "description": "Python web frameworks" },
+            { "label": "Laravel / PHP", "href": "/technologies/laravel-php", "description": "PHP development" }
+          ]
+        },
+        {
+          "title": "Databases & Storage",
+          "pages": [
+            { "label": "PostgreSQL / MongoDB", "href": "/technologies/databases", "description": "Database solutions" },
+            { "label": "AWS / Wasabi / MinIO / Cloudflare R2", "href": "/technologies/cloud-storage", "description": "Cloud storage options" }
+          ]
+        },
+        {
+          "title": "IoT & Security",
+          "pages": [
+            { "label": "MQTT / IoT Protocols / WebSockets", "href": "/technologies/iot-protocols", "description": "IoT communication protocols" },
+            { "label": "Fail2Ban / UFW / CrowdSec", "href": "/technologies/security-tools", "description": "Security tools and practices" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "Legal & Policies",
+      "icon": "file-text",
+      "pages": [
+        { "label": "Privacy Policy", "href": "/privacy-policy", "description": "How we protect your data" },
+        { "label": "Terms of Service", "href": "/terms-of-service", "description": "Terms and conditions" },
+        { "label": "Cookie Policy", "href": "/cookie-policy", "description": "Our use of cookies" },
+        { "label": "GDPR Compliance", "href": "/gdpr-compliance", "description": "Data protection compliance" }
+      ]
+    }
+  ]
+}
