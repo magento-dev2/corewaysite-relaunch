@@ -6,52 +6,176 @@
     "button": "See what we do"
   },
   "trustedBy": {
-    "title": "Trusted by leading companies worldwide"
+    "badge": "Trusted by",
+    "title": "Innovative Teams Worldwide"
   },
   "numbers": {
-    "title": "Coreway by the Numbers",
-    "subtitle": "Delivering excellence through measurable results",
-    "projects": "Projects Delivered",
-    "clients": "Happy Clients",
-    "countries": "Countries Served",
-    "satisfaction": "Client Satisfaction"
+    "title": "Who We are - Coreway Solution",
+    "description": "At Coreway Solution, we help businesses architect, build, and automate modern digital platforms that scale. With over a decade of experience, we specialize in product development, AI-driven applications, IoT dashboards, and cloud infrastructure engineering. Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.We partner with startups, SMBs, and enterprises across the world—delivering technology that drives growth, efficiency, and long-term impact.",
+    "button": "Learn More About Us",
+    "stats": {
+      "team": "Global Team",
+      "experience": "Years of Experience",
+      "revenue": "Revenue Empowered",
+      "industries": "Industries Served",
+      "launches": "Stores / Sites Launched",
+      "awards": "Awards Won"
+    }
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Comprehensive solutions for your digital transformation",
-    "viewAll": "View All Services"
+    "description": "We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.",
+    "architect": {
+      "title": "Architect",
+      "subtitle": "Plan. Design. Strategize.",
+      "description": "We start by defining clarity — translating your business goals into system blueprints that scale.",
+      "items": [
+        "Technology & System Architecture",
+        "Digital Discovery & Consulting",
+        "Cloud & Infrastructure Strategy",
+        "API Design & Integration Planning",
+        "UI/UX Experience Blueprints"
+      ]
+    },
+    "build": {
+      "title": "Build",
+      "subtitle": "Develop. Integrate. Deploy.",
+      "description": "We engineer reliable, scalable solutions — from intelligent apps to complete platform ecosystems.",
+      "items": [
+        "Custom Web & App Development",
+        "SaaS & Product Engineering",
+        "IoT Dashboards & Realtime Systems",
+        "eCommerce Development",
+        "CI/CD & DevOps Deployment"
+      ]
+    },
+    "automate": {
+      "title": "Automate",
+      "subtitle": "Optimize. Scale. Manage.",
+      "description": "We enable businesses to run smarter with automation, AI, and connected workflows.",
+      "items": [
+        "Workflow & Process Automation",
+        "AI & GPT-based Integrations",
+        "Data & Analytics Automation",
+        "ERP / CRM / Payment Connectors",
+        "Managed Cloud & Support"
+      ]
+    }
   },
   "expertise": {
     "title": "Our Expertise",
-    "subtitle": "Cutting-edge technologies and proven methodologies"
+    "description": "Technology-driven solutions that power growth and innovation",
+    "areas": {
+      "ai": {
+        "title": "AI & Data Engineering",
+        "description": "We create intelligent systems powered by GPT, Vision AI, and advanced data pipelines — enabling smarter analytics, automation, and decision-making.",
+        "link": "Explore AI & Data"
+      },
+      "commerce": {
+        "title": "Commerce Solutions",
+        "description": "We design scalable eCommerce and marketplace platforms — from new store development to replatforming, omnichannel growth, and system integration.",
+        "link": "Explore Commerce"
+      },
+      "automation": {
+        "title": "Automation & Integration",
+        "description": "We automate your workflows and connect platforms — linking payments, ERP, CRM, logistics, and marketing tools into one intelligent system.",
+        "link": "Explore Automation"
+      },
+      "mobile": {
+        "title": "Mobile & Web Applications",
+        "description": "We build high-performance mobile and web applications with intuitive UX, modern frameworks, and secure architecture tailored to your goals.",
+        "link": "Explore App Development"
+      },
+      "analytics": {
+        "title": "Analytics & Insights",
+        "description": "We transform data into clarity with real-time dashboards, predictive analytics, and performance tracking to drive measurable growth.",
+        "link": "Explore Analytics"
+      },
+      "cloud": {
+        "title": "Cloud & DevOps",
+        "description": "We design reliable, automated, and secure cloud infrastructures — ensuring seamless deployment, scalability, and performance optimization.",
+        "link": "Explore Cloud & DevOps"
+      }
+    }
   },
   "cto": {
-    "badge": "CTO as a Service",
-    "title": "Need Strategic Technical Leadership?",
-    "description": "Get instant access to experienced CTOs who can guide your technology strategy, architecture decisions, and team development.",
-    "button": "Learn More About CTO Service"
+    "title": "Hire us to lead globally",
+    "titleHighlight": "fast-growing",
+    "titleEnd": "brands.",
+    "name": "Mr. Alpesh Radadiya",
+    "role": "(Chief Technology Officer)",
+    "description": "Mr. Alpesh is a proactive chief technology officer (CTO) with 10+ years of experience in eCommerce, mobile apps, and web development. He is known for taking calculated risks, harnessing new technological advancements, and empowering global businesses with bespoke digital solutions.",
+    "button": "Schedule a Call with Our CTO"
   },
   "portfolio": {
-    "title": "Portfolio Highlights",
-    "subtitle": "Explore our successful projects and client stories"
+    "badge": "Success Stories",
+    "title": "Case Studies",
+    "subtitle": "Real results from real projects"
   },
   "integrations": {
-    "title": "Seamless Integrations",
-    "subtitle": "Connect with the tools and platforms you already use"
+    "badge": "Integrations",
+    "title": "Connect Everything",
+    "subtitle": "Seamlessly integrate with the tools you already use"
   },
   "testimonials": {
-    "title": "What Our Clients Say",
-    "subtitle": "Real feedback from companies we've helped transform"
+    "title": "Loved by teams everywhere",
+    "items": [
+      {
+        "quote": "Coreway has transformed how we handle customer data. What used to take hours now happens automatically.",
+        "author": "Sarah Chen",
+        "role": "VP of Operations",
+        "company": "TechFlow Inc"
+      },
+      {
+        "quote": "The flexibility to create custom workflows without coding has been a game-changer for our team.",
+        "author": "Michael Rodriguez",
+        "role": "Head of Marketing",
+        "company": "GrowthLabs"
+      },
+      {
+        "quote": "We've reduced manual work by 80% and can focus on what really matters - building great products.",
+        "author": "Emily Watson",
+        "role": "CTO",
+        "company": "InnovateCo"
+      }
+    ]
   },
   "industries": {
-    "title": "Industries We Serve",
-    "subtitle": "Specialized solutions for diverse sectors"
+    "badge": "Industries",
+    "title": "Who We Serve",
+    "subtitle": "Tailored solutions for diverse sectors",
+    "items": {
+      "healthcare": {
+        "title": "Healthcare",
+        "description": "Custom healthcare solutions"
+      },
+      "retail": {
+        "title": "Retail",
+        "description": "E-commerce platforms"
+      },
+      "finance": {
+        "title": "Finance",
+        "description": "Secure fintech solutions"
+      },
+      "education": {
+        "title": "Education",
+        "description": "Learning management systems"
+      },
+      "realEstate": {
+        "title": "Real-estate",
+        "description": "Property management tools"
+      },
+      "manufacturing": {
+        "title": "Manufacturing",
+        "description": "IoT and automation"
+      }
+    }
   },
   "blog": {
-    "title": "From Our Blog",
-    "subtitle": "Latest insights and articles",
     "badge": "Latest Insights",
-    "readArticle": "Read Article",
+    "title": "From Our Blog",
+    "subtitle": "Insights and articles on tech trends",
+    "readMore": "Read Article",
     "viewAll": "View All Articles"
   },
   "cta": {

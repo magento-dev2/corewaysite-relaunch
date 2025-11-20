@@ -6,52 +6,176 @@
     "button": "Ver lo que hacemos"
   },
   "trustedBy": {
-    "title": "Confiado por empresas líderes en todo el mundo"
+    "badge": "Confiado por",
+    "title": "Equipos Innovadores en Todo el Mundo"
   },
   "numbers": {
-    "title": "Coreway en Números",
-    "subtitle": "Ofreciendo excelencia a través de resultados medibles",
-    "projects": "Proyectos Entregados",
-    "clients": "Clientes Satisfechos",
-    "countries": "Países Atendidos",
-    "satisfaction": "Satisfacción del Cliente"
+    "title": "Quiénes Somos - Coreway Solution",
+    "description": "En Coreway Solution, ayudamos a las empresas a arquitectar, construir y automatizar plataformas digitales modernas que escalan. Con más de una década de experiencia, nos especializamos en desarrollo de productos, aplicaciones impulsadas por IA, paneles IoT e ingeniería de infraestructura en la nube. Nuestro equipo aporta profunda experiencia técnica y una mentalidad orientada a soluciones para convertir ideas en productos digitales confiables, seguros y de alto rendimiento. Nos asociamos con startups, PYMES y empresas de todo el mundo, entregando tecnología que impulsa el crecimiento, la eficiencia y el impacto a largo plazo.",
+    "button": "Conocer Más Sobre Nosotros",
+    "stats": {
+      "team": "Equipo Global",
+      "experience": "Años de Experiencia",
+      "revenue": "Ingresos Potenciados",
+      "industries": "Industrias Servidas",
+      "launches": "Tiendas / Sitios Lanzados",
+      "awards": "Premios Ganados"
+    }
   },
   "services": {
     "title": "Nuestros Servicios",
-    "subtitle": "Soluciones integrales para su transformación digital",
-    "viewAll": "Ver Todos los Servicios"
+    "description": "Entendemos muy bien el dolor de las startups y PYMES, para reducir este dolor ofrecemos el mejor conjunto de servicios para WEB, MÓVIL y EMPRESAS con tecnologías de próxima generación.",
+    "architect": {
+      "title": "Arquitectura",
+      "subtitle": "Planificar. Diseñar. Estrategizar.",
+      "description": "Comenzamos definiendo claridad: traduciendo tus objetivos empresariales en planos de sistema que escalan.",
+      "items": [
+        "Arquitectura de Tecnología y Sistemas",
+        "Descubrimiento Digital y Consultoría",
+        "Estrategia de Nube e Infraestructura",
+        "Diseño de API y Planificación de Integración",
+        "Planos de Experiencia UI/UX"
+      ]
+    },
+    "build": {
+      "title": "Construir",
+      "subtitle": "Desarrollar. Integrar. Desplegar.",
+      "description": "Diseñamos soluciones confiables y escalables: desde aplicaciones inteligentes hasta ecosistemas de plataforma completos.",
+      "items": [
+        "Desarrollo Web y de Aplicaciones Personalizadas",
+        "Ingeniería SaaS y de Productos",
+        "Paneles IoT y Sistemas en Tiempo Real",
+        "Desarrollo de Comercio Electrónico",
+        "Implementación CI/CD y DevOps"
+      ]
+    },
+    "automate": {
+      "title": "Automatizar",
+      "subtitle": "Optimizar. Escalar. Gestionar.",
+      "description": "Permitimos que las empresas operen de manera más inteligente con automatización, IA y flujos de trabajo conectados.",
+      "items": [
+        "Automatización de Flujos de Trabajo y Procesos",
+        "Integraciones Basadas en IA y GPT",
+        "Automatización de Datos y Análisis",
+        "Conectores ERP / CRM / Pagos",
+        "Nube Administrada y Soporte"
+      ]
+    }
   },
   "expertise": {
     "title": "Nuestra Experiencia",
-    "subtitle": "Tecnologías de vanguardia y metodologías probadas"
+    "description": "Soluciones impulsadas por tecnología que potencian el crecimiento y la innovación",
+    "areas": {
+      "ai": {
+        "title": "IA e Ingeniería de Datos",
+        "description": "Creamos sistemas inteligentes impulsados por GPT, IA de Visión y pipelines de datos avanzados: habilitando análisis más inteligentes, automatización y toma de decisiones.",
+        "link": "Explorar IA y Datos"
+      },
+      "commerce": {
+        "title": "Soluciones de Comercio",
+        "description": "Diseñamos plataformas de comercio electrónico y marketplace escalables: desde desarrollo de nuevas tiendas hasta replatformación, crecimiento omnicanal e integración de sistemas.",
+        "link": "Explorar Comercio"
+      },
+      "automation": {
+        "title": "Automatización e Integración",
+        "description": "Automatizamos tus flujos de trabajo y conectamos plataformas: enlazando pagos, ERP, CRM, logística y herramientas de marketing en un sistema inteligente.",
+        "link": "Explorar Automatización"
+      },
+      "mobile": {
+        "title": "Aplicaciones Móviles y Web",
+        "description": "Construimos aplicaciones móviles y web de alto rendimiento con UX intuitiva, frameworks modernos y arquitectura segura adaptada a tus objetivos.",
+        "link": "Explorar Desarrollo de Aplicaciones"
+      },
+      "analytics": {
+        "title": "Análisis e Insights",
+        "description": "Transformamos datos en claridad con paneles en tiempo real, análisis predictivo y seguimiento de rendimiento para impulsar un crecimiento medible.",
+        "link": "Explorar Análisis"
+      },
+      "cloud": {
+        "title": "Nube y DevOps",
+        "description": "Diseñamos infraestructuras en la nube confiables, automatizadas y seguras: asegurando implementación sin problemas, escalabilidad y optimización del rendimiento.",
+        "link": "Explorar Nube y DevOps"
+      }
+    }
   },
   "cto": {
-    "badge": "CTO como Servicio",
-    "title": "¿Necesitas Liderazgo Técnico Estratégico?",
-    "description": "Obtén acceso instantáneo a CTOs experimentados que pueden guiar tu estrategia tecnológica, decisiones de arquitectura y desarrollo de equipo.",
-    "button": "Conoce Más Sobre el Servicio CTO"
+    "title": "Contratanos para liderar globalmente",
+    "titleHighlight": "marcas de rápido crecimiento",
+    "titleEnd": ".",
+    "name": "Sr. Alpesh Radadiya",
+    "role": "(Director de Tecnología)",
+    "description": "El Sr. Alpesh es un director de tecnología (CTO) proactivo con más de 10 años de experiencia en comercio electrónico, aplicaciones móviles y desarrollo web. Es conocido por tomar riesgos calculados, aprovechar nuevos avances tecnológicos y empoderar a empresas globales con soluciones digitales personalizadas.",
+    "button": "Programar una Llamada con Nuestro CTO"
   },
   "portfolio": {
-    "title": "Destacados del Portafolio",
-    "subtitle": "Explora nuestros proyectos exitosos e historias de clientes"
+    "badge": "Historias de Éxito",
+    "title": "Casos de Estudio",
+    "subtitle": "Resultados reales de proyectos reales"
   },
   "integrations": {
-    "title": "Integraciones Perfectas",
-    "subtitle": "Conéctate con las herramientas y plataformas que ya usas"
+    "badge": "Integraciones",
+    "title": "Conectar Todo",
+    "subtitle": "Integrar sin problemas con las herramientas que ya usas"
   },
   "testimonials": {
-    "title": "Lo Que Dicen Nuestros Clientes",
-    "subtitle": "Comentarios reales de empresas que hemos ayudado a transformar"
+    "title": "Amado por equipos en todas partes",
+    "items": [
+      {
+        "quote": "Coreway ha transformado cómo manejamos los datos de clientes. Lo que solía tomar horas ahora sucede automáticamente.",
+        "author": "Sarah Chen",
+        "role": "VP de Operaciones",
+        "company": "TechFlow Inc"
+      },
+      {
+        "quote": "La flexibilidad para crear flujos de trabajo personalizados sin codificar ha sido un cambio radical para nuestro equipo.",
+        "author": "Michael Rodriguez",
+        "role": "Jefe de Marketing",
+        "company": "GrowthLabs"
+      },
+      {
+        "quote": "Hemos reducido el trabajo manual en un 80% y podemos enfocarnos en lo que realmente importa: construir grandes productos.",
+        "author": "Emily Watson",
+        "role": "CTO",
+        "company": "InnovateCo"
+      }
+    ]
   },
   "industries": {
-    "title": "Industrias que Servimos",
-    "subtitle": "Soluciones especializadas para diversos sectores"
+    "badge": "Industrias",
+    "title": "A Quién Servimos",
+    "subtitle": "Soluciones personalizadas para diversos sectores",
+    "items": {
+      "healthcare": {
+        "title": "Salud",
+        "description": "Soluciones de salud personalizadas"
+      },
+      "retail": {
+        "title": "Minorista",
+        "description": "Plataformas de comercio electrónico"
+      },
+      "finance": {
+        "title": "Finanzas",
+        "description": "Soluciones fintech seguras"
+      },
+      "education": {
+        "title": "Educación",
+        "description": "Sistemas de gestión de aprendizaje"
+      },
+      "realEstate": {
+        "title": "Bienes Raíces",
+        "description": "Herramientas de gestión de propiedades"
+      },
+      "manufacturing": {
+        "title": "Manufactura",
+        "description": "IoT y automatización"
+      }
+    }
   },
   "blog": {
-    "title": "Desde Nuestro Blog",
-    "subtitle": "Últimas ideas y artículos",
     "badge": "Últimas Perspectivas",
-    "readArticle": "Leer Artículo",
+    "title": "Desde Nuestro Blog",
+    "subtitle": "Ideas y artículos sobre tendencias tecnológicas",
+    "readMore": "Leer Artículo",
     "viewAll": "Ver Todos los Artículos"
   },
   "cta": {

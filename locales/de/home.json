@@ -6,57 +6,181 @@
     "button": "Sehen Sie, was wir tun"
   },
   "trustedBy": {
-    "title": "Vertraut von führenden Unternehmen weltweit"
+    "badge": "Vertraut von",
+    "title": "Innovative Teams Weltweit"
   },
   "numbers": {
-    "title": "Coreway in Zahlen",
-    "subtitle": "Exzellenz durch messbare Ergebnisse liefern",
-    "projects": "Abgeschlossene Projekte",
-    "clients": "Zufriedene Kunden",
-    "countries": "Bediente Länder",
-    "satisfaction": "Kundenzufriedenheit"
+    "title": "Wer Wir Sind - Coreway Solution",
+    "description": "Bei Coreway Solution helfen wir Unternehmen, moderne digitale Plattformen zu planen, zu erstellen und zu automatisieren, die skalieren. Mit über einem Jahrzehnt Erfahrung spezialisieren wir uns auf Produktentwicklung, KI-gesteuerte Anwendungen, IoT-Dashboards und Cloud-Infrastruktur-Engineering. Unser Team bringt tiefgreifende technische Expertise und eine lösungsorientierte Denkweise mit, um Ideen in zuverlässige, sichere und leistungsstarke digitale Produkte zu verwandeln. Wir arbeiten mit Startups, KMUs und Unternehmen auf der ganzen Welt zusammen und liefern Technologie, die Wachstum, Effizienz und langfristige Wirkung vorantreibt.",
+    "button": "Mehr Über Uns Erfahren",
+    "stats": {
+      "team": "Globales Team",
+      "experience": "Jahre Erfahrung",
+      "revenue": "Einnahmen Ermöglicht",
+      "industries": "Bediente Branchen",
+      "launches": "Geschäfte / Websites Gestartet",
+      "awards": "Gewonnene Auszeichnungen"
+    }
   },
   "services": {
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Umfassende Lösungen für Ihre digitale Transformation",
-    "viewAll": "Alle Dienste Anzeigen"
+    "description": "Wir verstehen die Herausforderungen von Startups und KMUs sehr gut. Um diese Herausforderungen zu reduzieren, bieten wir das beste Angebot an Dienstleistungen für WEB, MOBILE und UNTERNEHMEN mit Technologien der nächsten Generation.",
+    "architect": {
+      "title": "Architektur",
+      "subtitle": "Planen. Entwerfen. Strategisieren.",
+      "description": "Wir beginnen mit der Definition von Klarheit - übersetzen Ihre Geschäftsziele in System-Blaupausen, die skalieren.",
+      "items": [
+        "Technologie- & Systemarchitektur",
+        "Digitale Entdeckung & Beratung",
+        "Cloud- & Infrastrukturstrategie",
+        "API-Design & Integrationsplanung",
+        "UI/UX-Erlebnis-Blaupausen"
+      ]
+    },
+    "build": {
+      "title": "Aufbauen",
+      "subtitle": "Entwickeln. Integrieren. Bereitstellen.",
+      "description": "Wir entwickeln zuverlässige, skalierbare Lösungen - von intelligenten Apps bis hin zu vollständigen Plattform-Ökosystemen.",
+      "items": [
+        "Benutzerdefinierte Web- & App-Entwicklung",
+        "SaaS & Produkt-Engineering",
+        "IoT-Dashboards & Echtzeitsysteme",
+        "eCommerce-Entwicklung",
+        "CI/CD & DevOps-Bereitstellung"
+      ]
+    },
+    "automate": {
+      "title": "Automatisieren",
+      "subtitle": "Optimieren. Skalieren. Verwalten.",
+      "description": "Wir ermöglichen es Unternehmen, intelligenter zu arbeiten mit Automatisierung, KI und vernetzten Workflows.",
+      "items": [
+        "Workflow- & Prozessautomatisierung",
+        "KI- & GPT-basierte Integrationen",
+        "Daten- & Analytik-Automatisierung",
+        "ERP / CRM / Zahlungs-Konnektoren",
+        "Verwaltete Cloud & Support"
+      ]
+    }
   },
   "expertise": {
     "title": "Unsere Expertise",
-    "subtitle": "Modernste Technologien und bewährte Methoden"
+    "description": "Technologiegetriebene Lösungen, die Wachstum und Innovation vorantreiben",
+    "areas": {
+      "ai": {
+        "title": "KI & Daten-Engineering",
+        "description": "Wir erstellen intelligente Systeme, die von GPT, Vision AI und fortschrittlichen Daten-Pipelines angetrieben werden - und ermöglichen intelligentere Analysen, Automatisierung und Entscheidungsfindung.",
+        "link": "KI & Daten Erkunden"
+      },
+      "commerce": {
+        "title": "Commerce-Lösungen",
+        "description": "Wir entwerfen skalierbare eCommerce- und Marktplatz-Plattformen - von der Entwicklung neuer Geschäfte bis zur Replatformierung, Omnichannel-Wachstum und Systemintegration.",
+        "link": "Commerce Erkunden"
+      },
+      "automation": {
+        "title": "Automatisierung & Integration",
+        "description": "Wir automatisieren Ihre Workflows und verbinden Plattformen - verbinden Zahlungen, ERP, CRM, Logistik und Marketing-Tools zu einem intelligenten System.",
+        "link": "Automatisierung Erkunden"
+      },
+      "mobile": {
+        "title": "Mobile & Web-Anwendungen",
+        "description": "Wir erstellen leistungsstarke Mobile- und Web-Anwendungen mit intuitiver UX, modernen Frameworks und sicherer Architektur, die auf Ihre Ziele zugeschnitten sind.",
+        "link": "App-Entwicklung Erkunden"
+      },
+      "analytics": {
+        "title": "Analytik & Einblicke",
+        "description": "Wir verwandeln Daten in Klarheit mit Echtzeit-Dashboards, prädiktiver Analytik und Performance-Tracking, um messbares Wachstum voranzutreiben.",
+        "link": "Analytik Erkunden"
+      },
+      "cloud": {
+        "title": "Cloud & DevOps",
+        "description": "Wir entwerfen zuverlässige, automatisierte und sichere Cloud-Infrastrukturen - gewährleisten nahtlose Bereitstellung, Skalierbarkeit und Leistungsoptimierung.",
+        "link": "Cloud & DevOps Erkunden"
+      }
+    }
   },
   "cto": {
-    "badge": "CTO als Service",
-    "title": "Benötigen Sie Strategische Technische Führung?",
-    "description": "Erhalten Sie sofortigen Zugang zu erfahrenen CTOs, die Ihre Technologiestrategie, Architekturentscheidungen und Teamentwicklung leiten können.",
-    "button": "Mehr Über CTO-Service Erfahren"
+    "title": "Beauftragen Sie uns, global",
+    "titleHighlight": "schnell wachsende",
+    "titleEnd": "Marken zu führen.",
+    "name": "Herr Alpesh Radadiya",
+    "role": "(Chief Technology Officer)",
+    "description": "Herr Alpesh ist ein proaktiver Chief Technology Officer (CTO) mit über 10 Jahren Erfahrung in eCommerce, mobilen Apps und Webentwicklung. Er ist bekannt dafür, kalkulierte Risiken einzugehen, neue technologische Fortschritte zu nutzen und globale Unternehmen mit maßgeschneiderten digitalen Lösungen zu stärken.",
+    "button": "Anruf mit Unserem CTO Planen"
   },
   "portfolio": {
-    "title": "Portfolio-Highlights",
-    "subtitle": "Entdecken Sie unsere erfolgreichen Projekte und Kundengeschichten"
+    "badge": "Erfolgsgeschichten",
+    "title": "Fallstudien",
+    "subtitle": "Echte Ergebnisse aus echten Projekten"
   },
   "integrations": {
-    "title": "Nahtlose Integrationen",
-    "subtitle": "Verbinden Sie sich mit den Tools und Plattformen, die Sie bereits verwenden"
+    "badge": "Integrationen",
+    "title": "Alles Verbinden",
+    "subtitle": "Nahtlose Integration mit den Tools, die Sie bereits verwenden"
   },
   "testimonials": {
-    "title": "Was Unsere Kunden Sagen",
-    "subtitle": "Echtes Feedback von Unternehmen, die wir transformiert haben"
+    "title": "Von Teams überall geliebt",
+    "items": [
+      {
+        "quote": "Coreway hat unsere Handhabung von Kundendaten transformiert. Was früher Stunden dauerte, geschieht jetzt automatisch.",
+        "author": "Sarah Chen",
+        "role": "VP Operations",
+        "company": "TechFlow Inc"
+      },
+      {
+        "quote": "Die Flexibilität, benutzerdefinierte Workflows ohne Codierung zu erstellen, war ein Game-Changer für unser Team.",
+        "author": "Michael Rodriguez",
+        "role": "Leiter Marketing",
+        "company": "GrowthLabs"
+      },
+      {
+        "quote": "Wir haben manuelle Arbeit um 80% reduziert und können uns auf das konzentrieren, was wirklich zählt - großartige Produkte zu bauen.",
+        "author": "Emily Watson",
+        "role": "CTO",
+        "company": "InnovateCo"
+      }
+    ]
   },
   "industries": {
-    "title": "Branchen, Die Wir Bedienen",
-    "subtitle": "Spezialisierte Lösungen für verschiedene Sektoren"
+    "badge": "Branchen",
+    "title": "Wen Wir Bedienen",
+    "subtitle": "Maßgeschneiderte Lösungen für verschiedene Sektoren",
+    "items": {
+      "healthcare": {
+        "title": "Gesundheitswesen",
+        "description": "Benutzerdefinierte Gesundheitslösungen"
+      },
+      "retail": {
+        "title": "Einzelhandel",
+        "description": "E-Commerce-Plattformen"
+      },
+      "finance": {
+        "title": "Finanzen",
+        "description": "Sichere Fintech-Lösungen"
+      },
+      "education": {
+        "title": "Bildung",
+        "description": "Lernmanagementsysteme"
+      },
+      "realEstate": {
+        "title": "Immobilien",
+        "description": "Immobilienverwaltungstools"
+      },
+      "manufacturing": {
+        "title": "Fertigung",
+        "description": "IoT und Automatisierung"
+      }
+    }
   },
   "blog": {
-    "title": "Aus Unserem Blog",
-    "subtitle": "Neueste Einblicke und Artikel",
     "badge": "Neueste Einblicke",
-    "readArticle": "Artikel Lesen",
+    "title": "Aus Unserem Blog",
+    "subtitle": "Einblicke und Artikel zu Tech-Trends",
+    "readMore": "Artikel Lesen",
     "viewAll": "Alle Artikel Anzeigen"
   },
   "cta": {
     "badge": "Starten Sie heute mit der Automatisierung",
-    "title": "Bereit, Ihre Arbeitsabläufe zu transformieren?",
+    "title": "Bereit, Ihre Workflows zu transformieren?",
     "description": "Schließen Sie sich Tausenden von Teams an, die Coreway verwenden, um ihre Arbeit zu automatisieren und sich auf das Wesentliche zu konzentrieren. Erstellen Sie leistungsstarke Automatisierungen in Minuten, nicht Stunden.",
     "primaryButton": "Kostenlos Starten",
     "secondaryButton": "Mit Vertrieb Sprechen",
