@@ -1,0 +1,572 @@
+{
+  "hero": {
+    "title": "API Reference",
+    "subtitle": "Complete API Documentation",
+    "description": "Comprehensive reference for all API endpoints, authentication methods, and response formats.",
+    "version": "v1.0.0",
+    "baseUrl": "https://api.corewaysolution.com/v1"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "description": "All API requests require authentication. We support API Key and OAuth 2.0 authentication.",
+    "methods": [
+      {
+        "type": "API Key",
+        "description": "Include your API key in the Authorization header of every request.",
+        "example": {
+          "header": "Authorization: Bearer YOUR_API_KEY",
+          "curl": "curl -H \"Authorization: Bearer YOUR_API_KEY\" https://api.corewaysolution.com/v1/projects"
+        },
+        "steps": [
+          "Log in to your dashboard",
+          "Navigate to Settings > API Keys",
+          "Generate a new API key",
+          "Copy and securely store your key"
+        ]
+      },
+      {
+        "type": "OAuth 2.0",
+        "description": "For applications acting on behalf of users, use OAuth 2.0 with the authorization code flow.",
+        "flows": ["Authorization Code", "Client Credentials"],
+        "scopes": ["read", "write", "admin"],
+        "endpoints": {
+          "authorize": "https://auth.corewaysolution.com/oauth/authorize",
+          "token": "https://auth.corewaysolution.com/oauth/token",
+          "revoke": "https://auth.corewaysolution.com/oauth/revoke"
+        }
+      }
+    ]
+  },
+  "rateLimits": {
+    "title": "Rate Limits",
+    "description": "API requests are rate-limited to ensure fair usage and system stability.",
+    "limits": [
+      { "plan": "Free", "limit": "100 requests/hour", "burst": "10 requests/second" },
+      { "plan": "Starter", "limit": "1,000 requests/hour", "burst": "50 requests/second" },
+      { "plan": "Professional", "limit": "10,000 requests/hour", "burst": "100 requests/second" },
+      { "plan": "Enterprise", "limit": "Custom", "burst": "Custom" }
+    ],
+    "headers": [
+      { "name": "X-RateLimit-Limit", "description": "Total number of requests allowed per hour" },
+      { "name": "X-RateLimit-Remaining", "description": "Number of requests remaining in current window" },
+      { "name": "X-RateLimit-Reset", "description": "Unix timestamp when the rate limit resets" }
+    ],
+    "errorResponse": {
+      "status": 429,
+      "body": {
+        "error": "rate_limit_exceeded",
+        "message": "You have exceeded the rate limit. Please try again later.",
+        "retry_after": 3600
+      }
+    }
+  },
+  "endpoints": [
+    {
+      "category": "Projects",
+      "description": "Manage your projects and their configurations",
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/projects",
+          "name": "List Projects",
+          "description": "Retrieve a list of all projects in your account",
+          "authentication": "Required",
+          "parameters": [
+            { "name": "page", "type": "integer", "required": false, "description": "Page number for pagination", "default": 1 },
+            { "name": "limit", "type": "integer", "required": false, "description": "Number of items per page (max 100)", "default": 20 },
+            { "name": "status", "type": "string", "required": false, "description": "Filter by project status", "enum": ["active", "completed", "archived"] },
+            { "name": "sort", "type": "string", "required": false, "description": "Sort field", "enum": ["created_at", "updated_at", "name"] }
+          ],
+          "response": {
+            "status": 200,
+            "example": {
+              "data": [
+                {
+                  "id": "proj_1234567890",
+                  "name": "E-commerce Platform",
+                  "status": "active",
+                  "created_at": "2024-01-15T10:30:00Z",
+                  "updated_at": "2024-11-20T14:20:00Z",
+                  "team_size": 5,
+                  "progress": 75
+                }
+              ],
+              "pagination": {
+                "page": 1,
+                "limit": 20,
+                "total": 45,
+                "pages": 3
+              }
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/projects",
+          "name": "Create Project",
+          "description": "Create a new project",
+          "authentication": "Required",
+          "requestBody": {
+            "name": { "type": "string", "required": true, "description": "Project name" },
+            "description": { "type": "string", "required": false, "description": "Project description" },
+            "type": { "type": "string", "required": true, "description": "Project type", "enum": ["web", "mobile", "api", "iot", "ai"] },
+            "team": { "type": "array", "required": false, "description": "Array of team member IDs" },
+            "metadata": { "type": "object", "required": false, "description": "Additional project metadata" }
+          },
+          "response": {
+            "status": 201,
+            "example": {
+              "id": "proj_1234567890",
+              "name": "E-commerce Platform",
+              "description": "Custom e-commerce solution",
+              "type": "web",
+              "status": "active",
+              "created_at": "2024-11-20T14:20:00Z"
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/projects/{id}",
+          "name": "Get Project",
+          "description": "Retrieve details of a specific project",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "response": {
+            "status": 200,
+            "example": {
+              "id": "proj_1234567890",
+              "name": "E-commerce Platform",
+              "description": "Custom e-commerce solution",
+              "type": "web",
+              "status": "active",
+              "team_size": 5,
+              "progress": 75,
+              "created_at": "2024-01-15T10:30:00Z",
+              "updated_at": "2024-11-20T14:20:00Z"
+            }
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "/projects/{id}",
+          "name": "Update Project",
+          "description": "Update project details",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "requestBody": {
+            "name": { "type": "string", "required": false, "description": "Project name" },
+            "description": { "type": "string", "required": false, "description": "Project description" },
+            "status": { "type": "string", "required": false, "enum": ["active", "completed", "archived"] }
+          },
+          "response": {
+            "status": 200,
+            "example": {
+              "id": "proj_1234567890",
+              "name": "Updated Project Name",
+              "updated_at": "2024-11-20T15:30:00Z"
+            }
+          }
+        },
+        {
+          "method": "DELETE",
+          "path": "/projects/{id}",
+          "name": "Delete Project",
+          "description": "Delete a project (this action cannot be undone)",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "response": {
+            "status": 204,
+            "example": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "Deployments",
+      "description": "Manage application deployments",
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/projects/{id}/deployments",
+          "name": "List Deployments",
+          "description": "Get all deployments for a project",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "parameters": [
+            { "name": "environment", "type": "string", "required": false, "enum": ["development", "staging", "production"] },
+            { "name": "status", "type": "string", "required": false, "enum": ["pending", "building", "deploying", "success", "failed"] }
+          ],
+          "response": {
+            "status": 200,
+            "example": {
+              "data": [
+                {
+                  "id": "dep_0987654321",
+                  "project_id": "proj_1234567890",
+                  "environment": "production",
+                  "status": "success",
+                  "version": "v1.2.3",
+                  "deployed_at": "2024-11-20T12:00:00Z",
+                  "deployed_by": "user_1111"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/projects/{id}/deployments",
+          "name": "Create Deployment",
+          "description": "Deploy a project to specified environment",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "requestBody": {
+            "environment": { "type": "string", "required": true, "enum": ["development", "staging", "production"] },
+            "branch": { "type": "string", "required": true, "description": "Git branch to deploy" },
+            "version": { "type": "string", "required": false, "description": "Version tag" }
+          },
+          "response": {
+            "status": 201,
+            "example": {
+              "id": "dep_0987654321",
+              "project_id": "proj_1234567890",
+              "environment": "production",
+              "status": "pending",
+              "created_at": "2024-11-20T14:30:00Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category": "Analytics",
+      "description": "Access project analytics and metrics",
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/projects/{id}/analytics",
+          "name": "Get Analytics",
+          "description": "Retrieve analytics data for a project",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Project ID" }
+          ],
+          "parameters": [
+            { "name": "start_date", "type": "string", "required": false, "description": "Start date (ISO 8601 format)" },
+            { "name": "end_date", "type": "string", "required": false, "description": "End date (ISO 8601 format)" },
+            { "name": "metrics", "type": "array", "required": false, "description": "Specific metrics to retrieve" }
+          ],
+          "response": {
+            "status": 200,
+            "example": {
+              "project_id": "proj_1234567890",
+              "period": {
+                "start": "2024-11-01T00:00:00Z",
+                "end": "2024-11-20T23:59:59Z"
+              },
+              "metrics": {
+                "requests": 1250000,
+                "errors": 125,
+                "error_rate": 0.01,
+                "avg_response_time": 245,
+                "uptime": 99.98
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category": "Webhooks",
+      "description": "Configure and manage webhooks",
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/webhooks",
+          "name": "List Webhooks",
+          "description": "Get all configured webhooks",
+          "authentication": "Required",
+          "response": {
+            "status": 200,
+            "example": {
+              "data": [
+                {
+                  "id": "hook_1234567890",
+                  "url": "https://example.com/webhook",
+                  "events": ["project.created", "deployment.completed"],
+                  "active": true,
+                  "created_at": "2024-10-01T10:00:00Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/webhooks",
+          "name": "Create Webhook",
+          "description": "Register a new webhook endpoint",
+          "authentication": "Required",
+          "requestBody": {
+            "url": { "type": "string", "required": true, "description": "Webhook URL" },
+            "events": { "type": "array", "required": true, "description": "Array of event types to subscribe to" },
+            "secret": { "type": "string", "required": false, "description": "Secret for webhook signature verification" }
+          },
+          "response": {
+            "status": 201,
+            "example": {
+              "id": "hook_1234567890",
+              "url": "https://example.com/webhook",
+              "events": ["project.created", "deployment.completed"],
+              "active": true,
+              "secret": "whsec_xxxxxxxxxxxxx"
+            }
+          }
+        },
+        {
+          "method": "DELETE",
+          "path": "/webhooks/{id}",
+          "name": "Delete Webhook",
+          "description": "Remove a webhook",
+          "authentication": "Required",
+          "pathParameters": [
+            { "name": "id", "type": "string", "required": true, "description": "Webhook ID" }
+          ],
+          "response": {
+            "status": 204,
+            "example": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "Users",
+      "description": "Manage user accounts and permissions",
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/users/me",
+          "name": "Get Current User",
+          "description": "Retrieve authenticated user information",
+          "authentication": "Required",
+          "response": {
+            "status": 200,
+            "example": {
+              "id": "user_1234567890",
+              "email": "user@example.com",
+              "name": "John Doe",
+              "role": "admin",
+              "created_at": "2023-06-15T10:00:00Z"
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/users",
+          "name": "List Users",
+          "description": "List all users in your organization",
+          "authentication": "Required (Admin only)",
+          "response": {
+            "status": 200,
+            "example": {
+              "data": [
+                {
+                  "id": "user_1234567890",
+                  "email": "user@example.com",
+                  "name": "John Doe",
+                  "role": "admin",
+                  "status": "active"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "webhookEvents": {
+    "title": "Webhook Events",
+    "description": "Available webhook event types and their payloads",
+    "events": [
+      {
+        "event": "project.created",
+        "description": "Triggered when a new project is created",
+        "payload": {
+          "event": "project.created",
+          "timestamp": "2024-11-20T14:30:00Z",
+          "data": {
+            "id": "proj_1234567890",
+            "name": "New Project",
+            "type": "web",
+            "created_by": "user_1111"
+          }
+        }
+      },
+      {
+        "event": "project.updated",
+        "description": "Triggered when a project is modified",
+        "payload": {
+          "event": "project.updated",
+          "timestamp": "2024-11-20T15:00:00Z",
+          "data": {
+            "id": "proj_1234567890",
+            "changes": {
+              "name": { "old": "Old Name", "new": "New Name" }
+            }
+          }
+        }
+      },
+      {
+        "event": "deployment.started",
+        "description": "Triggered when a deployment begins",
+        "payload": {
+          "event": "deployment.started",
+          "timestamp": "2024-11-20T16:00:00Z",
+          "data": {
+            "id": "dep_0987654321",
+            "project_id": "proj_1234567890",
+            "environment": "production"
+          }
+        }
+      },
+      {
+        "event": "deployment.completed",
+        "description": "Triggered when a deployment finishes successfully",
+        "payload": {
+          "event": "deployment.completed",
+          "timestamp": "2024-11-20T16:10:00Z",
+          "data": {
+            "id": "dep_0987654321",
+            "project_id": "proj_1234567890",
+            "environment": "production",
+            "status": "success",
+            "duration": 600
+          }
+        }
+      },
+      {
+        "event": "deployment.failed",
+        "description": "Triggered when a deployment fails",
+        "payload": {
+          "event": "deployment.failed",
+          "timestamp": "2024-11-20T16:05:00Z",
+          "data": {
+            "id": "dep_0987654321",
+            "project_id": "proj_1234567890",
+            "environment": "production",
+            "error": "Build failed: npm install returned non-zero exit code"
+          }
+        }
+      }
+    ]
+  },
+  "errorCodes": {
+    "title": "Error Codes",
+    "description": "Standard error responses and their meanings",
+    "errors": [
+      {
+        "code": "invalid_request",
+        "status": 400,
+        "message": "The request was malformed or missing required parameters",
+        "example": {
+          "error": "invalid_request",
+          "message": "Missing required field: name",
+          "field": "name"
+        }
+      },
+      {
+        "code": "unauthorized",
+        "status": 401,
+        "message": "Authentication credentials are missing or invalid",
+        "example": {
+          "error": "unauthorized",
+          "message": "Invalid API key"
+        }
+      },
+      {
+        "code": "forbidden",
+        "status": 403,
+        "message": "You don't have permission to access this resource",
+        "example": {
+          "error": "forbidden",
+          "message": "Insufficient permissions to delete this project"
+        }
+      },
+      {
+        "code": "not_found",
+        "status": 404,
+        "message": "The requested resource doesn't exist",
+        "example": {
+          "error": "not_found",
+          "message": "Project not found",
+          "resource_id": "proj_invalid"
+        }
+      },
+      {
+        "code": "rate_limit_exceeded",
+        "status": 429,
+        "message": "Too many requests. Please slow down.",
+        "example": {
+          "error": "rate_limit_exceeded",
+          "message": "You have exceeded the rate limit",
+          "retry_after": 3600
+        }
+      },
+      {
+        "code": "internal_error",
+        "status": 500,
+        "message": "An unexpected error occurred on our servers",
+        "example": {
+          "error": "internal_error",
+          "message": "An unexpected error occurred. Please try again later.",
+          "request_id": "req_1234567890"
+        }
+      }
+    ]
+  },
+  "sdks": {
+    "title": "Official SDKs",
+    "description": "Use our official SDKs for easier integration",
+    "libraries": [
+      {
+        "language": "JavaScript/TypeScript",
+        "package": "@coreway/sdk",
+        "install": "npm install @coreway/sdk",
+        "documentation": "https://docs.corewaysolution.com/sdk/javascript",
+        "example": "import { CorewayClient } from '@coreway/sdk';\n\nconst client = new CorewayClient({ apiKey: 'YOUR_API_KEY' });\nconst projects = await client.projects.list();"
+      },
+      {
+        "language": "Python",
+        "package": "coreway-sdk",
+        "install": "pip install coreway-sdk",
+        "documentation": "https://docs.corewaysolution.com/sdk/python",
+        "example": "from coreway import CorewayClient\n\nclient = CorewayClient(api_key='YOUR_API_KEY')\nprojects = client.projects.list()"
+      },
+      {
+        "language": "PHP",
+        "package": "coreway/sdk",
+        "install": "composer require coreway/sdk",
+        "documentation": "https://docs.corewaysolution.com/sdk/php",
+        "example": "$client = new \\Coreway\\CorewayClient('YOUR_API_KEY');\n$projects = $client->projects->list();"
+      },
+      {
+        "language": "Ruby",
+        "package": "coreway-sdk",
+        "install": "gem install coreway-sdk",
+        "documentation": "https://docs.corewaysolution.com/sdk/ruby",
+        "example": "require 'coreway'\n\nclient = Coreway::Client.new(api_key: 'YOUR_API_KEY')\nprojects = client.projects.list"
+      }
+    ]
+  }
+}

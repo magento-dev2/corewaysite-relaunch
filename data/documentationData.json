@@ -1,0 +1,563 @@
+{
+  "hero": {
+    "title": "Documentation",
+    "subtitle": "Everything You Need to Get Started",
+    "description": "Comprehensive guides, tutorials, and resources to help you succeed with Coreway Solution."
+  },
+  "categories": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "icon": "rocket",
+      "description": "Quick start guides and essential information to begin your journey",
+      "articles": [
+        {
+          "id": "introduction",
+          "title": "Introduction to Coreway",
+          "description": "Learn about our platform, services, and how we can help your business",
+          "readTime": "5 min",
+          "difficulty": "Beginner",
+          "content": {
+            "overview": "Coreway Solution is a leading technology company specializing in custom software development, AI integration, and digital transformation services. We help businesses of all sizes build innovative solutions that drive growth and efficiency.",
+            "sections": [
+              {
+                "heading": "What We Offer",
+                "text": "Our comprehensive suite of services includes custom software development, AI/ML solutions, cloud infrastructure, IoT applications, and digital commerce platforms. We combine technical expertise with industry knowledge to deliver solutions that exceed expectations."
+              },
+              {
+                "heading": "Our Approach",
+                "text": "We follow an agile, collaborative approach that prioritizes transparency, quality, and timely delivery. Our team works closely with clients throughout the entire project lifecycle, from initial planning to deployment and ongoing support."
+              },
+              {
+                "heading": "Why Choose Us",
+                "text": "With over 200 successful projects delivered across 10+ countries, we bring proven expertise and a commitment to excellence. Our team of 50+ professionals stays at the forefront of technology trends to deliver cutting-edge solutions."
+              }
+            ]
+          }
+        },
+        {
+          "id": "onboarding-process",
+          "title": "Onboarding Process",
+          "description": "Step-by-step guide to getting started with your project",
+          "readTime": "8 min",
+          "difficulty": "Beginner",
+          "content": {
+            "overview": "Our streamlined onboarding process ensures a smooth start to your project. Here's what to expect at each stage.",
+            "sections": [
+              {
+                "heading": "Step 1: Initial Consultation",
+                "text": "We begin with a discovery call to understand your business goals, technical requirements, and project scope. This helps us provide accurate timelines and resource allocation.",
+                "duration": "1-2 hours"
+              },
+              {
+                "heading": "Step 2: Proposal & Agreement",
+                "text": "Based on our discussion, we prepare a detailed proposal outlining scope, timeline, deliverables, and pricing. Once approved, we proceed with contract signing.",
+                "duration": "3-5 days"
+              },
+              {
+                "heading": "Step 3: Team Assembly",
+                "text": "We assign a dedicated team including project manager, developers, designers, and QA engineers best suited for your project requirements.",
+                "duration": "1-2 days"
+              },
+              {
+                "heading": "Step 4: Kickoff Meeting",
+                "text": "We conduct a comprehensive kickoff meeting to align on goals, establish communication channels, and set up project management tools.",
+                "duration": "2-3 hours"
+              },
+              {
+                "heading": "Step 5: Development Begins",
+                "text": "Your dedicated team starts working on your project with regular updates, demos, and feedback sessions scheduled throughout the development cycle.",
+                "duration": "Ongoing"
+              }
+            ]
+          }
+        },
+        {
+          "id": "project-requirements",
+          "title": "Project Requirements Checklist",
+          "description": "What you need to prepare before starting a project",
+          "readTime": "6 min",
+          "difficulty": "Beginner",
+          "content": {
+            "overview": "Having the right information ready accelerates project kickoff and ensures accurate planning.",
+            "checklist": [
+              "Clear business objectives and success metrics",
+              "Target audience and user personas",
+              "Functional requirements and feature list",
+              "Design preferences and brand guidelines",
+              "Technical constraints or preferences",
+              "Integration requirements with existing systems",
+              "Budget and timeline expectations",
+              "Access to necessary accounts and resources",
+              "Key stakeholders and decision makers",
+              "Content, data, and assets if applicable"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "development-guides",
+      "title": "Development Guides",
+      "icon": "code",
+      "description": "Technical guides for implementing and integrating our solutions",
+      "articles": [
+        {
+          "id": "api-integration",
+          "title": "API Integration Guide",
+          "description": "Complete guide to integrating with our APIs",
+          "readTime": "15 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "Learn how to authenticate, make requests, and handle responses from our APIs.",
+            "sections": [
+              {
+                "heading": "Authentication",
+                "text": "All API requests require authentication using API keys or OAuth tokens. Include your credentials in the Authorization header of each request.",
+                "example": "Authorization: Bearer YOUR_API_KEY"
+              },
+              {
+                "heading": "Making Requests",
+                "text": "Our APIs follow RESTful conventions. Use standard HTTP methods (GET, POST, PUT, DELETE) to interact with resources.",
+                "example": "GET https://api.corewaysolution.com/v1/resources"
+              },
+              {
+                "heading": "Rate Limiting",
+                "text": "API requests are rate-limited to ensure fair usage. Standard accounts have a limit of 1000 requests per hour. Rate limit information is included in response headers.",
+                "headers": ["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"]
+              },
+              {
+                "heading": "Error Handling",
+                "text": "Our APIs use standard HTTP status codes. Error responses include a message and error code for troubleshooting.",
+                "statusCodes": [
+                  { "code": 200, "meaning": "Success" },
+                  { "code": 400, "meaning": "Bad Request" },
+                  { "code": 401, "meaning": "Unauthorized" },
+                  { "code": 404, "meaning": "Not Found" },
+                  { "code": 429, "meaning": "Rate Limit Exceeded" },
+                  { "code": 500, "meaning": "Server Error" }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "webhook-setup",
+          "title": "Setting Up Webhooks",
+          "description": "Configure webhooks to receive real-time updates",
+          "readTime": "10 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "Webhooks allow your application to receive real-time notifications when events occur in our system.",
+            "sections": [
+              {
+                "heading": "Creating Webhooks",
+                "text": "Configure webhook endpoints through your dashboard or API. Specify the events you want to receive and the URL where notifications should be sent."
+              },
+              {
+                "heading": "Webhook Security",
+                "text": "All webhook requests include a signature in the X-Webhook-Signature header. Verify this signature to ensure requests are authentic and haven't been tampered with."
+              },
+              {
+                "heading": "Event Types",
+                "text": "Available event types include: project.created, project.updated, deployment.completed, payment.succeeded, and more."
+              },
+              {
+                "heading": "Retry Logic",
+                "text": "If your endpoint returns an error or times out, we'll retry the webhook up to 3 times with exponential backoff."
+              }
+            ]
+          }
+        },
+        {
+          "id": "deployment-guide",
+          "title": "Deployment Best Practices",
+          "description": "Guidelines for deploying your application to production",
+          "readTime": "12 min",
+          "difficulty": "Advanced",
+          "content": {
+            "overview": "Follow these best practices to ensure smooth, reliable deployments.",
+            "sections": [
+              {
+                "heading": "Pre-Deployment Checklist",
+                "items": [
+                  "All tests passing in staging environment",
+                  "Database migrations reviewed and tested",
+                  "Environment variables configured",
+                  "SSL certificates installed and valid",
+                  "Monitoring and logging configured",
+                  "Backup strategy in place",
+                  "Rollback plan documented"
+                ]
+              },
+              {
+                "heading": "Deployment Strategy",
+                "text": "We recommend blue-green deployments or rolling updates to minimize downtime. Always deploy to a staging environment first and perform thorough testing."
+              },
+              {
+                "heading": "Post-Deployment",
+                "text": "Monitor application health, error rates, and performance metrics closely after deployment. Be prepared to rollback if issues arise."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "best-practices",
+      "title": "Best Practices",
+      "icon": "check-circle",
+      "description": "Industry standards and recommended approaches",
+      "articles": [
+        {
+          "id": "security-guidelines",
+          "title": "Security Best Practices",
+          "description": "Essential security measures for your application",
+          "readTime": "10 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "Security is paramount in modern applications. Follow these guidelines to protect your application and user data.",
+            "sections": [
+              {
+                "heading": "Authentication & Authorization",
+                "practices": [
+                  "Use strong password policies (minimum 12 characters)",
+                  "Implement multi-factor authentication (MFA)",
+                  "Use OAuth 2.0 for third-party integrations",
+                  "Apply principle of least privilege",
+                  "Regularly rotate API keys and secrets"
+                ]
+              },
+              {
+                "heading": "Data Protection",
+                "practices": [
+                  "Encrypt sensitive data at rest and in transit",
+                  "Use HTTPS/TLS for all communications",
+                  "Implement proper input validation and sanitization",
+                  "Store passwords using bcrypt or Argon2",
+                  "Comply with GDPR and data privacy regulations"
+                ]
+              },
+              {
+                "heading": "Infrastructure Security",
+                "practices": [
+                  "Keep all dependencies up to date",
+                  "Use firewalls and network segmentation",
+                  "Implement rate limiting and DDoS protection",
+                  "Regular security audits and penetration testing",
+                  "Monitor for suspicious activity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "performance-optimization",
+          "title": "Performance Optimization",
+          "description": "Strategies to improve application speed and efficiency",
+          "readTime": "12 min",
+          "difficulty": "Advanced",
+          "content": {
+            "overview": "Optimize your application's performance to deliver exceptional user experiences.",
+            "sections": [
+              {
+                "heading": "Frontend Optimization",
+                "techniques": [
+                  "Minimize and compress JavaScript/CSS bundles",
+                  "Implement lazy loading for images and components",
+                  "Use CDN for static assets",
+                  "Optimize images (WebP, proper sizing)",
+                  "Implement caching strategies",
+                  "Reduce HTTP requests"
+                ]
+              },
+              {
+                "heading": "Backend Optimization",
+                "techniques": [
+                  "Database query optimization and indexing",
+                  "Implement caching (Redis, Memcached)",
+                  "Use connection pooling",
+                  "Implement pagination for large datasets",
+                  "Optimize API response payloads",
+                  "Use asynchronous processing for heavy tasks"
+                ]
+              },
+              {
+                "heading": "Monitoring",
+                "text": "Continuously monitor performance metrics including response times, error rates, resource utilization, and user experience metrics (Core Web Vitals)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "code-quality",
+          "title": "Code Quality Standards",
+          "description": "Maintaining clean, maintainable code",
+          "readTime": "8 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "High-quality code is easier to maintain, debug, and extend.",
+            "standards": [
+              {
+                "category": "Code Organization",
+                "practices": [
+                  "Follow consistent naming conventions",
+                  "Keep functions small and focused",
+                  "Use meaningful variable and function names",
+                  "Organize code into logical modules",
+                  "Avoid deep nesting and complexity"
+                ]
+              },
+              {
+                "category": "Documentation",
+                "practices": [
+                  "Write clear comments for complex logic",
+                  "Maintain up-to-date README files",
+                  "Document API endpoints and parameters",
+                  "Include examples and use cases",
+                  "Keep architecture diagrams current"
+                ]
+              },
+              {
+                "category": "Testing",
+                "practices": [
+                  "Write unit tests for critical functions",
+                  "Implement integration tests",
+                  "Aim for high test coverage (80%+)",
+                  "Use automated testing in CI/CD",
+                  "Test edge cases and error conditions"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "title": "AI & Machine Learning",
+      "icon": "brain",
+      "description": "Guides for implementing AI and ML solutions",
+      "articles": [
+        {
+          "id": "ai-integration",
+          "title": "AI Integration Overview",
+          "description": "Getting started with AI features",
+          "readTime": "10 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "Learn how to integrate AI capabilities into your application.",
+            "sections": [
+              {
+                "heading": "Available AI Services",
+                "services": [
+                  "Natural Language Processing (NLP)",
+                  "Computer Vision and Image Recognition",
+                  "Predictive Analytics",
+                  "Recommendation Systems",
+                  "Chatbots and Virtual Assistants",
+                  "Anomaly Detection"
+                ]
+              },
+              {
+                "heading": "Implementation Approaches",
+                "text": "Choose between pre-built models, custom model development, or hybrid approaches based on your specific needs and resources."
+              },
+              {
+                "heading": "Data Requirements",
+                "text": "AI models require quality training data. We help you collect, clean, and prepare data for optimal model performance."
+              }
+            ]
+          }
+        },
+        {
+          "id": "model-training",
+          "title": "Model Training & Deployment",
+          "description": "Train and deploy custom ML models",
+          "readTime": "15 min",
+          "difficulty": "Advanced",
+          "content": {
+            "overview": "Complete guide to training custom machine learning models and deploying them to production.",
+            "pipeline": [
+              {
+                "stage": "Data Collection",
+                "description": "Gather and organize training data. Ensure data quality, diversity, and proper labeling."
+              },
+              {
+                "stage": "Preprocessing",
+                "description": "Clean data, handle missing values, normalize features, and split into training/validation/test sets."
+              },
+              {
+                "stage": "Model Selection",
+                "description": "Choose appropriate algorithms based on your problem type (classification, regression, clustering, etc.)."
+              },
+              {
+                "stage": "Training",
+                "description": "Train models using your prepared dataset. Tune hyperparameters for optimal performance."
+              },
+              {
+                "stage": "Evaluation",
+                "description": "Assess model performance using appropriate metrics (accuracy, precision, recall, F1, etc.)."
+              },
+              {
+                "stage": "Deployment",
+                "description": "Deploy model to production with proper versioning, monitoring, and fallback strategies."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Troubleshooting",
+      "icon": "alert-circle",
+      "description": "Common issues and their solutions",
+      "articles": [
+        {
+          "id": "common-errors",
+          "title": "Common Error Messages",
+          "description": "Understanding and resolving frequent errors",
+          "readTime": "8 min",
+          "difficulty": "Beginner",
+          "content": {
+            "overview": "Quick reference for common error messages and their solutions.",
+            "errors": [
+              {
+                "error": "Authentication Failed",
+                "cause": "Invalid or expired API key",
+                "solution": "Verify your API key is correct and hasn't expired. Generate a new key if needed."
+              },
+              {
+                "error": "Rate Limit Exceeded",
+                "cause": "Too many requests in a short time period",
+                "solution": "Implement exponential backoff and respect rate limit headers. Consider upgrading your plan for higher limits."
+              },
+              {
+                "error": "Resource Not Found",
+                "cause": "Requested resource doesn't exist or you lack permissions",
+                "solution": "Check the resource ID and ensure you have proper access permissions."
+              },
+              {
+                "error": "Validation Error",
+                "cause": "Request data doesn't meet required format or constraints",
+                "solution": "Review API documentation for required fields and data formats. Check error message for specific validation issues."
+              },
+              {
+                "error": "Timeout Error",
+                "cause": "Request took too long to process",
+                "solution": "Optimize your query, reduce payload size, or implement pagination for large datasets."
+              }
+            ]
+          }
+        },
+        {
+          "id": "debugging-tips",
+          "title": "Debugging Tips & Techniques",
+          "description": "Effective debugging strategies",
+          "readTime": "10 min",
+          "difficulty": "Intermediate",
+          "content": {
+            "overview": "Systematic approaches to identifying and fixing issues.",
+            "techniques": [
+              {
+                "technique": "Enable Detailed Logging",
+                "description": "Increase logging verbosity to capture more information about what's happening in your application."
+              },
+              {
+                "technique": "Use Developer Tools",
+                "description": "Leverage browser DevTools, API testing tools (Postman, Insomnia), and debugging features in your IDE."
+              },
+              {
+                "technique": "Isolate the Problem",
+                "description": "Narrow down the issue by testing individual components separately."
+              },
+              {
+                "technique": "Check Network Requests",
+                "description": "Inspect request/response headers and payloads to identify issues with API calls."
+              },
+              {
+                "technique": "Review Recent Changes",
+                "description": "If something stopped working, review recent code changes that might have introduced the issue."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "faqs",
+      "title": "FAQs",
+      "icon": "help-circle",
+      "description": "Frequently asked questions",
+      "questions": [
+        {
+          "question": "What programming languages do you support?",
+          "answer": "We work with a wide range of technologies including JavaScript/TypeScript (React, Node.js, Next.js), Python (Django, Flask, FastAPI), PHP (Laravel), Ruby on Rails, and more. Our team adapts to your preferred tech stack."
+        },
+        {
+          "question": "How long does a typical project take?",
+          "answer": "Project timelines vary based on scope and complexity. Simple projects may take 4-8 weeks, while complex enterprise applications can take 3-6 months or longer. We provide detailed timelines during the proposal phase."
+        },
+        {
+          "question": "Do you provide ongoing maintenance and support?",
+          "answer": "Yes, we offer comprehensive maintenance and support packages including bug fixes, security updates, performance optimization, and feature enhancements. Support plans can be customized to your needs."
+        },
+        {
+          "question": "Can you work with our existing team?",
+          "answer": "Absolutely. We can augment your team with our developers, work collaboratively on projects, or take full ownership of development. We're flexible and adapt to your preferred working model."
+        },
+        {
+          "question": "What is your development process?",
+          "answer": "We follow agile methodologies with regular sprints, daily standups, and frequent client communication. You'll have access to project management tools, see regular progress demos, and can provide feedback throughout development."
+        },
+        {
+          "question": "Do you sign NDAs and protect our intellectual property?",
+          "answer": "Yes, we take confidentiality seriously and sign NDAs as standard practice. Your intellectual property rights are fully protected, and code ownership transfers to you upon project completion."
+        },
+        {
+          "question": "What happens if we need to scale the team?",
+          "answer": "We can quickly scale your team up or down based on project needs. Our large pool of experienced developers allows us to add resources without sacrificing quality or causing delays."
+        },
+        {
+          "question": "How do you ensure code quality?",
+          "answer": "We implement code reviews, automated testing, continuous integration, and follow industry best practices. All code goes through QA testing before deployment, and we maintain high test coverage."
+        }
+      ]
+    }
+  ],
+  "support": {
+    "title": "Need More Help?",
+    "description": "Can't find what you're looking for? Our team is here to help.",
+    "channels": [
+      {
+        "name": "Email Support",
+        "description": "Get help via email",
+        "contact": "support@corewaysolution.com",
+        "responseTime": "Within 24 hours",
+        "icon": "mail"
+      },
+      {
+        "name": "Live Chat",
+        "description": "Chat with our team",
+        "contact": "Available on website",
+        "responseTime": "During business hours",
+        "icon": "message-circle"
+      },
+      {
+        "name": "Schedule a Call",
+        "description": "Book a consultation",
+        "contact": "Book via contact form",
+        "responseTime": "Within 2 business days",
+        "icon": "phone"
+      },
+      {
+        "name": "Community Forum",
+        "description": "Connect with other users",
+        "contact": "forum.corewaysolution.com",
+        "responseTime": "Community driven",
+        "icon": "users"
+      }
+    ]
+  }
+}
