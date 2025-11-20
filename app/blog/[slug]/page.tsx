@@ -1,4 +1,5 @@
-import { ArrowLeft, Calendar, User, Clock, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
+import { Metadata } from "next";
+import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 import TableOfContents from "@/components/home/TableOfContents";
 
@@ -212,32 +213,44 @@ export function generateStaticParams() {
 
 export default function BlogDetailPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0E0918] to-[#1a0f2b]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03),transparent_70%)] pointer-events-none" />
+    <div className="min-h-screen bg-white">
+      {/* <div className="bg-black text-white py-4 px-4 sticky top-0 z-50 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold">
+            YourBrand
+          </Link>
+          <nav className="hidden md:flex gap-8">
+            <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
+            <Link href="/blog" className="hover:text-gray-300 transition-colors">Blog</Link>
+            <Link href="/about" className="hover:text-gray-300 transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
+          </nav>
+        </div>
+      </div> */}
 
-      <div className="relative" style={{ minHeight: "650px" }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0E0918] z-10" />
+      <div className="relative bg-black text-white" style={{ minHeight: "650px" }}>
+        <div className="absolute inset-0 bg-black/60 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${blogPost.image})` }}
         />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center" style={{ minHeight: "650px" }}>
-          <Link href="/blog" className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors mb-8 group">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 flex flex-col justify-center" style={{ minHeight: "650px" }}>
+          <Link href="/blog" className="inline-flex items-center gap-2 text-white hover:text-purple-500 transition-colors mb-8 group">
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            <span className="text-lg font-medium">Back to Blog</span>
+            <span className="text-lg">Back to Blog</span>
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-slate-300 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded mb-6">
               {blogPost.category}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" >
               {blogPost.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-6 text-slate-300">
+            <div className="flex flex-wrap items-center gap-6 text-gray-300">
               <div className="flex items-center gap-2">
                 <User className="w-5 h-5" />
-                <span className="font-medium">{blogPost.author}</span>
+                <span>{blogPost.author}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
@@ -252,48 +265,47 @@ export default function BlogDetailPage() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-12 gap-12">
           <article className="lg:col-span-8">
-            <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-slate-700/50 shadow-2xl">
-              <div
-                className="prose prose-lg max-w-none text-slate-200"
-                dangerouslySetInnerHTML={{ __html: blogPost.content }}
-              />
-            </div>
+            <div
+              className="prose prose-lg max-w-none text-black"
 
-            <div className="mt-8 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50">
+              dangerouslySetInnerHTML={{ __html: blogPost.content }}
+            />
+
+            <div className="mt-16 pt-8 border-t border-gray-200">
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-white">Share this article</h3>
+                <h3 className="text-xl font-bold text-gray-900">Share this article</h3>
                 <div className="flex gap-3">
-                  <button className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 hover:scale-110 flex items-center justify-center text-white transition-all duration-300">
+                  <button className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white transition-colors">
                     <Facebook className="w-5 h-5" />
                   </button>
-                  <button className="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-600 hover:scale-110 flex items-center justify-center text-white transition-all duration-300">
+                  <button className="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-600 flex items-center justify-center text-white transition-colors">
                     <Twitter className="w-5 h-5" />
                   </button>
-                  <button className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-800 hover:scale-110 flex items-center justify-center text-white transition-all duration-300">
+                  <button className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center text-white transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </button>
-                  <button className="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 hover:scale-110 flex items-center justify-center text-white transition-all duration-300">
+                  <button className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-900 flex items-center justify-center text-white transition-colors">
                     <LinkIcon className="w-5 h-5" />
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border-l-4 border-slate-600 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-white mb-4">Subscribe to Our Newsletter</h3>
-              <p className="text-slate-300 mb-6">
+            <div className="mt-16 bg-orange-50 border-l-4 border-purple-600 p-8 rounded-r-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Subscribe to Our Newsletter</h3>
+              <p className="text-gray-700 mb-6">
                 Get the latest insights on e-commerce optimization, SEO strategies, and digital marketing tips delivered to your inbox.
               </p>
-              <form className="flex flex-col sm:flex-row gap-3">
+              <form className="flex gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 bg-slate-800/50 border border-slate-700 text-white placeholder-slate-400 rounded-lg focus:ring-2 focus:ring-slate-600 focus:border-transparent outline-none backdrop-blur-sm"
+                  className="flex-1 px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none"
                 />
-                <button className="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                <button className="px-8 py-3 bg-purple-600 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors">
                   Subscribe
                 </button>
               </form>
@@ -301,14 +313,25 @@ export default function BlogDetailPage() {
           </article>
 
           <aside className="lg:col-span-4">
-            <div className="sticky top-24 space-y-6">
-              <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-                <h3 className="text-xl font-bold text-white mb-4">Table of Contents</h3>
+            <div className="sticky top-24 space-y-8">
+              <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-purple-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Table of Contents</h3>
+                {/* <nav className="space-y-3">
+                  {tableOfContents.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="block text-gray-700 hover:text-purple-600 transition-colors text-sm leading-relaxed"
+                    >
+                      {item.title}
+                    </a>
+                  ))}
+                </nav> */}
                 <TableOfContents tableOfContents={tableOfContents} />
               </div>
 
-              <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-                <h3 className="text-xl font-bold text-white mb-6">Related Articles</h3>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
                 <div className="space-y-6">
                   {relatedPosts.map((post) => (
                     <Link
@@ -320,25 +343,24 @@ export default function BlogDetailPage() {
                         <img
                           src={post.image}
                           alt={post.title}
-                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <h4 className="font-semibold text-white group-hover:text-slate-300 transition-colors mb-2 leading-snug">
+                      <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors mb-2 leading-snug">
                         {post.title}
                       </h4>
-                      <p className="text-sm text-slate-400">{post.date}</p>
+                      <p className="text-sm text-gray-600">{post.date}</p>
                     </Link>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-6 text-white border border-slate-600">
+              <div className="bg-gradient-to-br from-purple-600 to-orange-700 rounded-lg p-6 text-white">
                 <h3 className="text-xl font-bold mb-3">Need Help?</h3>
-                <p className="text-slate-300 mb-4 text-sm">
+                <p className="text-orange-50 mb-4 text-sm">
                   Get expert assistance with your e-commerce audit and optimization.
                 </p>
-                <button className="w-full px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105">
+                <button className="w-full px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                   Contact Us
                 </button>
               </div>

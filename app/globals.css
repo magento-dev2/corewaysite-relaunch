@@ -32,18 +32,16 @@ body {
 .prose h2 {
   font-size: 32px;
   font-weight: 700;
-  color: #ffffff;
+  color: #000;
   margin-top: 48px;
   margin-bottom: 24px;
   font-family: 'Poppins', sans-serif;
-  border-bottom: 2px solid rgba(148, 163, 184, 0.2);
-  padding-bottom: 12px;
 }
 
 .prose h3 {
   font-size: 24px;
   font-weight: 600;
-  color: #f1f5f9;
+  color: #000;
   margin-top: 32px;
   margin-bottom: 16px;
   font-family: 'Poppins', sans-serif;
@@ -52,14 +50,14 @@ body {
 .prose p {
   font-size: 18px;
   line-height: 1.888;
-  color: #cbd5e1;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .prose ul, .prose ol {
   font-size: 18px;
   line-height: 1.888;
-  color: #cbd5e1;
+  color: #333;
   margin-bottom: 24px;
   padding-left: 24px;
 }
@@ -78,17 +76,15 @@ body {
 
 .prose strong {
   font-weight: 600;
-  color: #f8fafc;
+  color: #000;
 }
 
 .prose a {
-  color: #94a3b8;
+  color: purple;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .prose a:hover {
-  color: #cbd5e1;
   text-decoration: underline;
 }
 
