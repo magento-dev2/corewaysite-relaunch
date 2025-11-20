@@ -4,11 +4,35 @@ import { Github, Twitter, Linkedin, Youtube } from 'lucide-react';
 import Link from 'next/link';
 
 const footerLinks = {
-  Product: ['Features', 'Integrations', 'Pricing', 'Changelog', 'Security'],
-  Resources: ['Documentation', 'API Reference', 'Tutorials', 'Blog', 'Community'],
-  Company: ['About', 'Careers', 'Partners', 'Contact', 'Press Kit'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR'],
+  Product: [
+    { name: "Features", url: "/features" },
+    { name: "Integrations", url: "/integrations" },
+    { name: "Pricing", url: "/pricing" },
+    { name: "Changelog", url: "/changelog" },
+    { name: "Security", url: "/security" },
+  ],
+  Resources: [
+    { name: "Documentation", url: "/docs" },
+    { name: "API Reference", url: "/api-reference" },
+    { name: "Tutorials", url: "/tutorials" },
+    { name: "Blog", url: "/blog" },
+    { name: "Community", url: "/community" },
+  ],
+  Company: [
+    { name: "About", url: "/about" },
+    { name: "Careers", url: "/careers" },
+    { name: "Partners", url: "/partners" },
+    { name: "Contact", url: "/contact" },
+    { name: "Press Kit", url: "/press-kit" },
+  ],
+  Legal: [
+    { name: "Privacy Policy", url: "/privacy-policy" },
+    { name: "Terms of Service", url: "/terms-of-service" },
+    { name: "Cookie Policy", url: "/cookie-policy" },
+    { name: "GDPR", url: "/gdpr-compliance" },
+  ],
 };
+
 
 export default function Footer() {
   return (
@@ -45,27 +69,23 @@ export default function Footer() {
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="text-white font-semibold mb-4">{category}</h3>
-              <ul className="space-y-3">
-                {links.map((link) => {
-                  const url = "/" + link.toLowerCase().replace(/\s+/g, "-");
+  <div key={category}>
+    <h3 className="text-white font-semibold mb-4">{category}</h3>
+    <ul className="space-y-3">
+      {links.map(({ name, url }) => (
+        <li key={name}>
+          <a
+            href={url}
+            className="text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            {name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
 
-                  return (
-                    <li key={link}>
-                      <a
-                        href={url}
-                        className="text-gray-400 hover:text-white transition-colors text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  );
-                })}
-
-              </ul>
-            </div>
-          ))}
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">

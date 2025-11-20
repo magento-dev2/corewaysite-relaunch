@@ -29,7 +29,6 @@ export default function TermsOfServicePage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[
-                { label: "Home", href: "/" },
                 { label: "Terms of Service" },
               ]}
             />

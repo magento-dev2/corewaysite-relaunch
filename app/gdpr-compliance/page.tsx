@@ -79,7 +79,6 @@ export default function GDPRCompliancePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[
-                { label: "Home", href: "/" },
                 { label: "GDPR Compliance" },
               ]}
             />
