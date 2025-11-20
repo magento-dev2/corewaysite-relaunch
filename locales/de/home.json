@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Automatisieren Sie",
+    "titleHighlight": "ohne Grenzen",
+    "description": "Erstellen Sie komplexe Automatisierungen 10-mal schneller, ohne mit APIs zu kämpfen. Verbinden Sie alles mit Coreway Solution.",
+    "button": "Sehen Sie, was wir tun"
+  },
+  "trustedBy": {
+    "title": "Vertraut von führenden Unternehmen weltweit"
+  },
+  "numbers": {
+    "title": "Coreway in Zahlen",
+    "subtitle": "Exzellenz durch messbare Ergebnisse liefern",
+    "projects": "Abgeschlossene Projekte",
+    "clients": "Zufriedene Kunden",
+    "countries": "Bediente Länder",
+    "satisfaction": "Kundenzufriedenheit"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Lösungen für Ihre digitale Transformation",
+    "viewAll": "Alle Dienste Anzeigen"
+  },
+  "expertise": {
+    "title": "Unsere Expertise",
+    "subtitle": "Modernste Technologien und bewährte Methoden"
+  },
+  "cto": {
+    "badge": "CTO als Service",
+    "title": "Benötigen Sie Strategische Technische Führung?",
+    "description": "Erhalten Sie sofortigen Zugang zu erfahrenen CTOs, die Ihre Technologiestrategie, Architekturentscheidungen und Teamentwicklung leiten können.",
+    "button": "Mehr Über CTO-Service Erfahren"
+  },
+  "portfolio": {
+    "title": "Portfolio-Highlights",
+    "subtitle": "Entdecken Sie unsere erfolgreichen Projekte und Kundengeschichten"
+  },
+  "integrations": {
+    "title": "Nahtlose Integrationen",
+    "subtitle": "Verbinden Sie sich mit den Tools und Plattformen, die Sie bereits verwenden"
+  },
+  "testimonials": {
+    "title": "Was Unsere Kunden Sagen",
+    "subtitle": "Echtes Feedback von Unternehmen, die wir transformiert haben"
+  },
+  "industries": {
+    "title": "Branchen, Die Wir Bedienen",
+    "subtitle": "Spezialisierte Lösungen für verschiedene Sektoren"
+  },
+  "blog": {
+    "title": "Aus Unserem Blog",
+    "subtitle": "Neueste Einblicke und Artikel",
+    "badge": "Neueste Einblicke",
+    "readArticle": "Artikel Lesen",
+    "viewAll": "Alle Artikel Anzeigen"
+  },
+  "cta": {
+    "badge": "Starten Sie heute mit der Automatisierung",
+    "title": "Bereit, Ihre Arbeitsabläufe zu transformieren?",
+    "description": "Schließen Sie sich Tausenden von Teams an, die Coreway verwenden, um ihre Arbeit zu automatisieren und sich auf das Wesentliche zu konzentrieren. Erstellen Sie leistungsstarke Automatisierungen in Minuten, nicht Stunden.",
+    "primaryButton": "Kostenlos Starten",
+    "secondaryButton": "Mit Vertrieb Sprechen",
+    "footer": "Keine Kreditkarte erforderlich • Für immer kostenlos für Kernfunktionen • Jederzeit kündbar"
+  }
+}

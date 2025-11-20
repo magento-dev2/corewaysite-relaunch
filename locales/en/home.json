@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Automate",
+    "titleHighlight": "without limits",
+    "description": "Build complex automations 10x faster without fighting APIs. Connect everything with Coreway Solution.",
+    "button": "See what we do"
+  },
+  "trustedBy": {
+    "title": "Trusted by leading companies worldwide"
+  },
+  "numbers": {
+    "title": "Coreway by the Numbers",
+    "subtitle": "Delivering excellence through measurable results",
+    "projects": "Projects Delivered",
+    "clients": "Happy Clients",
+    "countries": "Countries Served",
+    "satisfaction": "Client Satisfaction"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your digital transformation",
+    "viewAll": "View All Services"
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "Cutting-edge technologies and proven methodologies"
+  },
+  "cto": {
+    "badge": "CTO as a Service",
+    "title": "Need Strategic Technical Leadership?",
+    "description": "Get instant access to experienced CTOs who can guide your technology strategy, architecture decisions, and team development.",
+    "button": "Learn More About CTO Service"
+  },
+  "portfolio": {
+    "title": "Portfolio Highlights",
+    "subtitle": "Explore our successful projects and client stories"
+  },
+  "integrations": {
+    "title": "Seamless Integrations",
+    "subtitle": "Connect with the tools and platforms you already use"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real feedback from companies we've helped transform"
+  },
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Specialized solutions for diverse sectors"
+  },
+  "blog": {
+    "title": "From Our Blog",
+    "subtitle": "Latest insights and articles",
+    "badge": "Latest Insights",
+    "readArticle": "Read Article",
+    "viewAll": "View All Articles"
+  },
+  "cta": {
+    "badge": "Start automating today",
+    "title": "Ready to transform your workflows?",
+    "description": "Join thousands of teams using Coreway to automate their work and focus on what matters most. Build powerful automations in minutes, not hours.",
+    "primaryButton": "Get started for free",
+    "secondaryButton": "Talk to sales",
+    "footer": "No credit card required • Free forever for core features • Cancel anytime"
+  }
+}

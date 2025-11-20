@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Automatiza",
+    "titleHighlight": "sin límites",
+    "description": "Construye automatizaciones complejas 10 veces más rápido sin luchar con APIs. Conecta todo con Coreway Solution.",
+    "button": "Ver lo que hacemos"
+  },
+  "trustedBy": {
+    "title": "Confiado por empresas líderes en todo el mundo"
+  },
+  "numbers": {
+    "title": "Coreway en Números",
+    "subtitle": "Ofreciendo excelencia a través de resultados medibles",
+    "projects": "Proyectos Entregados",
+    "clients": "Clientes Satisfechos",
+    "countries": "Países Atendidos",
+    "satisfaction": "Satisfacción del Cliente"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales para su transformación digital",
+    "viewAll": "Ver Todos los Servicios"
+  },
+  "expertise": {
+    "title": "Nuestra Experiencia",
+    "subtitle": "Tecnologías de vanguardia y metodologías probadas"
+  },
+  "cto": {
+    "badge": "CTO como Servicio",
+    "title": "¿Necesitas Liderazgo Técnico Estratégico?",
+    "description": "Obtén acceso instantáneo a CTOs experimentados que pueden guiar tu estrategia tecnológica, decisiones de arquitectura y desarrollo de equipo.",
+    "button": "Conoce Más Sobre el Servicio CTO"
+  },
+  "portfolio": {
+    "title": "Destacados del Portafolio",
+    "subtitle": "Explora nuestros proyectos exitosos e historias de clientes"
+  },
+  "integrations": {
+    "title": "Integraciones Perfectas",
+    "subtitle": "Conéctate con las herramientas y plataformas que ya usas"
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Comentarios reales de empresas que hemos ayudado a transformar"
+  },
+  "industries": {
+    "title": "Industrias que Servimos",
+    "subtitle": "Soluciones especializadas para diversos sectores"
+  },
+  "blog": {
+    "title": "Desde Nuestro Blog",
+    "subtitle": "Últimas ideas y artículos",
+    "badge": "Últimas Perspectivas",
+    "readArticle": "Leer Artículo",
+    "viewAll": "Ver Todos los Artículos"
+  },
+  "cta": {
+    "badge": "Comienza a automatizar hoy",
+    "title": "¿Listo para transformar tus flujos de trabajo?",
+    "description": "Únete a miles de equipos que usan Coreway para automatizar su trabajo y enfocarse en lo que más importa. Construye automatizaciones poderosas en minutos, no horas.",
+    "primaryButton": "Comienza gratis",
+    "secondaryButton": "Hablar con ventas",
+    "footer": "No se requiere tarjeta de crédito • Gratis para siempre en funciones principales • Cancela en cualquier momento"
+  }
+}

@@ -14,8 +14,11 @@ import Expertise2 from '@/components/home/Expertise2';
 import IndustriesWeServe from '../components/home/IndustriesWeServe';
 import BlogSection from '../components/home/BlogSection';
 import CTOSection from '@/components/home/CTO';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className='overflow-hidden' >
       <Hero />
@@ -55,12 +58,12 @@ export default function Home() {
 
       <ScrollScale>
         <PageCTA
-          badge="Start automating today"
-          title="Ready to transform your workflows?"
-          description="Join thousands of teams using Coreway to automate their work and focus on what matters most. Build powerful automations in minutes, not hours."
-          primaryButtonText="Get started for free"
-          secondaryButtonText="Talk to sales"
-          footerText="No credit card required • Free forever for core features • Cancel anytime"
+          badge={t('cta.badge')}
+          title={t('cta.title')}
+          description={t('cta.description')}
+          primaryButtonText={t('cta.primaryButton')}
+          secondaryButtonText={t('cta.secondaryButton')}
+          footerText={t('cta.footer')}
         />
       </ScrollScale>
     </div>

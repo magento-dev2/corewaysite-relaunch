@@ -7,33 +7,31 @@ import DropdownMenu from './DropdownMenu';
 import navigationData from '../data/navigationData.json';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 
 const languages = [
-  { "code": "EN", "name": "English", "country": "us" },
-  { "code": "FR", "name": "Français", "country": "fr" },
-  { "code": "DE", "name": "Deutsch", "country": "de" },
-  { "code": "ES", "name": "Español", "country": "es" },
-  { "code": "IT", "name": "Italiano", "country": "it" },
-  { "code": "PT", "name": "Português", "country": "pt" },
-  { "code": "JP", "name": "日本語", "country": "jp" },
-  { "code": "IN", "name": "हिन्दी", "country": "in" }
+  { "code": "en", "name": "English", "country": "us" },
+  { "code": "fr", "name": "Français", "country": "fr" },
+  { "code": "de", "name": "Deutsch", "country": "de" },
+  { "code": "es", "name": "Español", "country": "es" }
 ]
 
 
 
 export default function Navbar() {
+  const { language, setLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpenMenus, setMobileOpenMenus] = useState<string[]>([]);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
   const langRef = useRef<HTMLDivElement>(null);
 
+  const selectedLang = languages.find(lang => lang.code === language) || languages[0];
+
   const handleLangSelect = (lang: any) => {
-    // console.log(lang)
-    setSelectedLang(lang);
+    setLanguage(lang.code);
     setIsLangOpen(false);
   };
 

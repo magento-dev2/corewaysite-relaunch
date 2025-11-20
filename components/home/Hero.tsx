@@ -4,10 +4,11 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 export default function Hero() {
-
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -160,14 +161,14 @@ export default function Hero() {
           {/* Left Side Text + Button */}
           <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" ref={textRef}>
-              Automate <span className="text-purple-500">without limits</span>
+              {t('hero.title')} <span className="text-purple-500">{t('hero.titleHighlight')}</span>
             </h1>
             <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
-              Build complex automations 10x faster without fighting APIs. Connect everything with Coreway Solution.
+              {t('hero.description')}
             </p>
 
             <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
-              <span>See what we do</span>
+              <span>{t('hero.button')}</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
 
