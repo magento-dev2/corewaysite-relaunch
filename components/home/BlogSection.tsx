@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,7 @@ const blogPosts = [
 ];
 
 export default function BlogSection() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const featuredRef = useRef<HTMLDivElement>(null);
@@ -123,10 +125,10 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div ref={headerRef} className="text-center mb-16 opacity-0">
           <span className="inline-block px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-slate-300 rounded-full text-sm font-medium mb-4">
-            Latest Insights
+            {t('blog.badge')}
           </span>
           <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
-            From Our Blog
+            {t('blog.title')}
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Stay updated with the latest trends, best practices, and insights from our team of experts

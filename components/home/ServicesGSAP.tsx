@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import AnimatedIcon from "./AnimatedIcon";
 
@@ -12,61 +13,42 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+export default function ServicesGSAP() {
+  const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
 const services = [
   {
     animationPath: "/animations/architect.json",
     staticPath: "/animations/architect-static.svg",
     ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
-    title: "Architect",
-    subtitle: "Plan. Design. Strategize.",
-    description:
-      "We start by defining clarity — translating your business goals into system blueprints that scale.",
-    items: [
-      "Technology & System Architecture",
-      "Digital Discovery & Consulting",
-      "Cloud & Infrastructure Strategy",
-      "API Design & Integration Planning",
-      "UI/UX Experience Blueprints",
-    ],
+    title: t('services.architect.title'),
+    subtitle: t('services.architect.subtitle'),
+    description: t('services.architect.description'),
+    items: t('services.architect.items') as string[],
   },
   {
     animationPath: "/animations/build.json",
     staticPath: "/animations/build-static.svg",
     ariaLabel: "Code brackets with animated lines representing software development",
-    title: "Build",
-    subtitle: "Develop. Integrate. Deploy.",
-    description:
-      "We engineer reliable, scalable solutions — from intelligent apps to complete platform ecosystems.",
-    items: [
-      "Custom Web & App Development",
-      "SaaS & Product Engineering",
-      "IoT Dashboards & Realtime Systems",
-      "eCommerce Development",
-      "CI/CD & DevOps Deployment",
-    ],
+    title: t('services.build.title'),
+    subtitle: t('services.build.subtitle'),
+    description: t('services.build.description'),
+    items: t('services.build.items') as string[],
   },
   {
     animationPath: "/animations/automate.json",
     staticPath: "/animations/automate-static.svg",
     ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
-    title: "Automate",
-    subtitle: "Optimize. Scale. Manage.",
-    description:
-      "We enable businesses to run smarter with automation, AI, and connected workflows.",
-    items: [
-      "Workflow & Process Automation",
-      "AI & GPT-based Integrations",
-      "Data & Analytics Automation",
-      "ERP / CRM / Payment Connectors",
-      "Managed Cloud & Support",
-    ],
+    title: t('services.automate.title'),
+    subtitle: t('services.automate.subtitle'),
+    description: t('services.automate.description'),
+    items: t('services.automate.items') as string[],
   },
 ];
 
-export default function ServicesGSAP() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current || !headerRef.current || !cardsRef.current) return;
@@ -170,7 +152,7 @@ export default function ServicesGSAP() {
               <span className="text-sm font-medium text-gray-300">What We Do</span>
             </div> */}
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Services
+              {t('services.title')}
             </h2>
             {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
               From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
@@ -181,14 +163,12 @@ export default function ServicesGSAP() {
           <div className=" ">
             
               <motion.p
-                // key={index}
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false }}
-                // transition={{ duration: 0.8, delay: index * 0.3 }}
                 className="text-gray-300 text-lg"
               >
-                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
+                {t('services.description')}
               </motion.p>
             
           </div>

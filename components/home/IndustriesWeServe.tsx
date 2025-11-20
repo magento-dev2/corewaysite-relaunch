@@ -3,39 +3,45 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
+
+export default function IndustriesWeServe() {
+  const { t } = useLanguage();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
 const industries = [
   {
     icon: '🏥',
-    title: 'Healthcare',
-    description: 'Custom healthcare solutions'
+    title: t('industries.items.healthcare.title'),
+    description: t('industries.items.healthcare.description')
   },
   {
     icon: '🛍️',
-    title: 'Retail',
-    description: 'E-commerce platforms'
+    title: t('industries.items.retail.title'),
+    description: t('industries.items.retail.description')
   },
   {
     icon: '🏦',
-    title: 'Finance',
-    description: 'Secure fintech solutions'
+    title: t('industries.items.finance.title'),
+    description: t('industries.items.finance.description')
   },
   {
     icon: '🎓',
-    title: 'Education',
-    description: 'Learning management systems'
+    title: t('industries.items.education.title'),
+    description: t('industries.items.education.description')
   },
   {
     icon: '🤝',
-    title: 'Real-estate',
-    description: 'Property management tools'
+    title: t('industries.items.realEstate.title'),
+    description: t('industries.items.realEstate.description')
   },
   {
     icon: '🏭',
-    title: 'Manufacturing',
-    description: 'IoT and automation'
+    title: t('industries.items.manufacturing.title'),
+    description: t('industries.items.manufacturing.description')
   },
   // {
   //   icon: '🚚',
@@ -69,9 +75,6 @@ const industries = [
   // }
 ];
 
-export default function IndustriesWeServe() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;

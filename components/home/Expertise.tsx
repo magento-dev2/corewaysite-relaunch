@@ -4,61 +4,57 @@ import { useEffect, useRef } from "react";
 import { ArrowRight, Brain, ShoppingCart, Workflow, Smartphone, BarChart3, Cloud } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const expertiseAreas = [
-  {
-    icon: Brain,
-    title: "AI & Data Engineering",
-    description:
-      "We create intelligent systems powered by GPT, Vision AI, and advanced data pipelines — enabling smarter analytics, automation, and decision-making.",
-    link: "#",
-    linkText: "Explore AI & Data",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Commerce Solutions",
-    description:
-      "We design scalable eCommerce and marketplace platforms — from new store development to replatforming, omnichannel growth, and system integration.",
-    link: "#",
-    linkText: "Explore Commerce",
-  },
-  {
-    icon: Workflow,
-    title: "Automation & Integration",
-    description:
-      "We automate your workflows and connect platforms — linking payments, ERP, CRM, logistics, and marketing tools into one intelligent system.",
-    link: "#",
-    linkText: "Explore Automation",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile & Web Applications",
-    description:
-      "We build high-performance mobile and web applications with intuitive UX, modern frameworks, and secure architecture tailored to your goals.",
-    link: "#",
-    linkText: "Explore App Development",
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Insights",
-    description:
-      "We transform data into clarity with real-time dashboards, predictive analytics, and performance tracking to drive measurable growth.",
-    link: "#",
-    linkText: "Explore Analytics",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    description:
-      "We design reliable, automated, and secure cloud infrastructures — ensuring seamless deployment, scalability, and performance optimization.",
-    link: "#",
-    linkText: "Explore Cloud & DevOps",
-  },
-];
-
 export default function Expertise() {
+  const { t } = useLanguage();
+
+  const expertiseAreas = [
+    {
+      icon: Brain,
+      title: t('expertise.areas.ai.title'),
+      description: t('expertise.areas.ai.description'),
+      link: "#",
+      linkText: t('expertise.areas.ai.link'),
+    },
+    {
+      icon: ShoppingCart,
+      title: t('expertise.areas.commerce.title'),
+      description: t('expertise.areas.commerce.description'),
+      link: "#",
+      linkText: t('expertise.areas.commerce.link'),
+    },
+    {
+      icon: Workflow,
+      title: t('expertise.areas.automation.title'),
+      description: t('expertise.areas.automation.description'),
+      link: "#",
+      linkText: t('expertise.areas.automation.link'),
+    },
+    {
+      icon: Smartphone,
+      title: t('expertise.areas.mobile.title'),
+      description: t('expertise.areas.mobile.description'),
+      link: "#",
+      linkText: t('expertise.areas.mobile.link'),
+    },
+    {
+      icon: BarChart3,
+      title: t('expertise.areas.analytics.title'),
+      description: t('expertise.areas.analytics.description'),
+      link: "#",
+      linkText: t('expertise.areas.analytics.link'),
+    },
+    {
+      icon: Cloud,
+      title: t('expertise.areas.cloud.title'),
+      description: t('expertise.areas.cloud.description'),
+      link: "#",
+      linkText: t('expertise.areas.cloud.link'),
+    },
+  ];
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftSideRef = useRef<HTMLDivElement>(null);
   const rightSideRef = useRef<HTMLDivElement>(null);
@@ -125,10 +121,10 @@ export default function Expertise() {
           <div ref={leftSideRef} className="md:sticky md:top-24">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Our Expertise
+                {t('expertise.title')}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.
+                {t('expertise.description')}
               </p>
               
               {/* Optional CTA or additional content */}

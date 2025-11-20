@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { PopupModal } from "react-calendly";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function CTOSection() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
 
@@ -30,10 +32,9 @@ export default function CTOSection() {
         {/* LEFT CONTENT */}
         <div className=" relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Hire us to lead 
-            globally{" "}
-            <span className="text-purple-500">fast-growing </span> 
-            brands.
+            {t('cto.title')}{" "}
+            <span className="text-purple-500">{t('cto.titleHighlight')}</span>{" "}
+            {t('cto.titleEnd')}
           </h2>
         </div>
 
@@ -46,24 +47,20 @@ export default function CTOSection() {
               className="h-28 w-28 rounded-full border-4 border-white/80 shadow-lg"
             />
             <div>
-              <h3 className="text-xl font-bold text-purple-400">Mr. Alpesh Radadiya</h3>
-              <p className="text-white/80 text-sm">(Chief Technology Officer)</p>
+              <h3 className="text-xl font-bold text-purple-400">{t('cto.name')}</h3>
+              <p className="text-white/80 text-sm">{t('cto.role')}</p>
             </div>
           </div>
 
           <p className="text-white/80 leading-relaxed mb-6">
-            Mr. Alpesh is a proactive chief technology officer (CTO) with
-            10+ years of experience in eCommerce, mobile apps, and web
-            development. He is known for taking calculated risks,
-            harnessing new technological advancements, and empowering
-            global businesses with bespoke digital solutions.
+            {t('cto.description')}
           </p>
 
           <button
             onClick={() => setOpen(true)}
             className="px-8 py-3 bg-white text-[#2A2342] rounded-full font-medium shadow hover:shadow-lg cursor-pointer hover:bg-purple-600 hover:text-white transition"
           >
-            Schedule a Call with Our CTO
+            {t('cto.button')}
           </button>
         </div>
       </div>

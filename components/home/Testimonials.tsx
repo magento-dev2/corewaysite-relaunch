@@ -2,30 +2,32 @@
 
 import { useEffect, useState } from 'react';
 import { Quote } from 'lucide-react';
-
-const testimonials = [
-  {
-    quote: "Coreway has transformed how we handle customer data. What used to take hours now happens automatically.",
-    author: "Sarah Chen",
-    role: "VP of Operations",
-    company: "TechFlow Inc",
-  },
-  {
-    quote: "The flexibility to create custom workflows without coding has been a game-changer for our team.",
-    author: "Michael Rodriguez",
-    role: "Head of Marketing",
-    company: "GrowthLabs",
-  },
-  {
-    quote: "We've reduced manual work by 80% and can focus on what really matters - building great products.",
-    author: "Emily Watson",
-    role: "CTO",
-    company: "InnovateCo",
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const testimonials = [
+    {
+      quote: t('testimonials.items.0.quote'),
+      author: t('testimonials.items.0.author'),
+      role: t('testimonials.items.0.role'),
+      company: t('testimonials.items.0.company'),
+    },
+    {
+      quote: t('testimonials.items.1.quote'),
+      author: t('testimonials.items.1.author'),
+      role: t('testimonials.items.1.role'),
+      company: t('testimonials.items.1.company'),
+    },
+    {
+      quote: t('testimonials.items.2.quote'),
+      author: t('testimonials.items.2.author'),
+      role: t('testimonials.items.2.role'),
+      company: t('testimonials.items.2.company'),
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,7 +41,7 @@ export default function Testimonials() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Loved by teams everywhere
+            {t('testimonials.title')}
           </h2>
         </div>
 
