@@ -1,0 +1,218 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "November 20, 2025",
+  "sections": [
+    {
+      "id": 1,
+      "title": "Introduction",
+      "content": [
+        "Welcome to Coreway Solution. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+        "Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Information We Collect",
+      "subsections": [
+        {
+          "title": "2.1 Personal Information",
+          "content": [
+            "We may collect personal information that you voluntarily provide to us when you:"
+          ],
+          "list": [
+            "Contact us through our website forms",
+            "Subscribe to our newsletters or updates",
+            "Request a consultation or quote",
+            "Register for an account or service",
+            "Participate in surveys or promotions"
+          ],
+          "additionalContent": [
+            "This information may include:"
+          ],
+          "additionalList": [
+            "Name and contact information (email, phone number)",
+            "Company name and job title",
+            "Project requirements and business needs",
+            "Payment and billing information",
+            "Communication preferences"
+          ]
+        },
+        {
+          "title": "2.2 Automatically Collected Information",
+          "content": [
+            "When you visit our website, we automatically collect certain information about your device, including:"
+          ],
+          "list": [
+            "IP address and browser type",
+            "Operating system and device information",
+            "Pages visited and time spent on pages",
+            "Referring URLs and clickstream data",
+            "Cookies and similar tracking technologies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "How We Use Your Information",
+      "content": [
+        "We use the information we collect for various purposes, including:"
+      ],
+      "list": [
+        "Providing and maintaining our services",
+        "Responding to your inquiries and support requests",
+        "Processing transactions and sending confirmations",
+        "Sending administrative information and updates",
+        "Personalizing your experience on our website",
+        "Analyzing usage patterns to improve our services",
+        "Detecting and preventing fraud or security issues",
+        "Complying with legal obligations",
+        "Sending marketing communications (with your consent)"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Information Sharing and Disclosure",
+      "content": [
+        "We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:"
+      ],
+      "highlightList": [
+        {
+          "title": "Service Providers:",
+          "text": "With trusted third-party vendors who assist in operating our website and providing services"
+        },
+        {
+          "title": "Business Transfers:",
+          "text": "In connection with a merger, acquisition, or sale of assets"
+        },
+        {
+          "title": "Legal Requirements:",
+          "text": "When required by law or to protect our rights and safety"
+        },
+        {
+          "title": "With Your Consent:",
+          "text": "When you explicitly authorize us to share information"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Cookies and Tracking Technologies",
+      "content": [
+        "We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.",
+        "Types of cookies we use:"
+      ],
+      "highlightList": [
+        {
+          "title": "Essential Cookies:",
+          "text": "Required for website functionality"
+        },
+        {
+          "title": "Analytics Cookies:",
+          "text": "Help us understand how visitors use our site"
+        },
+        {
+          "title": "Preference Cookies:",
+          "text": "Remember your settings and preferences"
+        },
+        {
+          "title": "Marketing Cookies:",
+          "text": "Track your browsing activity to deliver relevant ads"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Data Security",
+      "content": [
+        "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:"
+      ],
+      "list": [
+        "SSL/TLS encryption for data transmission",
+        "Secure servers and data centers",
+        "Access controls and authentication",
+        "Regular security audits and updates",
+        "Employee training on data protection"
+      ],
+      "additionalContent": [
+        "However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security."
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Your Privacy Rights",
+      "content": [
+        "Depending on your location, you may have certain rights regarding your personal information:"
+      ],
+      "highlightList": [
+        {
+          "title": "Access:",
+          "text": "Request access to your personal information"
+        },
+        {
+          "title": "Correction:",
+          "text": "Request correction of inaccurate data"
+        },
+        {
+          "title": "Deletion:",
+          "text": "Request deletion of your personal information"
+        },
+        {
+          "title": "Portability:",
+          "text": "Request a copy of your data in a portable format"
+        },
+        {
+          "title": "Opt-Out:",
+          "text": "Unsubscribe from marketing communications"
+        },
+        {
+          "title": "Object:",
+          "text": "Object to certain processing activities"
+        }
+      ],
+      "additionalContent": [
+        "To exercise these rights, please contact us using the information provided below."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Third-Party Links",
+      "content": [
+        "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit."
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Children's Privacy",
+      "content": [
+        "Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately."
+      ]
+    },
+    {
+      "id": 10,
+      "title": "International Data Transfers",
+      "content": [
+        "Your information may be transferred to and maintained on servers located outside of your state, province, country, or other governmental jurisdiction. We take appropriate steps to ensure that your data is treated securely and in accordance with this privacy policy."
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Changes to This Privacy Policy",
+      "content": [
+        "We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the \"Last Updated\" date. You are advised to review this privacy policy periodically for any changes."
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Contact Us",
+      "content": [
+        "If you have any questions about this privacy policy or our data practices, please contact us:"
+      ],
+      "contact": {
+        "company": "Coreway Solution",
+        "email": "privacy@corewaysolution.com",
+        "website": "www.corewaysolution.com"
+      }
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "title": "GDPR Compliance",
+  "subtitle": "General Data Protection Regulation",
+  "lastUpdated": "November 20, 2025",
+  "sections": [
+    {
+      "id": 1,
+      "title": "Our Commitment to GDPR Compliance",
+      "content": [
+        "Coreway Solution is committed to protecting the privacy and security of personal data in accordance with the General Data Protection Regulation (GDPR) and other applicable data protection laws.",
+        "This page outlines how we comply with GDPR requirements and your rights as a data subject under GDPR."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Legal Basis for Processing Personal Data",
+      "content": [
+        "We process personal data only when we have a legal basis to do so. The legal bases we rely on include:"
+      ],
+      "legalBases": [
+        {
+          "basis": "Consent",
+          "description": "You have given clear consent for us to process your personal data for a specific purpose",
+          "examples": ["Newsletter subscriptions", "Marketing communications", "Cookie consent"]
+        },
+        {
+          "basis": "Contract",
+          "description": "Processing is necessary for a contract we have with you, or because you have asked us to take specific steps before entering into a contract",
+          "examples": ["Service delivery", "Project execution", "Payment processing"]
+        },
+        {
+          "basis": "Legal Obligation",
+          "description": "Processing is necessary for us to comply with the law",
+          "examples": ["Tax compliance", "Employment law", "Data retention requirements"]
+        },
+        {
+          "basis": "Legitimate Interests",
+          "description": "Processing is necessary for our legitimate interests or the legitimate interests of a third party, unless your interests and fundamental rights override those interests",
+          "examples": ["Fraud prevention", "Network security", "Business analytics"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Your Rights Under GDPR",
+      "content": [
+        "Under GDPR, you have the following rights regarding your personal data:"
+      ],
+      "rights": [
+        {
+          "right": "Right to Access",
+          "icon": "eye",
+          "description": "You have the right to request copies of your personal data. We may charge a small fee for this service.",
+          "howToExercise": "Submit a data access request via email to privacy@corewaysolution.com"
+        },
+        {
+          "right": "Right to Rectification",
+          "icon": "edit",
+          "description": "You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.",
+          "howToExercise": "Contact us with the details you wish to update"
+        },
+        {
+          "right": "Right to Erasure",
+          "icon": "trash",
+          "description": "You have the right to request that we erase your personal data, under certain conditions.",
+          "howToExercise": "Submit a deletion request explaining why you want your data erased"
+        },
+        {
+          "right": "Right to Restrict Processing",
+          "icon": "pause",
+          "description": "You have the right to request that we restrict the processing of your personal data, under certain conditions.",
+          "howToExercise": "Specify which processing activities you want restricted and why"
+        },
+        {
+          "right": "Right to Data Portability",
+          "icon": "download",
+          "description": "You have the right to request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.",
+          "howToExercise": "Request your data in a structured, commonly used format"
+        },
+        {
+          "right": "Right to Object",
+          "icon": "x",
+          "description": "You have the right to object to our processing of your personal data, under certain conditions.",
+          "howToExercise": "State your objection and the specific processing you want stopped"
+        },
+        {
+          "right": "Right to Withdraw Consent",
+          "icon": "shield",
+          "description": "Where we rely on consent to process your data, you have the right to withdraw that consent at any time.",
+          "howToExercise": "Use unsubscribe links or contact us directly"
+        },
+        {
+          "right": "Right to Lodge a Complaint",
+          "icon": "alert-circle",
+          "description": "You have the right to lodge a complaint with a supervisory authority if you believe your data protection rights have been violated.",
+          "howToExercise": "Contact your local data protection authority"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "How We Protect Your Data",
+      "content": [
+        "We implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk, including:"
+      ],
+      "securityMeasures": [
+        {
+          "category": "Technical Measures",
+          "measures": [
+            "End-to-end encryption for data transmission (SSL/TLS)",
+            "Encrypted storage of sensitive personal data",
+            "Regular security assessments and penetration testing",
+            "Multi-factor authentication for system access",
+            "Automated backup and disaster recovery systems"
+          ]
+        },
+        {
+          "category": "Organizational Measures",
+          "measures": [
+            "Staff training on data protection and GDPR compliance",
+            "Strict access controls and need-to-know principles",
+            "Data protection impact assessments for high-risk processing",
+            "Regular review and update of security policies",
+            "Incident response and breach notification procedures"
+          ]
+        },
+        {
+          "category": "Contractual Measures",
+          "measures": [
+            "Data processing agreements with third-party processors",
+            "Vendor security assessments",
+            "Contractual confidentiality obligations",
+            "Regular audits of third-party compliance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Data Retention",
+      "content": [
+        "We retain personal data only for as long as necessary to fulfill the purposes for which it was collected and to comply with legal obligations."
+      ],
+      "retentionPeriods": [
+        {
+          "dataType": "Customer Account Data",
+          "period": "Duration of relationship + 7 years",
+          "reason": "Contract performance and legal obligations"
+        },
+        {
+          "dataType": "Marketing Data",
+          "period": "Until consent is withdrawn + 30 days",
+          "reason": "Marketing purposes with consent"
+        },
+        {
+          "dataType": "Website Analytics",
+          "period": "26 months",
+          "reason": "Legitimate interest in site improvement"
+        },
+        {
+          "dataType": "Financial Records",
+          "period": "7 years",
+          "reason": "Tax and accounting legal requirements"
+        },
+        {
+          "dataType": "Support Inquiries",
+          "period": "3 years after resolution",
+          "reason": "Customer service and quality improvement"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "International Data Transfers",
+      "content": [
+        "We may transfer your personal data outside the European Economic Area (EEA). When we do, we ensure appropriate safeguards are in place to protect your data, including:"
+      ],
+      "safeguards": [
+        "EU Standard Contractual Clauses (SCCs)",
+        "Adequacy decisions by the European Commission",
+        "Binding Corporate Rules for intra-group transfers",
+        "Explicit consent for specific transfers where appropriate"
+      ],
+      "additionalContent": [
+        "We conduct transfer impact assessments to ensure the level of protection travels with your data."
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Data Protection Officer",
+      "content": [
+        "We have appointed a Data Protection Officer (DPO) to oversee our data protection strategy and ensure compliance with GDPR requirements."
+      ],
+      "dpo": {
+        "role": "Data Protection Officer",
+        "email": "dpo@corewaysolution.com",
+        "responsibilities": [
+          "Monitoring GDPR compliance",
+          "Providing advice on data protection matters",
+          "Serving as point of contact for data subjects and supervisory authorities",
+          "Conducting data protection impact assessments"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "Data Breach Notification",
+      "content": [
+        "In the event of a data breach that is likely to result in a risk to your rights and freedoms, we will:"
+      ],
+      "list": [
+        "Notify the relevant supervisory authority within 72 hours of becoming aware of the breach",
+        "Notify affected individuals without undue delay if the breach is likely to result in a high risk",
+        "Document all data breaches, including facts, effects, and remedial actions taken",
+        "Take immediate steps to mitigate the breach and prevent future occurrences"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Children's Privacy",
+      "content": [
+        "We do not knowingly process personal data of children under 16 years of age without parental consent. If we become aware that we have collected personal data from a child under 16 without parental consent, we will take steps to delete that information as quickly as possible.",
+        "If you believe we have collected data from a child without proper consent, please contact us immediately."
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Automated Decision-Making and Profiling",
+      "content": [
+        "We do not use automated decision-making or profiling that produces legal effects or similarly significantly affects you.",
+        "Any automated processing we conduct is limited to analytics and does not result in decisions that affect your rights or create legal obligations."
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Exercising Your Rights",
+      "content": [
+        "To exercise any of your GDPR rights, please contact us using the following methods:"
+      ],
+      "contactMethods": [
+        {
+          "method": "Email",
+          "value": "privacy@corewaysolution.com",
+          "note": "Include 'GDPR Request' in the subject line"
+        },
+        {
+          "method": "Data Protection Officer",
+          "value": "dpo@corewaysolution.com",
+          "note": "For complex data protection matters"
+        },
+        {
+          "method": "Written Request",
+          "value": "Coreway Solution - Data Protection Team",
+          "note": "Include proof of identity"
+        }
+      ],
+      "additionalContent": [
+        "We will respond to your request within one month, though this may be extended by two further months for complex requests. We will inform you of any extension within the first month."
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Updates to This Policy",
+      "content": [
+        "We may update this GDPR Compliance page from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by posting the updated policy on our website.",
+        "The \"Last Updated\" date at the top of this page indicates when this policy was last revised."
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Contact Information",
+      "content": [
+        "For any questions about GDPR compliance or to exercise your rights, please contact:"
+      ],
+      "contact": {
+        "company": "Coreway Solution",
+        "dpo": "dpo@corewaysolution.com",
+        "privacy": "privacy@corewaysolution.com",
+        "website": "www.corewaysolution.com"
+      }
+    }
+  ]
+}
