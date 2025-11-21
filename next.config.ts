@@ -20,11 +20,7 @@ const nextConfig: NextConfig = {
         destination: "/about/company-overview",
         permanent: true,
       },
-      {
-        source: "/case-studies.html",
-        destination: "/portfolio/case-studies",
-        permanent: true,
-      },
+   
       {
         source: "/portfolio.html",
         destination: "/portfolio/projects",
@@ -68,11 +64,11 @@ const nextConfig: NextConfig = {
       },
 
       // ======== CASE STUDY REDIRECTS ========
-      {
-        source: "/case-study/:slug*",
-        destination: "/portfolio/case-studies/:slug*",
-        permanent: true,
-      },
+      // {
+      //   source: "/case-study/:slug*",
+      //   destination: "/portfolio/case-studies/:slug*",
+      //   permanent: true,
+      // },
 
       // ======== PORTFOLIO QUERY REDIRECTS ========
       {
