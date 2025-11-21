@@ -36,10 +36,13 @@
         {
           "title": "AI & Consulting",
           "items": [
+            {"label":"AI Agent","href":"/solution/ai-agent","icon":"code"},
             { "label": "AI Consulting", "href": "/solution/ai-consulting", "icon": "lightbulb" },
             { "label": "AI Integration Services", "href": "/solution/ai-integration-services", "icon": "plug" },
             { "label": "Replatforming & Migration", "href": "/solution/replatforming-migration", "icon": "refresh-cw" },
             {"label":"UGS Ads","href":"/solution/ugs-ads","icon":"shield"}
+         
+
           ]
         },
         {

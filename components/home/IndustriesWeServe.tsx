@@ -130,21 +130,22 @@ const industries = [
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Industries We Serve
             </h2>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-gray-300 leading-relaxed">
               We develop industry-specific software solutions for healthcare, fintech, logistics,
               retail, and more, helping businesses tackle unique challenges with custom-built
               technology.
             </p>
           </div>
+              {/* <div "> */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-6 gap-2">
             {industries.map((industry, index) => (
               <div
                 key={industry.title}
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
                 }}
-                className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:shadow-xl hover:shadow-slate-900/20 transition-all duration-500 cursor-pointer overflow-hidden"
+                className="relative h-full cursor-pointer bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-4 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10 group overflow-hidden  "
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-700/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -162,7 +163,7 @@ const industries = [
                   </p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-slate-500 to-slate-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-slate-500 to-slate-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" /> */}
               </div>
             ))}
           </div>

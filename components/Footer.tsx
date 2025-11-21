@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Github, Twitter, Linkedin, Youtube, X, Facebook } from 'lucide-react';
 import Link from 'next/link';
 
 const footerLinks = {
@@ -15,20 +15,20 @@ const footerLinks = {
     { name: "Documentation", url: "/documentation" },
     { name: "API Reference", url: "/api-reference" },
     { name: "Tutorials", url: "/tutorials" },
-    { name: "Blog", url: "/blog" },
-    { name: "Community", url: "/community" },
+    
+   
   ],
   Company: [
     { name: "About", url: "/about" },
     { name: "Careers", url: "/careers" },
-    { name: "Partners", url: "/partners" },
     { name: "Contact", url: "/contact" },
-    { name: "Press Kit", url: "/press-kit" },
+    { name: "Blog", url: "/blog" },
+
   ],
   Legal: [
     { name: "Privacy Policy", url: "/privacy-policy" },
     { name: "Terms of Service", url: "/terms-of-service" },
-    { name: "Cookie Policy", url: "/cookie-policy" },
+    { name: "Cookie Policy", url: "/refund-policy" },
     { name: "GDPR", url: "/gdpr-compliance" },
   ],
 };
@@ -36,7 +36,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0E0918] border-t border-white/10">
+    <footer className="bg-[#0E0918] border-t border-white/10 ">
       <div className="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
@@ -53,38 +53,53 @@ export default function Footer() {
               Automate your workflows without limits
             </p>
             <div className="flex space-x-4">
+              {/* X (Twitter new logo) */}
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
+                <X size={20} />
               </a>
+
+              {/* Facebook */}
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github size={20} />
+                <Facebook size={20} />
               </a>
+
+              {/* LinkedIn */}
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
+
+              {/* Behance */}
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube size={20} />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M7.5 11.5a2.5 2.5 0 0 0 0-5H2v11h6a3 3 0 0 0 0-6zm-3.5-3h3a1.5 1.5 0 0 1 0 3h-3zm3.5 7h-3v-3h3a1.5 1.5 0 0 1 0 3zm13-4.5h-4a2 2 0 0 1 4 0zm-6 1a3 3 0 0 0 3 3h2a3 3 0 1 1-3-4h2.5a4.5 4.5 0 1 0 0 9h-2.5a4.5 4.5 0 0 1-4.5-4.5zm.5-4h5v-1.5h-5z" />
+                </svg>
               </a>
             </div>
+
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
-  <div key={category}>
-    <h3 className="text-white font-semibold mb-4">{category}</h3>
-    <ul className="space-y-3">
-      {links.map(({ name, url }) => (
-        <li key={name}>
-          <a
-            href={url}
-            className="text-gray-400 hover:text-white transition-colors text-sm"
-          >
-            {name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-))}
+            <div key={category}>
+              <h3 className="text-white font-semibold mb-4">{category}</h3>
+              <ul className="space-y-3">
+                {links.map(({ name, url }) => (
+                  <li key={name}>
+                    <a
+                      href={url}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
         </div>
 

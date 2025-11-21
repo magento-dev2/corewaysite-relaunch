@@ -50,10 +50,15 @@ const services = [
 ];
 
 
-  useEffect(() => {
-    if (!sectionRef.current || !headerRef.current || !cardsRef.current) return;
+ useEffect(() => {
+  if (!sectionRef.current || !headerRef.current || !cardsRef.current) return;
 
-    const ctx = gsap.context(() => {
+  const mm = gsap.matchMedia();
+
+  const ctx = gsap.context(() => {
+
+    /* ================= DESKTOP ================= */
+    mm.add("(min-width: 768px)", () => {
       gsap.fromTo(
         headerRef.current,
         {
@@ -76,37 +81,88 @@ const services = [
         }
       );
 
-      const cards = cardsRef.current?.children;
-      if (cards) {
-        gsap.fromTo(
-          cards,
-          {
-            opacity: 0,
-            y: 100,
-            rotationX: -15,
-            scale: 0.9
-          },
-          {
-            opacity: 1,
-            y: 0,
-            rotationX: 0,
-            scale: 1,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: "top 75%",
-              end: "top 20%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-      }
-    }, sectionRef);
+      const cards = cardsRef.current.children;
 
-    return () => ctx.revert();
-  }, []);
+      gsap.fromTo(
+        cards,
+        {
+          opacity: 0,
+          y: 100,
+          rotationX: -15,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+
+    /* ================= MOBILE ================= */
+    mm.add("(max-width: 767px)", () => {
+      gsap.fromTo(
+        headerRef.current,
+        {
+          opacity: 0,
+          y: 30
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 90%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      const cards = cardsRef.current.children;
+
+      gsap.fromTo(
+        cards,
+        {
+          opacity: 0,
+          y: 40,
+          scale: 0.97
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+  }, sectionRef);
+
+  return () => {
+    mm.revert();
+    ctx.revert();
+  };
+}, []);
+
 
    const lines = [
     "Strategy — We craft solutions that fit your business goals.",

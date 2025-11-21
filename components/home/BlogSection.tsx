@@ -141,7 +141,7 @@ export default function BlogSection() {
             className=" mt-24 group cursor-pointer"
           >
             <Link href={`/blog/${featuredPost.id}`}>
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 shadow-2xl shadow-slate-900/20">
+                <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative h-80 lg:h-auto overflow-hidden">
                     <div
@@ -151,7 +151,7 @@ export default function BlogSection() {
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent" />
                   </div>
 
-                  <div className="p-10 lg:p-12 flex flex-col justify-center relative z-10">
+                  <div className=" lg:p-12 flex flex-col justify-center relative z-10">
                     <span className="inline-block px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold mb-4 w-fit border border-slate-600">
                       {featuredPost.category}
                     </span>
@@ -195,7 +195,7 @@ export default function BlogSection() {
               className="group cursor-pointer"
             >
               <Link href={`/blog/${post.id}`}>
-                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 border border-slate-700/50 h-full flex flex-col">
+                <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl  transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                   <div className="relative h-56 overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"

@@ -34,22 +34,20 @@ export default function Home() {
       <ServicesGSAP />
 
       <Expertise />
-      {/* <Expertise2 /> */}
-<CTOSection/>
 
       <ScrollScale delay={0.2}>
         <PortfolioHighlights />
       </ScrollScale>
 
+      <CTOSection/>
+
       <ScrollFadeIn direction="up" duration={1.5}>
         <Integrations />
       </ScrollFadeIn>
 
-      <ScrollParallax speed={0.2}>
-        <ScrollFadeIn direction="left">
-          <Testimonials />
-        </ScrollFadeIn>
-      </ScrollParallax>
+ 
+
+      <Testimonials />
 
       <IndustriesWeServe />
 

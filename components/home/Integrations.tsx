@@ -104,7 +104,7 @@ export default function Integrations() {
             Connect Everything
           </h2>
 
-          <p className="text-base text-gray-400 max-w-2xl mx-auto">
+          <p className=" text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
             Seamlessly integrate with all your favorite tools and platforms
           </p>
         </div>

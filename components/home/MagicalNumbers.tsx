@@ -37,7 +37,7 @@ export default function MagicalNumbersElegant() {
           <h2 className="text-3xl text-center md:text-4xl font-bold leading-tight mb-3 text-white">
             {t('numbers.title')}
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
+          <p className="text-gray-300 text-lg leading-relaxed">
             {t('numbers.description')}
           </p>
           {/* <p className="text-base text-slate-400 leading-relaxed">
@@ -62,7 +62,9 @@ export default function MagicalNumbersElegant() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="group relative"
               >
-                <div className="relative h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 transition-all duration-300 hover:border-slate-600 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1">
+                {/* <div className="relative h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 transition-all duration-300 hover:border-slate-600 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1"> */}
+                <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
+
                   <div className="flex items-center justify-center mb-3">
                     <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 group-hover:bg-slate-700 transition-colors">
                       <Icon className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors" />

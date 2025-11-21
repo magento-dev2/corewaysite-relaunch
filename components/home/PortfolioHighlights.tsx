@@ -195,7 +195,7 @@ export default function CaseStudies() {
           </motion.div>
         </div> */}
 
-        <div className="grid md:grid-cols-2  items-start mb-18">
+        <div className=" text-center items-center mb-14">
 
           {/* Left Side: Heading + Text */}
           <motion.div
@@ -206,11 +206,11 @@ export default function CaseStudies() {
             transition={{ duration: 0.8 }}
           // className="space-y-6"
           >
-            
+
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Case Studies
             </h2>
-           
+
           </motion.div>
 
           {/* Right Side: Animated Text Lines */}
@@ -222,7 +222,7 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
               // transition={{ duration: 0.8, delay: index * 0.3 }}
-              className="text-gray-300 text-lg"
+              className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto"
             >
               We understand the pain of startups and SMEs. Our mission is to deliver cutting-edge solutions for WEB, MOBILE, and ENTERPRISE with next-generation technologies that drive real results.
             </motion.p>
@@ -234,7 +234,7 @@ export default function CaseStudies() {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute left-[-35px] top-[58%] -translate-y-1/2 z-20 group cursor-pointer"
+          className="absolute left-[-35px] top-[58%] -translate-y-1/2 z-20 group cursor-pointer hidden lg:block"
         >
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -246,15 +246,7 @@ export default function CaseStudies() {
         </button>
 
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
-            {current.title}
-          </h3>
-        </motion.div>
+
 
         {/* Main Content */}
         <div className="relative" style={{ perspective: "2000px" }}>
@@ -292,36 +284,59 @@ export default function CaseStudies() {
 
 
                 <motion.div
-                  className="space-y-6 pl-6 border-l-2 border-gradient-to-b from-purple-500 to-pink-500"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
                 >
-                  <div className="relative group">
-                    <div className="absolute -left-[30px] top-2 w-4 h-4 bg-purple-500 rounded-full animate-ping"></div>
-                    <div className="absolute -left-[30px] top-2 w-4 h-4 bg-purple-500 rounded-full"></div>
-                    <p className="text-sm font-semibold text-purple-400 mb-2 flex items-center gap-2">
-                      <Zap className="w-4 h-4" />
-                      The Challenge
-                    </p>
-                    <p className="text-gray-300 leading-relaxed">{current.challenge}</p>
-                  </div>
-
-                  <div className="relative group">
-                    <div className="absolute -left-[30px] top-2 w-4 h-4 bg-pink-500 rounded-full animate-ping" style={{ animationDelay: "0.5s" }}></div>
-                    <div className="absolute -left-[30px] top-2 w-4 h-4 bg-pink-500 rounded-full"></div>
-                    <p className="text-sm font-semibold text-pink-400 mb-2 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      The Solution
-                    </p>
-                    <p className="text-gray-300 leading-relaxed">{current.solution}</p>
-                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
+                    {current.title}
+                  </h3>
                 </motion.div>
 
-                {/* Stats Grid */}
-               
+                <motion.div
+                  className="grid grid-cols-2 gap-4 mt-2 "
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  {current.stats.map((stat, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="relative group"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all"></div>
+                      <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 group-hover:border-purple-500/50 transition-all">
+                        <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                          {stat.value}
+                        </p>
+                        <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
 
-               
+                <div className="flex justify-center">
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl overflow-hidden shadow-2xl cursor-pointer mt-4 "
+                  >
+                    <Link href={`/case-studies/${current.slug}`} className="relative z-10">
+                      <span className="relative z-10 cursor-pointer">View Full Case Study</span>
+                    </Link>
+                    <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
+                  </motion.button>
+                </div>
+
+                {/* Stats Grid */}
+
+
+
               </motion.div>
 
               {/* Right Image */}
@@ -360,52 +375,14 @@ export default function CaseStudies() {
                 </motion.div>
               </motion.div>
             </motion.div>
-            
-             <motion.div
-                  className="grid grid-cols-4 gap-4 mt-2 "
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  {current.stats.map((stat, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="relative group"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all"></div>
-                      <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 group-hover:border-purple-500/50 transition-all">
-                        <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                          {stat.value}
-                        </p>
-                        <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
 
-                <div className="flex justify-center">
-                 <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl overflow-hidden shadow-2xl cursor-pointer mt-4 "
-                >
-                  <Link href={`/case-studies/${current.slug}`} className="relative z-10">
-                  <span className="relative z-10 cursor-pointer">View Full Case Study</span>
-                  </Link>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                  {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
-                </motion.button>
-                </div>
+
           </AnimatePresence>
         </div>
 
         <button
           onClick={handleNext}
-          className="absolute right-[-35px] top-[58%] -translate-y-1/2 z-20 group cursor-pointer"
+          className="absolute right-[-35px] top-[58%] -translate-y-1/2 z-20 group cursor-pointer hidden lg:block"
         >
           <motion.div
             whileHover={{ scale: 1.1 }}

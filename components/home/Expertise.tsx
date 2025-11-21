@@ -59,14 +59,17 @@ export default function Expertise() {
   const leftSideRef = useRef<HTMLDivElement>(null);
   const rightSideRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const leftSide = leftSideRef.current;
-    const rightSide = rightSideRef.current;
+useEffect(() => {
+  const section = sectionRef.current;
+  const leftSide = leftSideRef.current;
+  const rightSide = rightSideRef.current;
 
-    if (!section || !leftSide || !rightSide) return;
+  if (!section || !leftSide || !rightSide) return;
 
-    // Pin the left side while right side scrolls
+  const mm = gsap.matchMedia();
+
+  // ✅ DESKTOP ONLY (Pin + animation)
+  mm.add("(min-width: 768px)", () => {
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
@@ -76,15 +79,11 @@ export default function Expertise() {
       anticipatePin: 1,
     });
 
-    // Animate each expertise card on scroll
     const cards = rightSide.querySelectorAll(".expertise-card");
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       gsap.fromTo(
         card,
-        {
-          opacity: 0,
-          y: 100,
-        },
+        { opacity: 0, y: 80 },
         {
           opacity: 1,
           y: 0,
@@ -92,18 +91,21 @@ export default function Expertise() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
           },
         }
       );
     });
+  });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  // ✅ MOBILE ONLY (No pin, natural flow)
+  mm.add("(max-width: 767px)", () => {
+    leftSide.style.position = "relative";
+  });
+
+  return () => mm.revert();
+}, []);
+
 
   return (
     <section
