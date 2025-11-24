@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,57 +63,57 @@ export default function BlogSection() {
   const featuredRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
- useEffect(() => {
-  const section = sectionRef.current;
-  const header = headerRef.current;
-  const featured = featuredRef.current;
-  const cards = cardsRef.current;
+  useEffect(() => {
+    const section = sectionRef.current;
+    const header = headerRef.current;
+    const featured = featuredRef.current;
+    const cards = cardsRef.current;
 
-  if (!section || !header) return;
+    if (!section || !header) return;
 
-  gsap.from(header, {
-    autoAlpha: 1,   // FIXED
-    y: 80,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: section,
-      start: "top 70%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  gsap.from(featured, {
-    autoAlpha: 1,   // FIXED
-    // x: 80,
-    duration: 1.2,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: featured,
-      start: "top 70%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  cards.forEach((card, index) => {
-    gsap.from(card, {
+    gsap.from(header, {
       autoAlpha: 1,   // FIXED
       y: 80,
-      duration: 0.8,
-      delay: index * 0.15,
+      duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
+        trigger: section,
+        start: "top 70%",
         toggleActions: "play none none reverse",
       },
     });
-  });
 
-  return () => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  };
-}, []);
+    gsap.from(featured, {
+      autoAlpha: 1,   // FIXED
+      // x: 80,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: featured,
+        start: "top 70%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    cards.forEach((card, index) => {
+      gsap.from(card, {
+        autoAlpha: 1,   // FIXED
+        y: 80,
+        duration: 0.8,
+        delay: index * 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
 
   const featuredPost = blogPosts.find(post => post.featured);
@@ -125,9 +126,14 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div ref={headerRef} className="text-center mb-16 opacity-0">
           <span className="inline-block px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-slate-300 rounded-full text-sm font-medium mb-4">
-            {t('blog.badge')}
+            <div className='flex items-center gap-1'>
+              <Sparkles className="text-purple-500" size={16} />
+
+              {t('blog.badge')}
+            </div>
+
           </span>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
             {t('blog.title')}
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
@@ -141,7 +147,7 @@ export default function BlogSection() {
             className=" mt-24 group cursor-pointer"
           >
             <Link href={`/blog/${featuredPost.id}`}>
-                <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
+              <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative h-80 lg:h-auto overflow-hidden">
                     <div

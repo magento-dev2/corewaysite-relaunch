@@ -127,7 +127,7 @@ const industries = [
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-[400px_1fr] gap-12 items-start">
           <div className="industries-header lg:sticky lg:top-32">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-white">
               Industries We Serve
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed">

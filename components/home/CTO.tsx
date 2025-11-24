@@ -28,7 +28,7 @@ export default function CTOSection() {
 
             {/* Left Side Text + Button */}
             <div className="flex-1 flex flex-col justify-start  mb-8 md:mb-0 space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 {t('cto.title')}{" "}
                 <span className="text-purple-500">{t('cto.titleHighlight')}</span>{" "}
                 {t('cto.titleEnd')}

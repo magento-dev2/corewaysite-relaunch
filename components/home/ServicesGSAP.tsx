@@ -209,7 +209,7 @@ const services = [
             {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
               <span className="text-sm font-medium text-gray-300">What We Do</span>
             </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t('services.title')}
             </h2>
             {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">

@@ -36,11 +36,11 @@ export default function PageCTA({
           </div>
         )}
 
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
           {title}
         </h2>
 
-        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           {description}
         </p>
 

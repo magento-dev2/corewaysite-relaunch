@@ -122,7 +122,7 @@ useEffect(() => {
           {/* LEFT SIDE - PINNED */}
           <div ref={leftSideRef} className="md:sticky md:top-24">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {t('expertise.title')}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
