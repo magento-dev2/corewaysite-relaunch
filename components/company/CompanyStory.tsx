@@ -88,7 +88,7 @@ export default function CompanyStory({ title, content, stats }: CompanyStoryProp
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             {title}
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -109,7 +109,7 @@ export default function CompanyStory({ title, content, stats }: CompanyStoryProp
 
               <div className="relative">
                 <div className="text-4xl mb-3 animate-bounce-slow">{stat.icon}</div>
-                <div className="text-4xl md:text-5xl font-bold text-purple-400 mb-2 font-mono">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 font-mono">
                   {stat.value.includes('+') ? `${counters[index]}+` : stat.value.includes('%') ? `${counters[index]}%` : stat.value}
                 </div>
                 <div className="text-sm text-gray-400 font-medium">{stat.label}</div>

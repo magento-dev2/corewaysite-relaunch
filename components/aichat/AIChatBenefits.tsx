@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, DollarSign, Target, Users, GitBranch, Scaling } from "lucide-react";
+import { TrendingUp, DollarSign, Target, Users, GitBranch, Scaling, Sparkle } from "lucide-react";
 
 const benefits = [
   {
@@ -59,12 +59,15 @@ export default function AIChatBenefits() {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+            <div className="flex items-center gap-1">
+              <Sparkle className="w-4 h-4 text-purple-600" />
             <span className="text-sm font-medium text-gray-300">Key Benefits</span>
+            </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Transform Your Business Operations
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Experience measurable improvements across all aspects of document management and team productivity
           </p>
         </motion.div>

@@ -50,10 +50,10 @@ export default function CustomAPICaseStudies({ title, cases }: CustomAPICaseStud
             <Code2 className="text-purple-500" size={16} />
             <span className="text-purple-300 text-sm font-medium">Integration Portfolio</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Real-world API and integration implementations
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function CustomAPICaseStudies({ title, cases }: CustomAPICaseStud
                 key={caseStudy.id}
                 onMouseEnter={() => setActiveCase(caseStudy.id)}
                 onMouseLeave={() => setActiveCase(null)}
-                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 ${
+                className={`relative group bg-white/5 cursor-pointer backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                 } ${
                   isActive
@@ -109,7 +109,7 @@ export default function CustomAPICaseStudies({ title, cases }: CustomAPICaseStud
                   <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${
                     isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
                   }`}>
-                    <span className="text-sm font-medium">View Integration</span>
+                    <span className="text-sm font-medium cursor-pointer">View Integration</span>
                     <ArrowRight size={16} className={`transition-transform ${
                       isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
                     }`} />

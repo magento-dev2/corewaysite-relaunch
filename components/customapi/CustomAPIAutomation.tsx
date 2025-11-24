@@ -51,7 +51,7 @@ export default function CustomAPIAutomation({ title, description, features }: Cu
               <span className="text-gray-300 text-sm">Secure & Scalable APIs</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               {title}
             </h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">

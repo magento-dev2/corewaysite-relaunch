@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Brain, FileStack, Zap, Puzzle, Shield, BarChart3 } from "lucide-react";
+import { Brain, FileStack, Zap, Puzzle, Shield, BarChart3, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -107,12 +107,15 @@ export default function AIChatFeatures() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="feature-header text-center mb-20">
           <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
-            <span className="text-sm font-medium text-gray-300">Powerful Features</span>
+            <div className="flex items-center gap-1">
+              <Sparkle className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium text-gray-300">Powerful Features</span>
+            </div>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Advanced AI <span className="bg-gradient-to-r from-purple-500 to-violet-500 bg-clip-text text-transparent">Capabilities</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Leveraging the latest advancements in AI and machine learning to deliver exceptional results
           </p>
         </div>

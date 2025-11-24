@@ -90,10 +90,10 @@ export default function S3SecurityCompliance() {
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
             <span className="text-sm font-medium text-gray-300">Security & Compliance</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             <span className="text-purple-500">Enterprise-Grade</span> Security
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-12">
             Your data is protected with military-grade security and compliance certifications
           </p>
         </div>

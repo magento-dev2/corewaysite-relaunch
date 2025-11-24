@@ -52,7 +52,7 @@ export default function CustomAPIOverview({ title, content, image }: CustomAPIOv
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               {title}
             </h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">

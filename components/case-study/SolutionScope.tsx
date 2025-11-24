@@ -110,7 +110,7 @@ export default function SolutionScope() {
           {/* <span className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full text-sm font-medium text-blue-300 mb-6">
             Solution Architecture
           </span> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
             Comprehensive{' '}
             <span className="bg-purple-600 bg-clip-text text-transparent">
               AI-Powered Platform
@@ -189,7 +189,7 @@ export default function SolutionScope() {
           className="mt-32"
         >
           <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Technology Stack</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Technology Stack</h3>
             <p className="text-gray-300 text-lg">
               Built with industry-leading technologies and frameworks
             </p>

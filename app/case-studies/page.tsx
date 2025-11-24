@@ -196,7 +196,7 @@ export default function CaseStudiesPage() {
             Case Studies
           </h1>
 
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             Explore how we've helped businesses transform their digital presence and achieve remarkable results through innovative solutions.
           </p>
 
@@ -382,7 +382,7 @@ export default function CaseStudiesPage() {
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Ready to Start Your Project?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Let's create something extraordinary together. Get in touch to discuss how we can help transform your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

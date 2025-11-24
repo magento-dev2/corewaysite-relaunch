@@ -244,7 +244,7 @@ export default function BlogDetailPage() {
             <div className="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded mb-6">
               {blogPost.category}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" >
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight" >
               {blogPost.title}
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-gray-300">

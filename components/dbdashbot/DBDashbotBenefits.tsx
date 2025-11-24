@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Clock, Sliders, Shield, TrendingUp } from "lucide-react";
+import { Clock, Sliders, Shield, TrendingUp, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -82,12 +82,15 @@ export default function DBDashbotBenefits() {
           <div ref={leftRef} className="lg:sticky lg:top-24 py-24">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+ <div className="flex items-center gap-1">
+          <Sparkle className="w-4 h-4 text-purple-600" />
                 <span className="text-sm font-medium text-gray-300">Key Benefits</span>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            </div>              </div>
+             
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Why Choose <span className="text-purple-500">DBDashbot</span>
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 Experience unparalleled efficiency, flexibility, and security in database querying with measurable results.
               </p>
 

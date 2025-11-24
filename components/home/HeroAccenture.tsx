@@ -207,7 +207,7 @@ export default function HeroAccenture() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+                className="text-lg md:text-lg text-gray-300 mb-8 leading-relaxed"
               >
                 We help clients prioritize business strategy, technology readiness and organizational readiness to get to value faster.
               </motion.p>

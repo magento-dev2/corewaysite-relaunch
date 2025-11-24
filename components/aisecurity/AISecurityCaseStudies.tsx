@@ -50,10 +50,10 @@ export default function AISecurityCaseStudies({ title, cases }: AISecurityCaseSt
             <ShieldCheck className="text-purple-500" size={16} />
             <span className="text-purple-300 text-sm font-medium">Protected Organizations</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Real-world AI security implementations protecting critical infrastructure
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function AISecurityCaseStudies({ title, cases }: AISecurityCaseSt
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="relative h-56 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br from-purple-500/20 to-violet-500/20 transition-opacity duration-500 z-10 ${
+                  <div className={`absolute inset-0 bg-gradient-to-br cursor-pointer from-purple-500/20 to-violet-500/20 transition-opacity duration-500 z-10 ${
                     isActive ? 'opacity-100' : 'opacity-0'
                   }`}></div>
                   <img
@@ -109,7 +109,7 @@ export default function AISecurityCaseStudies({ title, cases }: AISecurityCaseSt
                   <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${
                     isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
                   }`}>
-                    <span className="text-sm font-medium">View Case Study</span>
+                    <span className="text-sm font-medium cursor-pointer">View Case Study</span>
                     <ArrowRight size={16} className={`transition-transform ${
                       isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
                     }`} />

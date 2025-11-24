@@ -66,7 +66,7 @@ export default function AIIntegrationAutomation({ title, description, features }
             </div>
 
             <h2
-              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight"
               style={{ transform: 'translateZ(20px)' }}
             >
               {title}

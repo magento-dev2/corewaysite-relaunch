@@ -82,10 +82,10 @@ export default function WorkflowZigZagScroll() {
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
       <div className="relative z-10 text-center mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Workflows for every team
         </h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
           Pre-built templates to get you started in minutes
         </p>
       </div>

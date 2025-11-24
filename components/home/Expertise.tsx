@@ -131,7 +131,7 @@ useEffect(() => {
               
               {/* Optional CTA or additional content */}
               <div className="pt-6">
-                <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
+                <button className="cursor-pointer px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
                   View All Services
                 </button>
               </div>

@@ -50,10 +50,10 @@ export default function AWSS3CaseStudies({ title, cases }: AWSS3CaseStudiesProps
             <TrendingDown className="text-green-500" size={16} />
             <span className="text-purple-300 text-sm font-medium">Cost Reduction</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Real-world S3 optimizations delivering massive cost savings
           </p>
         </div>

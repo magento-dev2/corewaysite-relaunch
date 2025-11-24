@@ -67,7 +67,7 @@ export default function CaseStudyOverview({
 
         {/* LEFT: OVERVIEW TEXT */}
         <div ref={leftRef} className="space-y-6 md:sticky md:top-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             Overview
           </h2>
          

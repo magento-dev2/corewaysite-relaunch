@@ -79,10 +79,10 @@ export default function IoTCaseStudies({ title, cases }: IoTCaseStudiesProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Real-world IoT implementations across industries
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function IoTCaseStudies({ title, cases }: IoTCaseStudiesProps) {
               {getVisibleCases().map((caseStudy, index) => (
                 <article
                   key={`${caseStudy.id}-${index}`}
-                  className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${
+                  className={`group bg-white/5 backdrop-blur-sm border cursor-pointer border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${
                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                   }`}
                   style={{
@@ -126,7 +126,7 @@ export default function IoTCaseStudies({ title, cases }: IoTCaseStudiesProps) {
                       {caseStudy.description}
                     </p>
                     <button className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors group/btn">
-                      <span className="text-sm font-medium">View Details</span>
+                      <span className="text-sm font-medium cursor-pointer">View Details</span>
                       <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>

@@ -76,7 +76,7 @@ export default function ProjectBrief() {
           {/* <span className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full text-sm font-medium text-purple-300 mb-6">
             Project Objectives
           </span> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
             Clear Goals,{' '}
             <span className="bg-purple-600 bg-clip-text text-transparent">
               Measurable Results

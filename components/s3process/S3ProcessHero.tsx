@@ -88,7 +88,7 @@ export default function S3ProcessHero() {
               Master <span className="text-purple-500">S3 Storage</span> Process
             </h1>
 
-            <p ref={subtitleRef} className="text-xl text-gray-300 leading-relaxed">
+            <p ref={subtitleRef} className="text-lg text-gray-300 leading-relaxed">
               Streamline your AWS S3 workflows with automated processes, intelligent data management, and enterprise-grade security solutions.
             </p>
 

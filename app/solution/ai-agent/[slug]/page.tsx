@@ -112,10 +112,92 @@ const StepByStepComponent = () => {
     </div>
   );
 
+
+  //  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  //       <div className="flex flex-col md:flex-row items-center justify-between w-full">
+
+  //         {/* Left Side Text + Button */}
+  //         <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
+  //           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" >
+  //             Elevate Commerce <span className="text-purple-500"> with Intelligence</span>
+  //           </h1>
+  //           <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
+  //             Headless, AI-driven, and composable commerce solutions.
+  //           </p>
+
+
+
+
+  //           <div className="flex flex-wrap gap-4">
+  //             <button className="cursor-pointer group px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2">
+  //               Explore Solutions
+  //               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  //             </button>
+  //             <button className="cursor-pointer px-8 py-4 bg-transparent border-2 border-gray-700 hover:border-purple-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2">
+  //               Book Consultation
+  //               <ArrowRight className="w-5 h-5" />
+  //             </button>
+  //           </div>
+
+  //         </div>
+
+  //         {/* Right Side Image */}
+  //         <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
+  //           <img
+  //             src="/assets/home/coreway-ai.png"
+  //             alt="Hero Image"
+  //             className="w-full max-w-4xl rounded-lg shadow-lg"
+  //           />
+  //         </div>
+
+  //       </div>
+  //     </div>
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
       {/* Hero Section */}
-      
+      <div className="relative overflow-hidden border-b border-gray-800">
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10"></div> */}
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-32">
+            <div className="flex flex-col md:flex-row items-center justify-between w-full">
+
+          {/* Left Side Text + Button */}
+          <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" >
+              Elevate Commerce <span className="text-purple-500"> with Intelligence</span>
+            </h1>
+            <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
+              Headless, AI-driven, and composable commerce solutions.
+            </p>
+
+
+
+
+            <div className="flex flex-wrap gap-4">
+              <button className="cursor-pointer group px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2">
+                Explore Solutions
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="cursor-pointer px-8 py-4 bg-transparent border-2 border-gray-700 hover:border-purple-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2">
+                Book Consultation
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+
+          </div>
+
+          {/* Right Side Image */}
+          <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
+            <img
+              src="/assets/home/coreway-ai.png"
+              alt="Hero Image"
+              className="w-full max-w-4xl rounded-lg shadow-lg"
+            />
+          </div>
+
+        </div>
+        </div>
+      </div>
 
 
 <div className='max-w-6xl mx-auto mt-5 '>

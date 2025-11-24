@@ -90,7 +90,7 @@ export default function DedicatedDevHero() {
               Hire <span className="text-purple-500">Dedicated</span> Developers
             </h1>
 
-            <p ref={subtitleRef} className="text-xl text-gray-300 leading-relaxed">
+            <p ref={subtitleRef} className="text-lg text-gray-300 leading-relaxed">
               Scale your team with expert developers who work exclusively for you. Access unlimited technology expertise with flexible engagement models.
             </p>
 

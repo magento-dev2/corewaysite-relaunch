@@ -84,94 +84,87 @@ export default function AIChatHero() {
 
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAyKSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-        <div className="text-center space-y-8">
-          <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
-            <Sparkles className="text-purple-500" size={20} />
-            <span className="text-gray-300">AI-Powered Document Intelligence</span>
-          </div>
+ <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
 
-          <h1 ref={titleRef} className="text-6xl md:text-8xl font-bold text-white leading-tight max-w-5xl mx-auto">
-            Chat with Your{" "}
-            <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-purple-600 bg-clip-text text-transparent">
-              PDF Documents
-            </span>
-          </h1>
+    {/* LEFT CONTENT */}
+    <div className="space-y-8">
+      <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
+        <Sparkles className="text-purple-500" size={16} />
+        <span className="text-gray-300 text-sm">AI-Powered Document Intelligence</span>
+      </div>
 
-          <p ref={subtitleRef} className="text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Transform static PDFs into interactive conversations. Ask questions, get instant answers, and extract insights with AI.
-          </p>
+      <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+        Chat with Your{" "}
+        <span className="text-purple-500">PDF Documents</span>
+      </h1>
 
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <button className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-10 py-5 rounded-xl hover:from-purple-600 hover:to-violet-700 transition-all font-semibold text-lg flex items-center space-x-3 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105">
-              <span>Request for Demo</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
+      <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+        Transform static PDFs into interactive conversations. Ask questions, get instant answers, and extract insights with AI.
+      </p>
 
-            <button className="group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-10 py-5 rounded-xl hover:bg-white/10 hover:border-purple-500/50 transition-all font-semibold text-lg">
-              Watch Demo
-            </button>
-          </div>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <button className="cursor-pointer group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
+          <span>Request for Demo</span>
+          <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+        </button>
 
-          <div ref={visualRef} className="pt-16 max-w-4xl mx-auto">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 rounded-3xl blur-3xl"></div>
+        <button className="cursor-pointer group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
+          Watch Demo
+        </button>
+      </div>
+    </div>
 
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  </div>
-                  <div className="flex-1 bg-white/5 rounded-lg px-4 py-2">
-                    <span className="text-gray-400 text-sm">Document Analysis</span>
-                  </div>
-                </div>
+    {/* RIGHT VISUAL CARDS */}
+    <div className="relative space-y-4">
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="rotate-slow w-12 h-12 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-xl flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-purple-400" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="h-2 bg-white/10 rounded-full mb-2"></div>
-                          <div className="h-2 bg-white/10 rounded-full w-2/3"></div>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="h-1.5 bg-purple-500/30 rounded-full"></div>
-                        <div className="h-1.5 bg-purple-500/20 rounded-full w-5/6"></div>
-                        <div className="h-1.5 bg-purple-500/20 rounded-full w-4/6"></div>
-                      </div>
-                    </div>
-                  </div>
+      {/* Floating Icon */}
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="pulse-ring w-32 h-32 bg-purple-500/30 rounded-full"></div>
+        </div>
 
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-2xl p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <MessageSquare className="w-6 h-6 text-purple-400" />
-                        <span className="text-white font-semibold">AI Response</span>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="h-2 bg-white/20 rounded-full"></div>
-                        <div className="h-2 bg-white/20 rounded-full w-5/6"></div>
-                        <div className="h-2 bg-white/20 rounded-full w-4/6"></div>
-                      </div>
-                      <div className="mt-4 flex items-center space-x-2">
-                        <Zap className="w-4 h-4 text-yellow-400" />
-                        <span className="text-xs text-gray-400">Answered in 0.3s</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="relative flex justify-center mb-8">
+          <div className="floating-icon w-32 h-32 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-3xl flex items-center justify-center border border-purple-500/30 shadow-2xl backdrop-blur-xl">
+            <FileText className="w-16 h-16 text-purple-400" strokeWidth={1.5} />
           </div>
         </div>
       </div>
+
+      {/* Document Card */}
+      <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6">
+        <div className="flex items-start space-x-4">
+          <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-lg flex items-center justify-center flex-shrink-0">
+            <FileText className="w-6 h-6 text-purple-400" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-white font-semibold mb-2">Smart PDF Analysis</h3>
+            <p className="text-gray-400 text-sm">
+              AI reads and understands your documents instantly
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* AI Response Card */}
+      <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6">
+        <div className="flex items-start space-x-4">
+          <div className="w-12 h-12 bg-gradient-to-br from-violet-500/30 to-purple-500/30 rounded-lg flex items-center justify-center flex-shrink-0">
+            <MessageSquare className="w-6 h-6 text-violet-400" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-white font-semibold mb-2">Instant AI Answers</h3>
+            <p className="text-gray-400 text-sm">
+              Get responses in seconds with deep context
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
     </section>

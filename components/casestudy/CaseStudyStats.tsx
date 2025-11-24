@@ -50,7 +50,7 @@ export default function CaseStudyStats({
       ></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
           Results That Matter
         </h2>
         <p className="text-xl text-gray-400 text-center mb-12">
@@ -68,7 +68,7 @@ export default function CaseStudyStats({
             >
               <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
               <div className="relative z-10">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-3">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-3">
                   {stat.value}
                 </div>
                 <p className="text-gray-200 font-medium">{stat.label}</p>

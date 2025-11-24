@@ -48,7 +48,7 @@ export default function CaseStudiesPreview({ data }: CaseStudiesPreviewProps) {
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-[#1a1325] to-[#0E0918]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
           {data.title}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

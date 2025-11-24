@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Upload, MessageSquare, Zap, CheckCircle } from "lucide-react";
+import { Upload, MessageSquare, Zap, CheckCircle, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -79,12 +79,15 @@ export default function AIChatProcess() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
+ <div className="flex items-center gap-1">
+          <Sparkle className="w-4 h-4 text-purple-600" />
             <span className="text-sm font-medium text-gray-300">How It Works</span>
-          </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            </div>
+            </div>
+          <h2 className="text-3xl md:text-4 xl font-bold text-white mb-6">
             Simple <span className="bg-gradient-to-r from-purple-500 to-violet-500 bg-clip-text text-transparent">Four-Step</span> Process
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Get started with AI-powered document insights in just four easy steps
           </p>
         </div>
@@ -147,7 +150,7 @@ export default function AIChatProcess() {
           <div className="relative bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your PDFs?</h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Join thousands of users who are already experiencing the power of AI-driven document intelligence</p>
-            <button className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-10 py-4 rounded-xl hover:from-purple-600 hover:to-violet-700 transition-all font-semibold shadow-lg shadow-purple-500/30 hover:scale-105">
+            <button className="cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-10 py-4 rounded-xl hover:from-purple-600 hover:to-violet-700 transition-all font-semibold shadow-lg shadow-purple-500/30 hover:scale-105">
               Get Started Now
             </button>
           </div>

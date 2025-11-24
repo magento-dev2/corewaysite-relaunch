@@ -91,7 +91,7 @@ export default function TechOverview({
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div ref={contentRef} className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
               {title}
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed">{content}</p>

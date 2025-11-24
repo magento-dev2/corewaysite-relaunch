@@ -86,14 +86,14 @@ export default function DBDashbotFeatures() {
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
                 <span className="text-sm font-medium text-gray-300">Key Features</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Powerful AI-Driven <span className="text-purple-500">Capabilities</span>
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 Transform your database interactions with intelligent natural language processing and real-time insights.
               </p>
 
-              <div className="flex items-center space-x-4 pt-8">
+              {/* <div className="flex items-center space-x-4 pt-8">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 border-2 border-[#0E0918]"></div>
@@ -102,7 +102,7 @@ export default function DBDashbotFeatures() {
                 <div className="text-sm text-gray-400">
                   <span className="text-white font-semibold">500+</span> businesses using DBDashbot
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

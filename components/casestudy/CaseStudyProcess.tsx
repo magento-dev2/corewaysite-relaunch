@@ -71,7 +71,7 @@ export default function CaseStudyProcessTheme({ process }: CaseStudyProcessProps
 
           {/* LEFT SIDE — sticky heading */}
           <div ref={leftRef} className="md:sticky md:top-24 space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Our Process
             </h2>
 

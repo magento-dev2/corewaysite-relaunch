@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Brain, Code2, Server, Lock } from "lucide-react";
+import { Brain, Code2, Server, Lock, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -72,12 +72,15 @@ export default function DBDashbotTechnology() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+             <div className="flex items-center gap-1">
+          <Sparkle className="w-4 h-4 text-purple-600" />
             <span className="text-sm font-medium text-gray-300">Technology Stack</span>
+            </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Powered by Advanced AI
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Built on cutting-edge technologies for superior performance and reliability
           </p>
         </div>

@@ -50,10 +50,10 @@ export default function TechUseCases({ title, cases }: TechUseCasesProps) {
     <section ref={sectionRef} className="py-24 bg-[#1a1325] relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-lg text-gray-300">
             Real-world applications and success stories
           </p>
         </div>

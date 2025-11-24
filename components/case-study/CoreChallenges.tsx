@@ -36,7 +36,7 @@ export default function CoreChallenges() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Challenges We Overcame</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Challenges We Overcame</h2>
           <p className="text-gray-300 text-lg ">
             Complex obstacles that required innovative solutions and strategic thinking to deliver successful outcomes.
           </p>

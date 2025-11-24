@@ -83,10 +83,10 @@ export default function HealthcareOverview({
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               {title}
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">{content}</p>
+            <p className="text-lg text-gray-300 leading-relaxed">{content}</p>
           </div>
 
           <div ref={imageRef} className="relative">

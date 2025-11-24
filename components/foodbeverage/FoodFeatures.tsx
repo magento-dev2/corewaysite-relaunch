@@ -118,7 +118,7 @@ export default function FoodFeatures({ title, items }: FoodFeaturesProps) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
+          className="text-3xl md:text-4xl font-bold text-center text-white mb-16"
         >
           {title}
         </h2>

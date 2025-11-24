@@ -77,21 +77,21 @@ export default function DBDashbotHero() {
             </div>
 
             <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-white leading-tight">
-              AI-Driven SQL Database{" "}
-              <span className="text-purple-500">Answering Solution</span>
+              AI-Driven SQL 
+              <span className="text-purple-500"> Solution</span>
             </h1>
 
-            <p ref={subtitleRef} className="text-xl text-gray-300 leading-relaxed">
+            <p ref={subtitleRef} className="text-lg text-gray-300 leading-relaxed">
               Leverage the power of AI to extract precise answers from your SQL databases effortlessly. No technical SQL expertise required.
             </p>
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
+              <button className="cursor-pointer group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
                 <span>Request for Demo</span>
                 <Sparkles className="group-hover:rotate-12 transition-transform" size={20} />
               </button>
 
-              <button className="group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
+              <button className="cursor-pointer group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
                 Get Started Free
               </button>
             </div>

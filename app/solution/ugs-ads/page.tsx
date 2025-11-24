@@ -252,7 +252,7 @@ export default function UGCAdsPage() {
       </span>
     </h1>
 
-    <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+    <p className="text-lg text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
       Transform your product into compelling user-generated content using AI-powered models.
       Get professional-looking video ads in 24 hours — no filming required.
     </p>
@@ -303,11 +303,11 @@ export default function UGCAdsPage() {
                 Transform your product into compelling user-generated content using AI-powered models. Get professional-looking video ads in 24 hours — no filming required.            </p>
 
               <div className="flex justify-center gap-3">
-                <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
+                <button className="cursor-pointer group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
                   <span>Get Started Now</span>
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
-                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
+                <button className="cursor-pointer px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
                   <Play className="w-5 h-5" />
                   Watch Demo
                 </button>
@@ -350,7 +350,7 @@ export default function UGCAdsPage() {
       <section className="py-20  bg-gradient-to-b from-[#120A1F] via-[#1C0F33] to-[#0B0514]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
               How It Works
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">

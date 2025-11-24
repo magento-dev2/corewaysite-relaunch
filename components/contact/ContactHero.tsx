@@ -229,7 +229,7 @@ export default function ContactHero() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" ref={textRef}>
                 Get in <span className="bg-gradient-to-r from-purple-400 to-violet-600 bg-clip-text text-purple-500">Touch</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Have a project in mind? We'd love to hear from you. Let's discuss how we can help transform your business with cutting-edge solutions.
               </p>
             </div>

@@ -91,7 +91,7 @@ export default function ContactSection() {
           <div className="flex mb-8 border-b border-white/10">
             <button
               onClick={() => setTab("business")}
-              className={`px-6 py-3 font-semibold rounded-t-xl transition ${
+              className={`px-6 py-3 font-semibold rounded-t-xl transition cursor-pointer ${
                 tab === "business"
                   ? "bg-purple-600 text-white"
                   : "text-gray-400"
@@ -102,7 +102,7 @@ export default function ContactSection() {
 
             <button
               onClick={() => setTab("job")}
-              className={`px-6 py-3 font-semibold rounded-t-xl transition ${
+              className={`px-6 py-3 font-semibold rounded-t-xl transition cursor-pointer ${
                 tab === "job"
                   ? "bg-purple-600 text-white"
                   : "text-gray-400"
@@ -164,7 +164,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 transition text-white py-3 rounded-full font-semibold"
+              className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 transition text-white py-3 rounded-full font-semibold"
             >
               Talk to Our Experts
             </button>

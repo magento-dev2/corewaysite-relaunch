@@ -85,7 +85,7 @@ export default function LegalPageRenderer({
       ref={contentRef}
       className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm"
     >
-      <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
         {title}
       </h1>
       <p className="text-white/60 text-lg mb-12">Last Updated: {lastUpdated}</p>

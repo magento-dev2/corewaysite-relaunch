@@ -82,10 +82,10 @@ export default function FoodOverview({
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div ref={contentRef}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {title}
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">{content}</p>
+            <p className="text-lg text-gray-300 leading-relaxed">{content}</p>
           </div>
 
           <div ref={imageRef} className="relative">

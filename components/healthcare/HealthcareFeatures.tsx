@@ -84,11 +84,11 @@ export default function HealthcareFeatures({
         <div className="text-center mb-16">
           <h2
             ref={titleRef}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Comprehensive healthcare technology solutions for better patient
             outcomes
           </p>

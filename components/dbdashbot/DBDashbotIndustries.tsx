@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShoppingCart, BarChart3, Banknote, GraduationCap, Building2, Package } from "lucide-react";
+import { ShoppingCart, BarChart3, Banknote, GraduationCap, Building2, Package, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -96,12 +96,15 @@ export default function DBDashbotIndustries() {
           <div ref={leftRef} className="lg:sticky lg:top-24 py-24">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
-                <span className="text-sm font-medium text-gray-300">Industry Applications</span>
+                <div className="flex items-center gap-1">
+                  <Sparkle className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-gray-300">Industry Applications</span>
+                </div>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Built for <span className="text-purple-500">Every Industry</span>
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 From retail to finance, DBDashbot adapts to your industry-specific needs with powerful AI-driven insights.
               </p>
 

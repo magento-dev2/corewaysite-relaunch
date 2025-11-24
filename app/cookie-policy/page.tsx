@@ -82,7 +82,7 @@ export default function CookiePolicyPage() {
             >
               <div className="flex items-center gap-4 mb-4">
                 <Cookie className="w-12 h-12 text-purple-400" />
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="text-3xl md:text-4xl font-bold text-white">
                   {cookieData.title}
                 </h1>
               </div>

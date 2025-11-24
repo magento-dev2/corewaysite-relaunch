@@ -84,10 +84,10 @@ export default function FashionOverview({
           </div>
 
           <div ref={contentRef} className="order-1 lg:order-2">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {title}
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">{content}</p>
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">{content}</p>
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">

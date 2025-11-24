@@ -76,10 +76,10 @@ export default function S3UseCases() {
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
             <span className="text-sm font-medium text-gray-300">Use Cases</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             <span className="text-purple-500">Endless</span> Possibilities
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             From media storage to data lakes, S3 powers every use case
           </p>
         </div>

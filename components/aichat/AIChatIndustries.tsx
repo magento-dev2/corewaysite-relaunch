@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, BookOpen, Scale, PenTool, User } from "lucide-react";
+import { GraduationCap, Briefcase, BookOpen, Scale, PenTool, User, Sparkle } from "lucide-react";
 
 const industries = [
   {
@@ -56,12 +56,16 @@ export default function AIChatIndustries() {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+            <div className="flex items-center gap-1">
+              <Sparkle className="w-4 h-4 text-purple-600" />   
+              
             <span className="text-sm font-medium text-gray-300">Who Benefits</span>
+            </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Perfect for Every Professional
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             From students to legal professionals, our AI-powered system adapts to your specific needs
           </p>
         </motion.div>

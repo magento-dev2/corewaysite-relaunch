@@ -45,10 +45,10 @@ export default function AIPlatformCaseStudies({ title, cases }: AIPlatformCaseSt
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Real-world applications of our AI platform expertise
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function AIPlatformCaseStudies({ title, cases }: AIPlatformCaseSt
             return (
               <article
                 key={caseStudy.id}
-                className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${
+                className={`group bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
@@ -69,7 +69,7 @@ export default function AIPlatformCaseStudies({ title, cases }: AIPlatformCaseSt
                   <img
                     src={caseStudy.image}
                     alt={caseStudy.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full cursor-pointer object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E0918] via-transparent to-transparent"></div>
                 </div>
@@ -82,7 +82,7 @@ export default function AIPlatformCaseStudies({ title, cases }: AIPlatformCaseSt
                     {caseStudy.description}
                   </p>
                   <button className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors group/btn">
-                    <span className="text-sm font-medium">View Details</span>
+                    <span className="text-sm font-medium cursor-pointer">View Details</span>
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
