@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Award, Target, HeartHandshake, TrendingUp, Shield, Zap } from "lucide-react";
+import { Award, Target, HeartHandshake, TrendingUp, Shield, Zap, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -90,9 +90,12 @@ export default function WhyChooseUs() {
           <div ref={leftRef} className="lg:sticky lg:top-24 py-24">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <div className="flex items-center gap-1">
+              <Sparkle className="w-4 h-4 text-purple-600" />
                 <span className="text-sm font-medium text-gray-300">Why Choose Coreway</span>
+                </div>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Your Success is <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">Our Priority</span>
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed">

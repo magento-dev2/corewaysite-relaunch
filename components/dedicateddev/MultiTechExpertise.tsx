@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Code2, Smartphone, Database, Cloud, Cpu, Globe } from "lucide-react";
+import { Code2, Smartphone, Database, Cloud, Cpu, Globe, Sparkle } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -22,36 +22,31 @@ const expertiseAreas = [
     title: "Backend Development",
     description: "Scalable backend solutions with Node.js, Python, Java, .NET, PHP, and more. Build robust APIs and server-side applications.",
     technologies: ["Node.js", "Python", "Java", ".NET", "PHP"],
-    gradient: "from-cyan-500 to-blue-600"
-  },
+gradient: "from-purple-500 to-violet-500"  },
   {
     icon: Smartphone,
     title: "Mobile Development",
     description: "Native and cross-platform mobile apps for iOS and Android. Flutter, React Native, Swift, and Kotlin expertise.",
     technologies: ["Flutter", "React Native", "Swift", "Kotlin", "Xamarin"],
-    gradient: "from-blue-600 to-cyan-600"
-  },
+gradient: "from-purple-500 to-violet-500"  },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
     description: "Cloud infrastructure on AWS, Azure, GCP. CI/CD pipelines, Docker, Kubernetes, and modern DevOps practices.",
     technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Jenkins"],
-    gradient: "from-cyan-600 to-blue-500"
-  },
+gradient: "from-purple-500 to-violet-500"  },
   {
     icon: Database,
     title: "Database Expertise",
     description: "Design and optimize databases. SQL, NoSQL, PostgreSQL, MongoDB, Redis, and modern database technologies.",
     technologies: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Cassandra"],
-    gradient: "from-blue-500 to-cyan-400"
-  },
+gradient: "from-purple-500 to-violet-500"      },
   {
     icon: Cpu,
     title: "AI & Machine Learning",
     description: "Build intelligent applications with AI/ML expertise. TensorFlow, PyTorch, NLP, Computer Vision, and more.",
     technologies: ["TensorFlow", "PyTorch", "OpenAI", "NLP", "Computer Vision"],
-    gradient: "from-cyan-400 to-blue-600"
-  }
+gradient: "from-purple-500 to-violet-500"  }
 ];
 
 export default function MultiTechExpertise() {
@@ -96,9 +91,12 @@ export default function MultiTechExpertise() {
           <div ref={leftRef} className="lg:sticky lg:top-24 py-24">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+                <div className="flex items-center gap-1">
+              <Sparkle className="w-4 h-4 text-purple-600" />
                 <span className="text-sm font-medium text-gray-300">Multi-Technology Expertise</span>
+                </div>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Masters of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">Every Technology</span>
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed">
@@ -151,13 +149,13 @@ export default function MultiTechExpertise() {
 
                     <div className="flex flex-wrap gap-2">
                       {area.technologies.map((tech, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-300">
+                        <span key={idx} className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-purple-400">
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                 </div>
               );
