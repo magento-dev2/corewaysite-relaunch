@@ -4,12 +4,24 @@
       "id": "about",
       "label": "About",
       "type": "dropdown",
-      "href":"/about",
+      "href": "/about",
       "items": [
-        { "label": "Company Overview", "href": "/about/company-overview" },
-        { "label": "Why Coreway", "href": "/about/why-coreway" },
-        { "label": "Our Team", "href": "/about#team" },
-        { "label": "Careers", "href": "/careers" }
+        {
+          "label": "Company Overview",
+          "href": "/about/company-overview"
+        },
+        {
+          "label": "Why Coreway",
+          "href": "/about/why-coreway"
+        },
+        {
+          "label": "Our Team",
+          "href": "/about#team"
+        },
+        {
+          "label": "Careers",
+          "href": "/careers"
+        }
       ]
     },
     {
@@ -20,36 +32,96 @@
         {
           "title": "Digital Solutions",
           "items": [
-            { "label": "Digital Commerce Transformation", "href": "/solution/digital-commerce-transformation", "icon": "shopping-cart" },
-            { "label": "Product Development for Startups", "href": "/solution/product-development-forstartups", "icon": "rocket" },
-            { "label": "AI-Powered Application Platforms", "href": "/solution/ai-powered-application-platforms", "icon": "brain" }
+            {
+              "label": "Digital Commerce Transformation",
+              "href": "/solution/digital-commerce-transformation",
+              "icon": "shopping-cart"
+            },
+            {
+              "label": "Product Development for Startups",
+              "href": "/solution/product-development-forstartups",
+              "icon": "rocket"
+            },
+            {
+              "label": "AI-Powered Application Platforms",
+              "href": "/solution/ai-powered-application-platforms",
+              "icon": "brain"
+            }
           ]
         },
         {
           "title": "Development & Integration",
           "items": [
-            { "label": "IoT Application Development", "href": "/solution/iot-application-development", "icon": "wifi" },
-            { "label": "SaaS Infrastructure & DevOps", "href": "/solution/saas-infrastructure-devops", "icon": "cloud" },
-            { "label": "Business Workflow Automation", "href": "/solution/business-workflow-automation", "icon": "zap" }
+            {
+              "label": "IoT Application Development",
+              "href": "/solution/iot-application-development",
+              "icon": "wifi"
+            },
+            {
+              "label": "SaaS Infrastructure & DevOps",
+              "href": "/solution/saas-infrastructure-devops",
+              "icon": "cloud"
+            },
+            {
+              "label": "Business Workflow Automation",
+              "href": "/solution/business-workflow-automation",
+              "icon": "zap"
+            }
           ]
         },
         {
           "title": "AI & Consulting",
           "items": [
-            {"label":"AI Agent","href":"/solution/ai-agent","icon":"code"},
-            { "label": "AI Consulting", "href": "/solution/ai-consulting", "icon": "lightbulb" },
-            { "label": "AI Integration Services", "href": "/solution/ai-integration-services", "icon": "plug" },
-            { "label": "Replatforming & Migration", "href": "/solution/replatforming-migration", "icon": "refresh-cw" },
-            {"label":"UGS Ads","href":"/solution/ugs-ads","icon":"shield"}
-         
-
+            {
+              "label": "AI Agent",
+              "href": "/solution/ai-agent",
+              "icon": "code"
+            },
+            {
+              "label": "AI Consulting",
+              "href": "/solution/ai-consulting",
+              "icon": "lightbulb"
+            },
+            {
+              "label": "AI Integration Services",
+              "href": "/solution/ai-integration-services",
+              "icon": "plug"
+            },
+            {
+              "label": "Replatforming & Migration",
+              "href": "/solution/replatforming-migration",
+              "icon": "refresh-cw"
+            },
+            {
+              "label": "UGS Ads",
+              "href": "/solution/ugs-ads",
+              "icon": "shield"
+            },
+            {
+              "label": "DBDashbot",
+              "href": "/DBDashbot",
+              "icon": "shield"
+            },
+            {
+              "label": "Ai chat pdf",
+              "href": "/ai-chat-with-pdf",
+              "icon": "shield"
+            }
           ]
         },
         {
           "title": "Infrastructure & Security",
           "items": [
-            { "label": "Custom API & Systems Integration", "href": "/solution/custom-api-systems-integration/", "icon": "code" },
-            { "label": "Infrastructure Security Using AI", "href": "/solution/infrastructure-security-ai/", "icon": "shield" }
+            {
+              "label": "Custom API & Systems Integration",
+              "href": "/solution/custom-api-systems-integration/",
+              "icon": "code"
+            },
+            {
+              "label": "Infrastructure Security Using AI",
+              "href": "/solution/infrastructure-security-ai/",
+              "icon": "shield"
+            }
           ]
         }
       ]
@@ -59,12 +131,30 @@
       "label": "AI & Data Engineering",
       "type": "dropdown",
       "items": [
-        { "label": "Dataset Management & Delivery Systems", "href": "/ai-data/dataset-management-delivery" },
-        { "label": "AWS S3 Architecture & Cost Optimization", "href": "/ai-data/aws-s3-optimization" },
-        { "label": "Metadata Extraction using GPT / Vision AI", "href": "/ai-data/metadata-extraction-ai" },
-        { "label": "Automation via GPT, APIs, and Workflow Tools", "href": "/ai-data/gpt-automation" },
-        { "label": "Custom Data Dashboards & Access Portals", "href": "/ai-data/custom-dashboards" },
-        { "label": "Secure Infrastructure Automation", "href": "/ai-data/infrastructure-security-ai" }
+        {
+          "label": "Dataset Management & Delivery Systems",
+          "href": "/ai-data/dataset-management-delivery"
+        },
+        {
+          "label": "AWS S3 Architecture & Cost Optimization",
+          "href": "/ai-data/aws-s3-optimization"
+        },
+        {
+          "label": "Metadata Extraction using GPT / Vision AI",
+          "href": "/ai-data/metadata-extraction-ai"
+        },
+        {
+          "label": "Automation via GPT, APIs, and Workflow Tools",
+          "href": "/ai-data/gpt-automation"
+        },
+        {
+          "label": "Custom Data Dashboards & Access Portals",
+          "href": "/ai-data/custom-dashboards"
+        },
+        {
+          "label": "Secure Infrastructure Automation",
+          "href": "/ai-data/infrastructure-security-ai"
+        }
       ]
     },
     {
@@ -72,13 +162,34 @@
       "label": "Industries",
       "type": "dropdown",
       "items": [
-        { "label": "eCommerce & Virtual Product Stores", "href": "/industries/ecommerce-stores" },
-        { "label": "Automotive", "href": "/industries/automotive" },
-        { "label": "Manufacturing & Industrial IoT", "href": "/industries/manufacturing-iot" },
-        { "label": "Food & Beverage", "href": "/industries/food-beverage" },
-        { "label": "Furniture & Home Decor", "href": "/industries/furniture-home-decor" },
-        { "label": "Fashion & Apparel", "href": "/industries/fashion-apparel" },
-        { "label": "Pharmaceuticals & Healthcare", "href": "/industries/pharmaceuticals-healthcare" }
+        {
+          "label": "eCommerce & Virtual Product Stores",
+          "href": "/industries/ecommerce-stores"
+        },
+        {
+          "label": "Automotive",
+          "href": "/industries/automotive"
+        },
+        {
+          "label": "Manufacturing & Industrial IoT",
+          "href": "/industries/manufacturing-iot"
+        },
+        {
+          "label": "Food & Beverage",
+          "href": "/industries/food-beverage"
+        },
+        {
+          "label": "Furniture & Home Decor",
+          "href": "/industries/furniture-home-decor"
+        },
+        {
+          "label": "Fashion & Apparel",
+          "href": "/industries/fashion-apparel"
+        },
+        {
+          "label": "Pharmaceuticals & Healthcare",
+          "href": "/industries/pharmaceuticals-healthcare"
+        }
       ]
     },
     {
@@ -89,24 +200,61 @@
         {
           "title": "Frontend & Backend",
           "items": [
-            { "label": "React.js", "href": "/technologies/react", "icon": "code" },
-            { "label": "Node.js", "href": "/technologies/nodejs", "icon": "server" },
-            { "label": "Python (Flask, FastAPI)", "href": "/technologies/python", "icon": "code-2" },
-            { "label": "Laravel / PHP", "href": "/technologies/laravel-php", "icon": "box" }
+            {
+              "label": "React.js",
+              "href": "/technologies/react",
+              "icon": "code"
+            },
+            {
+              "label": "Node.js",
+              "href": "/technologies/nodejs",
+              "icon": "server"
+            },
+            {
+              "label": "Python (Flask, FastAPI)",
+              "href": "/technologies/python",
+              "icon": "code-2"
+            },
+            {
+              "label": "Laravel / PHP",
+              "href": "/technologies/laravel-php",
+              "icon": "box"
+            }
           ]
         },
         {
           "title": "Databases & Storage",
           "items": [
-            { "label": "PostgreSQL / MongoDB", "href": "/technologies/databases", "icon": "database" },
-            { "label": "AWS / Wasabi / MinIO / Cloudflare R2", "href": "/technologies/cloud-storage", "icon": "hard-drive" }
+            {
+              "label": "PostgreSQL / MongoDB",
+              "href": "/technologies/databases",
+              "icon": "database"
+            },
+            {
+              "label": "AWS / Wasabi / MinIO / Cloudflare R2",
+              "href": "/technologies/cloud-storage",
+              "icon": "hard-drive"
+            },
+            {
+              "label": "S3 Process",
+              "href": "/s3-process",
+              "icon": "database"
+            }
           ]
         },
         {
           "title": "IoT & Security",
           "items": [
-            { "label": "MQTT / IoT Protocols / WebSockets", "href": "/technologies/iot-protocols", "icon": "radio" },
-            { "label": "Fail2Ban / UFW / CrowdSec", "href": "/technologies/security-tools", "icon": "shield-check" }
+            {
+              "label": "MQTT / IoT Protocols / WebSockets",
+              "href": "/technologies/iot-protocols",
+              "icon": "radio"
+            },
+            {
+              "label": "Fail2Ban / UFW / CrowdSec",
+              "href": "/technologies/security-tools",
+              "icon": "shield-check"
+            }
           ]
         }
       ]
@@ -116,9 +264,22 @@
       "label": "Portfolio",
       "type": "dropdown",
       "items": [
-        { "label": "Case Studies", "href": "/case-studies" },
-        { "label": "Project Snapshots", "href": "/portfolio/projects" },
-        { "label": "Testimonials", "href": "/testimonials" }
+        {
+          "label": "Case Studies",
+          "href": "/case-studies"
+        },
+        {
+          "label": "Project Snapshots",
+          "href": "/portfolio/projects"
+        },
+        {
+          "label": "Testimonials",
+          "href": "/testimonials"
+        },
+        {
+          "label": "Dedicate developer",
+          "href": "/dedicated-developers"
+        }
       ]
     }
   ]

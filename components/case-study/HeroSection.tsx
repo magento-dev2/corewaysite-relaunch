@@ -83,9 +83,9 @@ export default function HeroSection() {
             <div className="absolute bottom-0 left-0 right-0 p-12">
               <div className="grid grid-cols-3 gap-8">
                 {[
-                  { icon: TrendingUp, value: '70%', label: 'Revenue Growth', color: 'from-emerald-400 to-teal-400' },
+                  { icon: TrendingUp, value: '70%', label: 'Revenue Growth', color: 'from-purple-400 to-fuchsia-400' },
                   { icon: DollarSign, value: '45%', label: 'Cost Reduction', color: 'from-purple-400 to-fuchsia-400' },
-                  { icon: Zap, value: '85%', label: 'Workflows Automated', color: 'from-blue-400 to-cyan-400' },
+                  { icon: Zap, value: '85%', label: 'Workflows Automated', color: 'from-purple-400 to-fuchsia-400' },
                 ].map((stat, index) => {
                   const Icon = stat.icon
                   return (

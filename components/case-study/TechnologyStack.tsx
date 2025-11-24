@@ -7,7 +7,7 @@ const techStack = [
   {
     category: 'AI & Machine Learning',
     icon: Cpu,
-    color: 'from-purple-500 to-fuchsia-600',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'TensorFlow', logo: '🔷' },
       { name: 'PyTorch', logo: '🔥' },
@@ -18,7 +18,7 @@ const techStack = [
   {
     category: 'Backend',
     icon: Code,
-    color: 'from-violet-500 to-purple-600',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'Node.js', logo: '💚' },
       { name: 'Python', logo: '🐍' },
@@ -29,7 +29,7 @@ const techStack = [
   {
     category: 'Frontend',
     icon: Layers,
-    color: 'from-fuchsia-500 to-pink-600',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'React', logo: '⚛️' },
       { name: 'Next.js', logo: '▲' },
@@ -40,7 +40,7 @@ const techStack = [
   {
     category: 'Database',
     icon: Database,
-    color: 'from-pink-500 to-rose-600',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'PostgreSQL', logo: '🐘' },
       { name: 'MongoDB', logo: '🍃' },
@@ -51,7 +51,7 @@ const techStack = [
   {
     category: 'Infrastructure',
     icon: Cloud,
-    color: 'from-purple-600 to-violet-600',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'AWS', logo: '☁️' },
       { name: 'Docker', logo: '🐋' },
@@ -62,7 +62,7 @@ const techStack = [
   {
     category: 'Security',
     icon: Shield,
-    color: 'from-violet-700 to-purple-700',
+ color: 'from-purple-600 to-fuchsia-600',
     technologies: [
       { name: 'Auth0', logo: '🔐' },
       { name: 'Vault', logo: '🔒' },
@@ -74,7 +74,7 @@ const techStack = [
 
 export default function TechnologyStack() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
+    <section className="py-10 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,10 +83,10 @@ export default function TechnologyStack() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
             Technology Stack
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Enterprise-grade technologies powering the solution
           </p>
         </motion.div>

@@ -34,10 +34,10 @@ export default function CoreChallenges() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Challenges We Overcame</h2>
-          <p className="text-gray-400 text-lg max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Challenges We Overcame</h2>
+          <p className="text-gray-300 text-lg ">
             Complex obstacles that required innovative solutions and strategic thinking to deliver successful outcomes.
           </p>
         </motion.div>
@@ -53,7 +53,7 @@ export default function CoreChallenges() {
               className="bg-gray-900/30 border border-gray-800 rounded-xl p-8 hover:border-purple-500/30 transition-colors"
             >
               <div className="flex gap-8 items-start">
-                <div className="text-4xl font-bold text-purple-500/30 flex-shrink-0">
+                <div className="text-4xl font-bold text-purple-600 flex-shrink-0">
                   {challenge.number}
                 </div>
                 <div>

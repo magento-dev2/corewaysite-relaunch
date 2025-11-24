@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function ClientBackground() {
   return (
-    <section className="relative bg-gradient-to-b from-[#04010a] via-[#1a1325] to-[#0E0918] py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#04010a] via-[#1a1325] to-[#0E0918] py-8  overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -16,10 +16,10 @@ export default function ClientBackground() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             The Situation
           </h2>
-          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
             A Fortune 500 enterprise struggling with outdated infrastructure and inefficient processes
           </p>
         </motion.div>
@@ -39,8 +39,8 @@ export default function ClientBackground() {
                   { value: '15+', label: 'Years of accumulated technical debt' },
                   { value: '500+', label: 'Employees affected by inefficiencies' },
                 ],
-                gradient: 'from-red-600/20 to-orange-600/20',
-                borderColor: 'border-red-500/30',
+                   gradient: 'from-purple-600/20 to-fuchsia-600/20',
+                borderColor: 'border-purple-500/30',
               },
               {
                 side: 'right',
@@ -52,8 +52,8 @@ export default function ClientBackground() {
                   { value: '$2M+', label: 'Investment budget allocated' },
                   { value: '6 mo', label: 'Timeline for transformation' },
                 ],
-                gradient: 'from-blue-600/20 to-cyan-600/20',
-                borderColor: 'border-blue-500/30',
+                gradient: 'from-purple-600/20 to-fuchsia-600/20',
+                borderColor: 'border-purple-500/30',
               },
               {
                 side: 'left',
@@ -65,8 +65,8 @@ export default function ClientBackground() {
                   { value: '99.8%', label: 'Processing accuracy achieved' },
                   { value: '3x', label: 'Capacity increase delivered' },
                 ],
-                gradient: 'from-emerald-600/20 to-teal-600/20',
-                borderColor: 'border-emerald-500/30',
+                  gradient: 'from-purple-600/20 to-fuchsia-600/20',
+                borderColor: 'border-purple-500/30',
               },
               {
                 side: 'right',

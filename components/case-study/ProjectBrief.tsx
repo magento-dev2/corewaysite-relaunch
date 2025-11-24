@@ -10,8 +10,8 @@ const objectives = [
     title: 'Drive Revenue & Reduce Costs',
     description: 'Achieve 40% cost reduction and 70% revenue growth while maintaining service quality',
     metrics: ['40% cost savings', '70% revenue increase', '9-month ROI'],
-    color: 'from-blue-600 to-cyan-600',
-    bgColor: 'from-blue-600/10 to-cyan-600/10',
+    color: 'from-purple-600/20 to-fuchsia-600/20',
+    bgColor: 'from-purple-600/10 to-fuchsia-600/10',
   },
   {
     icon: Rocket,
@@ -28,8 +28,8 @@ const objectives = [
     title: 'Empower Teams',
     description: 'Eliminate manual work and provide intuitive tools for all 500+ employees',
     metrics: ['85% less manual work', 'Mobile access', 'Role-based dashboards'],
-    color: 'from-emerald-600 to-teal-600',
-    bgColor: 'from-emerald-600/10 to-teal-600/10',
+   color: 'from-purple-600 to-fuchsia-600',
+    bgColor: 'from-purple-600/10 to-fuchsia-600/10',
   },
   {
     icon: Lock,
@@ -37,8 +37,8 @@ const objectives = [
     title: 'Enterprise-Grade Security',
     description: 'Maintain SOC 2, GDPR compliance with zero-trust architecture',
     metrics: ['Zero-trust model', 'SOC 2 certified', 'End-to-end encryption'],
-    color: 'from-orange-600 to-red-600',
-    bgColor: 'from-orange-600/10 to-red-600/10',
+  color: 'from-purple-600 to-fuchsia-600',
+    bgColor: 'from-purple-600/10 to-fuchsia-600/10',
   },
   {
     icon: TrendingUp,
@@ -46,8 +46,8 @@ const objectives = [
     title: 'Built for Growth',
     description: 'Infrastructure designed to support 3x capacity increase without degradation',
     metrics: ['3x capacity', 'Global reach', 'Auto-scaling'],
-    color: 'from-pink-600 to-rose-600',
-    bgColor: 'from-pink-600/10 to-rose-600/10',
+  color: 'from-purple-600 to-fuchsia-600',
+    bgColor: 'from-purple-600/10 to-fuchsia-600/10',
   },
   {
     icon: Award,
@@ -55,14 +55,14 @@ const objectives = [
     title: 'Excellence in Execution',
     description: 'Deliver industry-leading accuracy and performance metrics',
     metrics: ['99.8% accuracy', 'Real-time processing', 'Zero downtime'],
-    color: 'from-amber-600 to-yellow-600',
-    bgColor: 'from-amber-600/10 to-yellow-600/10',
+   color: 'from-purple-600 to-fuchsia-600',
+    bgColor: 'from-purple-600/10 to-fuchsia-600/10',
   },
 ]
 
 export default function ProjectBrief() {
   return (
-    <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] py-32 border-t border-gray-900">
+    <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] py-16 border-t border-gray-900">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -73,16 +73,16 @@ export default function ProjectBrief() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full text-sm font-medium text-purple-300 mb-6">
+          {/* <span className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full text-sm font-medium text-purple-300 mb-6">
             Project Objectives
-          </span>
-          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          </span> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             Clear Goals,{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span className="bg-purple-600 bg-clip-text text-transparent">
               Measurable Results
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Strategic objectives aligned with business priorities and user needs
           </p>
         </motion.div>

@@ -38,10 +38,10 @@ export default function MoreCaseStudies() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
             Explore More Case Studies
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Discover how we've helped other industry leaders achieve their goals
           </p>
         </motion.div>

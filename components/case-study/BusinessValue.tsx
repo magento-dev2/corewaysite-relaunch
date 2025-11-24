@@ -11,7 +11,7 @@ const metrics = [
     suffix: '%',
     label: 'Revenue Increase',
     description: 'Year-over-year growth in revenue',
-    color: 'from-purple-500 to-fuchsia-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: DollarSign,
@@ -19,7 +19,7 @@ const metrics = [
     suffix: 'M',
     label: 'Annual Cost Savings',
     description: 'Reduced operational expenses',
-    color: 'from-violet-500 to-purple-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Clock,
@@ -27,7 +27,7 @@ const metrics = [
     suffix: '+',
     label: 'Hours Saved Weekly',
     description: 'Automated manual processes',
-    color: 'from-fuchsia-500 to-pink-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Users,
@@ -35,7 +35,7 @@ const metrics = [
     suffix: '%',
     label: 'Client Satisfaction',
     description: 'Net Promoter Score improvement',
-    color: 'from-pink-500 to-rose-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Target,
@@ -43,7 +43,7 @@ const metrics = [
     suffix: '%',
     label: 'Accuracy Rate',
     description: 'Error-free data processing',
-    color: 'from-purple-600 to-violet-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Award,
@@ -51,7 +51,7 @@ const metrics = [
     suffix: '%',
     label: 'User Adoption',
     description: 'Employee engagement within month 1',
-    color: 'from-violet-600 to-purple-700',
+ color: 'from-purple-600 to-fuchsia-600',
   },
 ]
 
@@ -100,10 +100,10 @@ export default function BusinessValue() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
             Business Value Delivered
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Measurable outcomes that transformed the organization
           </p>
         </motion.div>

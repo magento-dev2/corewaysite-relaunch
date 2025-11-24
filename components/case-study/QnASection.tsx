@@ -15,31 +15,31 @@ const qnaItems = [
     icon: Clock,
     question: 'What was the project timeline and key milestones?',
     answer: 'The project was completed in 6 months with four major phases: Discovery & Planning (1 month), Development & Integration (3 months), Testing & Training (1 month), and Deployment & Optimization (1 month). Key milestones included legacy system integration, employee training completion, and successful production launch.',
-    color: 'from-purple-500 to-violet-600',
+ color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Code,
     question: 'How did you approach the technical implementation?',
     answer: 'We employed an agile methodology with bi-weekly sprints, starting with a microservices architecture for scalability. The implementation included containerized deployments, CI/CD pipelines, comprehensive API development, and progressive migration strategies to minimize disruption.',
-    color: 'from-fuchsia-500 to-purple-600',
+    color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: Users,
     question: 'How was change management handled across the organization?',
     answer: 'We implemented a comprehensive change management program including executive sponsorship, department champions, phased rollouts, hands-on training sessions, detailed documentation, and a dedicated support team. User adoption rates exceeded 92% within the first month.',
-    color: 'from-violet-500 to-purple-600',
+    color: 'from-purple-600 to-fuchsia-600',
   },
   {
     icon: DollarSign,
     question: 'What was the ROI and business impact?',
     answer: 'The client achieved ROI within 9 months (3 months ahead of target) through 45% reduction in operational costs, 70% increase in processing speed, elimination of manual errors, and improved customer satisfaction scores. Annual cost savings exceeded $2.5M.',
-    color: 'from-pink-500 to-fuchsia-600',
+    color: 'from-purple-600 to-fuchsia-600',
   },
 ]
 
 export default function QnASection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
+    <section className="py-10 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,10 +48,10 @@ export default function QnASection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
             Implementation Blueprint
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Detailed insights into our strategic approach and execution
           </p>
         </motion.div>
