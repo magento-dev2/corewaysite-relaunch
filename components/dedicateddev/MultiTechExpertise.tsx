@@ -15,7 +15,7 @@ const expertiseAreas = [
     title: "Frontend Development",
     description: "Expert developers in React, Vue, Angular, Next.js, and modern frontend frameworks. Build stunning, responsive user interfaces.",
     technologies: ["React", "Vue.js", "Angular", "Next.js", "TypeScript"],
-    gradient: "from-blue-500 to-cyan-500"
+    gradient: "from-purple-500 to-violet-500"
   },
   {
     icon: Database,
@@ -99,7 +99,7 @@ export default function MultiTechExpertise() {
                 <span className="text-sm font-medium text-gray-300">Multi-Technology Expertise</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Masters of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Every Technology</span>
+                Masters of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">Every Technology</span>
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed">
                 Access developers skilled in 50+ technologies across frontend, backend, mobile, cloud, and emerging tech stacks.
@@ -131,7 +131,7 @@ export default function MultiTechExpertise() {
               const Icon = area.icon;
               return (
                 <div key={index} className="expertise-panel">
-                  <div className="group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
+                  <div className="group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
                     <div className="flex items-start justify-between mb-6">
                       <div className={`w-16 h-16 bg-gradient-to-br ${area.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 opacity-80`}>
                         <Icon className="w-8 h-8 text-white" strokeWidth={2} />
@@ -141,7 +141,7 @@ export default function MultiTechExpertise() {
                       </div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
                       {area.title}
                     </h3>
 

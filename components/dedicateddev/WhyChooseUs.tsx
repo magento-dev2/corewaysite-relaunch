@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
                 <span className="text-sm font-medium text-gray-300">Why Choose Coreway</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Your Success is <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Our Priority</span>
+                Your Success is <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">Our Priority</span>
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed">
                 We go beyond just providing developers. We partner with you to ensure project success through quality, support, and flexibility.
@@ -104,13 +104,13 @@ export default function WhyChooseUs() {
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
-                        <Award className="w-4 h-4 text-blue-400" />
+                        <Award className="w-4 h-4 text-purple-400" />
                       </div>
                       <span className="text-white font-semibold">ISO 27001 Certified</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                        <Shield className="w-4 h-4 text-cyan-400" />
+                      <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <Shield className="w-4 h-4 text-purple-400" />
                       </div>
                       <span className="text-white font-semibold">GDPR Compliant</span>
                     </div>
@@ -128,14 +128,14 @@ export default function WhyChooseUs() {
                   <div className="group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
                     <div className="flex items-start justify-between mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-2xl flex items-center justify-center border border-blue-500/40 group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-8 h-8 text-blue-400" strokeWidth={2} />
+                        <Icon className="w-8 h-8 text-purple-400" strokeWidth={2} />
                       </div>
                       <div className="px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full">
-                        <span className="text-sm font-semibold text-blue-300">{reason.metric}</span>
+                        <span className="text-sm font-semibold text-purple-300">{reason.metric}</span>
                       </div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
                       {reason.title}
                     </h3>
 

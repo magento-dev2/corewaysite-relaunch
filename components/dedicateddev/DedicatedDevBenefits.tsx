@@ -56,32 +56,40 @@ const benefits = [
 
 export default function DedicatedDevBenefits() {
   const sectionRef = useRef<HTMLElement>(null);
-  const leftRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray<HTMLElement>('.benefit-panel');
+      const cards = gsap.utils.toArray<HTMLElement>('.benefit-card');
 
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${rightRef.current?.offsetHeight || 0}`,
-        pin: leftRef.current,
-        pinSpacing: false,
-      });
-
-      panels.forEach((panel) => {
-        gsap.from(panel, {
+      cards.forEach((card, index) => {
+        gsap.from(card, {
           opacity: 0,
-          x: 100,
-          scale: 0.9,
+          y: 80,
+          rotation: index % 2 === 0 ? -5 : 5,
           scrollTrigger: {
-            trigger: panel,
-            start: "top 80%",
-            end: "top 30%",
+            trigger: card,
+            start: "top 85%",
+            end: "top 50%",
             scrub: 1,
           }
+        });
+
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            scale: 1.02,
+            z: 50,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            scale: 1,
+            z: 0,
+            duration: 0.3,
+            ease: "power2.out"
+          });
         });
       });
     }, sectionRef);
@@ -90,75 +98,58 @@ export default function DedicatedDevBenefits() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 min-h-screen items-start">
-          <div ref={leftRef} className="lg:sticky lg:top-24 py-24">
-            <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
-                <span className="text-sm font-medium text-gray-300">Why Hire Dedicated Developers</span>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Benefits That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Transform Your Business</span>
-              </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
-                Get access to world-class developers who work as an extension of your team, delivering exceptional results while reducing costs.
-              </p>
+    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.05),transparent_70%)] pointer-events-none" />
 
-              <div className="pt-8 space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 flex items-center justify-center">
-                    <span className="text-green-400 font-bold text-lg">✓</span>
-                  </div>
-                  <span className="text-gray-300">Trusted by Fortune 500 companies</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 flex items-center justify-center">
-                    <span className="text-blue-400 font-bold text-lg">✓</span>
-                  </div>
-                  <span className="text-gray-300">Start in 48 hours or less</span>
-                </div>
-              </div>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+            <span className="text-sm font-medium text-gray-300">Why Hire Dedicated Developers</span>
           </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Benefits That <span className="text-purple-500">Transform Your Business</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Get access to world-class developers who work as an extension of your team
+          </p>
+        </div>
 
-          <div ref={rightRef} className="py-24 space-y-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div key={index} className="benefit-panel">
-                  <div className="group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-2xl flex items-center justify-center border border-blue-500/40 group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-8 h-8 text-blue-400" strokeWidth={2} />
-                      </div>
-                      <div className="px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full">
-                        <span className="text-sm font-semibold text-blue-300">{benefit.stat}</span>
-                      </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <div key={index} className="benefit-card">
+                <div className="h-full group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-2xl flex items-center justify-center border border-purple-500/40 group-hover:rotate-12 transition-transform duration-300">
+                      <Icon className="w-8 h-8 text-purple-400" strokeWidth={2} />
                     </div>
-
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
-                      {benefit.title}
-                    </h3>
-
-                    <p className="text-gray-400 leading-relaxed mb-6">
-                      {benefit.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {benefit.highlights.map((highlight, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400">
-                          {highlight}
-                        </span>
-                      ))}
+                    <div className="px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-full">
+                      <span className="text-sm font-semibold text-purple-300">{benefit.stat}</span>
                     </div>
-
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 rounded-3xl transition-all duration-300"></div>
                   </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    {benefit.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {benefit.highlights.map((highlight, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-violet-500/0 group-hover:from-purple-500/5 group-hover:to-violet-500/5 rounded-3xl transition-all duration-300"></div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

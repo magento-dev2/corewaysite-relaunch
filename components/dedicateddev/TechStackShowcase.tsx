@@ -61,7 +61,7 @@ export default function TechStackShowcase() {
             <span className="text-sm font-medium text-gray-300">No Technology Limitations</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Unlimited</span> Technology Access
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">Unlimited</span> Technology Access
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Whatever technology your project needs, we have experts ready to deliver
@@ -93,7 +93,7 @@ export default function TechStackShowcase() {
             Don't see your technology? <span className="text-blue-400 font-semibold">We've got you covered.</span>
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all font-medium">
+            <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all font-medium">
               Request Custom Stack
             </button>
             <button className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-lg hover:bg-white/10 transition-all font-medium">
