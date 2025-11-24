@@ -91,7 +91,7 @@ const stepsData = [
 const StepByStepComponent = () => {
   const [expandedSteps, setExpandedSteps] = useState([1, 2, 3]);
 
-  const toggleStep = (stepId) => {
+  const toggleStep = (stepId: number) => {
     setExpandedSteps(prev =>
       prev.includes(stepId)
         ? prev.filter(id => id !== stepId)
@@ -99,7 +99,7 @@ const StepByStepComponent = () => {
     );
   };
 
-  const renderFeature = (feature, index) => (
+  const renderFeature = (feature: any, index: number) => (
     <div key={index} className="flex items-start gap-3 mb-3">
       <div className={`mt-1 ${feature.isPositive ? 'text-green-400' : 'text-red-400'}`}>
         {feature.isPositive ? (
