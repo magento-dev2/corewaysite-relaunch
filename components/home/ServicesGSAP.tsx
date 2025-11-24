@@ -81,7 +81,8 @@ const services = [
         }
       );
 
-      const cards = cardsRef.current.children;
+      const cards = cardsRef.current?.children;
+      if (!cards) return;
 
       gsap.fromTo(
         cards,
@@ -130,7 +131,8 @@ const services = [
         }
       );
 
-      const cards = cardsRef.current.children;
+      const cards = cardsRef.current?.children;
+      if (!cards) return;
 
       gsap.fromTo(
         cards,

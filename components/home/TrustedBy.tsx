@@ -20,11 +20,11 @@ const companyLogos = [
 
 export default function TrustedBy() {
   const { t } = useLanguage();
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    let animationFrame;
+    let animationFrame: number;
     let position = 0;
     const speed = 0.6; // adjust speed here
 
