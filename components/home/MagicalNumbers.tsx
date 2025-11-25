@@ -1,20 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Users, Rocket, Award, Globe, Building } from "lucide-react";
+import {
+  BarChart3,
+  Briefcase,
+  Users,
+  Repeat,
+  CloudCog,
+  Star,
+  TrendingUp
+} from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function MagicalNumbersElegant() {
   const { t } = useLanguage();
 
-  const highlights = [
-    { value: "200+", label: t('numbers.stats.team'), icon: Users },
-    { value: "20+", label: t('numbers.stats.experience'), icon: TrendingUp },
-    { value: "$5B", label: t('numbers.stats.revenue'), icon: Rocket },
-    { value: "10+", label: t('numbers.stats.industries'), icon: Globe },
-    { value: "350+", label: t('numbers.stats.launches'), icon: Building },
-    { value: "10", label: t('numbers.stats.awards'), icon: Award },
-  ];
+const highlights = [
+  { 
+    value: "13+", 
+    label: "Years in Solution Engineering", 
+    icon: BarChart3 
+  },
+  { 
+    value: "180+", 
+    label: "Projects Delivered Across Multiple Industries", 
+    icon: Briefcase 
+  },
+  { 
+    value: "40+", 
+    label: "Long-Term Clients with Ongoing Development", 
+    icon: Users 
+  },
+  { 
+    value: "85%", 
+    label: "Repeat Business Due to Reliable Support", 
+    icon: Repeat 
+  },
+  { 
+    value: "24×7", 
+    label: "Cloud Monitoring for Managed Clients", 
+    icon: CloudCog 
+  },
+  { 
+    value: "9/10", 
+    label: "Average Client Satisfaction", 
+    icon: Star 
+  },
+];
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-[#0E0918] via-[#1a0f2b] to-[#0E0918] overflow-hidden">
@@ -29,16 +61,24 @@ export default function MagicalNumbersElegant() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text max-w-[780px] mx-auto  mb-12"
+          className="text max-w-[1280px]  mx-auto  mb-12"
         >
           {/* <div className="inline-block text-center px-3 py-1.5 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full mb-4">
             <span className="text-xs font-medium text-slate-300">Why Choose Coreway</span>
           </div> */}
           <h2 className="text-3xl text-center md:text-4xl font-bold leading-tight mb-3 text-white">
-            {t('numbers.title')}
+            Why Coreway
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            {t('numbers.description')}
+            At Coreway Solution, we help businesses<span className="font-bold text-white"> architect, build, and automate </span> modern digital platforms that scale with confidence. With over a decade of experience, we specialize in <span className="font-bold text-white"> custom software development, AI-driven solutions, IoT dashboards, automation workflows, and cloud infrastructure engineering.</span>
+          </p>
+
+          <p className="text-gray-300 text-lg leading-relaxed mt-3">
+            Our team combines deep technical expertise with a <span className="font-bold text-white">solution-first mindset</span>, enabling us to transform complex requirements into reliable, secure, and high-performance digital systems. We work closely with startups, SMBs, and enterprises worldwide—delivering technology that enhances <span className="font-bold text-white">efficiency, automation, and long-term business growth.</span></p>
+
+          <p className="text-gray-300 text-lg leading-relaxed mt-3">
+            Whether it’s building new applications, modernizing existing platforms, or integrating intelligent automation, we help organizations use AI and engineering to work smarter.
+
           </p>
           {/* <p className="text-base text-slate-400 leading-relaxed">
             Our team brings deep technical expertise and a solution-first mindset to turn ideas into reliable, secure, and high-performance digital products.          </p>

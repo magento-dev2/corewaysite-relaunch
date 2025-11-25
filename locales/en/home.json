@@ -24,7 +24,7 @@
   },
   "services": {
     "title": "Our Services",
-    "description": "We understand the pain of start ups and SMEs very well, to reduce this pain we come up with the best set of services for WEB, MOBILE and ENTERPRISE with next generation technologies.",
+    "description": " We help businesses plan, build, and automate modern digital systems using AI-driven workflows, strong cloud architecture, and reliable engineering. From strategy and development to automation and integration, our services are designed to deliver scale, efficiency, and long-term technical clarity.",
     "architect": {
       "title": "Architect",
       "subtitle": "Plan. Design. Strategize.",
@@ -68,32 +68,32 @@
     "areas": {
       "ai": {
         "title": "AI & Data Engineering",
-        "description": "We create intelligent systems powered by GPT, Vision AI, and advanced data pipelines — enabling smarter analytics, automation, and decision-making.",
+        "description": "We build intelligent systems using GPT, Vision AI, and secure data pipelines — enabling automation, smarter analytics, and faster decision-making.",
         "link": "Explore AI & Data"
       },
       "commerce": {
         "title": "Commerce Solutions",
-        "description": "We design scalable eCommerce and marketplace platforms — from new store development to replatforming, omnichannel growth, and system integration.",
+        "description": "]We design scalable eCommerce and marketplace architectures — from new store builds to replatforming, omnichannel growth, and seamless integrations",
         "link": "Explore Commerce"
       },
       "automation": {
         "title": "Automation & Integration",
-        "description": "We automate your workflows and connect platforms — linking payments, ERP, CRM, logistics, and marketing tools into one intelligent system.",
+        "description": "We automate workflows and connect your platforms — ERP, CRM, payments, logistics, marketing, and custom systems — into one intelligent, unified experience.",
         "link": "Explore Automation"
       },
       "mobile": {
         "title": "Mobile & Web Applications",
-        "description": "We build high-performance mobile and web applications with intuitive UX, modern frameworks, and secure architecture tailored to your goals.",
+        "description": "We build high-performance mobile and web apps with intuitive UX, modern frameworks, and secure, scalable architecture tailored to your goals.",
         "link": "Explore App Development"
       },
       "analytics": {
         "title": "Analytics & Insights",
-        "description": "We transform data into clarity with real-time dashboards, predictive analytics, and performance tracking to drive measurable growth.",
+        "description": "We turn data into clarity using real-time dashboards, predictive analytics, and performance tracking — helping teams make informed, measurable decisions.",
         "link": "Explore Analytics"
       },
       "cloud": {
         "title": "Cloud & DevOps",
-        "description": "We design reliable, automated, and secure cloud infrastructures — ensuring seamless deployment, scalability, and performance optimization.",
+        "description": "We design secure, automated, high-availability cloud infrastructures — ensuring smooth deployment, scalability, observability, and cost efficiency",
         "link": "Explore Cloud & DevOps"
       }
     }

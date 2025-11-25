@@ -213,7 +213,7 @@ export default function SitemapPage() {
               </div>
             </section>
 
-            <section ref={addToRefs} className="mt-12">
+            {/* <section ref={addToRefs} className="mt-12">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
                 <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -267,7 +267,7 @@ export default function SitemapPage() {
                   </Link>
                 </div>
               </div>
-            </section>
+            </section> */}
           </div>
         </main>
       </div>

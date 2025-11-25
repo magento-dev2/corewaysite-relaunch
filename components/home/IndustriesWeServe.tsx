@@ -149,9 +149,11 @@ const industries = [
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-700/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-5 border border-slate-700 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-slate-700 transition-all duration-500">
-                    <span className="text-3xl">{industry.icon}</span>
+                <div className="relative z-10 text-center justify-center">
+                  <div className='flex justify-center'>
+                  <div className="w-16 h-16 bg-slate-800 rounded-2xl  flex items-center justify-center mb-5 border border-slate-700 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-slate-700 transition-all duration-500">
+                    <span className="text-5xl text-center">{industry.icon}</span>
+                  </div>
                   </div>
 
                   <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-slate-200 transition-colors duration-300">

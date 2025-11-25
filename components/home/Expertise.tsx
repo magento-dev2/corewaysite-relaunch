@@ -60,51 +60,46 @@ export default function Expertise() {
   const rightSideRef = useRef<HTMLDivElement>(null);
 
 useEffect(() => {
-  const section = sectionRef.current;
-  const leftSide = leftSideRef.current;
-  const rightSide = rightSideRef.current;
+  const ctx = gsap.context(() => {
+    const section = sectionRef.current;
+    const left = leftSideRef.current;
+    const right = rightSideRef.current;
 
-  if (!section || !leftSide || !rightSide) return;
+    if (!section || !left || !right) return;
 
-  const mm = gsap.matchMedia();
+    const cards = gsap.utils.toArray<HTMLElement>(".expertise-card");
 
-  // ✅ DESKTOP ONLY (Pin + animation)
-  mm.add("(min-width: 768px)", () => {
+    // PIN LEFT SIDE
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: () => `+=${rightSide.offsetHeight - window.innerHeight + 200}`,
-      pin: leftSide,
+      end: () => `+=${right.offsetHeight}`,
+      pin: left,
       pinSpacing: false,
       anticipatePin: 1,
     });
 
-    const cards = rightSide.querySelectorAll(".expertise-card");
+    // Animate cards like your reference design
     cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 80 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-          },
-        }
-      );
+      gsap.from(card, {
+        opacity: 0,
+        x: 120,
+        scale: 0.9,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1,
+        },
+      });
     });
-  });
+  }, sectionRef);
 
-  // ✅ MOBILE ONLY (No pin, natural flow)
-  mm.add("(max-width: 767px)", () => {
-    leftSide.style.position = "relative";
-  });
-
-  return () => mm.revert();
+  return () => ctx.revert();
 }, []);
+
 
 
   return (
@@ -126,7 +121,9 @@ useEffect(() => {
                 {t('expertise.title')}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                {t('expertise.description')}
+AI-powered engineering, automation, and scalable digital solutions.
+              </p>
+<p className="text-lg text-gray-300 leading-relaxed">                We bring together AI, automation, cloud engineering, and deep technical expertise to help businesses build smarter systems. Explore our core service areas to see how we design, develop, and scale digital solutions across industries.
               </p>
               
               {/* Optional CTA or additional content */}

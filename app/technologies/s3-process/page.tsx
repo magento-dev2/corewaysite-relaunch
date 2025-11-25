@@ -7,6 +7,18 @@ import S3Benefits from '@/components/s3process/S3Benefits';
 import S3UseCases from '@/components/s3process/S3UseCases';
 import S3SecurityCompliance from '@/components/s3process/S3SecurityCompliance';
 import PageCTA from '@/components/PageCTA';
+import DatasetAutomation from '@/components/dataset/DatasetAutomation';
+
+const automotiveData =   {
+    title: "AI-Powered Automotive Intelligence",
+    description: "Our automotive solutions leverage artificial intelligence and machine learning to enable predictive maintenance, autonomous features, and intelligent driver assistance. With computer vision, sensor fusion, and deep learning, we help vehicles make smart decisions, optimize performance, and enhance safety in real-time.",
+    features: [
+      "AI-powered predictive maintenance and diagnostics",
+      "Computer vision for object detection and recognition",
+      "Real-time vehicle health monitoring and alerts",
+      "Intelligent route optimization and energy management"
+    ]
+  }
 
 export default function S3ProcessPage() {
   return (
@@ -17,6 +29,11 @@ export default function S3ProcessPage() {
       <S3Benefits />
       <S3UseCases />
       <S3SecurityCompliance />
+       <DatasetAutomation
+                  title={automotiveData.title}
+                  description={automotiveData.description}
+                  features={automotiveData.features}
+                />
       <PageCTA
         badge="AWS S3 Optimization"
         title="Ready to Optimize Your Cloud Storage?"

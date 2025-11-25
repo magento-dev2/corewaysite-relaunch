@@ -84,14 +84,7 @@ export default function AIChatFeatures() {
             }
           });
 
-          gsap.to(card, {
-            y: -15,
-            duration: 2 + (index % 3) * 0.5,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            delay: index * 0.2
-          });
+          
         }
       });
 

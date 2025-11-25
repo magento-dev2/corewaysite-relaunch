@@ -2,6 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Brain, Cog, Link2, BarChart3, Shield, Zap, Database, Cloud, Cpu, Network } from 'lucide-react'
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const solutions = [
   {
@@ -91,9 +96,32 @@ const techStack = [
   { name: 'Redis', category: 'Caching' },
   { name: 'AWS', category: 'Cloud' },
   { name: 'Docker', category: 'Containers' },
+  
 ]
 
 export default function SolutionScope() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(bgRef.current, {
+        y: "-40%",              // adjust how much the background moves
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,           // links animation to scroll smoothly
+          pin: true,              // pins this section while scrolling the effect
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  
   return (
     <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent"></div>
@@ -222,26 +250,70 @@ export default function SolutionScope() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Network className="w-8 h-8 text-purple-600" />
-              <h3 className="text-2xl font-bold text-white">Seamless Integration</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              All components work together in harmony, creating a unified platform that delivers
-              exceptional performance, security, and scalability while maintaining compatibility
-              with existing systems.
-            </p>
-          </div>
-        </motion.div>
+  
+
       </div>
+     {/* <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="mt-20 text-center"
+>
+  <div className="relative overflow-hidden h-screen ">
+
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800')",
+      }}
+    />
+
+    <div className="absolute inset-0 bg-black/60" />
+    <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
+      <p className="text-white text-3xl md:text-4xl font-serif italic max-w-4xl leading-relaxed">
+        “Toys are merely ideas brought to life.”
+      </p>
+
+      <span className="mt-6 text-gray-300 text-lg">
+        – Melissa Crawley
+      </span>
+    </div>
+
+  </div>
+</motion.div> */}
+  <motion.section
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative h-screen overflow-hidden"
+    >
+      {/* Background image layer */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 bg-center bg-cover "
+        style={{
+          backgroundImage: `url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800')`, // use your image path
+        }}
+      />
+
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content on top */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <h2 className="text-white text-4xl md:text-5xl font-serif italic leading-tight">
+          “Toys are merely ideas brought to life.”
+        </h2>
+        <span className="mt-6 text-gray-300 text-lg">
+          — Melissa Crawley
+        </span>
+      </div>
+    </motion.section>
+  
+
     </section>
   )
 }

@@ -19,154 +19,154 @@ export default function ServicesGSAP() {
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
-const services = [
-  {
-    animationPath: "/animations/architect.json",
-    staticPath: "/animations/architect-static.svg",
-    ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
-    title: t('services.architect.title'),
-    subtitle: t('services.architect.subtitle'),
-    description: t('services.architect.description'),
-    items: t('services.architect.items') as string[],
-  },
-  {
-    animationPath: "/animations/build.json",
-    staticPath: "/animations/build-static.svg",
-    ariaLabel: "Code brackets with animated lines representing software development",
-    title: t('services.build.title'),
-    subtitle: t('services.build.subtitle'),
-    description: t('services.build.description'),
-    items: t('services.build.items') as string[],
-  },
-  {
-    animationPath: "/animations/automate.json",
-    staticPath: "/animations/automate-static.svg",
-    ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
-    title: t('services.automate.title'),
-    subtitle: t('services.automate.subtitle'),
-    description: t('services.automate.description'),
-    items: t('services.automate.items') as string[],
-  },
-];
+  const services = [
+    {
+      animationPath: "/assets/home/architech.png",
+      staticPath: "/assets/home/architech.png",
+      ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
+      title: t('services.architect.title'),
+      subtitle: t('services.architect.subtitle'),
+      description: t('services.architect.description'),
+      items: t('services.architect.items') as string[],
+    },
+    {
+      animationPath: "/animations/build.json",
+      staticPath: "/assets/home/build.png",
+      ariaLabel: "Code brackets with animated lines representing software development",
+      title: t('services.build.title'),
+      subtitle: t('services.build.subtitle'),
+      description: t('services.build.description'),
+      items: t('services.build.items') as string[],
+    },
+    {
+      animationPath: "/animations/automate.json",
+      staticPath: "/assets/home/automate.png",
+      ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
+      title: t('services.automate.title'),
+      subtitle: t('services.automate.subtitle'),
+      description: t('services.automate.description'),
+      items: t('services.automate.items') as string[],
+    },
+  ];
 
 
- useEffect(() => {
-  if (!sectionRef.current || !headerRef.current || !cardsRef.current) return;
+  useEffect(() => {
+    if (!sectionRef.current || !headerRef.current || !cardsRef.current) return;
 
-  const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
-  const ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
 
-    /* ================= DESKTOP ================= */
-    mm.add("(min-width: 768px)", () => {
-      gsap.fromTo(
-        headerRef.current,
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.95
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse"
+      /* ================= DESKTOP ================= */
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          headerRef.current,
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 80%",
+              end: "top 20%",
+              toggleActions: "play none none reverse"
+            }
           }
-        }
-      );
+        );
 
-      const cards = cardsRef.current?.children;
-      if (!cards) return;
+        const cards = cardsRef.current?.children;
+        if (!cards) return;
 
-      gsap.fromTo(
-        cards,
-        {
-          opacity: 0,
-          y: 100,
-          rotationX: -15,
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 75%",
-            toggleActions: "play none none reverse"
+        gsap.fromTo(
+          cards,
+          {
+            opacity: 0,
+            y: 100,
+            rotationX: -15,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotationX: 0,
+            scale: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 75%",
+              toggleActions: "play none none reverse"
+            }
           }
-        }
-      );
-    });
+        );
+      });
 
 
-    /* ================= MOBILE ================= */
-    mm.add("(max-width: 767px)", () => {
-      gsap.fromTo(
-        headerRef.current,
-        {
-          opacity: 0,
-          y: 30
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
+      /* ================= MOBILE ================= */
+      mm.add("(max-width: 767px)", () => {
+        gsap.fromTo(
+          headerRef.current,
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 90%",
+              toggleActions: "play none none reverse"
+            }
           }
-        }
-      );
+        );
 
-      const cards = cardsRef.current?.children;
-      if (!cards) return;
+        const cards = cardsRef.current?.children;
+        if (!cards) return;
 
-      gsap.fromTo(
-        cards,
-        {
-          opacity: 0,
-          y: 40,
-          scale: 0.97
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
+        gsap.fromTo(
+          cards,
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.97
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
           }
-        }
-      );
-    });
+        );
+      });
 
-  }, sectionRef);
+    }, sectionRef);
 
-  return () => {
-    mm.revert();
-    ctx.revert();
-  };
-}, []);
+    return () => {
+      mm.revert();
+      ctx.revert();
+    };
+  }, []);
 
 
-   const lines = [
+  const lines = [
     "Strategy — We craft solutions that fit your business goals.",
     "Automation — We streamline processes to reduce manual work.",
     "Analytics — Data-driven insights to make smarter business decisions."
@@ -194,32 +194,32 @@ const services = [
           </p>
         </div> */}
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-        <div className="grid md:grid-cols-2  items-start mb-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+          <div className="grid md:grid-cols-2  items-start mb-18">
 
-          {/* Left Side: Heading + Text */}
-          <motion.div
-            ref={headerRef}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8 }}
+            {/* Left Side: Heading + Text */}
+            <motion.div
+              ref={headerRef}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
             // className="space-y-6"
-          >
-            {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
+            >
+              {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
               <span className="text-sm font-medium text-gray-300">What We Do</span>
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('services.title')}
-            </h2>
-            {/* <p className="text-lg text-gray-300 max-w-md leading-relaxed">
-              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
-            </p> */}
-          </motion.div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {t('services.title')}
+              </h2>
+              <p className="text-lg text-gray-300 max-w-md leading-relaxed">
+                Smart Engineering, AI Automation, and Scalable Digital Solutions
+              </p>
+            </motion.div>
 
-          {/* Right Side: Animated Text Lines */}
-          <div className=" ">
-            
+            {/* Right Side: Animated Text Lines */}
+            <div className=" ">
+
               <motion.p
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -228,11 +228,11 @@ const services = [
               >
                 {t('services.description')}
               </motion.p>
-            
-          </div>
 
+            </div>
+
+          </div>
         </div>
-      </div>
 
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -241,13 +241,11 @@ const services = [
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
                     <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6 p-3">
-                      <AnimatedIcon
-                        animationPath={service.animationPath}
-                        staticFallbackPath={service.staticPath}
-                        ariaLabel={service.ariaLabel}
-                        className="w-full h-full"
-                        playOnHover={false}
-                        autoplay={true}
+
+
+                      <img
+                        src={service.staticPath}
+                        alt={service.ariaLabel}
                       />
                     </div>
 
@@ -277,6 +275,18 @@ const services = [
                       </div>
                     ))}
                   </div>
+                  <div className="mt-6 flex justify-center">
+                    <a
+                      href="#"
+                      className="group inline-flex items-center gap-2 text-purple-500 font-medium tracking-wide hover:text-purple-400 transition-all"
+                    >
+                      View More
+                      <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
+
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

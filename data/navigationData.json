@@ -99,12 +99,12 @@
             },
             {
               "label": "DBDashbot",
-              "href": "/DBDashbot",
+              "href": "/solution/DBDashbot",
               "icon": "shield"
             },
             {
               "label": "Ai chat pdf",
-              "href": "/ai-chat-with-pdf",
+              "href": "/solution/ai-chat-with-pdf",
               "icon": "shield"
             }
           ]
@@ -236,8 +236,8 @@
               "icon": "hard-drive"
             },
             {
-              "label": "S3 Process",
-              "href": "/s3-process",
+              "label": "S3 Operation",
+              "href": "/technologies/s3-process",
               "icon": "database"
             }
           ]
@@ -260,10 +260,14 @@
       ]
     },
     {
-      "id": "portfolio",
-      "label": "Portfolio",
+      "id": "Insights",
+      "label": "Insights",
       "type": "dropdown",
       "items": [
+        {
+          "label": "Portfolio",
+          "href": "/portfolio"
+        },
         {
           "label": "Case Studies",
           "href": "/case-studies"

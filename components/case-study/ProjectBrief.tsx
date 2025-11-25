@@ -135,26 +135,7 @@ export default function ProjectBrief() {
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 text-center"
-        >
-                <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center">
-                <Award className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Success Criteria</h3>
-            </div>
-            <p className="text-gray-400 leading-relaxed">
-              All objectives were not only met but exceeded expectations, with ROI achieved
-              3 months ahead of schedule and user satisfaction scores reaching 95%.
-            </p>
-          </div>
-        </motion.div>
+   
       </div>
     </section>
   )

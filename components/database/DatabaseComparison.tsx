@@ -67,19 +67,19 @@ export default function DatabaseComparison({
         </div>
 
         <div ref={cardsRef} className="grid lg:grid-cols-2 gap-8">
-          <div className="group relative bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20 rounded-3xl p-8 hover:border-blue-500/40 transition-all">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity -mr-32 -mt-32"></div>
+          <div className="group relative bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 rounded-3xl p-8 hover:border-purple-500/40 transition-all">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity -mr-32 -mt-32"></div>
 
             <div className="relative">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center">
-                  <Database className="w-8 h-8 text-blue-400" />
+                <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center">
+                  <Database className="w-8 h-8 text-purple-500" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-white">
                     {postgresql.name}
                   </h3>
-                  <p className="text-blue-400">{postgresql.description}</p>
+                  <p className="text-purple-500">{postgresql.description}</p>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@ export default function DatabaseComparison({
                   <ul className="space-y-3">
                     {postgresql.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
@@ -106,7 +106,7 @@ export default function DatabaseComparison({
                     {postgresql.useCases.map((useCase, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1.5 bg-blue-500/20 border border-blue-500/30 rounded-lg text-sm text-blue-300"
+                        className="px-3 py-1.5 bg-purple-500/20 border border-purple-500/30 rounded-lg text-sm text-purple-300"
                       >
                         {useCase}
                       </span>
@@ -117,19 +117,19 @@ export default function DatabaseComparison({
             </div>
           </div>
 
-          <div className="group relative bg-gradient-to-br from-green-500/10 to-transparent border border-green-500/20 rounded-3xl p-8 hover:border-green-500/40 transition-all">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity -mr-32 -mt-32"></div>
+          <div className="group relative bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 rounded-3xl p-8 hover:border-purple-500/40 transition-all">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity -mr-32 -mt-32"></div>
 
             <div className="relative">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center">
-                  <Database className="w-8 h-8 text-green-400" />
+                <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center">
+                  <Database className="w-8 h-8 text-purple-500" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-white">
                     {mongodb.name}
                   </h3>
-                  <p className="text-green-400">{mongodb.description}</p>
+                  <p className="text-purple-500">{mongodb.description}</p>
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export default function DatabaseComparison({
                   <ul className="space-y-3">
                     {mongodb.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
@@ -156,7 +156,7 @@ export default function DatabaseComparison({
                     {mongodb.useCases.map((useCase, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1.5 bg-green-500/20 border border-green-500/30 rounded-lg text-sm text-green-300"
+                        className="px-3 py-1.5 bg-purple-500/20 border border-purple-500/30 rounded-lg text-sm text-purple-300"
                       >
                         {useCase}
                       </span>

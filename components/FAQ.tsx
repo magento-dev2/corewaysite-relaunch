@@ -90,7 +90,7 @@ export default function FAQ({
             </div>
           )}
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title.split(' ').map((word, index) => {
               const shouldHighlight = word.includes('Questions') || word.includes('Answers');
               return shouldHighlight ? (
@@ -102,7 +102,7 @@ export default function FAQ({
           </h2>
 
           {description && (
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               {description}
             </p>
           )}
@@ -113,13 +113,13 @@ export default function FAQ({
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="faq-item">
-                <div className={`group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 ${
+              <div key={index} className="faq-item ">
+                <div className={` group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 ${
                   isOpen ? 'border-purple-500/50 shadow-lg shadow-purple-500/20' : 'hover:border-purple-500/30'
                 }`}>
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full text-left p-6 flex items-start justify-between gap-4 transition-all"
+                    className="w-full cursor-pointer text-left p-6 flex items-start justify-between gap-4 transition-all"
                   >
                     <div className="flex items-start gap-4 flex-1">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
@@ -173,7 +173,7 @@ export default function FAQ({
           })}
         </div>
 
-        {showContactCTA && (
+        {/* {showContactCTA && (
           <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-3xl p-8 text-center backdrop-blur-xl">
             <div className="flex items-center justify-center mb-4">
               <Sparkles className="text-purple-500 mr-2" size={24} />
@@ -186,7 +186,7 @@ export default function FAQ({
               {contactButtonText}
             </button>
           </div>
-        )}
+        )} */}
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
