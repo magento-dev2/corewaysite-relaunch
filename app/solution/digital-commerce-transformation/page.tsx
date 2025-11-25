@@ -11,6 +11,10 @@ import CaseStudies from "@/components/commerce/CaseStudies";
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
+import WhyCorewaySection from "@/components/WhyCorewaySection";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faq.json';
+
 
 export default function DigitalCommerce() {
   const siteUrl = "https://www.corewaysolution.com"; // absolute URL
@@ -106,7 +110,7 @@ export default function DigitalCommerce() {
             description={commerceData.platforms.description}
             items={commerceData.platforms.items}
           />
-{/* 
+          {/* 
           <CaseStudies
             title={commerceData.caseStudies.title}
             cases={commerceData.caseStudies.cases}
@@ -122,6 +126,22 @@ export default function DigitalCommerce() {
             title={commerceData.automation.title}
             description={commerceData.automation.description}
             features={commerceData.automation.features}
+          />
+          <WhyCorewaySection
+            badge="Why Choose Us"
+            title="Why Choose Coreway Solutions"
+            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+          />
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
           />
 
           <PageCTA

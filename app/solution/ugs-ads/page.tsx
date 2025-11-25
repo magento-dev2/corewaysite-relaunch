@@ -7,6 +7,10 @@ import Lenis from "@studio-freight/lenis";
 import PageCTA from "@/components/PageCTA";
 import { gsap } from "gsap";
 import SplitType from "split-type";
+import WhyCorewaySection from "@/components/WhyCorewaySection";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faq.json';
+
 
 const processSteps = [
   {
@@ -478,6 +482,22 @@ export default function UGCAdsPage() {
           </div>
         </div>
       </section>
+      <WhyCorewaySection
+        badge="Why Choose Us"
+        title="Why Choose Coreway Solutions"
+        subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+      />
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
 
       <PageCTA
         badge="  Ready to Create Your UGC Ads?"

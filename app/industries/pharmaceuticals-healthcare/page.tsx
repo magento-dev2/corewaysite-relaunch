@@ -11,6 +11,9 @@ import CaseStudies from "@/components/commerce/CaseStudies";
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
+import sampleFAQs from '@/data/faq.json';
+import FAQ from '@/components/FAQ';
+
 
 export default function PharmaceuticalsHealthcarePage() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -138,6 +141,18 @@ export default function PharmaceuticalsHealthcarePage() {
             description={healthcareData.automation.description}
             features={healthcareData.automation.features}
           />
+
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
+
 
           <PageCTA
             badge="Transform Healthcare"

@@ -149,7 +149,7 @@ export default function MultiTechExpertise() {
 
                     <div className="flex flex-wrap gap-2">
                       {area.technologies.map((tech, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-purple-400">
+                        <span key={idx} className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-xs text-purple-400">
                           {tech}
                         </span>
                       ))}

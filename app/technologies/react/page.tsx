@@ -11,6 +11,9 @@ import TechUseCases from "@/components/technologies/TechUseCases";
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
+import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import sampleFAQs from '@/data/faq.json';
 
 export default function ReactTechnologyPage() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -120,13 +123,30 @@ export default function ReactTechnologyPage() {
             cases={reactData.useCases.cases}
           />
 
-          
+
 
           <AutomationSection
             title={reactData.benefits.title}
             description={reactData.benefits.description}
             features={reactData.benefits.features}
           />
+          <WhyCorewaySection
+            badge="Why Choose Us"
+            title="Why Choose Coreway Solutions"
+            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+          />
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
+
 
           <PageCTA
             badge="Start Building"

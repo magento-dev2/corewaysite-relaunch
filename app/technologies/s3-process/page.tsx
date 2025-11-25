@@ -8,17 +8,20 @@ import S3UseCases from '@/components/s3process/S3UseCases';
 import S3SecurityCompliance from '@/components/s3process/S3SecurityCompliance';
 import PageCTA from '@/components/PageCTA';
 import DatasetAutomation from '@/components/dataset/DatasetAutomation';
+import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import sampleFAQs from '@/data/faq.json';
 
-const automotiveData =   {
-    title: "AI-Powered Automotive Intelligence",
-    description: "Our automotive solutions leverage artificial intelligence and machine learning to enable predictive maintenance, autonomous features, and intelligent driver assistance. With computer vision, sensor fusion, and deep learning, we help vehicles make smart decisions, optimize performance, and enhance safety in real-time.",
-    features: [
-      "AI-powered predictive maintenance and diagnostics",
-      "Computer vision for object detection and recognition",
-      "Real-time vehicle health monitoring and alerts",
-      "Intelligent route optimization and energy management"
-    ]
-  }
+const automotiveData = {
+  title: "AI-Powered Automotive Intelligence",
+  description: "Our automotive solutions leverage artificial intelligence and machine learning to enable predictive maintenance, autonomous features, and intelligent driver assistance. With computer vision, sensor fusion, and deep learning, we help vehicles make smart decisions, optimize performance, and enhance safety in real-time.",
+  features: [
+    "AI-powered predictive maintenance and diagnostics",
+    "Computer vision for object detection and recognition",
+    "Real-time vehicle health monitoring and alerts",
+    "Intelligent route optimization and energy management"
+  ]
+}
 
 export default function S3ProcessPage() {
   return (
@@ -29,11 +32,27 @@ export default function S3ProcessPage() {
       <S3Benefits />
       <S3UseCases />
       <S3SecurityCompliance />
-       <DatasetAutomation
-                  title={automotiveData.title}
-                  description={automotiveData.description}
-                  features={automotiveData.features}
-                />
+      <DatasetAutomation
+        title={automotiveData.title}
+        description={automotiveData.description}
+        features={automotiveData.features}
+      />
+      <WhyCorewaySection
+        badge="Why Choose Us"
+        title="Why Choose Coreway Solutions"
+        subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+      />
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
       <PageCTA
         badge="AWS S3 Optimization"
         title="Ready to Optimize Your Cloud Storage?"

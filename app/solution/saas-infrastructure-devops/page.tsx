@@ -11,6 +11,10 @@ import SaaSCaseStudies from "@/components/saas/SaaSCaseStudies";
 import SaaSProcess from "@/components/saas/SaaSProcess";
 import SaaSAutomation from "@/components/saas/SaaSAutomation";
 import PageCTA from "@/components/PageCTA";
+import WhyCorewaySection from "@/components/WhyCorewaySection";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faq.json';
+
 
 export default function SaaSInfrastructureDevOps() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -122,6 +126,22 @@ export default function SaaSInfrastructureDevOps() {
             title={saasDevOpsData.automation.title}
             description={saasDevOpsData.automation.description}
             features={saasDevOpsData.automation.features}
+          />
+          <WhyCorewaySection
+            badge="Why Choose Us"
+            title="Why Choose Coreway Solutions"
+            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+          />
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
           />
 
           <PageCTA
