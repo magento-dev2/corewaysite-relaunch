@@ -11,6 +11,8 @@ import AWSS3CaseStudies from "@/components/awss3/AWSS3CaseStudies";
 import AWSS3Process from "@/components/awss3/AWSS3Process";
 import AWSS3Automation from "@/components/awss3/AWSS3Automation";
 import PageCTA from "@/components/PageCTA";
+import sampleFAQs from '@/data/faq.json';
+import FAQ from '@/components/FAQ';
 
 export default function AWSS3Optimization() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -122,6 +124,17 @@ export default function AWSS3Optimization() {
             title={awsS3Data.automation.title}
             description={awsS3Data.automation.description}
             features={awsS3Data.automation.features}
+          />
+
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
           />
 
           <PageCTA

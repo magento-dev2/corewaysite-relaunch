@@ -11,6 +11,8 @@ import DashboardCaseStudies from "@/components/dashboard/DashboardCaseStudies";
 import DashboardProcess from "@/components/dashboard/DashboardProcess";
 import DashboardAutomation from "@/components/dashboard/DashboardAutomation";
 import PageCTA from "@/components/PageCTA";
+import sampleFAQs from '@/data/faq.json';
+import FAQ from '@/components/FAQ';
 
 export default function CustomDashboards() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -122,6 +124,16 @@ export default function CustomDashboards() {
             title={customDashboardData.automation.title}
             description={customDashboardData.automation.description}
             features={customDashboardData.automation.features}
+          />
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
           />
 
           <PageCTA

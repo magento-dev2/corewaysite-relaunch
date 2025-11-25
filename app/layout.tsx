@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | Coreway Solution'
   },
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.png',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },

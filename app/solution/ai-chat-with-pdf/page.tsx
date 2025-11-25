@@ -6,6 +6,10 @@ import AIChatFeatures from '@/components/aichat/AIChatFeatures';
 import AIChatBenefits from '@/components/aichat/AIChatBenefits';
 import AIChatIndustries from '@/components/aichat/AIChatIndustries';
 import PageCTA from '@/components/PageCTA';
+import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import sampleFAQs from '@/data/faq.json';
+
 
 export default function AIChatWithPDFPage() {
   return (
@@ -15,6 +19,22 @@ export default function AIChatWithPDFPage() {
       <AIChatFeatures />
       <AIChatBenefits />
       <AIChatIndustries />
+      <WhyCorewaySection
+        badge="Why Choose Us"
+        title="Why Choose Coreway Solutions"
+        subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+      />
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
       <PageCTA
         badge="Start Your Journey"
         title="Let's Talk Your Success!"

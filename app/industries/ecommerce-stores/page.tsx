@@ -10,6 +10,9 @@ import EcommerceShowcase from "@/components/ecommerce/EcommerceShowcase";
 import AISecurityTechnologies from "@/components/aisecurity/AISecurityTechnologies";
 import AISecurityProcess from "@/components/aisecurity/AISecurityProcess";
 import PageCTA from "@/components/PageCTA";
+import sampleFAQs from '@/data/faq.json';
+import FAQ from '@/components/FAQ';
+
 
 export default function EcommerceStores() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -142,6 +145,19 @@ export default function EcommerceStores() {
               </div>
             </div>
           </section>
+
+
+             <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
+
 
           <PageCTA
             badge="Start Selling Online"

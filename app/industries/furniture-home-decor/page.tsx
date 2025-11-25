@@ -11,6 +11,9 @@ import DatasetCaseStudies from "@/components/dataset/DatasetCaseStudies";
 import DatasetProcess from "@/components/dataset/DatasetProcess";
 import DatasetAutomation from "@/components/dataset/DatasetAutomation";
 import PageCTA from "@/components/PageCTA";
+import sampleFAQs from '@/data/faq.json';
+import FAQ from '@/components/FAQ';
+
 
 export default function FurnitureHomeDecorPage() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -135,6 +138,18 @@ export default function FurnitureHomeDecorPage() {
             description={furnitureHomeDecorData.automation.description}
             features={furnitureHomeDecorData.automation.features}
           />
+
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
+
 
           <PageCTA
             badge="Transform Your Business"

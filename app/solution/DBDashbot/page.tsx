@@ -7,6 +7,11 @@ import DBDashbotIndustries from '@/components/dbdashbot/DBDashbotIndustries';
 import DBDashbotTechnology from '@/components/dbdashbot/DBDashbotTechnology';
 import DBDashbotProcess from '@/components/dbdashbot/DBDashbotProcess';
 import PageCTA from '@/components/PageCTA';
+import WhyCorewaySection from "@/components/WhyCorewaySection";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faq.json';
+
+
 
 export default function DBDashbotPage() {
   return (
@@ -17,6 +22,22 @@ export default function DBDashbotPage() {
       <DBDashbotBenefits />
       <DBDashbotTechnology />
       <DBDashbotIndustries />
+      <WhyCorewaySection
+        badge="Why Choose Us"
+        title="Why Choose Coreway Solutions"
+        subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
+
+      />
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
       <PageCTA
         badge="Free Setup Available"
         title="Let's Talk Your Success!"

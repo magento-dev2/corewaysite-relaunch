@@ -41,27 +41,14 @@ interface WhyCorewaySectionProps {
   badge?: string;
   title?: string;
   subtitle?: string;
-  reasons: Reason[];
-  showStats?: boolean;
-  stats?: {
-    value: string;
-    label: string;
-    highlight?: boolean;
-  }[];
+
 }
 
 export default function WhyCorewaySection({
   badge = "Why Choose Us",
   title = "Why Choose Coreway Solutions",
   subtitle = "We're not just another software company. We're your technology partner committed to delivering exceptional results.",
-  reasons,
-  showStats = true,
-  stats = [
-    { value: "500+", label: "Projects Delivered", highlight: true },
-    { value: "98%", label: "Client Satisfaction", highlight: false },
-    { value: "50+", label: "Technologies", highlight: false },
-    { value: "24/7", label: "Support Available", highlight: true }
-  ]
+  
 }: WhyCorewaySectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -91,36 +78,32 @@ export default function WhyCorewaySection({
         });
       });
 
-      if (showStats) {
-        const statCards = gsap.utils.toArray<HTMLElement>('.stat-card');
-        statCards.forEach((card) => {
-          gsap.from(card, {
-            opacity: 0,
-            scale: 0.8,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 90%",
-              end: "top 70%",
-              scrub: 1,
-            }
-          });
-        });
-      }
+      // if (showStats) {
+      //   const statCards = gsap.utils.toArray<HTMLElement>('.stat-card');
+      //   statCards.forEach((card) => {
+      //     gsap.from(card, {
+      //       opacity: 0,
+      //       scale: 0.8,
+      //       scrollTrigger: {
+      //         trigger: card,
+      //         start: "top 90%",
+      //         end: "top 70%",
+      //         scrub: 1,
+      //       }
+      //     });
+      //   });
+      // }
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [showStats]);
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
-
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAyKSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<div className="relative h-full bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
         <div className="why-header text-center mb-16">
           {badge && (
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
@@ -146,7 +129,10 @@ export default function WhyCorewaySection({
             </p>
           )}
         </div>
+        </div>
+          
 
+{/* 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {reasons.map((reason, index) => {
             const Icon = iconMap[reason.icon] || Star;
@@ -188,31 +174,8 @@ export default function WhyCorewaySection({
               </div>
             );
           })}
-        </div>
+        </div> */}
 
-        {showStats && stats && stats.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`stat-card text-center p-8 rounded-2xl transition-all duration-300 ${
-                  stat.highlight
-                    ? 'bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/50'
-                    : 'bg-white/5 border border-white/10'
-                } hover:border-purple-500/50 hover:scale-105`}
-              >
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${
-                  stat.highlight ? 'text-purple-400' : 'text-white'
-                }`}>
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
