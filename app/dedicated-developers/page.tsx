@@ -2,6 +2,7 @@
 
 import DedicatedDevHero from '@/components/dedicateddev/DedicatedDevHero';
 import DedicatedDevBenefits from '@/components/dedicateddev/DedicatedDevBenefits';
+import ComparisonTable from '@/components/dedicateddev/ComparisonTable';
 import MultiTechExpertise from '@/components/dedicateddev/MultiTechExpertise';
 import TechStackShowcase from '@/components/dedicateddev/TechStackShowcase';
 import HiringModels from '@/components/dedicateddev/HiringModels';
@@ -13,6 +14,7 @@ export default function DedicatedDevelopersPage() {
     <div className="overflow-hidden">
       <DedicatedDevHero />
       <DedicatedDevBenefits />
+      <ComparisonTable />
       <MultiTechExpertise />
       <TechStackShowcase />
       <HiringModels />

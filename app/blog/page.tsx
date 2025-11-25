@@ -5,11 +5,16 @@ import { ArrowRight, Calendar } from 'lucide-react';
 export const revalidate = 60; // Revalidate every 60 seconds
 
 async function getBlogs() {
-  const blogs = await prisma.blog.findMany({
-    where: { isActive: true },
-    orderBy: { createdAt: 'desc' },
-  });
-  return blogs;
+  try {
+    const blogs = await prisma.blog.findMany({
+      where: { isActive: true },
+      orderBy: { createdAt: 'desc' },
+    });
+    return blogs;
+  } catch (error) {
+    console.log('Database not available, returning empty blogs');
+    return [];
+  }
 }
 
 export default async function BlogListing() {
