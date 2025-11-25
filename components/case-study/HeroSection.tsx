@@ -1,117 +1,186 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ArrowLeft, Calendar, Clock, Building2, TrendingUp, DollarSign, Zap, ArrowRight } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ArrowLeft, ArrowRight, MapPin, Clock, Users, Briefcase, Calendar } from 'lucide-react'
+import Link from 'next/link'
 
+export default function HeroSection({ data }: { data: any }) {
+  const heroRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const subtitleRef = useRef<HTMLParagraphElement>(null)
+  const buttonsRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+  const statsRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
+      tl.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 1 }
+      )
+        .fromTo(
+          subtitleRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          '-=0.6'
+        )
+        .fromTo(
+          buttonsRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6 },
+          '-=0.4'
+        )
+        .fromTo(
+          imageRef.current,
+          { opacity: 0, x: 50 },
+          { opacity: 1, x: 0, duration: 1 },
+          '-=0.8'
+        )
+        .fromTo(
+          statsRef.current?.children || [],
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 },
+          '-=0.4'
+        )
+    }, heroRef)
 
+    return () => ctx.revert()
+  }, [])
 
-export default function HeroSection() {
   return (
     <>
-   <div className="container mx-auto px-6 max-w-7xl pt-8 pb-4">
-          <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
-          >
-
+      <div className="container mx-auto px-6 max-w-7xl pt-8 pb-4">
+        <Link href="/case-studies">
+          <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm">Back to Case Studies</span>
-          </motion.button>
-        </div>
-
-      <section className="relative  bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] pt-16 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iIzhiNWNmNiIgc3Ryb2tlLXdpZHRoPSIuNSIgb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-20"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col md:flex-row items-center justify-between w-full">
-
-          {/* Left Side Text + Button */}
-          <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" >
-         Transforming    <span className="text-purple-500">
-             Automation
-         </span>
-            </h1>
-            <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
-             How we helped a Fortune 500 company reduce operational costs by 45%,
-              automate 85% of workflows, and achieve 70% revenue growth through
-              intelligent automation and AI-driven insights.
-            </p>
-
-            {/* <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
-              <span>View al</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-            </button> */}
-
-          </div>
-
-          {/* Right Side Image */}
-          <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
-            <img
-              src="/assets/home/coreway-ai.png"
-              alt="Hero Image"
-              className="w-full max-w-4xl rounded-lg shadow-lg"
-            />
-          </div>
-
-        </div>
+          </button>
+        </Link>
       </div>
-      </section>
 
-      <section className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] py-20 border-b border-gray-900">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative rounded-3xl overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 blur-3xl"></div>
-            <img
-              src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1400"
-              alt="Enterprise workspace"
-              className="w-full h-[600px] object-cover rounded-3xl border border-purple-500/20"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent rounded-3xl"></div>
+      <section ref={heroRef} className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 text-purple-500/20">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z" />
+            </svg>
+          </div>
+          <div className="absolute top-40 right-20 w-16 h-16 text-purple-500/20">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <div className="absolute bottom-32 left-20 w-12 h-12 text-purple-500/20">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+        </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-12">
-              <div className="grid grid-cols-3 gap-8">
-                {[
-                  { icon: TrendingUp, value: '70%', label: 'Revenue Growth', color: 'from-purple-400 to-fuchsia-400' },
-                  { icon: DollarSign, value: '45%', label: 'Cost Reduction', color: 'from-purple-400 to-fuchsia-400' },
-                  { icon: Zap, value: '85%', label: 'Workflows Automated', color: 'from-purple-400 to-fuchsia-400' },
-                ].map((stat, index) => {
-                  const Icon = stat.icon
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                      className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center`}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div className={`text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
-                        {stat.value}
-                      </div>
-                      <div className="text-gray-300 font-medium">{stat.label}</div>
-                    </motion.div>
-                  )
-                })}
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <div className="space-y-8">
+              <div>
+                <h1
+                  ref={titleRef}
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+                >
+                  {data.title.split(' ').map((word: string, index: number) => {
+                    // Highlight specific words in purple
+                    const highlightWords = ['Geliyoo', 'Turkey', 'Digital', 'Future', 'Search']
+                    const isHighlight = highlightWords.some(hw => word.includes(hw))
+                    return (
+                      <span key={index}>
+                        {isHighlight ? (
+                          <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+                            {word}
+                          </span>
+                        ) : (
+                          word
+                        )}{' '}
+                      </span>
+                    )
+                  })}
+                </h1>
+                <p
+                  ref={subtitleRef}
+                  className="text-xl md:text-2xl text-gray-400 leading-relaxed"
+                >
+                  {data.subtitle}
+                </p>
+              </div>
+
+              <div ref={buttonsRef} className="flex flex-wrap gap-4">
+                <Link href="#client-overview">
+                  <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-fuchsia-700 transition-all shadow-lg hover:shadow-purple-500/50 inline-flex items-center gap-2 group">
+                    <span>View Details</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 text-white rounded-xl font-semibold hover:bg-gray-700/50 transition-all inline-flex items-center gap-2">
+                    <span>Start Your Project</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
               </div>
             </div>
-          </motion.div>
+
+            {/* Right Side - Image */}
+            <div ref={imageRef} className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 blur-3xl"></div>
+              <img
+                src={data.imageUrl}
+                alt={data.title}
+                className="relative rounded-2xl shadow-2xl border border-purple-500/20 w-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Stats Section Below */}
+          <div
+            ref={statsRef}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-5xl mx-auto"
+          >
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500/20 rounded-xl mb-3">
+                <Briefcase className="w-6 h-6 text-purple-400" />
+              </div>
+              <p className="text-sm text-gray-500 mb-1">Client</p>
+              <p className="text-white font-semibold">{data.client}</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500/20 rounded-xl mb-3">
+                <MapPin className="w-6 h-6 text-purple-400" />
+              </div>
+              <p className="text-sm text-gray-500 mb-1">Location</p>
+              <p className="text-white font-semibold">{data.location}</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500/20 rounded-xl mb-3">
+                <Clock className="w-6 h-6 text-purple-400" />
+              </div>
+              <p className="text-sm text-gray-500 mb-1">Duration</p>
+              <p className="text-white font-semibold">{data.duration}</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500/20 rounded-xl mb-3">
+                <Users className="w-6 h-6 text-purple-400" />
+              </div>
+              <p className="text-sm text-gray-500 mb-1">Team Size</p>
+              <p className="text-white font-semibold">{data.teamSize}</p>
+            </div>
+          </div>
         </div>
       </section>
     </>
