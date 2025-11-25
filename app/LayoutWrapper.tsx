@@ -15,13 +15,18 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     "/demo",
   ];
 
+  const hideHeaderFooterRoutes = [
+    "/admin",
+  ];
+
   const hideFooter = hideFooterRoutes.includes(pathname);
+  const hideHeaderFooter = pathname.startsWith("/admin");
 
   return (
     <LanguageProvider>
-      <Navbar />
+      {!hideHeaderFooter && <Navbar />}
       {children}
-      {!hideFooter && <Footer />}
+      {!hideFooter && !hideHeaderFooter && <Footer />}
     </LanguageProvider>
   );
 }
