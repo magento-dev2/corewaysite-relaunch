@@ -9,11 +9,30 @@ export const revalidate = 60;
 async function getBlog(slug: string) {
   const blog = await prisma.blog.findUnique({
     where: { slug, isActive: true },
+    include: {
+      relatedArticles: {
+        where: { isActive: true },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          excerpt: true,
+          coverImage: true,
+          createdAt: true,
+        },
+      },
+    },
   });
   return blog;
 }
 
-async function getRelatedBlogs(currentSlug: string) {
+async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: any[]) {
+  // If there are selected related articles, return them (up to 3)
+  if (selectedRelatedArticles && selectedRelatedArticles.length > 0) {
+    return selectedRelatedArticles.slice(0, 3);
+  }
+
+  // Otherwise, fall back to latest blogs
   const blogs = await prisma.blog.findMany({
     where: {
       slug: { not: currentSlug },
@@ -33,7 +52,7 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
     notFound();
   }
 
-  const relatedBlogs = await getRelatedBlogs(slug);
+  const relatedBlogs = await getRelatedBlogs(slug, blog.relatedArticles || []);
 
   return (
     <div className="min-h-screen bg-white">

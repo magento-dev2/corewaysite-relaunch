@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
+import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
 
 export default function EditBlog() {
     const router = useRouter();
@@ -20,6 +21,7 @@ export default function EditBlog() {
         coverImage: '',
         content: '',
         isActive: true,
+        relatedArticleIds: [] as string[],
     });
 
     useEffect(() => {
@@ -37,6 +39,7 @@ export default function EditBlog() {
                         coverImage: data.coverImage || '',
                         content: data.content,
                         isActive: data.isActive ?? true,
+                        relatedArticleIds: data.relatedArticles?.map((article: any) => article.id) || [],
                     });
                 } else {
                     alert('Blog not found');
@@ -136,6 +139,15 @@ export default function EditBlog() {
                         <Editor
                             content={formData.content}
                             onChange={(content) => setFormData({ ...formData, content })}
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-700">Related Articles</label>
+                        <RelatedArticlesSelector
+                            selectedIds={formData.relatedArticleIds}
+                            onChange={(ids) => setFormData({ ...formData, relatedArticleIds: ids })}
+                            currentBlogId={id}
                         />
                     </div>
 

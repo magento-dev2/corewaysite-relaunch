@@ -15,7 +15,7 @@ export async function GET() {
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { title, slug, content, excerpt, coverImage } = body;
+        const { title, slug, content, excerpt, coverImage, relatedArticleIds, isActive } = body;
 
         const blog = await prisma.blog.create({
             data: {
@@ -24,7 +24,11 @@ export async function POST(request: Request) {
                 content,
                 excerpt,
                 coverImage,
+                isActive: isActive ?? true,
                 publishedAt: new Date(),
+                relatedArticles: relatedArticleIds && relatedArticleIds.length > 0
+                    ? { connect: relatedArticleIds.map((id: string) => ({ id })) }
+                    : undefined,
             },
         });
         return NextResponse.json(blog);

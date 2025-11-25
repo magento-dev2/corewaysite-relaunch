@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Blog {
@@ -17,4 +18,8 @@ model Blog {
   publishedAt DateTime?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  
+  // Self-referential many-to-many relation for related articles
+  relatedArticles Blog[] @relation("RelatedBlogs")
+  relatedTo       Blog[] @relation("RelatedBlogs")
 }
