@@ -8,6 +8,17 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Testimonials() {
   const { t } = useLanguage();
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+
+  const toggleExpanded = (index: number) => {
+    const newExpanded = new Set(expandedCards);
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index);
+    } else {
+      newExpanded.add(index);
+    }
+    setExpandedCards(newExpanded);
+  };
 
   const testimonials = [
     {
@@ -17,7 +28,8 @@ export default function Testimonials() {
       company: t('testimonials.items.0.company'),
       image: "/assets/review/ty-smith.png",
       video: "https://www.youtube.com/watch?v=B6zVzWU95Sw",
-      rating: 5
+      rating: 5,
+      location: "USA"
     },
     {
       quote: t('testimonials.items.1.quote'),
@@ -26,7 +38,8 @@ export default function Testimonials() {
       company: t('testimonials.items.1.company'),
       image: "/assets/review/Alex-Bestall.png",
       video: "https://www.youtube.com/watch?v=QyhwSYhX09s",
-      rating: 5
+      rating: 5,
+      location: "UK"
     },
     {
       quote: t('testimonials.items.2.quote'),
@@ -35,7 +48,8 @@ export default function Testimonials() {
       company: t('testimonials.items.2.company'),
       image: "/assets/review/randy.png",
       video: "https://www.youtube.com/watch?v=H14bBuluwB8",
-      rating: 5
+      rating: 5,
+      location: "Canada"
     },
   ];
 
@@ -46,7 +60,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a0f2e] to-[#0E0918]">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
@@ -84,7 +98,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid - 3 Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -93,80 +107,88 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
-              whileHover={{ y: -8 }}
               className="group relative"
             >
               {/* Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-fuchsia-600 opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 rounded-3xl" />
 
               {/* Card */}
-              <div className="relative h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 group-hover:border-white/20 transition-all duration-500 flex flex-col">
-                {/* Quote Icon */}
-                <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Quote size={64} className="text-purple-400" />
+              <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group-hover:border-white/20 transition-all duration-500 flex flex-col">
+                {/* Image with Play Button */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-purple-900/20 to-fuchsia-900/20">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    className="w-full h-full object-cover"
+                  />
+
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center group-hover:bg-black/50 transition-all duration-300">
+                    <motion.button
+                      onClick={() => setActiveVideo(index)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-20 h-20 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transition-all duration-300"
+                    >
+                      <Play size={32} className="fill-white text-white ml-1" />
+                    </motion.button>
+                  </div>
                 </div>
 
-                {/* Author Info */}
-                <div className="flex items-center gap-4 mb-6 relative z-10">
-                  {/* Avatar */}
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                      />
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Quote Icon */}
+                  <Quote size={40} className="text-purple-400/40 mb-4" />
+
+                  {/* Quote Text */}
+                  <div className="flex-1 mb-4">
+                    <blockquote className={`text-gray-200 text-base leading-relaxed ${expandedCards.has(index) ? '' : 'line-clamp-4'
+                      }`}>
+                      <span className="font-medium">"</span>
+                      {testimonial.quote}
+                      <span className="font-medium">"</span>
+                    </blockquote>
+
+                    {/* Read More Button */}
+                    {testimonial.quote.length > 150 && (
+                      <motion.button
+                        onClick={() => toggleExpanded(index)}
+                        whileHover={{ x: 5 }}
+                        className="mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold flex items-center gap-2 group transition-colors"
+                      >
+                        <span>{expandedCards.has(index) ? 'Read Less' : 'Read More'}</span>
+                        <motion.span
+                          animate={{ rotate: expandedCards.has(index) ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          ▼
+                        </motion.span>
+                      </motion.button>
+                    )}
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent mb-4" />
+
+                  {/* Author Info */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-white font-bold text-lg">
+                        {testimonial.author}
+                      </h3>
+                      <p className="text-gray-400 text-sm mt-1">
+                        ( {testimonial.location} )
+                      </p>
                     </div>
                   </div>
-
-                  {/* Name & Role */}
-                  <div className="flex-1">
-                    <h3 className="text-white font-bold text-lg leading-tight">
-                      {testimonial.author}
-                    </h3>
-                    <p className="text-gray-400 text-sm mt-0.5">
-                      {testimonial.role}
-                    </p>
-                    <p className="text-purple-400 text-xs font-medium mt-0.5">
-                      {testimonial.company}
-                    </p>
-                  </div>
                 </div>
-
-                {/* Star Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className="fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-
-                {/* Quote Text */}
-                <blockquote className="text-gray-300 text-base leading-relaxed mb-6 flex-1 line-clamp-6">
-                  "{testimonial.quote}"
-                </blockquote>
-
-                {/* Video Play Button */}
-                <motion.button
-                  onClick={() => setActiveVideo(index)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group/btn flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-                >
-                  <Play size={18} className="fill-white" />
-                  <span>Watch Video</span>
-                </motion.button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Popup Modal */}
       <AnimatePresence>
         {activeVideo !== null && (
           <motion.div
@@ -187,13 +209,13 @@ export default function Testimonials() {
               {/* Close Button */}
               <button
                 onClick={() => setActiveVideo(null)}
-                className="absolute -top-12 right-0 p-2 text-white hover:text-purple-400 transition-colors"
+                className="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 group"
               >
-                <X size={32} />
+                <X className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-300" />
               </button>
 
               {/* Video Container */}
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black">
                 <iframe
                   src={`https://www.youtube.com/embed/${getYouTubeID(testimonials[activeVideo].video)}?autoplay=1`}
                   className="w-full h-full"
