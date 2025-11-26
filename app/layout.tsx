@@ -21,6 +21,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <div className="min-h-screen bg-[#0E0918]">
           <LayoutWrapper>{children}</LayoutWrapper>

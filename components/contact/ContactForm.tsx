@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { useRecaptcha } from '@/contexts/RecaptchaContext';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -28,17 +30,33 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setError('');
 
-    setTimeout(() => {
-      console.log('Contact Form Submission:', formData);
-      console.log('-----------------------------------');
-      console.log('Name:', formData.name);
-      console.log('Email:', formData.email);
-      console.log('Phone:', formData.phone);
-      console.log('Company:', formData.company);
-      console.log('Subject:', formData.subject);
-      console.log('Message:', formData.message);
-      console.log('-----------------------------------');
+    try {
+      // Execute reCAPTCHA
+      const token = await executeRecaptcha();
 
+      if (!token) {
+        throw new Error('reCAPTCHA verification failed. Please try again.');
+      }
+
+      // Send form data with reCAPTCHA token to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      // Success
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -49,9 +67,16 @@ export default function ContactForm() {
         message: '',
       });
 
-      setIsSubmitting(false);
+      // Reset reCAPTCHA
+      resetRecaptcha();
+
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 1000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+      resetRecaptcha();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

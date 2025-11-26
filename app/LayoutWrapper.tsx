@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
+import { RecaptchaProvider } from "@/contexts/RecaptchaContext";
+
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
@@ -24,9 +26,11 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
 
   return (
     <LanguageProvider>
-      {!hideHeaderFooter && <Navbar />}
-      {children}
-      {!hideFooter && !hideHeaderFooter && <Footer />}
+      <RecaptchaProvider>
+        {!hideHeaderFooter && <Navbar />}
+        {children}
+        {!hideFooter && !hideHeaderFooter && <Footer />}
+      </RecaptchaProvider>
     </LanguageProvider>
   );
 }
