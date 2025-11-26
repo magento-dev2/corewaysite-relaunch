@@ -26,6 +26,28 @@ async function getBlog(slug: string) {
   return blog;
 }
 
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
+  const blog = await getBlog(params.slug);
+
+  if (!blog) {
+    return {
+      title: 'Blog Not Found',
+    };
+  }
+
+  return {
+    title: blog.metaTitle || blog.title,
+    description: blog.metaDescription || blog.excerpt,
+    keywords: blog.metaKeywords ? blog.metaKeywords.split(',').map(k => k.trim()) : [],
+    openGraph: {
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || blog.excerpt,
+      images: [blog.coverImage || ''],
+    },
+  };
+}
+
 async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: any[]) {
   // If there are selected related articles, return them (up to 3)
   if (selectedRelatedArticles && selectedRelatedArticles.length > 0) {

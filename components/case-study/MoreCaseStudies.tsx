@@ -1,12 +1,22 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import caseStudiesData from '@/data/caseStudies.json'
 
 export default function MoreCaseStudies({ currentSlug }: { currentSlug: string }) {
-  const otherCaseStudies = caseStudiesData.filter(study => study.slug !== currentSlug).slice(0, 3)
+  const [caseStudies, setCaseStudies] = useState<any[]>([])
+
+  useEffect(() => {
+    fetch('/api/case-studies')
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter((study: any) => study.slug !== currentSlug).slice(0, 3)
+        setCaseStudies(filtered)
+      })
+      .catch(err => console.error('Error fetching case studies:', err))
+  }, [currentSlug])
 
   return (
     <section className="py-20 bg-gray-950">
@@ -27,7 +37,7 @@ export default function MoreCaseStudies({ currentSlug }: { currentSlug: string }
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {otherCaseStudies.map((study, index) => (
+          {caseStudies.map((study, index) => (
             <Link href={`/case-studies/${study.slug}`} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

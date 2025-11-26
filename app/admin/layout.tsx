@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, FileText, LogOut, Settings } from 'lucide-react';
+import { LayoutDashboard, FileText, LogOut, Settings, BookOpen, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -37,6 +37,22 @@ export default function AdminLayout({
                     >
                         <LayoutDashboard className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
                         <span className="font-medium">Dashboard</span>
+                    </Link>
+
+                    <Link
+                        href="/admin"
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors group"
+                    >
+                        <BookOpen className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
+                        <span className="font-medium">Manage Blog</span>
+                    </Link>
+
+                    <Link
+                        href="/admin/case-studies"
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors group"
+                    >
+                        <Briefcase className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
+                        <span className="font-medium">Manage Case Study</span>
                     </Link>
 
                     <Link

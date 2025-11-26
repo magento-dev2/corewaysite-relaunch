@@ -18,6 +18,9 @@ export default function CreateBlog() {
         content: '',
         isActive: true,
         relatedArticleIds: [] as string[],
+        metaTitle: '',
+        metaDescription: '',
+        metaKeywords: '',
     });
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -113,6 +116,41 @@ export default function CreateBlog() {
                             selectedIds={formData.relatedArticleIds}
                             onChange={(ids) => setFormData({ ...formData, relatedArticleIds: ids })}
                         />
+                    </div>
+
+                    {/* SEO Settings */}
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 space-y-4">
+                        <h2 className="text-lg font-semibold text-gray-900">SEO Settings</h2>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">Meta Title</label>
+                            <input
+                                type="text"
+                                value={formData.metaTitle}
+                                onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="SEO Title (defaults to post title if empty)"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">Meta Description</label>
+                            <textarea
+                                rows={3}
+                                value={formData.metaDescription}
+                                onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="SEO Description (defaults to excerpt if empty)"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">Meta Keywords</label>
+                            <input
+                                type="text"
+                                value={formData.metaKeywords}
+                                onChange={(e) => setFormData({ ...formData, metaKeywords: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="keyword1, keyword2, keyword3"
+                            />
+                        </div>
                     </div>
 
                     <div className="space-y-2">
