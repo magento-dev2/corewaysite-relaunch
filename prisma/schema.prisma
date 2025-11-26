@@ -8,98 +8,68 @@ datasource db {
 }
 
 model Blog {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  content     String   @db.Text
-  excerpt     String?  @db.Text
-  coverImage  String?
-  isActive    Boolean  @default(true)
-  publishedAt DateTime?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  // Self-referential many-to-many relation for related articles
-  relatedArticles Blog[] @relation("RelatedBlogs")
-  relatedTo       Blog[] @relation("RelatedBlogs")
-
-  // SEO
-  metaTitle       String?
-  metaDescription String? @db.Text
+  id              String    @id @default(cuid())
+  title           String
+  slug            String    @unique
+  content         String
+  excerpt         String?
+  coverImage      String?
+  publishedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  isActive        Boolean   @default(true)
+  metaDescription String?
   metaKeywords    String?
+  metaTitle       String?
+  Blog_A          Blog[]    @relation("RelatedBlogs")
+  Blog_B          Blog[]    @relation("RelatedBlogs")
 }
 
 model CaseStudy {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  
-  // Basic Info
-  title       String
-  subtitle    String
-  client      String
-  industry    String
-  location    String
-  overview    String   @db.Text
-  
-  // Project Details
-  services    String[] // Array of services
-  technologies String[] // Array of technologies
-  duration    String
-  teamSize    String
-  
-  // Images
-  imageUrl    String
-  bannerImage String
-  
-  // Client Overview Section
+  id                        String    @id @default(cuid())
+  slug                      String    @unique
+  title                     String
+  subtitle                  String
+  client                    String
+  industry                  String
+  location                  String
+  overview                  String
+  services                  String[]
+  technologies              String[]
+  duration                  String
+  teamSize                  String
+  imageUrl                  String
+  bannerImage               String
   clientOverviewTitle       String?
-  clientOverviewDescription String? @db.Text
-  
-  // Challenge Section
-  challengeTitle       String?
-  challengeDescription String? @db.Text
-  challengePoints      String[] // Array of challenge points
-  challengeConclusion  String?  @db.Text
-  challengeImage       String?
-  
-  // Solution Section
-  solutionTitle       String?
-  solutionDescription String? @db.Text
-  solutionSteps       Json?   // Array of {title, description}
-  solutionImage       String?
-  
-  // Impact Section
-  impactTitle       String?
-  impactDescription String? @db.Text
-  impactPoints      String[] // Array of impact points
-  impactConclusion  String?  @db.Text
-  impactImage       String?
-  
-  // Stats (4 stats per case study)
-  stats Json // Array of {value, label}
-  
-  // Testimonial (optional)
-  testimonialQuote    String? @db.Text
-  testimonialAuthor   String?
-  testimonialPosition String?
-  testimonialImage    String?
-  
-  // Inspirational Quote (optional)
-  quoteText   String? @db.Text
-  quoteAuthor String?
-  
-  // UI Styling
-  gradient String? // e.g., "from-violet-500 to-purple-600"
-  icon     String? // e.g., "search", "trending", "shield"
-
-  // SEO
-  metaTitle       String?
-  metaDescription String? @db.Text
-  metaKeywords    String?
-  
-  // Status
-  isActive    Boolean  @default(true)
-  publishedAt DateTime?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  clientOverviewDescription String?
+  challengeTitle            String?
+  challengeDescription      String?
+  challengePoints           String[]
+  challengeConclusion       String?
+  challengeImage            String?
+  solutionTitle             String?
+  solutionDescription       String?
+  solutionSteps             Json?
+  solutionImage             String?
+  impactTitle               String?
+  impactDescription         String?
+  impactPoints              String[]
+  impactConclusion          String?
+  impactImage               String?
+  stats                     Json
+  testimonialQuote          String?
+  testimonialAuthor         String?
+  testimonialPosition       String?
+  testimonialImage          String?
+  quoteText                 String?
+  quoteAuthor               String?
+  gradient                  String?
+  icon                      String?
+  isActive                  Boolean   @default(true)
+  publishedAt               DateTime?
+  createdAt                 DateTime  @default(now())
+  updatedAt                 DateTime  @updatedAt
+  metaDescription           String?
+  metaKeywords              String?
+  metaTitle                 String?
 }

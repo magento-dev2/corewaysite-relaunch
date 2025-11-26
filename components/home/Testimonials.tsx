@@ -69,16 +69,17 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-6"
           >
-            <span className="px-5 py-2 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold backdrop-blur-sm">
+            <div className="px-5 flex justify-center items-center py-2 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold backdrop-blur-sm">
+              <Quote className="w-5 h-5 mr-2" />
               Client Success Stories
-            </span>
+            </div>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
             {t('testimonials.title')}
           </h2>
 
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
             Hear from clients who've transformed their businesses with our solutions
           </p>
         </motion.div>

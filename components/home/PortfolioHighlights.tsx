@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, TrendingUp, Zap, ExternalLink } from "lucide-react";
+import { ArrowRight, Sparkles, TrendingUp, Zap, ExternalLink, Workflow } from "lucide-react";
 import Link from "next/link";
 import projects from "../../data/caseStudies.json";
 
@@ -61,16 +61,18 @@ export default function PortfolioHighlights() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-6"
           >
-            <span className="px-5 py-2 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold backdrop-blur-sm">
+
+            <div className="px-5 flex justify-center items-center py-2 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold backdrop-blur-sm">
+              <Workflow className="w-5 h-5 mr-2" />
               Our Work
-            </span>
+            </div>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
             Case Studies
           </h2>
 
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-lg  max-w-3xl mx-auto leading-relaxed">
             Transforming visions into reality with cutting-edge solutions that drive measurable results
           </p>
         </motion.div>
@@ -239,8 +241,8 @@ export default function PortfolioHighlights() {
 
               {/* Button */}
               <div className={`relative px-6 py-3 rounded-xl border transition-all duration-300 ${activeIndex === i
-                  ? 'bg-white/10 border-white/30 backdrop-blur-md'
-                  : 'bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-white/20'
+                ? 'bg-white/10 border-white/30 backdrop-blur-md'
+                : 'bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-white/20'
                 }`}>
                 <div className="flex items-center gap-3">
                   {/* Project Icon */}
