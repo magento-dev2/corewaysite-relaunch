@@ -7,6 +7,7 @@ import CompanyHero from "@/components/company/CompanyHero";
 import CompanyStory from "@/components/company/CompanyStory";
 import CompanyMission from "@/components/company/CompanyMission";
 import CompanyValues from "@/components/company/CompanyValues";
+import JourneyTimeline from "@/components/about/JourneyTimeline";
 import OurTeam from "@/components/about/OurTeam";
 import PageCTA from "@/components/PageCTA";
 
@@ -100,6 +101,8 @@ export default function CompanyOverview() {
             title={companyOverviewData.values.title}
             items={companyOverviewData.values.items}
           />
+
+          <JourneyTimeline />
 
           <OurTeam members={[
             {

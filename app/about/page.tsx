@@ -2,6 +2,7 @@
 
 import Breadcrumb from "@/components/about/Breadcrumb";
 import CompanyOverview from "@/components/about/CompanyOverview";
+import JourneyTimeline from "@/components/about/JourneyTimeline";
 import OurProcess from "@/components/about/OurProcess";
 import OurTeam from "@/components/about/OurTeam";
 import PageCTA from "@/components/PageCTA";
@@ -61,6 +62,7 @@ export default function AboutUs() {
 
         <main>
           <CompanyOverview data={aboutUsData.companyOverview} />
+          <JourneyTimeline />
           <OurProcess />
           <OurTeam members={aboutUsData.teamMembers} />
           <PageCTA

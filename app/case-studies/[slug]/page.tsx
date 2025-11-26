@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import BusinessValue from "@/components/case-study/BusinessValue"
+import CaseStudyStats from "@/components/case-study/CaseStudyStats"
 import ClientBackground from "@/components/case-study/ClientBackground"
 import ClientTestimonial from "@/components/case-study/ClientTestimonial"
 import CoreChallenges from "@/components/case-study/CoreChallenges"
@@ -95,6 +96,7 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
   return (
     <main className="min-h-screen bg-[#0E0918]">
       <HeroSection data={caseStudy} />
+      <CaseStudyStats data={caseStudy} />
       <ClientBackground data={caseStudy} />
       <CoreChallenges data={caseStudy} />
       <SolutionScope data={caseStudy} />
