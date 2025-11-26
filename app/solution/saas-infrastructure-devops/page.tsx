@@ -13,7 +13,7 @@ import SaaSAutomation from "@/components/saas/SaaSAutomation";
 import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 
 
 export default function SaaSInfrastructureDevOps() {
@@ -137,7 +137,7 @@ export default function SaaSInfrastructureDevOps() {
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["saas-infrastructure-devops"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

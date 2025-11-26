@@ -7,7 +7,7 @@ import Integrations from "@/components/home/Integrations";
 import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 
 const siteUrl = "https://www.corewaysolution.com";
 
@@ -33,6 +33,28 @@ export const metadata = {
     canonical: siteUrl,
   },
 };
+const defaultReasons : {icon: string, title: string, description: string}[] = [
+  {
+    icon: "agency",
+    title: "Award  Agency",
+    description: "Recognized for excellence in digital innovation and software development.",
+  },
+  {
+    icon: "zap",
+    title: "Fast Delivery",
+    description: "Rapid prototyping and agile development to get your product to market sooner.",
+  },
+  {
+    icon: "shield",
+    title: "Enterprise Security",
+    description: "Bank-grade security protocols ensuring your data remains protected at all times.",
+  },
+  {
+    icon: "users",
+    title: "Expert Team",
+    description: "A dedicated team of senior developers and designers working on your project.",
+  }
+];
 
 export default function HomePage() {
   return (
@@ -47,13 +69,13 @@ export default function HomePage() {
         badge="Why Choose Us"
         title="Why Choose Coreway Solutions"
         subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+        reasons={defaultReasons}
       />
       <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs}
+        faqs={sampleFAQs["business-workflow-automation"]}
         columns={1}
         showContactCTA={true}
         contactText="Still have questions?"

@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import AnimatedIcon from "./AnimatedIcon";
+// import AnimatedIcon from "./AnimatedIcon"; // Removed as we are using static images now
 
 export const services = [
   {
-    animationPath: "/animations/architect.json",
-    staticPath: "/animations/architect-static.svg",
+    imagePath: "/images/architect_service_icon.png", // Updated path
     ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
     title: "Architect",
     subtitle: "Plan. Design. Strategize.",
@@ -22,8 +21,7 @@ export const services = [
     ],
   },
   {
-    animationPath: "/animations/build.json",
-    staticPath: "/animations/build-static.svg",
+    imagePath: "/images/build_service_icon.png", // Updated path
     ariaLabel: "Code brackets with animated lines representing software development",
     title: "Build",
     subtitle: "Develop. Integrate. Deploy.",
@@ -38,8 +36,7 @@ export const services = [
     ],
   },
   {
-    animationPath: "/animations/automate.json",
-    staticPath: "/animations/automate-static.svg",
+    imagePath: "/images/automate_service_icon.png", // Updated path
     ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
     title: "Automate",
     subtitle: "Optimize. Scale. Manage.",
@@ -66,8 +63,8 @@ export default function Services() {
 
       <div className="relative z-10 max-w-1440 mx-auto px-6 md:px-12 w-full">
         {/* Section header */}
-     <div className="grid md:grid-cols-2 gap-12 items-center">
-          
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+
           {/* Left Side: Heading + Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -111,7 +108,7 @@ export default function Services() {
           </motion.div>
 
         </div>
-      
+
 
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -125,18 +122,15 @@ export default function Services() {
               className="group relative"
             >
               <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
-                
+
                 <div className="flex flex-col h-full">
                   {/* Icon + title */}
                   <div className="mb-6">
-                    <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6 p-3">
-                      <AnimatedIcon
-                        animationPath={service.animationPath}
-                        staticFallbackPath={service.staticPath}
-                        ariaLabel={service.ariaLabel}
-                        className="w-full h-full"
-                        playOnHover={false}
-                        autoplay={true}
+                    <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6 p-3 overflow-hidden">
+                      <img
+                        src={service.imagePath}
+                        alt={service.ariaLabel}
+                        className="w-full h-full object-contain"
                       />
                     </div>
 

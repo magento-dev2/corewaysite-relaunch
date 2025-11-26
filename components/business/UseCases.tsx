@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ShoppingCart,
   Users,
@@ -8,16 +8,27 @@ import {
   BarChart,
   Mail,
   Zap,
+  ArrowRight,
+  LucideIcon
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const workflows = [
+interface Workflow {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  image: string;
+  color: string;
+}
+
+const workflows: Workflow[] = [
   {
     icon: ShoppingCart,
     title: "E-commerce",
     description:
       "Automate order processing, inventory management, and customer communications effortlessly.",
     image: "/images/workflow-ecommerce.jpg",
+    color: "text-blue-400",
   },
   {
     icon: Users,
@@ -25,6 +36,7 @@ const workflows = [
     description:
       "Run omnichannel campaigns that sync your CRM, email, and ad platforms automatically.",
     image: "/images/workflow-marketing.jpg",
+    color: "text-pink-400",
   },
   {
     icon: Database,
@@ -32,20 +44,16 @@ const workflows = [
     description:
       "Transform, sync, and clean data pipelines across your internal and external systems.",
     image: "/images/workflow-dataops.jpg",
+    color: "text-cyan-400",
   },
-  {
-    icon: BarChart,
-    title: "Analytics",
-    description:
-      "Aggregate metrics and reports across departments to make smarter, faster decisions.",
-    image: "/images/workflow-analytics.jpg",
-  },
+
   {
     icon: Mail,
     title: "Communication",
     description:
       "Personalize internal and customer messages across Slack, email, and chatbots.",
     image: "/images/workflow-communication.jpg",
+    color: "text-green-400",
   },
   {
     icon: Zap,
@@ -53,6 +61,7 @@ const workflows = [
     description:
       "Deploy, monitor, and resolve infrastructure issues automatically with zero downtime.",
     image: "/images/workflow-devops.jpg",
+    color: "text-yellow-400",
   },
 ];
 
@@ -60,261 +69,148 @@ export default function UseCases() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Detect scroll progress within the section
+  const Icon = workflows[activeIndex].icon;
+
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const sectionTop = rect.top + window.scrollY;
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      const totalHeight = rect.height;
-      const progress = Math.min(
-        1,
-        Math.max(0, (scrollPosition - sectionTop) / totalHeight)
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate progress based on how much of the section has been scrolled
+      // We start counting when the section hits the top of the viewport
+      const scrollDistance = -sectionTop;
+      const maxScroll = sectionHeight - viewportHeight;
+
+      // Normalize progress between 0 and 1
+      let progress = scrollDistance / maxScroll;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const newIndex = Math.min(
+        Math.floor(progress * workflows.length),
+        workflows.length - 1
       );
-      const newIndex = Math.floor(progress * workflows.length);
-      setActiveIndex(Math.min(workflows.length - 1, Math.max(0, newIndex)));
+
+      setActiveIndex(newIndex);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check initial position
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[400vh] bg-gradient-to-b from-[#1a1325] to-[#0E0918]"
+      className="relative bg-[#0E0918]"
+      style={{ height: `${workflows.length * 50 + 50}vh` }} // Dynamic height based on content
     >
-      {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Workflow List */}
-          <div className="space-y-6">
-            {workflows.map((workflow, index) => {
-              const Icon = workflow.icon;
-              return (
-                <div
-                  key={index}
-                  className={`transition-all duration-500 border rounded-xl p-6 backdrop-blur-sm cursor-default ${
-                    index === activeIndex
-                      ? "bg-white/10 border-purple-500 shadow-lg shadow-purple-500/20"
-                      : "bg-white/5 border-white/10 opacity-70"
-                  }`}
-                >
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="p-2 rounded-md bg-purple-600/40">
-                      <Icon size={20} className="text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {workflow.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {workflow.description}
-                  </p>
-                </div>
-              );
-            })}
+      {/* Sticky Container */}
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden py-12">
+
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              Built for every department
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              From marketing to engineering, empower every team to build their own solutions without waiting for IT.
+            </p>
           </div>
 
-          {/* Right Scroll-based Image Preview */}
-          <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl border border-white/10">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={workflows[activeIndex].title}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute inset-0"
-              >
-                <img
-                  src={workflows[activeIndex].image}
-                  alt={workflows[activeIndex].title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h4 className="text-2xl font-bold">
-                    {workflows[activeIndex].title}
-                  </h4>
-                  <p className="text-sm text-gray-300 max-w-sm">
-                    {workflows[activeIndex].description}
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+
+            {/* Left Column: Interactive List */}
+            <div className="lg:col-span-5 space-y-4">
+              {workflows.map((workflow, index) => {
+                const Icon = workflow.icon;
+                const isActive = index === activeIndex;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      // Optional: Scroll to the position corresponding to this item
+                      // For now, just setting state for immediate feedback if clicked
+                      setActiveIndex(index);
+                    }}
+                    className={`group relative p-4 rounded-xl transition-all duration-300 cursor-pointer border ${isActive
+                      ? "bg-white/10 border-purple-500/50 shadow-lg shadow-purple-500/10"
+                      : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
+                      }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className={`p-2 rounded-lg transition-colors duration-300 ${isActive ? 'bg-purple-500/20' : 'bg-white/5 group-hover:bg-white/10'}`}>
+                        <Icon size={24} className={`${isActive ? workflow.color : 'text-gray-400 group-hover:text-white'} transition-colors duration-300`} />
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
+                          {workflow.title}
+                        </h3>
+                        <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive ? 'text-gray-300' : 'text-gray-500 group-hover:text-gray-400'}`}>
+                          {workflow.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Right Column: Image Preview */}
+            <div className="lg:col-span-7 relative h-[400px] lg:h-[500px] xl:h-[600px] max-h-[60vh] rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  {/* Image Placeholder - In a real app this would be the actual image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center relative group">
+                    {/* Abstract Background Pattern */}
+                    <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${workflows[activeIndex].color.replace('text-', 'from-').replace('-400', '-600')} to-transparent`}></div>
+
+                    <img
+                      src={workflows[activeIndex].image}
+                      alt={workflows[activeIndex].title}
+                      className="w-full h-full object-cover opacity-60 mix-blend-overlay"
+                      onError={(e) => {
+                        // Fallback if image fails to load
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center z-10">
+                      <div className={`w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-8 shadow-2xl`}>
+                        <Icon size={40} className={workflows[activeIndex].color} />
+                      </div>
+                      <h3 className="text-4xl font-bold text-white mb-4">{workflows[activeIndex].title}</h3>
+                      <p className="text-xl text-gray-300 max-w-md mb-8">{workflows[activeIndex].description}</p>
+
+                      <button className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors flex items-center gap-2">
+                        See {workflows[activeIndex].title} templates <ArrowRight size={18} />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-// "use client";
-
-// import { useEffect, useState, useRef } from "react";
-// import {
-//   ShoppingCart,
-//   Users,
-//   Database,
-//   BarChart,
-//   Mail,
-//   Zap,
-// } from "lucide-react";
-// import { motion, AnimatePresence } from "framer-motion";
-
-// const workflows = [
-//   {
-//     icon: ShoppingCart,
-//     title: "E-commerce",
-//     description:
-//       "Automate order processing, inventory management, and customer communications effortlessly.",
-//     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800",
-//   },
-//   {
-//     icon: Users,
-//     title: "Marketing",
-//     description:
-//       "Run omnichannel campaigns that sync your CRM, email, and ad platforms automatically.",
-//     image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800",
-//   },
-//   {
-//     icon: Database,
-//     title: "Data Operations",
-//     description:
-//       "Transform, sync, and clean data pipelines across your internal and external systems.",
-//     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-//   },
-//   {
-//     icon: BarChart,
-//     title: "Analytics",
-//     description:
-//       "Aggregate metrics and reports across departments to make smarter, faster decisions.",
-//     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-//   },
-//   {
-//     icon: Mail,
-//     title: "Communication",
-//     description:
-//       "Personalize internal and customer messages across Slack, email, and chatbots.",
-//     image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800",
-//   },
-//   {
-//     icon: Zap,
-//     title: "DevOps",
-//     description:
-//       "Deploy, monitor, and resolve infrastructure issues automatically with zero downtime.",
-//     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
-//   },
-// ];
-
-// export default function UseCases() {
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const sectionRef = useRef(null);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (!sectionRef.current) return;
-
-//       const rect = sectionRef.current.getBoundingClientRect();
-//       const sectionTop = rect.top;
-//       const sectionHeight = rect.height;
-//       const viewportHeight = window.innerHeight;
-
-//       // How far the section has scrolled past the top of viewport
-//       const scrolledPast = -sectionTop;
-      
-//       // Progress through the section (0 to 1)
-//       const progress = scrolledPast / (sectionHeight - viewportHeight);
-      
-//       // Calculate which workflow should be active
-//       const index = Math.floor(progress * workflows.length);
-
-//       // Clamp index between 0 and workflows.length - 1
-//       setActiveIndex(Math.min(Math.max(index, 0), workflows.length - 1));
-//     };
-
-//     // Run once on mount
-//     handleScroll();
-    
-//     window.addEventListener("scroll", handleScroll, { passive: true });
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       className="relative bg-gradient-to-b from-[#1a1325] to-[#0E0918]"
-//       style={{ height: `${workflows.length * 100}vh` }}
-//     >
-//       {/* Sticky container */}
-//       <div className="sticky top-0 h-screen flex items-center justify-center">
-//         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-//           {/* Left Workflow List */}
-//           <div className="space-y-6">
-//             {workflows.map((workflow, index) => {
-//               const Icon = workflow.icon;
-//               return (
-//                 <div
-//                   key={index}
-//                   className={`transition-all duration-500 border rounded-xl p-6 backdrop-blur-sm cursor-default ${
-//                     index === activeIndex
-//                       ? "bg-white/10 border-purple-500 shadow-lg shadow-purple-500/20"
-//                       : "bg-white/5 border-white/10 opacity-70"
-//                   }`}
-//                 >
-//                   <div className="flex items-center space-x-3 mb-3">
-//                     <div className="p-2 rounded-md bg-purple-600/40">
-//                       <Icon size={20} className="text-white" />
-//                     </div>
-//                     <h3 className="text-xl font-semibold text-white">
-//                       {workflow.title}
-//                     </h3>
-//                   </div>
-//                   <p className="text-gray-300 text-sm leading-relaxed">
-//                     {workflow.description}
-//                   </p>
-//                 </div>
-//               );
-//             })}
-//           </div>
-
-//           {/* Right Scroll-based Image Preview */}
-//           <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl border border-white/10">
-//             <AnimatePresence mode="wait">
-//               <motion.div
-//                 key={workflows[activeIndex].title}
-//                 initial={{ opacity: 0, scale: 1.05 }}
-//                 animate={{ opacity: 1, scale: 1 }}
-//                 exit={{ opacity: 0, scale: 0.95 }}
-//                 transition={{ duration: 0.8, ease: "easeOut" }}
-//                 className="absolute inset-0"
-//               >
-//                 <img
-//                   src={workflows[activeIndex].image}
-//                   alt={workflows[activeIndex].title}
-//                   className="w-full h-full object-cover"
-//                 />
-//                 <div className="absolute inset-0 bg-black/40" />
-//                 <div className="absolute bottom-6 left-6 text-white">
-//                   <h4 className="text-2xl font-bold">
-//                     {workflows[activeIndex].title}
-//                   </h4>
-//                   <p className="text-sm text-gray-300 max-w-sm">
-//                     {workflows[activeIndex].description}
-//                   </p>
-//                 </div>
-//               </motion.div>
-//             </AnimatePresence>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }

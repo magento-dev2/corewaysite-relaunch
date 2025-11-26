@@ -13,7 +13,7 @@ import AIIntegrationAutomation from "@/components/aiintegration/AIIntegrationAut
 import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 
 export default function AIIntegrationServices() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -136,7 +136,7 @@ export default function AIIntegrationServices() {
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["ai-integration-services"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

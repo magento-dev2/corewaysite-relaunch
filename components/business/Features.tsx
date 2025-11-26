@@ -1,129 +1,102 @@
 "use client";
 
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from "react";
+import { ArrowRight, Database, Users, RefreshCw, MessageSquare } from "lucide-react";
 
 const workflows = [
   {
     title: "Lead enrichment",
     description:
       "Automatically enrich leads from your CRM with data from multiple sources.",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-violet-500/20 to-indigo-500/20",
+    icon: Database,
+    borderColor: "group-hover:border-violet-500/50",
+    iconColor: "text-violet-400"
   },
   {
     title: "Customer onboarding",
     description:
       "Create seamless onboarding experiences that sync across all your tools.",
-    color: "from-green-500 to-emerald-500",
+    color: "from-violet-500/20 to-indigo-500/20",
+    icon: Users,
+    borderColor: "group-hover:border-violet-500/50",
+    iconColor: "text-violet-400"
   },
   {
     title: "Data synchronization",
     description: "Keep your databases, spreadsheets, and apps in perfect sync.",
-    color: "from-purple-500 to-pink-500",
+    color: "from-violet-500/20 to-indigo-500/20",
+    icon: RefreshCw,
+    borderColor: "group-hover:border-violet-500/50",
+    iconColor: "text-violet-400"
   },
   {
     title: "Support automation",
     description:
       "Route tickets, gather context, and respond faster to customers.",
-    color: "from-purple-500 to-violet-500",
+    color: "from-violet-500/20 to-indigo-500/20",
+    icon: MessageSquare,
+    borderColor: "group-hover:border-violet-500/50",
+    iconColor: "text-violet-400"
   },
 ];
 
 export default function WorkflowZigZagScroll() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const scrollSection = scrollRef.current;
-
-    if (!container || !scrollSection) return;
-
-    const totalScrollWidth = scrollSection.scrollWidth;
-    const scrollDistance = totalScrollWidth - window.innerWidth;
-
-    gsap.to(scrollSection, {
-      x: () => -scrollDistance,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: () => `+=${scrollDistance}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
-  }, []);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative bg-[#0E0918] py-32 overflow-hidden"
-      style={{
-        backgroundImage:
-          'url("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=1600&q=80")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Subtle dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <section className="relative bg-[#0E0918] py-24 overflow-hidden">
 
-      <div className="relative z-10 text-center mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Workflows for every team
-        </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-          Pre-built templates to get you started in minutes
-        </p>
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"></div>
       </div>
 
-      {/* Horizontal Scroll Section */}
-      <div
-        ref={scrollRef}
-        className="flex space-x-24 px-[10vw] relative z-10 items-center"
-      >
-        {workflows.map((item, i) => (
-          <div
-            key={i}
-            className={`relative flex-shrink-0 w-[30vw] h-[30vh] rounded-xl p-3 bg-gradient-to-br ${item.color}`}
-          >
-            {/* Subtle connecting line */}
-            {i !== 0 && (
-              <div className="absolute top-1/2 -left-[15vw] w-[15vw] h-[2px] bg-gradient-to-r from-white/10 to-white/0"></div>
-            )}
-
-            {/* Card content */}
-            <div className="bg-[#0E0918]/90 h-full rounded-xl p-10 flex flex-col justify-center border border-white/10 backdrop-blur-sm shadow-xl shadow-black/20">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                {item.title}
-              </h3>
-              <p className="text-gray-300 text-lg mb-6">
-                {item.description}
-              </p>
-              <button className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition">
-                Learn more <ArrowRight size={18} />
-              </button>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
+            <span className="text-purple-400 text-sm font-medium">Streamline Operations</span>
           </div>
-        ))}
-      </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Workflows for every team
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Pre-built templates to get you started in minutes. Automate repetitive tasks and focus on high-impact work.
+          </p>
+        </div>
 
-      {/* Gradient fade edges for polish */}
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#0E0918] to-transparent pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#0E0918] to-transparent pointer-events-none"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {workflows.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={i}
+                className={`group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 ${item.borderColor}`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}></div>
+
+                <div className="relative z-10">
+                  <div className={`w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                    <Icon className={`w-7 h-7 ${item.iconColor}`} />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-400 mb-8 leading-relaxed group-hover:text-gray-300 transition-colors">
+                    {item.description}
+                  </p>
+
+                  <div className="flex items-center text-white font-medium group/btn cursor-pointer">
+                    <span className="mr-2 group-hover/btn:mr-4 transition-all duration-300">Explore template</span>
+                    <ArrowRight className="w-5 h-5 text-purple-400 group-hover/btn:text-white transition-colors" />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }

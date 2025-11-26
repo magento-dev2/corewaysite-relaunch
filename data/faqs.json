@@ -1,0 +1,299 @@
+{
+  "home": [
+    {
+      "question": "What services do you offer?",
+      "answer": "We offer a comprehensive range of services including AI integration, custom software development, cloud infrastructure, dedicated developers, and digital transformation solutions. Our team specializes in cutting-edge technologies to help businesses scale and innovate."
+    },
+    {
+      "question": "How long does a typical project take?",
+      "answer": "Project timelines vary based on scope and complexity. Simple integrations can be completed in 2-4 weeks, while comprehensive solutions typically take 3-6 months. We provide detailed project timelines during the discovery phase and maintain transparent communication throughout development."
+    },
+    {
+      "question": "Do you provide ongoing support and maintenance?",
+      "answer": "Yes! We offer comprehensive support packages including 24/7 monitoring, regular updates, security patches, and performance optimization. Our team ensures your systems run smoothly and efficiently long after launch."
+    },
+    {
+      "question": "What is your pricing model?",
+      "answer": "We offer flexible pricing models including fixed-price projects, time & materials, and dedicated team engagements. Pricing depends on project scope, technology stack, and team size. Contact us for a customized quote tailored to your specific needs."
+    },
+    {
+      "question": "Can you work with our existing technology stack?",
+      "answer": "Absolutely! Our developers are proficient in 50+ technologies across various platforms. We seamlessly integrate with your existing systems and can work with any technology stack including legacy systems, modern frameworks, and emerging technologies."
+    },
+    {
+      "question": "How do you ensure project security and data privacy?",
+      "answer": "Security is our top priority. We follow industry best practices including encryption, secure coding standards, regular security audits, and compliance with regulations like GDPR, HIPAA, and SOC 2. All team members sign NDAs and we implement strict access controls."
+    }
+  ],
+  "digital": [
+    {
+      "question": "What is Digital Commerce Transformation?",
+      "answer": "Digital Commerce Transformation involves modernizing and optimizing your online business operations using advanced technologies such as AI, cloud platforms, automation, and analytics. It aims to improve customer experience, streamline processes, and drive revenue growth."
+    },
+    {
+      "question": "Which businesses can benefit from digital commerce transformation?",
+      "answer": "Businesses of all sizes across retail, B2B, e-commerce, and service industries can benefit. Companies looking to enhance their online presence, automate operations, and leverage data for smarter decision-making are ideal candidates."
+    },
+    {
+      "question": "What technologies do you use for transformation?",
+      "answer": "We leverage cutting-edge technologies including AI & ML, cloud computing, headless commerce platforms, API integrations, data analytics, and modern frameworks to ensure scalable and efficient digital solutions."
+    },
+    {
+      "question": "How long does a typical transformation take?",
+      "answer": "The timeline depends on the scope and complexity of the project. Smaller optimizations may take 4-6 weeks, while a full-scale transformation can take 3-9 months. We provide detailed timelines during the discovery phase."
+    },
+    {
+      "question": "Do you provide ongoing support after implementation?",
+      "answer": "Yes, we provide ongoing support including system monitoring, performance optimization, updates, security audits, and technical assistance to ensure your digital commerce ecosystem runs smoothly."
+    },
+    {
+      "question": "Can you integrate with our existing systems?",
+      "answer": "Absolutely! We can seamlessly integrate with your current ERP, CRM, payment gateways, and other business systems to ensure a smooth and unified digital commerce experience."
+    }
+   
+  ],
+  "product-development-for-startups": [
+  {
+    "question": "What is product development for startups?",
+    "answer": "Product development for startups involves transforming an idea into a market-ready product through strategic planning, design, prototyping, development, testing, and iteration, ensuring fast time-to-market and scalability."
+  },
+  {
+    "question": "How do you help startups validate their product idea?",
+    "answer": "We assist startups with market research, competitor analysis, user persona creation, and MVP development to validate ideas quickly and reduce the risk of failure."
+  },
+  {
+    "question": "Do you build MVPs for startups?",
+    "answer": "Yes, we specialize in building MVPs (Minimum Viable Products) that focus on core features, helping startups launch quickly, gather feedback, and iterate efficiently."
+  },
+  {
+    "question": "What technologies do you use for startup product development?",
+    "answer": "We use modern and scalable technologies including React, Next.js, Node.js, cloud platforms, microservices, AI tools, and mobile frameworks to build future-ready products."
+  },
+  {
+    "question": "How long does it take to develop a startup product?",
+    "answer": "An MVP typically takes 4-8 weeks depending on complexity, while full-scale products may take 3-6 months. We provide clear timelines after requirement analysis."
+  },
+  {
+    "question": "Can you help with product scaling after launch?",
+    "answer": "Absolutely! We provide scaling strategies, performance optimization, feature expansion, and infrastructure upgrades to support business growth."
+  }
+],
+"ai-powered-application-platforms": [
+  {
+    "question": "What are AI-powered application platforms?",
+    "answer": "AI-powered application platforms are systems that leverage artificial intelligence technologies such as machine learning, natural language processing, and automation to build intelligent, scalable, and data-driven applications."
+  },
+  {
+    "question": "How can AI-powered platforms benefit my business?",
+    "answer": "They enhance efficiency, automate repetitive tasks, improve decision-making, personalize user experiences, and enable predictive analytics to drive smarter business outcomes."
+  },
+  {
+    "question": "What types of AI solutions do you develop?",
+    "answer": "We develop AI-driven solutions including chatbots, recommendation engines, predictive analytics systems, intelligent automation tools, computer vision applications, and custom AI models."
+  },
+  {
+    "question": "Can AI platforms integrate with my existing systems?",
+    "answer": "Yes, our AI platforms are designed to seamlessly integrate with your current ERP, CRM, databases, APIs, and third-party tools without disrupting your operations."
+  },
+  {
+    "question": "How secure are AI-powered applications?",
+    "answer": "We implement enterprise-grade security measures including data encryption, secure APIs, role-based access control, and compliance with standards like GDPR and SOC 2 to ensure maximum data protection."
+  },
+  {
+    "question": "How long does it take to build an AI-powered application?",
+    "answer": "Development timelines vary based on complexity. Basic AI solutions may take 4-6 weeks, while advanced platforms can take 3-6 months with continuous model training and optimization."
+  }
+],
+"iot-application-development": [
+  {
+    "question": "What is IoT application development?",
+    "answer": "IoT application development involves creating smart systems that connect physical devices to the internet, enabling real-time data collection, monitoring, automation, and intelligent decision-making across industries."
+  },
+  {
+    "question": "What industries can benefit from IoT solutions?",
+    "answer": "Industries such as healthcare, manufacturing, logistics, agriculture, smart homes, retail, and smart cities can benefit from IoT solutions for automation, efficiency, and real-time insights."
+  },
+  {
+    "question": "What types of IoT applications do you build?",
+    "answer": "We develop smart IoT applications including asset tracking systems, smart monitoring platforms, connected devices, industrial IoT (IIoT) solutions, predictive maintenance systems, and real-time analytics dashboards."
+  },
+  {
+    "question": "Can IoT solutions integrate with existing systems?",
+    "answer": "Yes, our IoT applications seamlessly integrate with your existing ERP, CRM, cloud platforms, and third-party systems through secure APIs and middleware."
+  },
+  {
+    "question": "How secure are IoT applications?",
+    "answer": "We implement robust security measures including device authentication, encrypted communication, firmware protection, secure cloud connections, and compliance with global IoT security standards."
+  },
+  {
+    "question": "How long does IoT application development take?",
+    "answer": "Timelines depend on project complexity and hardware requirements. Basic IoT applications can take 6-8 weeks, while large-scale IoT ecosystems may take 3-6 months or more."
+  }
+],
+"saas-infrastructure-devops": [
+  {
+    "question": "What is SaaS infrastructure and DevOps?",
+    "answer": "SaaS infrastructure and DevOps involve designing, deploying, and managing cloud-based software environments using automated processes, continuous integration, and scalable architecture to ensure high performance, reliability, and rapid deployment."
+  },
+  {
+    "question": "How does DevOps improve SaaS performance?",
+    "answer": "DevOps enhances SaaS performance by enabling continuous integration and deployment (CI/CD), automated testing, faster releases, reduced downtime, and improved system stability through real-time monitoring."
+  },
+  {
+    "question": "What services do you provide for SaaS and DevOps?",
+    "answer": "We provide cloud infrastructure setup, CI/CD pipeline implementation, containerization, microservices architecture, performance optimization, monitoring, and automated deployment solutions."
+  },
+  {
+    "question": "Which cloud platforms do you support?",
+    "answer": "We work with major cloud platforms including AWS, Google Cloud, Microsoft Azure, and hybrid cloud environments to build scalable and secure SaaS infrastructures."
+  },
+  {
+    "question": "How secure is SaaS infrastructure?",
+    "answer": "We implement enterprise-grade security including encrypted data storage, secure access control, automated vulnerability scanning, and compliance with standards like SOC 2, ISO 27001, and GDPR."
+  },
+  {
+    "question": "Can you optimize our existing SaaS infrastructure?",
+    "answer": "Yes, we analyze and optimize existing SaaS systems to improve performance, reduce costs, enhance scalability, and strengthen security."
+  }
+],
+  "business-workflow-automation": [
+    {
+      "question": "What is business workflow automation?",
+      "answer": "Business workflow automation uses technology to streamline and automate repetitive business processes, reducing manual effort and improving operational efficiency."
+    },
+    {
+      "question": "Which processes can be automated?",
+      "answer": "Processes such as HR onboarding, invoice processing, customer support ticketing, approvals, reporting, and data entry can all be automated effectively."
+    },
+    {
+      "question": "How does workflow automation benefit businesses?",
+      "answer": "It increases productivity, minimizes human errors, accelerates task completion, enhances transparency, and reduces operational costs."
+    },
+    {
+      "question": "Can automation integrate with existing systems?",
+      "answer": "Yes, our automation solutions seamlessly integrate with your current software, CRMs, ERPs, and cloud platforms without disrupting operations."
+    },
+    {
+      "question": "Is workflow automation scalable?",
+      "answer": "Absolutely. Our solutions are designed to scale with your business growth, adapting to increasing workloads and evolving processes."
+    },
+    {
+      "question": "How secure are automated workflows?",
+      "answer": "We implement enterprise-grade security, encrypted data handling, role-based access control, and compliance best practices to ensure safe automation."
+    }
+  ],
+
+
+
+  "ai-integration-services": [
+    {
+      "question": "What are AI integration services?",
+      "answer": "AI integration services involve embedding artificial intelligence technologies into your existing systems, applications, and workflows to enhance automation, decision-making, and operational intelligence."
+    },
+    {
+      "question": "Which AI technologies can be integrated?",
+      "answer": "We integrate machine learning models, natural language processing, computer vision, chatbots, predictive analytics, and generative AI into your business platforms."
+    },
+    {
+      "question": "Can AI be integrated with my current software?",
+      "answer": "Yes, our AI solutions are designed to seamlessly integrate with your existing CRM, ERP, SaaS platforms, and legacy systems without disrupting operations."
+    },
+    {
+      "question": "How does AI integration improve business performance?",
+      "answer": "AI enhances efficiency by automating repetitive tasks, improving accuracy, providing real-time insights, optimizing customer experiences, and enabling data-driven decisions."
+    },
+    {
+      "question": "Is AI integration scalable for future growth?",
+      "answer": "Absolutely. Our AI solutions are built to scale, allowing your systems to evolve as your data volume and business needs grow."
+    },
+    {
+      "question": "How do you ensure data security in AI integration?",
+      "answer": "We follow strict security protocols including encrypted data handling, secure APIs, compliance standards, and role-based access control to ensure complete data protection."
+    }
+  ],
+
+  "replatforming-migration": [
+    {
+      "question": "What is replatforming and migration?",
+      "answer": "Replatforming and migration involve moving your existing application, website, or system to a new platform or infrastructure to improve performance, scalability, security, and functionality."
+    },
+    {
+      "question": "When should a business consider replatforming?",
+      "answer": "You should consider replatforming when your current system is outdated, slow, difficult to scale, costly to maintain, or unable to support new features and technologies."
+    },
+    {
+      "question": "Will my data be safe during migration?",
+      "answer": "Yes, we follow strict data protection protocols, secure backups, and staged migration processes to ensure zero data loss and complete data integrity."
+    },
+    {
+      "question": "Do you minimize downtime during migration?",
+      "answer": "Absolutely. We use proven strategies such as phased migration and parallel system deployment to ensure minimal or no disruption to your business operations."
+    },
+    {
+      "question": "Can you migrate from legacy systems?",
+      "answer": "Yes, we specialize in migrating legacy platforms to modern, scalable, and cloud-ready architectures without affecting core business functions."
+    },
+    {
+      "question": "How long does a replatforming project take?",
+      "answer": "Project duration depends on system complexity and data volume. Typically, migrations take anywhere from a few weeks to several months."
+    }
+  ],
+  "ugs-ads": [
+    {
+      "question": "What are UGS ads?",
+      "answer": "UGS ads are user-generated style advertisements designed to feel authentic, relatable, and engaging, helping brands connect with audiences through real-life content and storytelling."
+    },
+    {
+      "question": "How do UGS ads benefit marketing campaigns?",
+      "answer": "UGS ads build trust, increase engagement, improve conversion rates, and create stronger emotional connections by showcasing real customer experiences."
+    },
+    {
+      "question": "Which platforms are best for UGS ads?",
+      "answer": "UGS ads perform exceptionally well on social media platforms such as Instagram, TikTok, Facebook, YouTube, and other performance-driven digital channels."
+    },
+    {
+      "question": "Do you create content for UGS ads?",
+      "answer": "Yes, we handle the entire process including concept development, content creation, editing, optimization, and campaign strategy for maximum impact."
+    },
+    {
+      "question": "Are UGS ads suitable for all industries?",
+      "answer": "Absolutely. UGS ads can be tailored for eCommerce, SaaS, real estate, healthcare, education, and many other industries to enhance brand visibility."
+    },
+    {
+      "question": "How do you measure the performance of UGS ads?",
+      "answer": "We track key metrics such as engagement rate, CTR, conversions, and ROI to continuously optimize campaign performance and deliver better results."
+    }
+  ],
+   "DBDashbot": [
+    {
+      "question": "What is DBDashbot?",
+      "answer": "DBDashbot is an intelligent dashboard chatbot solution that allows users to interact with databases and analytics systems using natural language for faster insights and decision-making."
+    },
+    {
+      "question": "How does DBDashbot work?",
+      "answer": "DBDashbot connects to your data sources and uses AI-powered natural language processing to convert user queries into actionable reports, visualizations, and real-time data responses."
+    },
+    {
+      "question": "Which data sources can DBDashbot integrate with?",
+      "answer": "DBDashbot can integrate with SQL databases, cloud data warehouses, CRMs, ERPs, and business intelligence platforms for seamless data access."
+    },
+    {
+      "question": "Is DBDashbot secure?",
+      "answer": "Yes, we implement enterprise-grade encryption, role-based access controls, secure APIs, and compliance protocols to ensure complete data protection."
+    },
+    {
+      "question": "Can DBDashbot be customized for my business needs?",
+      "answer": "Absolutely. The chatbot can be tailored to your specific KPIs, workflows, and reporting preferences."
+    },
+    {
+      "question": "Does DBDashbot support real-time analytics?",
+      "answer": "Yes, it delivers real-time insights and live data monitoring, enabling faster and smarter business decisions."
+    }
+  ]
+
+
+
+
+
+
+}

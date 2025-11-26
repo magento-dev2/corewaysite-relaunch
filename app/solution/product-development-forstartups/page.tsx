@@ -20,7 +20,7 @@ import acceleratorData from "@/public/content/product-development/accelerator.js
 import ctaData from "@/public/content/product-development/cta.json";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 
 
 const siteUrl = "https://www.corewaysolution.com";
@@ -105,7 +105,7 @@ export default function ProductDevelopmentPage() {
           badge="Help Center"
           title="Common Questions & Answers"
           description="Everything you need to know about our services and how we work"
-          faqs={sampleFAQs}
+          faqs={sampleFAQs["product-development-for-startups"]}
           columns={1}
           showContactCTA={true}
           contactText="Still have questions?"
