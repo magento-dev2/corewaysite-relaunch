@@ -1,0 +1,297 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "AI-Powered E-Commerce Platform",
+            "category": "Web Development",
+            "categories": [
+                "Web",
+                "AI",
+                "E-Commerce"
+            ],
+            "description": "Revolutionary shopping experience with AI-driven product recommendations",
+            "longDescription": "Built a comprehensive e-commerce platform featuring AI-powered product recommendations, real-time inventory management, and seamless payment integration. The platform increased conversion rates by 45% and reduced cart abandonment by 30%.",
+            "image": "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "TensorFlow",
+                "Stripe",
+                "PostgreSQL"
+            ],
+            "gradient": "from-purple-500 to-fuchsia-500",
+            "icon": "shopping",
+            "metrics": [
+                {
+                    "value": "45%",
+                    "label": "Conversion Increase"
+                },
+                {
+                    "value": "30%",
+                    "label": "Cart Recovery"
+                },
+                {
+                    "value": "100k+",
+                    "label": "Monthly Users"
+                },
+                {
+                    "value": "99.9%",
+                    "label": "Uptime"
+                }
+            ],
+            "liveUrl": "https://example.com",
+            "featured": true
+        },
+        {
+            "id": 2,
+            "title": "Healthcare Management System",
+            "category": "Mobile App",
+            "categories": [
+                "Mobile",
+                "Healthcare",
+                "AI"
+            ],
+            "description": "Comprehensive patient management with AI diagnostics support",
+            "longDescription": "Developed a HIPAA-compliant healthcare management system with AI-assisted diagnostics, appointment scheduling, and telemedicine capabilities. Improved patient care efficiency by 60% and reduced administrative overhead.",
+            "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "React Native",
+                "Node.js",
+                "MongoDB",
+                "AWS",
+                "TensorFlow"
+            ],
+            "gradient": "from-blue-500 to-cyan-500",
+            "icon": "heart",
+            "metrics": [
+                {
+                    "value": "60%",
+                    "label": "Efficiency Gain"
+                },
+                {
+                    "value": "50k+",
+                    "label": "Patients Served"
+                },
+                {
+                    "value": "4.9/5",
+                    "label": "User Rating"
+                },
+                {
+                    "value": "24/7",
+                    "label": "Support"
+                }
+            ],
+            "featured": true
+        },
+        {
+            "id": 3,
+            "title": "Real-Time Analytics Dashboard",
+            "category": "Data Visualization",
+            "categories": [
+                "Web",
+                "Analytics",
+                "Dashboard"
+            ],
+            "description": "Enterprise-grade analytics platform with real-time data processing",
+            "longDescription": "Created a powerful analytics dashboard processing millions of events per day with real-time visualizations, custom reporting, and predictive analytics. Enabled data-driven decision making across the organization.",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "React",
+                "D3.js",
+                "Python",
+                "Apache Kafka",
+                "Redis"
+            ],
+            "gradient": "from-green-500 to-emerald-500",
+            "icon": "chart",
+            "metrics": [
+                {
+                    "value": "10M+",
+                    "label": "Events/Day"
+                },
+                {
+                    "value": "<100ms",
+                    "label": "Query Time"
+                },
+                {
+                    "value": "15+",
+                    "label": "Data Sources"
+                },
+                {
+                    "value": "500+",
+                    "label": "Active Users"
+                }
+            ],
+            "featured": true
+        },
+        {
+            "id": 4,
+            "title": "Smart Home IoT Platform",
+            "category": "IoT",
+            "categories": [
+                "IoT",
+                "Mobile",
+                "AI"
+            ],
+            "description": "Intelligent home automation with voice control and ML optimization",
+            "longDescription": "Developed an IoT platform connecting 50+ smart devices with AI-powered automation, energy optimization, and voice control integration. Reduced energy consumption by 35% through intelligent scheduling.",
+            "image": "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "Flutter",
+                "AWS IoT",
+                "Python",
+                "TensorFlow",
+                "MQTT"
+            ],
+            "gradient": "from-orange-500 to-red-500",
+            "icon": "home",
+            "metrics": [
+                {
+                    "value": "35%",
+                    "label": "Energy Savings"
+                },
+                {
+                    "value": "50+",
+                    "label": "Device Types"
+                },
+                {
+                    "value": "10k+",
+                    "label": "Installations"
+                },
+                {
+                    "value": "4.8/5",
+                    "label": "User Rating"
+                }
+            ],
+            "featured": false
+        },
+        {
+            "id": 5,
+            "title": "Blockchain Supply Chain",
+            "category": "Blockchain",
+            "categories": [
+                "Blockchain",
+                "Web",
+                "Enterprise"
+            ],
+            "description": "Transparent supply chain tracking with blockchain technology",
+            "longDescription": "Implemented a blockchain-based supply chain management system ensuring transparency, traceability, and authenticity verification. Reduced fraud by 90% and improved supply chain visibility.",
+            "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "Ethereum",
+                "Solidity",
+                "React",
+                "Node.js",
+                "IPFS"
+            ],
+            "gradient": "from-violet-500 to-purple-500",
+            "icon": "link",
+            "metrics": [
+                {
+                    "value": "90%",
+                    "label": "Fraud Reduction"
+                },
+                {
+                    "value": "1000+",
+                    "label": "Tracked Products"
+                },
+                {
+                    "value": "100%",
+                    "label": "Transparency"
+                },
+                {
+                    "value": "25+",
+                    "label": "Partners"
+                }
+            ],
+            "featured": false
+        },
+        {
+            "id": 6,
+            "title": "AI Content Generator",
+            "category": "AI/ML",
+            "categories": [
+                "AI",
+                "Web",
+                "SaaS"
+            ],
+            "description": "Advanced AI tool for automated content creation and optimization",
+            "longDescription": "Built an AI-powered content generation platform using GPT models for creating marketing copy, blog posts, and social media content. Increased content production by 300% while maintaining quality.",
+            "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+            "images": [
+                "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1676277791608-ac54525aa94d?w=800&h=600&fit=crop"
+            ],
+            "technologies": [
+                "Next.js",
+                "OpenAI API",
+                "Python",
+                "PostgreSQL",
+                "Redis"
+            ],
+            "gradient": "from-pink-500 to-rose-500",
+            "icon": "sparkles",
+            "metrics": [
+                {
+                    "value": "300%",
+                    "label": "Productivity Boost"
+                },
+                {
+                    "value": "50k+",
+                    "label": "Content Pieces"
+                },
+                {
+                    "value": "20+",
+                    "label": "Languages"
+                },
+                {
+                    "value": "5k+",
+                    "label": "Active Users"
+                }
+            ],
+            "featured": false
+        }
+    ],
+    "categories": [
+        "All",
+        "Web",
+        "Mobile",
+        "AI",
+        "E-Commerce",
+        "Healthcare",
+        "Analytics",
+        "Dashboard",
+        "IoT",
+        "Blockchain",
+        "Enterprise",
+        "SaaS"
+    ],
+    "stats": {
+        "totalProjects": "50+",
+        "happyClients": "100+",
+        "yearsExperience": "10+",
+        "teamMembers": "25+"
+    }
+}
