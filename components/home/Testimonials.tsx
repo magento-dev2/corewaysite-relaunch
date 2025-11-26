@@ -46,7 +46,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#1a0f2e] via-[#0E0918] to-[#1a0f2e]">
+    <section className="relative py-32 overflow-hidden">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
@@ -164,38 +164,6 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
-
-        {/* Trust Indicators */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <div className="inline-flex flex-wrap items-center justify-center gap-8 px-8 py-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl">
-            <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-                100+
-              </div>
-              <div className="text-gray-400 text-sm mt-1">Happy Clients</div>
-            </div>
-            <div className="w-px h-12 bg-white/10" />
-            <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-                4.9/5
-              </div>
-              <div className="text-gray-400 text-sm mt-1">Average Rating</div>
-            </div>
-            <div className="w-px h-12 bg-white/10" />
-            <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-                200+
-              </div>
-              <div className="text-gray-400 text-sm mt-1">Projects Delivered</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Video Modal */}
