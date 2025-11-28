@@ -4,8 +4,11 @@ import { useState } from "react";
 import PortfolioHero from "@/components/portfolio/PortfolioHero";
 import PortfolioScroll from "@/components/portfolio/PortfolioScroll";
 import PortfolioModal from "@/components/portfolio/PortfolioModal";
+import PortfolioCategory from "@/components/portfolio/PortfolioCategory";
 import PageCTA from "@/components/PageCTA";
 import portfolioData from "@/data/portfolio.json";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faqs.json';
 
 interface Project {
     id: number;
@@ -44,12 +47,34 @@ export default function PortfolioPage() {
     return (
         <div className="overflow-x-hidden">
             {/* Hero Section */}
-            <PortfolioHero />
+            <PortfolioHero
+                title="Visual"
+                title2="Storytelling"
+                subtitle="Explore our creative work and digital craftsmanship — where strategy, design, and technology come together to deliver impactful experiences."
+                buttons={[
+                    { label: "View Projects", link: "#projects" },
+                    { label: "Contact Us", link: "#contact" },
+                ]}
+            />
 
             {/* Horizontal Scroll Portfolio */}
             <PortfolioScroll
                 projects={projects}
                 onProjectClick={handleProjectClick}
+            />
+
+            <PortfolioCategory/>
+
+            {/* FAQ Section */}
+            <FAQ
+                badge="Help Center"
+                title="Common Questions & Answers"
+                description="Everything you need to know about our services and how we work"
+                faqs={sampleFAQs["portfolio"]}
+                columns={1}
+                showContactCTA={true}
+                contactText="Still have questions?"
+                contactButtonText="Contact Our Team"
             />
 
             {/* CTA Section */}

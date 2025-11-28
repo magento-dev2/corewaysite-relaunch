@@ -8,6 +8,8 @@ import TechStackShowcase from '@/components/dedicateddev/TechStackShowcase';
 import HiringModels from '@/components/dedicateddev/HiringModels';
 import WhyChooseUs from '@/components/dedicateddev/WhyChooseUs';
 import PageCTA from '@/components/PageCTA';
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faqs.json';
 
 export default function DedicatedDevelopersPage() {
   return (
@@ -19,6 +21,18 @@ export default function DedicatedDevelopersPage() {
       <TechStackShowcase />
       <HiringModels />
       <WhyChooseUs />
+
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs["dedicated-developers"]}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
+
       <PageCTA
         badge="Hire Dedicated Developers"
         title="Ready to Build Your Dream Team?"

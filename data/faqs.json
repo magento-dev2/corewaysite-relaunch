@@ -289,11 +289,88 @@
       "question": "Does DBDashbot support real-time analytics?",
       "answer": "Yes, it delivers real-time insights and live data monitoring, enabling faster and smarter business decisions."
     }
-  ]
+  ],
 
+  "portfolio": [
+  {
+    "question": "What is a portfolio in a business context?",
+    "answer": "A portfolio showcases a company's projects, products, or services to demonstrate expertise, experience, and successful outcomes to potential clients or stakeholders."
+  },
+  {
+    "question": "Why do businesses need a portfolio?",
+    "answer": "Businesses need a portfolio to build credibility, attract clients, highlight past work, differentiate themselves from competitors, and communicate their capabilities effectively."
+  },
+  {
+    "question": "What components are typically included in a portfolio?",
+    "answer": "A portfolio usually includes case studies, project descriptions, images or videos of work, client testimonials, project outcomes, and service highlights."
+  },
+  {
+    "question": "How does a portfolio improve client engagement?",
+    "answer": "A well-structured portfolio provides potential clients with clear evidence of skills and results, helping them make informed decisions and increasing trust and engagement."
+  },
+  {
+    "question": "Is it important to update a portfolio regularly?",
+    "answer": "Yes. Regular updates ensure the portfolio reflects the latest work, technologies, and achievements, keeping it relevant and impactful for prospective clients."
+  },
+  {
+    "question": "Can a digital portfolio integrate with a company’s website?",
+    "answer": "Absolutely. Digital portfolios can be integrated into websites, allowing interactive presentations, multimedia content, and seamless navigation to enhance user experience."
+  }
+],
 
+"case-studies": [
+  {
+    "question": "What are case studies in a business context?",
+    "answer": "Case studies are detailed accounts of projects, solutions, or services implemented by a company, demonstrating how challenges were addressed and results were achieved."
+  },
+  {
+    "question": "Why are case studies important for businesses?",
+    "answer": "Case studies help businesses showcase their expertise, provide proof of success, build credibility with clients, and illustrate the value of their solutions in real-world scenarios."
+  },
+  {
+    "question": "What components are typically included in a case study?",
+    "answer": "A case study usually includes the client background, problem statement, implemented solution, methodologies used, outcomes achieved, and measurable results."
+  },
+  {
+    "question": "How do case studies enhance client trust?",
+    "answer": "By providing real examples of successful projects, case studies demonstrate a company’s capabilities and reliability, helping clients make informed decisions and fostering trust."
+  },
+  {
+    "question": "Can case studies be used for marketing purposes?",
+    "answer": "Absolutely. Case studies are effective marketing tools that highlight success stories, showcase expertise, and attract potential clients by illustrating tangible benefits."
+  },
+  {
+    "question": "Is it important to update case studies regularly?",
+    "answer": "Yes. Updating case studies ensures that they reflect the latest projects, innovations, and outcomes, keeping them relevant and impactful for prospective clients."
+  }
+],
 
-
+"dedicated-developers": [
+  {
+    "question": "What are dedicated developers?",
+    "answer": "Dedicated developers are skilled professionals assigned exclusively to a client’s project, providing focused development services without being shared with other projects or clients."
+  },
+  {
+    "question": "Why should businesses hire dedicated developers?",
+    "answer": "Hiring dedicated developers allows businesses to get specialized expertise, maintain control over project priorities, ensure consistent progress, and scale their team flexibly according to project needs."
+  },
+  {
+    "question": "What types of projects benefit from dedicated developers?",
+    "answer": "Complex, long-term, or evolving projects such as custom software development, mobile apps, enterprise solutions, and web platforms benefit the most from dedicated developer engagement."
+  },
+  {
+    "question": "How do dedicated developers work with existing teams?",
+    "answer": "Dedicated developers seamlessly integrate with a client’s team, following the same workflows, coding standards, and communication channels to ensure smooth collaboration and project continuity."
+  },
+  {
+    "question": "Can businesses scale the team of dedicated developers?",
+    "answer": "Yes. Businesses can scale the number of dedicated developers up or down based on project requirements, deadlines, or workload fluctuations, providing flexibility and cost efficiency."
+  },
+  {
+    "question": "What are the key advantages of hiring dedicated developers?",
+    "answer": "Key advantages include focused expertise, faster delivery, enhanced productivity, consistent communication, long-term project ownership, and cost-effective development compared to hiring in-house full-time staff."
+  }
+]
 
 
 }

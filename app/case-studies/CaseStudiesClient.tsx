@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Filter, Search, MapPin, Briefcase } from "lucide-react";
 import PageCTA from "@/components/PageCTA";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faqs.json';
 
 interface CaseStudy {
     id: string;
@@ -80,8 +82,8 @@ export default function CaseStudiesClient({ caseStudies }: { caseStudies: CaseSt
                                     key={industry}
                                     onClick={() => setSelectedIndustry(industry)}
                                     className={`px-4 py-2 rounded-full font-semibold transition-all ${selectedIndustry === industry
-                                            ? 'bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-lg shadow-purple-500/30'
-                                            : 'bg-white/5 backdrop-blur-xl text-gray-400 hover:bg-white/10 border border-white/10'
+                                        ? 'bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-lg shadow-purple-500/30'
+                                        : 'bg-white/5 backdrop-blur-xl text-gray-400 hover:bg-white/10 border border-white/10'
                                         }`}
                                 >
                                     {industry}
@@ -154,7 +156,8 @@ export default function CaseStudiesClient({ caseStudies }: { caseStudies: CaseSt
                                             {/* Services Tags */}
                                             {study.services && study.services.length > 0 && (
                                                 <div className="flex flex-wrap gap-2 mb-4">
-                                                    {study.services.slice(0, 2).map((service, i) => (
+                                             import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faqs.json';       {study.services.slice(0, 2).map((service, i) => (
                                                         <span key={i} className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs rounded-full">
                                                             {service}
                                                         </span>
@@ -179,6 +182,17 @@ export default function CaseStudiesClient({ caseStudies }: { caseStudies: CaseSt
                     )}
                 </div>
             </section>
+
+            <FAQ
+                badge="Help Center"
+                title="Common Questions & Answers"
+                description="Everything you need to know about our services and how we work"
+                faqs={sampleFAQs["case-studies"]}
+                columns={1}
+                showContactCTA={true}
+                contactText="Still have questions?"
+                contactButtonText="Contact Our Team"
+            />
 
             <PageCTA
                 badge="Transform Your Business"
