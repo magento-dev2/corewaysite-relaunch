@@ -136,7 +136,7 @@ AI-powered engineering, automation, and scalable digital solutions.
           </div>
 
           {/* RIGHT SIDE - SCROLLING CONTENT */}
-          <div ref={rightSideRef} className="space-y-12">
+          <div ref={rightSideRef} className="space-y-24">
             {expertiseAreas.map((area, index) => {
               const Icon = area.icon;
               return (

@@ -21,6 +21,7 @@ import ctaData from "@/public/content/product-development/cta.json";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 const siteUrl = "https://www.corewaysolution.com";
@@ -96,10 +97,10 @@ export default function ProductDevelopmentPage() {
         <ProcessDiagram data={processData} />
         <AcceleratorSection data={acceleratorData} />
         <WhyCorewaySection
-          badge="Why Choose Us"
-          title="Why Choose Coreway Solutions"
-          subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+          badge={whyCorewayData["product-development-forstartups"].badge}
+          title={whyCorewayData["product-development-forstartups"].title}
+          subtitle={whyCorewayData["product-development-forstartups"].subtitle}
+          reasons={whyCorewayData["product-development-forstartups"].reasons}
         />
         <FAQ
           badge="Help Center"

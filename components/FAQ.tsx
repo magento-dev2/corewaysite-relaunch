@@ -38,6 +38,9 @@ export default function FAQ({
   const sectionRef = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  // Ensure faqs is always an array
+  const faqList = Array.isArray(faqs) ? faqs : [];
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".faq-header", {
@@ -109,43 +112,38 @@ export default function FAQ({
         </div>
 
         <div className={`grid ${columns === 2 ? 'md:grid-cols-2' : 'grid-cols-1'} gap-6 mb-12`}>
-          {faqs.map((faq, index) => {
+          {faqList.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div key={index} className="faq-item ">
-                <div className={` group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'border-purple-500/50 shadow-lg shadow-purple-500/20' : 'hover:border-purple-500/30'
-                }`}>
+                <div className={` group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-purple-500/50 shadow-lg shadow-purple-500/20' : 'hover:border-purple-500/30'
+                  }`}>
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full cursor-pointer text-left p-6 flex items-start justify-between gap-4 transition-all"
                   >
                     <div className="flex items-start gap-4 flex-1">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                        isOpen
-                          ? 'bg-gradient-to-br from-purple-500/30 to-violet-500/30 border border-purple-500/50'
-                          : 'bg-white/5 border border-white/10 group-hover:bg-purple-500/20 group-hover:border-purple-500/30'
-                      }`}>
-                        <span className={`font-bold text-sm transition-colors ${
-                          isOpen ? 'text-purple-400' : 'text-gray-400 group-hover:text-purple-400'
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen
+                        ? 'bg-gradient-to-br from-purple-500/30 to-violet-500/30 border border-purple-500/50'
+                        : 'bg-white/5 border border-white/10 group-hover:bg-purple-500/20 group-hover:border-purple-500/30'
                         }`}>
+                        <span className={`font-bold text-sm transition-colors ${isOpen ? 'text-purple-400' : 'text-gray-400 group-hover:text-purple-400'
+                          }`}>
                           Q{index + 1}
                         </span>
                       </div>
 
-                      <h3 className={`text-lg font-semibold leading-relaxed transition-colors ${
-                        isOpen ? 'text-purple-300' : 'text-white group-hover:text-purple-300'
-                      }`}>
+                      <h3 className={`text-lg font-semibold leading-relaxed transition-colors ${isOpen ? 'text-purple-300' : 'text-white group-hover:text-purple-300'
+                        }`}>
                         {faq.question}
                       </h3>
                     </div>
 
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                      isOpen
-                        ? 'bg-purple-500 rotate-180'
-                        : 'bg-white/10 group-hover:bg-purple-500/20'
-                    }`}>
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen
+                      ? 'bg-purple-500 rotate-180'
+                      : 'bg-white/10 group-hover:bg-purple-500/20'
+                      }`}>
                       {isOpen ? (
                         <Minus className="w-4 h-4 text-white" strokeWidth={3} />
                       ) : (
@@ -155,9 +153,8 @@ export default function FAQ({
                   </button>
 
                   <div
-                    className={`transition-all duration-300 ease-in-out ${
-                      isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <div className="px-6 pb-6 pl-20">
                       <div className="border-t border-white/10 pt-4">

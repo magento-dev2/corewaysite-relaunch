@@ -50,112 +50,111 @@
       "question": "Can you integrate with our existing systems?",
       "answer": "Absolutely! We can seamlessly integrate with your current ERP, CRM, payment gateways, and other business systems to ensure a smooth and unified digital commerce experience."
     }
-   
   ],
   "product-development-for-startups": [
-  {
-    "question": "What is product development for startups?",
-    "answer": "Product development for startups involves transforming an idea into a market-ready product through strategic planning, design, prototyping, development, testing, and iteration, ensuring fast time-to-market and scalability."
-  },
-  {
-    "question": "How do you help startups validate their product idea?",
-    "answer": "We assist startups with market research, competitor analysis, user persona creation, and MVP development to validate ideas quickly and reduce the risk of failure."
-  },
-  {
-    "question": "Do you build MVPs for startups?",
-    "answer": "Yes, we specialize in building MVPs (Minimum Viable Products) that focus on core features, helping startups launch quickly, gather feedback, and iterate efficiently."
-  },
-  {
-    "question": "What technologies do you use for startup product development?",
-    "answer": "We use modern and scalable technologies including React, Next.js, Node.js, cloud platforms, microservices, AI tools, and mobile frameworks to build future-ready products."
-  },
-  {
-    "question": "How long does it take to develop a startup product?",
-    "answer": "An MVP typically takes 4-8 weeks depending on complexity, while full-scale products may take 3-6 months. We provide clear timelines after requirement analysis."
-  },
-  {
-    "question": "Can you help with product scaling after launch?",
-    "answer": "Absolutely! We provide scaling strategies, performance optimization, feature expansion, and infrastructure upgrades to support business growth."
-  }
-],
-"ai-powered-application-platforms": [
-  {
-    "question": "What are AI-powered application platforms?",
-    "answer": "AI-powered application platforms are systems that leverage artificial intelligence technologies such as machine learning, natural language processing, and automation to build intelligent, scalable, and data-driven applications."
-  },
-  {
-    "question": "How can AI-powered platforms benefit my business?",
-    "answer": "They enhance efficiency, automate repetitive tasks, improve decision-making, personalize user experiences, and enable predictive analytics to drive smarter business outcomes."
-  },
-  {
-    "question": "What types of AI solutions do you develop?",
-    "answer": "We develop AI-driven solutions including chatbots, recommendation engines, predictive analytics systems, intelligent automation tools, computer vision applications, and custom AI models."
-  },
-  {
-    "question": "Can AI platforms integrate with my existing systems?",
-    "answer": "Yes, our AI platforms are designed to seamlessly integrate with your current ERP, CRM, databases, APIs, and third-party tools without disrupting your operations."
-  },
-  {
-    "question": "How secure are AI-powered applications?",
-    "answer": "We implement enterprise-grade security measures including data encryption, secure APIs, role-based access control, and compliance with standards like GDPR and SOC 2 to ensure maximum data protection."
-  },
-  {
-    "question": "How long does it take to build an AI-powered application?",
-    "answer": "Development timelines vary based on complexity. Basic AI solutions may take 4-6 weeks, while advanced platforms can take 3-6 months with continuous model training and optimization."
-  }
-],
-"iot-application-development": [
-  {
-    "question": "What is IoT application development?",
-    "answer": "IoT application development involves creating smart systems that connect physical devices to the internet, enabling real-time data collection, monitoring, automation, and intelligent decision-making across industries."
-  },
-  {
-    "question": "What industries can benefit from IoT solutions?",
-    "answer": "Industries such as healthcare, manufacturing, logistics, agriculture, smart homes, retail, and smart cities can benefit from IoT solutions for automation, efficiency, and real-time insights."
-  },
-  {
-    "question": "What types of IoT applications do you build?",
-    "answer": "We develop smart IoT applications including asset tracking systems, smart monitoring platforms, connected devices, industrial IoT (IIoT) solutions, predictive maintenance systems, and real-time analytics dashboards."
-  },
-  {
-    "question": "Can IoT solutions integrate with existing systems?",
-    "answer": "Yes, our IoT applications seamlessly integrate with your existing ERP, CRM, cloud platforms, and third-party systems through secure APIs and middleware."
-  },
-  {
-    "question": "How secure are IoT applications?",
-    "answer": "We implement robust security measures including device authentication, encrypted communication, firmware protection, secure cloud connections, and compliance with global IoT security standards."
-  },
-  {
-    "question": "How long does IoT application development take?",
-    "answer": "Timelines depend on project complexity and hardware requirements. Basic IoT applications can take 6-8 weeks, while large-scale IoT ecosystems may take 3-6 months or more."
-  }
-],
-"saas-infrastructure-devops": [
-  {
-    "question": "What is SaaS infrastructure and DevOps?",
-    "answer": "SaaS infrastructure and DevOps involve designing, deploying, and managing cloud-based software environments using automated processes, continuous integration, and scalable architecture to ensure high performance, reliability, and rapid deployment."
-  },
-  {
-    "question": "How does DevOps improve SaaS performance?",
-    "answer": "DevOps enhances SaaS performance by enabling continuous integration and deployment (CI/CD), automated testing, faster releases, reduced downtime, and improved system stability through real-time monitoring."
-  },
-  {
-    "question": "What services do you provide for SaaS and DevOps?",
-    "answer": "We provide cloud infrastructure setup, CI/CD pipeline implementation, containerization, microservices architecture, performance optimization, monitoring, and automated deployment solutions."
-  },
-  {
-    "question": "Which cloud platforms do you support?",
-    "answer": "We work with major cloud platforms including AWS, Google Cloud, Microsoft Azure, and hybrid cloud environments to build scalable and secure SaaS infrastructures."
-  },
-  {
-    "question": "How secure is SaaS infrastructure?",
-    "answer": "We implement enterprise-grade security including encrypted data storage, secure access control, automated vulnerability scanning, and compliance with standards like SOC 2, ISO 27001, and GDPR."
-  },
-  {
-    "question": "Can you optimize our existing SaaS infrastructure?",
-    "answer": "Yes, we analyze and optimize existing SaaS systems to improve performance, reduce costs, enhance scalability, and strengthen security."
-  }
-],
+    {
+      "question": "What is product development for startups?",
+      "answer": "Product development for startups involves transforming an idea into a market-ready product through strategic planning, design, prototyping, development, testing, and iteration, ensuring fast time-to-market and scalability."
+    },
+    {
+      "question": "How do you help startups validate their product idea?",
+      "answer": "We assist startups with market research, competitor analysis, user persona creation, and MVP development to validate ideas quickly and reduce the risk of failure."
+    },
+    {
+      "question": "Do you build MVPs for startups?",
+      "answer": "Yes, we specialize in building MVPs (Minimum Viable Products) that focus on core features, helping startups launch quickly, gather feedback, and iterate efficiently."
+    },
+    {
+      "question": "What technologies do you use for startup product development?",
+      "answer": "We use modern and scalable technologies including React, Next.js, Node.js, cloud platforms, microservices, AI tools, and mobile frameworks to build future-ready products."
+    },
+    {
+      "question": "How long does it take to develop a startup product?",
+      "answer": "An MVP typically takes 4-8 weeks depending on complexity, while full-scale products may take 3-6 months. We provide clear timelines after requirement analysis."
+    },
+    {
+      "question": "Can you help with product scaling after launch?",
+      "answer": "Absolutely! We provide scaling strategies, performance optimization, feature expansion, and infrastructure upgrades to support business growth."
+    }
+  ],
+  "ai-powered-application-platforms": [
+    {
+      "question": "What are AI-powered application platforms?",
+      "answer": "AI-powered application platforms are systems that leverage artificial intelligence technologies such as machine learning, natural language processing, and automation to build intelligent, scalable, and data-driven applications."
+    },
+    {
+      "question": "How can AI-powered platforms benefit my business?",
+      "answer": "They enhance efficiency, automate repetitive tasks, improve decision-making, personalize user experiences, and enable predictive analytics to drive smarter business outcomes."
+    },
+    {
+      "question": "What types of AI solutions do you develop?",
+      "answer": "We develop AI-driven solutions including chatbots, recommendation engines, predictive analytics systems, intelligent automation tools, computer vision applications, and custom AI models."
+    },
+    {
+      "question": "Can AI platforms integrate with my existing systems?",
+      "answer": "Yes, our AI platforms are designed to seamlessly integrate with your current ERP, CRM, databases, APIs, and third-party tools without disrupting your operations."
+    },
+    {
+      "question": "How secure are AI-powered applications?",
+      "answer": "We implement enterprise-grade security measures including data encryption, secure APIs, role-based access control, and compliance with standards like GDPR and SOC 2 to ensure maximum data protection."
+    },
+    {
+      "question": "How long does it take to build an AI-powered application?",
+      "answer": "Development timelines vary based on complexity. Basic AI solutions may take 4-6 weeks, while advanced platforms can take 3-6 months with continuous model training and optimization."
+    }
+  ],
+  "iot-application-development": [
+    {
+      "question": "What is IoT application development?",
+      "answer": "IoT application development involves creating smart systems that connect physical devices to the internet, enabling real-time data collection, monitoring, automation, and intelligent decision-making across industries."
+    },
+    {
+      "question": "What industries can benefit from IoT solutions?",
+      "answer": "Industries such as healthcare, manufacturing, logistics, agriculture, smart homes, retail, and smart cities can benefit from IoT solutions for automation, efficiency, and real-time insights."
+    },
+    {
+      "question": "What types of IoT applications do you build?",
+      "answer": "We develop smart IoT applications including asset tracking systems, smart monitoring platforms, connected devices, industrial IoT (IIoT) solutions, predictive maintenance systems, and real-time analytics dashboards."
+    },
+    {
+      "question": "Can IoT solutions integrate with existing systems?",
+      "answer": "Yes, our IoT applications seamlessly integrate with your existing ERP, CRM, cloud platforms, and third-party systems through secure APIs and middleware."
+    },
+    {
+      "question": "How secure are IoT applications?",
+      "answer": "We implement robust security measures including device authentication, encrypted communication, firmware protection, secure cloud connections, and compliance with global IoT security standards."
+    },
+    {
+      "question": "How long does IoT application development take?",
+      "answer": "Timelines depend on project complexity and hardware requirements. Basic IoT applications can take 6-8 weeks, while large-scale IoT ecosystems may take 3-6 months or more."
+    }
+  ],
+  "saas-infrastructure-devops": [
+    {
+      "question": "What is SaaS infrastructure and DevOps?",
+      "answer": "SaaS infrastructure and DevOps involve designing, deploying, and managing cloud-based software environments using automated processes, continuous integration, and scalable architecture to ensure high performance, reliability, and rapid deployment."
+    },
+    {
+      "question": "How does DevOps improve SaaS performance?",
+      "answer": "DevOps enhances SaaS performance by enabling continuous integration and deployment (CI/CD), automated testing, faster releases, reduced downtime, and improved system stability through real-time monitoring."
+    },
+    {
+      "question": "What services do you provide for SaaS and DevOps?",
+      "answer": "We provide cloud infrastructure setup, CI/CD pipeline implementation, containerization, microservices architecture, performance optimization, monitoring, and automated deployment solutions."
+    },
+    {
+      "question": "Which cloud platforms do you support?",
+      "answer": "We work with major cloud platforms including AWS, Google Cloud, Microsoft Azure, and hybrid cloud environments to build scalable and secure SaaS infrastructures."
+    },
+    {
+      "question": "How secure is SaaS infrastructure?",
+      "answer": "We implement enterprise-grade security including encrypted data storage, secure access control, automated vulnerability scanning, and compliance with standards like SOC 2, ISO 27001, and GDPR."
+    },
+    {
+      "question": "Can you optimize our existing SaaS infrastructure?",
+      "answer": "Yes, we analyze and optimize existing SaaS systems to improve performance, reduce costs, enhance scalability, and strengthen security."
+    }
+  ],
   "business-workflow-automation": [
     {
       "question": "What is business workflow automation?",
@@ -182,9 +181,6 @@
       "answer": "We implement enterprise-grade security, encrypted data handling, role-based access control, and compliance best practices to ensure safe automation."
     }
   ],
-
-
-
   "ai-integration-services": [
     {
       "question": "What are AI integration services?",
@@ -211,7 +207,6 @@
       "answer": "We follow strict security protocols including encrypted data handling, secure APIs, compliance standards, and role-based access control to ensure complete data protection."
     }
   ],
-
   "replatforming-migration": [
     {
       "question": "What is replatforming and migration?",
@@ -264,7 +259,7 @@
       "answer": "We track key metrics such as engagement rate, CTR, conversions, and ROI to continuously optimize campaign performance and deliver better results."
     }
   ],
-   "DBDashbot": [
+  "DBDashbot": [
     {
       "question": "What is DBDashbot?",
       "answer": "DBDashbot is an intelligent dashboard chatbot solution that allows users to interact with databases and analytics systems using natural language for faster insights and decision-making."
@@ -290,87 +285,632 @@
       "answer": "Yes, it delivers real-time insights and live data monitoring, enabling faster and smarter business decisions."
     }
   ],
-
   "portfolio": [
-  {
-    "question": "What is a portfolio in a business context?",
-    "answer": "A portfolio showcases a company's projects, products, or services to demonstrate expertise, experience, and successful outcomes to potential clients or stakeholders."
-  },
-  {
-    "question": "Why do businesses need a portfolio?",
-    "answer": "Businesses need a portfolio to build credibility, attract clients, highlight past work, differentiate themselves from competitors, and communicate their capabilities effectively."
-  },
-  {
-    "question": "What components are typically included in a portfolio?",
-    "answer": "A portfolio usually includes case studies, project descriptions, images or videos of work, client testimonials, project outcomes, and service highlights."
-  },
-  {
-    "question": "How does a portfolio improve client engagement?",
-    "answer": "A well-structured portfolio provides potential clients with clear evidence of skills and results, helping them make informed decisions and increasing trust and engagement."
-  },
-  {
-    "question": "Is it important to update a portfolio regularly?",
-    "answer": "Yes. Regular updates ensure the portfolio reflects the latest work, technologies, and achievements, keeping it relevant and impactful for prospective clients."
-  },
-  {
-    "question": "Can a digital portfolio integrate with a company’s website?",
-    "answer": "Absolutely. Digital portfolios can be integrated into websites, allowing interactive presentations, multimedia content, and seamless navigation to enhance user experience."
-  }
-],
-
-"case-studies": [
-  {
-    "question": "What are case studies in a business context?",
-    "answer": "Case studies are detailed accounts of projects, solutions, or services implemented by a company, demonstrating how challenges were addressed and results were achieved."
-  },
-  {
-    "question": "Why are case studies important for businesses?",
-    "answer": "Case studies help businesses showcase their expertise, provide proof of success, build credibility with clients, and illustrate the value of their solutions in real-world scenarios."
-  },
-  {
-    "question": "What components are typically included in a case study?",
-    "answer": "A case study usually includes the client background, problem statement, implemented solution, methodologies used, outcomes achieved, and measurable results."
-  },
-  {
-    "question": "How do case studies enhance client trust?",
-    "answer": "By providing real examples of successful projects, case studies demonstrate a company’s capabilities and reliability, helping clients make informed decisions and fostering trust."
-  },
-  {
-    "question": "Can case studies be used for marketing purposes?",
-    "answer": "Absolutely. Case studies are effective marketing tools that highlight success stories, showcase expertise, and attract potential clients by illustrating tangible benefits."
-  },
-  {
-    "question": "Is it important to update case studies regularly?",
-    "answer": "Yes. Updating case studies ensures that they reflect the latest projects, innovations, and outcomes, keeping them relevant and impactful for prospective clients."
-  }
-],
-
-"dedicated-developers": [
-  {
-    "question": "What are dedicated developers?",
-    "answer": "Dedicated developers are skilled professionals assigned exclusively to a client’s project, providing focused development services without being shared with other projects or clients."
-  },
-  {
-    "question": "Why should businesses hire dedicated developers?",
-    "answer": "Hiring dedicated developers allows businesses to get specialized expertise, maintain control over project priorities, ensure consistent progress, and scale their team flexibly according to project needs."
-  },
-  {
-    "question": "What types of projects benefit from dedicated developers?",
-    "answer": "Complex, long-term, or evolving projects such as custom software development, mobile apps, enterprise solutions, and web platforms benefit the most from dedicated developer engagement."
-  },
-  {
-    "question": "How do dedicated developers work with existing teams?",
-    "answer": "Dedicated developers seamlessly integrate with a client’s team, following the same workflows, coding standards, and communication channels to ensure smooth collaboration and project continuity."
-  },
-  {
-    "question": "Can businesses scale the team of dedicated developers?",
-    "answer": "Yes. Businesses can scale the number of dedicated developers up or down based on project requirements, deadlines, or workload fluctuations, providing flexibility and cost efficiency."
-  },
-  {
-    "question": "What are the key advantages of hiring dedicated developers?",
-    "answer": "Key advantages include focused expertise, faster delivery, enhanced productivity, consistent communication, long-term project ownership, and cost-effective development compared to hiring in-house full-time staff."
-  }
-]
-
-
+    {
+      "question": "What is a portfolio in a business context?",
+      "answer": "A portfolio showcases a company's projects, products, or services to demonstrate expertise, experience, and successful outcomes to potential clients or stakeholders."
+    },
+    {
+      "question": "Why do businesses need a portfolio?",
+      "answer": "Businesses need a portfolio to build credibility, attract clients, highlight past work, differentiate themselves from competitors, and communicate their capabilities effectively."
+    },
+    {
+      "question": "What components are typically included in a portfolio?",
+      "answer": "A portfolio usually includes case studies, project descriptions, images or videos of work, client testimonials, project outcomes, and service highlights."
+    },
+    {
+      "question": "How does a portfolio improve client engagement?",
+      "answer": "A well-structured portfolio provides potential clients with clear evidence of skills and results, helping them make informed decisions and increasing trust and engagement."
+    },
+    {
+      "question": "Is it important to update a portfolio regularly?",
+      "answer": "Yes. Regular updates ensure the portfolio reflects the latest work, technologies, and achievements, keeping it relevant and impactful for prospective clients."
+    },
+    {
+      "question": "Can a digital portfolio integrate with a company’s website?",
+      "answer": "Absolutely. Digital portfolios can be integrated into websites, allowing interactive presentations, multimedia content, and seamless navigation to enhance user experience."
+    }
+  ],
+  "case-studies": [
+    {
+      "question": "What are case studies in a business context?",
+      "answer": "Case studies are detailed accounts of projects, solutions, or services implemented by a company, demonstrating how challenges were addressed and results were achieved."
+    },
+    {
+      "question": "Why are case studies important for businesses?",
+      "answer": "Case studies help businesses showcase their expertise, provide proof of success, build credibility with clients, and illustrate the value of their solutions in real-world scenarios."
+    },
+    {
+      "question": "What components are typically included in a case study?",
+      "answer": "A case study usually includes the client background, problem statement, implemented solution, methodologies used, outcomes achieved, and measurable results."
+    },
+    {
+      "question": "How do case studies enhance client trust?",
+      "answer": "By providing real examples of successful projects, case studies demonstrate a company’s capabilities and reliability, helping clients make informed decisions and fostering trust."
+    },
+    {
+      "question": "Can case studies be used for marketing purposes?",
+      "answer": "Absolutely. Case studies are effective marketing tools that highlight success stories, showcase expertise, and attract potential clients by illustrating tangible benefits."
+    },
+    {
+      "question": "Is it important to update case studies regularly?",
+      "answer": "Yes. Updating case studies ensures that they reflect the latest projects, innovations, and outcomes, keeping them relevant and impactful for prospective clients."
+    }
+  ],
+  "dedicated-developers": [
+    {
+      "question": "What are dedicated developers?",
+      "answer": "Dedicated developers are skilled professionals assigned exclusively to a client’s project, providing focused development services without being shared with other projects or clients."
+    },
+    {
+      "question": "Why should businesses hire dedicated developers?",
+      "answer": "Hiring dedicated developers allows businesses to get specialized expertise, maintain control over project priorities, ensure consistent progress, and scale their team flexibly according to project needs."
+    },
+    {
+      "question": "What types of projects benefit from dedicated developers?",
+      "answer": "Complex, long-term, or evolving projects such as custom software development, mobile apps, enterprise solutions, and web platforms benefit the most from dedicated developer engagement."
+    },
+    {
+      "question": "How do dedicated developers work with existing teams?",
+      "answer": "Dedicated developers seamlessly integrate with a client’s team, following the same workflows, coding standards, and communication channels to ensure smooth collaboration and project continuity."
+    },
+    {
+      "question": "Can businesses scale the team of dedicated developers?",
+      "answer": "Yes. Businesses can scale the number of dedicated developers up or down based on project requirements, deadlines, or workload fluctuations, providing flexibility and cost efficiency."
+    },
+    {
+      "question": "What are the key advantages of hiring dedicated developers?",
+      "answer": "Key advantages include focused expertise, faster delivery, enhanced productivity, consistent communication, long-term project ownership, and cost-effective development compared to hiring in-house full-time staff."
+    }
+  ],
+  "infrastructure-security-ai": [
+    {
+      "question": "What is infrastructure security AI?",
+      "answer": "Infrastructure security AI uses artificial intelligence and machine learning to protect IT infrastructure, detect threats in real-time, automate security responses, and predict potential vulnerabilities before they can be exploited."
+    },
+    {
+      "question": "How does AI improve infrastructure security?",
+      "answer": "AI enhances security through automated threat detection, behavioral analysis, anomaly detection, predictive analytics, faster incident response, and continuous learning from new attack patterns."
+    },
+    {
+      "question": "Can AI security solutions integrate with existing infrastructure?",
+      "answer": "Yes! Our AI security solutions seamlessly integrate with your existing firewalls, SIEM systems, cloud platforms, and security tools to provide comprehensive protection without disrupting operations."
+    },
+    {
+      "question": "What types of threats can AI security detect?",
+      "answer": "AI security can detect malware, ransomware, DDoS attacks, insider threats, zero-day exploits, data breaches, unauthorized access attempts, and suspicious network behavior in real-time."
+    },
+    {
+      "question": "Is AI security suitable for cloud infrastructure?",
+      "answer": "Absolutely! We provide AI-powered security solutions specifically designed for cloud environments including AWS, Azure, and GCP, ensuring comprehensive protection for cloud-native applications and data."
+    }
+  ],
+  "custom-api-systems-integration": [
+    {
+      "question": "What is custom API and systems integration?",
+      "answer": "Custom API and systems integration involves connecting different software applications, databases, and services through tailored APIs to enable seamless data flow, automation, and unified business operations."
+    },
+    {
+      "question": "Why do businesses need custom API integration?",
+      "answer": "Custom APIs enable businesses to connect disparate systems, automate workflows, eliminate data silos, improve efficiency, enhance customer experiences, and create scalable, future-proof technology ecosystems."
+    },
+    {
+      "question": "What systems can you integrate?",
+      "answer": "We integrate CRM, ERP, payment gateways, e-commerce platforms, marketing tools, databases, cloud services, third-party APIs, legacy systems, and custom applications across any technology stack."
+    },
+    {
+      "question": "How long does API integration take?",
+      "answer": "Simple integrations can be completed in 1-2 weeks, while complex enterprise integrations may take 4-12 weeks depending on the number of systems, data complexity, and custom requirements."
+    },
+    {
+      "question": "Do you provide API documentation and support?",
+      "answer": "Yes! We provide comprehensive API documentation, integration guides, testing support, ongoing maintenance, and technical assistance to ensure smooth operation and easy troubleshooting."
+    }
+  ],
+  "ai-consulting": [
+    {
+      "question": "What is AI consulting?",
+      "answer": "AI consulting helps businesses identify AI opportunities, develop AI strategies, select appropriate technologies, implement AI solutions, and optimize AI investments to drive innovation and competitive advantage."
+    },
+    {
+      "question": "How can AI consulting benefit my business?",
+      "answer": "AI consulting provides expert guidance on AI adoption, helps avoid costly mistakes, accelerates implementation, ensures ROI, identifies high-impact use cases, and builds sustainable AI capabilities within your organization."
+    },
+    {
+      "question": "What industries do you provide AI consulting for?",
+      "answer": "We provide AI consulting across healthcare, finance, retail, manufacturing, logistics, e-commerce, education, and more, tailoring solutions to industry-specific challenges and opportunities."
+    },
+    {
+      "question": "Do you help with AI strategy and roadmap development?",
+      "answer": "Yes! We help create comprehensive AI strategies, develop implementation roadmaps, prioritize use cases, assess technical readiness, and plan phased rollouts aligned with business objectives."
+    },
+    {
+      "question": "Can you assist with AI model selection and deployment?",
+      "answer": "Absolutely! We help select the right AI models, frameworks, and platforms, handle deployment, integration, monitoring, and optimization to ensure successful AI implementation."
+    }
+  ],
+  "ai-chat-with-pdf": [
+    {
+      "question": "What is AI Chat with PDF?",
+      "answer": "AI Chat with PDF is an intelligent system that allows users to interact with PDF documents through natural language conversations, extracting information, answering questions, and summarizing content using advanced AI models."
+    },
+    {
+      "question": "How does AI Chat with PDF work?",
+      "answer": "The system uses AI to parse PDF content, understand context, and respond to user queries in natural language. It can extract specific information, summarize sections, and provide insights from complex documents."
+    },
+    {
+      "question": "What types of PDFs can be processed?",
+      "answer": "We support all types of PDFs including text documents, scanned files, forms, reports, contracts, research papers, manuals, and multi-language documents with high accuracy."
+    },
+    {
+      "question": "Is the data in my PDFs secure?",
+      "answer": "Yes! We implement enterprise-grade security including encryption, secure processing, data privacy compliance, and optional on-premises deployment to ensure complete data protection."
+    },
+    {
+      "question": "Can I integrate this with my existing systems?",
+      "answer": "Absolutely! Our AI Chat with PDF solution can be integrated into your applications, websites, document management systems, and workflows through APIs and custom integrations."
+    }
+  ],
+  "metadata-extraction-ai": [
+    {
+      "question": "What is AI-powered metadata extraction?",
+      "answer": "AI-powered metadata extraction uses machine learning and computer vision to automatically extract, classify, and enrich metadata from documents, images, videos, and other unstructured data with high accuracy."
+    },
+    {
+      "question": "What types of files can you process?",
+      "answer": "We process PDFs, images, videos, audio files, scanned documents, forms, invoices, contracts, and various file formats using AI models trained for diverse document types."
+    },
+    {
+      "question": "How accurate is the metadata extraction?",
+      "answer": "Our AI models achieve 95%+ accuracy for most document types. Accuracy improves through continuous learning and can be fine-tuned for specific use cases and formats."
+    },
+    {
+      "question": "Can you extract metadata from images and videos?",
+      "answer": "Yes! We use Vision AI to extract metadata from images and videos including objects, scenes, text, faces, activities, and contextual information with automatic tagging."
+    },
+    {
+      "question": "How do you handle sensitive data?",
+      "answer": "We implement strict data privacy measures including encryption, secure processing, data anonymization, and compliance with GDPR and HIPAA. On-premises processing is available if required."
+    }
+  ],
+  "gpt-automation": [
+    {
+      "question": "What is GPT automation?",
+      "answer": "GPT automation uses advanced language models like GPT-4 to automate content generation, customer support, data processing, document analysis, and other text-based tasks with human-like quality."
+    },
+    {
+      "question": "What tasks can be automated with GPT?",
+      "answer": "GPT can automate content writing, email responses, report generation, data extraction, summarization, translation, code generation, customer support, and complex text analysis tasks."
+    },
+    {
+      "question": "How accurate are GPT-powered automations?",
+      "answer": "GPT models provide high accuracy for most tasks, typically 90-95%. We fine-tune models for specific use cases and implement validation workflows to ensure quality and reliability."
+    },
+    {
+      "question": "Can GPT automation integrate with our existing systems?",
+      "answer": "Yes! We integrate GPT automation with your CRM, helpdesk, content management systems, databases, and workflows through APIs and custom connectors."
+    },
+    {
+      "question": "Is GPT automation cost-effective?",
+      "answer": "Absolutely! GPT automation significantly reduces manual work, improves efficiency, scales easily, and provides ROI through time savings and improved productivity."
+    }
+  ],
+  "dataset-management-delivery": [
+    {
+      "question": "What is dataset management and delivery?",
+      "answer": "Dataset management and delivery involves organizing, storing, processing, and delivering large-scale datasets efficiently and securely for AI/ML training, analytics, and business intelligence."
+    },
+    {
+      "question": "What types of datasets do you handle?",
+      "answer": "We handle structured data, unstructured data, images, videos, text, audio, sensor data, time-series data, and multi-modal datasets across various industries and use cases."
+    },
+    {
+      "question": "How do you ensure data quality?",
+      "answer": "We implement data validation, cleaning, normalization, deduplication, quality checks, and automated pipelines to ensure high-quality, consistent, and reliable datasets."
+    },
+    {
+      "question": "Can you handle large-scale datasets?",
+      "answer": "Yes! We have experience managing and delivering datasets ranging from gigabytes to petabytes using scalable cloud infrastructure and optimized processing pipelines."
+    },
+    {
+      "question": "Do you provide data annotation services?",
+      "answer": "Absolutely! We offer professional data annotation including labeling, tagging, segmentation, and classification for images, videos, text, and audio to prepare training datasets."
+    }
+  ],
+  "custom-dashboards": [
+    {
+      "question": "What are custom dashboards?",
+      "answer": "Custom dashboards are tailored data visualization interfaces that provide real-time insights, KPIs, and analytics specific to your business needs, enabling data-driven decision-making."
+    },
+    {
+      "question": "What data sources can you connect?",
+      "answer": "We connect databases, APIs, cloud services, CRM, ERP, analytics platforms, IoT devices, and any data source to create unified, comprehensive dashboards."
+    },
+    {
+      "question": "Can dashboards be accessed on mobile devices?",
+      "answer": "Yes! We build responsive dashboards that work seamlessly across desktop, tablet, and mobile devices, ensuring access to critical insights anywhere, anytime."
+    },
+    {
+      "question": "Do you provide real-time data updates?",
+      "answer": "Absolutely! Our dashboards support real-time data streaming, live updates, and automatic refreshes to ensure you always have the latest information."
+    },
+    {
+      "question": "Can users customize their dashboard views?",
+      "answer": "Yes! We build dashboards with customizable layouts, filters, widgets, and user preferences, allowing each user to personalize their view and focus on relevant metrics."
+    }
+  ],
+  "aws-s3-optimization": [
+    {
+      "question": "What is AWS S3 optimization?",
+      "answer": "AWS S3 optimization involves implementing best practices, cost-saving strategies, performance improvements, and security enhancements to maximize the efficiency and value of your S3 storage."
+    },
+    {
+      "question": "How can you reduce S3 storage costs?",
+      "answer": "We reduce costs through intelligent tiering, lifecycle policies, compression, deduplication, unused object removal, and optimal storage class selection based on access patterns."
+    },
+    {
+      "question": "Can you improve S3 performance?",
+      "answer": "Yes! We optimize performance through proper bucket configuration, CloudFront integration, multipart uploads, transfer acceleration, and request optimization."
+    },
+    {
+      "question": "Do you provide S3 security optimization?",
+      "answer": "Absolutely! We implement encryption, access controls, bucket policies, versioning, logging, and compliance measures to ensure maximum S3 security."
+    },
+    {
+      "question": "Can you help with S3 data migration?",
+      "answer": "Yes! We provide efficient S3 migration services including data transfer, validation, minimal downtime strategies, and post-migration optimization."
+    }
+  ],
+  "ecommerce-stores": [
+    {
+      "question": "What e-commerce solutions do you provide?",
+      "answer": "We build custom e-commerce platforms, integrate payment gateways, implement inventory management, create mobile apps, and provide ongoing optimization for online stores."
+    },
+    {
+      "question": "Which e-commerce platforms do you work with?",
+      "answer": "We work with Shopify, WooCommerce, Magento, custom solutions, and headless commerce platforms, choosing the best fit for your business needs."
+    },
+    {
+      "question": "Can you integrate payment gateways?",
+      "answer": "Yes! We integrate all major payment gateways including Stripe, PayPal, Square, and regional payment providers with secure, PCI-compliant implementations."
+    },
+    {
+      "question": "Do you provide mobile e-commerce apps?",
+      "answer": "Absolutely! We develop native and cross-platform mobile apps for iOS and Android with seamless shopping experiences and offline capabilities."
+    },
+    {
+      "question": "Can you help with e-commerce marketing automation?",
+      "answer": "Yes! We implement email marketing, abandoned cart recovery, personalized recommendations, and marketing automation to increase conversions and customer retention."
+    }
+  ],
+  "fashion-apparel": [
+    {
+      "question": "What solutions do you provide for fashion and apparel businesses?",
+      "answer": "We build e-commerce platforms, virtual try-on solutions, inventory management systems, size recommendation engines, and omnichannel retail experiences for fashion brands."
+    },
+    {
+      "question": "Can you implement virtual try-on features?",
+      "answer": "Yes! We develop AR-powered virtual try-on solutions that allow customers to visualize clothing and accessories before purchase, improving engagement and reducing returns."
+    },
+    {
+      "question": "Do you provide size recommendation systems?",
+      "answer": "Absolutely! We implement AI-powered size recommendation engines that analyze customer data and product specifications to suggest the perfect fit, reducing returns."
+    },
+    {
+      "question": "Can you integrate with fashion industry platforms?",
+      "answer": "Yes! We integrate with PLM systems, fashion marketplaces, dropshipping platforms, and industry-specific tools to streamline operations."
+    },
+    {
+      "question": "Do you support multi-channel selling?",
+      "answer": "Yes! We enable selling across your website, mobile app, social media, marketplaces, and physical stores with unified inventory and order management."
+    }
+  ],
+  "automotive": [
+    {
+      "question": "What automotive solutions do you provide?",
+      "answer": "We develop dealer management systems, vehicle configurators, parts e-commerce platforms, service booking systems, and IoT solutions for connected vehicles."
+    },
+    {
+      "question": "Can you build vehicle configurators?",
+      "answer": "Yes! We create interactive 3D vehicle configurators that allow customers to customize colors, features, and options with real-time pricing and visualization."
+    },
+    {
+      "question": "Do you provide automotive e-commerce solutions?",
+      "answer": "Absolutely! We build platforms for selling vehicles, parts, and accessories online with inventory management, financing integration, and delivery tracking."
+    },
+    {
+      "question": "Can you develop connected vehicle solutions?",
+      "answer": "Yes! We create IoT solutions for vehicle tracking, diagnostics, predictive maintenance, fleet management, and telematics integration."
+    },
+    {
+      "question": "Do you integrate with automotive industry systems?",
+      "answer": "Yes! We integrate with DMS, CRM, inventory systems, OEM platforms, and third-party automotive services for seamless operations."
+    }
+  ],
+  "food-beverage": [
+    {
+      "question": "What solutions do you provide for food and beverage businesses?",
+      "answer": "We build online ordering systems, delivery platforms, restaurant management software, inventory tracking, menu management, and customer loyalty programs."
+    },
+    {
+      "question": "Can you develop food delivery apps?",
+      "answer": "Yes! We create custom food delivery apps with real-time tracking, payment integration, driver management, and customer support features."
+    },
+    {
+      "question": "Do you provide restaurant POS integration?",
+      "answer": "Absolutely! We integrate with major POS systems to synchronize orders, inventory, and sales data across all channels."
+    },
+    {
+      "question": "Can you implement online menu management?",
+      "answer": "Yes! We build dynamic menu management systems with real-time updates, pricing control, availability tracking, and multi-location support."
+    },
+    {
+      "question": "Do you support table reservation systems?",
+      "answer": "Yes! We implement table reservation and waitlist management systems with automated confirmations, reminders, and capacity optimization."
+    }
+  ],
+  "furniture-home-decor": [
+    {
+      "question": "What solutions do you provide for furniture and home decor businesses?",
+      "answer": "We build e-commerce platforms, AR visualization tools, room planners, custom product configurators, and inventory management systems for furniture retailers."
+    },
+    {
+      "question": "Can you implement AR furniture visualization?",
+      "answer": "Yes! We develop AR solutions that allow customers to visualize furniture in their space using their smartphone camera before making a purchase."
+    },
+    {
+      "question": "Do you provide 3D product configurators?",
+      "answer": "Absolutely! We create interactive 3D configurators for customizing furniture materials, colors, dimensions, and features with real-time pricing."
+    },
+    {
+      "question": "Can you build room planning tools?",
+      "answer": "Yes! We develop room planning and design tools that help customers plan their space, arrange furniture, and visualize complete room setups."
+    },
+    {
+      "question": "Do you support custom furniture ordering?",
+      "answer": "Yes! We implement systems for custom furniture orders with specification management, pricing calculation, production tracking, and delivery scheduling."
+    }
+  ],
+  "pharmaceuticals-healthcare": [
+    {
+      "question": "What healthcare solutions do you provide?",
+      "answer": "We build telemedicine platforms, patient portals, EHR/EMR systems, pharmacy management software, clinical trial management, and HIPAA-compliant healthcare applications."
+    },
+    {
+      "question": "Are your solutions HIPAA compliant?",
+      "answer": "Yes! All our healthcare solutions are built with HIPAA compliance including encrypted data storage, access controls, audit logs, and proper PHI handling."
+    },
+    {
+      "question": "Can you build telemedicine platforms?",
+      "answer": "Absolutely! We create comprehensive telemedicine solutions with video consultations, appointment scheduling, prescription management, and patient records."
+    },
+    {
+      "question": "Do you provide pharmacy management systems?",
+      "answer": "Yes! We develop pharmacy software with prescription processing, inventory management, insurance billing, drug interaction checking, and compliance features."
+    },
+    {
+      "question": "Can you integrate with healthcare systems?",
+      "answer": "Yes! We integrate with EHR/EMR, laboratory systems, pharmacy systems, and insurance providers using HL7, FHIR, and healthcare interoperability standards."
+    }
+  ],
+  "manufacturing-iot": [
+    {
+      "question": "What IoT solutions do you provide for manufacturing?",
+      "answer": "We develop predictive maintenance systems, production monitoring, quality control automation, asset tracking, energy management, and smart factory implementations."
+    },
+    {
+      "question": "Can you build predictive maintenance systems?",
+      "answer": "Yes! We create AI-powered predictive maintenance that analyzes sensor data to predict failures, optimize schedules, reduce downtime, and extend equipment life."
+    },
+    {
+      "question": "Do you provide production monitoring solutions?",
+      "answer": "Absolutely! We build real-time dashboards tracking OEE, machine status, production rates, quality metrics, and alerts for immediate issue resolution."
+    },
+    {
+      "question": "Can you integrate with manufacturing systems?",
+      "answer": "Yes! We integrate with MES, ERP, SCADA, and PLC systems to create unified platforms providing end-to-end visibility and control."
+    },
+    {
+      "question": "How do you ensure IoT security?",
+      "answer": "We implement secure device authentication, encrypted communication, network segmentation, regular updates, and industrial IoT security standards."
+    }
+  ],
+  "react": [
+    {
+      "question": "Why choose React for web development?",
+      "answer": "React offers component-based architecture, virtual DOM for performance, large ecosystem, strong community support, and excellent developer experience for building modern, scalable web applications."
+    },
+    {
+      "question": "What React services do you provide?",
+      "answer": "We provide React development, Next.js applications, React Native mobile apps, UI/UX design, performance optimization, migration services, and ongoing maintenance."
+    },
+    {
+      "question": "Can you migrate existing applications to React?",
+      "answer": "Yes! We provide seamless migration from Angular, Vue, or legacy frameworks to React with minimal disruption and improved performance."
+    },
+    {
+      "question": "Do you use React best practices?",
+      "answer": "Absolutely! We follow React best practices including hooks, functional components, proper state management, code splitting, and performance optimization."
+    },
+    {
+      "question": "Can you build mobile apps with React?",
+      "answer": "Yes! We use React Native to build cross-platform mobile apps for iOS and Android with native performance and shared codebase."
+    }
+  ],
+  "nodejs": [
+    {
+      "question": "Why choose Node.js for backend development?",
+      "answer": "Node.js offers high performance, scalability, real-time capabilities, large ecosystem (npm), JavaScript across stack, and excellent support for microservices architecture."
+    },
+    {
+      "question": "What Node.js services do you provide?",
+      "answer": "We provide API development, microservices, real-time applications, serverless functions, database integration, performance optimization, and DevOps setup."
+    },
+    {
+      "question": "Can you build scalable Node.js applications?",
+      "answer": "Yes! We architect highly scalable Node.js applications using clustering, load balancing, caching, and cloud infrastructure for handling millions of requests."
+    },
+    {
+      "question": "Do you provide Node.js API development?",
+      "answer": "Absolutely! We build RESTful APIs, GraphQL APIs, and WebSocket servers with proper authentication, validation, documentation, and testing."
+    },
+    {
+      "question": "Can you optimize existing Node.js applications?",
+      "answer": "Yes! We provide performance audits, code optimization, database query optimization, caching strategies, and infrastructure improvements."
+    }
+  ],
+  "python": [
+    {
+      "question": "Why choose Python for development?",
+      "answer": "Python offers simplicity, versatility, extensive libraries, strong AI/ML support, rapid development, and excellent community support for various applications."
+    },
+    {
+      "question": "What Python services do you provide?",
+      "answer": "We provide web development (Django/Flask), AI/ML solutions, data science, automation scripts, API development, data processing, and scientific computing."
+    },
+    {
+      "question": "Can you build AI/ML solutions with Python?",
+      "answer": "Yes! We use Python frameworks like TensorFlow, PyTorch, and scikit-learn to build machine learning models, deep learning applications, and AI solutions."
+    },
+    {
+      "question": "Do you provide Python web development?",
+      "answer": "Absolutely! We build web applications using Django and Flask with database integration, authentication, APIs, and deployment."
+    },
+    {
+      "question": "Can you automate tasks with Python?",
+      "answer": "Yes! We create Python automation scripts for data processing, web scraping, report generation, system administration, and workflow automation."
+    }
+  ],
+  "laravel-php": [
+    {
+      "question": "Why choose Laravel for web development?",
+      "answer": "Laravel offers elegant syntax, robust features, MVC architecture, built-in security, excellent documentation, and a vibrant ecosystem for building modern PHP applications."
+    },
+    {
+      "question": "What Laravel services do you provide?",
+      "answer": "We provide custom web applications, API development, e-commerce solutions, CMS development, third-party integrations, and Laravel maintenance."
+    },
+    {
+      "question": "Can you build e-commerce sites with Laravel?",
+      "answer": "Yes! We build custom e-commerce platforms using Laravel with payment integration, inventory management, order processing, and admin panels."
+    },
+    {
+      "question": "Do you provide Laravel API development?",
+      "answer": "Absolutely! We build RESTful APIs using Laravel with proper authentication (Passport/Sanctum), validation, documentation, and testing."
+    },
+    {
+      "question": "Can you migrate to Laravel from other frameworks?",
+      "answer": "Yes! We provide migration services from CodeIgniter, WordPress, or custom PHP to Laravel with data migration and feature parity."
+    }
+  ],
+  "databases": [
+    {
+      "question": "What database services do you provide?",
+      "answer": "We provide database design, optimization, migration, administration, backup solutions, performance tuning, and support for SQL and NoSQL databases."
+    },
+    {
+      "question": "Which databases do you work with?",
+      "answer": "We work with PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, DynamoDB, Cassandra, and other SQL and NoSQL databases."
+    },
+    {
+      "question": "Can you optimize database performance?",
+      "answer": "Yes! We provide query optimization, indexing strategies, caching implementation, schema design, and infrastructure tuning for maximum performance."
+    },
+    {
+      "question": "Do you provide database migration services?",
+      "answer": "Absolutely! We handle database migrations with minimal downtime, data validation, rollback plans, and post-migration optimization."
+    },
+    {
+      "question": "Can you implement database security?",
+      "answer": "Yes! We implement encryption, access controls, audit logging, backup strategies, and compliance measures to ensure database security."
+    }
+  ],
+  "security-tools": [
+    {
+      "question": "What security tools and services do you provide?",
+      "answer": "We provide security audits, penetration testing, vulnerability scanning, SIEM implementation, firewall configuration, and security monitoring solutions."
+    },
+    {
+      "question": "Can you perform security audits?",
+      "answer": "Yes! We conduct comprehensive security audits including code review, infrastructure assessment, compliance checking, and vulnerability analysis."
+    },
+    {
+      "question": "Do you provide penetration testing?",
+      "answer": "Absolutely! We perform ethical hacking and penetration testing to identify vulnerabilities before malicious actors can exploit them."
+    },
+    {
+      "question": "Can you implement security monitoring?",
+      "answer": "Yes! We set up 24/7 security monitoring, intrusion detection, log analysis, and automated alert systems to protect your infrastructure."
+    },
+    {
+      "question": "Do you help with compliance requirements?",
+      "answer": "Yes! We assist with GDPR, HIPAA, PCI-DSS, SOC 2, and other compliance requirements through security implementations and documentation."
+    }
+  ],
+  "s3-process": [
+    {
+      "question": "What is S3 process optimization?",
+      "answer": "S3 process optimization involves streamlining data workflows, automating uploads/downloads, implementing efficient processing pipelines, and optimizing costs for AWS S3 operations."
+    },
+    {
+      "question": "Can you automate S3 workflows?",
+      "answer": "Yes! We create automated workflows for data ingestion, processing, transformation, and delivery using Lambda, Step Functions, and other AWS services."
+    },
+    {
+      "question": "Do you provide S3 data processing solutions?",
+      "answer": "Absolutely! We build serverless data processing pipelines for transforming, analyzing, and enriching data stored in S3."
+    },
+    {
+      "question": "Can you optimize S3 transfer speeds?",
+      "answer": "Yes! We implement transfer acceleration, multipart uploads, parallel processing, and CloudFront integration for faster S3 operations."
+    },
+    {
+      "question": "Do you provide S3 cost optimization?",
+      "answer": "Yes! We analyze usage patterns, implement lifecycle policies, optimize storage classes, and reduce unnecessary costs."
+    }
+  ],
+  "iot-protocols": [
+    {
+      "question": "What IoT protocols do you work with?",
+      "answer": "We work with MQTT, CoAP, HTTP/HTTPS, WebSocket, AMQP, LoRaWAN, Zigbee, and other IoT communication protocols for various use cases."
+    },
+    {
+      "question": "Can you implement MQTT solutions?",
+      "answer": "Yes! We build MQTT-based IoT solutions with message brokers, pub/sub patterns, QoS levels, and secure communication for real-time data exchange."
+    },
+    {
+      "question": "Do you provide IoT gateway development?",
+      "answer": "Absolutely! We develop IoT gateways that bridge devices and cloud platforms, handling protocol translation, data aggregation, and edge processing."
+    },
+    {
+      "question": "Can you ensure IoT security?",
+      "answer": "Yes! We implement device authentication, encrypted communication, secure firmware updates, and network security for IoT deployments."
+    },
+    {
+      "question": "Do you support industrial IoT protocols?",
+      "answer": "Yes! We work with Modbus, OPC UA, BACnet, and other industrial protocols for manufacturing and automation applications."
+    }
+  ],
+  "cloud-storage": [
+    {
+      "question": "What cloud storage solutions do you provide?",
+      "answer": "We provide cloud storage architecture, migration, optimization, backup solutions, and integration with AWS S3, Azure Blob, Google Cloud Storage, and other platforms."
+    },
+    {
+      "question": "Can you migrate data to cloud storage?",
+      "answer": "Yes! We provide seamless cloud migration with minimal downtime, data validation, security measures, and post-migration optimization."
+    },
+    {
+      "question": "Do you provide multi-cloud storage solutions?",
+      "answer": "Absolutely! We implement multi-cloud strategies with data replication, failover, and unified management across AWS, Azure, and GCP."
+    },
+    {
+      "question": "Can you optimize cloud storage costs?",
+      "answer": "Yes! We reduce costs through intelligent tiering, lifecycle policies, compression, deduplication, and optimal storage class selection."
+    },
+    {
+      "question": "Do you provide cloud backup solutions?",
+      "answer": "Yes! We implement automated backup strategies, disaster recovery plans, versioning, and compliance-ready backup solutions."
+    }
+  ]
 }

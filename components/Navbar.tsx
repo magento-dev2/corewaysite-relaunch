@@ -79,7 +79,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0E0918]/95 backdrop-blur-lg border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0E0918]/70 backdrop-blur-md border-b border-white/10">
       <div className="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
@@ -182,8 +182,7 @@ export default function Navbar() {
               );
             })}
           </div>
-          <div className="hidden lg:flex items-center space-x-4">
-            {/* 🌐 Language Selector */}
+          {/* <div className="hidden lg:flex items-center space-x-4">
             <div ref={langRef} className="relative cursor-pointer">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -208,7 +207,6 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {/* Dropdown Menu */}
               {isLangOpen && (
                 <div className="absolute right-0 mt-2 w-44 bg-[#1a1325] border border-white/10 rounded-lg shadow-lg z-50 overflow-hidden">
                   {languages.map((lang) => (
@@ -232,22 +230,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 💌 Contact Button */}
-            <Link
-              href="/contact"
-              className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
-            >
-              Contact
-            </Link>
-          </div>
-
-
-
-
-
-
-
-          {/* <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
               className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
@@ -255,6 +237,21 @@ export default function Navbar() {
               Contact
             </Link>
           </div> */}
+
+
+
+
+
+
+
+          <div className="hidden lg:flex items-center">
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-purple-500 to-violet-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
+            >
+              Contact
+            </Link>
+          </div>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
+    themeColor: '#000000',
+
   description: "Build complex automations 10x faster without fighting APIs.",
 };
 

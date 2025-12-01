@@ -1,0 +1,974 @@
+{
+  "home": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Home",
+    "subtitle": "Expert Home solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Home solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "DBDashbot": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Dbdashbot",
+    "subtitle": "Expert Dbdashbot solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Dbdashbot solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ai-chat-with-pdf": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ai Chat With Pdf",
+    "subtitle": "Expert Ai Chat With Pdf solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ai Chat With Pdf solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ai-consulting": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ai Consulting",
+    "subtitle": "Expert Ai Consulting solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ai Consulting solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ai-integration-services": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ai Integration Services",
+    "subtitle": "Expert Ai Integration Services solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ai Integration Services solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ai-powered-application-platforms": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ai Powered Application Platforms",
+    "subtitle": "Expert Ai Powered Application Platforms solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ai Powered Application Platforms solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "automotive": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Automotive",
+    "subtitle": "Expert Automotive solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Automotive solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "aws-s3-optimization": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Aws S3 Optimization",
+    "subtitle": "Expert Aws S3 Optimization solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Aws S3 Optimization solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "business-workflow-automation": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Business Workflow Automation",
+    "subtitle": "Expert Business Workflow Automation solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Business Workflow Automation solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "cloud-storage": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Cloud Storage",
+    "subtitle": "Expert Cloud Storage solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Cloud Storage solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "custom-api-systems-integration": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Custom Api Systems Integration",
+    "subtitle": "Expert Custom Api Systems Integration solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Custom Api Systems Integration solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "custom-dashboards": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Custom Dashboards",
+    "subtitle": "Expert Custom Dashboards solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Custom Dashboards solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "databases": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Databases",
+    "subtitle": "Expert Databases solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Databases solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "dataset-management-delivery": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Dataset Management Delivery",
+    "subtitle": "Expert Dataset Management Delivery solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Dataset Management Delivery solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "digital-commerce-transformation": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Digital Commerce Transformation",
+    "subtitle": "Expert Digital Commerce Transformation solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Digital Commerce Transformation solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ecommerce-stores": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ecommerce Stores",
+    "subtitle": "Expert Ecommerce Stores solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ecommerce Stores solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "fashion-apparel": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Fashion Apparel",
+    "subtitle": "Expert Fashion Apparel solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Fashion Apparel solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "food-beverage": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Food Beverage",
+    "subtitle": "Expert Food Beverage solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Food Beverage solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "furniture-home-decor": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Furniture Home Decor",
+    "subtitle": "Expert Furniture Home Decor solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Furniture Home Decor solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "gpt-automation": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Gpt Automation",
+    "subtitle": "Expert Gpt Automation solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Gpt Automation solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "infrastructure-security-ai": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Infrastructure Security Ai",
+    "subtitle": "Expert Infrastructure Security Ai solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Infrastructure Security Ai solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "iot-application-development": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Iot Application Development",
+    "subtitle": "Expert Iot Application Development solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Iot Application Development solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "iot-protocols": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Iot Protocols",
+    "subtitle": "Expert Iot Protocols solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Iot Protocols solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "laravel-php": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Laravel Php",
+    "subtitle": "Expert Laravel Php solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Laravel Php solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "manufacturing-iot": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Manufacturing Iot",
+    "subtitle": "Expert Manufacturing Iot solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Manufacturing Iot solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "metadata-extraction-ai": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Metadata Extraction Ai",
+    "subtitle": "Expert Metadata Extraction Ai solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Metadata Extraction Ai solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "nodejs": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Nodejs",
+    "subtitle": "Expert Nodejs solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Nodejs solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "pharmaceuticals-healthcare": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Pharmaceuticals Healthcare",
+    "subtitle": "Expert Pharmaceuticals Healthcare solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Pharmaceuticals Healthcare solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "product-development-forstartups": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Product Development Forstartups",
+    "subtitle": "Expert Product Development Forstartups solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Product Development Forstartups solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "python": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Python",
+    "subtitle": "Expert Python solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Python solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "react": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our React",
+    "subtitle": "Expert React solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional React solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "replatforming-migration": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Replatforming Migration",
+    "subtitle": "Expert Replatforming Migration solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Replatforming Migration solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "s3-process": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our S3 Process",
+    "subtitle": "Expert S3 Process solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional S3 Process solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "saas-infrastructure-devops": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Saas Infrastructure Devops",
+    "subtitle": "Expert Saas Infrastructure Devops solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Saas Infrastructure Devops solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "security-tools": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Security Tools",
+    "subtitle": "Expert Security Tools solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Security Tools solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  },
+  "ugs-ads": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Our Ugs Ads",
+    "subtitle": "Expert Ugs Ads solutions that drive results and deliver exceptional value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Proven Expertise",
+        "description": "Years of experience delivering exceptional Ugs Ads solutions."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Delivery",
+        "description": "Rapid implementation with agile methodologies and efficient processes."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise Security",
+        "description": "Bank-grade security protocols ensuring your data remains protected."
+      },
+      {
+        "icon": "users",
+        "title": "Expert Team",
+        "description": "Dedicated team of senior professionals working on your project."
+      }
+    ]
+  }
+}

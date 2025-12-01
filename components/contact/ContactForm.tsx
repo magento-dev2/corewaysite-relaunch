@@ -1,15 +1,20 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Send, CheckCircle } from 'lucide-react';
 import { useRecaptcha } from '@/contexts/RecaptchaContext';
 
 export default function ContactForm() {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState<'business' | 'job'>('business');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     company: '',
+    designation: '',
+    country: '',
     subject: '',
     message: '',
   });
@@ -17,6 +22,14 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
   const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
+
+  const handleTabChange = (tab: 'business' | 'job') => {
+    if (tab === 'job') {
+      router.push('/careers');
+    } else {
+      setActiveTab(tab);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -63,6 +76,8 @@ export default function ContactForm() {
         email: '',
         phone: '',
         company: '',
+        designation: '',
+        country: '',
         subject: '',
         message: '',
       });
@@ -80,37 +95,62 @@ export default function ContactForm() {
   };
 
   return (
-    <section className=" ">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Send Us a Message
-            </h2>
-            <p className="text-gray-300">
-              Fill out the form below and we'll get back to you within 24 hours
-            </p>
-          </div>
+    <section className="w-full">
+      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+        {/* TABS */}
+        <div className="flex border-b border-gray-200">
+          <button
+            onClick={() => handleTabChange('business')}
+            className={`flex-1 px-8 py-4 font-semibold text-base transition-all relative ${activeTab === 'business'
+              ? 'bg-purple-600 text-white'
+              : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+              }`}
+            style={{
+              borderTopLeftRadius: '1rem',
+              clipPath: activeTab === 'business' ? 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' : 'none'
+            }}
+          >
+            Business Inquiry
+          </button>
+
+          <button
+            onClick={() => handleTabChange('job')}
+            className={`cursor-pointer flex-1 px-8 py-4 font-semibold text-base transition-all flex items-center justify-center gap-2 ${activeTab === 'job'
+              ? 'bg-purple-600 text-white'
+              : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+              }`}
+            style={{
+              borderTopRightRadius: '1rem',
+            }}
+          >
+            Apply for Job <span>→</span>
+          </button>
+        </div>
+
+        {/* FORM CONTENT */}
+        <div className="p-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            Tell Us About Your Project
+          </h2>
+
 
           {isSuccess && (
-            <div className="mb-6 bg-green-500/10 border border-green-500/50 rounded-lg p-4 flex items-center space-x-3">
-              <CheckCircle className="text-green-500" size={24} />
-              <p className="text-green-400">Thank you! Your message has been sent successfully.</p>
+            <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
+              <CheckCircle className="text-green-600" size={24} />
+              <p className="text-green-700">Thank you! Your message has been sent successfully.</p>
             </div>
           )}
 
           {error && (
-            <div className="mb-6 bg-red-500/10 border border-red-500/50 rounded-lg p-4">
-              <p className="text-red-400">{error}</p>
+            <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+              <p className="text-red-700">{error}</p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Row 1: Full Name & Company */}
+            <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Full Name *
-                </label>
                 <input
                   type="text"
                   id="name"
@@ -118,15 +158,27 @@ export default function ContactForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="John Doe"
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Full Name *"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address *
-                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Company"
+                />
+              </div>
+            </div>
+
+            {/* Row 2: Email & Designation */}
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
                 <input
                   type="email"
                   id="email"
@@ -134,93 +186,99 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="john@example.com"
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Email *"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="designation"
+                  name="designation"
+                  value={formData.designation}
+                  onChange={handleChange}
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Designation"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Row 3: Phone & Country */}
+            <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                  Phone Number
-                </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
+                  required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="+1 (234) 567-890"
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Phone *"
                 />
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
+                <select
+                  id="country"
+                  name="country"
+                  required
+                  value={formData.country}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="Your Company"
-                />
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 1rem center',
+                  }}
+                >
+                  <option value="">Country *</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="IN">India</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
 
+            {/* Message */}
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                Subject *
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                required
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-              >
-                <option value="" className="bg-[#1a1325]">Select a subject</option>
-                <option value="General Inquiry" className="bg-[#1a1325]">General Inquiry</option>
-                <option value="Project Quote" className="bg-[#1a1325]">Project Quote</option>
-                <option value="AI Consulting" className="bg-[#1a1325]">AI Consulting</option>
-                <option value="Product Development" className="bg-[#1a1325]">Product Development</option>
-                <option value="Partnership" className="bg-[#1a1325]">Partnership</option>
-                <option value="Support" className="bg-[#1a1325]">Support</option>
-                <option value="Other" className="bg-[#1a1325]">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Message *
-              </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 value={formData.message}
                 onChange={handleChange}
-                rows={6}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
-                placeholder="Tell us about your project..."
+                rows={5}
+                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
+                placeholder="Brief your Requirement *"
               />
             </div>
 
-            <div className="text-center">
+            {/* Submit Button */}
+            <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mx-auto"
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
               >
-                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                {!isSubmitting && <Send className="group-hover:translate-x-1 transition-transform" size={20} />}
+                <span>{isSubmitting ? 'Sending...' : 'Talk to Our Experts'}</span>
+                {!isSubmitting && <Send size={20} />}
               </button>
             </div>
+
+            {/* Privacy Policy */}
+            <p className="text-gray-600 text-sm text-center">
+              By submitting this form, you agree to our{' '}
+              <a href="/privacy-policy" className="text-purple-600 font-semibold underline hover:text-purple-700">
+                Privacy Policy
+              </a>
+            </p>
           </form>
         </div>
       </div>

@@ -14,6 +14,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 
@@ -129,16 +130,16 @@ export default function ReplatformingMigration() {
             features={replatformingData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["replatforming-migration"].badge}
+            title={whyCorewayData["replatforming-migration"].title}
+            subtitle={whyCorewayData["replatforming-migration"].subtitle}
+            reasons={whyCorewayData["replatforming-migration"].reasons}
           />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs  ["replatforming-migration"]}
+            faqs={sampleFAQs["replatforming-migration"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

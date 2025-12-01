@@ -14,6 +14,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 
@@ -129,10 +130,10 @@ export default function IoTApplicationDevelopment() {
             features={iotApplicationsData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["iot-application-development"].badge}
+            title={whyCorewayData["iot-application-development"].title}
+            subtitle={whyCorewayData["iot-application-development"].subtitle}
+            reasons={whyCorewayData["iot-application-development"].reasons}
           />
           <FAQ
             badge="Help Center"

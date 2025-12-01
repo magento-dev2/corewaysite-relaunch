@@ -9,8 +9,10 @@ import ManufacturingFeatures from "@/components/manufacturing/ManufacturingFeatu
 import ManufacturingCases from "@/components/manufacturing/ManufacturingCases";
 import AISecurityProcess from "@/components/aisecurity/AISecurityProcess";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function ManufacturingIoT() {
@@ -163,11 +165,17 @@ export default function ManufacturingIoT() {
           </section>
 
 
+          <WhyCorewaySection
+            badge={whyCorewayData["manufacturing-iot"].badge}
+            title={whyCorewayData["manufacturing-iot"].title}
+            subtitle={whyCorewayData["manufacturing-iot"].subtitle}
+            reasons={whyCorewayData["manufacturing-iot"].reasons}
+          />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["manufacturing-iot"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

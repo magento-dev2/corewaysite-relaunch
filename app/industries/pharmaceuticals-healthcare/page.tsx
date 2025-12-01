@@ -11,8 +11,10 @@ import CaseStudies from "@/components/commerce/CaseStudies";
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function PharmaceuticalsHealthcarePage() {
@@ -142,11 +144,17 @@ export default function PharmaceuticalsHealthcarePage() {
             features={healthcareData.automation.features}
           />
 
+          <WhyCorewaySection
+            badge={whyCorewayData["pharmaceuticals-healthcare"].badge}
+            title={whyCorewayData["pharmaceuticals-healthcare"].title}
+            subtitle={whyCorewayData["pharmaceuticals-healthcare"].subtitle}
+            reasons={whyCorewayData["pharmaceuticals-healthcare"].reasons}
+          />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["pharmaceuticals-healthcare"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

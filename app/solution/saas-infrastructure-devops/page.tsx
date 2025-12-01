@@ -14,6 +14,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function SaaSInfrastructureDevOps() {
@@ -128,10 +129,10 @@ export default function SaaSInfrastructureDevOps() {
             features={saasDevOpsData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["saas-infrastructure-devops"].badge}
+            title={whyCorewayData["saas-infrastructure-devops"].title}
+            subtitle={whyCorewayData["saas-infrastructure-devops"].subtitle}
+            reasons={whyCorewayData["saas-infrastructure-devops"].reasons}
           />
           <FAQ
             badge="Help Center"

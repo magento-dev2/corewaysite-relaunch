@@ -13,7 +13,8 @@ import AIConsultingAutomation from "@/components/aiconsulting/AIConsultingAutoma
 import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function AIConsulting() {
@@ -127,22 +128,22 @@ export default function AIConsulting() {
             description={aiConsultingData.automation.description}
             features={aiConsultingData.automation.features}
           />
-            <WhyCorewaySection
-                  badge="Why Choose Us"
-                  title="Why Choose Coreway Solutions"
-                  subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-          
-                />
-                <FAQ
-                  badge="Help Center"
-                  title="Common Questions & Answers"
-                  description="Everything you need to know about our services and how we work"
-                  faqs={sampleFAQs}
-                  columns={1}
-                  showContactCTA={true}
-                  contactText="Still have questions?"
-                  contactButtonText="Contact Our Team"
-                />
+          <WhyCorewaySection
+            badge={whyCorewayData["ai-consulting"].badge}
+            title={whyCorewayData["ai-consulting"].title}
+            subtitle={whyCorewayData["ai-consulting"].subtitle}
+            reasons={whyCorewayData["ai-consulting"].reasons}
+          />
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs["ai-consulting"]}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
 
           <PageCTA
             badge="Ready to innovate?"

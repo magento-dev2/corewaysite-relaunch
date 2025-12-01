@@ -1,0 +1,1083 @@
+{
+    "home": {
+        "badge": "Why Choose Us",
+        "title": "Why Choose Coreway Solutions",
+        "subtitle": "We're not just another software company. We're your technology partner committed to delivering exceptional results.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Award Winning Agency",
+                "description": "Recognized for excellence in digital innovation and software development."
+            },
+            {
+                "icon": "zap",
+                "title": "Fast Delivery",
+                "description": "Rapid prototyping and agile development to get your product to market sooner."
+            },
+            {
+                "icon": "shield",
+                "title": "Enterprise Security",
+                "description": "Bank-grade security protocols ensuring your data remains protected at all times."
+            },
+            {
+                "icon": "users",
+                "title": "Expert Team",
+                "description": "A dedicated team of senior developers and designers working on your project."
+            }
+        ]
+    },
+    "infrastructure-security-ai": {
+        "badge": "Why Choose Our AI Security",
+        "title": "Why Choose Our Infrastructure Security AI",
+        "subtitle": "Advanced AI-powered security solutions that protect your infrastructure 24/7 with intelligent threat detection and automated responses.",
+        "reasons": [
+            {
+                "icon": "shield",
+                "title": "AI-Powered Protection",
+                "description": "Machine learning algorithms that detect and prevent threats before they impact your systems."
+            },
+            {
+                "icon": "zap",
+                "title": "Real-Time Monitoring",
+                "description": "Continuous 24/7 surveillance with instant alerts and automated threat response."
+            },
+            {
+                "icon": "trending",
+                "title": "Predictive Analytics",
+                "description": "Identify vulnerabilities and predict potential security breaches before they occur."
+            },
+            {
+                "icon": "users",
+                "title": "Expert Security Team",
+                "description": "Certified security professionals managing and optimizing your AI security infrastructure."
+            }
+        ]
+    },
+    "custom-api-systems-integration": {
+        "badge": "Why Choose Our Integration",
+        "title": "Why Choose Our API Integration Services",
+        "subtitle": "Seamlessly connect your systems with custom API solutions that enhance efficiency and enable data-driven decision making.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Seamless Integration",
+                "description": "Connect any system, platform, or service with our robust API integration solutions."
+            },
+            {
+                "icon": "shield",
+                "title": "Secure & Reliable",
+                "description": "Enterprise-grade security with encrypted data transfer and authentication protocols."
+            },
+            {
+                "icon": "clock",
+                "title": "Fast Implementation",
+                "description": "Quick deployment with minimal disruption to your existing operations."
+            },
+            {
+                "icon": "users",
+                "title": "Ongoing Support",
+                "description": "Dedicated support team ensuring your integrations run smoothly at all times."
+            }
+        ]
+    },
+    "ai-consulting": {
+        "badge": "Why Choose Our Consulting",
+        "title": "Why Choose Our AI Consulting Services",
+        "subtitle": "Expert guidance to help you navigate the AI landscape and implement solutions that drive real business value.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Proven Expertise",
+                "description": "Years of experience implementing AI solutions across diverse industries and use cases."
+            },
+            {
+                "icon": "trending",
+                "title": "Strategic Approach",
+                "description": "Data-driven strategies aligned with your business goals for maximum ROI."
+            },
+            {
+                "icon": "users",
+                "title": "End-to-End Support",
+                "description": "From strategy to implementation and optimization, we're with you every step."
+            },
+            {
+                "icon": "zap",
+                "title": "Rapid Results",
+                "description": "Quick wins and phased implementation to deliver value from day one."
+            }
+        ]
+    },
+    "ai-chat-with-pdf": {
+        "badge": "Why Choose Our Solution",
+        "title": "Why Choose Our AI Chat with PDF",
+        "subtitle": "Transform how you interact with documents using advanced AI that understands context and delivers instant, accurate answers.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Instant Answers",
+                "description": "Get immediate responses to questions from your PDF documents using advanced AI."
+            },
+            {
+                "icon": "shield",
+                "title": "Secure Processing",
+                "description": "Your documents are processed securely with enterprise-grade encryption and privacy."
+            },
+            {
+                "icon": "trophy",
+                "title": "High Accuracy",
+                "description": "Advanced NLP models ensure accurate understanding and relevant responses."
+            },
+            {
+                "icon": "users",
+                "title": "Easy Integration",
+                "description": "Simple API integration into your existing workflows and applications."
+            }
+        ]
+    },
+    "metadata-extraction-ai": {
+        "badge": "Why Choose Our AI",
+        "title": "Why Choose Our Metadata Extraction AI",
+        "subtitle": "Automate metadata extraction with AI-powered accuracy, saving time and eliminating manual data entry errors.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Automated Extraction",
+                "description": "Extract metadata from documents, images, and videos automatically with AI precision."
+            },
+            {
+                "icon": "trophy",
+                "title": "95%+ Accuracy",
+                "description": "Industry-leading accuracy rates with continuous learning and improvement."
+            },
+            {
+                "icon": "trending",
+                "title": "Scalable Solution",
+                "description": "Process thousands of files efficiently with cloud-based infrastructure."
+            },
+            {
+                "icon": "shield",
+                "title": "Data Security",
+                "description": "GDPR and HIPAA compliant processing with complete data privacy."
+            }
+        ]
+    },
+    "gpt-automation": {
+        "badge": "Why Choose GPT Automation",
+        "title": "Why Choose Our GPT Automation",
+        "subtitle": "Leverage the power of GPT models to automate content creation, customer support, and complex text-based tasks at scale.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Powerful Automation",
+                "description": "Automate content generation, analysis, and processing with GPT-4 technology."
+            },
+            {
+                "icon": "trophy",
+                "title": "Human-Like Quality",
+                "description": "Generate content that matches human quality with context awareness."
+            },
+            {
+                "icon": "trending",
+                "title": "Cost Effective",
+                "description": "Reduce operational costs while scaling your content and support operations."
+            },
+            {
+                "icon": "users",
+                "title": "Custom Training",
+                "description": "Fine-tuned models specific to your industry and use case requirements."
+            }
+        ]
+    },
+    "dataset-management-delivery": {
+        "badge": "Why Choose Our Services",
+        "title": "Why Choose Our Dataset Management",
+        "subtitle": "Professional dataset management and delivery services ensuring high-quality, well-organized data for your AI and analytics needs.",
+        "reasons": [
+            {
+                "icon": "shield",
+                "title": "Data Quality",
+                "description": "Rigorous validation and cleaning processes ensuring high-quality datasets."
+            },
+            {
+                "icon": "trending",
+                "title": "Scalable Infrastructure",
+                "description": "Handle datasets from gigabytes to petabytes with optimized pipelines."
+            },
+            {
+                "icon": "users",
+                "title": "Expert Annotation",
+                "description": "Professional data annotation services for training AI models."
+            },
+            {
+                "icon": "zap",
+                "title": "Fast Delivery",
+                "description": "Efficient processing and delivery to meet your project timelines."
+            }
+        ]
+    },
+    "custom-dashboards": {
+        "badge": "Why Choose Our Dashboards",
+        "title": "Why Choose Our Custom Dashboards",
+        "subtitle": "Transform your data into actionable insights with beautiful, interactive dashboards tailored to your business needs.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Tailored Solutions",
+                "description": "Custom-built dashboards designed specifically for your business requirements."
+            },
+            {
+                "icon": "zap",
+                "title": "Real-Time Data",
+                "description": "Live data updates and streaming for always-current insights."
+            },
+            {
+                "icon": "users",
+                "title": "User-Friendly",
+                "description": "Intuitive interfaces that anyone in your team can use effectively."
+            },
+            {
+                "icon": "trending",
+                "title": "Advanced Analytics",
+                "description": "Built-in analytics and visualization tools for deeper insights."
+            }
+        ]
+    },
+    "aws-s3-optimization": {
+        "badge": "Why Choose Our Optimization",
+        "title": "Why Choose Our S3 Optimization",
+        "subtitle": "Maximize your AWS S3 performance while minimizing costs with our expert optimization strategies and automation.",
+        "reasons": [
+            {
+                "icon": "trending",
+                "title": "Cost Reduction",
+                "description": "Reduce S3 storage costs by up to 70% through intelligent tiering and optimization."
+            },
+            {
+                "icon": "zap",
+                "title": "Performance Boost",
+                "description": "Faster data access and transfer with optimized bucket configurations."
+            },
+            {
+                "icon": "shield",
+                "title": "Enhanced Security",
+                "description": "Implement best-practice security measures and compliance standards."
+            },
+            {
+                "icon": "users",
+                "title": "AWS Expertise",
+                "description": "Certified AWS professionals managing your S3 infrastructure."
+            }
+        ]
+    },
+    "ecommerce-stores": {
+        "badge": "Why Choose Our E-commerce Solutions",
+        "title": "Why Choose Our E-commerce Platform",
+        "subtitle": "Build a powerful online store with features that drive sales, enhance customer experience, and scale with your business.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Proven Platform",
+                "description": "Trusted by hundreds of successful online stores across various industries."
+            },
+            {
+                "icon": "zap",
+                "title": "Fast & Scalable",
+                "description": "High-performance infrastructure that handles traffic spikes effortlessly."
+            },
+            {
+                "icon": "shield",
+                "title": "Secure Payments",
+                "description": "PCI-compliant payment processing with multiple gateway integrations."
+            },
+            {
+                "icon": "users",
+                "title": "24/7 Support",
+                "description": "Dedicated support team ensuring your store runs smoothly always."
+            }
+        ]
+    },
+    "fashion-apparel": {
+        "badge": "Why Choose Our Fashion Tech",
+        "title": "Why Choose Our Fashion Solutions",
+        "subtitle": "Innovative technology solutions designed specifically for fashion and apparel brands to enhance customer experience and boost sales.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "AR Try-On",
+                "description": "Virtual try-on technology that reduces returns and increases customer confidence."
+            },
+            {
+                "icon": "zap",
+                "title": "Size Recommendations",
+                "description": "AI-powered size matching that ensures perfect fit for every customer."
+            },
+            {
+                "icon": "trending",
+                "title": "Trend Analytics",
+                "description": "Data-driven insights into fashion trends and customer preferences."
+            },
+            {
+                "icon": "users",
+                "title": "Omnichannel",
+                "description": "Seamless shopping experience across web, mobile, and physical stores."
+            }
+        ]
+    },
+    "automotive": {
+        "badge": "Why Choose Our Automotive Tech",
+        "title": "Why Choose Our Automotive Solutions",
+        "subtitle": "Advanced technology solutions for automotive businesses, from dealerships to manufacturers, enhancing operations and customer experience.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "3D Configurators",
+                "description": "Interactive vehicle customization with real-time pricing and visualization."
+            },
+            {
+                "icon": "zap",
+                "title": "IoT Integration",
+                "description": "Connected vehicle solutions for tracking, diagnostics, and fleet management."
+            },
+            {
+                "icon": "shield",
+                "title": "Secure Systems",
+                "description": "Enterprise-grade security for customer data and transaction processing."
+            },
+            {
+                "icon": "users",
+                "title": "Industry Expertise",
+                "description": "Deep understanding of automotive industry workflows and requirements."
+            }
+        ]
+    },
+    "food-beverage": {
+        "badge": "Why Choose Our F&B Tech",
+        "title": "Why Choose Our Food & Beverage Solutions",
+        "subtitle": "Complete technology solutions for restaurants, cafes, and food delivery businesses to streamline operations and delight customers.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Fast Ordering",
+                "description": "Quick and easy online ordering with real-time menu updates."
+            },
+            {
+                "icon": "trending",
+                "title": "Delivery Tracking",
+                "description": "Real-time order tracking and driver management for smooth deliveries."
+            },
+            {
+                "icon": "users",
+                "title": "POS Integration",
+                "description": "Seamless integration with major POS systems for unified operations."
+            },
+            {
+                "icon": "trophy",
+                "title": "Customer Loyalty",
+                "description": "Built-in loyalty programs to increase repeat orders and customer retention."
+            }
+        ]
+    },
+    "furniture-home-decor": {
+        "badge": "Why Choose Our Solutions",
+        "title": "Why Choose Our Furniture Tech",
+        "subtitle": "Transform your furniture business with AR visualization, 3D configurators, and seamless e-commerce solutions.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "AR Visualization",
+                "description": "Let customers see furniture in their space before buying with AR technology."
+            },
+            {
+                "icon": "zap",
+                "title": "3D Configurators",
+                "description": "Interactive customization of materials, colors, and dimensions in real-time."
+            },
+            {
+                "icon": "users",
+                "title": "Room Planners",
+                "description": "Help customers design complete rooms with drag-and-drop planning tools."
+            },
+            {
+                "icon": "shield",
+                "title": "Secure Checkout",
+                "description": "Safe and reliable payment processing for high-value furniture purchases."
+            }
+        ]
+    },
+    "pharmaceuticals-healthcare": {
+        "badge": "Why Choose Our Healthcare Tech",
+        "title": "Why Choose Our Healthcare Solutions",
+        "subtitle": "HIPAA-compliant healthcare technology solutions that improve patient care, streamline operations, and ensure data security.",
+        "reasons": [
+            {
+                "icon": "shield",
+                "title": "HIPAA Compliant",
+                "description": "Fully compliant with healthcare regulations ensuring patient data privacy."
+            },
+            {
+                "icon": "trophy",
+                "title": "Proven Reliability",
+                "description": "Trusted by healthcare providers for critical patient care systems."
+            },
+            {
+                "icon": "users",
+                "title": "Telemedicine Ready",
+                "description": "Complete telemedicine platforms with video consultations and e-prescriptions."
+            },
+            {
+                "icon": "zap",
+                "title": "EHR Integration",
+                "description": "Seamless integration with existing EHR/EMR systems using HL7 and FHIR."
+            }
+        ]
+    },
+    "manufacturing-iot": {
+        "badge": "Why Choose Our IoT Solutions",
+        "title": "Why Choose Our Manufacturing IoT",
+        "subtitle": "Smart factory solutions with IoT sensors, predictive maintenance, and real-time monitoring to optimize production efficiency.",
+        "reasons": [
+            {
+                "icon": "trending",
+                "title": "Predictive Maintenance",
+                "description": "AI-powered predictions to prevent equipment failures and reduce downtime."
+            },
+            {
+                "icon": "zap",
+                "title": "Real-Time Monitoring",
+                "description": "Live production tracking with instant alerts for issues and anomalies."
+            },
+            {
+                "icon": "trophy",
+                "title": "OEE Optimization",
+                "description": "Maximize Overall Equipment Effectiveness with data-driven insights."
+            },
+            {
+                "icon": "shield",
+                "title": "Industrial Security",
+                "description": "Secure IoT implementation with network segmentation and encryption."
+            }
+        ]
+    },
+    "react": {
+        "badge": "Why Choose React",
+        "title": "Why Choose React Development",
+        "subtitle": "Build modern, high-performance web applications with React's component-based architecture and vast ecosystem.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "Fast Performance",
+                "description": "Virtual DOM ensures optimal rendering and lightning-fast user experiences."
+            },
+            {
+                "icon": "trophy",
+                "title": "Industry Standard",
+                "description": "Used by Facebook, Netflix, and thousands of leading companies worldwide."
+            },
+            {
+                "icon": "users",
+                "title": "Large Community",
+                "description": "Massive ecosystem with libraries, tools, and support from millions of developers."
+            },
+            {
+                "icon": "trending",
+                "title": "Future-Proof",
+                "description": "Continuous updates and improvements backed by Meta and the community."
+            }
+        ]
+    },
+    "nodejs": {
+        "badge": "Why Choose Node.js",
+        "title": "Why Choose Node.js Development",
+        "subtitle": "Build scalable, high-performance server-side applications with JavaScript using Node.js's event-driven architecture.",
+        "reasons": [
+            {
+                "icon": "zap",
+                "title": "High Performance",
+                "description": "Non-blocking I/O and event-driven architecture for handling thousands of connections."
+            },
+            {
+                "icon": "trending",
+                "title": "Scalable",
+                "description": "Built for microservices and distributed systems that scale horizontally."
+            },
+            {
+                "icon": "trophy",
+                "title": "NPM Ecosystem",
+                "description": "Access to millions of packages and libraries for rapid development."
+            },
+            {
+                "icon": "users",
+                "title": "Full-Stack JS",
+                "description": "Use JavaScript across your entire stack for consistency and efficiency."
+            }
+        ]
+    },
+    "python": {
+        "badge": "Why Choose Python",
+        "title": "Why Choose Python Development",
+        "subtitle": "Versatile, powerful, and easy to learn - Python is perfect for web development, AI/ML, data science, and automation.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Versatile Language",
+                "description": "From web apps to AI/ML, data science to automation - Python does it all."
+            },
+            {
+                "icon": "users",
+                "title": "Rich Libraries",
+                "description": "Extensive libraries for AI/ML, data analysis, web frameworks, and more."
+            },
+            {
+                "icon": "zap",
+                "title": "Rapid Development",
+                "description": "Clean syntax and powerful features enable faster development cycles."
+            },
+            {
+                "icon": "trending",
+                "title": "Growing Demand",
+                "description": "Most popular language for AI/ML and data science with increasing adoption."
+            }
+        ]
+    },
+    "laravel-php": {
+        "badge": "Why Choose Laravel",
+        "title": "Why Choose Laravel Development",
+        "subtitle": "Build elegant, feature-rich web applications with Laravel's expressive syntax and comprehensive ecosystem.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Elegant Framework",
+                "description": "Beautiful, expressive syntax that makes development enjoyable and productive."
+            },
+            {
+                "icon": "shield",
+                "title": "Built-in Security",
+                "description": "Protection against SQL injection, XSS, and CSRF attacks out of the box."
+            },
+            {
+                "icon": "zap",
+                "title": "Rapid Development",
+                "description": "Rich features and tools for building applications quickly and efficiently."
+            },
+            {
+                "icon": "users",
+                "title": "Large Community",
+                "description": "Active community with extensive documentation and package ecosystem."
+            }
+        ]
+    },
+    "databases": {
+        "badge": "Why Choose Our Database Services",
+        "title": "Why Choose Our Database Solutions",
+        "subtitle": "Expert database design, optimization, and management services for SQL and NoSQL databases ensuring performance and reliability.",
+        "reasons": [
+            {
+                "icon": "trophy",
+                "title": "Multi-Database Expertise",
+                "description": "Proficient in PostgreSQL, MySQL, MongoDB, Redis, and more."
+            },
+            {
+                "icon": "zap",
+                "title": "Performance Tuning",
+                "description": "Optimize queries, indexes, and schemas for maximum performance."
+            },
+            {
+                "icon": "shield",
+                "title": "Data Security",
+                "description": "Encryption, access controls, and compliance with security standards."
+            },
+            {
+                "icon": "users",
+                "title": "24/7 Monitoring",
+                "description": "Continuous monitoring and proactive maintenance for database health."
+            }
+        ]
+    },
+    "security-tools": {
+        "badge": "Why Choose Our Security",
+        "title": "Why Choose Our Security Services",
+        "subtitle": "Comprehensive security solutions including audits, penetration testing, and 24/7 monitoring to protect your infrastructure.",
+        "reasons": [
+            {
+                "icon": "shield",
+                "title": "Comprehensive Protection",
+                "description": "Multi-layered security approach covering all aspects of your infrastructure."
+            },
+            {
+                "icon": "trophy",
+                "title": "Certified Experts",
+                "description": "Team of certified security professionals with proven track records."
+            },
+        },
+        {
+            "icon": "trophy",
+            "title": "Proven Reliability",
+            "description": "Trusted by healthcare providers for critical patient care systems."
+        },
+        {
+            "icon": "users",
+            "title": "Telemedicine Ready",
+            "description": "Complete telemedicine platforms with video consultations and e-prescriptions."
+        },
+        {
+            "icon": "zap",
+            "title": "EHR Integration",
+            "description": "Seamless integration with existing EHR/EMR systems using HL7 and FHIR."
+        }
+    ]
+},
+"manufacturing-iot": {
+    "badge": "Why Choose Our IoT Solutions",
+    "title": "Why Choose Our Manufacturing IoT",
+    "subtitle": "Smart factory solutions with IoT sensors, predictive maintenance, and real-time monitoring to optimize production efficiency.",
+    "reasons": [
+        {
+            "icon": "trending",
+            "title": "Predictive Maintenance",
+            "description": "AI-powered predictions to prevent equipment failures and reduce downtime."
+        },
+        {
+            "icon": "zap",
+            "title": "Real-Time Monitoring",
+            "description": "Live production tracking with instant alerts for issues and anomalies."
+        },
+        {
+            "icon": "trophy",
+            "title": "OEE Optimization",
+            "description": "Maximize Overall Equipment Effectiveness with data-driven insights."
+        },
+        {
+            "icon": "shield",
+            "title": "Industrial Security",
+            "description": "Secure IoT implementation with network segmentation and encryption."
+        }
+    ]
+},
+"react": {
+    "badge": "Why Choose React",
+    "title": "Why Choose React Development",
+    "subtitle": "Build modern, high-performance web applications with React's component-based architecture and vast ecosystem.",
+    "reasons": [
+        {
+            "icon": "zap",
+            "title": "Fast Performance",
+            "description": "Virtual DOM ensures optimal rendering and lightning-fast user experiences."
+        },
+        {
+            "icon": "trophy",
+            "title": "Industry Standard",
+            "description": "Used by Facebook, Netflix, and thousands of leading companies worldwide."
+        },
+        {
+            "icon": "users",
+            "title": "Large Community",
+            "description": "Massive ecosystem with libraries, tools, and support from millions of developers."
+        },
+        {
+            "icon": "trending",
+            "title": "Future-Proof",
+            "description": "Continuous updates and improvements backed by Meta and the community."
+        }
+    ]
+},
+"nodejs": {
+    "badge": "Why Choose Node.js",
+    "title": "Why Choose Node.js Development",
+    "subtitle": "Build scalable, high-performance server-side applications with JavaScript using Node.js's event-driven architecture.",
+    "reasons": [
+        {
+            "icon": "zap",
+            "title": "High Performance",
+            "description": "Non-blocking I/O and event-driven architecture for handling thousands of connections."
+        },
+        {
+            "icon": "trending",
+            "title": "Scalable",
+            "description": "Built for microservices and distributed systems that scale horizontally."
+        },
+        {
+            "icon": "trophy",
+            "title": "NPM Ecosystem",
+            "description": "Access to millions of packages and libraries for rapid development."
+        },
+        {
+            "icon": "users",
+            "title": "Full-Stack JS",
+            "description": "Use JavaScript across your entire stack for consistency and efficiency."
+        }
+    ]
+},
+"python": {
+    "badge": "Why Choose Python",
+    "title": "Why Choose Python Development",
+    "subtitle": "Versatile, powerful, and easy to learn - Python is perfect for web development, AI/ML, data science, and automation.",
+    "reasons": [
+        {
+            "icon": "trophy",
+            "title": "Versatile Language",
+            "description": "From web apps to AI/ML, data science to automation - Python does it all."
+        },
+        {
+            "icon": "users",
+            "title": "Rich Libraries",
+            "description": "Extensive libraries for AI/ML, data analysis, web frameworks, and more."
+        },
+        {
+            "icon": "zap",
+            "title": "Rapid Development",
+            "description": "Clean syntax and powerful features enable faster development cycles."
+        },
+        {
+            "icon": "trending",
+            "title": "Growing Demand",
+            "description": "Most popular language for AI/ML and data science with increasing adoption."
+        }
+    ]
+},
+"laravel-php": {
+    "badge": "Why Choose Laravel",
+    "title": "Why Choose Laravel Development",
+    "subtitle": "Build elegant, feature-rich web applications with Laravel's expressive syntax and comprehensive ecosystem.",
+    "reasons": [
+        {
+            "icon": "trophy",
+            "title": "Elegant Framework",
+            "description": "Beautiful, expressive syntax that makes development enjoyable and productive."
+        },
+        {
+            "icon": "shield",
+            "title": "Built-in Security",
+            "description": "Protection against SQL injection, XSS, and CSRF attacks out of the box."
+        },
+        {
+            "icon": "zap",
+            "title": "Rapid Development",
+            "description": "Rich features and tools for building applications quickly and efficiently."
+        },
+        {
+            "icon": "users",
+            "title": "Large Community",
+            "description": "Active community with extensive documentation and package ecosystem."
+        }
+    ]
+},
+"databases": {
+    "badge": "Why Choose Our Database Services",
+    "title": "Why Choose Our Database Solutions",
+    "subtitle": "Expert database design, optimization, and management services for SQL and NoSQL databases ensuring performance and reliability.",
+    "reasons": [
+        {
+            "icon": "trophy",
+            "title": "Multi-Database Expertise",
+            "description": "Proficient in PostgreSQL, MySQL, MongoDB, Redis, and more."
+        },
+        {
+            "icon": "zap",
+            "title": "Performance Tuning",
+            "description": "Optimize queries, indexes, and schemas for maximum performance."
+        },
+        {
+            "icon": "shield",
+            "title": "Data Security",
+            "description": "Encryption, access controls, and compliance with security standards."
+        },
+        {
+            "icon": "users",
+            "title": "24/7 Monitoring",
+            "description": "Continuous monitoring and proactive maintenance for database health."
+        }
+    ]
+},
+"security-tools": {
+    "badge": "Why Choose Our Security",
+    "title": "Why Choose Our Security Services",
+    "subtitle": "Comprehensive security solutions including audits, penetration testing, and 24/7 monitoring to protect your infrastructure.",
+    "reasons": [
+        {
+            "icon": "shield",
+            "title": "Comprehensive Protection",
+            "description": "Multi-layered security approach covering all aspects of your infrastructure."
+        },
+        {
+            "icon": "trophy",
+            "title": "Certified Experts",
+            "description": "Team of certified security professionals with proven track records."
+        },
+        {
+            "icon": "zap",
+            "title": "Rapid Response",
+            "description": "24/7 monitoring with immediate incident response and threat mitigation."
+        },
+        {
+            "icon": "users",
+            "title": "Compliance Ready",
+            "description": "Help achieve and maintain GDPR, HIPAA, PCI-DSS, and SOC 2 compliance."
+        }
+    ]
+},
+"s3-process": {
+    "badge": "Why Choose Our S3 Solutions",
+    "title": "Why Choose Our S3 Process Optimization",
+    "subtitle": "Streamline your AWS S3 workflows with automated processes, efficient pipelines, and cost-effective storage strategies.",
+    "reasons": [
+        {
+            "icon": "zap",
+            "title": "Automated Workflows",
+            "description": "Serverless automation for data ingestion, processing, and delivery."
+        },
+        {
+            "icon": "trending",
+            "title": "Cost Optimization",
+            "description": "Reduce storage costs through intelligent lifecycle policies and tiering."
+        },
+        {
+            "icon": "trophy",
+            "title": "High Performance",
+            "description": "Optimized transfer speeds with multipart uploads and CloudFront integration."
+        },
+        {
+            "icon": "shield",
+            "title": "Enterprise Security",
+            "description": "Advanced encryption, access controls, and compliance with industry standards."
+        }
+    ]
+},
+"business-workflow-automation": {
+    "badge": "Why Choose Us",
+    "title": "Why Automate with Coreway",
+    "subtitle": "Streamline operations and reduce manual effort with intelligent automation.",
+    "reasons": [
+        {
+            "icon": "zap",
+            "title": "Efficiency Boost",
+            "description": "Reduce manual tasks by up to 80% and free up your team for strategic work."
+        },
+        {
+            "icon": "link",
+            "title": "Universal Connectivity",
+            "description": "Connects with over 5000+ apps and services to unify your workflow."
+        },
+        {
+            "icon": "clock",
+            "title": "24/7 Operations",
+            "description": "Your automated workflows run round-the-clock, ensuring business continuity."
+        },
+        {
+            "icon": "trending-up",
+            "title": "ROI Focused",
+            "description": "Designed to deliver measurable cost savings and productivity improvements."
+        }
+    ]
+},
+"digital-commerce-transformation": {
+    "badge": "Why Choose Us",
+    "title": "Why Partner for Digital Commerce",
+    "subtitle": "Future-proof your e-commerce business with composable and AI-driven solutions.",
+    "reasons": [
+        {
+            "icon": "shopping-bag",
+            "title": "Composable Commerce",
+            "description": "Flexible, modular architecture that adapts to changing market needs."
+        },
+        {
+            "icon": "users",
+            "title": "Personalized Experiences",
+            "description": "AI-driven personalization to increase engagement and conversion rates."
+        },
+        {
+            "icon": "globe",
+            "title": "Omnichannel Reach",
+            "description": "Seamlessly sell across web, mobile, social, and physical touchpoints."
+        },
+        {
+            "icon": "bar-chart",
+            "title": "Data-Driven Growth",
+            "description": "Actionable insights to optimize inventory, pricing, and marketing strategies."
+        }
+    ]
+},
+"iot-application-development": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Coreway for IoT",
+    "subtitle": "Connect the physical and digital worlds with robust IoT solutions.",
+    "reasons": [
+        {
+            "icon": "wifi",
+            "title": "Real-Time Connectivity",
+            "description": "Reliable communication protocols for instant data transmission and control."
+        },
+        {
+            "icon": "database",
+            "title": "Big Data Handling",
+            "description": "Process and analyze massive streams of sensor data efficiently."
+        },
+        {
+            "icon": "lock",
+            "title": "End-to-End Security",
+            "description": "Secure device authentication and encrypted data transmission."
+        },
+        {
+            "icon": "smartphone",
+            "title": "User-Centric Apps",
+            "description": "Intuitive mobile and web dashboards for monitoring and controlling devices."
+        }
+    ]
+},
+"product-development-forstartups": {
+    "badge": "Why Choose Us",
+    "title": "Why Startups Choose Coreway",
+    "subtitle": "Accelerate your journey from idea to MVP and beyond.",
+    "reasons": [
+        {
+            "icon": "rocket",
+            "title": "Rapid MVP Delivery",
+            "description": "Launch your product in weeks, not months, to validate your market."
+        },
+        {
+            "icon": "users",
+            "title": "Agile Methodology",
+            "description": "Flexible development process that adapts to user feedback and pivots."
+        },
+        {
+            "icon": "code",
+            "title": "Scalable Tech Stack",
+            "description": "Built on modern technologies that grow with your user base."
+        },
+        {
+            "icon": "dollar-sign",
+            "title": "Cost-Effective",
+            "description": "Optimized development costs without compromising on quality."
+        },
+        {
+            "icon": "trending-up",
+            "title": "Investor Ready",
+            "description": "We help you build products that are ready for investor presentations and funding rounds."
+        }
+    ]
+},
+"replatforming-migration": {
+    "badge": "Why Choose Us",
+    "title": "Why Trust Us with Migration",
+    "subtitle": "Risk-free migration strategies with zero downtime and data integrity.",
+    "reasons": [
+        {
+            "icon": "refresh-cw",
+            "title": "Zero Downtime",
+            "description": "Seamless transition strategies to keep your business running during migration."
+        },
+        {
+            "icon": "database",
+            "title": "Data Integrity",
+            "description": "Rigorous validation processes to ensure no data is lost or corrupted."
+        },
+        {
+            "icon": "trending-up",
+            "title": "Performance Boost",
+            "description": "Modernize your legacy systems for better speed, security, and scalability."
+        },
+        {
+            "icon": "check-circle",
+            "title": "Proven Expertise",
+            "description": "Extensive experience in migrating complex enterprise systems."
+        }
+    ]
+},
+"saas-infrastructure-devops": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Coreway for DevOps",
+    "subtitle": "Build a resilient, scalable, and automated cloud infrastructure.",
+    "reasons": [
+        {
+            "icon": "cloud",
+            "title": "Cloud Agnostic",
+            "description": "Expertise across AWS, Azure, and Google Cloud for optimal solutions."
+        },
+        {
+            "icon": "repeat",
+            "title": "CI/CD Automation",
+            "description": "Automated pipelines for faster, more reliable code deployments."
+        },
+        {
+            "icon": "shield",
+            "title": "Security First",
+            "description": "DevSecOps practices integrated into every stage of the infrastructure."
+        },
+        {
+            "icon": "activity",
+            "icon": "users",
+            "title": "Expert Team",
+            "description": "Our engineers specialize in both traditional software and modern AI technologies."
+        }
+    ]
+},
+"ai-powered-application-platforms": {
+    "badge": "Why Choose Us",
+    "title": "Why Build AI Platforms with Us",
+    "subtitle": "Create intelligent, scalable applications that drive business growth.",
+    "reasons": [
+        {
+            "icon": "layers",
+            "title": "End-to-End Development",
+            "description": "From concept to deployment, we handle every aspect of your AI platform build."
+        },
+        {
+            "icon": "brain",
+            "title": "Advanced AI Models",
+            "description": "Leverage the latest LLMs and ML models for superior application intelligence."
+        },
+        {
+            "icon": "cloud",
+            "title": "Cloud Native",
+            "description": "Optimized for cloud environments to ensure high availability and scalability."
+        },
+        {
+            "icon": "settings",
+            "icon": "award",
+            "title": "Vetted Talent Pool",
+            "description": "Only the top 1% of developers make it through our rigorous screening process."
+        },
+        {
+            "icon": "target",
+            "title": "Perfect Match Guarantee",
+            "description": "We match developers to your project based on technical requirements and culture."
+        },
+        {
+            "icon": "heart-handshake",
+            "title": "Seamless Onboarding",
+            "description": "Start working with your dedicated developer within 48 hours."
+        },
+        {
+            "icon": "shield",
+            "title": "Risk-Free Trial",
+            "description": "Try before you commit with a 2-week trial period."
+        }
+    ]
+},
+"rag-chatbot-pdf": {
+    "badge": "Why Choose Our RAG Chatbot",
+    "title": "Why Choose Our RAG Solution",
+    "subtitle": "Unlock the full potential of your documents with our advanced AI-powered chatbot.",
+    "reasons": [
+        {
+            "icon": "brain",
+            "title": "Intelligent Processing",
+            "description": "Advanced PDF parsing and text extraction for accurate understanding."
+        },
+        {
+            "icon": "search",
+            "title": "Semantic Search",
+            "description": "Vector embeddings ensure you find the exact information you need instantly."
+        },
+        {
+            "icon": "message-circle",
+            "title": "Accurate Answers",
+            "description": "RAG technology provides precise answers with citations from your documents."
+        },
+        {
+            "icon": "shield",
+            "title": "Enterprise Security",
+            "description": "Your data is processed securely with end-to-end encryption."
+        }
+    ]
+}
+}

@@ -10,8 +10,10 @@ import EcommerceShowcase from "@/components/ecommerce/EcommerceShowcase";
 import AISecurityTechnologies from "@/components/aisecurity/AISecurityTechnologies";
 import AISecurityProcess from "@/components/aisecurity/AISecurityProcess";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function EcommerceStores() {
@@ -147,11 +149,17 @@ export default function EcommerceStores() {
           </section>
 
 
-             <FAQ
+          <WhyCorewaySection
+            badge={whyCorewayData["ecommerce-stores"].badge}
+            title={whyCorewayData["ecommerce-stores"].title}
+            subtitle={whyCorewayData["ecommerce-stores"].subtitle}
+            reasons={whyCorewayData["ecommerce-stores"].reasons}
+          />
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["ecommerce-stores"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

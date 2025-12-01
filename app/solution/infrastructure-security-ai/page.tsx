@@ -13,7 +13,8 @@ import AISecurityAutomation from "@/components/aisecurity/AISecurityAutomation";
 import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function InfrastructureSecurityAI() {
@@ -128,16 +129,16 @@ export default function InfrastructureSecurityAI() {
             features={infrastructureSecurityData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["infrastructure-security-ai"].badge}
+            title={whyCorewayData["infrastructure-security-ai"].title}
+            subtitle={whyCorewayData["infrastructure-security-ai"].subtitle}
+            reasons={whyCorewayData["infrastructure-security-ai"].reasons}
           />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["infrastructure-security-ai"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

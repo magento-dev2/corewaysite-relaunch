@@ -14,6 +14,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function DigitalCommerce() {
@@ -128,16 +129,16 @@ export default function DigitalCommerce() {
             features={commerceData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["digital-commerce-transformation"].badge}
+            title={whyCorewayData["digital-commerce-transformation"].title}
+            subtitle={whyCorewayData["digital-commerce-transformation"].subtitle}
+            reasons={whyCorewayData["digital-commerce-transformation"].reasons}
           />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs.digital}
+            faqs={sampleFAQs["digital"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

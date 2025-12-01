@@ -63,7 +63,8 @@ export default function PortfolioPage() {
                 onProjectClick={handleProjectClick}
             />
 
-            <PortfolioCategory/>
+            <PortfolioCategory
+            />
 
             {/* FAQ Section */}
             <FAQ

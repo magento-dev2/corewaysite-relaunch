@@ -158,7 +158,7 @@ export default function BlogSection() {
                   </div>
 
                   <div className=" lg:p-12 flex flex-col justify-center relative z-10">
-                    <span className="inline-block px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold mb-4 w-fit border border-slate-600">
+                    <span className="inline-block px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50 rounded-full text-xs font-semibold mb-4 w-fit">
                       {featuredPost.category}
                     </span>
 
@@ -208,7 +208,7 @@ export default function BlogSection() {
                       style={{ backgroundImage: `url(${post.image})` }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="inline-block px-3 py-1 bg-slate-800/90 backdrop-blur-sm text-slate-300 rounded-full text-xs font-semibold border border-slate-700">
+                      <span className="inline-block px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50 rounded-full text-xs font-semibold  w-fit">
                         {post.category}
                       </span>
                     </div>
@@ -246,7 +246,7 @@ export default function BlogSection() {
         <div className="text-center mt-24 ">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-full font-semibold border border-slate-700 hover:bg-slate-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-xl rounded-lg font-medium"
           >
             View All Articles
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

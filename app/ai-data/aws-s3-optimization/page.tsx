@@ -11,8 +11,10 @@ import AWSS3CaseStudies from "@/components/awss3/AWSS3CaseStudies";
 import AWSS3Process from "@/components/awss3/AWSS3Process";
 import AWSS3Automation from "@/components/awss3/AWSS3Automation";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 export default function AWSS3Optimization() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -126,11 +128,17 @@ export default function AWSS3Optimization() {
             features={awsS3Data.automation.features}
           />
 
+          <WhyCorewaySection
+            badge={whyCorewayData["aws-s3-optimization"].badge}
+            title={whyCorewayData["aws-s3-optimization"].title}
+            subtitle={whyCorewayData["aws-s3-optimization"].subtitle}
+            reasons={whyCorewayData["aws-s3-optimization"].reasons}
+          />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["aws-s3-optimization"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

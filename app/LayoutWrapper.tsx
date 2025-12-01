@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NavigationLoader from "@/components/NavigationLoader";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 import { RecaptchaProvider } from "@/contexts/RecaptchaContext";
@@ -27,6 +28,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   return (
     <LanguageProvider>
       <RecaptchaProvider>
+        <NavigationLoader />
         {!hideHeaderFooter && <Navbar />}
         {children}
         {!hideFooter && !hideHeaderFooter && <Footer />}

@@ -1,0 +1,231 @@
+{
+  "total_pages": 40,
+  "missing_faq": [
+    {
+      "name": "ai-agent",
+      "path": "app/solution\\ai-agent\\page.tsx"
+    },
+    {
+      "name": "rag-chatbot-pdf",
+      "path": "app/solution\\ai-agent\\rag-chatbot-pdf\\page.tsx"
+    },
+    {
+      "name": "[slug]",
+      "path": "app/solution\\ai-agent\\[slug]\\page.tsx"
+    }
+  ],
+  "missing_why_coreway": [
+    {
+      "name": "home",
+      "path": "app/page.tsx"
+    },
+    {
+      "name": "ai-agent",
+      "path": "app/solution\\ai-agent\\page.tsx"
+    },
+    {
+      "name": "rag-chatbot-pdf",
+      "path": "app/solution\\ai-agent\\rag-chatbot-pdf\\page.tsx"
+    },
+    {
+      "name": "[slug]",
+      "path": "app/solution\\ai-agent\\[slug]\\page.tsx"
+    }
+  ],
+  "missing_cta": [
+    {
+      "name": "ai-agent",
+      "path": "app/solution\\ai-agent\\page.tsx"
+    },
+    {
+      "name": "rag-chatbot-pdf",
+      "path": "app/solution\\ai-agent\\rag-chatbot-pdf\\page.tsx"
+    },
+    {
+      "name": "[slug]",
+      "path": "app/solution\\ai-agent\\[slug]\\page.tsx"
+    }
+  ],
+  "complete_pages": [
+    {
+      "name": "ai-chat-with-pdf",
+      "faq_key": "ai-chat-with-pdf",
+      "why_key": "ai-chat-with-pdf"
+    },
+    {
+      "name": "ai-consulting",
+      "faq_key": "ai-consulting",
+      "why_key": "ai-consulting"
+    },
+    {
+      "name": "ai-integration-services",
+      "faq_key": "ai-integration-services",
+      "why_key": "ai-integration-services"
+    },
+    {
+      "name": "ai-powered-application-platforms",
+      "faq_key": "ai-powered-application-platforms",
+      "why_key": "ai-powered-application-platforms"
+    },
+    {
+      "name": "business-workflow-automation",
+      "faq_key": "business-workflow-automation",
+      "why_key": "business-workflow-automation"
+    },
+    {
+      "name": "custom-api-systems-integration",
+      "faq_key": "custom-api-systems-integration",
+      "why_key": "custom-api-systems-integration"
+    },
+    {
+      "name": "DBDashbot",
+      "faq_key": "DBDashbot",
+      "why_key": "DBDashbot"
+    },
+    {
+      "name": "digital-commerce-transformation",
+      "faq_key": "digital",
+      "why_key": "digital-commerce-transformation"
+    },
+    {
+      "name": "infrastructure-security-ai",
+      "faq_key": "infrastructure-security-ai",
+      "why_key": "infrastructure-security-ai"
+    },
+    {
+      "name": "iot-application-development",
+      "faq_key": "iot-application-development",
+      "why_key": "iot-application-development"
+    },
+    {
+      "name": "product-development-forstartups",
+      "faq_key": "product-development-for-startups",
+      "why_key": "product-development-forstartups"
+    },
+    {
+      "name": "replatforming-migration",
+      "faq_key": "replatforming-migration",
+      "why_key": "replatforming-migration"
+    },
+    {
+      "name": "saas-infrastructure-devops",
+      "faq_key": "saas-infrastructure-devops",
+      "why_key": "saas-infrastructure-devops"
+    },
+    {
+      "name": "ugs-ads",
+      "faq_key": "ugs-ads",
+      "why_key": "ugs-ads"
+    },
+    {
+      "name": "cloud-storage",
+      "faq_key": "cloud-storage",
+      "why_key": "cloud-storage"
+    },
+    {
+      "name": "databases",
+      "faq_key": "databases",
+      "why_key": "databases"
+    },
+    {
+      "name": "iot-protocols",
+      "faq_key": "iot-protocols",
+      "why_key": "iot-protocols"
+    },
+    {
+      "name": "laravel-php",
+      "faq_key": "laravel-php",
+      "why_key": "laravel-php"
+    },
+    {
+      "name": "nodejs",
+      "faq_key": "nodejs",
+      "why_key": "nodejs"
+    },
+    {
+      "name": "python",
+      "faq_key": "python",
+      "why_key": "python"
+    },
+    {
+      "name": "react",
+      "faq_key": "react",
+      "why_key": "react"
+    },
+    {
+      "name": "s3-process",
+      "faq_key": "s3-process",
+      "why_key": "s3-process"
+    },
+    {
+      "name": "security-tools",
+      "faq_key": "security-tools",
+      "why_key": "security-tools"
+    },
+    {
+      "name": "automotive",
+      "faq_key": "automotive",
+      "why_key": "automotive"
+    },
+    {
+      "name": "ecommerce-stores",
+      "faq_key": "ecommerce-stores",
+      "why_key": "ecommerce-stores"
+    },
+    {
+      "name": "fashion-apparel",
+      "faq_key": "fashion-apparel",
+      "why_key": "fashion-apparel"
+    },
+    {
+      "name": "food-beverage",
+      "faq_key": "food-beverage",
+      "why_key": "food-beverage"
+    },
+    {
+      "name": "furniture-home-decor",
+      "faq_key": "furniture-home-decor",
+      "why_key": "furniture-home-decor"
+    },
+    {
+      "name": "manufacturing-iot",
+      "faq_key": "manufacturing-iot",
+      "why_key": "manufacturing-iot"
+    },
+    {
+      "name": "pharmaceuticals-healthcare",
+      "faq_key": "pharmaceuticals-healthcare",
+      "why_key": "pharmaceuticals-healthcare"
+    },
+    {
+      "name": "aws-s3-optimization",
+      "faq_key": "aws-s3-optimization",
+      "why_key": "aws-s3-optimization"
+    },
+    {
+      "name": "custom-dashboards",
+      "faq_key": "custom-dashboards",
+      "why_key": "custom-dashboards"
+    },
+    {
+      "name": "dataset-management-delivery",
+      "faq_key": "dataset-management-delivery",
+      "why_key": "dataset-management-delivery"
+    },
+    {
+      "name": "gpt-automation",
+      "faq_key": "gpt-automation",
+      "why_key": "gpt-automation"
+    },
+    {
+      "name": "infrastructure-security-ai",
+      "faq_key": "infrastructure-security-ai",
+      "why_key": "infrastructure-security-ai"
+    },
+    {
+      "name": "metadata-extraction-ai",
+      "faq_key": "metadata-extraction-ai",
+      "why_key": "metadata-extraction-ai"
+    }
+  ]
+}

@@ -11,8 +11,10 @@ import AISecurityCaseStudies from "@/components/aisecurity/AISecurityCaseStudies
 import AISecurityProcess from "@/components/aisecurity/AISecurityProcess";
 import AISecurityAutomation from "@/components/aisecurity/AISecurityAutomation";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 export default function InfrastructureSecurityAI() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -126,11 +128,17 @@ export default function InfrastructureSecurityAI() {
             features={infrastructureSecurityData.automation.features}
           />
 
-           <FAQ
+          <WhyCorewaySection
+            badge={whyCorewayData["infrastructure-security-ai"].badge}
+            title={whyCorewayData["infrastructure-security-ai"].title}
+            subtitle={whyCorewayData["infrastructure-security-ai"].subtitle}
+            reasons={whyCorewayData["infrastructure-security-ai"].reasons}
+          />
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["infrastructure-security-ai"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

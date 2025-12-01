@@ -14,6 +14,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function AIPoweredApplicationPlatforms() {
@@ -128,10 +129,10 @@ export default function AIPoweredApplicationPlatforms() {
             features={aiPlatformsData.automation.features}
           />
           <WhyCorewaySection
-            badge="Why Choose Us"
-            title="Why Choose Coreway Solutions"
-            subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-
+            badge={whyCorewayData["ai-powered-application-platforms"].badge}
+            title={whyCorewayData["ai-powered-application-platforms"].title}
+            subtitle={whyCorewayData["ai-powered-application-platforms"].subtitle}
+            reasons={whyCorewayData["ai-powered-application-platforms"].reasons}
           />
           <FAQ
             badge="Help Center"

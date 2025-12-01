@@ -11,8 +11,10 @@ import DatasetCaseStudies from "@/components/dataset/DatasetCaseStudies";
 import DatasetProcess from "@/components/dataset/DatasetProcess";
 import DatasetAutomation from "@/components/dataset/DatasetAutomation";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function AutomotivePage() {
@@ -127,11 +129,17 @@ export default function AutomotivePage() {
             description={automotiveData.automation.description}
             features={automotiveData.automation.features}
           />
+          <WhyCorewaySection
+            badge={whyCorewayData["automotive"].badge}
+            title={whyCorewayData["automotive"].title}
+            subtitle={whyCorewayData["automotive"].subtitle}
+            reasons={whyCorewayData["automotive"].reasons}
+          />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["automotive"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

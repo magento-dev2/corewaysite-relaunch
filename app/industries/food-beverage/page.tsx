@@ -11,8 +11,10 @@ import DatasetCaseStudies from "@/components/dataset/DatasetCaseStudies";
 import DatasetProcess from "@/components/dataset/DatasetProcess";
 import DatasetAutomation from "@/components/dataset/DatasetAutomation";
 import PageCTA from "@/components/PageCTA";
-import sampleFAQs from '@/data/faq.json';
+import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
+import WhyCorewaySection from '@/components/WhyCorewaySection';
+import whyCorewayData from '@/data/why-coreway.json';
 
 
 export default function FoodBeveragePage() {
@@ -139,11 +141,17 @@ export default function FoodBeveragePage() {
             features={foodBeverageData.automation.features}
           />
 
+          <WhyCorewaySection
+            badge={whyCorewayData["food-beverage"].badge}
+            title={whyCorewayData["food-beverage"].title}
+            subtitle={whyCorewayData["food-beverage"].subtitle}
+            reasons={whyCorewayData["food-beverage"].reasons}
+          />
           <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs}
+            faqs={sampleFAQs["food-beverage"]}
             columns={1}
             showContactCTA={true}
             contactText="Still have questions?"

@@ -8,6 +8,7 @@ import PageCTA from "@/components/PageCTA";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import whyCorewayData from '@/data/why-coreway.json';
 
 const siteUrl = "https://www.corewaysolution.com";
 
@@ -33,7 +34,7 @@ export const metadata = {
     canonical: siteUrl,
   },
 };
-const defaultReasons : {icon: string, title: string, description: string}[] = [
+const defaultReasons: { icon: string, title: string, description: string }[] = [
   {
     icon: "agency",
     title: "Award  Agency",
@@ -66,10 +67,10 @@ export default function HomePage() {
       <UseCases />
       <Integrations />
       <WhyCorewaySection
-        badge="Why Choose Us"
-        title="Why Choose Coreway Solutions"
-        subtitle="We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation and expertise."
-        reasons={defaultReasons}
+        badge={whyCorewayData["business-workflow-automation"].badge}
+        title={whyCorewayData["business-workflow-automation"].title}
+        subtitle={whyCorewayData["business-workflow-automation"].subtitle}
+        reasons={whyCorewayData["business-workflow-automation"].reasons}
       />
       <FAQ
         badge="Help Center"
