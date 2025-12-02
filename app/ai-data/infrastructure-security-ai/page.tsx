@@ -15,8 +15,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function InfrastructureSecurityAI() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -94,16 +102,22 @@ export default function InfrastructureSecurityAI() {
             buttons={infrastructureSecurityData.hero.buttons}
           />
 
-          <InfraSecurityOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <InfraSecurityOverview
             title={infrastructureSecurityData.overview.title}
             content={infrastructureSecurityData.overview.content}
             image={infrastructureSecurityData.overview.image}
           />
+          </div>
 
-          <InfraSecurityFeatures
+          <div id="features">
+            <InfraSecurityFeatures
             title={infrastructureSecurityData.features.title}
             items={infrastructureSecurityData.features.items}
           />
+          </div>
 
           <AISecurityTechnologies
             title={infrastructureSecurityData.platforms.title}
@@ -116,11 +130,13 @@ export default function InfrastructureSecurityAI() {
             cases={infrastructureSecurityData.caseStudies.cases}
           />
 
-          <AISecurityProcess
+          <div id="process">
+            <AISecurityProcess
             title={infrastructureSecurityData.process.title}
             description={infrastructureSecurityData.process.description}
             steps={infrastructureSecurityData.process.steps}
           />
+          </div>
 
           <AISecurityAutomation
             title={infrastructureSecurityData.automation.title}
@@ -134,7 +150,8 @@ export default function InfrastructureSecurityAI() {
             subtitle={whyCorewayData["infrastructure-security-ai"].subtitle}
             reasons={whyCorewayData["infrastructure-security-ai"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function InfrastructureSecurityAI() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Secure your infrastructure"

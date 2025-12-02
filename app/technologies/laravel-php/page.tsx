@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function LaravelPHPTechnologyPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -104,17 +112,23 @@ export default function LaravelPHPTechnologyPage() {
             img={laravelData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={laravelData.overview.title}
             content={laravelData.overview.content}
             image={laravelData.overview.image}
             stats={laravelData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={laravelData.features.title}
             items={laravelData.features.items}
           />
+          </div>
 
           <TechStack
             title={laravelData.technologies.title}
@@ -145,7 +159,8 @@ export default function LaravelPHPTechnologyPage() {
             subtitle={whyCorewayData["laravel-php"].subtitle}
             reasons={whyCorewayData["laravel-php"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -155,6 +170,7 @@ export default function LaravelPHPTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

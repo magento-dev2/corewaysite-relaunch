@@ -15,10 +15,18 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 
 export default function ReplatformingMigration() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -96,16 +104,22 @@ export default function ReplatformingMigration() {
             buttons={replatformingData.hero.buttons}
           />
 
-          <ReplatformingOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <ReplatformingOverview
             title={replatformingData.overview.title}
             content={replatformingData.overview.content}
             image={replatformingData.overview.image}
           />
+          </div>
 
-          <ReplatformingFeatures
+          <div id="features">
+            <ReplatformingFeatures
             title={replatformingData.features.title}
             items={replatformingData.features.items}
           />
+          </div>
 
           <ReplatformingTechnologies
             title={replatformingData.platforms.title}
@@ -118,11 +132,13 @@ export default function ReplatformingMigration() {
             cases={replatformingData.caseStudies.cases}
           />
 
-          <ReplatformingProcess
+          <div id="process">
+            <ReplatformingProcess
             title={replatformingData.process.title}
             description={replatformingData.process.description}
             steps={replatformingData.process.steps}
           />
+          </div>
 
           <ReplatformingAutomation
             title={replatformingData.automation.title}
@@ -135,7 +151,8 @@ export default function ReplatformingMigration() {
             subtitle={whyCorewayData["replatforming-migration"].subtitle}
             reasons={whyCorewayData["replatforming-migration"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -145,6 +162,7 @@ export default function ReplatformingMigration() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Ready to migrate?"

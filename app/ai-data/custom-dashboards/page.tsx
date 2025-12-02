@@ -15,8 +15,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function CustomDashboards() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -94,16 +102,22 @@ export default function CustomDashboards() {
             buttons={customDashboardData.hero.buttons}
           />
 
-          <DashboardOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <DashboardOverview
             title={customDashboardData.overview.title}
             content={customDashboardData.overview.content}
             image={customDashboardData.overview.image}
           />
+          </div>
 
-          <DashboardFeatures
+          <div id="features">
+            <DashboardFeatures
             title={customDashboardData.features.title}
             items={customDashboardData.features.items}
           />
+          </div>
 
           <DashboardTechnologies
             title={customDashboardData.platforms.title}
@@ -116,11 +130,13 @@ export default function CustomDashboards() {
             cases={customDashboardData.caseStudies.cases}
           />
 
-          <DashboardProcess
+          <div id="process">
+            <DashboardProcess
             title={customDashboardData.process.title}
             description={customDashboardData.process.description}
             steps={customDashboardData.process.steps}
           />
+          </div>
 
           <DashboardAutomation
             title={customDashboardData.automation.title}
@@ -133,7 +149,8 @@ export default function CustomDashboards() {
             subtitle={whyCorewayData["custom-dashboards"].subtitle}
             reasons={whyCorewayData["custom-dashboards"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -143,6 +160,7 @@ export default function CustomDashboards() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Visualize Your Data"

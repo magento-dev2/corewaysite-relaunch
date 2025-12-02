@@ -11,6 +11,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 const processSteps = [
@@ -129,6 +130,13 @@ const stats = [
 ];
 
 export default function UGCAdsPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [visibleVideos, setVisibleVideos] = useState<boolean[]>(new Array(showcaseVideos.length).fill(false));
   const showcaseRef = useRef<HTMLDivElement>(null);
@@ -491,7 +499,8 @@ export default function UGCAdsPage() {
         reasons={whyCorewayData["ugs-ads"].reasons}
       />
 
-      <FAQ
+      <div id="faq">
+            <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
@@ -501,6 +510,7 @@ export default function UGCAdsPage() {
         contactText="Still have questions?"
         contactButtonText="Contact Our Team"
       />
+          </div>
 
       <PageCTA
         badge="  Ready to Create Your UGC Ads?"

@@ -15,9 +15,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function FashionApparelPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -107,16 +115,22 @@ export default function FashionApparelPage() {
             img={fashionApparelData.hero.img}
           />
 
-          <FashionOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <FashionOverview
             title={fashionApparelData.overview.title}
             content={fashionApparelData.overview.content}
             image={fashionApparelData.overview.image}
           />
+          </div>
 
-          <FashionFeatures
+          <div id="features">
+            <FashionFeatures
             title={fashionApparelData.features.title}
             items={fashionApparelData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={fashionApparelData.platforms.title}
@@ -129,11 +143,13 @@ export default function FashionApparelPage() {
             cases={fashionApparelData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={fashionApparelData.process.title}
             description={fashionApparelData.process.description}
             steps={fashionApparelData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={fashionApparelData.automation.title}
@@ -147,7 +163,8 @@ export default function FashionApparelPage() {
             subtitle={whyCorewayData["fashion-apparel"].subtitle}
             reasons={whyCorewayData["fashion-apparel"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -157,6 +174,7 @@ export default function FashionApparelPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

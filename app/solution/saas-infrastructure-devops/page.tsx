@@ -15,9 +15,17 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function SaaSInfrastructureDevOps() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function SaaSInfrastructureDevOps() {
             buttons={saasDevOpsData.hero.buttons}
           />
 
-          <SaaSOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <SaaSOverview
             title={saasDevOpsData.overview.title}
             content={saasDevOpsData.overview.content}
             image={saasDevOpsData.overview.image}
           />
+          </div>
 
-          <SaaSFeatures
+          <div id="features">
+            <SaaSFeatures
             title={saasDevOpsData.features.title}
             items={saasDevOpsData.features.items}
           />
+          </div>
 
           <SaaSTechnologies
             title={saasDevOpsData.platforms.title}
@@ -117,11 +131,13 @@ export default function SaaSInfrastructureDevOps() {
             cases={saasDevOpsData.caseStudies.cases}
           />
 
-          <SaaSProcess
+          <div id="process">
+            <SaaSProcess
             title={saasDevOpsData.process.title}
             description={saasDevOpsData.process.description}
             steps={saasDevOpsData.process.steps}
           />
+          </div>
 
           <SaaSAutomation
             title={saasDevOpsData.automation.title}
@@ -134,7 +150,8 @@ export default function SaaSInfrastructureDevOps() {
             subtitle={whyCorewayData["saas-infrastructure-devops"].subtitle}
             reasons={whyCorewayData["saas-infrastructure-devops"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function SaaSInfrastructureDevOps() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Ready to scale?"

@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function PythonTechnologyPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -101,17 +109,23 @@ export default function PythonTechnologyPage() {
             img={pythonData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={pythonData.overview.title}
             content={pythonData.overview.content}
             image={pythonData.overview.image}
             stats={pythonData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={pythonData.features.title}
             items={pythonData.features.items}
           />
+          </div>
 
           <TechStack
             title={pythonData.technologies.title}
@@ -142,7 +156,8 @@ export default function PythonTechnologyPage() {
             subtitle={whyCorewayData["python"].subtitle}
             reasons={whyCorewayData["python"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -152,6 +167,7 @@ export default function PythonTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Start Building"

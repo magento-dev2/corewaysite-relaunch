@@ -14,8 +14,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function MetadataExtractionAI() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -71,16 +79,22 @@ export default function MetadataExtractionAI() {
             img={metadataExtractionData.hero.img}
           />
 
-          <DatasetOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <DatasetOverview
             title={metadataExtractionData.overview.title}
             content={metadataExtractionData.overview.content}
             image={metadataExtractionData.overview.image}
           />
+          </div>
 
-          <DatasetFeatures
+          <div id="features">
+            <DatasetFeatures
             title={metadataExtractionData.features.title}
             items={metadataExtractionData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={metadataExtractionData.platforms.title}
@@ -93,11 +107,13 @@ export default function MetadataExtractionAI() {
             cases={metadataExtractionData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={metadataExtractionData.process.title}
             description={metadataExtractionData.process.description}
             steps={metadataExtractionData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={metadataExtractionData.automation.title}
@@ -111,7 +127,8 @@ export default function MetadataExtractionAI() {
             subtitle={whyCorewayData["metadata-extraction-ai"].subtitle}
             reasons={whyCorewayData["metadata-extraction-ai"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -121,6 +138,7 @@ export default function MetadataExtractionAI() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Extract Intelligence"

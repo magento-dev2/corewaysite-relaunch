@@ -10,14 +10,28 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function AIChatWithPDFPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <div className="overflow-hidden">
       <AIChatHero />
-      <AIChatProcess />
-      <AIChatFeatures />
+
+          <SubHeader title="Solutions" items={subHeaderItems} />
+      <div id="process">
+            <AIChatProcess />
+          </div>
+      <div id="features">
+            <AIChatFeatures />
+          </div>
       <AIChatBenefits />
       <AIChatIndustries />
       <WhyCorewaySection
@@ -26,7 +40,8 @@ export default function AIChatWithPDFPage() {
         subtitle={whyCorewayData["ai-chat-with-pdf"].subtitle}
         reasons={whyCorewayData["ai-chat-with-pdf"].reasons}
       />
-      <FAQ
+      <div id="faq">
+            <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
@@ -36,6 +51,7 @@ export default function AIChatWithPDFPage() {
         contactText="Still have questions?"
         contactButtonText="Contact Our Team"
       />
+          </div>
       <PageCTA
         badge="Start Your Journey"
         title="Let's Talk Your Success!"

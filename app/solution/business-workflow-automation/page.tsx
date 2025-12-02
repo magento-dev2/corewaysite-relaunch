@@ -9,6 +9,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 const siteUrl = "https://www.corewaysolution.com";
 
@@ -58,6 +59,13 @@ const defaultReasons: { icon: string, title: string, description: string }[] = [
 ];
 
 export default function HomePage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <>
       <Hero />
@@ -72,7 +80,8 @@ export default function HomePage() {
         subtitle={whyCorewayData["business-workflow-automation"].subtitle}
         reasons={whyCorewayData["business-workflow-automation"].reasons}
       />
-      <FAQ
+      <div id="faq">
+            <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
@@ -82,6 +91,7 @@ export default function HomePage() {
         contactText="Still have questions?"
         contactButtonText="Contact Our Team"
       />
+          </div>
       <PageCTA
         badge="Start automating today"
         title="Ready to transform your workflows?"

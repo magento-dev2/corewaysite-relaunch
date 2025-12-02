@@ -15,9 +15,17 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function AIPoweredApplicationPlatforms() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function AIPoweredApplicationPlatforms() {
             buttons={aiPlatformsData.hero.buttons}
           />
 
-          <AIPlatformsOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <AIPlatformsOverview
             title={aiPlatformsData.overview.title}
             content={aiPlatformsData.overview.content}
             image={aiPlatformsData.overview.image}
           />
+          </div>
 
-          <AIPlatformsFeatures
+          <div id="features">
+            <AIPlatformsFeatures
             title={aiPlatformsData.features.title}
             items={aiPlatformsData.features.items}
           />
+          </div>
 
           <AIPlatformTechnologies
             title={aiPlatformsData.platforms.title}
@@ -117,11 +131,13 @@ export default function AIPoweredApplicationPlatforms() {
             cases={aiPlatformsData.caseStudies.cases}
           />
 
-          <AIPlatformProcess
+          <div id="process">
+            <AIPlatformProcess
             title={aiPlatformsData.process.title}
             description={aiPlatformsData.process.description}
             steps={aiPlatformsData.process.steps}
           />
+          </div>
 
           <AIPlatformAutomation
             title={aiPlatformsData.automation.title}
@@ -134,7 +150,8 @@ export default function AIPoweredApplicationPlatforms() {
             subtitle={whyCorewayData["ai-powered-application-platforms"].subtitle}
             reasons={whyCorewayData["ai-powered-application-platforms"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function AIPoweredApplicationPlatforms() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

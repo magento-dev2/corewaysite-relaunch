@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function CloudStorageTechnologyPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -106,17 +114,23 @@ export default function CloudStorageTechnologyPage() {
             img={storageData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={storageData.overview.title}
             content={storageData.overview.content}
             image={storageData.overview.image}
             stats={storageData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={storageData.features.title}
             items={storageData.features.items}
           />
+          </div>
 
           <StorageComparison
             title={storageData.comparison.title}
@@ -146,7 +160,8 @@ export default function CloudStorageTechnologyPage() {
             subtitle={whyCorewayData["cloud-storage"].subtitle}
             reasons={whyCorewayData["cloud-storage"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -156,6 +171,7 @@ export default function CloudStorageTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Start Optimizing"

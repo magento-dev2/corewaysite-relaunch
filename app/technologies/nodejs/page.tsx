@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function NodeJSTechnologyPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -101,17 +109,23 @@ export default function NodeJSTechnologyPage() {
             img={nodeData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={nodeData.overview.title}
             content={nodeData.overview.content}
             image={nodeData.overview.image}
             stats={nodeData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={nodeData.features.title}
             items={nodeData.features.items}
           />
+          </div>
 
           <TechStack
             title={nodeData.technologies.title}
@@ -142,7 +156,8 @@ export default function NodeJSTechnologyPage() {
             subtitle={whyCorewayData["nodejs"].subtitle}
             reasons={whyCorewayData["nodejs"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -152,6 +167,7 @@ export default function NodeJSTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
           <PageCTA
             badge="Start Building"
             title="Ready to Build with Node.js?"

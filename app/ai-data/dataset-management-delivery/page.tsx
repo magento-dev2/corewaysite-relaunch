@@ -15,8 +15,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function DatasetManagementDelivery() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function DatasetManagementDelivery() {
             img={datasetManagementData.hero.img}
           />
 
-          <DatasetOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <DatasetOverview
             title={datasetManagementData.overview.title}
             content={datasetManagementData.overview.content}
             image={datasetManagementData.overview.image}
           />
+          </div>
 
-          <DatasetFeatures
+          <div id="features">
+            <DatasetFeatures
             title={datasetManagementData.features.title}
             items={datasetManagementData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={datasetManagementData.platforms.title}
@@ -117,11 +131,13 @@ export default function DatasetManagementDelivery() {
             cases={datasetManagementData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={datasetManagementData.process.title}
             description={datasetManagementData.process.description}
             steps={datasetManagementData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={datasetManagementData.automation.title}
@@ -135,7 +151,8 @@ export default function DatasetManagementDelivery() {
             subtitle={whyCorewayData["dataset-management-delivery"].subtitle}
             reasons={whyCorewayData["dataset-management-delivery"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -145,6 +162,7 @@ export default function DatasetManagementDelivery() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Transform your data"

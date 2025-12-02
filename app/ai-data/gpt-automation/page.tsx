@@ -15,8 +15,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function GPTAutomation() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function GPTAutomation() {
             img={gptAutomationData.hero.img}
           />
 
-          <DatasetOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <DatasetOverview
             title={gptAutomationData.overview.title}
             content={gptAutomationData.overview.content}
             image={gptAutomationData.overview.image}
           />
+          </div>
 
-          <DatasetFeatures
+          <div id="features">
+            <DatasetFeatures
             title={gptAutomationData.features.title}
             items={gptAutomationData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={gptAutomationData.platforms.title}
@@ -117,11 +131,13 @@ export default function GPTAutomation() {
             cases={gptAutomationData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={gptAutomationData.process.title}
             description={gptAutomationData.process.description}
             steps={gptAutomationData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={gptAutomationData.automation.title}
@@ -135,7 +151,8 @@ export default function GPTAutomation() {
             subtitle={whyCorewayData["gpt-automation"].subtitle}
             reasons={whyCorewayData["gpt-automation"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -145,6 +162,7 @@ export default function GPTAutomation() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Automate Everything"

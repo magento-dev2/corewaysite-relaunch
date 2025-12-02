@@ -15,10 +15,18 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 
 export default function IoTApplicationDevelopment() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -96,16 +104,22 @@ export default function IoTApplicationDevelopment() {
             buttons={iotApplicationsData.hero.buttons}
           />
 
-          <IoTOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <IoTOverview
             title={iotApplicationsData.overview.title}
             content={iotApplicationsData.overview.content}
             image={iotApplicationsData.overview.image}
           />
+          </div>
 
-          <IoTFeatures
+          <div id="features">
+            <IoTFeatures
             title={iotApplicationsData.features.title}
             items={iotApplicationsData.features.items}
           />
+          </div>
 
           <IoTTechnologies
             title={iotApplicationsData.platforms.title}
@@ -118,11 +132,13 @@ export default function IoTApplicationDevelopment() {
             cases={iotApplicationsData.caseStudies.cases}
           />
 
-          <IoTProcess
+          <div id="process">
+            <IoTProcess
             title={iotApplicationsData.process.title}
             description={iotApplicationsData.process.description}
             steps={iotApplicationsData.process.steps}
           />
+          </div>
 
           <IoTAutomation
             title={iotApplicationsData.automation.title}
@@ -135,7 +151,8 @@ export default function IoTApplicationDevelopment() {
             subtitle={whyCorewayData["iot-application-development"].subtitle}
             reasons={whyCorewayData["iot-application-development"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -145,6 +162,7 @@ export default function IoTApplicationDevelopment() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Ready to connect?"

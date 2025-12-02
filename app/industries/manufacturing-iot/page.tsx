@@ -13,9 +13,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function ManufacturingIoT() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -92,16 +100,22 @@ export default function ManufacturingIoT() {
             buttons={manufacturingIoTData.hero.buttons}
           />
 
-          <ManufacturingOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <ManufacturingOverview
             title={manufacturingIoTData.overview.title}
             content={manufacturingIoTData.overview.content}
             image={manufacturingIoTData.overview.image}
           />
+          </div>
 
-          <ManufacturingFeatures
+          <div id="features">
+            <ManufacturingFeatures
             title={manufacturingIoTData.features.title}
             items={manufacturingIoTData.features.items}
           />
+          </div>
 
           <section className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,11 +145,13 @@ export default function ManufacturingIoT() {
             items={manufacturingIoTData.cases.items}
           />
 
-          <AISecurityProcess
+          <div id="process">
+            <AISecurityProcess
             title={manufacturingIoTData.process.title}
             description={manufacturingIoTData.process.description}
             steps={manufacturingIoTData.process.steps}
           />
+          </div>
 
           <section className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a1325]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,7 +187,8 @@ export default function ManufacturingIoT() {
             subtitle={whyCorewayData["manufacturing-iot"].subtitle}
             reasons={whyCorewayData["manufacturing-iot"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -181,6 +198,7 @@ export default function ManufacturingIoT() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

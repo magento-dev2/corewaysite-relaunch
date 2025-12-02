@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function DatabaseTechnologyPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -106,17 +114,23 @@ export default function DatabaseTechnologyPage() {
             img={databaseData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={databaseData.overview.title}
             content={databaseData.overview.content}
             image={databaseData.overview.image}
             stats={databaseData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={databaseData.features.title}
             items={databaseData.features.items}
           />
+          </div>
 
           <DatabaseComparison
             title={databaseData.comparison.title}
@@ -148,7 +162,8 @@ export default function DatabaseTechnologyPage() {
             subtitle={whyCorewayData["databases"].subtitle}
             reasons={whyCorewayData["databases"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -158,6 +173,7 @@ export default function DatabaseTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Start Building"

@@ -15,9 +15,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function FoodBeveragePage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -107,16 +115,22 @@ export default function FoodBeveragePage() {
             img={foodBeverageData.hero.img}
           />
 
-          <FoodOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <FoodOverview
             title={foodBeverageData.overview.title}
             content={foodBeverageData.overview.content}
             image={foodBeverageData.overview.image}
           />
+          </div>
 
-          <FoodFeatures
+          <div id="features">
+            <FoodFeatures
             title={foodBeverageData.features.title}
             items={foodBeverageData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={foodBeverageData.platforms.title}
@@ -129,11 +143,13 @@ export default function FoodBeveragePage() {
             cases={foodBeverageData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={foodBeverageData.process.title}
             description={foodBeverageData.process.description}
             steps={foodBeverageData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={foodBeverageData.automation.title}
@@ -147,7 +163,8 @@ export default function FoodBeveragePage() {
             subtitle={whyCorewayData["food-beverage"].subtitle}
             reasons={whyCorewayData["food-beverage"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -157,6 +174,7 @@ export default function FoodBeveragePage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

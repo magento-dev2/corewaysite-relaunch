@@ -16,6 +16,8 @@ import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 
 
+import SubHeader from "@/components/SubHeader";
+
 export default function DigitalCommerce() {
   const siteUrl = "https://www.corewaysolution.com"; // absolute URL
 
@@ -48,6 +50,13 @@ export default function DigitalCommerce() {
     areaServed: "Worldwide",
   };
 
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <>
 
@@ -71,55 +80,73 @@ export default function DigitalCommerce() {
             buttons={commerceData.hero.buttons}
           />
 
-          <CommerceOverview
-            title={commerceData.overview.title}
-            content={commerceData.overview.content}
-            image={commerceData.overview.image}
-          />
+          <SubHeader title="Digital Commerce" items={subHeaderItems} />
 
-          <CommerceFeatures
-            title={commerceData.features.title}
-            items={commerceData.features.items}
-          />
+          <div id="overview">
+            <CommerceOverview
+              title={commerceData.overview.title}
+              content={commerceData.overview.content}
+              image={commerceData.overview.image}
+            />
+          </div>
 
-          <PlatformExpertise
-            title={commerceData.platforms.title}
-            description={commerceData.platforms.description}
-            items={commerceData.platforms.items}
-          />
+          <div id="features">
+            <CommerceFeatures
+              title={commerceData.features.title}
+              items={commerceData.features.items}
+            />
+          </div>
+
+          <div id="expertise">
+            <PlatformExpertise
+              title={commerceData.platforms.title}
+              description={commerceData.platforms.description}
+              items={commerceData.platforms.items}
+            />
+          </div>
           {/* 
           <CaseStudies
             title={commerceData.caseStudies.title}
             cases={commerceData.caseStudies.cases}
           /> */}
 
-          <ProcessDiagram
-            title={commerceData.process.title}
-            description={commerceData.process.description}
-            steps={commerceData.process.steps}
-          />
+          <div id="process">
+            <ProcessDiagram
+              title={commerceData.process.title}
+              description={commerceData.process.description}
+              steps={commerceData.process.steps}
+            />
+          </div>
 
-          <AutomationSection
-            title={commerceData.automation.title}
-            description={commerceData.automation.description}
-            features={commerceData.automation.features}
-          />
-          <WhyCorewaySection
-            badge={whyCorewayData["digital-commerce-transformation"].badge}
-            title={whyCorewayData["digital-commerce-transformation"].title}
-            subtitle={whyCorewayData["digital-commerce-transformation"].subtitle}
-            reasons={whyCorewayData["digital-commerce-transformation"].reasons}
-          />
-          <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["digital"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+          <div id="automation">
+            <AutomationSection
+              title={commerceData.automation.title}
+              description={commerceData.automation.description}
+              features={commerceData.automation.features}
+            />
+          </div>
+
+          <div id="why-coreway">
+            <WhyCorewaySection
+              badge={whyCorewayData["digital-commerce-transformation"].badge}
+              title={whyCorewayData["digital-commerce-transformation"].title}
+              subtitle={whyCorewayData["digital-commerce-transformation"].subtitle}
+              reasons={whyCorewayData["digital-commerce-transformation"].reasons}
+            />
+          </div>
+
+          <div id="faq">
+            <FAQ
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["digital"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
+          </div>
 
           <PageCTA
             badge="Ready to transform?"

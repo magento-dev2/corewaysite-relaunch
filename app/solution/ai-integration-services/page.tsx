@@ -15,8 +15,16 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function AIIntegrationServices() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -94,16 +102,22 @@ export default function AIIntegrationServices() {
             buttons={aiIntegrationData.hero.buttons}
           />
 
-          <AIIntegrationOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <AIIntegrationOverview
             title={aiIntegrationData.overview.title}
             content={aiIntegrationData.overview.content}
             image={aiIntegrationData.overview.image}
           />
+          </div>
 
-          <AIIntegrationFeatures
+          <div id="features">
+            <AIIntegrationFeatures
             title={aiIntegrationData.features.title}
             items={aiIntegrationData.features.items}
           />
+          </div>
 
           <AIIntegrationTechnologies
             title={aiIntegrationData.platforms.title}
@@ -116,11 +130,13 @@ export default function AIIntegrationServices() {
             cases={aiIntegrationData.caseStudies.cases}
           />
 
-          <AIIntegrationProcess
+          <div id="process">
+            <AIIntegrationProcess
             title={aiIntegrationData.process.title}
             description={aiIntegrationData.process.description}
             steps={aiIntegrationData.process.steps}
           />
+          </div>
 
           <AIIntegrationAutomation
             title={aiIntegrationData.automation.title}
@@ -133,7 +149,8 @@ export default function AIIntegrationServices() {
             subtitle={whyCorewayData["ai-integration-services"].subtitle}
             reasons={whyCorewayData["ai-integration-services"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -143,6 +160,7 @@ export default function AIIntegrationServices() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

@@ -15,9 +15,17 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function AIConsulting() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function AIConsulting() {
             buttons={aiConsultingData.hero.buttons}
           />
 
-          <AIConsultingOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <AIConsultingOverview
             title={aiConsultingData.overview.title}
             content={aiConsultingData.overview.content}
             image={aiConsultingData.overview.image}
           />
+          </div>
 
-          <AIConsultingFeatures
+          <div id="features">
+            <AIConsultingFeatures
             title={aiConsultingData.features.title}
             items={aiConsultingData.features.items}
           />
+          </div>
 
           <AIConsultingTechnologies
             title={aiConsultingData.platforms.title}
@@ -117,11 +131,13 @@ export default function AIConsulting() {
             cases={aiConsultingData.caseStudies.cases}
           />
 
-          <AIConsultingProcess
+          <div id="process">
+            <AIConsultingProcess
             title={aiConsultingData.process.title}
             description={aiConsultingData.process.description}
             steps={aiConsultingData.process.steps}
           />
+          </div>
 
           <AIConsultingAutomation
             title={aiConsultingData.automation.title}
@@ -134,7 +150,8 @@ export default function AIConsulting() {
             subtitle={whyCorewayData["ai-consulting"].subtitle}
             reasons={whyCorewayData["ai-consulting"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function AIConsulting() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Ready to innovate?"

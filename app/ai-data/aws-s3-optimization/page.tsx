@@ -15,8 +15,16 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function AWSS3Optimization() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -94,16 +102,22 @@ export default function AWSS3Optimization() {
             buttons={awsS3Data.hero.buttons}
           />
 
-          <AWSS3Overview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <AWSS3Overview
             title={awsS3Data.overview.title}
             content={awsS3Data.overview.content}
             image={awsS3Data.overview.image}
           />
+          </div>
 
-          <AWSS3Features
+          <div id="features">
+            <AWSS3Features
             title={awsS3Data.features.title}
             items={awsS3Data.features.items}
           />
+          </div>
 
           <AWSS3Technologies
             title={awsS3Data.platforms.title}
@@ -116,11 +130,13 @@ export default function AWSS3Optimization() {
             cases={awsS3Data.caseStudies.cases}
           />
 
-          <AWSS3Process
+          <div id="process">
+            <AWSS3Process
             title={awsS3Data.process.title}
             description={awsS3Data.process.description}
             steps={awsS3Data.process.steps}
           />
+          </div>
 
           <AWSS3Automation
             title={awsS3Data.automation.title}
@@ -134,7 +150,8 @@ export default function AWSS3Optimization() {
             subtitle={whyCorewayData["aws-s3-optimization"].subtitle}
             reasons={whyCorewayData["aws-s3-optimization"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function AWSS3Optimization() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Optimize Your Storage"

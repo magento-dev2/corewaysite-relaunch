@@ -15,9 +15,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function FurnitureHomeDecorPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -107,16 +115,22 @@ export default function FurnitureHomeDecorPage() {
             img={furnitureHomeDecorData.hero.img}
           />
 
-          <FurnitureOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <FurnitureOverview
             title={furnitureHomeDecorData.overview.title}
             content={furnitureHomeDecorData.overview.content}
             image={furnitureHomeDecorData.overview.image}
           />
+          </div>
 
-          <FurnitureFeatures
+          <div id="features">
+            <FurnitureFeatures
             title={furnitureHomeDecorData.features.title}
             items={furnitureHomeDecorData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={furnitureHomeDecorData.platforms.title}
@@ -129,11 +143,13 @@ export default function FurnitureHomeDecorPage() {
             cases={furnitureHomeDecorData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={furnitureHomeDecorData.process.title}
             description={furnitureHomeDecorData.process.description}
             steps={furnitureHomeDecorData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={furnitureHomeDecorData.automation.title}
@@ -147,7 +163,8 @@ export default function FurnitureHomeDecorPage() {
             subtitle={whyCorewayData["furniture-home-decor"].subtitle}
             reasons={whyCorewayData["furniture-home-decor"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -157,6 +174,7 @@ export default function FurnitureHomeDecorPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

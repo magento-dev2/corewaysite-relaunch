@@ -22,6 +22,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 const siteUrl = "https://www.corewaysolution.com";
@@ -75,6 +76,13 @@ export const metadata = {
 };
 
 export default function ProductDevelopmentPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="pt-20">
@@ -90,7 +98,11 @@ export default function ProductDevelopmentPage() {
 
       <main>
         <StartupHero data={heroData} />
-        <StartupOverview data={overviewData} />
+
+          <SubHeader title="Home" items={subHeaderItems} />
+        <div id="overview">
+            <StartupOverview data={overviewData} />
+          </div>
         <FeatureGrid data={featuresData} />
         <TechStack data={techData} />
         <CaseStudiesPreview data={casesData} />
@@ -102,7 +114,8 @@ export default function ProductDevelopmentPage() {
           subtitle={whyCorewayData["product-development-forstartups"].subtitle}
           reasons={whyCorewayData["product-development-forstartups"].reasons}
         />
-        <FAQ
+        <div id="faq">
+            <FAQ
           badge="Help Center"
           title="Common Questions & Answers"
           description="Everything you need to know about our services and how we work"
@@ -112,6 +125,7 @@ export default function ProductDevelopmentPage() {
           contactText="Still have questions?"
           contactButtonText="Contact Our Team"
         />
+          </div>
         <PageCTA
           badge="Ready to build?"
           title={ctaData.text}

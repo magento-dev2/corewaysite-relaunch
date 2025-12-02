@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Calendar, Clock, User, Search, ArrowRight } from 'lucide-react';
+import SubHeader from "@/components/SubHeader";
 
 const blogPosts = [
   {
@@ -109,6 +110,13 @@ const blogPosts = [
 const categories = ['All', 'AI & Machine Learning', 'Cloud Solutions', 'E-commerce', 'IoT Development', 'Security', 'Web Development', 'Database', 'Software Architecture'];
 
 export default function BlogPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 

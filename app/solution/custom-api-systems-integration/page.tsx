@@ -15,9 +15,17 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function CustomAPISystemsIntegration() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -95,16 +103,22 @@ export default function CustomAPISystemsIntegration() {
             buttons={customApiData.hero.buttons}
           />
 
-          <CustomAPIOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <CustomAPIOverview
             title={customApiData.overview.title}
             content={customApiData.overview.content}
             image={customApiData.overview.image}
           />
+          </div>
 
-          <CustomAPIFeatures
+          <div id="features">
+            <CustomAPIFeatures
             title={customApiData.features.title}
             items={customApiData.features.items}
           />
+          </div>
 
           <CustomAPITechnologies
             title={customApiData.platforms.title}
@@ -117,11 +131,13 @@ export default function CustomAPISystemsIntegration() {
             cases={customApiData.caseStudies.cases}
           />
 
-          <CustomAPIProcess
+          <div id="process">
+            <CustomAPIProcess
             title={customApiData.process.title}
             description={customApiData.process.description}
             steps={customApiData.process.steps}
           />
+          </div>
 
           <CustomAPIAutomation
             title={customApiData.automation.title}
@@ -134,7 +150,8 @@ export default function CustomAPISystemsIntegration() {
             subtitle={whyCorewayData["custom-api-systems-integration"].subtitle}
             reasons={whyCorewayData["custom-api-systems-integration"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -144,6 +161,7 @@ export default function CustomAPISystemsIntegration() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Ready to integrate?"

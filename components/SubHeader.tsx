@@ -1,0 +1,116 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
+interface SubHeaderProps {
+    title: string;
+    items: {
+        label: string;
+        sectionId: string;
+    }[];
+}
+
+export default function SubHeader({ title, items }: SubHeaderProps) {
+    const [activeSection, setActiveSection] = useState<string>("");
+    const [isSticky, setIsSticky] = useState(false);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Navbar visibility logic
+            if (currentScrollY < 10) {
+                setIsNavbarVisible(true);
+            } else if (currentScrollY > lastScrollY) {
+                setIsNavbarVisible(false); // Scrolling down
+            } else {
+                setIsNavbarVisible(true); // Scrolling up
+            }
+
+            // Sticky state
+            setIsSticky(currentScrollY > 100);
+
+            // Determine active section
+            const sections = items.map((item) => document.getElementById(item.sectionId));
+            // Adjust offset based on whether navbar is visible
+            const headerOffset = isNavbarVisible ? 150 : 80;
+            const scrollPosition = window.scrollY + headerOffset;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section && section.offsetTop <= scrollPosition) {
+                    setActiveSection(items[i].sectionId);
+                    break;
+                }
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [items, lastScrollY, isNavbarVisible]);
+
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // When scrolling to section, navbar usually shows up (scroll up) or we want it to be accounted for
+            // But if we are scrolling down to it, it might hide. 
+            // Let's assume a safe offset.
+            const headerOffset = 140;
+            const elementPosition = section.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
+
+    return (
+        <div
+            className={cn(
+                "w-full z-40 transition-all duration-300 border-b border-white/10 bg-[#0E0918]/80 backdrop-blur-md",
+                isSticky ? "fixed left-0 right-0 shadow-lg shadow-purple-900/10" : "relative",
+                isSticky && isNavbarVisible ? "top-[73px]" : "",
+                isSticky && !isNavbarVisible ? "top-0" : ""
+            )}
+        >
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between py-4">
+                    {/* Left Side: Title */}
+                    <div className="hidden md:block">
+                        <h2 className="text-lg font-semibold text-white tracking-wide">
+                            {title}
+                        </h2>
+                    </div>
+
+                    {/* Right Side: Navigation Items */}
+                    <div className="flex items-center space-x-8 overflow-x-auto no-scrollbar w-full md:w-auto">
+                        {items.map((item) => (
+                            <button
+                                key={item.sectionId}
+                                onClick={() => scrollToSection(item.sectionId)}
+                                className={cn(
+                                    "whitespace-nowrap text-sm font-medium transition-colors relative pb-1",
+                                    activeSection === item.sectionId
+                                        ? "text-purple-400"
+                                        : "text-gray-400 hover:text-white"
+                                )}
+                            >
+                                {item.label}
+                                {activeSection === item.sectionId && (
+                                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500 rounded-full" />
+                                )}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

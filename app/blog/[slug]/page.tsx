@@ -10,7 +10,18 @@ async function getBlog(slug: string) {
   const blog = await prisma.blog.findUnique({
     where: { slug, isActive: true },
     include: {
-      relatedArticles: {
+      Blog_A: {
+        where: { isActive: true },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          excerpt: true,
+          coverImage: true,
+          createdAt: true,
+        },
+      },
+      Blog_B: {
         where: { isActive: true },
         select: {
           id: true,
@@ -23,7 +34,16 @@ async function getBlog(slug: string) {
       },
     },
   });
-  return blog;
+
+  if (!blog) return null;
+
+  const allRelated = [...(blog.Blog_A || []), ...(blog.Blog_B || [])];
+  const uniqueRelated = Array.from(new Map(allRelated.map(item => [item.id, item])).values());
+
+  return {
+    ...blog,
+    relatedArticles: uniqueRelated
+  };
 }
 
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {

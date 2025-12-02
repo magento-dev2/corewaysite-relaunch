@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function IoTProtocolsPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -106,17 +114,23 @@ export default function IoTProtocolsPage() {
             img={iotData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={iotData.overview.title}
             content={iotData.overview.content}
             image={iotData.overview.image}
             stats={iotData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={iotData.features.title}
             items={iotData.features.items}
           />
+          </div>
 
           <ProtocolComparison
             title={iotData.protocolComparison.title}
@@ -147,7 +161,8 @@ export default function IoTProtocolsPage() {
             subtitle={whyCorewayData["iot-protocols"].subtitle}
             reasons={whyCorewayData["iot-protocols"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -157,6 +172,7 @@ export default function IoTProtocolsPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Get Started"

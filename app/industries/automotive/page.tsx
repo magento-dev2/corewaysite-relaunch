@@ -15,9 +15,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function AutomotivePage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -96,16 +104,22 @@ export default function AutomotivePage() {
             img={automotiveData.hero.img}
           />
 
-          <DatasetOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <DatasetOverview
             title={automotiveData.overview.title}
             content={automotiveData.overview.content}
             image={automotiveData.overview.image}
           />
+          </div>
 
-          <DatasetFeatures
+          <div id="features">
+            <DatasetFeatures
             title={automotiveData.features.title}
             items={automotiveData.features.items}
           />
+          </div>
 
           <DatasetTechnologies
             title={automotiveData.platforms.title}
@@ -118,11 +132,13 @@ export default function AutomotivePage() {
             cases={automotiveData.caseStudies.cases}
           />
 
-          <DatasetProcess
+          <div id="process">
+            <DatasetProcess
             title={automotiveData.process.title}
             description={automotiveData.process.description}
             steps={automotiveData.process.steps}
           />
+          </div>
 
           <DatasetAutomation
             title={automotiveData.automation.title}
@@ -135,7 +151,8 @@ export default function AutomotivePage() {
             subtitle={whyCorewayData["automotive"].subtitle}
             reasons={whyCorewayData["automotive"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -145,6 +162,7 @@ export default function AutomotivePage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

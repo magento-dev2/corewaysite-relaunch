@@ -15,9 +15,17 @@ import sampleFAQs from '@/data/faqs.json';
 import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 
 export default function PharmaceuticalsHealthcarePage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -110,16 +118,22 @@ export default function PharmaceuticalsHealthcarePage() {
             img={healthcareData.hero.img}
           />
 
-          <HealthcareOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <HealthcareOverview
             title={healthcareData.overview.title}
             content={healthcareData.overview.content}
             image={healthcareData.overview.image}
           />
+          </div>
 
-          <HealthcareFeatures
+          <div id="features">
+            <HealthcareFeatures
             title={healthcareData.features.title}
             items={healthcareData.features.items}
           />
+          </div>
 
           <PlatformExpertise
             title={healthcareData.platforms.title}
@@ -150,7 +164,8 @@ export default function PharmaceuticalsHealthcarePage() {
             subtitle={whyCorewayData["pharmaceuticals-healthcare"].subtitle}
             reasons={whyCorewayData["pharmaceuticals-healthcare"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -160,6 +175,7 @@ export default function PharmaceuticalsHealthcarePage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
 
           <PageCTA

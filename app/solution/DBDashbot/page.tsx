@@ -11,13 +11,27 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function DBDashbotPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <div className="overflow-hidden">
       <DBDashbotHero />
-      <DBDashbotFeatures />
-      <DBDashbotProcess />
+
+          <SubHeader title="Solutions" items={subHeaderItems} />
+      <div id="features">
+            <DBDashbotFeatures />
+          </div>
+      <div id="process">
+            <DBDashbotProcess />
+          </div>
       <DBDashbotBenefits />
       <DBDashbotTechnology />
       <DBDashbotIndustries />
@@ -27,7 +41,8 @@ export default function DBDashbotPage() {
         subtitle={whyCorewayData["DBDashbot"].subtitle}
         reasons={whyCorewayData["DBDashbot"].reasons}
       />
-      <FAQ
+      <div id="faq">
+            <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
@@ -37,6 +52,7 @@ export default function DBDashbotPage() {
         contactText="Still have questions?"
         contactButtonText="Contact Our Team"
       />
+          </div>
       <PageCTA
         badge="Free Setup Available"
         title="Let's Talk Your Success!"

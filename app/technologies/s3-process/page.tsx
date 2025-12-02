@@ -12,6 +12,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 const automotiveData = {
   title: "AI-Powered Automotive Intelligence",
@@ -25,10 +26,23 @@ const automotiveData = {
 }
 
 export default function S3ProcessPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   return (
     <div className="overflow-hidden">
-      <S3ProcessHero />
-      <S3Features />
+      <div id="process">
+            <S3ProcessHero />
+          </div>
+
+          <SubHeader title="Solutions" items={subHeaderItems} />
+      <div id="features">
+            <S3Features />
+          </div>
       <S3WorkflowSteps />
       <S3Benefits />
       <S3UseCases />
@@ -44,7 +58,8 @@ export default function S3ProcessPage() {
         subtitle={whyCorewayData["s3-process"].subtitle}
         reasons={whyCorewayData["s3-process"].reasons}
       />
-      <FAQ
+      <div id="faq">
+            <FAQ
         badge="Help Center"
         title="Common Questions & Answers"
         description="Everything you need to know about our services and how we work"
@@ -54,6 +69,7 @@ export default function S3ProcessPage() {
         contactText="Still have questions?"
         contactButtonText="Contact Our Team"
       />
+          </div>
       <PageCTA
         badge="AWS S3 Optimization"
         title="Ready to Optimize Your Cloud Storage?"

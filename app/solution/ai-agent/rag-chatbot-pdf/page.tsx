@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, ChevronDown, ChevronUp, ArrowRight, FileText, Brain, Database, Zap, Shield, Clock, Sparkle } from 'lucide-react';
 import Image from 'next/image';
+import SubHeader from "@/components/SubHeader";
 
 // Steps data for RAG Chatbot
 const stepsData = [
@@ -176,6 +177,13 @@ const useCases = [
 ];
 
 export default function RAGChatbotPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
     const [expandedSteps, setExpandedSteps] = useState([1, 2, 3, 4]);
 
     const toggleStep = (stepId: number) => {

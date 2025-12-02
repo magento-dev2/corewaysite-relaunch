@@ -15,8 +15,16 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
+import SubHeader from "@/components/SubHeader";
 
 export default function SecurityToolsPage() {
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Capabilities", sectionId: "features" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -106,17 +114,23 @@ export default function SecurityToolsPage() {
             img={securityData.hero.img}
           />
 
-          <TechOverview
+          <SubHeader title="Home" items={subHeaderItems} />
+
+          <div id="overview">
+            <TechOverview
             title={securityData.overview.title}
             content={securityData.overview.content}
             image={securityData.overview.image}
             stats={securityData.overview.stats}
           />
+          </div>
 
-          <TechFeatures
+          <div id="features">
+            <TechFeatures
             title={securityData.features.title}
             items={securityData.features.items}
           />
+          </div>
 
           <SecurityToolsComparison
             title={securityData.toolComparison.title}
@@ -147,7 +161,8 @@ export default function SecurityToolsPage() {
             subtitle={whyCorewayData["security-tools"].subtitle}
             reasons={whyCorewayData["security-tools"].reasons}
           />
-          <FAQ
+          <div id="faq">
+            <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -157,6 +172,7 @@ export default function SecurityToolsPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
+          </div>
 
           <PageCTA
             badge="Secure Now"
