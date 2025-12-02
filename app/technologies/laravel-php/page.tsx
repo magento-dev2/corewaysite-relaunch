@@ -112,22 +112,22 @@ export default function LaravelPHPTechnologyPage() {
             img={laravelData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Laravel / PHP" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview
-            title={laravelData.overview.title}
-            content={laravelData.overview.content}
-            image={laravelData.overview.image}
-            stats={laravelData.overview.stats}
-          />
+              title={laravelData.overview.title}
+              content={laravelData.overview.content}
+              image={laravelData.overview.image}
+              stats={laravelData.overview.stats}
+            />
           </div>
 
           <div id="features">
             <TechFeatures
-            title={laravelData.features.title}
-            items={laravelData.features.items}
-          />
+              title={laravelData.features.title}
+              items={laravelData.features.items}
+            />
           </div>
 
           <TechStack
@@ -141,11 +141,13 @@ export default function LaravelPHPTechnologyPage() {
             cases={laravelData.useCases.cases}
           />
 
-          {/* <ProcessDiagram
-            title={laravelData.process.title}
-            description={laravelData.process.description}
-            steps={laravelData.process.steps}
-          /> */}
+          <div id="process">
+            <ProcessDiagram
+              title={laravelData.process.title}
+              description={laravelData.process.description}
+              steps={laravelData.process.steps}
+            />
+          </div>
 
           <AutomationSection
             title={laravelData.benefits.title}
@@ -161,15 +163,15 @@ export default function LaravelPHPTechnologyPage() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["laravel-php"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["laravel-php"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
 
 

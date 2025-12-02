@@ -115,7 +115,7 @@ export default function FoodBeveragePage() {
             img={foodBeverageData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Food & Beverage" items={subHeaderItems} />
 
           <div id="overview">
             <FoodOverview

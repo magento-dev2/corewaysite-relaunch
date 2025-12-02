@@ -8,8 +8,16 @@ import WhyAdvantages from "@/components/why/WhyAdvantages";
 import OurProcess from "@/components/about/OurProcess";
 import Testimonials from "@/components/home/Testimonials";
 import PageCTA from "@/components/PageCTA";
+import SubHeader from "@/components/SubHeader";
 
 export default function WhyCoreway() {
+  const subHeaderItems = [
+    { label: "Our Advantages", sectionId: "advantages" },
+    { label: "Our Process", sectionId: "process" },
+    { label: "Results", sectionId: "results" },
+    { label: "Testimonials", sectionId: "testimonials" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -71,43 +79,53 @@ export default function WhyCoreway() {
             buttons={whyCorewayData.hero.buttons}
           />
 
-          <WhyAdvantages
-            title={whyCorewayData.advantages.title}
-            items={whyCorewayData.advantages.items}
-          />
+          <SubHeader title="Why Coreway" items={subHeaderItems} />
 
-          <OurProcess />
+          <div id="advantages">
+            <WhyAdvantages
+              title={whyCorewayData.advantages.title}
+              items={whyCorewayData.advantages.items}
+            />
+          </div>
 
-          <section className="py-24 bg-gradient-to-b from-[#1a1325] to-[#0E0918]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {whyCorewayData.results.title}
-                </h2>
-              </div>
+          <div id="process">
+            <OurProcess />
+          </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {whyCorewayData.results.cases.map((result, index) => (
-                  <div
-                    key={index}
-                    className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 text-center hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500"
-                  >
-                    <div className="text-5xl font-bold text-purple-400 mb-3 font-mono">
-                      {result.metric}
+          <div id="results">
+            <section className="py-24 bg-gradient-to-b from-[#1a1325] to-[#0E0918]">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    {whyCorewayData.results.title}
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {whyCorewayData.results.cases.map((result, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 text-center hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500"
+                    >
+                      <div className="text-5xl font-bold text-purple-400 mb-3 font-mono">
+                        {result.metric}
+                      </div>
+                      <p className="text-gray-300 mb-2 leading-relaxed">
+                        {result.description}
+                      </p>
+                      <div className="text-xs text-purple-400 font-medium uppercase tracking-wider">
+                        {result.category}
+                      </div>
                     </div>
-                    <p className="text-gray-300 mb-2 leading-relaxed">
-                      {result.description}
-                    </p>
-                    <div className="text-xs text-purple-400 font-medium uppercase tracking-wider">
-                      {result.category}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
 
-          <Testimonials />
+          <div id="testimonials">
+            <Testimonials />
+          </div>
 
           <PageCTA
             badge="Your Success Partner"

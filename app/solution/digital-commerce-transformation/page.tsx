@@ -80,7 +80,7 @@ export default function DigitalCommerce() {
             buttons={commerceData.hero.buttons}
           />
 
-          <SubHeader title="Digital Commerce" items={subHeaderItems} />
+          <SubHeader title="Digital Commerce Transformation" items={subHeaderItems} />
 
           <div id="overview">
             <CommerceOverview

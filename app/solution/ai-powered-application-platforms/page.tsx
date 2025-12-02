@@ -103,7 +103,7 @@ export default function AIPoweredApplicationPlatforms() {
             buttons={aiPlatformsData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="AI-Powered Application Platforms" items={subHeaderItems} />
 
           <div id="overview">
             <AIPlatformsOverview

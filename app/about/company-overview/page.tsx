@@ -10,8 +10,16 @@ import CompanyValues from "@/components/company/CompanyValues";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import OurTeam from "@/components/about/OurTeam";
 import PageCTA from "@/components/PageCTA";
+import SubHeader from "@/components/SubHeader";
 
 export default function CompanyOverview() {
+  const subHeaderItems = [
+    { label: "Our Story", sectionId: "story" },
+    { label: "Mission & Vision", sectionId: "mission" },
+    { label: "Our Values", sectionId: "values" },
+    { label: "Our Team", sectionId: "team" },
+  ];
+
   const siteUrl = "https://www.corewaysolution.com";
 
   const breadcrumbSchema = {
@@ -85,63 +93,73 @@ export default function CompanyOverview() {
             buttons={companyOverviewData.hero.buttons}
           />
 
-          <CompanyStory
-            title={companyOverviewData.story.title}
-            content={companyOverviewData.story.content}
-            stats={companyOverviewData.story.stats}
-          />
+          <SubHeader title="Company Overview" items={subHeaderItems} />
 
-          <CompanyMission
-            title={companyOverviewData.mission.title}
-            mission={companyOverviewData.mission.mission}
-            vision={companyOverviewData.mission.vision}
-          />
+          <div id="story">
+            <CompanyStory
+              title={companyOverviewData.story.title}
+              content={companyOverviewData.story.content}
+              stats={companyOverviewData.story.stats}
+            />
+          </div>
 
-          <CompanyValues
-            title={companyOverviewData.values.title}
-            items={companyOverviewData.values.items}
-          />
+          <div id="mission">
+            <CompanyMission
+              title={companyOverviewData.mission.title}
+              mission={companyOverviewData.mission.mission}
+              vision={companyOverviewData.mission.vision}
+            />
+          </div>
+
+          <div id="values">
+            <CompanyValues
+              title={companyOverviewData.values.title}
+              items={companyOverviewData.values.items}
+            />
+          </div>
 
           <JourneyTimeline />
 
-          <OurTeam members={[
-            {
-              id: "1",
-              name: "John Smith",
-              role: "CEO & Founder",
-              bio: "Visionary leader with 15+ years in enterprise software",
-              imageUrl: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
-              linkedinUrl: "#",
-              twitterUrl: "#"
-            },
-            {
-              id: "2",
-              name: "Sarah Johnson",
-              role: "CTO",
-              bio: "Former Google engineer specializing in AI/ML systems",
-              imageUrl: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
-              linkedinUrl: "#",
-              twitterUrl: null
-            },
-            {
-              id: "3",
-              name: "Michael Chen",
-              role: "Head of Design",
-              bio: "Award-winning designer focused on user experience",
-              imageUrl: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg",
-              linkedinUrl: "#",
-              twitterUrl: "#"
-            },
-            {
-              id: "4",
-              name: "Emma Williams",
-              role: "VP Engineering",
-              bio: "Cloud architecture expert with Fortune 500 experience",
-              imageUrl: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg",
-              linkedinUrl: "#",
-              twitterUrl: null
-            }
-          ]} />
+          <div id="team">
+            <OurTeam members={[
+              {
+                id: "1",
+                name: "John Smith",
+                role: "CEO & Founder",
+                bio: "Visionary leader with 15+ years in enterprise software",
+                imageUrl: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+                linkedinUrl: "#",
+                twitterUrl: "#"
+              },
+              {
+                id: "2",
+                name: "Sarah Johnson",
+                role: "CTO",
+                bio: "Former Google engineer specializing in AI/ML systems",
+                imageUrl: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
+                linkedinUrl: "#",
+                twitterUrl: null
+              },
+              {
+                id: "3",
+                name: "Michael Chen",
+                role: "Head of Design",
+                bio: "Award-winning designer focused on user experience",
+                imageUrl: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg",
+                linkedinUrl: "#",
+                twitterUrl: "#"
+              },
+              {
+                id: "4",
+                name: "Emma Williams",
+                role: "VP Engineering",
+                bio: "Cloud architecture expert with Fortune 500 experience",
+                imageUrl: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg",
+                linkedinUrl: "#",
+                twitterUrl: null
+              }
+            ]} />
+          </div>
 
           <PageCTA
             badge="Join Our Journey"

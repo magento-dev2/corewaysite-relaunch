@@ -35,9 +35,9 @@ export default function SubHeader({ title, items }: SubHeaderProps) {
 
             // Determine active section
             const sections = items.map((item) => document.getElementById(item.sectionId));
-            // Adjust offset based on whether navbar is visible
-            const headerOffset = isNavbarVisible ? 150 : 80;
-            const scrollPosition = window.scrollY + headerOffset;
+            // Use a consistent offset for active section detection
+            const offset = 200; // Account for main header + subheader
+            const scrollPosition = window.scrollY + offset;
 
             for (let i = sections.length - 1; i >= 0; i--) {
                 const section = sections[i];
@@ -57,10 +57,8 @@ export default function SubHeader({ title, items }: SubHeaderProps) {
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         if (section) {
-            // When scrolling to section, navbar usually shows up (scroll up) or we want it to be accounted for
-            // But if we are scrolling down to it, it might hide. 
-            // Let's assume a safe offset.
-            const headerOffset = 140;
+            // Increased offset to account for main header + subheader
+            const headerOffset = 160;
             const elementPosition = section.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -96,7 +94,7 @@ export default function SubHeader({ title, items }: SubHeaderProps) {
                                 key={item.sectionId}
                                 onClick={() => scrollToSection(item.sectionId)}
                                 className={cn(
-                                    "whitespace-nowrap text-sm font-medium transition-colors relative pb-1",
+                                    "whitespace-nowrap cursor-pointer text-sm font-medium transition-colors relative pb-1",
                                     activeSection === item.sectionId
                                         ? "text-purple-400"
                                         : "text-gray-400 hover:text-white"

@@ -104,7 +104,7 @@ export default function IoTApplicationDevelopment() {
             buttons={iotApplicationsData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="IoT Application Development" items={subHeaderItems} />
 
           <div id="overview">
             <IoTOverview

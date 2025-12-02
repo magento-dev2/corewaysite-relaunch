@@ -115,7 +115,7 @@ export default function FurnitureHomeDecorPage() {
             img={furnitureHomeDecorData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Furniture & Home Decor" items={subHeaderItems} />
 
           <div id="overview">
             <FurnitureOverview

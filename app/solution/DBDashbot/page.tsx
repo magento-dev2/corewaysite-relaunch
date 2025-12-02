@@ -23,15 +23,17 @@ export default function DBDashbotPage() {
 
   return (
     <div className="overflow-hidden">
-      <DBDashbotHero />
+      <div id="overview">
+        <DBDashbotHero />
+      </div>
 
-          <SubHeader title="Solutions" items={subHeaderItems} />
+      <SubHeader title="DB Dashbot" items={subHeaderItems} />
       <div id="features">
-            <DBDashbotFeatures />
-          </div>
+        <DBDashbotFeatures />
+      </div>
       <div id="process">
-            <DBDashbotProcess />
-          </div>
+        <DBDashbotProcess />
+      </div>
       <DBDashbotBenefits />
       <DBDashbotTechnology />
       <DBDashbotIndustries />
@@ -42,17 +44,17 @@ export default function DBDashbotPage() {
         reasons={whyCorewayData["DBDashbot"].reasons}
       />
       <div id="faq">
-            <FAQ
-        badge="Help Center"
-        title="Common Questions & Answers"
-        description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs["DBDashbot"]}
-        columns={1}
-        showContactCTA={true}
-        contactText="Still have questions?"
-        contactButtonText="Contact Our Team"
-      />
-          </div>
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs["DBDashbot"]}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+      </div>
       <PageCTA
         badge="Free Setup Available"
         title="Let's Talk Your Success!"

@@ -103,7 +103,7 @@ export default function GPTAutomation() {
             img={gptAutomationData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="GPT Automation" items={subHeaderItems} />
 
           <div id="overview">
             <DatasetOverview

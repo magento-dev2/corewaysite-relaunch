@@ -1,0 +1,24 @@
+[
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\page.tsx",
+    "rel_path": "/solution/ai-agent/page.tsx",
+    "existing": [],
+    "missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\rag-chatbot-pdf\\page.tsx",
+    "rel_path": "/solution/ai-agent/rag-chatbot-pdf/page.tsx",
+    "existing": [],
+    "missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ]
+  }
+]

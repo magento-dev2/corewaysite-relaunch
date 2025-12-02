@@ -102,7 +102,7 @@ export default function CustomDashboards() {
             buttons={customDashboardData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Custom Dashboards" items={subHeaderItems} />
 
           <div id="overview">
             <DashboardOverview

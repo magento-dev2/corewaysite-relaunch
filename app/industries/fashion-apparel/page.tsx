@@ -115,7 +115,7 @@ export default function FashionApparelPage() {
             img={fashionApparelData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Fashion & Apparel" items={subHeaderItems} />
 
           <div id="overview">
             <FashionOverview

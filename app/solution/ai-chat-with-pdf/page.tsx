@@ -23,15 +23,17 @@ export default function AIChatWithPDFPage() {
 
   return (
     <div className="overflow-hidden">
-      <AIChatHero />
+      <div id="overview">
+        <AIChatHero />
+      </div>
 
-          <SubHeader title="Solutions" items={subHeaderItems} />
+      <SubHeader title="AI Chat with PDF" items={subHeaderItems} />
       <div id="process">
-            <AIChatProcess />
-          </div>
+        <AIChatProcess />
+      </div>
       <div id="features">
-            <AIChatFeatures />
-          </div>
+        <AIChatFeatures />
+      </div>
       <AIChatBenefits />
       <AIChatIndustries />
       <WhyCorewaySection
@@ -41,17 +43,17 @@ export default function AIChatWithPDFPage() {
         reasons={whyCorewayData["ai-chat-with-pdf"].reasons}
       />
       <div id="faq">
-            <FAQ
-        badge="Help Center"
-        title="Common Questions & Answers"
-        description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs["ai-chat-with-pdf"]}
-        columns={1}
-        showContactCTA={true}
-        contactText="Still have questions?"
-        contactButtonText="Contact Our Team"
-      />
-          </div>
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs["ai-chat-with-pdf"]}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+      </div>
       <PageCTA
         badge="Start Your Journey"
         title="Let's Talk Your Success!"

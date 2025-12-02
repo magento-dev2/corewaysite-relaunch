@@ -107,7 +107,7 @@ export default function ContactForm() {
               }`}
             style={{
               borderTopLeftRadius: '1rem',
-              clipPath: activeTab === 'business' ? 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' : 'none'
+              // clipPath: activeTab === 'business' ? 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' : 'none'
             }}
           >
             Business Inquiry

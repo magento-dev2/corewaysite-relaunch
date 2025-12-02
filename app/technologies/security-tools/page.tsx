@@ -114,7 +114,7 @@ export default function SecurityToolsPage() {
             img={securityData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Security Tools" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview

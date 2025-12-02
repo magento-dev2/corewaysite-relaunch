@@ -118,21 +118,21 @@ export default function PharmaceuticalsHealthcarePage() {
             img={healthcareData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Pharmaceuticals & Healthcare" items={subHeaderItems} />
 
           <div id="overview">
             <HealthcareOverview
-            title={healthcareData.overview.title}
-            content={healthcareData.overview.content}
-            image={healthcareData.overview.image}
-          />
+              title={healthcareData.overview.title}
+              content={healthcareData.overview.content}
+              image={healthcareData.overview.image}
+            />
           </div>
 
           <div id="features">
             <HealthcareFeatures
-            title={healthcareData.features.title}
-            items={healthcareData.features.items}
-          />
+              title={healthcareData.features.title}
+              items={healthcareData.features.items}
+            />
           </div>
 
           <PlatformExpertise
@@ -146,11 +146,13 @@ export default function PharmaceuticalsHealthcarePage() {
             cases={healthcareData.caseStudies.cases}
           />
 
-          <ProcessDiagram
-            title={healthcareData.process.title}
-            description={healthcareData.process.description}
-            steps={healthcareData.process.steps}
-          />
+          <div id="process">
+            <ProcessDiagram
+              title={healthcareData.process.title}
+              description={healthcareData.process.description}
+              steps={healthcareData.process.steps}
+            />
+          </div>
 
           <AutomationSection
             title={healthcareData.automation.title}
@@ -166,15 +168,15 @@ export default function PharmaceuticalsHealthcarePage() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["pharmaceuticals-healthcare"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["pharmaceuticals-healthcare"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
 
 

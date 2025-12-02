@@ -1,0 +1,1303 @@
+{
+  "solutions": [
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": null,
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [],
+      "missing_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\rag-chatbot-pdf\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": null,
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [],
+      "missing_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\[slug]\\page.tsx",
+      "has_subheader": false,
+      "subheader_title": null,
+      "subheader_items": [],
+      "section_ids": [],
+      "missing_ids": [],
+      "issues": [
+        "No SubHeader component found"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-chat-with-pdf\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "process",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-consulting\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-integration-services\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-powered-application-platforms\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\business-workflow-automation\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": null,
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "faq"
+      ],
+      "missing_ids": [
+        "overview",
+        "features",
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\custom-api-systems-integration\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\DBDashbot\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\digital-commerce-transformation\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "expertise",
+        "process",
+        "automation",
+        "why-coreway",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\infrastructure-security-ai\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\iot-application-development\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\product-development-forstartups\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "faq"
+      ],
+      "missing_ids": [
+        "features",
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\replatforming-migration\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\saas-infrastructure-devops\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Solutions",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ugs-ads\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": null,
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "faq"
+      ],
+      "missing_ids": [
+        "overview",
+        "features",
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    }
+  ],
+  "ai-data": [
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\aws-s3-optimization\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\custom-dashboards\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\dataset-management-delivery\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\gpt-automation\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\infrastructure-security-ai\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\ai-data\\metadata-extraction-ai\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "AI & Data",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\automotive\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\ecommerce-stores\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\fashion-apparel\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\food-beverage\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\furniture-home-decor\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\manufacturing-iot\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\industries\\pharmaceuticals-healthcare\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Industries",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: capabilities"
+      ]
+    }
+  ],
+  "technologies": [
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\cloud-storage\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\databases\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\iot-protocols\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\laravel-php\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\nodejs\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "process",
+        "faq"
+      ],
+      "missing_ids": [],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\python\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\react\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\s3-process\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "process",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "overview"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    },
+    {
+      "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\security-tools\\page.tsx",
+      "has_subheader": true,
+      "subheader_title": "Technologies",
+      "subheader_items": [
+        [
+          "Overview",
+          "overview"
+        ],
+        [
+          "Capabilities",
+          "features"
+        ],
+        [
+          "Our Process",
+          "process"
+        ],
+        [
+          "FAQ",
+          "faq"
+        ]
+      ],
+      "section_ids": [
+        "overview",
+        "features",
+        "faq"
+      ],
+      "missing_ids": [
+        "process"
+      ],
+      "issues": [
+        "Potential unwrapped section: benefits",
+        "Potential unwrapped section: capabilities"
+      ]
+    }
+  ]
+}

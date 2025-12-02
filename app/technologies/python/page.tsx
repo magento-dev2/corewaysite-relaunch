@@ -109,22 +109,22 @@ export default function PythonTechnologyPage() {
             img={pythonData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Python Development" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview
-            title={pythonData.overview.title}
-            content={pythonData.overview.content}
-            image={pythonData.overview.image}
-            stats={pythonData.overview.stats}
-          />
+              title={pythonData.overview.title}
+              content={pythonData.overview.content}
+              image={pythonData.overview.image}
+              stats={pythonData.overview.stats}
+            />
           </div>
 
           <div id="features">
             <TechFeatures
-            title={pythonData.features.title}
-            items={pythonData.features.items}
-          />
+              title={pythonData.features.title}
+              items={pythonData.features.items}
+            />
           </div>
 
           <TechStack
@@ -138,11 +138,13 @@ export default function PythonTechnologyPage() {
             cases={pythonData.useCases.cases}
           />
 
-          {/* <ProcessDiagram
-            title={pythonData.process.title}
-            description={pythonData.process.description}
-            steps={pythonData.process.steps}
-          /> */}
+          <div id="process">
+            <ProcessDiagram
+              title={pythonData.process.title}
+              description={pythonData.process.description}
+              steps={pythonData.process.steps}
+            />
+          </div>
 
           <AutomationSection
             title={pythonData.benefits.title}
@@ -158,15 +160,15 @@ export default function PythonTechnologyPage() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["python"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["python"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
 
           <PageCTA

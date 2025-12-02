@@ -103,21 +103,21 @@ export default function AIConsulting() {
             buttons={aiConsultingData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="AI Consulting" items={subHeaderItems} />
 
           <div id="overview">
             <AIConsultingOverview
-            title={aiConsultingData.overview.title}
-            content={aiConsultingData.overview.content}
-            image={aiConsultingData.overview.image}
-          />
+              title={aiConsultingData.overview.title}
+              content={aiConsultingData.overview.content}
+              image={aiConsultingData.overview.image}
+            />
           </div>
 
           <div id="features">
             <AIConsultingFeatures
-            title={aiConsultingData.features.title}
-            items={aiConsultingData.features.items}
-          />
+              title={aiConsultingData.features.title}
+              items={aiConsultingData.features.items}
+            />
           </div>
 
           <AIConsultingTechnologies
@@ -133,10 +133,10 @@ export default function AIConsulting() {
 
           <div id="process">
             <AIConsultingProcess
-            title={aiConsultingData.process.title}
-            description={aiConsultingData.process.description}
-            steps={aiConsultingData.process.steps}
-          />
+              title={aiConsultingData.process.title}
+              description={aiConsultingData.process.description}
+              steps={aiConsultingData.process.steps}
+            />
           </div>
 
           <AIConsultingAutomation
@@ -152,15 +152,15 @@ export default function AIConsulting() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["ai-consulting"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["ai-consulting"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
 
           <PageCTA

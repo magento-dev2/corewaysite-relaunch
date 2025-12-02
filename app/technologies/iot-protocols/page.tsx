@@ -114,7 +114,7 @@ export default function IoTProtocolsPage() {
             img={iotData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="IoT Protocols" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview

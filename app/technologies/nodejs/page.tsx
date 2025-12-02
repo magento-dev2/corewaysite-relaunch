@@ -109,22 +109,22 @@ export default function NodeJSTechnologyPage() {
             img={nodeData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Node.js Development" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview
-            title={nodeData.overview.title}
-            content={nodeData.overview.content}
-            image={nodeData.overview.image}
-            stats={nodeData.overview.stats}
-          />
+              title={nodeData.overview.title}
+              content={nodeData.overview.content}
+              image={nodeData.overview.image}
+              stats={nodeData.overview.stats}
+            />
           </div>
 
           <div id="features">
             <TechFeatures
-            title={nodeData.features.title}
-            items={nodeData.features.items}
-          />
+              title={nodeData.features.title}
+              items={nodeData.features.items}
+            />
           </div>
 
           <TechStack
@@ -138,11 +138,13 @@ export default function NodeJSTechnologyPage() {
             cases={nodeData.useCases.cases}
           />
 
-          {/* <ProcessDiagram
-            title={nodeData.process.title}
-            description={nodeData.process.description}
-            steps={nodeData.process.steps}
-          /> */}
+          <div id="process">
+            <ProcessDiagram
+              title={nodeData.process.title}
+              description={nodeData.process.description}
+              steps={nodeData.process.steps}
+            />
+          </div>
 
           <AutomationSection
             title={nodeData.benefits.title}
@@ -158,15 +160,15 @@ export default function NodeJSTechnologyPage() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["nodejs"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["nodejs"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
           <PageCTA
             badge="Start Building"

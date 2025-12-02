@@ -103,7 +103,7 @@ export default function CustomAPISystemsIntegration() {
             buttons={customApiData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Custom API & Systems Integration" items={subHeaderItems} />
 
           <div id="overview">
             <CustomAPIOverview

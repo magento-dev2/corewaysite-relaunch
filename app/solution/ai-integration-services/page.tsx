@@ -102,7 +102,7 @@ export default function AIIntegrationServices() {
             buttons={aiIntegrationData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="AI Integration Services" items={subHeaderItems} />
 
           <div id="overview">
             <AIIntegrationOverview

@@ -114,7 +114,7 @@ export default function CloudStorageTechnologyPage() {
             img={storageData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Cloud Storage" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview

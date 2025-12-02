@@ -1,0 +1,370 @@
+[
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\page.tsx",
+    "rel_path": "/solution/ai-agent/page.tsx",
+    "current_missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\rag-chatbot-pdf\\page.tsx",
+    "rel_path": "/solution/ai-agent/rag-chatbot-pdf/page.tsx",
+    "current_missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Use Cases",
+        "sectionId": "use-cases",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\business-workflow-automation\\page.tsx",
+    "rel_path": "/solution/business-workflow-automation/page.tsx",
+    "current_missing": [
+      "overview",
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Use Cases",
+        "sectionId": "use-cases",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\product-development-forstartups\\page.tsx",
+    "rel_path": "/solution/product-development-forstartups/page.tsx",
+    "current_missing": [
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ugs-ads\\page.tsx",
+    "rel_path": "/solution/ugs-ads/page.tsx",
+    "current_missing": [
+      "overview",
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Why Coreway",
+        "sectionId": "why-coreway",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\cloud-storage\\page.tsx",
+    "rel_path": "/technologies/cloud-storage/page.tsx",
+    "current_missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\databases\\page.tsx",
+    "rel_path": "/technologies/databases/page.tsx",
+    "current_missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\iot-protocols\\page.tsx",
+    "rel_path": "/technologies/iot-protocols/page.tsx",
+    "current_missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\react\\page.tsx",
+    "rel_path": "/technologies/react/page.tsx",
+    "current_missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\s3-process\\page.tsx",
+    "rel_path": "/technologies/s3-process/page.tsx",
+    "current_missing": [
+      "overview"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Benefits",
+        "sectionId": "benefits",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\security-tools\\page.tsx",
+    "rel_path": "/technologies/security-tools/page.tsx",
+    "current_missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features",
+        "exists": true,
+        "needs_wrapper": false
+      },
+      {
+        "label": "Our Process",
+        "sectionId": "process",
+        "exists": false,
+        "needs_wrapper": true
+      },
+      {
+        "label": "Technologies",
+        "sectionId": "technologies",
+        "exists": false,
+        "needs_wrapper": true
+      }
+    ]
+  }
+]

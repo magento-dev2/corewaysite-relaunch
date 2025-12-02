@@ -79,7 +79,7 @@ export default function MetadataExtractionAI() {
             img={metadataExtractionData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Metadata Extraction AI" items={subHeaderItems} />
 
           <div id="overview">
             <DatasetOverview

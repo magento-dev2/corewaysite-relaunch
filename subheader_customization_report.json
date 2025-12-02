@@ -1,0 +1,427 @@
+[
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [],
+    "missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ],
+    "recommended": []
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ai-agent\\rag-chatbot-pdf\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [],
+    "missing": [
+      "overview",
+      "features",
+      "process",
+      "faq"
+    ],
+    "recommended": []
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\business-workflow-automation\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "faq"
+    ],
+    "missing": [
+      "overview",
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\product-development-forstartups\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "faq"
+    ],
+    "missing": [
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\solution\\ugs-ads\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "faq"
+    ],
+    "missing": [
+      "overview",
+      "features",
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\cloud-storage\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\databases\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\iot-protocols\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\react\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\s3-process\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "process",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "overview"
+    ],
+    "recommended": [
+      {
+        "label": "Our Process",
+        "sectionId": "process"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  },
+  {
+    "path": "c:\\Users\\NIKHIL\\Desktop\\coreway-new\\app\\technologies\\security-tools\\page.tsx",
+    "current_items": [
+      [
+        "Overview",
+        "overview"
+      ],
+      [
+        "Capabilities",
+        "features"
+      ],
+      [
+        "Our Process",
+        "process"
+      ],
+      [
+        "FAQ",
+        "faq"
+      ]
+    ],
+    "existing_sections": [
+      "overview",
+      "features",
+      "faq"
+    ],
+    "missing": [
+      "process"
+    ],
+    "recommended": [
+      {
+        "label": "Overview",
+        "sectionId": "overview"
+      },
+      {
+        "label": "Capabilities",
+        "sectionId": "features"
+      },
+      {
+        "label": "FAQ",
+        "sectionId": "faq"
+      }
+    ]
+  }
+]

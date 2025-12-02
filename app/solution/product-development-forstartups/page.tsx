@@ -99,7 +99,7 @@ export default function ProductDevelopmentPage() {
       <main>
         <StartupHero data={heroData} />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Product Development for Startups" items={subHeaderItems} />
         <div id="overview">
             <StartupOverview data={overviewData} />
           </div>

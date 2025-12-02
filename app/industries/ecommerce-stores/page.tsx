@@ -101,7 +101,7 @@ export default function EcommerceStores() {
             buttons={ecommerceStoresData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="E-Commerce Stores" items={subHeaderItems} />
 
           <div id="overview">
             <EcommerceOverview

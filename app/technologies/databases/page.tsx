@@ -114,7 +114,7 @@ export default function DatabaseTechnologyPage() {
             img={databaseData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Databases" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview

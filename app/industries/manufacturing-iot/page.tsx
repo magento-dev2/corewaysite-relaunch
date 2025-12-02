@@ -100,7 +100,7 @@ export default function ManufacturingIoT() {
             buttons={manufacturingIoTData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Manufacturing & IoT" items={subHeaderItems} />
 
           <div id="overview">
             <ManufacturingOverview

@@ -39,7 +39,7 @@ export default function S3ProcessPage() {
             <S3ProcessHero />
           </div>
 
-          <SubHeader title="Solutions" items={subHeaderItems} />
+          <SubHeader title="S3 Process" items={subHeaderItems} />
       <div id="features">
             <S3Features />
           </div>

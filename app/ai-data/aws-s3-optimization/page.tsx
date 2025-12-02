@@ -102,7 +102,7 @@ export default function AWSS3Optimization() {
             buttons={awsS3Data.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="AWS S3 Optimization" items={subHeaderItems} />
 
           <div id="overview">
             <AWSS3Overview

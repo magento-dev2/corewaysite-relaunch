@@ -102,7 +102,7 @@ export default function InfrastructureSecurityAI() {
             buttons={infrastructureSecurityData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Infrastructure Security AI" items={subHeaderItems} />
 
           <div id="overview">
             <InfraSecurityOverview

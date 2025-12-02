@@ -104,7 +104,7 @@ export default function AutomotivePage() {
             img={automotiveData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Automotive" items={subHeaderItems} />
 
           <div id="overview">
             <DatasetOverview

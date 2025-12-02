@@ -104,7 +104,7 @@ export default function ReplatformingMigration() {
             buttons={replatformingData.hero.buttons}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="Replatforming & Migration" items={subHeaderItems} />
 
           <div id="overview">
             <ReplatformingOverview

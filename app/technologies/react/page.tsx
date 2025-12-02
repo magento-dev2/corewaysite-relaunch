@@ -109,7 +109,7 @@ export default function ReactTechnologyPage() {
             img={reactData.hero.img}
           />
 
-          <SubHeader title="Home" items={subHeaderItems} />
+          <SubHeader title="React Development" items={subHeaderItems} />
 
           <div id="overview">
             <TechOverview
