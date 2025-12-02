@@ -1,29 +1,28 @@
 {
   "hero": {
-    "items":[
+    "items": [
       {
         "title": "Automate",
         "titleHighlight": "without limits",
         "description": "Build complex automations 10x faster without fighting APIs. Connect everything with Coreway Solution.",
         "button": "See what we do",
-        "image":"/assets/home/coreway-ai.png"
+        "image": "/assets/home/coreway-ai-2.png"
       },
       {
         "title": "Intelligent ",
         "titleHighlight": "Business",
         "description": "We design and automate digital services using AI, cloud, and smart engineering. Streamline workflows, cut manual effort, and scale your operations with confidence.",
         "button": "See what we do",
-        "image" : "/assets/home/coreway-ai-1.png"
+        "image": "/assets/home/coreway-ai-1.png"
       },
       {
         "title": "AI-Engineered",
         "titleHighlight": "Simplicity",
         "description": "We turn complex digital challenges into seamless experiences. Smarter architecture. Faster delivery. Better outcomes for your business.",
         "button": "See what we do",
-        "image" : "/assets/home/coreway-ai.png"
+        "image": "/assets/home/coreway-ai-3.png"
       }
     ]
-    
   },
   "trustedBy": {
     "badge": "Trusted by",

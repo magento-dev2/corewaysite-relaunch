@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import commerceData from "../../../data/commerceData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import CommerceHero from "@/components/commerce/CommerceHero";
@@ -51,29 +50,6 @@ export default function DigitalCommerce() {
 
   return (
     <>
-      <Head>
-        <title>Digital Commerce Transformation | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Discover how Coreway empowers brands with headless, AI-driven, and composable commerce solutions. Transform your digital commerce experience."
-        />
-        <meta property="og:title" content="Digital Commerce Transformation | Coreway" />
-        <meta
-          property="og:description"
-          content="Discover how Coreway empowers brands with headless, AI-driven, and composable commerce solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/digital-commerce-transformation`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/digital-commerce-transformation`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
 
       <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">

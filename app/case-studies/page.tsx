@@ -21,3 +21,31 @@ export default async function CaseStudiesPage() {
 
   return <CaseStudiesClient caseStudies={caseStudies} />;
 }
+
+export const metadata = {
+  title: "Case Studies | Coreway Solution",
+  description: "Explore Case Studies services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+  keywords: "case studies, coreway solution, AI development, automation",
+  openGraph: {
+    title: "Case Studies | Coreway Solution",
+    description: "Explore Case Studies services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+    type: "website",
+    url: "https://www.corewaysolution.com/case-studies/",
+    images: [{
+      url: "https://www.corewaysolution.com/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Coreway Solution"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | Coreway Solution",
+    description: "Explore Case Studies services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+    images: ["https://www.corewaysolution.com/og-image.jpg"]
+  },
+  alternates: {
+    canonical: "https://www.corewaysolution.com/case-studies/"
+  }
+};
+

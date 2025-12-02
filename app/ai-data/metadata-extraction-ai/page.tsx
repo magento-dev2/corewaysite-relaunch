@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import metadataExtractionData from "../../../data/metadataExtractionData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import DatasetHero from "@/components/dataset/DatasetHero";
@@ -50,29 +49,6 @@ export default function MetadataExtractionAI() {
 
   return (
     <>
-      <Head>
-        <title>Metadata Extraction using GPT & Vision AI | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Automatically extract, classify, and enrich metadata from documents, images, and videos using advanced GPT-4 and Vision AI models."
-        />
-        <meta property="og:title" content="AI Metadata Extraction | Coreway" />
-        <meta
-          property="og:description"
-          content="Transform unstructured data into actionable insights using GPT-4 and Vision AI at scale."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/metadata-extraction-ai`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/metadata-extraction-ai`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
 
       <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">

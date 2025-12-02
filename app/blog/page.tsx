@@ -75,3 +75,31 @@ export default async function BlogListing() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Blog | Coreway Solution",
+  description: "Explore Blog services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+  keywords: "blog, coreway solution, AI development, automation",
+  openGraph: {
+    title: "Blog | Coreway Solution",
+    description: "Explore Blog services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+    type: "website",
+    url: "https://www.corewaysolution.com/blog/",
+    images: [{
+      url: "https://www.corewaysolution.com/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Coreway Solution"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Coreway Solution",
+    description: "Explore Blog services and solutions by Coreway Solution. Expert AI development and digital transformation.",
+    images: ["https://www.corewaysolution.com/og-image.jpg"]
+  },
+  alternates: {
+    canonical: "https://www.corewaysolution.com/blog/"
+  }
+};
+
