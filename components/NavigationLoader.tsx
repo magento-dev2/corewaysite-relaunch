@@ -47,6 +47,18 @@ export default function NavigationLoader() {
     return () => document.removeEventListener('click', handleClick, true);
   }, []);
 
+  // Lock body scroll when loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoading]);
+
   if (!isLoading) return null;
 
   return (
@@ -60,7 +72,7 @@ export default function NavigationLoader() {
       </div>
 
       {/* Blur Overlay - Only Below Header */}
-      <div className="fixed top-[73px] left-0 right-0 bottom-0 bg-black/10 backdrop-blur-lg flex items-center justify-center z-40 transition-all duration-300">
+      <div className="fixed top-[73px] left-0 right-0 bottom-0 bg-black/10 backdrop-blur-lg flex items-center justify-center z-45 transition-all duration-300">
         <div className="relative">
           {/* Spinning Ring */}
           <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin" />

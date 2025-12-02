@@ -128,7 +128,7 @@ export default function Testimonials() {
                       onClick={() => setActiveVideo(index)}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="w-20 h-20 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transition-all duration-300"
+                      className="w-20 h-20 cursor-pointer bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transition-all duration-300"
                     >
                       <Play size={32} className="fill-white text-white ml-1" />
                     </motion.button>
