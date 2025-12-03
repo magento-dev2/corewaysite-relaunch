@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, Box, Workflow, Rocket, Activity } from 'lucide-react';
 
@@ -74,17 +76,14 @@ export default function SaaSProcess({ title, description, steps }: SaaSProcessPr
               return (
                 <div
                   key={step.id}
-                  className={`relative flex items-center ${
-                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } ${
-                    isVisible ? 'opacity-100' : 'opacity-0'
-                  } transition-opacity duration-700`}
+                  className={`relative flex items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                    } ${isVisible ? 'opacity-100' : 'opacity-0'
+                    } transition-opacity duration-700`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div
-                    className={`w-full lg:w-5/12 ${
-                      isEven ? 'lg:text-right lg:pr-16' : 'lg:pl-16'
-                    }`}
+                    className={`w-full lg:w-5/12 ${isEven ? 'lg:text-right lg:pr-16' : 'lg:pl-16'
+                      }`}
                   >
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 group">
                       <div className="flex items-center space-x-4 mb-4 lg:hidden">

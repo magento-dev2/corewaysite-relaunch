@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Brain, Cloud, Shield, AlertTriangle, Activity, Lock } from 'lucide-react';
 

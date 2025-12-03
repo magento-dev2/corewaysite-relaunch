@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Head from "next/head";
 import Link from "next/link";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import {
@@ -66,17 +65,7 @@ export default function SitemapPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Sitemap | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Navigate our website with ease. Complete sitemap of all pages and services offered by Coreway Solution."
-        />
-        <link rel="canonical" href={`${siteUrl}/sitemap`} />
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -271,6 +260,5 @@ export default function SitemapPage() {
           </div>
         </main>
       </div>
-    </>
   );
 }

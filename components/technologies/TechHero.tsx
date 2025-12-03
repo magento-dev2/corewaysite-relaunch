@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { BarChart3, ArrowRight } from 'lucide-react';
 import { gsap } from "gsap";
@@ -11,7 +13,7 @@ interface DashboardHeroProps {
   img: string;
 }
 
-export default function TechHero({ title, subtitle, buttons, title2 ,img}: DashboardHeroProps) {
+export default function TechHero({ title, subtitle, buttons, title2, img }: DashboardHeroProps) {
   const [chartBars, setChartBars] = useState<Array<{ id: number; height: number; color: string }>>([]);
   const [metrics, setMetrics] = useState({ users: 0, queries: 0, uptime: 0 });
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -229,8 +231,8 @@ export default function TechHero({ title, subtitle, buttons, title2 ,img}: Dashb
                   key={index}
                   href={button.link}
                   className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
-                      ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
-                      : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                    ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
                     }`}
                 >
                   <span>{button.label}</span>

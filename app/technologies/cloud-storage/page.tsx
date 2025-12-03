@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import storageData from "../../../data/cloudStorageData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import TechHero from "@/components/technologies/TechHero";
@@ -62,38 +59,7 @@ export default function CloudStorageTechnologyPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Cloud Storage Solutions - AWS S3, Wasabi, MinIO, R2 | Coreway
-        </title>
-        <meta
-          name="description"
-          content="Expert cloud storage implementation with AWS S3, Wasabi, MinIO, and Cloudflare R2. Reduce costs by 80% with optimized storage solutions."
-        />
-        <meta
-          property="og:title"
-          content="Cloud Storage Solutions - AWS S3 & Alternatives | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Professional cloud storage architecture with AWS S3, Wasabi, MinIO, and Cloudflare R2. Cost-effective, scalable solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/technologies/cloud-storage`}
-        />
-        <link rel="canonical" href={`${siteUrl}/technologies/cloud-storage`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -183,6 +149,5 @@ export default function CloudStorageTechnologyPage() {
           />
         </main>
       </div>
-    </>
   );
 }

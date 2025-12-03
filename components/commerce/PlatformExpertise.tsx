@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Package, ShoppingBag, Code, Layers as LayersIcon, Database, Cloud } from 'lucide-react';
 

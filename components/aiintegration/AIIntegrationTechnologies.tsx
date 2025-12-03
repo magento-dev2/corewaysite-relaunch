@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Sparkles, Cloud, Box, Brain, Link2, Zap } from 'lucide-react';
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Lightbulb, Award, Handshake, MessageSquare, Zap, TrendingUp } from 'lucide-react';
 

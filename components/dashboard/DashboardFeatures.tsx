@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Activity, BarChart2, Shield, Database, Smartphone, Share2 } from 'lucide-react';
 

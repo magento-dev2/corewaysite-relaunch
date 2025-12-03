@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Head from "next/head";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import { Shield, Eye, Edit, Trash, Download, X, AlertCircle, Pause } from "lucide-react";
 import gdprData from "../../data/gdprComplianceData.json";
@@ -63,18 +62,7 @@ export default function GDPRCompliancePage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>GDPR Compliance | Coreway Solution</title>
-        <meta
-          name="description"
-          content="GDPR Compliance information for Coreway Solution. Learn about our commitment to data protection."
-        />
-        <meta property="og:title" content="GDPR Compliance | Coreway Solution" />
-        <link rel="canonical" href={`${siteUrl}/gdpr-compliance`} />
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20 pb-8">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -275,6 +263,5 @@ export default function GDPRCompliancePage() {
           </div>
         </main>
       </div>
-    </>
   );
 }

@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import aiPlatformsData from "../../../data/aiPlatformsData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import AIPlatformsHero from "@/components/aiplatforms/AIPlatformsHero";
@@ -58,32 +55,7 @@ export default function AIPoweredApplicationPlatforms() {
   };
 
   return (
-    <>
-      <Head>
-        <title>AI-Powered Application Platforms | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Transform your business with AI-powered application platforms. Build intelligent, scalable solutions using machine learning, NLP, and cloud-native technologies."
-        />
-        <meta property="og:title" content="AI-Powered Application Platforms | Coreway" />
-        <meta
-          property="og:description"
-          content="Build intelligent, scalable applications with AI-driven platforms leveraging machine learning and cloud technologies."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/ai-powered-application-platforms`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/ai-powered-application-platforms`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -174,6 +146,5 @@ export default function AIPoweredApplicationPlatforms() {
           />
         </main>
       </div>
-    </>
   );
 }

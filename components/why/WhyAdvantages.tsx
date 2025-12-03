@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Brain, Trophy, RefreshCw, Headphones, Rocket, Eye } from 'lucide-react';
 
@@ -97,28 +99,24 @@ export default function WhyAdvantages({ title, items }: WhyAdvantagesProps) {
             return (
               <article
                 key={item.id}
-                className={`relative group bg-white/5 backdrop-blur-sm border rounded-2xl p-8 transition-all duration-700 ${
-                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                } ${
-                  isActive
+                className={`relative group bg-white/5 backdrop-blur-sm border rounded-2xl p-8 transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                  } ${isActive
                     ? 'border-purple-500 bg-gradient-to-br from-purple-500/20 to-violet-500/20 scale-105 shadow-2xl shadow-purple-500/30'
                     : 'border-white/10 hover:border-purple-500/50 hover:scale-102'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
                 {isActive && (
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-violet-500/10 animate-pulse"></div>
                 )}
 
-                <div className={`relative w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ${
-                  isActive ? 'scale-110 rotate-12 shadow-lg shadow-purple-500/50' : 'group-hover:scale-105'
-                }`}>
+                <div className={`relative w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ${isActive ? 'scale-110 rotate-12 shadow-lg shadow-purple-500/50' : 'group-hover:scale-105'
+                  }`}>
                   <Icon className="text-white" size={28} />
                 </div>
 
-                <h3 className={`relative text-xl font-bold mb-3 transition-colors duration-300 ${
-                  isActive ? 'text-purple-300' : 'text-white'
-                }`}>
+                <h3 className={`relative text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-purple-300' : 'text-white'
+                  }`}>
                   {item.title}
                 </h3>
                 <p className="relative text-gray-300 leading-relaxed">

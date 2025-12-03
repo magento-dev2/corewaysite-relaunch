@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Workflow, Database, Radio, Shield, TrendingUp, Zap } from 'lucide-react';
 

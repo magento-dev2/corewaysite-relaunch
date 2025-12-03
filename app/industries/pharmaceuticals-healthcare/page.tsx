@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import healthcareData from "../../../data/pharmaceuticalsHealthcareData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import HealthcareHero from "@/components/healthcare/HealthcareHero";
@@ -63,41 +60,7 @@ export default function PharmaceuticalsHealthcarePage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Pharmaceuticals & Healthcare Digital Solutions | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="HIPAA-compliant telemedicine platforms, patient portals, EHR integration, prescription management, and AI diagnostics for healthcare providers."
-        />
-        <meta
-          property="og:title"
-          content="Pharmaceuticals & Healthcare Solutions | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Secure, compliant healthcare technology solutions including telemedicine, patient portals, and AI diagnostics."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/pharmaceuticals-healthcare`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/industries/pharmaceuticals-healthcare`}
-        />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -190,6 +153,5 @@ export default function PharmaceuticalsHealthcarePage() {
           />
         </main>
       </div>
-    </>
   );
 }

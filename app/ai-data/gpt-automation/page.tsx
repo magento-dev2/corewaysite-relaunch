@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import gptAutomationData from "../../../data/gptAutomationData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import DatasetHero from "@/components/dataset/DatasetHero";
@@ -57,32 +54,7 @@ export default function GPTAutomation() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Automation via GPT, APIs & Workflow Tools | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Build intelligent automation workflows that combine GPT models, external APIs, and workflow orchestration to eliminate manual tasks and scale operations."
-        />
-        <meta property="og:title" content="GPT Workflow Automation | Coreway" />
-        <meta
-          property="og:description"
-          content="Intelligent automation using GPT-4, APIs, and workflow tools to accelerate processes and scale operations."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/gpt-automation`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/gpt-automation`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -174,6 +146,5 @@ export default function GPTAutomation() {
           />
         </main>
       </div>
-    </>
   );
 }

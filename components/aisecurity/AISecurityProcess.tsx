@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, Cpu, Rocket, GraduationCap, Activity } from 'lucide-react';
 

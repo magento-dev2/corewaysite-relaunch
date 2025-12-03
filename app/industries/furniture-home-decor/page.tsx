@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import furnitureHomeDecorData from "../../../data/furnitureHomeDecorData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import FurnitureHero from "@/components/furniture/FurnitureHero";
@@ -63,38 +60,7 @@ export default function FurnitureHomeDecorPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Furniture & Home Decor Digital Solutions | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="Transform furniture retail with AR visualization, 3D configurators, virtual showrooms, smart inventory, and AI-powered recommendations."
-        />
-        <meta
-          property="og:title"
-          content="Furniture & Home Decor Solutions | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="AR room visualization, 3D product configurators, virtual showrooms, and omnichannel solutions for furniture retail."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/furniture-home-decor`}
-        />
-        <link rel="canonical" href={`${siteUrl}/industries/furniture-home-decor`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -187,6 +153,5 @@ export default function FurnitureHomeDecorPage() {
           />
         </main>
       </div>
-    </>
   );
 }

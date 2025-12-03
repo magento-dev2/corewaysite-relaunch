@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import manufacturingIoTData from "../../../data/manufacturingIoTData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import ManufacturingHero from "@/components/manufacturing/ManufacturingHero";
@@ -56,32 +53,7 @@ export default function ManufacturingIoT() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Manufacturing & Industrial IoT Solutions | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Transform your factory with smart sensors, predictive maintenance, and real-time monitoring. Industry 4.0 IoT solutions that reduce downtime by 40%."
-        />
-        <meta property="og:title" content="Manufacturing & Industrial IoT | Coreway" />
-        <meta
-          property="og:description"
-          content="Smart factory transformation with IoT sensors, predictive maintenance, and production optimization."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/manufacturing-iot`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/industries/manufacturing-iot`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -211,6 +183,5 @@ export default function ManufacturingIoT() {
           />
         </main>
       </div>
-    </>
   );
 }

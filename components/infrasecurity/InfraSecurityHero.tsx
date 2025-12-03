@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Shield, ArrowRight, Lock } from 'lucide-react';
 import { gsap } from "gsap";

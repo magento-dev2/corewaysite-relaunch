@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import foodBeverageData from "../../../data/foodBeverageData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import FoodHero from "@/components/foodbeverage/FoodHero";
@@ -63,38 +60,7 @@ export default function FoodBeveragePage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Food & Beverage Digital Solutions | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="Transform food & beverage operations with smart supply chain, IoT production, AI forecasting, quality control, and digital ordering systems."
-        />
-        <meta
-          property="og:title"
-          content="Food & Beverage Solutions | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Smart supply chain, automated production, AI demand forecasting, and digital ordering for food and beverage industry."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/food-beverage`}
-        />
-        <link rel="canonical" href={`${siteUrl}/industries/food-beverage`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -187,6 +153,5 @@ export default function FoodBeveragePage() {
           />
         </main>
       </div>
-    </>
   );
 }

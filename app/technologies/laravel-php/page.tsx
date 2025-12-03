@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import laravelData from "../../../data/phpLaravelData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import TechHero from "@/components/technologies/TechHero";
@@ -62,36 +59,7 @@ export default function LaravelPHPTechnologyPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Laravel / PHP Development Services | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Expert Laravel and PHP development for building elegant web applications, APIs, e-commerce platforms, and SaaS solutions with modern architecture."
-        />
-        <meta
-          property="og:title"
-          content="Laravel / PHP Development Services | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Build powerful Laravel applications with elegant syntax and enterprise capabilities. Expert PHP development team."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/technologies/laravel-php`}
-        />
-        <link rel="canonical" href={`${siteUrl}/technologies/laravel-php`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -185,6 +153,5 @@ export default function LaravelPHPTechnologyPage() {
           />
         </main>
       </div>
-    </>
   );
 }

@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import aiIntegrationData from "../../../data/aiIntegrationData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import AIIntegrationHero from "@/components/aiintegration/AIIntegrationHero";
@@ -57,32 +54,7 @@ export default function AIIntegrationServices() {
   };
 
   return (
-    <>
-      <Head>
-        <title>AI Integration Services | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Seamless AI integration services. Connect OpenAI, Google AI, AWS AI with your systems. Expert API integration, chatbots, and intelligent automation."
-        />
-        <meta property="og:title" content="AI Integration Services | Coreway" />
-        <meta
-          property="og:description"
-          content="Connect artificial intelligence with your existing systems for enhanced automation and intelligent workflows."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/ai-integration-services`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/ai-integration-services`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function AIIntegrationServices() {
           />
         </main>
       </div>
-    </>
   );
 }

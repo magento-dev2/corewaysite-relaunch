@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import fashionApparelData from "../../../data/fashionApparelData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import FashionHero from "@/components/fashion/FashionHero";
@@ -63,38 +60,7 @@ export default function FashionApparelPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Fashion & Apparel E-Commerce Solutions | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="Transform fashion retail with AI-powered virtual try-on, personalized styling, trend forecasting, smart inventory, and omnichannel experiences."
-        />
-        <meta
-          property="og:title"
-          content="Fashion & Apparel Solutions | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Virtual try-on, AI styling assistant, trend analytics, smart inventory, and omnichannel retail for fashion brands."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/fashion-apparel`}
-        />
-        <link rel="canonical" href={`${siteUrl}/industries/fashion-apparel`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -187,6 +153,5 @@ export default function FashionApparelPage() {
           />
         </main>
       </div>
-    </>
   );
 }

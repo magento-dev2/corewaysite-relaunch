@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import infrastructureSecurityData from "../../../data/infrastructureSecurityData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import InfraSecurityHero from "@/components/infrasecurity/InfraSecurityHero";
@@ -57,32 +54,7 @@ export default function InfrastructureSecurityAI() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Secure Infrastructure Automation with AI | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Build self-healing, AI-powered infrastructure with automated security controls, threat detection, and compliance monitoring."
-        />
-        <meta property="og:title" content="AI Infrastructure Security Solutions | Coreway" />
-        <meta
-          property="og:description"
-          content="Intelligent threat detection, automated response, and predictive security analytics powered by artificial intelligence."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/infrastructure-security-ai`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/infrastructure-security-ai`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function InfrastructureSecurityAI() {
           />
         </main>
       </div>
-    </>
   );
 }

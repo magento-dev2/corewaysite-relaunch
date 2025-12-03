@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { CheckCircle, Shield } from 'lucide-react';
 
@@ -42,9 +44,8 @@ export default function ReplatformingAutomation({ title, description, features }
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-            }`}
+            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+              }`}
           >
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
               <Shield className="text-purple-500 animate-pulse" size={16} />
@@ -62,9 +63,8 @@ export default function ReplatformingAutomation({ title, description, features }
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex items-start space-x-3 transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                  }`}
+                  className={`flex items-start space-x-3 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                    }`}
                   style={{ transitionDelay: `${300 + index * 150}ms` }}
                 >
                   <div className="mt-1 flex-shrink-0">
@@ -80,9 +80,8 @@ export default function ReplatformingAutomation({ title, description, features }
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-90'
-            }`}
+            className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-90'
+              }`}
           >
             <div className="relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 p-8">
               <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-xl flex items-center justify-center relative overflow-hidden">

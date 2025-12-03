@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Code, Network, Webhook, CreditCard, Users, Zap } from 'lucide-react';
 

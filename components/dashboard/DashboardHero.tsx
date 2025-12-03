@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { BarChart3, ArrowRight } from 'lucide-react';
 import { gsap } from "gsap";

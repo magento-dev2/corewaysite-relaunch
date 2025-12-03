@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, Lightbulb, Rocket, CheckCircle } from 'lucide-react';
 
@@ -79,11 +81,10 @@ export default function OurProcess() {
             {processSteps.map((step, index) => (
               <div
                 key={step.id}
-                className={`relative transition-all duration-700 ${
-                  visibleSteps.includes(step.id)
+                className={`relative transition-all duration-700 ${visibleSteps.includes(step.id)
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <article className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-500/50 transition-all hover:scale-105 h-full">

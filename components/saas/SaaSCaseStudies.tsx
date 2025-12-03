@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -60,9 +62,8 @@ export default function SaaSCaseStudies({ title, cases }: SaaSCaseStudiesProps) 
             return (
               <article
                 key={caseStudy.id}
-                className={`group bg-white/5 backdrop-blur-sm border cursor-pointer border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
+                className={`group bg-white/5 backdrop-blur-sm border cursor-pointer border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="relative h-56 overflow-hidden">

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { TrendingDown, TrendingUp, DollarSign } from 'lucide-react';
 

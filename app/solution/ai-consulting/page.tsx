@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import aiConsultingData from "../../../data/aiConsultingData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import AIConsultingHero from "@/components/aiconsulting/AIConsultingHero";
@@ -58,32 +55,7 @@ export default function AIConsulting() {
   };
 
   return (
-    <>
-      <Head>
-        <title>AI Consulting Services | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Transform your business with AI consulting expertise. Custom machine learning models, NLP solutions, and strategic AI implementation for measurable ROI."
-        />
-        <meta property="og:title" content="AI Consulting Services | Coreway" />
-        <meta
-          property="og:description"
-          content="Strategic AI implementation and machine learning solutions that deliver measurable business value."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/ai-consulting`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/ai-consulting`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function AIConsulting() {
           />
         </main>
       </div>
-    </>
   );
 }

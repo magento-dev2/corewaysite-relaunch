@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import awsS3Data from "../../../data/awsS3Data.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import AWSS3Hero from "@/components/awss3/AWSS3Hero";
@@ -57,32 +54,7 @@ export default function AWSS3Optimization() {
   };
 
   return (
-    <>
-      <Head>
-        <title>AWS S3 Architecture & Cost Optimization | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Design scalable S3 architectures, optimize storage costs by up to 70%, and implement best practices for performance, security, and data lifecycle management."
-        />
-        <meta property="og:title" content="AWS S3 Optimization Services | Coreway" />
-        <meta
-          property="og:description"
-          content="Reduce AWS S3 costs by 70% through intelligent tiering, lifecycle policies, and performance optimization."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/ai-data/aws-s3-optimization`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/ai-data/aws-s3-optimization`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function AWSS3Optimization() {
           />
         </main>
       </div>
-    </>
   );
 }

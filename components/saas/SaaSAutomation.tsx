@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { CheckCircle, Zap } from 'lucide-react';
 
@@ -41,9 +43,8 @@ export default function SaaSAutomation({ title, description, features }: SaaSAut
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}
+            className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
           >
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
               <Zap className="text-purple-500" size={16} />
@@ -61,9 +62,8 @@ export default function SaaSAutomation({ title, description, features }: SaaSAut
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex items-start space-x-3 transition-all duration-500 ${
-                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                  }`}
+                  className={`flex items-start space-x-3 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                    }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="mt-1 flex-shrink-0">
@@ -76,9 +76,8 @@ export default function SaaSAutomation({ title, description, features }: SaaSAut
           </div>
 
           <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+            className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
           >
             <div className="relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 p-8">
               <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-xl flex items-center justify-center">

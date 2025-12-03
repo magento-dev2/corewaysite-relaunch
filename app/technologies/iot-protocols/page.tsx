@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import iotData from "../../../data/iotProtocolsData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import TechHero from "@/components/technologies/TechHero";
@@ -62,38 +59,7 @@ export default function IoTProtocolsPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          IoT Protocols - MQTT & WebSockets | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="Expert MQTT, WebSockets, and IoT protocol implementation for real-time communication, device connectivity, and live applications."
-        />
-        <meta
-          property="og:title"
-          content="IoT Protocols - MQTT & WebSockets | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Professional real-time communication with MQTT, WebSockets, and IoT protocols. Handle millions of messages per second."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/technologies/iot-protocols`}
-        />
-        <link rel="canonical" href={`${siteUrl}/technologies/iot-protocols`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -184,6 +150,5 @@ export default function IoTProtocolsPage() {
           />
         </main>
       </div>
-    </>
   );
 }

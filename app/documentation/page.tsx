@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Head from "next/head";
 import Link from "next/link";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import {
@@ -92,17 +91,7 @@ export default function DocumentationPage() {
   });
 
   return (
-    <>
-      <Head>
-        <title>Documentation | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Comprehensive documentation, guides, and resources for Coreway Solution services."
-        />
-        <link rel="canonical" href={`${siteUrl}/documentation`} />
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -362,6 +351,5 @@ export default function DocumentationPage() {
           </div>
         </main>
       </div>
-    </>
   );
 }

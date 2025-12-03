@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 
@@ -43,9 +45,8 @@ export default function SaaSOverview({ title, content, image }: SaaSOverviewProp
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}
+            className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               {title}
@@ -71,9 +72,8 @@ export default function SaaSOverview({ title, content, image }: SaaSOverviewProp
           </div>
 
           <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+            className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
               <img

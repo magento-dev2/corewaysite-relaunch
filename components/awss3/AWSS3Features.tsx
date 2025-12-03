@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Layout, DollarSign, Zap, Shield, RefreshCw, Move } from 'lucide-react';
 

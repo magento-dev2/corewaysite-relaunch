@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Wifi, Activity, Cpu, BarChart3, Shield, Link2 } from 'lucide-react';
 

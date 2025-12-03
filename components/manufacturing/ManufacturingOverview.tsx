@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 
@@ -78,9 +80,8 @@ export default function ManufacturingOverview({ title, content, image }: Manufac
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-            }`}
+            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+              }`}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               {title}
@@ -93,9 +94,8 @@ export default function ManufacturingOverview({ title, content, image }: Manufac
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className={`flex items-start space-x-3 transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                  }`}
+                  className={`flex items-start space-x-3 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                    }`}
                   style={{ transitionDelay: `${200 + index * 150}ms` }}
                 >
                   <div className="mt-1 flex-shrink-0">
@@ -110,9 +110,8 @@ export default function ManufacturingOverview({ title, content, image }: Manufac
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-3'
-            }`}
+            className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-3'
+              }`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
@@ -121,13 +120,11 @@ export default function ManufacturingOverview({ title, content, image }: Manufac
                 {sensors.map((sensor) => (
                   <div
                     key={sensor.id}
-                    className={`relative flex flex-col items-center justify-center transition-all duration-500 ${
-                      sensor.active ? 'text-purple-400' : 'text-gray-600'
-                    }`}
+                    className={`relative flex flex-col items-center justify-center transition-all duration-500 ${sensor.active ? 'text-purple-400' : 'text-gray-600'
+                      }`}
                   >
-                    <div className={`w-full h-full rounded-lg border-2 flex flex-col items-center justify-center ${
-                      sensor.active ? 'border-purple-500 bg-purple-500/20' : 'border-gray-600 bg-gray-600/10'
-                    }`}>
+                    <div className={`w-full h-full rounded-lg border-2 flex flex-col items-center justify-center ${sensor.active ? 'border-purple-500 bg-purple-500/20' : 'border-gray-600 bg-gray-600/10'
+                      }`}>
                       <div className="text-xs font-bold mb-1">{sensor.active ? '●' : '○'}</div>
                       <div className="text-[10px] font-mono">{sensor.value}</div>
                     </div>

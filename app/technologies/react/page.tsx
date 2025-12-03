@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import reactData from "../../../data/reactData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import TechHero from "@/components/technologies/TechHero";
@@ -62,33 +59,7 @@ export default function ReactTechnologyPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>React Development Services | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Expert React development for building fast, scalable web applications. SPAs, PWAs, enterprise solutions with modern React architecture."
-        />
-        <meta
-          property="og:title"
-          content="React Development Services | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Build lightning-fast React applications with our expert development team. Component-based architecture for scalable solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${siteUrl}/technologies/react`} />
-        <link rel="canonical" href={`${siteUrl}/technologies/react`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -175,6 +146,5 @@ export default function ReactTechnologyPage() {
           />
         </main>
       </div>
-    </>
   );
 }

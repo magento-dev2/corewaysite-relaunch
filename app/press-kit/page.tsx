@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Head from "next/head";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import {
   Download, Package, Image, FileText, Camera, Monitor, Book,
@@ -70,17 +69,7 @@ export default function PressKitPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Press Kit | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Download our brand assets, company information, and media resources for editorial use."
-        />
-        <link rel="canonical" href={`${siteUrl}/press-kit`} />
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -384,6 +373,5 @@ export default function PressKitPage() {
           </div>
         </main>
       </div>
-    </>
   );
 }

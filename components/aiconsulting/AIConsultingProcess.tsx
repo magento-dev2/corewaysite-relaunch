@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, Lightbulb, FlaskConical, Brain, Rocket } from 'lucide-react';
 

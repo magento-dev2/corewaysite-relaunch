@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, FileText, Settings, Move, BarChart } from 'lucide-react';
 

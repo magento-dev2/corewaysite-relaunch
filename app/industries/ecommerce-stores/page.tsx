@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import ecommerceStoresData from "../../../data/ecommerceStoresData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import EcommerceHero from "@/components/ecommerce/EcommerceHero";
@@ -57,32 +54,7 @@ export default function EcommerceStores() {
   };
 
   return (
-    <>
-      <Head>
-        <title>eCommerce & Virtual Product Stores | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Build high-converting online stores with AI-powered personalization, seamless checkout, and omnichannel integration. Shopify to headless commerce."
-        />
-        <meta property="og:title" content="eCommerce Development | Coreway" />
-        <meta
-          property="og:description"
-          content="Create digital storefronts that drive sales with AI personalization and seamless experiences."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/ecommerce-stores`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/industries/ecommerce-stores`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -195,6 +167,5 @@ export default function EcommerceStores() {
           />
         </main>
       </div>
-    </>
   );
 }

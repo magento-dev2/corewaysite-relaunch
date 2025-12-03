@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import automotiveData from "../../../data/automotiveData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import DatasetHero from "@/components/dataset/DatasetHero";
@@ -58,32 +55,7 @@ export default function AutomotivePage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Automotive Digital Transformation Solutions | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Drive innovation in automotive with connected vehicles, smart manufacturing, AI diagnostics, and mobility solutions. Industry 4.0 for automotive."
-        />
-        <meta property="og:title" content="Automotive Solutions | Coreway" />
-        <meta
-          property="og:description"
-          content="Connected vehicle platforms, autonomous driving systems, smart factory automation, and predictive maintenance for automotive industry."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/industries/automotive`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/industries/automotive`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -175,6 +147,5 @@ export default function AutomotivePage() {
           />
         </main>
       </div>
-    </>
   );
 }

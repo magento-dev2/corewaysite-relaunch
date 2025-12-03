@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import databaseData from "../../../data/databaseData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import TechHero from "@/components/technologies/TechHero";
@@ -62,38 +59,7 @@ export default function DatabaseTechnologyPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Database Solutions - PostgreSQL & MongoDB | Coreway Solution
-        </title>
-        <meta
-          name="description"
-          content="Expert PostgreSQL and MongoDB database architecture, design, and optimization. Build scalable, high-performance database systems."
-        />
-        <meta
-          property="og:title"
-          content="Database Solutions - PostgreSQL & MongoDB | Coreway"
-        />
-        <meta
-          property="og:description"
-          content="Professional database design and optimization for PostgreSQL and MongoDB. Expert architecture and performance tuning."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/technologies/databases`}
-        />
-        <link rel="canonical" href={`${siteUrl}/technologies/databases`} />
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -185,6 +151,5 @@ export default function DatabaseTechnologyPage() {
           />
         </main>
       </div>
-    </>
   );
 }

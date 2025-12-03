@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Lightbulb, Brain, MessageSquare, Eye, BarChart3, Cpu } from 'lucide-react';
 

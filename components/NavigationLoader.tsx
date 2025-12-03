@@ -26,6 +26,9 @@ export default function NavigationLoader() {
 
         // Only show loader for internal navigation to different pages
         if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
+          // Scroll to top immediately when navigation starts
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
           setIsLoading(true);
           setProgress(10);
 

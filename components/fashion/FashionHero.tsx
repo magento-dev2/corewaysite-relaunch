@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Zap, Link2, GitBranch, Webhook, ArrowRight } from 'lucide-react';
 import { gsap } from "gsap";

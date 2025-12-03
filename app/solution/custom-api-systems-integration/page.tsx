@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import customApiData from "../../../data/customApiData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import CustomAPIHero from "@/components/customapi/CustomAPIHero";
@@ -58,32 +55,7 @@ export default function CustomAPISystemsIntegration() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Custom API & Systems Integration | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Expert custom API development and systems integration. RESTful APIs, GraphQL, webhooks, third-party integrations, and microservices architecture."
-        />
-        <meta property="og:title" content="Custom API Integration Services | Coreway" />
-        <meta
-          property="og:description"
-          content="Connect your business systems seamlessly. Expert API development, third-party integrations, and custom middleware solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/custom-api-systems-integration`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/custom-api-systems-integration`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function CustomAPISystemsIntegration() {
           />
         </main>
       </div>
-    </>
   );
 }

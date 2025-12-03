@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Cloud, ShoppingBag, Database, Boxes, Layers, Package } from 'lucide-react';
 
@@ -80,13 +82,11 @@ export default function ReplatformingFeatures({ title, items }: ReplatformingFea
                 key={item.id}
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-700 ${
-                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                } ${
-                  isHovered
+                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                  } ${isHovered
                     ? 'bg-gradient-to-br from-purple-500/15 to-violet-500/15 border-purple-500/50 -translate-y-3 shadow-2xl shadow-purple-500/30'
                     : 'hover:border-purple-500/30 hover:-translate-y-2'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {isHovered && (
@@ -98,15 +98,13 @@ export default function ReplatformingFeatures({ title, items }: ReplatformingFea
                   </>
                 )}
 
-                <div className={`relative w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ${
-                  isHovered ? 'scale-110 rotate-6 shadow-lg shadow-purple-500/50' : 'group-hover:scale-105'
-                }`}>
+                <div className={`relative w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ${isHovered ? 'scale-110 rotate-6 shadow-lg shadow-purple-500/50' : 'group-hover:scale-105'
+                  }`}>
                   <Icon className="text-white" size={28} />
                 </div>
 
-                <h3 className={`relative text-xl font-bold mb-3 transition-colors duration-300 ${
-                  isHovered ? 'text-purple-300' : 'text-white'
-                }`}>
+                <h3 className={`relative text-xl font-bold mb-3 transition-colors duration-300 ${isHovered ? 'text-purple-300' : 'text-white'
+                  }`}>
                   {item.title}
                 </h3>
                 <p className="relative text-gray-300 leading-relaxed">

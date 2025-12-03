@@ -1,3 +1,5 @@
+"use client";
+
 import { HtmlBlock } from '@/types/blocks';
 import { Trash2, GripVertical, Code as CodeIcon, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';

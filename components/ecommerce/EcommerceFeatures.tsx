@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Package, CreditCard, Sparkles, BarChart3, Smartphone, Database } from 'lucide-react';
 

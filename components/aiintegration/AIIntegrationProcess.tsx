@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, FileText, Code, Rocket, Headphones } from 'lucide-react';
 

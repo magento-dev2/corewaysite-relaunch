@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Code, Network, Webhook, Layers, Box, GitBranch } from 'lucide-react';
 

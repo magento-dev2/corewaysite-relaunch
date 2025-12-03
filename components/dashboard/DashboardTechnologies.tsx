@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Code, PieChart, BarChart3, TrendingUp, Layout, Layers } from 'lucide-react';
 

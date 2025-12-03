@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import replatformingData from "../../../data/replatformingData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import ReplatformingHero from "@/components/replatforming/ReplatformingHero";
@@ -59,32 +56,7 @@ export default function ReplatformingMigration() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Platform Migration & Replatforming Services | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Expert platform migration and replatforming services. Zero downtime cloud migration, e-commerce replatforming, and legacy system modernization."
-        />
-        <meta property="og:title" content="Platform Migration Services | Coreway" />
-        <meta
-          property="og:description"
-          content="Modernize your technology stack with zero downtime. Expert migration services for e-commerce, SaaS, and enterprise applications."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/replatforming-migration`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/replatforming-migration`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -174,6 +146,5 @@ export default function ReplatformingMigration() {
           />
         </main>
       </div>
-    </>
   );
 }

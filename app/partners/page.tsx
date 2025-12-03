@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Head from "next/head";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import {
   Code, Briefcase, ShoppingCart, Users, TrendingUp, DollarSign,
@@ -76,17 +75,7 @@ export default function PartnersPage() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Partners | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Join our partner ecosystem and unlock new opportunities for growth and success with Coreway Solution."
-        />
-        <link rel="canonical" href={`${siteUrl}/partners`} />
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -360,6 +349,5 @@ export default function PartnersPage() {
           </div>
         </main>
       </div>
-    </>
   );
 }

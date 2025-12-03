@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import customDashboardData from "../../../data/customDashboardData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import DashboardHero from "@/components/dashboard/DashboardHero";
@@ -57,32 +54,7 @@ export default function CustomDashboards() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Custom Data Dashboards & Access Portals | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Build interactive, real-time data dashboards and secure access portals that transform complex datasets into actionable insights."
-        />
-        <meta property="og:title" content="Custom Data Dashboards | Coreway" />
-        <meta
-          property="og:description"
-          content="Interactive dashboards with real-time updates, advanced visualizations, and role-based access control."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/ai-data/custom-dashboards`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/ai-data/custom-dashboards`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -172,6 +144,5 @@ export default function CustomDashboards() {
           />
         </main>
       </div>
-    </>
   );
 }

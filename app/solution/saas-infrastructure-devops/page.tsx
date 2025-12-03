@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import saasDevOpsData from "../../../data/saasDevOpsData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import SaaSHero from "@/components/saas/SaaSHero";
@@ -58,32 +55,7 @@ export default function SaaSInfrastructureDevOps() {
   };
 
   return (
-    <>
-      <Head>
-        <title>SaaS Infrastructure & DevOps | Coreway Solution</title>
-        <meta
-          name="description"
-          content="Build scalable SaaS infrastructure with modern DevOps practices. Automated CI/CD pipelines, container orchestration, and cloud-native solutions."
-        />
-        <meta property="og:title" content="SaaS Infrastructure & DevOps | Coreway" />
-        <meta
-          property="og:description"
-          content="Enterprise-grade cloud infrastructure and DevOps automation for rapid deployment and continuous delivery."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/solution/saas-infrastructure-devops`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/solution/saas-infrastructure-devops`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -173,6 +145,5 @@ export default function SaaSInfrastructureDevOps() {
           />
         </main>
       </div>
-    </>
   );
 }

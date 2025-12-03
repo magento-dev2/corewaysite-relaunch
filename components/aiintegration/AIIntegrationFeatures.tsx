@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Plug, Workflow, Database, MessageSquare, RefreshCw, Activity } from 'lucide-react';
 

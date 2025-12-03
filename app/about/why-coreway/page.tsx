@@ -1,6 +1,3 @@
-"use client";
-
-import Head from "next/head";
 import whyCorewayData from "../../../data/whyCorewayData.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import WhyHero from "@/components/why/WhyHero";
@@ -36,31 +33,7 @@ export default function WhyCoreway() {
   };
 
   return (
-    <>
-      <Head>
-        <title>Why Choose Coreway Solution | Your Trusted Technology Partner</title>
-        <meta
-          name="description"
-          content="Discover why 200+ companies chose Coreway as their technology partner. Deep expertise, proven track record, and exceptional results."
-        />
-        <meta property="og:title" content="Why Choose Coreway Solution" />
-        <meta
-          property="og:description"
-          content="Deep technical expertise, proven track record, agile methodology, and 24/7 support. See why we're different."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteUrl}/about/why-coreway`}
-        />
-        <link
-          rel="canonical"
-          href={`${siteUrl}/about/why-coreway`}
-        />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-      </Head>
-
-      <div className="min-h-screen bg-[#0E0918]">
+    <div className="min-h-screen bg-[#0E0918]">
         <header className="pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
@@ -137,6 +110,5 @@ export default function WhyCoreway() {
           />
         </main>
       </div>
-    </>
   );
 }

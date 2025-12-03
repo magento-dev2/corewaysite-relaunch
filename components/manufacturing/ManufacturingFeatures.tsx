@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Activity, Wrench, Zap, Eye, Battery, Link } from 'lucide-react';
 

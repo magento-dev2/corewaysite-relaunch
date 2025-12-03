@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Cloud, Server, Radio, Wifi, Cpu, Layers } from 'lucide-react';
 

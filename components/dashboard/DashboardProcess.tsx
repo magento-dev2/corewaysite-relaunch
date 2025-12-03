@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 import { Search, Palette, Code, Shield, Rocket } from 'lucide-react';
 
