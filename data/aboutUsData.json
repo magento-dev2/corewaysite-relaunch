@@ -1,4 +1,12 @@
 {
+  "hero": {
+    "title": "About ",
+    "title2" :"Coreway Solution",   
+    "subtitle": "Empowering teams worldwide with intelligent automation solutions",
+    "buttons": [
+      { "label": "See what we do", "link": "#features" }
+    ]
+  },
   "companyOverview": {
     "title": "Company Overview",
     "subtitle": "Our Journey and Vision",

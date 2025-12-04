@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,15 +29,13 @@ export default function PortfolioCategory() {
     { id: 12, language: "Wordpress", images: ["/images/Wordpress/american.png","/images/Wordpress/apa.png","/images/Wordpress/bapuji-2.png","/images/Wordpress/beauty.png","/images/Wordpress/cardiology.png","/images/Wordpress/community-1.png","/images/Wordpress/culinery.png","/images/Wordpress/dcrcc-1.png","/images/Wordpress/discovery-sf-1.png","/images/Wordpress/growing.png","/images/Wordpress/gsg-1.png","/images/Wordpress/handy-app.png","/images/Wordpress/hazm-1.png","/images/Wordpress/luxury.png","/images/Wordpress/pierr.png","/images/Wordpress/preservation-1.png","/images/Wordpress/rancho-1.png","/images/Wordpress/rkimagine.png","/images/Wordpress/sdapa-1.png","/images/Wordpress/sf-1.png","/images/Wordpress/sol.png","/images/Wordpress/tsm.png","/images/Wordpress/usgm-3.png"] }
   ];
 
-  const categories = Array.from(
-    new Set(data.map((p) => p.language))
-  ).map((lang) => ({
+  const categories = Array.from(new Set(data.map((p) => p.language))).map((lang) => ({
     language: lang,
     projects: data.filter((p) => p.language === lang),
   }));
 
   return (
-    <div className="bg-[#0E0918] text-white py-16 space-y-32">
+    <div className="bg-[#05030D] text-white py-16 space-y-32 relative overflow-hidden">
       {categories.map((cat, idx) => (
         <CategoryScroller key={idx} category={cat} />
       ))}
@@ -45,55 +43,46 @@ export default function PortfolioCategory() {
   );
 }
 
-/*  CATEGORY SCROLLER */
+/* ---------------------- CATEGORY SCROLLER ---------------------- */
 function CategoryScroller({ category }: { category: { language: string; projects: Project[] } }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!containerRef.current || !rowRef.current) return;
 
-    const totalImages = category.projects.reduce((sum, p) => sum + p.images.length, 0);
+    const row = rowRef.current;
+    const totalWidth = row.scrollWidth - window.innerWidth;
 
-    if (totalImages > 2) {
-      const row = rowRef.current;
-      const container = containerRef.current;
-
-      const totalWidth = row.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      const scrollLength = totalWidth - viewportWidth;
-
+    if (totalWidth > 0) {
       gsap.to(row, {
-        x: -scrollLength,
+        x: -totalWidth,
         ease: "none",
         scrollTrigger: {
-          trigger: container,
+          trigger: containerRef.current,
           start: "top top",
-          end: () => `+=${totalWidth}`,
-          scrub: 0.8,
+          end: "+=" + totalWidth,
+          scrub: 1.2,
           pin: true,
-          anticipatePin: 1,
         },
       });
-
-      const handleResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-        window.removeEventListener("resize", handleResize);
-      };
     }
-  }, [category.projects]);
+
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[800px] flex flex-col justify-center gap-5">
-      <h2 className="text-4xl md:text-5xl font-bold px-16">{category.language}</h2>
-      <div className=" h-[420px] flex-1 flex items-center overflow-hidden">
-        <div ref={rowRef} className="flex gap-10 px-16 will-change-transform">
+    <section ref={containerRef} className="relative h-screen flex flex-col gap-6">
+
+      <h2 className="text-4xl md:text-5xl font-extrabold px-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
+        {category.language}
+      </h2>
+
+      <div className="h-full flex items-center overflow-hidden">
+        <div ref={rowRef} className="flex gap-5 px-10 will-change-transform">
           {category.projects.flatMap((project) =>
             project.images.map((img, i) => (
-              <PortfolioCard key={project.id + "-" + i} language={project.language} src={img} />
+              <ThreeCardImage key={project.id + "-" + i} language={project.language} src={img} index={i} />
             ))
           )}
         </div>
@@ -102,49 +91,35 @@ function CategoryScroller({ category }: { category: { language: string; projects
   );
 }
 
-
-/*  CARD COMPONENT */
-function PortfolioCard({ src, language }: { src: string; language: string }) {
+//* ---------------------- SINGLE CARD — AUTO WIDTH WITH GRID EFFECT ---------------------- */
+function ThreeCardImage({ src, language, index }: { src: string; language: string; index: number }) {
   const imgRef = useRef<HTMLDivElement>(null);
 
-  const onHover = () => {
-    if (!imgRef.current) return;
-    gsap.to(imgRef.current, { scale: 1.1, transformOrigin: "center center", duration: 0.5, ease: "power2.out" });
-  };
-
-  const onLeave = () => {
-    if (!imgRef.current) return;
-    gsap.to(imgRef.current, { scale: 1, transformOrigin: "center center", duration: 0.5, ease: "power2.out" });
-  };
+  // Array of gradient backgrounds to cycle through
+  const gradients = [
+    "from-purple-700/40 to-cyan-700/40",
+    "from-pink-800/40 to-yellow-800/40",
+    "from-indigo-800/40 to-green-800/40",
+    "from-red-800/40 to-orange-800/40",
+    "from-blue-900/40 to-purple-900/40",
+  ];
+  const gradient = gradients[index % gradients.length];
 
   return (
     <div
-      className="group relative flex-shrink-0  w-[593px]  h-[420px] cursor-pointer"
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      className="group relative flex-shrink-0 min-w-[300px] sm:min-w-[350px] md:min-w-[400px] h-[80vh] rounded-xl cursor-pointer"
+      onMouseEnter={() => gsap.to(imgRef.current, { scale: 1.05, duration: 0.4 })}
+      onMouseLeave={() => gsap.to(imgRef.current, { scale: 1, duration: 0.4 })}
     >
-      {/* Glow effect */}
-      <div
-        className="absolute -inset-3 rounded-3xl blur-2xl opacity-0 
-          bg-gradient-to-r from-purple-500/30 to-cyan-500/30 
-          group-hover:opacity-70 transition"
-      />
+      {/* Dark Grid / Gradient Background */}
+      <div className={`absolute -inset-2 rounded-xl blur-xl opacity-70 bg-gradient-to-br ${gradient}`}></div>
 
-      {/* Card container */}
-      <div className="relative w-full h-full rounded-3xl overflow-hidden bg-transparent border border-white/40">
-        {/* Image wrapper */}
+      {/* Card */}
+      <div className="relative w-[50vw] h-[80vh] overflow-hidden bg-white/5 border border-white/20 shadow-lg rounded-xl">
         <div ref={imgRef} className="w-full h-full relative">
-          <Image
-            src={src}
-            alt={language}
-            fill
-            quality={100}
-            className="object-cover w-full h-full"
-            style={{ imageRendering: "auto" }}
-          />
+          <Image src={src} alt={language} fill className="object-cover w-full h-full" />
 
-          {/* Language label button */}
-          <span className="absolute bottom-4 left-10 z-10 bg-white/5 border border-white/10 text-black px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+          <span className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-sm font-medium border border-white/10">
             {language}
           </span>
         </div>

@@ -1,6 +1,7 @@
 {
   "hero": {
-    "title": "Why Choose Coreway Solution?",
+    "title": "Why Choose",
+    "title2": " Coreway Solution?",
     "subtitle": "We're not just another software company. We're your technology partner committed to delivering exceptional results through innovation, expertise, and proven methodologies that drive real business outcomes.",
     "buttons": [
       { "label": "See Our Advantages", "link": "#advantages" },

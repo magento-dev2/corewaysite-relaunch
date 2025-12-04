@@ -1,8 +1,12 @@
 {
   "hero": {
-    "title": "Join Our Team",
+    "title": "Join ",
+    "title2":"Our Team",
     "subtitle": "Shape the Future of Technology",
     "description": "We're looking for talented individuals who are passionate about building innovative solutions and making a real impact.",
+    "buttons": [
+      { "label": "See our team", "link": "#features" }
+    ],
     "stats": [
       { "label": "Team Members", "value": "50+" },
       { "label": "Countries", "value": "10+" },
