@@ -70,11 +70,11 @@ const highlights = [
             Why Coreway
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            At Coreway Solution, we help businesses<span className="font-bold text-white"> architect, build, and automate </span> modern digital platforms that scale with confidence. With over a decade of experience, we specialize in <span className="font-bold text-white"> custom software development, AI-driven solutions, IoT dashboards, automation workflows, and cloud infrastructure engineering.</span>
+            At Coreway Solution, we help businesses architect, build, and automate  modern digital platforms that scale with confidence. With over a decade of experience, we specialize in custom software development, AI-driven solutions, IoT dashboards, automation workflows, and cloud infrastructure engineering.
           </p>
 
           <p className="text-gray-300 text-lg leading-relaxed mt-3">
-            Our team combines deep technical expertise with a <span className="font-bold text-white">solution-first mindset</span>, enabling us to transform complex requirements into reliable, secure, and high-performance digital systems. We work closely with startups, SMBs, and enterprises worldwide—delivering technology that enhances <span className="font-bold text-white">efficiency, automation, and long-term business growth.</span></p>
+            Our team combines deep technical expertise with a solution-first mindset, enabling us to transform complex requirements into reliable, secure, and high-performance digital systems. We work closely with startups, SMBs, and enterprises worldwide—delivering technology that enhances efficiency, automation, and long-term business growth.</p>
 
           <p className="text-gray-300 text-lg leading-relaxed mt-3">
             Whether it’s building new applications, modernizing existing platforms, or integrating intelligent automation, we help organizations use AI and engineering to work smarter.
@@ -106,8 +106,8 @@ const highlights = [
                 <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
 
                   <div className="flex items-center justify-center mb-3">
-                    <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 group-hover:bg-slate-700 transition-colors">
-                      <Icon className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors" />
+                    <div className="w-10 h-10  bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" strokeWidth={1.5} />
                     </div>
                   </div>
 
@@ -133,7 +133,7 @@ const highlights = [
           className="flex justify-center"
         >
           <a
-            href="#"
+            href="/about"
             className="group bg-white text-slate-900 px-8 py-3 rounded-lg hover:bg-slate-100 transition-all font-semibold text-base shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
           >
             {t('numbers.button')}

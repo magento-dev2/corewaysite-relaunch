@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 
 export const services = [
   {
-    imagePath: "/images/architect_service_icon.png", // Updated path
+    imagePath: "/assets/home/architech.png", // Updated path
     ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
     title: "Architect",
     subtitle: "Plan. Design. Strategize.",
@@ -21,7 +21,7 @@ export const services = [
     ],
   },
   {
-    imagePath: "/images/build_service_icon.png", // Updated path
+    imagePath: "/assets/home/build.png", // Updated path
     ariaLabel: "Code brackets with animated lines representing software development",
     title: "Build",
     subtitle: "Develop. Integrate. Deploy.",
@@ -36,7 +36,7 @@ export const services = [
     ],
   },
   {
-    imagePath: "/images/automate_service_icon.png", // Updated path
+    imagePath: "/assets/home/automate.png", // Updated path
     ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
     title: "Automate",
     subtitle: "Optimize. Scale. Manage.",

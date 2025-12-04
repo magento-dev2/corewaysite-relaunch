@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.",
   keywords: "AI development, workflow automation, custom software development, digital transformation, AI consulting, software solutions",
   icons: {
-    icon: '/favicon.png',
+    icon: '/favicon1.png',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },

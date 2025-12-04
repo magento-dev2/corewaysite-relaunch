@@ -82,8 +82,8 @@ export default function TrustedBy() {
             {[...companyLogos, ...companyLogos].map((company, index) => (
               <div
                 key={index}
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
+                // onMouseEnter={() => setIsPaused(true)}
+                // onMouseLeave={() => setIsPaused(false)}
                 className="flex-shrink-0 cursor-pointer transition-transform duration-300 hover:scale-110"
               >
                 <img

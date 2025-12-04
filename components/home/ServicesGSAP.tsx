@@ -21,8 +21,8 @@ export default function ServicesGSAP() {
 
   const services = [
     {
-      imagePath: "/images/architect_service_icon.png", // Updated path
-      staticPath: "/images/architect_service_icon.png",
+      imagePath: "/assets/home/build.jpg", // Updated path
+      staticPath: "/assets/home/build.jpg",
       ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
       title: t('services.architect.title'),
       subtitle: t('services.architect.subtitle'),
@@ -30,8 +30,8 @@ export default function ServicesGSAP() {
       items: t('services.architect.items') as string[],
     },
     {
-      imagePath: "/images/build_service_icon.png", // Updated path
-      staticPath: "/images/build_service_icon.png",
+      imagePath:"/assets/home/build.jpg", // Updated path
+      staticPath:"/assets/home/build.jpg",
       ariaLabel: "Code brackets with animated lines representing software development",
       title: t('services.build.title'),
       subtitle: t('services.build.subtitle'),
@@ -39,8 +39,8 @@ export default function ServicesGSAP() {
       items: t('services.build.items') as string[],
     },
     {
-      imagePath: "/images/automate_service_icon.png", // Updated path
-      staticPath: "/images/automate_service_icon.png",
+      imagePath: "/assets/home/build.jpg", // Updated path
+      staticPath: "/assets/home/build.jpg",
       ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
       title: t('services.automate.title'),
       subtitle: t('services.automate.subtitle'),
@@ -240,7 +240,7 @@ export default function ServicesGSAP() {
               <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
-                    <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6 p-3 overflow-hidden">
+                    <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6  overflow-hidden">
                       <img
                         src={service.imagePath}
                         alt={service.ariaLabel}

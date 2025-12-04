@@ -28,6 +28,7 @@
       "id": "solutions",
       "label": "Solutions",
       "type": "mega",
+      "href": "/solutions",
       "columns": [
         {
           "title": "Digital Solutions",
@@ -130,6 +131,7 @@
       "id": "ai-data",
       "label": "AI & Data Engineering",
       "type": "dropdown",
+      "href": "/ai-data",
       "items": [
         {
           "label": "Dataset Management & Delivery Systems",
@@ -161,6 +163,7 @@
       "id": "industries",
       "label": "Industries",
       "type": "dropdown",
+      "href": "/industries",
       "items": [
         {
           "label": "eCommerce & Virtual Product Stores",
@@ -196,6 +199,7 @@
       "id": "technologies",
       "label": "Technologies",
       "type": "mega",
+      "href": "/technologies",
       "columns": [
         {
           "title": "Frontend & Backend",
@@ -263,6 +267,7 @@
       "id": "Insights",
       "label": "Insights",
       "type": "dropdown",
+      "href": "/insights",
       "items": [
         {
           "label": "Portfolio",

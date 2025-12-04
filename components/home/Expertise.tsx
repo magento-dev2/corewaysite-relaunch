@@ -59,46 +59,46 @@ export default function Expertise() {
   const leftSideRef = useRef<HTMLDivElement>(null);
   const rightSideRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    const section = sectionRef.current;
-    const left = leftSideRef.current;
-    const right = rightSideRef.current;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const section = sectionRef.current;
+      const left = leftSideRef.current;
+      const right = rightSideRef.current;
 
-    if (!section || !left || !right) return;
+      if (!section || !left || !right) return;
 
-    const cards = gsap.utils.toArray<HTMLElement>(".expertise-card");
+      const cards = gsap.utils.toArray<HTMLElement>(".expertise-card");
 
-    // PIN LEFT SIDE
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      end: () => `+=${right.offsetHeight}`,
-      pin: left,
-      pinSpacing: false,
-      anticipatePin: 1,
-    });
-
-    // Animate cards like your reference design
-    cards.forEach((card) => {
-      gsap.from(card, {
-        opacity: 0,
-        x: 120,
-        scale: 0.9,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: 1,
-        },
+      // PIN LEFT SIDE
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: () => `+=${right.offsetHeight}`,
+        pin: left,
+        pinSpacing: false,
+        anticipatePin: 1,
       });
-    });
-  }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+      // Animate cards like your reference design
+      cards.forEach((card) => {
+        gsap.from(card, {
+          opacity: 0,
+          x: 120,
+          scale: 0.9,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            end: "top 40%",
+            scrub: 1,
+          },
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
 
 
@@ -112,7 +112,7 @@ useEffect(() => {
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
+      <div className="relative z-0 max-w-7xl mx-auto px-6 md:px-12 py-24">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* LEFT SIDE - PINNED */}
           <div ref={leftSideRef} className="md:sticky md:top-24">
@@ -121,11 +121,11 @@ useEffect(() => {
                 {t('expertise.title')}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-AI-powered engineering, automation, and scalable digital solutions.
+                AI-powered engineering, automation, and scalable digital solutions.
               </p>
-<p className="text-lg text-gray-300 leading-relaxed">                We bring together AI, automation, cloud engineering, and deep technical expertise to help businesses build smarter systems. Explore our core service areas to see how we design, develop, and scale digital solutions across industries.
+              <p className="text-lg text-gray-300 leading-relaxed">                We bring together AI, automation, cloud engineering, and deep technical expertise to help businesses build smarter systems. Explore our core service areas to see how we design, develop, and scale digital solutions across industries.
               </p>
-              
+
               {/* Optional CTA or additional content */}
               <div className="pt-6">
                 <button className="cursor-pointer px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
@@ -157,7 +157,7 @@ AI-powered engineering, automation, and scalable digital solutions.
                     <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-4">
                       {area.description}
                     </p>
-                    
+
                     <a
                       href={area.link}
                       className="group/link inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium transition-all text-sm"
