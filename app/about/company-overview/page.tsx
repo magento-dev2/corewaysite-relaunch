@@ -61,6 +61,7 @@ export default function CompanyOverview() {
         <main>
           <CompanyHero
             title={companyOverviewData.hero.title}
+            title2={companyOverviewData.hero.title2}
             subtitle={companyOverviewData.hero.subtitle}
             buttons={companyOverviewData.hero.buttons}
           />
@@ -92,46 +93,7 @@ export default function CompanyOverview() {
 
           <JourneyTimeline />
 
-          <div id="team">
-            <OurTeam members={[
-              {
-                id: "1",
-                name: "John Smith",
-                role: "CEO & Founder",
-                bio: "Visionary leader with 15+ years in enterprise software",
-                imageUrl: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
-                linkedinUrl: "#",
-                twitterUrl: "#"
-              },
-              {
-                id: "2",
-                name: "Sarah Johnson",
-                role: "CTO",
-                bio: "Former Google engineer specializing in AI/ML systems",
-                imageUrl: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
-                linkedinUrl: "#",
-                twitterUrl: null
-              },
-              {
-                id: "3",
-                name: "Michael Chen",
-                role: "Head of Design",
-                bio: "Award-winning designer focused on user experience",
-                imageUrl: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg",
-                linkedinUrl: "#",
-                twitterUrl: "#"
-              },
-              {
-                id: "4",
-                name: "Emma Williams",
-                role: "VP Engineering",
-                bio: "Cloud architecture expert with Fortune 500 experience",
-                imageUrl: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg",
-                linkedinUrl: "#",
-                twitterUrl: null
-              }
-            ]} />
-          </div>
+          
 
           <PageCTA
             badge="Join Our Journey"
