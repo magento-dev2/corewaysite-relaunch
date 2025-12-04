@@ -67,7 +67,14 @@
               "label": "Business Workflow Automation",
               "href": "/solution/business-workflow-automation",
               "icon": "zap"
+            },
+            {
+              "label": "ERP Solution",
+              "href": "/solution/erp-solutions",
+              "icon": "zap"
             }
+            
+
           ]
         },
         {

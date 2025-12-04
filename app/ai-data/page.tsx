@@ -54,18 +54,22 @@ export default function AIDataPage() {
 
     const whyCorewayReasons = [
         {
+            icon: "star",
             title: "AI Expertise",
             description: "Deep expertise in GPT, Vision AI, and machine learning technologies for intelligent data solutions."
         },
         {
+            icon: "trending",
             title: "Scalable Architecture",
             description: "Build data infrastructure that scales seamlessly with your growing business needs."
         },
         {
+            icon: "trophy",
             title: "Cost Optimization",
             description: "Reduce cloud storage costs by up to 70% with our intelligent optimization strategies."
         },
         {
+            icon: "shield",
             title: "Security First",
             description: "Enterprise-grade security with encryption, access controls, and compliance standards."
         }

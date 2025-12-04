@@ -970,5 +970,33 @@
         "description": "Dedicated team of senior professionals working on your project."
       }
     ]
-  }
+  },
+  "erp-solutions": {
+  "badge": "Why Choose Us",
+  "title": "Why Choose Our ERP Solution",
+  "subtitle": "Powerful, scalable, and intelligent ERP solutions built for modern businesses.",
+  "reasons": [
+    {
+      "icon": "layers",
+      "title": "All-In-One Platform",
+      "description": "Manage finance, inventory, HR, sales, and operations from a single dashboard."
+    },
+    {
+      "icon": "cpu",
+      "title": "Smart Automation",
+      "description": "Automate workflows, reduce manual tasks, and improve overall efficiency."
+    },
+    {
+      "icon": "bar-chart-3",
+      "title": "Real-Time Analytics",
+      "description": "Get instant insights with advanced reporting and real-time data visibility."
+    },
+    {
+      "icon": "lock",
+      "title": "Robust Security",
+      "description": "Enterprise-grade encryption and access control for maximum data protection."
+    }
+  ]
+}
+
 }

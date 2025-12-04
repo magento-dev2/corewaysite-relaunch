@@ -1,0 +1,255 @@
+{
+    "hero": {
+        "title": "Smart ",
+        "titleHighlight": "ERP Solutions",
+        
+        "description": "Transform your business operations with our comprehensive ERP solutions. Integrate all your business processes—finance, HR, inventory, CRM, and more—into one powerful, unified system for maximum efficiency and growth.",
+        "buttons": [
+            {
+                "label": "Get Started",
+                "link": "/contact"
+            },
+            {
+                "label": "View Demo",
+                "link": "/demo"
+            }
+        ]
+    },
+    "overview": {
+        "title": "Streamline Every Aspect of Your Business",
+        "description": "Our ERP solutions provide a centralized platform that connects all your business functions, eliminates data silos, and provides real-time visibility across your entire organization. From small businesses to large enterprises, we deliver scalable, customizable ERP systems that grow with you.",
+        "benefits": [
+            "Eliminate data silos and manual processes across departments",
+            "Real-time visibility into all business operations and KPIs",
+            "Reduce operational costs by up to 40% through automation",
+            "Make data-driven decisions with comprehensive analytics",
+            "Scale seamlessly as your business grows"
+        ],
+        "stats": [
+            {
+                "value": "40%",
+                "label": "Cost Reduction"
+            },
+            {
+                "value": "60%",
+                "label": "Faster Reporting"
+            },
+            {
+                "value": "99.9%",
+                "label": "System Uptime"
+            },
+            {
+                "value": "24/7",
+                "label": "Support Available"
+            }
+        ]
+    },
+    "modules": {
+        "title": "Comprehensive ERP Modules",
+        "description": "All the tools you need to manage your entire business from a single platform",
+        "items": [
+            {
+                "icon": "dollar-sign",
+                "title": "Financial Management",
+                "description": "Complete financial control with accounting, budgeting, and reporting",
+                "features": [
+                    "General Ledger",
+                    "Accounts Payable/Receivable",
+                    "Financial Reporting",
+                    "Budget Management"
+                ]
+            },
+            {
+                "icon": "users",
+                "title": "Human Resources",
+                "description": "Streamline HR processes from recruitment to retirement",
+                "features": [
+                    "Employee Management",
+                    "Payroll Processing",
+                    "Attendance Tracking",
+                    "Performance Reviews"
+                ]
+            },
+            {
+                "icon": "package",
+                "title": "Inventory Management",
+                "description": "Real-time inventory tracking and warehouse management",
+                "features": [
+                    "Stock Tracking",
+                    "Warehouse Management",
+                    "Reorder Automation",
+                    "Multi-location Support"
+                ]
+            },
+            {
+                "icon": "user-check",
+                "title": "CRM & Sales",
+                "description": "Manage customer relationships and sales pipeline",
+                "features": [
+                    "Lead Management",
+                    "Sales Pipeline",
+                    "Customer Portal",
+                    "Quote Management"
+                ]
+            },
+            {
+                "icon": "truck",
+                "title": "Supply Chain",
+                "description": "Optimize procurement and vendor management",
+                "features": [
+                    "Purchase Orders",
+                    "Vendor Management",
+                    "Procurement",
+                    "Logistics Tracking"
+                ]
+            },
+            {
+                "icon": "factory",
+                "title": "Manufacturing",
+                "description": "Production planning and quality control",
+                "features": [
+                    "Production Planning",
+                    "Bill of Materials",
+                    "Quality Control",
+                    "Shop Floor Management"
+                ]
+            },
+            {
+                "icon": "folder-kanban",
+                "title": "Project Management",
+                "description": "Track projects, resources, and time efficiently",
+                "features": [
+                    "Project Tracking",
+                    "Resource Allocation",
+                    "Time Tracking",
+                    "Milestone Management"
+                ]
+            },
+            {
+                "icon": "bar-chart-3",
+                "title": "Business Intelligence",
+                "description": "Advanced analytics and customizable dashboards",
+                "features": [
+                    "Custom Dashboards",
+                    "Real-time Analytics",
+                    "KPI Tracking",
+                    "Predictive Insights"
+                ]
+            }
+        ]
+    },
+    "process": {
+        "title": "Our ERP Implementation Process",
+        "description": "A proven methodology that ensures successful ERP deployment with minimal disruption",
+        "steps": [
+            {
+                "step": "01",
+                "title": "Discovery & Analysis",
+                "description": "We analyze your current processes, identify pain points, and define requirements for your ERP system.",
+                "deliverables": [
+                    "Business Process Analysis",
+                    "Requirements Document",
+                    "Gap Analysis",
+                    "Project Roadmap"
+                ]
+            },
+            {
+                "step": "02",
+                "title": "Design & Planning",
+                "description": "Design the ERP architecture, customize modules, and create a detailed implementation plan.",
+                "deliverables": [
+                    "System Architecture",
+                    "Module Configuration",
+                    "Data Migration Plan",
+                    "Training Plan"
+                ]
+            },
+            {
+                "step": "03",
+                "title": "Development & Configuration",
+                "description": "Build and configure your ERP system with custom features and integrations.",
+                "deliverables": [
+                    "Configured System",
+                    "Custom Modules",
+                    "API Integrations",
+                    "Test Environment"
+                ]
+            },
+            {
+                "step": "04",
+                "title": "Testing & Training",
+                "description": "Comprehensive testing and user training to ensure smooth adoption.",
+                "deliverables": [
+                    "Test Reports",
+                    "User Documentation",
+                    "Training Sessions",
+                    "Admin Training"
+                ]
+            },
+            {
+                "step": "05",
+                "title": "Deployment & Go-Live",
+                "description": "Deploy the ERP system with minimal disruption and ensure successful go-live.",
+                "deliverables": [
+                    "Production Deployment",
+                    "Data Migration",
+                    "Go-Live Support",
+                    "Performance Monitoring"
+                ]
+            },
+            {
+                "step": "06",
+                "title": "Support & Optimization",
+                "description": "Ongoing support, maintenance, and continuous optimization of your ERP system.",
+                "deliverables": [
+                    "24/7 Support",
+                    "System Updates",
+                    "Performance Optimization",
+                    "Feature Enhancements"
+                ]
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Transform Your Business with ERP",
+        "description": "Measurable benefits that drive growth and efficiency across your organization",
+        "items": [
+            {
+                "icon": "trending-up",
+                "title": "Increased Productivity",
+                "description": "Automate repetitive tasks and streamline workflows to boost team productivity and focus on strategic initiatives.",
+                "impact": "35-50%"
+            },
+            {
+                "icon": "dollar-sign",
+                "title": "Cost Reduction",
+                "description": "Eliminate redundant systems, reduce manual errors, and optimize resource allocation for significant cost savings.",
+                "impact": "30-40%"
+            },
+            {
+                "icon": "eye",
+                "title": "Real-Time Visibility",
+                "description": "Get instant access to critical business data and KPIs across all departments for informed decision-making.",
+                "impact": "100%"
+            },
+            {
+                "icon": "zap",
+                "title": "Faster Operations",
+                "description": "Accelerate business processes from order to delivery with automated workflows and integrated systems.",
+                "impact": "60%"
+            },
+            {
+                "icon": "shield",
+                "title": "Better Compliance",
+                "description": "Ensure regulatory compliance with built-in controls, audit trails, and automated reporting capabilities.",
+                "impact": "99%"
+            },
+            {
+                "icon": "users",
+                "title": "Enhanced Collaboration",
+                "description": "Break down silos and improve cross-departmental collaboration with shared data and unified processes.",
+                "impact": "45%"
+            }
+        ]
+    }
+}

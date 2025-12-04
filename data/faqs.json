@@ -912,5 +912,31 @@
       "question": "Do you provide cloud backup solutions?",
       "answer": "Yes! We implement automated backup strategies, disaster recovery plans, versioning, and compliance-ready backup solutions."
     }
+  ],
+  "erp-solutions": [
+    {
+      "question": "What is an ERP system?",
+      "answer": "An ERP (Enterprise Resource Planning) system is a unified software platform that integrates all core business processes including finance, HR, inventory, CRM, supply chain, and manufacturing into one centralized system for improved efficiency and visibility."
+    },
+    {
+      "question": "How long does ERP implementation take?",
+      "answer": "Implementation timelines vary based on company size and complexity. Small businesses typically take 3-6 months, while enterprise implementations can take 6-18 months. We provide detailed timelines during the discovery phase."
+    },
+    {
+      "question": "Can you customize the ERP system for our specific needs?",
+      "answer": "Absolutely! We build fully customizable ERP solutions tailored to your industry, workflows, and business requirements. All modules can be configured to match your exact processes."
+    },
+    {
+      "question": "Will ERP integrate with our existing systems?",
+      "answer": "Yes! Our ERP solutions seamlessly integrate with your existing CRM, accounting software, e-commerce platforms, payment gateways, and third-party tools through APIs and custom connectors."
+    },
+    {
+      "question": "How much does an ERP system cost?",
+      "answer": "ERP costs vary based on modules, users, customization, and deployment (cloud vs on-premise). We offer flexible pricing models including subscription-based and one-time licensing. Contact us for a customized quote."
+    },
+    {
+      "question": "Do you provide training and support after implementation?",
+      "answer": "Yes! We provide comprehensive user training, admin training, documentation, 24/7 support, regular updates, and ongoing optimization to ensure successful ERP adoption and long-term success."
+    }
   ]
 }
