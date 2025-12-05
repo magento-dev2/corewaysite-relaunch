@@ -156,8 +156,7 @@ export default function CaseStudiesClient({ caseStudies }: { caseStudies: CaseSt
                                             {/* Services Tags */}
                                             {study.services && study.services.length > 0 && (
                                                 <div className="flex flex-wrap gap-2 mb-4">
-                                             import FAQ from "@/components/FAQ";
-import sampleFAQs from '@/data/faqs.json';       {study.services.slice(0, 2).map((service, i) => (
+                                                 {study.services.slice(0, 2).map((service, i) => (
                                                         <span key={i} className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs rounded-full">
                                                             {service}
                                                         </span>

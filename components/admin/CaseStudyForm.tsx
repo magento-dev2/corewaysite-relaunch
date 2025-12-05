@@ -326,7 +326,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Hero Image URL *</label>
                         <input
-                            type="url"
+                            type="text"
                             required
                             value={formData.imageUrl}
                             onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
@@ -336,7 +336,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Banner Image URL *</label>
                         <input
-                            type="url"
+                            type="text"
                             required
                             value={formData.bannerImage}
                             onChange={(e) => setFormData({ ...formData, bannerImage: e.target.value })}
