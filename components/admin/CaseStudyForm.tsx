@@ -465,7 +465,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Image URL</label>
                         <input
-                            type="url"
+                            type="text"
                             value={formData.challengeImage}
                             onChange={(e) => setFormData({ ...formData, challengeImage: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
@@ -539,7 +539,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Image URL</label>
                         <input
-                            type="url"
+                            type="text"
                             value={formData.solutionImage}
                             onChange={(e) => setFormData({ ...formData, solutionImage: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
@@ -612,7 +612,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Image URL</label>
                         <input
-                            type="url"
+                            type="text"
                             value={formData.impactImage}
                             onChange={(e) => setFormData({ ...formData, impactImage: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
@@ -657,7 +657,7 @@ export default function CaseStudyForm({ initialData, onSubmit, loading, submitLa
                     <div>
                         <label className="text-sm font-medium text-gray-700">Image URL</label>
                         <input
-                            type="url"
+                            type="text"
                             value={formData.testimonialImage}
                             onChange={(e) => setFormData({ ...formData, testimonialImage: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
