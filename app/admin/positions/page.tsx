@@ -27,10 +27,15 @@ export default function AdminPositionsPage() {
     const fetchPositions = async () => {
         try {
             const res = await fetch("/api/admin/positions");
+            if (!res.ok) {
+                throw new Error("Failed to fetch positions");
+            }
             const data = await res.json();
-            setPositions(data);
+            // Ensure data is an array
+            setPositions(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Error fetching positions:", error);
+            setPositions([]); // Set to empty array on error
         } finally {
             setLoading(false);
         }
@@ -108,8 +113,8 @@ export default function AdminPositionsPage() {
                     <button
                         onClick={() => setFilter("all")}
                         className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === "all"
-                                ? "bg-purple-600 text-white"
-                                : "bg-white/5 text-gray-400 hover:bg-white/10"
+                            ? "bg-purple-600 text-white"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10"
                             }`}
                     >
                         All ({positions.length})
@@ -117,8 +122,8 @@ export default function AdminPositionsPage() {
                     <button
                         onClick={() => setFilter("active")}
                         className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === "active"
-                                ? "bg-purple-600 text-white"
-                                : "bg-white/5 text-gray-400 hover:bg-white/10"
+                            ? "bg-purple-600 text-white"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10"
                             }`}
                     >
                         Active ({positions.filter((p) => p.isActive).length})
@@ -126,8 +131,8 @@ export default function AdminPositionsPage() {
                     <button
                         onClick={() => setFilter("inactive")}
                         className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === "inactive"
-                                ? "bg-purple-600 text-white"
-                                : "bg-white/5 text-gray-400 hover:bg-white/10"
+                            ? "bg-purple-600 text-white"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10"
                             }`}
                     >
                         Inactive ({positions.filter((p) => !p.isActive).length})
@@ -198,8 +203,8 @@ export default function AdminPositionsPage() {
                                                         handleToggleStatus(position.id, position.isActive)
                                                     }
                                                     className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${position.isActive
-                                                            ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
-                                                            : "bg-gray-500/20 text-gray-400 hover:bg-gray-500/30"
+                                                        ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                                                        : "bg-gray-500/20 text-gray-400 hover:bg-gray-500/30"
                                                         }`}
                                                 >
                                                     {position.isActive ? (
