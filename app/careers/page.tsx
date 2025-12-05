@@ -345,6 +345,7 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import { ArrowRight, Lightbulb, Users, Book, Heart, Globe, Target, MapPin, Clock, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 import careersData from "../../data/careersData.json";
 import SplitType from "split-type";
+import ApplicationModal from "@/components/careers/ApplicationModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -356,6 +357,19 @@ const iconMap: any = {
   globe: Globe,
   target: Target,
 };
+
+interface JobPosition {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+  niceToHave: string[];
+}
 
 /* ------------------- HERO SECTION ------------------- */
 interface CareerHeroProps {
@@ -497,8 +511,8 @@ function CareerHero({ title, title2, subtitle, buttons }: CareerHeroProps) {
                   key={index}
                   href={button.link}
                   className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
-                      ? "bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:scale-105"
-                      : "bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50"
+                    ? "bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:scale-105"
+                    : "bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50"
                     }`}
                 >
                   <span>{button.label}</span>
@@ -536,10 +550,34 @@ function CareerHero({ title, title2, subtitle, buttons }: CareerHeroProps) {
 
 /* ------------------- CAREERS PAGE ------------------- */
 export default function CareersPage() {
-  const siteUrl = "https://www.corewaysolution.com";
   const contentRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<HTMLElement[]>([]);
-  const [expandedJob, setExpandedJob] = useState<number | null>(null);
+  const [expandedJob, setExpandedJob] = useState<string | null>(null);
+  const [positions, setPositions] = useState<JobPosition[]>([]);
+  const [loadingPositions, setLoadingPositions] = useState(true);
+  const [selectedJob, setSelectedJob] = useState<{ id: string; title: string } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetchPositions();
+  }, []);
+
+  const fetchPositions = async () => {
+    try {
+      const res = await fetch("/api/careers/positions");
+      const data = await res.json();
+      setPositions(data);
+    } catch (error) {
+      console.error("Error fetching positions:", error);
+    } finally {
+      setLoadingPositions(false);
+    }
+  };
+
+  const handleApply = (jobId: string, jobTitle: string) => {
+    setSelectedJob({ id: jobId, title: jobTitle });
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -578,7 +616,6 @@ export default function CareersPage() {
           <Breadcrumb items={[{ label: "Careers" }]} />
         </div>
       </header>
-
 
       <main className="pb-20">
         {/* HERO SECTION */}
@@ -661,7 +698,7 @@ export default function CareersPage() {
               {careersData.benefits.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-2xl p-6"
+                  className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/20 rounded-2xl p-6"
                 >
                   <h3 className="text-xl font-bold text-white mb-4">
                     {item.category}
@@ -682,115 +719,197 @@ export default function CareersPage() {
             </div>
           </section>
 
-          <section ref={addToRefs} className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                Open Positions
-              </h2>
-              <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                Join our team and work on exciting projects that make a real impact.
-              </p>
-            </div>
+          {/* Show message when no positions available with option to submit resume */}
+          {!loadingPositions && positions.length === 0 && (
+            <section ref={addToRefs} className="mb-20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  Join Our Team
+                </h2>
+                <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                  We're always looking for talented individuals to join our team.
+                </p>
+              </div>
 
-            <div className="space-y-4">
-              {careersData.openPositions.map((job) => (
-                <div
-                  key={job.id}
-                  className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
-                >
-                  <div
-                    className="p-6 cursor-pointer"
-                    onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-3">
-                          {job.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-3 mb-3">
-                          <span className="flex items-center gap-1 text-sm text-white/70">
-                            <Briefcase className="w-4 h-4" />
-                            {job.department}
-                          </span>
-                          <span className="flex items-center gap-1 text-sm text-white/70">
-                            <MapPin className="w-4 h-4" />
-                            {job.location}
-                          </span>
-                          <span className="flex items-center gap-1 text-sm text-white/70">
-                            <Clock className="w-4 h-4" />
-                            {job.type}
-                          </span>
-                          <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-lg text-xs text-purple-300">
-                            {job.experience}
-                          </span>
-                        </div>
-                        <p className="text-white/80">{job.description}</p>
-                      </div>
-                      <button className="ml-4 text-purple-400 hover:text-purple-300">
-                        {expandedJob === job.id ? (
-                          <ChevronUp className="w-6 h-6" />
-                        ) : (
-                          <ChevronDown className="w-6 h-6" />
-                        )}
-                      </button>
-                    </div>
+              <div className="max-w-3xl mx-auto">
+                <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-2xl p-8 md:p-12 text-center">
+                  <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Briefcase className="w-8 h-8 text-purple-400" />
                   </div>
 
-                  {expandedJob === job.id && (
-                    <div className="px-6 pb-6 border-t border-white/10 pt-6">
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">
-                            Responsibilities
-                          </h4>
-                          <ul className="space-y-2">
-                            {job.responsibilities.map((resp, idx) => (
-                              <li key={idx} className="text-white/80 flex items-start gap-2">
-                                <span className="text-purple-400 mt-1">•</span>
-                                <span>{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    No Positions Currently Open
+                  </h3>
 
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">
-                            Requirements
-                          </h4>
-                          <ul className="space-y-2">
-                            {job.requirements.map((req, idx) => (
-                              <li key={idx} className="text-white/80 flex items-start gap-2">
-                                <span className="text-purple-400 mt-1">•</span>
-                                <span>{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                  <p className="text-white/80 mb-6 leading-relaxed">
+                    While we don't have any specific openings at the moment, we're always interested in connecting with talented professionals.
+                    Send us your resume and we'll keep you in mind for future opportunities that match your skills and experience.
+                  </p>
 
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">
-                            Nice to Have
-                          </h4>
-                          <ul className="space-y-2">
-                            {job.niceToHave.map((item, idx) => (
-                              <li key={idx} className="text-white/80 flex items-start gap-2">
-                                <span className="text-blue-400 mt-1">•</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 mb-6 text-left">
+                    <h4 className="text-lg font-semibold text-white mb-3">Why Submit Your Resume?</h4>
+                    <ul className="space-y-2 text-white/70">
+                      <li className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-1">✓</span>
+                        <span>Be the first to know about new openings</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-1">✓</span>
+                        <span>Get matched with positions that fit your profile</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-1">✓</span>
+                        <span>Join our talent pool for future opportunities</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                        <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300">
-                          Apply for this position
+                  <button
+                    onClick={() => handleApply(0, "General Application")}
+                    className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                  >
+                    Submit Your Resume
+                  </button>
+
+                  <p className="text-white/50 text-sm mt-4">
+                    We'll review your application and reach out when relevant opportunities arise
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Only show Open Positions section if there are positions */}
+          {!loadingPositions && positions.length > 0 && (
+            <section ref={addToRefs} className="mb-20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  Open Positions
+                </h2>
+                <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                  Join our team and work on exciting projects that make a real impact.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {positions.map((job) => (
+                  <div
+                    key={job.id}
+                    className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
+                  >
+                    <div
+                      className="p-6 cursor-pointer"
+                      onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex justify-between">
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                              {job.title}
+                            </h3>
+
+                            <button
+                              onClick={() => handleApply(job.id, job.title)}
+                              className="w-fit bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
+                            >
+                              Apply for this position
+                            </button>
+                          </div>
+
+                          <div className="flex flex-wrap gap-3 mb-3">
+                            <span className="flex items-center gap-1 text-sm text-white/70">
+                              <Briefcase className="w-4 h-4" />
+                              {job.department}
+                            </span>
+                            <span className="flex items-center gap-1 text-sm text-white/70">
+                              <MapPin className="w-4 h-4" />
+                              {job.location}
+                            </span>
+                            <span className="flex items-center gap-1 text-sm text-white/70">
+                              <Clock className="w-4 h-4" />
+                              {job.type}
+                            </span>
+                            <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-lg text-xs text-purple-300">
+                              {job.experience}
+                            </span>
+                          </div>
+                          <p className="text-white/80">{job.description}</p>
+                        </div>
+                        <button className="ml-4 text-purple-400 hover:text-purple-300">
+                          {expandedJob === job.id ? (
+                            <ChevronUp className="w-6 h-6" />
+                          ) : (
+                            <ChevronDown className="w-6 h-6" />
+                          )}
                         </button>
                       </div>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
+
+                    {expandedJob === job.id && (
+                      <div className="px-6 pb-6 border-t border-white/10 pt-6">
+                        <div className="space-y-6">
+                          {job.responsibilities && job.responsibilities.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-semibold text-white mb-3">
+                                Responsibilities
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.responsibilities.map((resp, idx) => (
+                                  <li key={idx} className="text-white/80 flex items-start gap-2">
+                                    <span className="text-purple-400 mt-1">•</span>
+                                    <span>{resp}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {job.requirements && job.requirements.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-semibold text-white mb-3">
+                                Requirements
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.requirements.map((req, idx) => (
+                                  <li key={idx} className="text-white/80 flex items-start gap-2">
+                                    <span className="text-purple-400 mt-1">•</span>
+                                    <span>{req}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {job.niceToHave.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-semibold text-white mb-3">
+                                Nice to Have
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.niceToHave.map((item, idx) => (
+                                  <li key={idx} className="text-white/80 flex items-start gap-2">
+                                    <span className="text-blue-400 mt-1">•</span>
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {/* <button
+                            onClick={() => handleApply(job.id, job.title)}
+                            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
+                          >
+                            Apply for this position
+                          </button> */}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section ref={addToRefs} className="mb-20">
             <div className="text-center mb-12">
@@ -829,9 +948,12 @@ export default function CareersPage() {
               <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
                 {careersData.cta.description}
               </p>
-              <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300">
+              <a
+                href={`mailto:${careersData.cta.email}`}
+                className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300"
+              >
                 {careersData.cta.buttonText}
-              </button>
+              </a>
               <p className="text-sm text-white/60 mt-4">
                 Email us at{" "}
                 <a href={`mailto:${careersData.cta.email}`} className="text-purple-400 hover:text-purple-300">
@@ -843,8 +965,21 @@ export default function CareersPage() {
         </div>
       </main>
 
+      {/* Application Modal */}
+      {selectedJob && (
+        <ApplicationModal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+            setSelectedJob(null);
+          }}
+          jobTitle={selectedJob.title}
+          jobId={parseInt(selectedJob.id)}
+        />
+      )}
     </div>
   );
 }
+
 
 

@@ -60,7 +60,7 @@ export default function CookieConsent() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
                 >
-                    <div className="max-w-7xl mx-auto">
+                    <div className="">
                         <div className="relative bg-gradient-to-br from-[#1a1325] to-[#0E0918] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
                             {/* Glow Effect */}
                             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 opacity-20 blur-xl"></div>
@@ -112,13 +112,13 @@ export default function CookieConsent() {
                                     <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                                         <button
                                             onClick={handleDecline}
-                                            className="px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-sm whitespace-nowrap"
+                                            className="cursor-pointer px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-sm whitespace-nowrap"
                                         >
                                             Decline
                                         </button>
                                         <button
                                             onClick={handleAccept}
-                                            className="px-6 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-lg hover:from-purple-600 hover:to-fuchsia-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 text-sm whitespace-nowrap flex items-center justify-center gap-2"
+                                            className="cursor-pointer px-6 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white rounded-lg hover:from-purple-600 hover:to-fuchsia-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 text-sm whitespace-nowrap flex items-center justify-center gap-2"
                                         >
                                             <CheckCircle className="w-4 h-4" />
                                             Accept All

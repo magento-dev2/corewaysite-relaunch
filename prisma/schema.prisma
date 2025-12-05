@@ -73,3 +73,19 @@ model CaseStudy {
   metaKeywords              String?
   metaTitle                 String?
 }
+
+model JobPosition {
+  id               String   @id @default(cuid())
+  title            String
+  department       String
+  location         String
+  type             String
+  experience       String
+  description      String
+  responsibilities String[]
+  requirements     String[]
+  niceToHave       String[]
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}

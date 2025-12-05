@@ -5,8 +5,9 @@ import CompanyStory from "@/components/company/CompanyStory";
 import CompanyMission from "@/components/company/CompanyMission";
 import CompanyValues from "@/components/company/CompanyValues";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
-import OurTeam from "@/components/about/OurTeam";
 import PageCTA from "@/components/PageCTA";
+import FAQ from "@/components/FAQ";
+import faqData from "../../../data/faq.json";
 import SubHeader from "@/components/SubHeader";
 
 export default function CompanyOverview() {
@@ -14,7 +15,6 @@ export default function CompanyOverview() {
     { label: "Our Story", sectionId: "story" },
     { label: "Mission & Vision", sectionId: "mission" },
     { label: "Our Values", sectionId: "values" },
-    { label: "Our Team", sectionId: "team" },
   ];
 
   const siteUrl = "https://www.corewaysolution.com";
@@ -47,63 +47,69 @@ export default function CompanyOverview() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="pt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "About", href: "/about" },
-                { label: "Company Overview" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <CompanyHero
-            title={companyOverviewData.hero.title}
-            title2={companyOverviewData.hero.title2}
-            subtitle={companyOverviewData.hero.subtitle}
-            buttons={companyOverviewData.hero.buttons}
+      <header className="pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "About", href: "/about" },
+              { label: "Company Overview" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="Company Overview" items={subHeaderItems} />
+      <main>
+        <CompanyHero
+          title={companyOverviewData.hero.title}
+          title2={companyOverviewData.hero.title2}
+          subtitle={companyOverviewData.hero.subtitle}
+          buttons={companyOverviewData.hero.buttons}
+        />
 
-          <div id="story">
-            <CompanyStory
-              title={companyOverviewData.story.title}
-              content={companyOverviewData.story.content}
-              stats={companyOverviewData.story.stats}
-            />
-          </div>
+        <SubHeader title="Company Overview" items={subHeaderItems} />
 
-          <div id="mission">
-            <CompanyMission
-              title={companyOverviewData.mission.title}
-              mission={companyOverviewData.mission.mission}
-              vision={companyOverviewData.mission.vision}
-            />
-          </div>
-
-          <div id="values">
-            <CompanyValues
-              title={companyOverviewData.values.title}
-              items={companyOverviewData.values.items}
-            />
-          </div>
-
-          <JourneyTimeline />
-
-          
-
-          <PageCTA
-            badge="Join Our Journey"
-            title="Ready to Build Something Amazing?"
-            description="Let's transform your vision into reality. Partner with a team that's delivered 200+ successful projects across 30+ countries."
-            primaryButtonText="Start Your Project"
-            secondaryButtonText="Meet the Team"
-            footerText="Free consultation • Global expertise • Proven track record"
+        <div id="story">
+          <CompanyStory
+            title={companyOverviewData.story.title}
+            content={companyOverviewData.story.content}
+            stats={companyOverviewData.story.stats}
           />
-        </main>
-      </div>
+        </div>
+
+        <div id="mission">
+          <CompanyMission
+            title={companyOverviewData.mission.title}
+            mission={companyOverviewData.mission.mission}
+            vision={companyOverviewData.mission.vision}
+          />
+        </div>
+
+        <div id="values">
+          <CompanyValues
+            title={companyOverviewData.values.title}
+            items={companyOverviewData.values.items}
+          />
+        </div>
+
+        <JourneyTimeline />
+
+        <FAQ
+          badge="Frequently Asked Questions"
+          title="Learn More About Coreway"
+          description="Common questions about our company and how we work"
+          faqs={faqData}
+          // columns={2}
+        />
+
+        <PageCTA
+          badge="Join Our Journey"
+          title="Ready to Build Something Amazing?"
+          description="Let's transform your vision into reality. Partner with a team that's delivered 200+ successful projects across 30+ countries."
+          primaryButtonText="Start Your Project"
+          secondaryButtonText="Meet the Team"
+          footerText="Free consultation • Global expertise • Proven track record"
+        />
+      </main>
+    </div>
   );
 }

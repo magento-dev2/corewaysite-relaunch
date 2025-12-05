@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, FileText, LogOut, Settings, BookOpen, Briefcase } from 'lucide-react';
+import { LayoutDashboard, FileText, LogOut, Settings, BookOpen, Briefcase, Users } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -61,6 +61,14 @@ export default function AdminLayout({
                     >
                         <FileText className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
                         <span className="font-medium">Create Post</span>
+                    </Link>
+
+                    <Link
+                        href="/admin/positions"
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors group"
+                    >
+                        <Users className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
+                        <span className="font-medium">Job Positions</span>
                     </Link>
                 </nav>
 

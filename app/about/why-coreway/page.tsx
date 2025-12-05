@@ -2,9 +2,10 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import CompanyOverview from "@/components/about/CompanyOverview";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import OurProcess from "@/components/about/OurProcess";
-import OurTeam from "@/components/about/OurTeam";
 import PageCTA from "@/components/PageCTA";
+import FAQ from "@/components/FAQ";
 import aboutUsData from '@/data/aboutUsData.json';
+import faqData from '@/data/faq.json';
 import AboutHero from '@/components/about/AboutHero';
 
 
@@ -25,9 +26,6 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        
-
-
       <main>
         <AboutHero
           title={aboutUsData.hero.title}
@@ -38,7 +36,13 @@ export default function AboutUs() {
         <CompanyOverview data={aboutUsData.companyOverview} />
         <JourneyTimeline />
         <OurProcess />
-        <OurTeam members={aboutUsData.teamMembers} />
+        <FAQ
+          badge="Frequently Asked Questions"
+          title="Why Choose Coreway?"
+          description="Discover what makes us different and how we can help transform your business"
+          faqs={faqData}
+          // columns={2}
+        />
         <PageCTA
           badge="Join our team"
           title="Want to work with us?"
