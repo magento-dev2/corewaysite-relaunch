@@ -108,3 +108,14 @@ html.lenis {
   pointer-events: none;
 }
 
+/* Page content padding to prevent navbar overlap */
+.page-content {
+  padding-top: 88px; /* Mobile: navbar height (~72px) + spacing */
+}
+
+@media (min-width: 1024px) {
+  .page-content {
+    padding-top: 128px; /* Desktop: pt-32 equivalent */
+  }
+}
+

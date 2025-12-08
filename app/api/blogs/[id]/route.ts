@@ -33,7 +33,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     try {
         const { id } = await params;
         const body = await request.json();
-        const { title, slug, content, excerpt, coverImage, metaTitle, metaDescription, metaKeywords, relatedArticleIds } = body;
+        const { title, slug, content, excerpt, coverImage, metaTitle, metaDescription, metaKeywords, relatedArticleIds, isActive } = body;
 
         const blog = await prisma.blog.update({
             where: { id },
@@ -43,6 +43,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 content,
                 excerpt,
                 coverImage,
+                isActive,
                 metaTitle,
                 metaDescription,
                 metaKeywords,

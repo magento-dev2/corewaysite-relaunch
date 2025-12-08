@@ -78,6 +78,20 @@ export default function Navbar() {
     };
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -288,7 +302,7 @@ export default function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#0E0918] border-t border-white/10 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-[72px] bg-[#0E0918] border-t border-white/10 h-[calc(100vh-72px)] overflow-y-auto z-40">
           <div className="px-4 py-4 space-y-2">
             {navigationData.menuItems.map((item) => {
               if (item.type === 'link') {

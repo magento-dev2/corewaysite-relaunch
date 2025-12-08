@@ -12,6 +12,7 @@ export default function EditBlog() {
     const params = useParams();
     const id = params?.id as string;
 
+
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
     const [formData, setFormData] = useState({
@@ -48,8 +49,9 @@ export default function EditBlog() {
                         metaKeywords: data.metaKeywords || '',
                     });
                 } else {
-                    alert('Blog not found');
-                    router.push('/admin');
+                    // alert('Blog not found');
+                    // router.push('/admin');
+                    console.log("Blog not")
                 }
             } catch (error) {
                 console.error('Error fetching blog:', error);

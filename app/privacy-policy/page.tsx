@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="pt-20 pb-8">
+        <header className="page-content pb-8">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[

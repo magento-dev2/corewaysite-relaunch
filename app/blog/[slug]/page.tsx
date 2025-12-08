@@ -10,7 +10,7 @@ async function getBlog(slug: string) {
   const blog = await prisma.blog.findUnique({
     where: { slug, isActive: true },
     include: {
-      Blog_A: {
+      relatedArticles: {
         where: { isActive: true },
         select: {
           id: true,
@@ -21,7 +21,7 @@ async function getBlog(slug: string) {
           createdAt: true,
         },
       },
-      Blog_B: {
+      relatedTo: {
         where: { isActive: true },
         select: {
           id: true,
@@ -37,7 +37,7 @@ async function getBlog(slug: string) {
 
   if (!blog) return null;
 
-  const allRelated = [...(blog.Blog_A || []), ...(blog.Blog_B || [])];
+  const allRelated = [...(blog.relatedArticles || []), ...(blog.relatedTo || [])];
   const uniqueRelated = Array.from(new Map(allRelated.map(item => [item.id, item])).values());
 
   return {

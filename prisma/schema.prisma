@@ -21,8 +21,8 @@ model Blog {
   metaDescription String?
   metaKeywords    String?
   metaTitle       String?
-  Blog_A          Blog[]    @relation("RelatedBlogs")
-  Blog_B          Blog[]    @relation("RelatedBlogs")
+  relatedArticles Blog[]    @relation("RelatedBlogs")
+  relatedTo       Blog[]    @relation("RelatedBlogs")
 }
 
 model CaseStudy {

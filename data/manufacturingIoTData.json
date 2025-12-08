@@ -1,11 +1,19 @@
 {
   "hero": {
-    "title": "Manufacturing & Industrial IoT",
+    "title": "Manufacturing & ",
+    "title2": "Industrial IoT",
     "subtitle": "Transform your factory floor with smart sensors, predictive maintenance, and real-time production monitoring. From legacy equipment to Industry 4.0, we connect your machines, optimize operations, and maximize output with IoT solutions that deliver measurable ROI.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "View Case Studies", "link": "#cases" }
-    ]
+      {
+        "label": "Explore Solutions",
+        "link": "#features"
+      },
+      {
+        "label": "View Case Studies",
+        "link": "#cases"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg"
   },
   "overview": {
     "title": "Smart Factory Transformation",
@@ -53,19 +61,41 @@
     "categories": [
       {
         "name": "Sensors & Devices",
-        "items": ["Temperature Sensors", "Vibration Monitors", "Pressure Gauges", "Flow Meters", "PLCs"]
+        "items": [
+          "Temperature Sensors",
+          "Vibration Monitors",
+          "Pressure Gauges",
+          "Flow Meters",
+          "PLCs"
+        ]
       },
       {
         "name": "Connectivity",
-        "items": ["MQTT", "OPC-UA", "Modbus", "LoRaWAN", "5G/LTE"]
+        "items": [
+          "MQTT",
+          "OPC-UA",
+          "Modbus",
+          "LoRaWAN",
+          "5G/LTE"
+        ]
       },
       {
         "name": "Edge Computing",
-        "items": ["AWS IoT Greengrass", "Azure IoT Edge", "EdgeX Foundry", "KubeEdge"]
+        "items": [
+          "AWS IoT Greengrass",
+          "Azure IoT Edge",
+          "EdgeX Foundry",
+          "KubeEdge"
+        ]
       },
       {
         "name": "Cloud Platforms",
-        "items": ["AWS IoT Core", "Azure IoT Hub", "Google Cloud IoT", "ThingsBoard"]
+        "items": [
+          "AWS IoT Core",
+          "Azure IoT Hub",
+          "Google Cloud IoT",
+          "ThingsBoard"
+        ]
       }
     ]
   },
@@ -171,12 +201,36 @@
   "sensors": {
     "title": "Sensor Types We Deploy",
     "items": [
-      { "name": "Temperature", "icon": "🌡️", "use": "Monitor heat levels in equipment and processes" },
-      { "name": "Vibration", "icon": "📳", "use": "Detect bearing wear and mechanical issues" },
-      { "name": "Pressure", "icon": "🔧", "use": "Track hydraulic and pneumatic systems" },
-      { "name": "Flow", "icon": "💧", "use": "Measure liquid and gas flow rates" },
-      { "name": "Vision", "icon": "👁️", "use": "Quality inspection and defect detection" },
-      { "name": "Energy", "icon": "⚡", "use": "Monitor power consumption and efficiency" }
+      {
+        "name": "Temperature",
+        "icon": "🌡️",
+        "use": "Monitor heat levels in equipment and processes"
+      },
+      {
+        "name": "Vibration",
+        "icon": "📳",
+        "use": "Detect bearing wear and mechanical issues"
+      },
+      {
+        "name": "Pressure",
+        "icon": "🔧",
+        "use": "Track hydraulic and pneumatic systems"
+      },
+      {
+        "name": "Flow",
+        "icon": "💧",
+        "use": "Measure liquid and gas flow rates"
+      },
+      {
+        "name": "Vision",
+        "icon": "👁️",
+        "use": "Quality inspection and defect detection"
+      },
+      {
+        "name": "Energy",
+        "icon": "⚡",
+        "use": "Monitor power consumption and efficiency"
+      }
     ]
   }
 }

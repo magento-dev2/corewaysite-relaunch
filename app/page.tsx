@@ -51,7 +51,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className='overflow-hidden' >
+    <div className='overflow-x-hidden' >
       <Hero />
 
       <ScrollFadeIn direction="up">
@@ -70,13 +70,13 @@ export default function Home() {
         <PortfolioHighlights />
       </ScrollScale>
 
-      <CTOSection/>
+      <CTOSection />
 
       <ScrollFadeIn direction="up" duration={1.5}>
         <Integrations />
       </ScrollFadeIn>
 
- 
+
 
       <Testimonials />
 
@@ -87,16 +87,16 @@ export default function Home() {
 
       <ScrollScale>
 
-              <FAQ
-                badge="Help Center"
-                title="Common Questions & Answers"
-                description="Everything you need to know about our services and how we work"
-                faqs={sampleFAQs}
-                columns={1}
-                showContactCTA={true}
-                contactText="Still have questions?"
-                contactButtonText="Contact Our Team"
-              />
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
         <PageCTA
           badge={t('cta.badge')}
           title={t('cta.title')}

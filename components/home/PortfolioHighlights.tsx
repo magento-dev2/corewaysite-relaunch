@@ -41,7 +41,7 @@ export default function PortfolioHighlights() {
   const IconComponent = iconMap[current.icon] || Sparkles;
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a0f2e] to-[#0E0918]">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a0f2e] to-[#0E0918]">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
@@ -49,9 +49,9 @@ export default function PortfolioHighlights() {
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 overflow-hidden">
         {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-20">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-12 md:mb-20">
           <motion.div initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="inline-block mb-6">
             <div className="px-5 flex justify-center items-center py-2 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold backdrop-blur-sm">
               <Workflow className="w-5 h-5 mr-2" />
@@ -59,11 +59,11 @@ export default function PortfolioHighlights() {
             </div>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
             Case Studies
           </h2>
 
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
             Transforming visions into reality with cutting-edge solutions that drive measurable results
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ export default function PortfolioHighlights() {
             >
               <div className={`absolute -inset-1 bg-gradient-to-r ${current.gradient} opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500 rounded-3xl`} />
 
-              <div className="relative h-full min-h-[600px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden group-hover:border-white/20 transition-all duration-500">
+              <div className="relative h-full min-h-[400px] md:min-h-[600px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden group-hover:border-white/20 transition-all duration-500">
                 <div className="absolute inset-0">
                   <motion.img
                     src={current.imageUrl}
@@ -96,7 +96,7 @@ export default function PortfolioHighlights() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
                 </div>
 
-                <div className="relative h-full flex flex-col justify-end p-8 md:p-10">
+                <div className="relative h-full flex flex-col justify-end p-6 md:p-8 lg:p-10">
                   {/* Icon */}
                   <motion.div
                     className="absolute top-8 right-8 w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center"
@@ -115,12 +115,12 @@ export default function PortfolioHighlights() {
                     </motion.div>
                   )}
 
-                  <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                     {current.title}
                   </motion.h3>
 
                   {current.subtitle && (
-                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-gray-300 text-lg mb-6 line-clamp-2">
+                    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-gray-300 text-base md:text-lg mb-4 md:mb-6 line-clamp-2">
                       {current.subtitle}
                     </motion.p>
                   )}
@@ -139,7 +139,7 @@ export default function PortfolioHighlights() {
           </AnimatePresence>
 
           {/* RIGHT SIDE – Stats & Impact */}
-          <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+          <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-6 md:gap-y-4">
             {/* Stats Cards */}
             <AnimatePresence mode="wait">
               {current.stats.slice(0, 4).map((stat, idx) => (
@@ -153,11 +153,11 @@ export default function PortfolioHighlights() {
                   className="relative group/stat"
                 >
                   <div className={`absolute -inset-1 bg-gradient-to-br ${current.gradient} opacity-0 group-hover/stat:opacity-30 blur-xl transition-all duration-500 rounded-2xl`} />
-                  <div className="relative h-[130px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 group-hover/stat:border-white/20 transition-all duration-300 flex flex-col justify-center items-center text-center">
+                  <div className="relative h-[120px] md:h-[130px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 md:p-5 group-hover/stat:border-white/20 transition-all duration-300 flex flex-col justify-center items-center text-center">
                     {/* Optional top gradient icon */}
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${current.gradient} opacity-20 mb-2`} />
                     {/* Value */}
-                    <p className={`text-3xl font-bold bg-gradient-to-r ${current.gradient} bg-clip-text text-transparent`}>
+                    <p className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${current.gradient} bg-clip-text text-transparent`}>
                       {stat.value}
                     </p>
                     {/* Label */}
@@ -174,13 +174,13 @@ export default function PortfolioHighlights() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="col-span-1 sm:col-span-2 relative group mt-6"
+                className="col-span-2 relative group mt-6"
               >
                 <div className={`absolute -inset-1 bg-gradient-to-br ${current.gradient} opacity-20 group-hover:opacity-40 blur-2xl transition-all duration-500 rounded-2xl`} />
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 group-hover:border-white/20 transition-all duration-300">
-                  <h3 className="text-[21px] font-bold text-white mb-3">{current.impact.title}</h3>
-                  <p className="text-gray-300 text-[20px] mb-3">{current.impact.description}</p>
-                  <ul className="text-gray-300 space-y-2 text-[20px] leading-relaxed list-disc list-inside">
+                  <h3 className="text-lg md:text-xl lg:text-[21px] font-bold text-white mb-3">{current.impact.title}</h3>
+                  <p className="text-gray-300 text-base md:text-lg lg:text-[20px] mb-3">{current.impact.description}</p>
+                  <ul className="text-gray-300 space-y-2 text-base md:text-lg lg:text-[20px] leading-relaxed list-disc list-inside">
                     {current.impact.points.map((point, idx) => (
                       <li key={idx}>{point}</li>
                     ))}
@@ -189,26 +189,26 @@ export default function PortfolioHighlights() {
               </motion.div>
             )}
 
-           
+
           </div>
         </div>
 
         {/* Navigation */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }} className="flex flex-wrap items-center justify-center gap-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.8 }} className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {projects.map((project, i) => (
             <motion.button key={project.id} onClick={() => setActiveIndex(i)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className={`relative transition-all duration-300 ${activeIndex === i ? "opacity-100" : "opacity-50 hover:opacity-75"}`}>
               {activeIndex === i && (
                 <motion.div layoutId="activeGlow" className={`absolute -inset-2 bg-gradient-to-r ${project.gradient} opacity-30 blur-lg rounded-2xl`} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} />
               )}
-              <div className={`relative cursor-pointer px-6 py-3 rounded-xl border transition-all duration-300 ${activeIndex === i ? "bg-white/10 border-white/30 backdrop-blur-md" : "bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-white/20"}`}>
-                <div className="flex items-center gap-3">
+              <div className={`relative cursor-pointer px-4 md:px-6 py-2 md:py-3 rounded-xl border transition-all duration-300 ${activeIndex === i ? "bg-white/10 border-white/30 backdrop-blur-md" : "bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-white/20"}`}>
+                <div className="flex items-center gap-2 md:gap-3">
                   <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${project.gradient} ${activeIndex === i ? "opacity-100" : "opacity-50"} flex items-center justify-center`}>
                     {(() => {
                       const Icon = iconMap[project.icon] || Sparkles;
                       return <Icon className="w-4 h-4 text-white" />;
                     })()}
                   </div>
-                  <span className="text-white font-medium text-sm">{project.client || `Project ${i + 1}`}</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{project.client || `Project ${i + 1}`}</span>
                 </div>
               </div>
             </motion.button>

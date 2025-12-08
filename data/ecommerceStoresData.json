@@ -1,11 +1,19 @@
 {
   "hero": {
-    "title": "eCommerce & Virtual Product Stores",
+    "title": "eCommerce & Virtual ",
+    "title2": "Product Stores",
     "subtitle": "Build high-converting online stores with AI-powered personalization, seamless checkout experiences, and omnichannel integration. From Shopify to headless commerce, we create digital storefronts that drive sales and delight customers.",
     "buttons": [
-      { "label": "Start Your Store", "link": "#features" },
-      { "label": "View Portfolio", "link": "#showcase" }
-    ]
+      {
+        "label": "Start Your Store",
+        "link": "#features"
+      },
+      {
+        "label": "View Portfolio",
+        "link": "#showcase"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"
   },
   "overview": {
     "title": "Next-Generation Online Retail",
@@ -51,12 +59,30 @@
     "title": "eCommerce Technologies",
     "description": "Built with leading platforms and frameworks.",
     "items": [
-      { "name": "Shopify", "id": "shopify" },
-      { "name": "WooCommerce", "id": "woocommerce" },
-      { "name": "Magento", "id": "magento" },
-      { "name": "Next.js", "id": "nextjs" },
-      { "name": "Stripe", "id": "stripe" },
-      { "name": "PayPal", "id": "paypal" }
+      {
+        "name": "Shopify",
+        "id": "shopify"
+      },
+      {
+        "name": "WooCommerce",
+        "id": "woocommerce"
+      },
+      {
+        "name": "Magento",
+        "id": "magento"
+      },
+      {
+        "name": "Next.js",
+        "id": "nextjs"
+      },
+      {
+        "name": "Stripe",
+        "id": "stripe"
+      },
+      {
+        "name": "PayPal",
+        "id": "paypal"
+      }
     ]
   },
   "showcase": {
@@ -67,21 +93,33 @@
         "name": "Fashion Boutique",
         "image": "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg",
         "description": "Luxury fashion brand with 300% revenue increase in first year",
-        "metrics": { "conversion": "+45%", "revenue": "$2.5M", "orders": "15K+" }
+        "metrics": {
+          "conversion": "+45%",
+          "revenue": "$2.5M",
+          "orders": "15K+"
+        }
       },
       {
         "id": "2",
         "name": "Tech Gadgets Store",
         "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg",
         "description": "Electronics marketplace handling 50K products with real-time inventory",
-        "metrics": { "conversion": "+60%", "revenue": "$8M", "orders": "45K+" }
+        "metrics": {
+          "conversion": "+60%",
+          "revenue": "$8M",
+          "orders": "45K+"
+        }
       },
       {
         "id": "3",
         "name": "Beauty & Cosmetics",
         "image": "https://images.pexels.com/photos/3373727/pexels-photo-3373727.jpeg",
         "description": "D2C beauty brand with AI-powered product recommendations",
-        "metrics": { "conversion": "+70%", "revenue": "$1.2M", "orders": "8K+" }
+        "metrics": {
+          "conversion": "+70%",
+          "revenue": "$1.2M",
+          "orders": "8K+"
+        }
       }
     ]
   },
@@ -127,19 +165,43 @@
     "categories": [
       {
         "name": "Payments",
-        "tools": ["Stripe", "PayPal", "Square", "Klarna", "Afterpay"]
+        "tools": [
+          "Stripe",
+          "PayPal",
+          "Square",
+          "Klarna",
+          "Afterpay"
+        ]
       },
       {
         "name": "Shipping",
-        "tools": ["ShipStation", "EasyPost", "Shippo", "FedEx", "UPS"]
+        "tools": [
+          "ShipStation",
+          "EasyPost",
+          "Shippo",
+          "FedEx",
+          "UPS"
+        ]
       },
       {
         "name": "Marketing",
-        "tools": ["Mailchimp", "Klaviyo", "Google Analytics", "Facebook Pixel", "TikTok Ads"]
+        "tools": [
+          "Mailchimp",
+          "Klaviyo",
+          "Google Analytics",
+          "Facebook Pixel",
+          "TikTok Ads"
+        ]
       },
       {
         "name": "Customer Support",
-        "tools": ["Zendesk", "Intercom", "Gorgias", "LiveChat", "Tidio"]
+        "tools": [
+          "Zendesk",
+          "Intercom",
+          "Gorgias",
+          "LiveChat",
+          "Tidio"
+        ]
       }
     ]
   },

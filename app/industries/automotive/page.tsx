@@ -56,7 +56,7 @@ export default function AutomotivePage() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="pt-20">
+        <header className="page-content">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[

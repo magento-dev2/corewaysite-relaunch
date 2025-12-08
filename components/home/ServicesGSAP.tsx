@@ -30,8 +30,8 @@ export default function ServicesGSAP() {
       items: t('services.architect.items') as string[],
     },
     {
-      imagePath:"/assets/home/build.jpg", // Updated path
-      staticPath:"/assets/home/build.jpg",
+      imagePath: "/assets/home/build.jpg", // Updated path
+      staticPath: "/assets/home/build.jpg",
       ariaLabel: "Code brackets with animated lines representing software development",
       title: t('services.build.title'),
       subtitle: t('services.build.subtitle'),
@@ -174,28 +174,17 @@ export default function ServicesGSAP() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] min-h-[90vh] flex items-center py-16 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918] min-h-[90vh] flex items-center py-12 md:py-16 overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
       </div>
 
-      <div className="relative z-10 max-w-1440 mx-auto px-6 md:px-12 w-full">
-        {/* <div ref={headerRef} className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
-            <span className="text-sm font-medium text-gray-300">What We Do</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Our Services
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
-          </p>
-        </div> */}
+      <div className="relative z-10 max-w-1440 mx-auto px-4 md:px-6 lg:px-12 w-full overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-          <div className="grid md:grid-cols-2  items-start mb-18">
+        <div className="max-w-7xl mx-auto mb-8 md:mb-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start mb-12 md:mb-18">
 
             {/* Left Side: Heading + Text */}
             <motion.div
@@ -204,37 +193,33 @@ export default function ServicesGSAP() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.8 }}
-            // className="space-y-6"
+              className="space-y-4"
             >
-              {/* <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6">
-              <span className="text-sm font-medium text-gray-300">What We Do</span>
-            </div> */}
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 {t('services.title')}
               </h2>
-              <p className="text-lg text-gray-300 max-w-md leading-relaxed">
+              <p className="text-base md:text-lg text-gray-300 max-w-md leading-relaxed">
                 Smart Engineering, AI Automation, and Scalable Digital Solutions
               </p>
             </motion.div>
 
             {/* Right Side: Animated Text Lines */}
-            <div className=" ">
-
-              <motion.p
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                className="text-gray-300 text-lg"
-              >
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex items-center"
+            >
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                 {t('services.description')}
-              </motion.p>
-
-            </div>
+              </p>
+            </motion.div>
 
           </div>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div key={index} className="group relative perspective-1000">
               <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">

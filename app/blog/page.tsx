@@ -21,7 +21,7 @@ export default async function BlogListing() {
   const blogs = await getBlogs();
 
   return (
-    <div className="min-h-screen bg-[#0E0918] text-white pt-32 pb-20">
+    <div className="min-h-screen bg-[#0E0918] text-white page-content pb-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-md mb-6">
