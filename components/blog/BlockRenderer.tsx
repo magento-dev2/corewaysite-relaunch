@@ -67,11 +67,14 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                         );
 
                     case 'image':
+                        // Replace '/blog/' with '/'
+                        const imageUrl = block.url.replace('/blog/', '/');
+
                         return (
                             <figure key={block.id} className="my-8">
                                 <div className="rounded-2xl overflow-hidden bg-gray-900">
                                     <img
-                                        src={block.url}
+                                        src={imageUrl}
                                         alt={block.alt}
                                         className="w-full h-auto"
                                     />
@@ -83,6 +86,7 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                                 )}
                             </figure>
                         );
+
 
                     case 'code':
                         return (
