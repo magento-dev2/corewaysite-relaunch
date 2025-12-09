@@ -202,12 +202,13 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
                         {post.coverImage && (
                           <div className="relative overflow-hidden rounded-lg mb-3">
                             <img
-                              src={post.coverImage}
+                              src={post.coverImage.startsWith('assets/') ? `/${post.coverImage}` : post.coverImage}
                               alt={post.title}
                               className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
                         )}
+
                         <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors mb-2 leading-snug">
                           {post.title}
                         </h4>
