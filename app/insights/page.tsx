@@ -48,18 +48,22 @@ export default function InsightsPage() {
 
     const whyCorewayReasons = [
         {
+            icon:"",
             title: "Proven Track Record",
             description: "100+ successful projects delivered with measurable impact on business growth and efficiency."
         },
         {
+             icon:"",
             title: "Client-Focused Approach",
             description: "95% client retention rate through transparent communication and exceptional service delivery."
         },
         {
+             icon:"",
             title: "Quality Assurance",
             description: "Rigorous testing and quality control processes ensure flawless execution every time."
         },
         {
+             icon:"",
             title: "Long-Term Partnership",
             description: "We build lasting relationships, providing ongoing support and continuous improvement."
         }

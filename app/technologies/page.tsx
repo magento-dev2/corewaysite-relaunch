@@ -72,25 +72,30 @@ export default function TechnologiesPage() {
             icon: "shield-check",
         },
     ];
+    
+const whyCorewayReasons = [
+    {
+        icon: "cpu", // Modern Tech Stack
+        title: "Modern Tech Stack",
+        description: "We use the latest technologies and frameworks to build future-proof, scalable solutions."
+    },
+    {
+        icon: "layers", // Full-Stack Expertise
+        title: "Full-Stack Expertise",
+        description: "50+ technologies mastered across frontend, backend, databases, cloud, and security."
+    },
+    {
+        icon: "check-circle", // Best Practices
+        title: "Best Practices",
+        description: "Clean code, comprehensive testing, CI/CD pipelines, and industry-standard development practices."
+    },
+    {
+        icon: "zap", // Continuous Learning
+        title: "Continuous Learning",
+        description: "Our team stays updated with emerging technologies to deliver cutting-edge solutions."
+    }
+];
 
-    const whyCorewayReasons = [
-        {
-            title: "Modern Tech Stack",
-            description: "We use the latest technologies and frameworks to build future-proof, scalable solutions."
-        },
-        {
-            title: "Full-Stack Expertise",
-            description: "50+ technologies mastered across frontend, backend, databases, cloud, and security."
-        },
-        {
-            title: "Best Practices",
-            description: "Clean code, comprehensive testing, CI/CD pipelines, and industry-standard development practices."
-        },
-        {
-            title: "Continuous Learning",
-            description: "Our team stays updated with emerging technologies to deliver cutting-edge solutions."
-        }
-    ];
 
     const faqs = [
         {

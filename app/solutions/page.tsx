@@ -110,24 +110,29 @@ export default function SolutionsPage() {
         },
     ];
 
-    const whyCorewayReasons = [
-        {
-            title: "End-to-End Expertise",
-            description: "From strategy to implementation, we handle every aspect of your digital transformation journey."
-        },
-        {
-            title: "Proven Track Record",
-            description: "50+ successful projects delivered across industries with 100% client satisfaction."
-        },
-        {
-            title: "Cutting-Edge Technology",
-            description: "We leverage the latest technologies and frameworks to build future-proof solutions."
-        },
-        {
-            title: "Agile Approach",
-            description: "Flexible, iterative development process that adapts to your changing needs."
-        }
-    ];
+const whyCorewayReasons = [
+    {
+        icon: "layers", // End-to-End expertise
+        title: "End-to-End Expertise",
+        description: "From strategy to implementation, we handle every aspect of your digital transformation journey."
+    },
+    {
+        icon: "award", // Proven track record
+        title: "Proven Track Record",
+        description: "50+ successful projects delivered across industries with 100% client satisfaction."
+    },
+    {
+        icon: "cpu", // Cutting-edge technology
+        title: "Cutting-Edge Technology",
+        description: "We leverage the latest technologies and frameworks to build future-proof solutions."
+    },
+    {
+        icon: "git-branch", // Agile approach
+        title: "Agile Approach",
+        description: "Flexible, iterative development process that adapts to your changing needs."
+    }
+];
+
 
     const faqs = [
         {

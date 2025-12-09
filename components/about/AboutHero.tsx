@@ -10,7 +10,7 @@ interface CustomAPIHeroProps {
   subtitle: string;
   buttons: { label: string; link: string }[];
   title2: string;
-  img: string;
+ 
 }
 
 interface Particle {
@@ -26,7 +26,7 @@ export default function FurnitureHero({
   subtitle,
   buttons,
   title2,
-  img,
+ 
 }: CustomAPIHeroProps) {
   const [particles, setParticles] = useState<Particle[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);

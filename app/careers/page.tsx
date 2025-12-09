@@ -574,7 +574,7 @@ export default function CareersPage() {
     }
   };
 
-  const handleApply = (jobId: string, jobTitle: string) => {
+  const handleApply = (jobId: any, jobTitle: string) => {
     setSelectedJob({ id: jobId, title: jobTitle });
     setIsModalOpen(true);
   };

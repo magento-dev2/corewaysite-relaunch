@@ -7,7 +7,7 @@ import Image from "next/image";
 interface ERPHeroProps {
     title: string;
     titleHighlight: string;
-    subtitle: string;
+    subtitle: any;
     description: string;
     buttons: { label: string; link: string }[];
 }

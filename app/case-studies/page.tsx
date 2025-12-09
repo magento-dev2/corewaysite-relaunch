@@ -3,18 +3,46 @@ import { prisma } from '@/lib/prisma';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
+// async function getCaseStudies() {
+//   try {
+//     const caseStudies = await prisma.caseStudy.findMany({
+//       where: { isActive: true },
+//       orderBy: { createdAt: 'desc' },
+//     });
+//     return caseStudies;
+//   } catch (error) {
+//     console.log('Database not available, returning empty case studies');
+//     return [];
+//   }
+// }
+
+
 async function getCaseStudies() {
   try {
     const caseStudies = await prisma.caseStudy.findMany({
       where: { isActive: true },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: "desc" },
     });
-    return caseStudies;
+
+    return caseStudies.map((cs) => ({
+      ...cs,
+      stats: Array.isArray(cs.stats)
+        ? cs.stats
+        : typeof cs.stats === "string"
+        ? JSON.parse(cs.stats)
+        : [], // fallback
+      services: Array.isArray(cs.services)
+        ? cs.services
+        : typeof cs.services === "string"
+        ? JSON.parse(cs.services)
+        : [], // fallback
+    }));
   } catch (error) {
-    console.log('Database not available, returning empty case studies');
+    console.log("Database not available, returning empty case studies");
     return [];
   }
 }
+
 
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies();

@@ -58,24 +58,28 @@ export default function IndustriesPage() {
         },
     ];
 
-    const whyCorewayReasons = [
-        {
-            title: "Industry Expertise",
-            description: "Deep understanding of industry-specific challenges and regulatory requirements across 7+ sectors."
-        },
-        {
-            title: "Proven Solutions",
-            description: "100+ successful projects delivered with measurable impact on efficiency and revenue."
-        },
-        {
-            title: "Compliance Ready",
-            description: "Solutions built with industry standards and regulatory compliance from day one."
-        },
-        {
-            title: "Scalable Architecture",
-            description: "Future-proof solutions that grow with your business and adapt to market changes."
-        }
-    ];
+  const whyCorewayReasons = [
+    {
+        icon: "star",
+        title: "Industry Expertise",
+        description: "Deep understanding of industry-specific challenges and regulatory requirements across 7+ sectors."
+    },
+    {
+        icon: "check-circle",
+        title: "Proven Solutions",
+        description: "100+ successful projects delivered with measurable impact on efficiency and revenue."
+    },
+    {
+        icon: "shield",
+        title: "Compliance Ready",
+        description: "Solutions built with industry standards and regulatory compliance from day one."
+    },
+    {
+        icon: "trending-up",
+        title: "Scalable Architecture",
+        description: "Future-proof solutions that grow with your business and adapt to market changes."
+    }
+];
 
     const faqs = [
         {

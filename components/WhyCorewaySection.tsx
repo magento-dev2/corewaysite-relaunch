@@ -40,7 +40,7 @@ export interface Reason {
 interface WhyCorewaySectionProps {
   badge?: string;
   title?: string;
-  subtitle?: string;
+ subtitle?: string;
   reasons?: Reason[];
 }
 

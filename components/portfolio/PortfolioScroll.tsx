@@ -19,7 +19,7 @@ interface Project {
 
 interface PortfolioScrollProps {
     projects: Project[];
-    onProjectClick: (project: Project) => void;
+    onProjectClick: any;
 }
 
 export default function PortfolioScroll({ projects, onProjectClick }: PortfolioScrollProps) {
