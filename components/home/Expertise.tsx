@@ -5,6 +5,7 @@ import { ArrowRight, Brain, ShoppingCart, Workflow, Smartphone, BarChart3, Cloud
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,21 +17,21 @@ export default function Expertise() {
       icon: Brain,
       title: t('expertise.areas.ai.title'),
       description: t('expertise.areas.ai.description'),
-      link: "#",
+      link: "/ai-data",
       linkText: t('expertise.areas.ai.link'),
     },
     {
       icon: ShoppingCart,
       title: t('expertise.areas.commerce.title'),
       description: t('expertise.areas.commerce.description'),
-      link: "#",
+      link: "/industries/ecommerce-stores",
       linkText: t('expertise.areas.commerce.link'),
     },
     {
       icon: Workflow,
       title: t('expertise.areas.automation.title'),
       description: t('expertise.areas.automation.description'),
-      link: "#",
+      link: "/solution/business-workflow-automation",
       linkText: t('expertise.areas.automation.link'),
     },
     {
@@ -51,7 +52,7 @@ export default function Expertise() {
       icon: Cloud,
       title: t('expertise.areas.cloud.title'),
       description: t('expertise.areas.cloud.description'),
-      link: "#",
+      link: "/solution/saas-infrastructure-devops",
       linkText: t('expertise.areas.cloud.link'),
     },
   ];
@@ -135,7 +136,9 @@ export default function Expertise() {
               {/* Optional CTA or additional content */}
               <div className="pt-4 md:pt-6">
                 <button className="cursor-pointer px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
+                 <Link href="/solutions">
                   View All Services
+                  </Link>
                 </button>
               </div>
             </div>

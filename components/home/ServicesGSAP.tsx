@@ -261,7 +261,7 @@ export default function ServicesGSAP() {
                   </div>
                   <div className="mt-6 flex justify-center">
                     <a
-                      href="#"
+                      href="/solution/business-workflow-automation"
                       className="group inline-flex items-center gap-2 text-purple-500 font-medium tracking-wide hover:text-purple-400 transition-all"
                     >
                       View More

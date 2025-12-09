@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
@@ -9,115 +9,169 @@ import { Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const blogPosts = [
-  {
-    id: 1,
-    category: 'AI & Machine Learning',
-    title: 'How AI is Transforming Business Process Automation',
-    excerpt: 'Discover how artificial intelligence is revolutionizing the way businesses automate their workflows and increase productivity.',
-    author: 'Sarah Chen',
-    date: 'Nov 10, 2025',
-    readTime: '5 min read',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
-    featured: true
-  },
-  {
-    id: 2,
-    category: 'Cloud Solutions',
-    title: 'AWS vs Azure: Choosing the Right Cloud Platform',
-    excerpt: 'A comprehensive comparison of leading cloud platforms to help you make informed decisions for your infrastructure.',
-    author: 'Mike Johnson',
-    date: 'Nov 8, 2025',
-    readTime: '7 min read',
-    image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
-    featured: false
-  },
-  {
-    id: 3,
-    category: 'IoT Development',
-    title: 'Building Scalable IoT Solutions for Manufacturing',
-    excerpt: 'Learn best practices for developing robust IoT applications that can handle millions of connected devices.',
-    author: 'Emma Williams',
-    date: 'Nov 5, 2025',
-    readTime: '6 min read',
-    image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800',
-    featured: false
-  },
-  {
-    id: 4,
-    category: 'E-commerce',
-    title: 'The Future of Digital Commerce in 2025',
-    excerpt: 'Explore emerging trends and technologies shaping the future of online shopping experiences.',
-    author: 'David Park',
-    date: 'Nov 3, 2025',
-    readTime: '4 min read',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    featured: false
-  }
-];
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  coverImage: string | null;
+  createdAt: string;
+  // Add other DB fields if needed, but these seem to be what we have
+}
+
+interface UIBlogPost {
+  id: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  readTime: string;
+  image: string;
+  featured: boolean;
+  slug: string;
+}
 
 export default function BlogSection() {
   const { t } = useLanguage();
+  const [posts, setPosts] = useState<UIBlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const featuredRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
+  // Fetch blogs
   useEffect(() => {
-    const section = sectionRef.current;
-    const header = headerRef.current;
-    const featured = featuredRef.current;
-    const cards = cardsRef.current;
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch('/api/blogs');
+        if (!response.ok) {
+          throw new Error('Failed to fetch blogs');
+        }
+        const data: BlogPost[] = await response.json();
 
-    if (!section || !header) return;
+        // Map DB data to UI data
+        const mappedPosts: UIBlogPost[] = data.map((blog, index) => ({
+          id: blog.id,
+          category: 'Insights', // Default category
+          title: blog.title,
+          slug: blog.slug,
+          excerpt: blog.excerpt || 'No excerpt available',
+          author: 'Coreway Team', // Default author
+          date: new Date(blog.createdAt).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          }),
+          readTime: '5 min read', // Default read time
+          image: blog.coverImage || 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800', // Default image
+          featured: index === 0, // First item is featured
+        })).slice(0, 4); // Limit to 4 posts
 
-    gsap.from(header, {
-      autoAlpha: 1,   // FIXED
-      y: 80,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 70%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    gsap.from(featured, {
-      autoAlpha: 1,   // FIXED
-      // x: 80,
-      duration: 1.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: featured,
-        start: "top 70%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    cards.forEach((card, index) => {
-      gsap.from(card, {
-        autoAlpha: 1,   // FIXED
-        y: 80,
-        duration: 0.8,
-        delay: index * 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        setPosts(mappedPosts);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      } finally {
+        setLoading(false);
+      }
     };
+
+    fetchBlogs();
   }, []);
 
+  // Animations
+  useEffect(() => {
+    if (loading || posts.length === 0) return;
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const section = sectionRef.current;
+      const header = headerRef.current;
+      const featured = featuredRef.current;
+      const cards = cardsRef.current;
+
+      if (!section || !header) return;
+
+      // Clear any previous ScrollTriggers to avoid duplicates on re-renders
+      ScrollTrigger.getAll().forEach(trigger => {
+        // We could be more selective here, but for this component, cleaning all might refer to global ones. 
+        // Better to let gsap.context handle cleanup if possible, but existing code used getAll().kill().
+        // Let's use gsap.context for safety.
+      });
+
+      const ctx = gsap.context(() => {
+        gsap.from(header, {
+          autoAlpha: 1,
+          y: 80,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        if (featured) {
+          gsap.from(featured, {
+            autoAlpha: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: featured,
+              start: "top 70%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+
+        cards.forEach((card, index) => {
+          if (card) {
+            gsap.from(card, {
+              autoAlpha: 1,
+              y: 80,
+              duration: 0.8,
+              delay: index * 0.15,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            });
+          }
+        });
+      }, sectionRef);
+
+      return () => ctx.revert();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [loading, posts]);
+
+
+  const featuredPost = posts.find(post => post.featured);
+  const regularPosts = posts.filter(post => !post.featured);
+
+  if (loading) {
+    // Simple loading state or return null to avoid layout shift if possible, 
+    // but a skeleton or height placeholder is better.
+    // For now, keeping the section structure to maintain layout.
+    return (
+      <section className="pb-6 px-6 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative min-h-[600px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03),transparent_70%)] pointer-events-none" />
+        <div className="text-white/50 animate-pulse">Loading insights...</div>
+      </section>
+    )
+  }
+
+  // If no posts, hide section or show empty state? 
+  // User asked for dynamic set, if empty, maybe hide or show standard empty.
+  if (posts.length === 0) {
+    return null; // Or return an empty fragment
+  }
 
   return (
     <section ref={sectionRef} className="pb-6 px-6 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative ">
@@ -146,7 +200,7 @@ export default function BlogSection() {
             ref={featuredRef}
             className=" mt-24 group cursor-pointer"
           >
-            <Link href={`/blog/${featuredPost.id}`}>
+            <Link href={`/blog/${featuredPost.slug}`}>
               <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative h-80 lg:h-auto overflow-hidden">
@@ -200,7 +254,7 @@ export default function BlogSection() {
               }}
               className="group cursor-pointer"
             >
-              <Link href={`/blog/${post.id}`}>
+              <Link href={`/blog/${post.slug}`}>
                 <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl  transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
                   <div className="relative h-56 overflow-hidden">
                     <div

@@ -190,7 +190,23 @@
       "manufacturing": {
         "title": "Manufacturing",
         "description": "IoT and automation"
-      }
+      },
+        "food": {
+    "title": "Food & Restaurants",
+    "description": "Smart ordering and delivery solutions"
+  },
+  "shopping": {
+    "title": "Shopping",
+    "description": "Modern online and in-store shopping systems"
+  },
+  "homeDecor": {
+    "title": "Home Décor",
+    "description": "Interior design and décor platforms"
+  },
+  "fashion": {
+    "title": "Fashion",
+    "description": "Trendy fashion and apparel solutions"
+  }
     }
   },
   "blog": {
@@ -204,8 +220,8 @@
     "badge": "Start automating today",
     "title": "Ready to transform your workflows?",
     "description": "Join thousands of teams using Coreway to automate their work and focus on what matters most. Build powerful automations in minutes, not hours.",
-    "primaryButton": "Get started for free",
+    "primaryButton": "Let’s Connect",
     "secondaryButton": "Talk to sales",
-    "footer": "No credit card required • Free forever for core features • Cancel anytime"
+    "footer": "• Zero-Cost Project Estimation • Architecture Guidance at No Charge • Flexible & Scalable Development Models"
   }
 }

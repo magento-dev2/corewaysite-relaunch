@@ -1,6 +1,9 @@
 "use client";
 
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { PopupModal } from "react-calendly";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 interface PageCTAProps {
   badge?: string;
@@ -15,10 +18,23 @@ export default function PageCTA({
   badge = 'Start automating today',
   title,
   description,
-  primaryButtonText = 'Get started for free',
+  primaryButtonText = 'Let’s Connect.',
   secondaryButtonText = 'Talk to sales',
   footerText = 'No credit card required • Free forever for core features • Cancel anytime',
 }: PageCTAProps) {
+
+   const [open, setOpen] = useState(false);
+    const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
+  
+    useEffect(() => {
+      const el =
+        document.getElementById("__next") ??
+        document.getElementById("root") ??
+        document.body;
+  
+      setRootEl(el);
+    }, []);
+
   return (
     <section className="py-24 bg-gradient-to-b from-[#1a1325] to-[#0E0918] relative overflow-hidden">
       <div className="absolute inset-0">
@@ -46,12 +62,15 @@ export default function PageCTA({
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button className="cursor-pointer group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
-            <span>{primaryButtonText}</span>
+            <Link href="/contact">{primaryButtonText}</Link>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </button>
 
           <button className="cursor-pointer group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
-            {secondaryButtonText}
+           
+           <div  onClick={() => setOpen(true)}>
+                            
+ {secondaryButtonText}</div>
           </button>
         </div>
 
@@ -70,6 +89,15 @@ export default function PageCTA({
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+
+       {rootEl && (
+          <PopupModal
+            url="https://calendly.com/YOUR_USERNAME/YOUR_EVENT"
+            onModalClose={() => setOpen(false)}
+            open={open}
+            rootElement={rootEl}
+          />
+        )}
     </section>
   );
 }

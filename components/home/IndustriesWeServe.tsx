@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,35 +15,73 @@ export default function IndustriesWeServe() {
 
 const industries = [
   {
-    icon: '🏥',
-    title: t('industries.items.healthcare.title'),
-    description: t('industries.items.healthcare.description')
-  },
-  {
     icon: '🛍️',
     title: t('industries.items.retail.title'),
-    description: t('industries.items.retail.description')
+    description: t('industries.items.retail.description'),
+    link:"/industries/ecommerce-stores"
   },
-  {
-    icon: '🏦',
-    title: t('industries.items.finance.title'),
-    description: t('industries.items.finance.description')
-  },
-  {
-    icon: '🎓',
-    title: t('industries.items.education.title'),
-    description: t('industries.items.education.description')
-  },
-  {
-    icon: '🤝',
-    title: t('industries.items.realEstate.title'),
-    description: t('industries.items.realEstate.description')
-  },
-  {
+  
+    {
     icon: '🏭',
     title: t('industries.items.manufacturing.title'),
-    description: t('industries.items.manufacturing.description')
+    description: t('industries.items.manufacturing.description'),
+    link:"/industries/manufacturing-iot"
   },
+  {
+  icon: '🍽️',
+  title: t('industries.items.food.title'),
+  description: t('industries.items.food.description'),
+     link:"/industries/food-beverage"
+
+},
+{
+  icon: '🪑',
+  title: t('industries.items.homeDecor.title'),
+  description: t('industries.items.homeDecor.description'),
+     link:"/industries/furniture-home-decor"
+},
+{
+  icon: '👗',
+  title: t('industries.items.fashion.title'),
+  description: t('industries.items.fashion.description'),
+     link:"/industries/fashion-apparel"
+},
+{
+    icon: '🏥',
+    title: t('industries.items.healthcare.title'),
+    description: t('industries.items.healthcare.description'),
+       link:"/industries/pharmaceuticals-healthcare"
+  },
+
+
+
+  
+//   {
+//     icon: '🏦',
+//     title: t('industries.items.finance.title'),
+//     description: t('industries.items.finance.description')
+//   },
+//   {
+//     icon: '🎓',
+//     title: t('industries.items.education.title'),
+//     description: t('industries.items.education.description')
+//   },
+//   {
+//     icon: '🤝',
+//     title: t('industries.items.realEstate.title'),
+//     description: t('industries.items.realEstate.description')
+//   },
+
+  
+// {
+//   icon: '🛒',
+//   title: t('industries.items.shopping.title'),
+//   description: t('industries.items.shopping.description')
+// },
+
+
+
+
   // {
   //   icon: '🚚',
   //   title: 'Transportation',
@@ -140,7 +179,10 @@ const industries = [
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-6 gap-2">
             {industries.map((industry, index) => (
+                <Link href={industry.link} key={industry.title}>
+
               <div
+
                 key={industry.title}
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
@@ -167,6 +209,7 @@ const industries = [
 
                 {/* <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-slate-500 to-slate-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" /> */}
               </div>
+              </Link>
             ))}
           </div>
         </div>

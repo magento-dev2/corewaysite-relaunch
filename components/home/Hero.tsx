@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import SplitType from "split-type";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroData from "@/locales/en/home.json";
+import Link from "next/link";
 
 interface Particle {
   id: number;
@@ -184,7 +185,7 @@ export default function Hero() {
             <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">{heroItem.description}</p>
 
             <button className="group cursor-pointer bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
-              <span>{heroItem.button}</span>
+              <Link href={heroItem.button_link}>{heroItem.button}</Link>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
           </div>
