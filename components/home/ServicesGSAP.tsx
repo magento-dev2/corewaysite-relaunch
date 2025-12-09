@@ -21,8 +21,8 @@ export default function ServicesGSAP() {
 
   const services = [
     {
-      imagePath: "/assets/home/build.jpg", // Updated path
-      staticPath: "/assets/home/build.jpg",
+      imagePath: "/assets/home/energy.png", // Updated path
+      staticPath: "/assets/home/energy.png",
       ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
       title: t('services.architect.title'),
       subtitle: t('services.architect.subtitle'),
@@ -30,8 +30,8 @@ export default function ServicesGSAP() {
       items: t('services.architect.items') as string[],
     },
     {
-      imagePath: "/assets/home/build.jpg", // Updated path
-      staticPath: "/assets/home/build.jpg",
+      imagePath: "/assets/home/instruction.png", // Updated path
+      staticPath: "/assets/home/instruction.png",
       ariaLabel: "Code brackets with animated lines representing software development",
       title: t('services.build.title'),
       subtitle: t('services.build.subtitle'),
@@ -39,8 +39,8 @@ export default function ServicesGSAP() {
       items: t('services.build.items') as string[],
     },
     {
-      imagePath: "/assets/home/build.jpg", // Updated path
-      staticPath: "/assets/home/build.jpg",
+      imagePath: "/assets/home/rpa.png", // Updated path
+      staticPath: "/assets/home/rpa.png",
       ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
       title: t('services.automate.title'),
       subtitle: t('services.automate.subtitle'),

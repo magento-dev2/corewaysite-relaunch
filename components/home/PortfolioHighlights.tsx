@@ -178,12 +178,22 @@ export default function PortfolioHighlights() {
               >
                 <div className={`absolute -inset-1 bg-gradient-to-br ${current.gradient} opacity-20 group-hover:opacity-40 blur-2xl transition-all duration-500 rounded-2xl`} />
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 group-hover:border-white/20 transition-all duration-300">
-                  <h3 className="text-lg md:text-xl lg:text-[21px] font-bold text-white mb-3">{current.impact.title}</h3>
-                  <p className="text-gray-300 text-base md:text-lg lg:text-[20px] mb-3">{current.impact.description}</p>
-                  <ul className="text-gray-300 space-y-2 text-base md:text-lg lg:text-[20px] leading-relaxed list-disc list-inside">
-                    {current.impact.points.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
+                  {/* <h3 className="text-lg md:text-xl lg:text-[21px] font-bold text-white mb-3">{current.impact.title}</h3> */}
+                  {/* <p className="text-gray-300 text-base md:text-lg lg:text-[20px] mb-3">{current.impact.description}</p> */}
+                  <ul className="text-white space-y-2 text-lg md:text-lg lg:text-[20px] leading-relaxed list-disc list-inside">
+                    {/* {current.impact.points.map((point, idx) => (
+                      <li key={idx}>
+                        
+                      </li>
+                    ))} */}
+                    <li>  3× Faster development cycles</li>
+<li>40% Reduction in technical overhead</li>
+<li>100% Roadmap Clarity achieved</li>
+<li>50% Faster vendor coordination</li>
+
+
+
+                  
                   </ul>
                 </div>
               </motion.div>
