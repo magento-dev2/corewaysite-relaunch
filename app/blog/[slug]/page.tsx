@@ -104,7 +104,9 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
         {blog.coverImage && (
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${blog.coverImage})` }}
+            style={{ 
+              backgroundImage: `url(${blog.coverImage.startsWith('assets/') ? `/${blog.coverImage}` : blog.coverImage})` 
+            }}
           />
         )}
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-20 flex flex-col justify-center" style={{ minHeight: "650px" }}>
