@@ -21,12 +21,17 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
         isHTML = true;
     }
 
-    // Render legacy HTML content
     if (isHTML) {
+        // Fix relative image paths
+        const fixedContent = content.replace(
+            /src=["']assets\//g, // Match src="assets/ or src='assets/
+            'src="/assets/'
+        );
+
         return (
             <div
                 className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-strong:text-white"
-                dangerouslySetInnerHTML={{ __html: content }}
+                dangerouslySetInnerHTML={{ __html: fixedContent }}
             />
         );
     }
