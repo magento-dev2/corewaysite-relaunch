@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description: "Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.",
   keywords: "AI development, workflow automation, custom software development, digital transformation, AI consulting, software solutions",
   icons: {
-    icon: '/favicon1.png',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/favicon_io/android-chrome-192x192.png',          // main icon
+    shortcut: '/favicon_io/favicon-16x16.png',               // browser shortcut
+    apple: '/favicon_io/apple-touch-icon.png',               // apple touch icon
   },
   themeColor: '#000000',
   openGraph: {
@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     },
   },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
