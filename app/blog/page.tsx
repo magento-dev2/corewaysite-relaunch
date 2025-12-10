@@ -1,24 +1,44 @@
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { ArrowRight, Calendar } from 'lucide-react';
+import Pagination from '@/components/ui/Pagination';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
-async function getBlogs() {
+const ITEMS_PER_PAGE = 12;
+
+async function getBlogs(page: number) {
   try {
-    const blogs = await prisma.blog.findMany({
-      where: { isActive: true },
-      orderBy: { createdAt: 'desc' },
-    });
-    return blogs;
+    const skip = (page - 1) * ITEMS_PER_PAGE;
+
+    const [blogs, totalCount] = await Promise.all([
+      prisma.blog.findMany({
+        where: { isActive: true },
+        orderBy: { createdAt: 'desc' },
+        skip: skip,
+        take: ITEMS_PER_PAGE,
+      }),
+      prisma.blog.count({
+        where: { isActive: true },
+      }),
+    ]);
+
+    const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+
+    return { blogs, totalPages };
   } catch (error) {
     console.log('Database not available, returning empty blogs');
-    return [];
+    return { blogs: [], totalPages: 0 };
   }
 }
 
-export default async function BlogListing() {
-  const blogs = await getBlogs();
+export default async function BlogListing({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const currentPage = Number(searchParams?.page) || 1;
+  const { blogs, totalPages } = await getBlogs(currentPage);
 
   return (
     <div className="min-h-screen bg-[#0E0918] text-white page-content pb-20">
@@ -35,7 +55,7 @@ export default async function BlogListing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogs.map((blog) => (
             <Link key={blog.id} href={`/blog/${blog.slug}`} className="group">
               <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
@@ -71,6 +91,8 @@ export default async function BlogListing() {
             </Link>
           ))}
         </div>
+
+        <Pagination totalPages={totalPages} />
       </div>
     </div>
   );
