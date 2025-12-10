@@ -135,7 +135,7 @@ export default function EditBlog() {
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">Cover Image URL</label>
                         <input
-                            type="url"
+                            type="text"
                             value={formData.coverImage}
                             onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
