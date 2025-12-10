@@ -3,7 +3,8 @@ import { prisma } from '@/lib/prisma';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Pagination from '@/components/ui/Pagination';
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const dynamic = 'force-dynamic';
+
 
 const ITEMS_PER_PAGE = 12;
 
@@ -32,11 +33,10 @@ async function getBlogs(page: number) {
   }
 }
 
-export default async function BlogListing({
-  searchParams,
-}: {
-  searchParams: { page?: string };
+export default async function BlogListing(props: {
+  searchParams: Promise<{ page?: string }>;
 }) {
+  const searchParams = await props.searchParams;
   const currentPage = Number(searchParams?.page) || 1;
   const { blogs, totalPages } = await getBlogs(currentPage);
 
