@@ -173,7 +173,7 @@ const whyCorewayReasons = [
                     description="We deliver end-to-end solutions that transform businesses through cutting-edge technology, AI integration, and scalable infrastructure. Explore our comprehensive suite of services designed to accelerate your digital transformation journey."
                     primaryButton={{ label: "Schedule Consultation", href: "/contact" }}
                     secondaryButton={{ label: "View Case Studies", href: "/case-studies" }}
-                    imageSrc="/assets/herosection/digital-solution.png"
+                    imageSrc="/assets/images/solution11.png"
                     imageAlt="Digital Solutions"
                 />
 

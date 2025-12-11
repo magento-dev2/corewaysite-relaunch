@@ -71,7 +71,7 @@ export default function ERPHero({ title, titleHighlight, subtitle, description, 
                     >
                         <div className="relative w-full max-w-2xl">
                             <Image
-                                src="/assets/herosection/ERP-Photoroom.png"
+                                src="/assets/images/erp11.png"
                                 alt="ERP Solutions"
                                 width={800}
                                 height={600}

@@ -189,7 +189,7 @@ export default function AIIntegrationHero({ title, subtitle, buttons,title2 }: A
                 <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
                   <img
                     // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
-                   src="/assets/herosection/ai-intergation-Photoroom.png"
+                   src="/assets/images/ai-inter.png"
                     alt="Hero Image"
                     className="w-full max-w-4xl rounded-lg shadow-lg"
                   />

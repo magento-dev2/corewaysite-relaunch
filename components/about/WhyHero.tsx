@@ -21,7 +21,7 @@ interface Particle {
   delay: number;
 }
 
-export default function FurnitureHero({
+export default function WhyHero({
   title,
   subtitle,
   buttons,
@@ -174,7 +174,7 @@ export default function FurnitureHero({
           {/* LEFT */}
           <div className="flex-1 text-center space-y-6">
             <h1 ref={textRef} className="text-5xl md:text-6xl font-bold text-white leading-tight">
-              {title} <span className="text-purple-500">{title2}</span>
+              Why <span className="text-purple-500">{title2}</span>
             </h1>
 
             <p className="text-lg text-gray-300 max-w-md mx-auto">{subtitle}</p>
@@ -199,14 +199,12 @@ export default function FurnitureHero({
 
           {/* RIGHT IMAGE */}
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-            <img 
-            src="/assets/images/about.png" 
-            className=" rounded-lg shadow-lg"
-             style={{
-    width: "auto",
-    height: "auto",
-    maxWidth: "100%", // prevents overflow on small screens
-  }} />
+           <img
+  src="/assets/images/whycoreway.png"
+  className="rounded-lg shadow-lg"
+ 
+/>
+
           </div>
         </div>
       </div>

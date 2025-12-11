@@ -77,7 +77,7 @@ export default function PythonTechnologyPage() {
             title2={pythonData.hero.title2}
             subtitle={pythonData.hero.subtitle}
             buttons={pythonData.hero.buttons}
-            img={pythonData.hero.img}
+            img="/assets/images/python.png"
           />
 
           <SubHeader title="Python Development" items={subHeaderItems} />

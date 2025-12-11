@@ -72,7 +72,7 @@ export default function EcommerceStores() {
           title2={ecommerceStoresData.hero.title2}
           subtitle={ecommerceStoresData.hero.subtitle}
           buttons={ecommerceStoresData.hero.buttons}
-          img={ecommerceStoresData.hero.img}
+          img="/assets/images/ecommerce.png"
         />
 
         <SubHeader title="E-Commerce Stores" items={subHeaderItems} />

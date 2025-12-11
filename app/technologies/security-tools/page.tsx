@@ -77,7 +77,7 @@ export default function SecurityToolsPage() {
             title2={securityData.hero.title2}
             subtitle={securityData.hero.subtitle}
             buttons={securityData.hero.buttons}
-            img={securityData.hero.img}
+            img="/assets/images/security-tools.png"
           />
 
           <SubHeader title="Security Tools" items={subHeaderItems} />

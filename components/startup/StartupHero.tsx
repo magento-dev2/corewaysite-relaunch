@@ -169,7 +169,7 @@ export default function StartupHero({ data }: StartupHeroProps) {
                 <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
                   <img
                     // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
-                   src="/assets/herosection/startup.png"
+                   src="/assets/images/product1-removebg.png"
                     alt="Hero Image"
                     className="w-full max-w-4xl rounded-lg shadow-lg"
                   />

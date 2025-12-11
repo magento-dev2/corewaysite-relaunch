@@ -137,7 +137,7 @@ const whyCorewayReasons = [
                     description="We leverage the latest technologies and frameworks to build robust, scalable, and secure solutions. Our expertise spans across frontend, backend, databases, cloud infrastructure, IoT, and security."
                     primaryButton={{ label: "Discuss Your Tech Stack", href: "/contact" }}
                     secondaryButton={{ label: "View Our Projects", href: "/case-studies" }}
-                    imageSrc="/assets/herosection/ai-intergation-Photoroom.png"
+                    imageSrc="/assets/images/technologies.png"
                     imageAlt="Technology Stack"
                 />
 

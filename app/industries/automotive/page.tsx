@@ -73,7 +73,7 @@ export default function AutomotivePage() {
             title2={automotiveData.hero.title2}
             subtitle={automotiveData.hero.subtitle}
             buttons={automotiveData.hero.buttons}
-            img={automotiveData.hero.img}
+            img="/assets/images/automotive.png"
           />
 
           <SubHeader title="Automotive" items={subHeaderItems} />

@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import aboutUsData from '@/data/aboutUsData.json';
 import faqData from '@/data/faq.json';
 import AboutHero from '@/components/about/AboutHero';
+import WhyHero from "@/components/about/WhyHero";
 
 
 export default function AboutUs() {
@@ -27,7 +28,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <main>
-        <AboutHero
+        <WhyHero
           title={aboutUsData.hero.title}
           title2={aboutUsData.hero.title2}
           subtitle={aboutUsData.hero.subtitle}

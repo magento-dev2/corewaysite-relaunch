@@ -210,7 +210,12 @@ export default function CompanyHero({
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
             <img
               src="/assets/images/company.png"
-              className="w-full max-w-4xl rounded-lg shadow-lg"
+              className=" rounded-lg shadow-lg"
+               style={{
+    width: "auto",
+    height: "auto",
+    maxWidth: "100%", // prevents overflow on small screens
+  }}
             />
           </div>
         </div>

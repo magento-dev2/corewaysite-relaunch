@@ -115,7 +115,7 @@ export default function AIDataPage() {
                     description="Transform your data infrastructure with our AI-powered engineering services. From dataset management to intelligent automation, we help you unlock the full potential of your data assets with cutting-edge technology."
                     primaryButton={{ label: "Start Your Project", href: "/contact" }}
                     secondaryButton={{ label: "View Our Work", href: "/case-studies" }}
-                    imageSrc="/assets/herosection/ai-intergation-Photoroom.png"
+                    imageSrc="/assets/images/aisec.png"
                     imageAlt="AI & Data Engineering"
                 />
 

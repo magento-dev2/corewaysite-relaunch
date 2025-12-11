@@ -78,7 +78,7 @@ export default function FoodBeveragePage() {
             title2={foodBeverageData.hero.title2}
             subtitle={foodBeverageData.hero.subtitle}
             buttons={foodBeverageData.hero.buttons}
-            img={foodBeverageData.hero.img}
+            img="/assets/images/food-beverage.png"
           />
 
           <SubHeader title="Food & Beverage" items={subHeaderItems} />

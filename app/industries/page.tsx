@@ -121,7 +121,7 @@ export default function IndustriesPage() {
                     description="We understand that every industry has unique challenges and requirements. Our specialized solutions are designed to address the specific needs of your sector, leveraging industry best practices and cutting-edge technology."
                     primaryButton={{ label: "Discuss Your Industry", href: "/contact" }}
                     secondaryButton={{ label: "View Success Stories", href: "/case-studies" }}
-                    imageSrc="/assets/herosection/digital.png"
+                    imageSrc="/assets/images/industries.png"
                     imageAlt="Industry Solutions"
                 />
 

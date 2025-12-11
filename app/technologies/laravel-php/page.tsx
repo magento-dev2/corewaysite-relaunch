@@ -77,8 +77,8 @@ export default function LaravelPHPTechnologyPage() {
             title2={laravelData.hero.title2}
             subtitle={laravelData.hero.subtitle}
             buttons={laravelData.hero.buttons}
-            img={laravelData.hero.img}
-          />
+ img="/assets/images/php.png"
+           />
 
           <SubHeader title="Laravel / PHP" items={subHeaderItems} />
 

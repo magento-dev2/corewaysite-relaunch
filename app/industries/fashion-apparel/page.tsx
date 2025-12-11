@@ -78,7 +78,7 @@ export default function FashionApparelPage() {
             title2={fashionApparelData.hero.title2}
             subtitle={fashionApparelData.hero.subtitle}
             buttons={fashionApparelData.hero.buttons}
-            img={fashionApparelData.hero.img}
+            img="/assets/images/fashion-apparel.png"
           />
 
           <SubHeader title="Fashion & Apparel" items={subHeaderItems} />

@@ -77,7 +77,8 @@ export default function CloudStorageTechnologyPage() {
             title2={storageData.hero.title2}
             subtitle={storageData.hero.subtitle}
             buttons={storageData.hero.buttons}
-            img={storageData.hero.img}
+            
+            img="/assets/images/cloud-storage.png"
           />
 
           <SubHeader title="Cloud Storage" items={subHeaderItems} />

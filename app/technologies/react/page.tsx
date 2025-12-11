@@ -77,7 +77,7 @@ export default function ReactTechnologyPage() {
             title2={reactData.hero.title2}
             subtitle={reactData.hero.subtitle}
             buttons={reactData.hero.buttons}
-            img={reactData.hero.img}
+            img="/assets/images/react.png"
           />
 
           <SubHeader title="React Development" items={subHeaderItems} />

@@ -78,7 +78,7 @@ export default function FurnitureHomeDecorPage() {
             title2={furnitureHomeDecorData.hero.title2}
             subtitle={furnitureHomeDecorData.hero.subtitle}
             buttons={furnitureHomeDecorData.hero.buttons}
-            img={furnitureHomeDecorData.hero.img}
+            img="/assets/images/furniture.png"
           />
 
           <SubHeader title="Furniture & Home Decor" items={subHeaderItems} />

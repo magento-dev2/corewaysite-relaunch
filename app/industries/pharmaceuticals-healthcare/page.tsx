@@ -78,7 +78,7 @@ export default function PharmaceuticalsHealthcarePage() {
             title2={healthcareData.hero.title2}
             subtitle={healthcareData.hero.subtitle}
             buttons={healthcareData.hero.buttons}
-            img={healthcareData.hero.img}
+            img="/assets/images/pharmaceuticals-healthcare.png"
           />
 
           <SubHeader title="Pharmaceuticals & Healthcare" items={subHeaderItems} />

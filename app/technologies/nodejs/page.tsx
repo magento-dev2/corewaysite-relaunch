@@ -77,7 +77,7 @@ export default function NodeJSTechnologyPage() {
             title2={nodeData.hero.title2}
             subtitle={nodeData.hero.subtitle}
             buttons={nodeData.hero.buttons}
-            img={nodeData.hero.img}
+            img="/assets/images/nodejs.png"
           />
 
           <SubHeader title="Node.js Development" items={subHeaderItems} />

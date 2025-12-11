@@ -77,7 +77,7 @@ export default function DatabaseTechnologyPage() {
             title2={databaseData.hero.title2}
             subtitle={databaseData.hero.subtitle}
             buttons={databaseData.hero.buttons}
-            img={databaseData.hero.img}
+            img="/assets/images/database.png"
           />
 
           <SubHeader title="Databases" items={subHeaderItems} />

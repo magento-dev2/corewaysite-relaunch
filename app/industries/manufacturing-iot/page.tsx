@@ -71,7 +71,7 @@ export default function ManufacturingIoT() {
           title2={manufacturingIoTData.hero.title2}
           subtitle={manufacturingIoTData.hero.subtitle}
           buttons={manufacturingIoTData.hero.buttons}
-          img={manufacturingIoTData.hero.img}
+          img="/assets/images/Manufacturing.png"
         />
 
         <SubHeader title="Manufacturing & IoT" items={subHeaderItems} />
