@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "DevOps Infrastructure for",
-    "title2": " Modern SaaS",
+    "title": "Cloud-Native",
+    "title2": " SaaS DevOps",
     "subtitle": "Enterprise-grade cloud infrastructure and DevOps automation for rapid deployment and continuous delivery.",
     "buttons": [
       { "label": "Explore Solutions", "link": "#features" },

@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Security Tools",
-    "title2": "Fail2Ban, UFW & CrowdSec",
+    "title": "Cybersecurity Tools",
+    "title2": "Integration",
     "img": "/assets/herosection/security-Photoroom.png",
     "subtitle": "Comprehensive server security implementation with intrusion prevention, firewall configuration, and threat intelligence. Protect your infrastructure from attacks.",
     "buttons": [

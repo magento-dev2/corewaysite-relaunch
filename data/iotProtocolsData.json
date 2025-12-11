@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "IoT Protocols",
-    "title2": "MQTT & WebSockets",
+    "title": "Next-Gen",
+    "title2": "IoT Connectivity",
     "img": "/assets/herosection/iot-Photoroom.png",
     "subtitle": "Real-time communication protocols for IoT devices, messaging systems, and live applications. Expert implementation of MQTT, WebSockets, and IoT connectivity.",
     "buttons": [

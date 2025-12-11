@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Cloud Storage Solutions",
-    "title2": "AWS S3 & Alternatives",
+    "title": "Cloud Storage Solutions ",
+    "title2": "AWS S3",
     "img": "/assets/herosection/digital.png",
     "subtitle": "Scalable, cost-effective object storage with AWS S3, Wasabi, MinIO, and Cloudflare R2. Expert implementation and optimization.",
     "buttons": [
