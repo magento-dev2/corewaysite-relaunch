@@ -63,7 +63,9 @@ export default function BusinessValue({ data }: { data: any }) {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 blur-3xl"></div>
             <img
-              src={data.impact?.image || "/assets/home/coreway-ai.png"}
+              // src={data.impact?.image || "/assets/home/coreway-ai.png"}
+                                            src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${data.impact?.image}`}
+
               alt="Impact"
               className="relative rounded-3xl shadow-2xl border border-purple-500/20 w-full object-cover"
             />

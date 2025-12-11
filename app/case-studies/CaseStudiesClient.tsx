@@ -108,7 +108,7 @@ export default function CaseStudiesClient({ caseStudies }: { caseStudies: CaseSt
                                     <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all hover:scale-105 h-full flex flex-col">
                                         <div className="relative aspect-video overflow-hidden">
                                             <img
-                                                src={study.imageUrl}
+  src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${study.imageUrl}`}
                                                 alt={study.title}
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                             />

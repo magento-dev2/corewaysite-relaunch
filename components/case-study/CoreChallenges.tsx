@@ -55,7 +55,9 @@ export default function CoreChallenges({ data }: { data: any }) {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 blur-3xl"></div>
             <img
-              src={data.challenge?.image || "/assets/home/coreway-ai.png"}
+              // src={data.challenge?.image || "/assets/home/coreway-ai.png"}
+                              src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${data.challenge?.image}`}
+
               alt="Challenge"
               className="relative rounded-2xl shadow-2xl border border-purple-500/20 w-full object-cover"
             />

@@ -129,7 +129,7 @@ const secondLine = words.slice(2).join(" ");      // rest
             <div ref={imageRef} className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 blur-3xl"></div>
               <img
-                src={data.imageUrl}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${data.imageUrl}`}
                 alt={data.title}
                 className="relative rounded-2xl shadow-2xl border border-purple-500/20 w-full object-cover"
               />

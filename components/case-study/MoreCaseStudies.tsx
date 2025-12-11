@@ -49,7 +49,8 @@ export default function MoreCaseStudies({ currentSlug }: { currentSlug: string }
                 <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-500/30 hover:shadow-2xl transition-all duration-300 border border-purple-500/30 h-full flex flex-col">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
-                      src={study.imageUrl}
+  src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${study.imageUrl}`}
+                      
                       alt={study.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

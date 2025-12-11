@@ -86,7 +86,9 @@ export default function SolutionScope({ data }: { data: any }) {
             className="mt-20"
           >
             <img
-              src={data.solution.image}
+              // src={data.solution.image}
+                              src={`${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}/${data.solution?.image}`}
+              
               alt="Solution Architecture"
               className="w-full rounded-3xl shadow-2xl border border-purple-500/20"
             />

@@ -21,8 +21,8 @@ export default function ServicesGSAP() {
 
   const services = [
     {
-      imagePath: "/assets/home/energy.png", // Updated path
-      staticPath: "/assets/home/energy.png",
+      imagePath: "/assets/home/architec-sample.png", // Updated path
+      staticPath: "/assets/home/architec-sample.png",
       ariaLabel: "Blueprint showing system architecture with connected nodes and grid structure",
       title: t('services.architect.title'),
       subtitle: t('services.architect.subtitle'),
@@ -30,8 +30,8 @@ export default function ServicesGSAP() {
       items: t('services.architect.items') as string[],
     },
     {
-      imagePath: "/assets/home/instruction.png", // Updated path
-      staticPath: "/assets/home/instruction.png",
+      imagePath: "/assets/home/build_sample.png", // Updated path
+      staticPath: "/assets/home/build_sample.png",
       ariaLabel: "Code brackets with animated lines representing software development",
       title: t('services.build.title'),
       subtitle: t('services.build.subtitle'),
@@ -39,8 +39,8 @@ export default function ServicesGSAP() {
       items: t('services.build.items') as string[],
     },
     {
-      imagePath: "/assets/home/rpa.png", // Updated path
-      staticPath: "/assets/home/rpa.png",
+      imagePath: "/assets/home/automation_sample.png", // Updated path
+      staticPath: "/assets/home/automation_sample.png",
       ariaLabel: "Infinity loop symbol representing continuous automation and optimization",
       title: t('services.automate.title'),
       subtitle: t('services.automate.subtitle'),
@@ -222,14 +222,14 @@ export default function ServicesGSAP() {
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div key={index} className="group relative perspective-1000">
-              <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.03] hover:bg-white/10">
+              <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1] hover:bg-white/10">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
-                    <div className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6  overflow-hidden">
+                    <div className="w-20 h-20 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6  overflow-hidden">
                       <img
                         src={service.imagePath}
                         alt={service.ariaLabel}
-                        className="w-full h-full object-contain"
+                        className="w-12 h-full object-contain"
                       />
                     </div>
 

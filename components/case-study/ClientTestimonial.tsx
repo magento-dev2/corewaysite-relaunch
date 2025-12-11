@@ -31,7 +31,7 @@ export default function ClientTestimonial({ data }: { data: any }) {
 
 
                         <p className="text-purple-400 font-bold text-xl mb-6">
-                            {data.testimonial.author}
+    {data.testimonial.position || "Team Member"}
                         </p>
 
                         <Quote className="text-purple-500 mx-auto mb-6" size={44} />
@@ -40,9 +40,7 @@ export default function ClientTestimonial({ data }: { data: any }) {
                             {data.testimonial.quote}
                         </blockquote>
 
-                      <p className="text-purple-400 text-sm">
-    {data.testimonial.position || "Team Member"}
-</p>
+        
 
                     </div>
                 </motion.div>
