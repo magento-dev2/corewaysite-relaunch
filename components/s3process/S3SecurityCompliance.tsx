@@ -45,36 +45,36 @@ const securityFeatures = [
 export default function S3SecurityCompliance() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const badges = gsap.utils.toArray<HTMLElement>('.security-badge');
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     const badges = gsap.utils.toArray<HTMLElement>('.security-badge');
 
-      badges.forEach((badge, index) => {
-        gsap.from(badge, {
-          opacity: 0,
-          scale: 0,
-          rotation: 180,
-          scrollTrigger: {
-            trigger: badge,
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
-          }
-        });
-      });
+  //     badges.forEach((badge, index) => {
+  //       gsap.from(badge, {
+  //         opacity: 0,
+  //         scale: 0,
+  //         rotation: 180,
+  //         scrollTrigger: {
+  //           trigger: badge,
+  //           start: "top 90%",
+  //           end: "top 60%",
+  //           scrub: 1,
+  //         }
+  //       });
+  //     });
 
-      gsap.to(".shield-pulse", {
-        scale: 1.2,
-        opacity: 0.5,
-        duration: 2,
-        repeat: -1,
-        ease: "power1.inOut",
-        stagger: 0.3
-      });
-    }, sectionRef);
+  //     gsap.to(".shield-pulse", {
+  //       scale: 1.2,
+  //       opacity: 0.5,
+  //       duration: 2,
+  //       repeat: -1,
+  //       ease: "power1.inOut",
+  //       stagger: 0.3
+  //     });
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative overflow-hidden">

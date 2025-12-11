@@ -1,8 +1,12 @@
+
 import { prisma } from '@/lib/prisma';
 import { ArrowLeft, Calendar, User, Clock, Facebook, Twitter, Linkedin, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import BlockRenderer from '@/components/blog/BlockRenderer';
+import CalendlyCTA from '../CalendlyCTA';
+
+
 
 export const revalidate = 60;
 
@@ -86,7 +90,12 @@ async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: any
   return blogs;
 }
 
+
+
+ 
+
 export default async function BlogDetail({ params }: { params: Promise<{ slug: string }> }) {
+  
   const { slug } = await params;
   const blog = await getBlog(slug);
 
@@ -104,8 +113,8 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
         {blog.coverImage && (
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${blog.coverImage.startsWith('assets/') ? `/${blog.coverImage}` : blog.coverImage})` 
+            style={{
+              backgroundImage: `url(${blog.coverImage.startsWith('assets/') ? `/${blog.coverImage}` : blog.coverImage})`
             }}
           />
         )}
@@ -170,20 +179,14 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
 
             {/* Newsletter Subscription */}
             <div className="mt-16 bg-orange-50 border-l-4 border-purple-600 p-8 rounded-r-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Subscribe to Our Newsletter</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Help?</h3>
               <p className="text-gray-700 mb-6">
-                Get the latest insights on technology, development, and digital innovation delivered to your inbox.
-              </p>
-              <form className="flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none"
-                />
-                <button type="submit" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
-                  Subscribe
-                </button>
-              </form>
+                  Get expert assistance with your project and technology needs.
+                </p>
+                <Link href="/contact" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                  Contact Us
+                </Link>
+              
             </div>
           </article>
 
@@ -224,15 +227,9 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
               )}
 
               {/* CTA Card */}
-              <div className="bg-gradient-to-br from-purple-600 to-orange-700 rounded-lg p-6 text-white">
-                <h3 className="text-xl font-bold mb-3">Need Help?</h3>
-                <p className="text-orange-50 mb-4 text-sm">
-                  Get expert assistance with your project and technology needs.
-                </p>
-                <Link href="/contact" className="block w-full px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-center">
-                  Contact Us
-                </Link>
-              </div>
+              <CalendlyCTA />
+
+
             </div>
           </aside>
         </div>

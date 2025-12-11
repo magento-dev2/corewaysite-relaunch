@@ -203,7 +203,10 @@ const whyCorewayReasons = [
                     description="Our team of experts is ready to help you choose the right solution and create a custom implementation plan tailored to your business needs."
                     primaryButtonText="Schedule Consultation"
                     secondaryButtonText="View Case Studies"
-                    footerText="Free consultation • Expert guidance • Proven results"
+                    footerText=" • Free consultation • Expert guidance • Proven results"
+                    primaryButtonlink="/contact"
+                    secondaryButtonlink="/case-studies"
+            
                 />
             </main>
         </div>

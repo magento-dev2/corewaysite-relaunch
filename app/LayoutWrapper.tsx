@@ -21,10 +21,11 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
 
   const hideHeaderFooterRoutes = [
     "/admin",
+    "/contact"
   ];
 
   const hideFooter = hideFooterRoutes.includes(pathname);
-  const hideHeaderFooter = pathname.startsWith("/admin");
+  const hideHeaderFooter = hideHeaderFooterRoutes.includes(pathname);
 
   return (
     <LanguageProvider>

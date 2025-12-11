@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/about/Breadcrumb";
 import LegalPageRenderer from "@/components/legal/LegalPageRenderer";
-import privacyData from "../../data/privacyPolicyData.json";
+import privacyData from "../../data/refundPolicyData.json";
 
 export default function PrivacyPolicyPage() {
   const siteUrl = "https://www.corewaysolution.com";
@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[
-                { label: "Privacy Policy" },
+                { label: "Refund Policy" },
               ]}
             />
           </div>
@@ -21,7 +21,6 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <LegalPageRenderer
               title={privacyData.title}
-              // lastUpdated={privacyData?.lastUpdated}
               sections={privacyData.sections}
             />
           </div>

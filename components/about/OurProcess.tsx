@@ -110,7 +110,7 @@ export default function OurProcess() {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <svg
             className="mx-auto w-full max-w-4xl h-auto opacity-10"
             viewBox="0 0 800 200"
@@ -131,7 +131,7 @@ export default function OurProcess() {
               </linearGradient>
             </defs>
           </svg>
-        </div>
+        </div> */}
       </div>
     </section>
   );

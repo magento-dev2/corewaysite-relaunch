@@ -2,12 +2,17 @@
 
 import { useState } from "react";
 import ContactForm from "@/components/contact/ContactForm";
+import ContactNavbar from "./ContactNavbar";
 
 export default function ContactSection() {
   const [tab, setTab] = useState("business");
 
   return (
-    <section className="w-full bg-[#0E0918] py-20 px-4">
+    <>
+    <ContactNavbar/>
+    <section className="w-full bg-[#0E0918] pt-20 ">
+
+          
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         {/* LEFT SECTION – Testimonials + Stats */}
@@ -91,5 +96,6 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

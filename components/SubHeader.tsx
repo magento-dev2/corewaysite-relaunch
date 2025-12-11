@@ -104,8 +104,17 @@ export default function SubHeader({ title, items }: SubHeaderProps) {
                                 {activeSection === item.sectionId && (
                                     <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500 rounded-full" />
                                 )}
+           
                             </button>
                         ))}
+      <a
+  href="/contact"
+  className="group whitespace-nowrap cursor-pointer text-sm font-medium transition-colors relative pb-1 text-gray-400 hover:text-white"
+>
+  Contact
+  {/* <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span> */}
+</a>
+
                     </div>
                 </div>
             </div>

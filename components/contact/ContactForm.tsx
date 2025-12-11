@@ -190,8 +190,20 @@ export default function ContactForm() {
                   placeholder="Email *"
                 />
               </div>
+ <div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  placeholder="Phone"
+                />
+              </div>
 
-              <div>
+              {/* <div>
                 <input
                   type="text"
                   id="designation"
@@ -201,11 +213,11 @@ export default function ContactForm() {
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                   placeholder="Designation"
                 />
-              </div>
+              </div> */}
             </div>
 
             {/* Row 3: Phone & Country */}
-            <div className="grid md:grid-cols-2 gap-5">
+            {/* <div className="grid md:grid-cols-2 gap-5">
               <div>
                 <input
                   type="tel"
@@ -244,7 +256,7 @@ export default function ContactForm() {
                   <option value="Other">Other</option>
                 </select>
               </div>
-            </div>
+            </div> */}
 
             {/* Message */}
             <div>

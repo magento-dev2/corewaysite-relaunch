@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ContactInfo {
-  company: string;
+  company?: string;
   email?: string;
   website?: string;
   dpo?: string;
@@ -16,7 +16,7 @@ interface ContactInfo {
 
 interface Section {
   id: number;
-  title: string;
+  title?: string;
   content?: string[];
   list?: string[];
   additionalContent?: string[];
@@ -31,9 +31,9 @@ interface Section {
 }
 
 interface LegalPageRendererProps {
-  title: string;
-  lastUpdated: string;
-  sections: Section[];
+  title?: string;
+  lastUpdated?: string;
+  sections?: Section[];
 }
 
 export default function LegalPageRenderer({
@@ -88,10 +88,10 @@ export default function LegalPageRenderer({
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
         {title}
       </h1>
-      <p className="text-white/60 text-lg mb-12">Last Updated: {lastUpdated}</p>
+      {/* <p className="text-white/60 text-lg mb-12">Last Updated: {lastUpdated}</p> */}
 
       <div className="space-y-12">
-        {sections.map((section) => (
+        {sections?.map((section) => (
           <section key={section.id} ref={addToRefs}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               {section.title}

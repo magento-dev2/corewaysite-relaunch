@@ -58,10 +58,10 @@ export default function PortfolioPage() {
             />
 
             {/* Horizontal Scroll Portfolio */}
-            <PortfolioScroll
+            {/* <PortfolioScroll
                 projects={projects}
                 onProjectClick={handleProjectClick}
-            />
+            /> */}
 
             <PortfolioCategory
             />

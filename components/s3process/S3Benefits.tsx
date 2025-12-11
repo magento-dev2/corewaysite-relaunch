@@ -51,45 +51,45 @@ const benefits = [
 export default function S3Benefits() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray<HTMLElement>('.benefit-card');
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     const cards = gsap.utils.toArray<HTMLElement>('.benefit-card');
 
-      cards.forEach((card, index) => {
-        gsap.from(card, {
-          opacity: 0,
-          scale: 0.5,
-          rotation: 180,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            end: "top 50%",
-            scrub: 1,
-          }
-        });
+  //     cards.forEach((card, index) => {
+  //       gsap.from(card, {
+  //         opacity: 0,
+  //         scale: 0.5,
+  //         rotation: 180,
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //           end: "top 50%",
+  //           scrub: 1,
+  //         }
+  //       });
 
-        card.addEventListener('mouseenter', () => {
-          gsap.to(card.querySelector('.icon-wrapper'), {
-            rotation: 360,
-            scale: 1.2,
-            duration: 0.5,
-            ease: "back.out(1.7)"
-          });
-        });
+  //       card.addEventListener('mouseenter', () => {
+  //         gsap.to(card.querySelector('.icon-wrapper'), {
+  //           rotation: 360,
+  //           scale: 1.2,
+  //           duration: 0.5,
+  //           ease: "back.out(1.7)"
+  //         });
+  //       });
 
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card.querySelector('.icon-wrapper'), {
-            rotation: 0,
-            scale: 1,
-            duration: 0.5,
-            ease: "back.out(1.7)"
-          });
-        });
-      });
-    }, sectionRef);
+  //       card.addEventListener('mouseleave', () => {
+  //         gsap.to(card.querySelector('.icon-wrapper'), {
+  //           rotation: 0,
+  //           scale: 1,
+  //           duration: 0.5,
+  //           ease: "back.out(1.7)"
+  //         });
+  //       });
+  //     });
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-[#0E0918] to-[#1a0f2b] relative overflow-hidden">

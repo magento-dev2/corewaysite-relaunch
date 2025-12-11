@@ -114,8 +114,6 @@ html.lenis {
 }
 
 @media (min-width: 1024px) {
-  .page-content {
-    padding-top: 128px; /* Desktop: pt-32 equivalent */
-  }
+ 
 }
 

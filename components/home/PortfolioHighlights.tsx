@@ -141,31 +141,39 @@ export default function PortfolioHighlights() {
           {/* RIGHT SIDE – Stats & Impact */}
           <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-6 md:gap-y-4">
             {/* Stats Cards */}
-            <AnimatePresence mode="wait">
-              {current.stats.slice(0, 4).map((stat, idx) => (
-                <motion.div
-                  key={`${current.id}-${idx}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="relative group/stat"
-                >
-                  <div className={`absolute -inset-1 bg-gradient-to-br ${current.gradient} opacity-0 group-hover/stat:opacity-30 blur-xl transition-all duration-500 rounded-2xl`} />
-                  <div className="relative h-[120px] md:h-[130px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 md:p-5 group-hover/stat:border-white/20 transition-all duration-300 flex flex-col justify-center items-center text-center">
-                    {/* Optional top gradient icon */}
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${current.gradient} opacity-20 mb-2`} />
-                    {/* Value */}
-                    <p className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${current.gradient} bg-clip-text text-transparent`}>
-                      {stat.value}
-                    </p>
-                    {/* Label */}
-                    <p className="text-gray-400 text-sm font-medium">{stat.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
+  <AnimatePresence mode="wait">
+    {current.stats.slice(0, 4).map((stat, idx) => (
+      <motion.div
+        key={`${current.id}-${idx}`}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ delay: idx * 0.1 }}
+        whileHover={{ scale: 1.05, y: -5 }}
+        className="relative group/stat w-full"
+      >
+        {/* Hover Gradient */}
+        <div className={`absolute -inset-1 bg-gradient-to-br ${current.gradient} opacity-0 group-hover/stat:opacity-30 blur-xl transition-all duration-500 rounded-2xl`} />
+
+        {/* Card */}
+        <div className="relative h-[150px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 md:p-5 group-hover/stat:border-white/20 transition-all duration-300 flex flex-col justify-center items-center text-center w-full">
+          {/* Icon */}
+          <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${current.gradient} opacity-20 mb-2`} />
+
+          {/* Value */}
+          <p className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${current.gradient} bg-clip-text text-transparent`}>
+            {stat.value}
+          </p>
+
+          {/* Label */}
+          <p className="text-gray-400 text-sm font-medium">{stat.label}</p>
+        </div>
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</div>
+
 
 
             {/* Impact Box */}

@@ -17,15 +17,18 @@ export default function ClientTestimonial({ data }: { data: any }) {
                 >
                     <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-10 text-center shadow-2xl">
                         {/* Avatar */}
-                        {data.testimonial.image && (
-                            <div className="w-28 h-28 rounded-full border-4 border-purple-500/30 overflow-hidden shadow-xl mx-auto mb-6">
-                                <img
-                                    src={data.testimonial.image}
-                                    alt={data.testimonial.author}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        )}
+                        <div className="w-28 h-28 rounded-full border-4 border-purple-500/30 overflow-hidden shadow-xl mx-auto mb-6">
+                            <img
+                                src={
+                                    data.testimonial.image
+                                        ? data.testimonial.image
+                                        : "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                                }
+                                alt={data.testimonial.author || "Default Author"}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+
 
                         <p className="text-purple-400 font-bold text-xl mb-6">
                             {data.testimonial.author}
@@ -37,11 +40,10 @@ export default function ClientTestimonial({ data }: { data: any }) {
                             {data.testimonial.quote}
                         </blockquote>
 
-                        {data.testimonial.position && (
-                            <p className="text-purple-400 text-sm">
-                                {data.testimonial.position}
-                            </p>
-                        )}
+                      <p className="text-purple-400 text-sm">
+    {data.testimonial.position || "Team Member"}
+</p>
+
                     </div>
                 </motion.div>
             </div>

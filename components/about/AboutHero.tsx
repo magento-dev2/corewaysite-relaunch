@@ -183,7 +183,7 @@ export default function FurnitureHero({
               {buttons.map((b, i) => (
                 <a
                   key={i}
-                  href={b.link}
+                  href="/solutions"
                   className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${
                     i === 0
                       ? "bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:scale-105"
@@ -200,7 +200,7 @@ export default function FurnitureHero({
           {/* RIGHT IMAGE */}
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
             <img 
-            src="/assets/herosection/ai-counsting-Photoroom.png" 
+            src="/assets/images/about.png" 
             className="w-full max-w-4xl rounded-lg shadow-lg" />
           </div>
         </div>

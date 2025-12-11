@@ -51,7 +51,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className='overflow-x-hidden' >
+    <div className='overflow-x-hidden ' >
       <Hero />
 
       <ScrollFadeIn direction="up">

@@ -1,0 +1,46 @@
+{
+   "title": "Refund Policy",
+  "sections": [
+    {
+      "id": 1,
+    
+      "content": [
+        "Coreway Solution believes in helping its customers as much as possible, and has therefore a considerate cancellation policy. We, as a merchant, provide a service that comes in the form of services. As such, our offering is not a tangible product that can be returned for a refund. It can be used immediately upon receipt; there is no product to return."
+      ],
+      "list": [
+        "Coreway Solution undertakes all projects under the purview of Milestones that dictate the direction / road-map followed by the project.",
+        "All Web Design/ Development/ Applications are carried out and accepted upon a complete analysis and creation of a complete scope document, in order to make sure that teams have complete understanding of the work needed to be done, elimination possibilities of a project cancellation / reversal / dispute.",
+        "Since Coreway Solution and the Clientele realize that there is work involved in achieving every milestone of the project and completion of every module, a refund would not be possible for the work already completed.",
+        "Coreway Solution makes sure that in case of a project termination on a mutual basis, the client has control of all the work done till that date and the money, if paid for further development, is returned.",
+        "Coreway Solution also respects a decision made by a client to work with a different provider within 48 hours of the project initiation. In such a scenario we would refund the amount for the project that has been paid till date except the fees of payment gateway.",
+        "No cancellations are entertained for the Services that the Coreway Solution marketing team has offered on special occasions with great discount. These are limited occasion offers and therefore cancellations are not possible.",
+        "Development Services and Consulting – if the services opted by you are T&M (Time & Material) based services or Hire Dedicated Developer service, these are non-refundable."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cancellation Policy",
+      "content": [
+        "If in case, unfortunately you need to cancel the project, than simply write down the email at cancel@corewaysolution.com. Your request will not be considered valid unless and until you receive confirmation from our side."
+      ],
+      "list": [
+        "We take minimum 2 weeks to process the cancellation request.",
+        "Cancellation of project is based on service level agreement, as agreed with you while starting the project.",
+        "Once project is released for beta delivery, cannot be canceled.",
+        "In event of cancellation of project mutually decided between you & Coreway Solution, you have to pay for efforts invested in project up to date of cancellation.",
+        "Source Code, Design or any other material related to project will not be delivered if payment is not settled by you."
+      ],
+      "contact": {
+        "email": "cancel@corewaysolution.com",
+        "purpose": "Project cancellation requests"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Delivery Policy",
+      "content": [
+        "We are in service business and doesn't have tangible item to deliver. So there is no chance of missing or misplacement of any item. Our deliverables are in form of designs file, software code & compiled application. These deliverable are delivered to you in form of electronic files using our collaboration tool or email. Thereafter you have to save a copy of delivered electronic files on your server or on any storage media. Up-to 30 days from delivery date Coreway Solution can re-deliver the electronic files to you, thereafter Coreway Solution doesn't owe the responsibility."
+      ]
+    }
+  ]
+}

@@ -209,7 +209,7 @@ export default function CompanyHero({
           {/* RIGHT IMAGE */}
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
             <img
-              src="/assets/herosection/startup.png"
+              src="/assets/images/company.png"
               className="w-full max-w-4xl rounded-lg shadow-lg"
             />
           </div>
