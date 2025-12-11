@@ -51,9 +51,14 @@ export default function HeroSection({ data }: { data: any }) {
     return () => ctx.revert()
   }, [])
 
+  const words = data.title.split(" ");
+const firstLine = words.slice(0, 2).join(" ");   // first 2 words
+const secondLine = words.slice(2).join(" ");      // rest
+
+
   return (
     <>
-      <div className="container mx-auto px-6 max-w-7xl pt-8 pb-4">
+      <div className="container mx-auto px-6 max-w-7xl pt-24  ">
         <Link href="/case-studies">
           <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -88,27 +93,14 @@ export default function HeroSection({ data }: { data: any }) {
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h1
-                  ref={titleRef}
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                >
-                  {data.title.split(' ').map((word: string, index: number) => {
-                    // Highlight specific words in purple
-                    const highlightWords = ['Geliyoo', 'Turkey', 'Digital', 'Future', 'Search']
-                    const isHighlight = highlightWords.some(hw => word.includes(hw))
-                    return (
-                      <span key={index}>
-                        {isHighlight ? (
-                          <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-                            {word}
-                          </span>
-                        ) : (
-                          word
-                        )}{' '}
-                      </span>
-                    )
-                  })}
-                </h1>
+               <h1
+  ref={titleRef}
+  className="text-5xl  font-bold text-white mb-6 leading-tight"
+>
+  <span className="block">{firstLine}</span>
+  <span className="block text-purple-500">{secondLine}</span>
+</h1>
+
                 <p
                   ref={subtitleRef}
                   className="text-xl md:text-2xl text-gray-400 leading-relaxed"

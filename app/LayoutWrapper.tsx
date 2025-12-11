@@ -20,13 +20,14 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   ];
 
   const hideHeaderFooterRoutes = [
-    "/admin",
     "/contact"
   ];
 
   const hideFooter = hideFooterRoutes.includes(pathname);
-  const hideHeaderFooter = hideHeaderFooterRoutes.includes(pathname);
-
+const hideHeaderFooter =
+  pathname.startsWith("/admin") ||
+  hideHeaderFooterRoutes.includes(pathname);
+  
   return (
     <LanguageProvider>
       <RecaptchaProvider>
