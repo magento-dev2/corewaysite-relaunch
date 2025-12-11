@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Python Development",
-    "title2": "Services",
+    "title": "Python Application",
+    "title2": " Solutions",
     "img": "/assets/herosection/digital.png",
     "subtitle": "Build powerful, scalable applications with Python. Expert development for web APIs, data science, machine learning, and automation solutions.",
     "buttons": [

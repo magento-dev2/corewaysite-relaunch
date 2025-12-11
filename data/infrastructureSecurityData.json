@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Secure Infrastructure",
-    "title2":" Automation with AI",
+    "title": "AI Security",
+    "title2":" Automation",
     "subtitle": "Build self-healing, AI-powered infrastructure with automated security controls, threat detection, and compliance monitoring. Deploy bulletproof systems that scale securely across cloud environments.",
     "buttons": [
       { "label": "Secure Your Infrastructure", "link": "#features" },
