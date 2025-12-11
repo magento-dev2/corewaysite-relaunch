@@ -249,7 +249,7 @@ export default function TechHero({ title, subtitle, buttons, title2, img }: Dash
               // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
               src={img}
               alt="Hero Image"
-              className="w-full max-w-4xl rounded-lg shadow-lg"
+              className=" rounded-lg shadow-lg"
             />
           </div>
 

@@ -109,7 +109,7 @@ export default function InsightsPage() {
                     description="Discover how we've helped businesses transform through technology. From detailed case studies to client testimonials, explore the impact of our solutions across industries and technologies."
                     primaryButton={{ label: "Start Your Project", href: "/contact" }}
                     secondaryButton={{ label: "Talk to Our Team", href: "/contact" }}
-                    imageSrc="/assets/herosection/digital.png"
+                    imageSrc="/assets/images/insights.png"
                     imageAlt="Success Stories"
                 />
 

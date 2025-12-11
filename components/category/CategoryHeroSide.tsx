@@ -99,14 +99,15 @@ export default function CategoryHeroSide({
                         className="flex-1 flex justify-center md:justify-end"
                     >
                         <div className="relative w-full max-w-2xl">
-                            <Image
+                            <img src={imageSrc}/>
+                            {/* <Image
                                 src={imageSrc}
                                 alt={imageAlt}
                                 width={800}
                                 height={600}
                                 className="w-full h-auto rounded-lg"
                                 priority
-                            />
+                            /> */}
                         </div>
                     </motion.div>
                 </div>

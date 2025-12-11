@@ -138,9 +138,9 @@ export default function PortfolioHero({ title, title2, subtitle, buttons }: Port
                     {/* RIGHT IMAGE */}
                     <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
                         <img
-                            src="/assets/herosection/digital.png"
+                            src="/assets/images/portfolio.png"
                             alt="Portfolio Visual"
-                            className="w-full max-w-4xl rounded-lg shadow-lg"
+                            className=" rounded-lg shadow-lg"
                         />
                     </div>
 
