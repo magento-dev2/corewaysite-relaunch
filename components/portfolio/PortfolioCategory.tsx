@@ -194,7 +194,7 @@ function CategoryScroller({ category }: { category: { language: string; projects
     if (!container || !row) return;
 
     function initScroll() {
-      let totalWidth = row.scrollWidth - window.innerWidth;
+      let totalWidth = row!.scrollWidth - window.innerWidth;
 
       // 🔥 FIX FOR 1–2 IMAGES → artificially increase scroll space
       if (itemCount <= 2) {
