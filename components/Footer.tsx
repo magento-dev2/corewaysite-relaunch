@@ -19,13 +19,10 @@ const footerLinks = {
     // { name: "GDPR", url: "/gdpr-compliance" },
   ],
   Business: [
-    { name: "info@corewaysolution.com", },
-    
-   
+    { name: "info@corewaysolution.com", url: "mailto:info@corewaysolution.com" },
   ],
   Career: [
-    { name: "career@corewaysolution.com",  },
-
+    { name: "career@corewaysolution.com", url: "mailto:career@corewaysolution.com" },
   ],
 };
 
