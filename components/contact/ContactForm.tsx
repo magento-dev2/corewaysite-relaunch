@@ -22,18 +22,25 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
     const [open, setOpen] = useState(false);
-      const boxRef = useRef(null);
+const boxRef = useRef<HTMLDivElement>(null);
 
   // Close if clicked outside
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (boxRef.current && !boxRef.current.contains(e.target)) {
-        setOpen(false);
-      }
+useEffect(() => {
+  function handleClickOutside(e: Event) {
+    if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
+      setOpen(false);
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }
+
+  document.addEventListener("mousedown", handleClickOutside);
+  document.addEventListener("touchstart", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+    document.removeEventListener("touchstart", handleClickOutside);
+  };
+}, []);
+
 
   const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
 
