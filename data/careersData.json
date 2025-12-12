@@ -54,23 +54,13 @@
     "title": "Benefits & Perks",
     "description": "We offer comprehensive benefits designed to support your health, happiness, and professional growth.",
     "items": [
-      {
-        "category": "Health & Wellness",
-        "benefits": [
-          "Comprehensive health insurance",
-          "Dental and vision coverage",
-          "Mental health support programs",
-          "Gym membership reimbursement",
-          "Annual wellness allowance"
-        ]
-      },
+     
       {
         "category": "Work Flexibility",
         "benefits": [
           "Remote work options",
           "Flexible working hours",
-          "Unlimited PTO policy",
-          "Paid parental leave",
+         
           "Work from anywhere programs"
         ]
       },
@@ -79,7 +69,6 @@
         "benefits": [
           "Annual learning budget",
           "Conference attendance sponsorship",
-          "Online course subscriptions",
           "Mentorship programs",
           "Career progression pathways"
         ]
@@ -89,8 +78,8 @@
         "benefits": [
           "Competitive salary packages",
           "Performance bonuses",
-          "401(k) retirement plans",
-          "Stock options for senior roles",
+         
+      
           "Annual salary reviews"
         ]
       },
@@ -99,8 +88,6 @@
         "benefits": [
           "Latest tech equipment",
           "Modern office spaces",
-          "Ergonomic workstations",
-          "Free snacks and beverages",
           "Team building activities"
         ]
       },
