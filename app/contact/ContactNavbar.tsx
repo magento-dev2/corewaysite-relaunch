@@ -26,7 +26,7 @@ export default function ContactNavbar() {
                         </Link>
                     </div>
                     <Link href="/">
-                        <div className="flex items-center gap-2 text-sm font-medium hover:text-purple-600 transition">
+                        <div className="flex items-center gap-2 text-sm font-medium text-white hover:text-purple-600 transition">
                             <ArrowLeft size={18} />
                             Go Back
                         </div>

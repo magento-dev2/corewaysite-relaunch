@@ -292,7 +292,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
               >
-                <span>{isSubmitting ? 'Sending...' : 'Talk to Our Experts'}</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send to Our Experts'}</span>
                 {!isSubmitting && <Send size={20} />}
               </button>
             </div>
