@@ -4,8 +4,8 @@
     "title2":"with Intelligence",
     "subtitle": "Headless, AI-driven, and composable commerce solutions.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/solutions" },
+      { "label": "Book Consultation", "link": "/contact" }
     ]
   },
   "overview": {

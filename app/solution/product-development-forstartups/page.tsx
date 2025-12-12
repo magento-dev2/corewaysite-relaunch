@@ -106,8 +106,10 @@ export default function ProductDevelopmentPage() {
         <FeatureGrid data={featuresData} />
         <TechStack data={techData} />
         <CaseStudiesPreview data={casesData} />
+        <div id="process"> 
         <ProcessDiagram data={processData} />
-        <AcceleratorSection data={acceleratorData} />
+        </div>
+        {/* <AcceleratorSection data={acceleratorData} /> */}
         <WhyCorewaySection
           badge={whyCorewayData["product-development-forstartups"].badge}
           title={whyCorewayData["product-development-forstartups"].title}

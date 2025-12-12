@@ -4,8 +4,8 @@
     "title2":" IoT Experiences",
     "subtitle": "End-to-end IoT solutions from devices to cloud platforms.",
     "buttons": [
-      { "label": "Explore IoT Solutions", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Explore IoT Solutions", "link": "/solutions" },
+      { "label": "Book Consultation", "link":"/contact" }
     ]
   },
   "overview": {

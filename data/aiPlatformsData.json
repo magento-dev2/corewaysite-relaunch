@@ -4,8 +4,8 @@
     "title2":"AI Platforms",
     "subtitle": "Transform your business with scalable, AI-driven application platforms.",
     "buttons": [
-      { "label": "Explore AI Solutions", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Explore AI Solutions", "link": "/solution" },
+      { "label": "Book Consultation", "link": "/contact" }
     ]
   },
   "overview": {
@@ -67,19 +67,23 @@
         "id": "1",
         "title": "Intelligent Document Processing System",
         "image": "https://images.pexels.com/photos/5668838/pexels-photo-5668838.jpeg",
-        "description": "AI-powered document extraction and classification for enterprise"
+        "description": "AI-powered document extraction and classification for enterprise",
+        "link":"/solution/ugs-ads"
       },
       {
         "id": "2",
         "title": "Predictive Analytics Platform",
         "image": "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg",
-        "description": "ML-driven forecasting system for retail inventory optimization"
+        "description": "ML-driven forecasting system for retail inventory optimization",
+        "link":"/solution/ai-chat-with-pdf"
       },
       {
         "id": "3",
         "title": "Conversational AI Assistant",
         "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg",
-        "description": "Multi-language customer support chatbot with NLP capabilities"
+        "description": "Multi-language customer support chatbot with NLP capabilities",
+                "link":"/solution/DBDashbot"
+
       }
     ]
   },

@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface CaseStudy {
+  link: Url;
   id: string;
   title: string;
   image: string;
@@ -83,10 +85,12 @@ export default function AIPlatformCaseStudies({ title, cases }: AIPlatformCaseSt
                   <p className="text-gray-300 mb-4 leading-relaxed">
                     {caseStudy.description}
                   </p>
+                   <Link href={caseStudy.link}>
                   <button className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors group/btn">
-                    <span className="text-sm font-medium cursor-pointer">View Details</span>
+               <span className="text-sm font-medium cursor-pointer">View Details</span>
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
+                  </Link>
                 </div>
               </article>
             );
