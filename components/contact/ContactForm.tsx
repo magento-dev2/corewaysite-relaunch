@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, CheckCircle, ShieldCheck, Lock ,X } from 'lucide-react';
+import { Send, CheckCircle, ShieldCheck, Lock, X } from 'lucide-react';
 import { useRecaptcha } from '@/contexts/RecaptchaContext';
 
 export default function ContactForm() {
@@ -21,25 +21,25 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
-    const [open, setOpen] = useState(false);
-const boxRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
 
   // Close if clicked outside
-useEffect(() => {
-  function handleClickOutside(e: Event) {
-    if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
-      setOpen(false);
+  useEffect(() => {
+    function handleClickOutside(e: Event) {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
     }
-  }
 
-  document.addEventListener("mousedown", handleClickOutside);
-  document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
 
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-    document.removeEventListener("touchstart", handleClickOutside);
-  };
-}, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
 
   const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
@@ -168,9 +168,9 @@ useEffect(() => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="">
             {/* Row 1: Full Name & Company */}
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-5 mb-5">
               <div>
                 <input
                   type="text"
@@ -210,14 +210,13 @@ useEffect(() => {
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                   placeholder="Email *"
                 />
-                <p className='text-gray-400'>Note : Write business email</p>
               </div>
- <div>
+              <div>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  
+
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
@@ -225,18 +224,10 @@ useEffect(() => {
                 />
               </div>
 
-              {/* <div>
-                <input
-                  type="text"
-                  id="designation"
-                  name="designation"
-                  value={formData.designation}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
-                  placeholder="Designation"
-                />
-              </div> */}
             </div>
+            <p className='text-gray-400 text-[10px] mb-5 mt-1 '>*For faster processing, please use your company email.</p>
+
+
 
             {/* Row 3: Phone & Country */}
             {/* <div className="grid md:grid-cols-2 gap-5">
@@ -281,7 +272,7 @@ useEffect(() => {
             </div> */}
 
             {/* Message */}
-            <div>
+            <div className='mb-5'>
               <textarea
                 id="message"
                 name="message"
@@ -295,7 +286,7 @@ useEffect(() => {
             </div>
 
             {/* Submit Button */}
-            <div>
+            <div className='mb-5'>
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -314,45 +305,45 @@ useEffect(() => {
               </a>
             </p>
 
-         
+
           </form>
-          
-       <div className="flex justify-center relative mt-4">
-      {/* Trigger Text */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="text-sm cursor-pointer  text-purple-600  font-semibold underline hover:text-purple-700 justify-center flex items-center gap-1"
-      >
-        <Lock size={14} />
-        Safe & Confidential
-      </button>
 
-      {/* Popup Box (Dropdown Style) */}
-      {open && (
-        <div
-          ref={boxRef}
-          className="absolute left-26 bottom-6 w-80 bg-white shadow-xl rounded-xl border  border-gray-200 p-4 z-30"
-        >
-          {/* Close Button */}
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute top-2 cursor-pointer right-2 text-gray-500 hover:text-gray-700"
-          >
-            <X size={16} />
-          </button>
+          <div className="flex justify-center relative mt-4">
+            {/* Trigger Text */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-sm cursor-pointer  text-purple-600  font-semibold underline hover:text-purple-700 justify-center flex items-center gap-1"
+            >
+              <Lock size={14} />
+              Safe & Confidential
+            </button>
 
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Privacy is our top priority. We will not disclose your personal
-            information to anybody. It will strictly be used to contact you
-            for the specified purpose.
-          </p>
+            {/* Popup Box (Dropdown Style) */}
+            {open && (
+              <div
+                ref={boxRef}
+                className="absolute left-26 bottom-6 w-80 bg-white shadow-xl rounded-xl border  border-gray-200 p-4 z-30"
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setOpen(false)}
+                  className="absolute top-2 cursor-pointer right-2 text-gray-500 hover:text-gray-700"
+                >
+                  <X size={16} />
+                </button>
+
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Privacy is our top priority. We will not disclose your personal
+                  information to anybody. It will strictly be used to contact you
+                  for the specified purpose.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-    </div>
-        </div>
-       
+
       </div>
-            
+
     </section>
   );
 }

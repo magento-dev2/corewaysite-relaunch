@@ -135,18 +135,18 @@ export default function DigitalCommerce() {
               reasons={whyCorewayData["digital-commerce-transformation"].reasons}
             />
           </div>
-       
-          
-          <TestimonialHero 
-          testimonial = "At Rightsify we've been working with Coreway Solution for a couple years now and have been really happy with the results they have delivered. Their work is done on time and as specified and the support has always been great..."
-  authorName = "Alex-Bestall,"
-  authorLocation = "Los Angeles, USA"
-  authorImage = "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400"
-  heroImage = "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1600"
-title={`${commerceData.hero.title} ${commerceData.hero.title2}`}
-  description={commerceData.hero.subtitle}
+
+
+          <TestimonialHero
+            testimonial="At Rightsify we've been working with Coreway Solution for a couple years now and have been really happy with the results they have delivered. Their work is done on time and as specified and the support has always been great..."
+            authorName="Alex-Bestall,"
+            authorLocation="Los Angeles, USA"
+            authorImage="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400"
+            heroImage="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            title={`${commerceData.hero.title} ${commerceData.hero.title2}`}
+            description={commerceData.hero.subtitle}
           />
-           
+
 
           <div id="faq">
             <FAQ

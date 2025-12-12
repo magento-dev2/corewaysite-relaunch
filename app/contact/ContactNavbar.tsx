@@ -16,7 +16,7 @@ export default function ContactNavbar() {
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center space-x-3">
                             <Image
-                                src="/assets/logo/logo.png"
+                                src="/logo.png"
                                 alt="Coreway Solution Logo"
                                 width={214}
                                 height={40}

@@ -115,7 +115,7 @@ export default function PageCTA({
       {/* Calendly Popup */}
       {rootEl && (
         <PopupModal
-          url="https://calendly.com/YOUR_USERNAME/YOUR_EVENT"
+    url="https://calendly.com/alpeshr2689/30min"
           onModalClose={() => setOpen(false)}
           open={open}
           rootElement={rootEl}

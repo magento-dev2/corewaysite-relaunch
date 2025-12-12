@@ -110,10 +110,8 @@ html.lenis {
 
 /* Page content padding to prevent navbar overlap */
 .page-content {
-  padding-top: 88px; /* Mobile: navbar height (~72px) + spacing */
+  padding-top: 70px; /* Mobile: navbar height (~72px) + spacing */
 }
 
-@media (min-width: 1024px) {
- 
-}
+
 

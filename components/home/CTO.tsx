@@ -48,7 +48,7 @@ export default function CTOSection() {
             <div className="flex-1 flex flex-col gap-4 justify-center md:justify-end mt-8 md:mt-0 ">
               <div className="flex items-center  gap-6 shrink-0">
                 <img
-                  src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                  src="/coreway_leader.png"
                   alt="CTO"
                   className="h-28 w-28 rounded-full border-4 border-white/80 shadow-lg object-cover"
                 />
@@ -84,7 +84,7 @@ export default function CTOSection() {
         {/* Calendly Popup */}
         {rootEl && (
           <PopupModal
-            url="https://calendly.com/YOUR_USERNAME/YOUR_EVENT"
+    url="https://calendly.com/alpeshr2689/30min"
             onModalClose={() => setOpen(false)}
             open={open}
             rootElement={rootEl}

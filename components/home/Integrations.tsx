@@ -107,13 +107,13 @@ export default function Integrations() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Integrate Without Limits
+       Expert Integration Services for Any Platform
 
           </h2>
 
           <p className=" text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-           Effortlessly connect your apps, tools, and platforms in seconds.
-          </p>
+We offer integration services that connect third-party tools, APIs, and platforms directly into your existing ERP, CRM, web application, or mobile app.
+           </p>
         </div>
 
         <div className="space-y-6">
