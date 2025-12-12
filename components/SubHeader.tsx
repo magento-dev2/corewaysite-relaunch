@@ -72,10 +72,10 @@ export default function SubHeader({ title, items }: SubHeaderProps) {
     return (
         <div
             className={cn(
-                "w-full z-40 transition-all duration-300 border-b border-white/10 bg-[#0E0918]/80 backdrop-blur-md",
-                isSticky ? "fixed left-0 right-0 shadow-lg shadow-purple-900/10" : "relative",
-                isSticky && isNavbarVisible ? "top-[73px]" : "",
-                isSticky && !isNavbarVisible ? "top-0" : ""
+                "w-full z-40 transition-all duration-300 border-b border-white/10 bg-[#0E0918]/80 backdrop-blur-md fixed left-0 right-0 top-[73px]",
+                // isSticky ? "fixed left-0 right-0 shadow-lg shadow-purple-900/10" : "relative",
+                // isSticky && isNavbarVisible ? "top-[73px]" : "",
+                // isSticky && !isNavbarVisible ? "top-0" : ""
             )}
         >
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">

@@ -278,8 +278,8 @@ export default function JourneyTimeline() {
                     <div className="inline-block px-8 py-6 bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 border border-purple-500/30 rounded-2xl backdrop-blur-sm">
                         <p className="text-gray-300 text-lg">
                             <span className="text-white font-bold text-2xl">13 years</span> of innovation,{" "}
-                            <span className="text-white font-bold text-2xl">500+ clients</span> served,{" "}
-                            <span className="text-white font-bold text-2xl">2000+ projects</span> delivered
+                            <span className="text-white font-bold text-2xl">40+ clients</span> served,{" "}
+                            <span className="text-white font-bold text-2xl">180+ projects</span> delivered
                         </p>
                     </div>
                 </motion.div>

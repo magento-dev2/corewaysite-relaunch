@@ -116,15 +116,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#0E0918]/70 backdrop-blur-md border-b border-white/10 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#0E0918]/70 backdrop-blur-md border-b border-white/10 transition-transform duration-300 `}
     >
       <div className="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/assets/logo/logo.png"
+                src="/logo.png"
                 alt="Coreway Solution Logo"
                 width={214}
                 height={40}

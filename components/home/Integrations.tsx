@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
 const integrations = [
@@ -12,22 +13,22 @@ const integrations = [
   { name: "FedEx", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fedex.svg" },
   { name: "DHL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/dhl.svg" },
   { name: "ShipRocket", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/rocket.svg" },
-  { name: "EasyPost", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/easypost.svg" },
-  { name: "Delhivery", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/delhivery.svg" },
-  { name: "ShipStation", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shipstation.svg" },
+  // { name: "EasyPost", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/easypost.svg" },
+  // { name: "Delhivery", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/delhivery.svg" },
+  // { name: "ShipStation", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shipstation.svg" },
   { name: "BlueDart", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/rocket.svg" },
   { name: "UPS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ups.svg" },
   { name: "Google Analytics", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" },
   { name: "Meta Pixel", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
-  { name: "Klaviyo", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/klaviyo.svg" },
+  // { name: "Klaviyo", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/klaviyo.svg" },
   { name: "Mailchimp", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mailchimp.svg" },
   { name: "HubSpot", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" },
   { name: "Zoho", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zoho.svg" },
-  { name: "Segment", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/segment.svg" },
+  // { name: "Segment", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/segment.svg" },
   { name: "Zapier", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zapier.svg" },
   { name: "Make", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/make.svg" },
   { name: "OpenAI", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" },
-  { name: "n8n", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/n8n.svg" },
+  // { name: "n8n", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/n8n.svg" },
   { name: "Slack", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg" },
   { name: "Discord", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" },
   { name: "Twilio", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/twilio.svg" },
@@ -96,16 +97,22 @@ export default function Integrations() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
+         
           <div className="inline-block px-3 py-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-4">
+            <div className='flex items-center gap-1'>
+                        <Sparkles className="text-purple-500" size={16} />
+          
             <span className="text-xs font-medium text-gray-300">Integrations</span>
+                      </div>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Connect Everything
+            Integrate Without Limits
+
           </h2>
 
           <p className=" text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-            Seamlessly integrate with all your favorite tools and platforms
+           Effortlessly connect your apps, tools, and platforms in seconds.
           </p>
         </div>
 

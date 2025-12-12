@@ -39,7 +39,7 @@ export default function Testimonials() {
       image: "/assets/review/Alex-Bestall.png",
       video: "https://www.youtube.com/watch?v=QyhwSYhX09s",
       rating: 5,
-      location: "UK"
+    location: "USA"
     },
     {
       quote: t('testimonials.items.2.quote'),
@@ -49,7 +49,7 @@ export default function Testimonials() {
       image: "/assets/review/randy.png",
       video: "https://www.youtube.com/watch?v=H14bBuluwB8",
       rating: 5,
-      location: "Canada"
+       location: "USA"
     },
   ];
 
@@ -154,7 +154,7 @@ export default function Testimonials() {
                       <motion.button
                         onClick={() => toggleExpanded(index)}
                         whileHover={{ x: 5 }}
-                        className="mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold flex items-center gap-2 group transition-colors"
+                        className="mt-3 text-purple-400 cursor-pointer hover:text-purple-300 text-sm font-semibold flex items-center gap-2 group transition-colors"
                       >
                         <span>{expandedCards.has(index) ? 'Read Less' : 'Read More'}</span>
                         <motion.span

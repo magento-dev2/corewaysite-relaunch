@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, ShieldCheck, Lock ,X } from 'lucide-react';
 import { useRecaptcha } from '@/contexts/RecaptchaContext';
 
 export default function ContactForm() {
@@ -21,6 +21,20 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+    const [open, setOpen] = useState(false);
+      const boxRef = useRef(null);
+
+  // Close if clicked outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (boxRef.current && !boxRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
 
   const handleTabChange = (tab: 'business' | 'job') => {
@@ -189,13 +203,14 @@ export default function ContactForm() {
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                   placeholder="Email *"
                 />
+                <p className='text-gray-400'>Note : Write business email</p>
               </div>
  <div>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  required
+                  
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
@@ -277,7 +292,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
+                className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Talk to Our Experts'}</span>
                 {!isSubmitting && <Send size={20} />}
@@ -291,9 +306,46 @@ export default function ContactForm() {
                 Privacy Policy
               </a>
             </p>
+
+         
           </form>
+          
+       <div className="flex justify-center relative mt-4">
+      {/* Trigger Text */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="text-sm cursor-pointer  text-purple-600  font-semibold underline hover:text-purple-700 justify-center flex items-center gap-1"
+      >
+        <Lock size={14} />
+        Safe & Confidential
+      </button>
+
+      {/* Popup Box (Dropdown Style) */}
+      {open && (
+        <div
+          ref={boxRef}
+          className="absolute left-26 bottom-6 w-80 bg-white shadow-xl rounded-xl border  border-gray-200 p-4 z-30"
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setOpen(false)}
+            className="absolute top-2 cursor-pointer right-2 text-gray-500 hover:text-gray-700"
+          >
+            <X size={16} />
+          </button>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Privacy is our top priority. We will not disclose your personal
+            information to anybody. It will strictly be used to contact you
+            for the specified purpose.
+          </p>
         </div>
+      )}
+    </div>
+        </div>
+       
       </div>
+            
     </section>
   );
 }

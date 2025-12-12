@@ -40,7 +40,7 @@ export default function Footer() {
               <span className="text-white font-bold text-xl">Coreway</span> */}
               <Link href="/">
                 <img src="/assets/logo/logo.png" className=' h-8 cursor-pointer' />
-                <p className='text-3xl font-bold text-white'>SOLUTION</p>
+                <p className='text-[23px] flex justify-center font-bold text-white'>SOLUTION</p>
                 </Link>
 
             </div>

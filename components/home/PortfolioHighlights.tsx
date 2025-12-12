@@ -189,15 +189,15 @@ export default function PortfolioHighlights() {
                   {/* <h3 className="text-lg md:text-xl lg:text-[21px] font-bold text-white mb-3">{current.impact.title}</h3> */}
                   {/* <p className="text-gray-300 text-base md:text-lg lg:text-[20px] mb-3">{current.impact.description}</p> */}
                   <ul className="text-white space-y-2 text-lg md:text-lg lg:text-[20px] leading-relaxed list-disc list-inside">
-                    {/* {current.impact.points.map((point, idx) => (
+                    {current.impact.points.map((point, idx) => (
                       <li key={idx}>
-                        
+                        {point}
                       </li>
-                    ))} */}
-                    <li>  3× Faster development cycles</li>
+                    ))}
+                    {/* <li>  3× Faster development cycles</li>
 <li>40% Reduction in technical overhead</li>
 <li>100% Roadmap Clarity achieved</li>
-<li>50% Faster vendor coordination</li>
+<li>50% Faster vendor coordination</li> */}
 
 
 
