@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface CaseStudy {
-  link: Url;
+  link: any;
   id: string;
   title: string;
   image: string;
