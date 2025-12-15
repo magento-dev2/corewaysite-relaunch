@@ -207,8 +207,8 @@ export default function ApplicationModal({
                                         <div
                                             key={step}
                                             className={`h-1 flex-1 rounded-full transition-colors ${step <= currentStep
-                                                    ? "bg-gradient-to-r from-purple-600 to-blue-600"
-                                                    : "bg-white/10"
+                                                ? "bg-gradient-to-r from-purple-600 to-blue-600"
+                                                : "bg-white/10"
                                                 }`}
                                         />
                                     ))}

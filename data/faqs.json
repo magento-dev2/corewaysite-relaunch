@@ -51,6 +51,67 @@
       "answer": "Absolutely! We can seamlessly integrate with your current ERP, CRM, payment gateways, and other business systems to ensure a smooth and unified digital commerce experience."
     }
   ],
+  
+  "analytics": [
+    {
+      "question": "What types of analytics do you provide?",
+      "answer": "We offer comprehensive analytics including business intelligence, predictive analytics, data visualization, real-time dashboards, custom reporting, and AI-powered insights. Our solutions cover everything from basic metrics to advanced machine learning models."
+    },
+    {
+      "question": "How quickly can I see results after implementation?",
+      "answer": "Basic dashboards can be set up within 1-2 weeks. For complex implementations with custom integrations and AI models, expect 4-8 weeks. You'll start seeing actionable insights immediately after the initial setup."
+    },
+    {
+      "question": "Can you integrate with our existing data sources?",
+      "answer": "Yes! We integrate with virtually any data source including databases (PostgreSQL, MySQL, MongoDB), cloud platforms (AWS, Azure, GCP), CRM systems, marketing tools, and custom APIs. We also build custom integrations when needed."
+    },
+    {
+      "question": "Is my data secure?",
+      "answer": "Absolutely. We implement bank-level security with AES-256 encryption, role-based access control, secure data transmission, and compliance with GDPR, HIPAA, SOC 2, and other standards. Your data never leaves your secure environment without explicit permission."
+    },
+    {
+      "question": "What's the difference between real-time and batch analytics?",
+      "answer": "Real-time analytics process data instantly (sub-second latency) for immediate insights and alerts. Batch analytics process data in scheduled intervals (hourly, daily) for historical analysis. We recommend a hybrid approach for most businesses."
+    },
+    {
+      "question": "Do you provide training for our team?",
+      "answer": "Yes! We provide comprehensive training including dashboard usage, report creation, data interpretation, and best practices. Training is customized to your team's skill level and includes documentation, video tutorials, and ongoing support."
+    },
+    {
+      "question": "What's the pricing model?",
+      "answer": "We offer flexible pricing based on data volume, number of users, and features needed. Plans start at $2,500/month for small businesses and scale up for enterprises. Custom enterprise plans include dedicated support and advanced features."
+    },
+    {
+      "question": "Can you help us migrate from our current analytics platform?",
+      "answer": "Yes! We specialize in migrations from platforms like Google Analytics, Tableau, Power BI, and custom solutions. We ensure zero data loss, maintain historical data, and minimize downtime during the transition."
+    }
+  ],
+  "mobileApplication": [
+  {
+    "question": "What mobile app development services do you offer?",
+    "answer": "We provide end-to-end mobile app development services including UI/UX design, native and cross-platform app development, backend integration, testing, deployment, and ongoing maintenance."
+  },
+  {
+    "question": "Do you develop apps for both Android and iOS?",
+    "answer": "Yes, we build applications for both Android and iOS platforms using native technologies as well as cross-platform frameworks like React Native and Flutter."
+  },
+  {
+    "question": "How long does it take to develop a mobile application?",
+    "answer": "Development timelines depend on app complexity and features. A basic app may take 6–8 weeks, while feature-rich or enterprise-grade applications can take 3–6 months or more."
+  },
+  {
+    "question": "Can you integrate the app with existing systems?",
+    "answer": "Absolutely. We can integrate mobile applications with your existing APIs, databases, CRMs, ERPs, payment gateways, and third-party services for seamless functionality."
+  },
+  {
+    "question": "How do you ensure app security?",
+    "answer": "We follow industry best practices including secure authentication, data encryption, secure API communication, and regular security testing to protect user data and ensure compliance."
+  },
+  {
+    "question": "Do you provide support and maintenance after launch?",
+    "answer": "Yes, we offer post-launch support including performance monitoring, bug fixes, feature enhancements, OS updates, and long-term maintenance plans."
+  }
+],
   "product-development-for-startups": [
     {
       "question": "What is product development for startups?",

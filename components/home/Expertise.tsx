@@ -38,14 +38,14 @@ export default function Expertise() {
       icon: Smartphone,
       title: t('expertise.areas.mobile.title'),
       description: t('expertise.areas.mobile.description'),
-      link: "#",
+      link: "/solution/mobile-application",
       linkText: t('expertise.areas.mobile.link'),
     },
     {
       icon: BarChart3,
       title: t('expertise.areas.analytics.title'),
       description: t('expertise.areas.analytics.description'),
-      link: "#",
+      link: "/solution/analytics",
       linkText: t('expertise.areas.analytics.link'),
     },
     {

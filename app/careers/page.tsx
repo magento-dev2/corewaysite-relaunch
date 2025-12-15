@@ -523,11 +523,11 @@ function CareerHero({ title, title2, subtitle, buttons }: CareerHeroProps) {
           </div>
 
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-            <img src="/assets/images/careers.png" className="  rounded-lg shadow-lg"  style={{
-    width: "auto",
-    height: "auto",
-    maxWidth: "100%", // prevents overflow on small screens
-  }} />
+            <img src="/assets/images/careers.png" className="  rounded-lg shadow-lg" style={{
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%", // prevents overflow on small screens
+            }} />
           </div>
         </div>
       </div>
@@ -613,6 +613,8 @@ export default function CareersPage() {
     if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el);
   };
 
+
+
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content ">
@@ -669,6 +671,7 @@ export default function CareersPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {careersData.culture.values.map((value, idx) => {
+
                 const IconComponent = iconMap[value.icon] || Target;
                 return (
                   <div
@@ -702,7 +705,7 @@ export default function CareersPage() {
               {careersData.benefits.items.map((item, idx) => (
                 <div
                   key={idx}
-                    className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
+                  className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
                 >
                   <h3 className="text-xl font-bold text-white mb-4">
                     {item.category}
@@ -724,7 +727,7 @@ export default function CareersPage() {
           </section>
 
           {/* Show message when no positions available with option to submit resume */}
-          {/* {!loadingPositions && positions.length === 0 && ( */}
+          {!loadingPositions && positions.length === 0 && (
             <section ref={addToRefs} className="mb-20">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
@@ -781,10 +784,13 @@ export default function CareersPage() {
                 </div>
               </div>
             </section>
-          {/* )} */}
+          )}
 
           {/* Only show Open Positions section if there are positions */}
           {!loadingPositions && positions.length > 0 && (
+
+
+
             <section ref={addToRefs} className="mb-20">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
@@ -796,121 +802,135 @@ export default function CareersPage() {
               </div>
 
               <div className="space-y-4">
-                {positions.map((job) => (
-                  <div
-                    key={job.id}
-                    className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
-                  >
+                {positions.map((job) => {
+                  const hasExpandableContent =
+                    (job.responsibilities && job.responsibilities.length > 0) ||
+                    (job.requirements && job.requirements.length > 0) ||
+                    (job.niceToHave && job.niceToHave.length > 0);
+
+                  return (
                     <div
-                      className="p-6 cursor-pointer"
-                      onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
+                      key={job.id}
+                      className="bg-gradient-to-br from-white/5 to-gray-900/30 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
                     >
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex justify-between">
-                            <h3 className="text-2xl font-bold text-white mb-3">
-                              {job.title}
-                            </h3>
+                      <div
+                        className="p-6 cursor-pointer"
+                        onClick={() => {
+                          if (!hasExpandableContent) return;
+                          setExpandedJob(expandedJob === job.id ? null : job.id);
+                        }}
+                      >
 
-                            <button
-                              onClick={() => handleApply(job.id, job.title)}
-                              className="w-fit bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
-                            >
-                              Apply for this position
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex justify-between">
+                              <h3 className="text-2xl font-bold text-white mb-3">
+                                {job.title}
+                              </h3>
+
+                              <button
+                                onClick={() => handleApply(job.id, job.title)}
+                                className="w-fit bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
+                              >
+                                Apply for this position
+                              </button>
+                            </div>
+
+                            <div className="flex flex-wrap gap-3 mb-3">
+                              <span className="flex items-center gap-1 text-sm text-white/70">
+                                <Briefcase className="w-4 h-4" />
+                                {job.department}
+                              </span>
+                              <span className="flex items-center gap-1 text-sm text-white/70">
+                                <MapPin className="w-4 h-4" />
+                                {job.location}
+                              </span>
+                              <span className="flex items-center gap-1 text-sm text-white/70">
+                                <Clock className="w-4 h-4" />
+                                {job.type}
+                              </span>
+                              <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-lg text-xs text-purple-300">
+                                {job.experience}
+                              </span>
+                            </div>
+                            <p className="text-white/80">{job.description}</p>
+                          </div>
+
+                          {hasExpandableContent && (
+                            <button className="ml-4 text-purple-400 hover:text-purple-300">
+                              {expandedJob === job.id ? (
+                                <ChevronUp className="w-6 h-6" />
+                              ) : (
+                                <ChevronDown className="w-6 h-6" />
+                              )}
                             </button>
-                          </div>
-
-                          <div className="flex flex-wrap gap-3 mb-3">
-                            <span className="flex items-center gap-1 text-sm text-white/70">
-                              <Briefcase className="w-4 h-4" />
-                              {job.department}
-                            </span>
-                            <span className="flex items-center gap-1 text-sm text-white/70">
-                              <MapPin className="w-4 h-4" />
-                              {job.location}
-                            </span>
-                            <span className="flex items-center gap-1 text-sm text-white/70">
-                              <Clock className="w-4 h-4" />
-                              {job.type}
-                            </span>
-                            <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-lg text-xs text-purple-300">
-                              {job.experience}
-                            </span>
-                          </div>
-                          <p className="text-white/80">{job.description}</p>
+                          )}
                         </div>
-                        <button className="ml-4 text-purple-400 hover:text-purple-300">
-                          {expandedJob === job.id ? (
-                            <ChevronUp className="w-6 h-6" />
-                          ) : (
-                            <ChevronDown className="w-6 h-6" />
-                          )}
-                        </button>
                       </div>
-                    </div>
 
-                    {expandedJob === job.id && (
-                      <div className="px-6 pb-6 border-t border-white/10 pt-6">
-                        <div className="space-y-6">
-                          {job.responsibilities && job.responsibilities.length > 0 && (
-                            <div>
-                              <h4 className="text-lg font-semibold text-white mb-3">
-                                Responsibilities
-                              </h4>
-                              <ul className="space-y-2">
-                                {job.responsibilities.map((resp, idx) => (
-                                  <li key={idx} className="text-white/80 flex items-start gap-2">
-                                    <span className="text-purple-400 mt-1">•</span>
-                                    <span>{resp}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                      {expandedJob === job.id && (
+                        <div className="px-6 pb-6 border-t border-white/10 pt-6">
+                          <div className="space-y-6">
+                            {job.responsibilities && job.responsibilities.length > 0 && (
+                              <div>
+                                <h4 className="text-lg font-semibold text-white mb-3">
+                                  Responsibilities
+                                </h4>
+                                <ul className="space-y-2">
+                                  {job.responsibilities.map((resp, idx) => (
+                                    <li key={idx} className="text-white/80 flex items-start gap-2">
+                                      <span className="text-purple-400 mt-1">•</span>
+                                      <span>{resp}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
 
-                          {job.requirements && job.requirements.length > 0 && (
-                            <div>
-                              <h4 className="text-lg font-semibold text-white mb-3">
-                                Requirements
-                              </h4>
-                              <ul className="space-y-2">
-                                {job.requirements.map((req, idx) => (
-                                  <li key={idx} className="text-white/80 flex items-start gap-2">
-                                    <span className="text-purple-400 mt-1">•</span>
-                                    <span>{req}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                            {job.requirements && job.requirements.length > 0 && (
+                              <div>
+                                <h4 className="text-lg font-semibold text-white mb-3">
+                                  Requirements
+                                </h4>
+                                <ul className="space-y-2">
+                                  {job.requirements.map((req, idx) => (
+                                    <li key={idx} className="text-white/80 flex items-start gap-2">
+                                      <span className="text-purple-400 mt-1">•</span>
+                                      <span>{req}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
 
-                          {job.niceToHave.length > 0 && (
-                            <div>
-                              <h4 className="text-lg font-semibold text-white mb-3">
-                                Nice to Have
-                              </h4>
-                              <ul className="space-y-2">
-                                {job.niceToHave.map((item, idx) => (
-                                  <li key={idx} className="text-white/80 flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">•</span>
-                                    <span>{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                            {job.niceToHave.length > 0 && (
+                              <div>
+                                <h4 className="text-lg font-semibold text-white mb-3">
+                                  Nice to Have
+                                </h4>
+                                <ul className="space-y-2">
+                                  {job.niceToHave.map((item, idx) => (
+                                    <li key={idx} className="text-white/80 flex items-start gap-2">
+                                      <span className="text-blue-400 mt-1">•</span>
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
 
-                          {/* <button
+                            {/* <button
                             onClick={() => handleApply(job.id, job.title)}
                             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
                           >
                             Apply for this position
                           </button> */}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </section>
           )}
@@ -929,7 +949,7 @@ export default function CareersPage() {
               {careersData.hiringProcess.steps.map((step, idx) => (
                 <div
                   key={idx}
-                    className="bg-gradient-to-br from-white/5 relative to-gray-900/30 border border-white/10 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
+                  className="bg-gradient-to-br from-white/5 relative to-gray-900/30 border border-white/10 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
                 >
                   <div className="absolute -top-4 left-6 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {step.step}

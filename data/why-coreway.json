@@ -997,6 +997,67 @@
       "description": "Enterprise-grade encryption and access control for maximum data protection."
     }
   ]
-}
+},
+"MobileApplication": {
+  "badge": "Why Choose Us",
+  "title": "Why Choose Our Mobile App Development",
+  "subtitle": "Powerful, scalable mobile applications designed to engage users and drive business growth.",
+  "reasons": [
+    {
+      "icon": "smartphone",
+      "title": "User-Centric Design",
+      "description": "Intuitive and engaging mobile experiences crafted for maximum user satisfaction."
+    },
+    {
+      "icon": "zap",
+      "title": "High Performance Apps",
+      "description": "Optimized, fast, and reliable applications built for smooth performance across devices."
+    },
+    {
+      "icon": "layers",
+      "title": "Cross-Platform Expertise",
+      "description": "Native and cross-platform solutions for iOS and Android using modern technologies."
+    },
+    {
+      "icon": "shield",
+      "title": "Secure & Scalable",
+      "description": "Enterprise-grade security and scalable architecture to support future growth."
+    }
+  ]
+},
+
+  "analytics": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Coreway for Analytics Solutions?",
+    "subtitle": "We transform complex data into clear, actionable insights that drive measurable business growth",
+    "reasons": [
+      {
+        "title": "1B+ Events Processed Daily",
+        "description": "Our enterprise-grade infrastructure handles massive data volumes with sub-second latency and 99.9% uptime."
+      },
+      {
+        "title": "AI-Powered Insights",
+        "description": "Advanced machine learning models automatically detect patterns, anomalies, and opportunities you might miss."
+      },
+      {
+        "title": "Real-Time Analytics",
+        "description": "Get instant insights with live dashboards that update in real-time, enabling faster decision-making."
+      },
+      {
+        "title": "200+ Integrations",
+        "description": "Connect seamlessly with all your existing tools and data sources through our extensive integration library."
+      },
+      {
+        "title": "Expert Data Team",
+        "description": "Our data scientists and engineers average 10+ years of experience in analytics, ML, and big data technologies."
+      },
+      {
+        "title": "Enterprise Security",
+        "description": "Bank-level security with SOC 2, GDPR, and HIPAA compliance. Your data is always encrypted and protected."
+      }
+    ]
+  }
+
+
 
 }

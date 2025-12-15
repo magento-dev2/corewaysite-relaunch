@@ -43,7 +43,13 @@
               "label": "AI-Powered Application Platforms",
               "href": "/solution/ai-powered-application-platforms",
               "icon": "brain"
+            },
+              {
+              "label": "Analystics Solutions",
+              "href": "/solution/analytics",
+              "icon": "brain"
             }
+            
           ]
         },
         {
@@ -68,8 +74,12 @@
               "label": "ERP Solution",
               "href": "/solution/erp-solutions",
               "icon": "zap"
-            }
-            
+            },
+               {
+             "label": "Mobile Application Development",
+              "href": "/solution/mobile-application",
+              "icon": "code"
+        }
 
           ]
         },
