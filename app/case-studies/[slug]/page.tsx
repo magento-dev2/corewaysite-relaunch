@@ -9,14 +9,21 @@ import HeroSection from "@/components/case-study/HeroSection"
 import MoreCaseStudies from "@/components/case-study/MoreCaseStudies"
 import SolutionScope from "@/components/case-study/SolutionScope"
 import TechnologyStack from "@/components/case-study/TechnologyStack"
+import { Prisma } from '@prisma/client'
+
+type CaseStudyDB = Prisma.CaseStudyGetPayload<{}>;
+
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
-async function getCaseStudy(slug: string) {
+async function getCaseStudy(
+  slug: string
+): Promise<CaseStudyDB | null> {
   try {
     const caseStudy = await prisma.caseStudy.findUnique({
       where: { slug },
     });
+
     return caseStudy;
   } catch (error) {
     console.log('Database not available');
@@ -24,20 +31,23 @@ async function getCaseStudy(slug: string) {
   }
 }
 
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+
+export async function generateMetadata(
+  props: { params: Promise<{ slug: string }> }
+) {
   const params = await props.params;
   const caseStudy = await getCaseStudy(params.slug);
 
   if (!caseStudy) {
-    return {
-      title: 'Case Study Not Found',
-    };
+    return { title: 'Case Study Not Found' };
   }
 
   return {
     title: caseStudy.metaTitle || caseStudy.title,
     description: caseStudy.metaDescription || caseStudy.overview,
-    keywords: caseStudy.metaKeywords ? caseStudy.metaKeywords.split(',').map(k => k.trim()) : [],
+    keywords: caseStudy.metaKeywords
+      ? caseStudy.metaKeywords.split(',').map(k => k.trim())
+      : [],
     openGraph: {
       title: caseStudy.metaTitle || caseStudy.title,
       description: caseStudy.metaDescription || caseStudy.overview,
@@ -45,6 +55,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     },
   };
 }
+
 
 export default async function CaseStudyPage(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
