@@ -5,10 +5,22 @@ import Pagination from '@/components/ui/Pagination';
 
 export const dynamic = 'force-dynamic';
 
+type BlogListItem = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  coverImage: string | null;
+  createdAt: Date;
+};
+
+
 
 const ITEMS_PER_PAGE = 12;
 
-async function getBlogs(page: number) {
+async function getBlogs(
+  page: number
+): Promise<{ blogs: BlogListItem[]; totalPages: number }> {
   try {
     const skip = (page - 1) * ITEMS_PER_PAGE;
 
@@ -16,8 +28,16 @@ async function getBlogs(page: number) {
       prisma.blog.findMany({
         where: { isActive: true },
         orderBy: { createdAt: 'desc' },
-        skip: skip,
+        skip,
         take: ITEMS_PER_PAGE,
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          excerpt: true,
+          coverImage: true,
+          createdAt: true,
+        },
       }),
       prisma.blog.count({
         where: { isActive: true },
@@ -32,6 +52,7 @@ async function getBlogs(page: number) {
     return { blogs: [], totalPages: 0 };
   }
 }
+
 
 export default async function BlogListing(props: {
   searchParams: Promise<{ page?: string }>;
