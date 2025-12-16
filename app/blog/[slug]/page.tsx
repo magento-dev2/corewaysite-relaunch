@@ -18,7 +18,9 @@ type RelatedBlog = {
 
 export const revalidate = 60;
 
-async function getBlog(slug: string) {
+async function getBlog(slug: string): Promise<{
+  relatedArticles: RelatedBlog[];
+} & Record<string, any> | null> {
   const blog = await prisma.blog.findUnique({
     where: { slug, isActive: true },
     include: {
@@ -83,7 +85,10 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   };
 }
 
-async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: RelatedBlog[]) {
+async function getRelatedBlogs(
+  currentSlug: string,
+  selectedRelatedArticles: RelatedBlog[]
+): Promise<RelatedBlog[]> {
   // If there are selected related articles, return them (up to 3)
   if (selectedRelatedArticles && selectedRelatedArticles.length > 0) {
     return selectedRelatedArticles.slice(0, 3);
@@ -114,7 +119,10 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
     notFound();
   }
 
-  const relatedBlogs = await getRelatedBlogs(slug, blog.relatedArticles || []);
+const relatedBlogs: RelatedBlog[] = await getRelatedBlogs(
+  slug,
+  blog.relatedArticles
+);
 
   return (
     <div className="min-h-screen bg-white">
