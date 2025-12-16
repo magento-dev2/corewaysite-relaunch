@@ -1,41 +1,26 @@
+import { CaseStudy } from '@prisma/client';
 import CaseStudiesClient from './CaseStudiesClient';
-import { prisma } from '@/lib/prisma';
-
-export const revalidate = 60; // Revalidate every 60 seconds
-
-// async function getCaseStudies() {
-//   try {
-//     const caseStudies = await prisma.caseStudy.findMany({
-//       where: { isActive: true },
-//       orderBy: { createdAt: 'desc' },
-//     });
-//     return caseStudies;
-//   } catch (error) {
-//     console.log('Database not available, returning empty case studies');
-//     return [];
-//   }
-// }
-
+import { prisma, } from '@/lib/prisma';
 
 async function getCaseStudies() {
   try {
-    const caseStudies = await prisma.caseStudy.findMany({
+    const caseStudies: CaseStudy[] = await prisma.caseStudy.findMany({
       where: { isActive: true },
       orderBy: { createdAt: "desc" },
     });
 
-    return caseStudies.map((cs) => ({
+    return caseStudies.map((cs: CaseStudy) => ({
       ...cs,
       stats: Array.isArray(cs.stats)
         ? cs.stats
         : typeof cs.stats === "string"
         ? JSON.parse(cs.stats)
-        : [], // fallback
+        : [],
       services: Array.isArray(cs.services)
         ? cs.services
         : typeof cs.services === "string"
         ? JSON.parse(cs.services)
-        : [], // fallback
+        : [],
     }));
   } catch (error) {
     console.log("Database not available, returning empty case studies");
