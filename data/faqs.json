@@ -1,28 +1,44 @@
 {
   "home": [
     {
-      "question": "What services do you offer?",
-      "answer": "We offer a comprehensive range of services including AI integration, custom software development, cloud infrastructure, dedicated developers, and digital transformation solutions. Our team specializes in cutting-edge technologies to help businesses scale and innovate."
+      "question": "What services does Coreway Solution provide?",
+      "answer": "Coreway Solution provides custom software development, web application development, mobile app development (Android and iOS), eCommerce development, AI and automation solutions, cloud deployment, ERP and business system integration, and dedicated developer hiring services for startups, SMEs, and enterprises."
     },
     {
-      "question": "How long does a typical project take?",
-      "answer": "Project timelines vary based on scope and complexity. Simple integrations can be completed in 2-4 weeks, while comprehensive solutions typically take 3-6 months. We provide detailed project timelines during the discovery phase and maintain transparent communication throughout development."
+      "question": "What technologies does Coreway Solution specialize in?",
+      "answer": "Coreway Solution specializes in PHP, Python, JavaScript, Magento 2, WordPress, Shopify, Laravel, React, Node.js, MySQL, cloud platforms, and AI-driven automation tools. The team also works with REST APIs, third-party integrations, and scalable backend architectures."
     },
     {
-      "question": "Do you provide ongoing support and maintenance?",
-      "answer": "Yes! We offer comprehensive support packages including 24/7 monitoring, regular updates, security patches, and performance optimization. Our team ensures your systems run smoothly and efficiently long after launch."
+      "question": "Does Coreway Solution work with existing or legacy systems?",
+      "answer": "Yes, Coreway Solution works with existing and legacy systems. The team can enhance, migrate, optimize, or integrate new features into legacy applications while ensuring performance, security, and data integrity."
     },
     {
-      "question": "What is your pricing model?",
-      "answer": "We offer flexible pricing models including fixed-price projects, time & materials, and dedicated team engagements. Pricing depends on project scope, technology stack, and team size. Contact us for a customized quote tailored to your specific needs."
+      "question": "What industries does Coreway Solution serve?",
+      "answer": "Coreway Solution serves multiple industries including eCommerce, retail, education, healthcare, logistics, real estate, manufacturing, startups, and enterprise businesses across global markets."
     },
     {
-      "question": "Can you work with our existing technology stack?",
-      "answer": "Absolutely! Our developers are proficient in 50+ technologies across various platforms. We seamlessly integrate with your existing systems and can work with any technology stack including legacy systems, modern frameworks, and emerging technologies."
+      "question": "How long does a typical software development project take?",
+      "answer": "Project duration depends on requirements and complexity. Small projects or integrations usually take 2 to 4 weeks, medium-sized applications take 2 to 3 months, and large enterprise solutions may take 4 to 6 months or more. Coreway Solution provides a clear timeline after requirement analysis."
     },
     {
-      "question": "How do you ensure project security and data privacy?",
-      "answer": "Security is our top priority. We follow industry best practices including encryption, secure coding standards, regular security audits, and compliance with regulations like GDPR, HIPAA, and SOC 2. All team members sign NDAs and we implement strict access controls."
+      "question": "Does Coreway Solution offer dedicated developers or teams?",
+      "answer": "Yes, Coreway Solution offers dedicated developers and dedicated development teams on a full-time or part-time basis. Clients can hire developers for Magento, WordPress, PHP, Python, mobile apps, and custom software projects."
+    },
+    {
+      "question": "What is the pricing model at Coreway Solution?",
+      "answer": "Coreway Solution offers flexible pricing models including fixed-price projects, hourly billing, and dedicated team engagement. Pricing is based on project scope, technology requirements, and development duration."
+    },
+    {
+      "question": "Does Coreway Solution provide post-launch support and maintenance?",
+      "answer": "Yes, Coreway Solution provides ongoing support and maintenance services including bug fixes, performance optimization, security updates, server monitoring, and feature enhancements after project delivery."
+    },
+    {
+      "question": "How does Coreway Solution ensure data security and confidentiality?",
+      "answer": "Coreway Solution follows secure coding practices, data encryption, access control policies, and regular security checks. NDAs are signed with clients, and data privacy standards are followed throughout the development lifecycle."
+    },
+    {
+      "question": "Where is Coreway Solution located and do you work with international clients?",
+      "answer": "Coreway Solution is based in India and works with clients globally including the USA, UK, Australia, Europe, and other regions. The company provides flexible communication and time-zone-friendly collaboration."
     }
   ],
   "digital": [
