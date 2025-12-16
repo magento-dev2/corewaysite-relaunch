@@ -45,9 +45,10 @@ export async function generateMetadata(
   return {
     title: caseStudy.metaTitle || caseStudy.title,
     description: caseStudy.metaDescription || caseStudy.overview,
-    keywords: caseStudy.metaKeywords
-      ? caseStudy.metaKeywords.split(',').map(k => k.trim())
-      : [],
+   keywords: caseStudy.metaKeywords
+  ? caseStudy.metaKeywords.split(',').map((k: string) => k.trim())
+  : [],
+
     openGraph: {
       title: caseStudy.metaTitle || caseStudy.title,
       description: caseStudy.metaDescription || caseStudy.overview,
