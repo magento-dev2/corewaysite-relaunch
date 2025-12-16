@@ -6,6 +6,14 @@ import { notFound } from 'next/navigation';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 
+type RelatedBlog = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt?: string | null;
+  coverImage?: string | null;
+  createdAt: Date;
+};
 
 
 export const revalidate = 60;
@@ -75,7 +83,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   };
 }
 
-async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: any[]) {
+async function getRelatedBlogs(currentSlug: string, selectedRelatedArticles: RelatedBlog[]) {
   // If there are selected related articles, return them (up to 3)
   if (selectedRelatedArticles && selectedRelatedArticles.length > 0) {
     return selectedRelatedArticles.slice(0, 3);
