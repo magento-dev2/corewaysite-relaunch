@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
+import sampleFAQs from '@/data/faqs.json';
 
 export const metadata: Metadata = {
     title: "Industries We Serve | Coreway Solution - Industry-Specific Solutions",
@@ -81,28 +82,7 @@ export default function IndustriesPage() {
     }
 ];
 
-    const faqs = [
-        {
-            question: "Which industries do you specialize in?",
-            answer: "We serve eCommerce, automotive, manufacturing, food & beverage, furniture, fashion, and pharmaceuticals industries with specialized solutions tailored to each sector's unique needs."
-        },
-        {
-            question: "Do you understand industry-specific regulations?",
-            answer: "Yes, we have deep expertise in industry regulations including HIPAA for healthcare, FDA compliance for pharma, and data protection standards for all sectors."
-        },
-        {
-            question: "Can you integrate with industry-specific software?",
-            answer: "Absolutely! We have experience integrating with ERP systems, POS systems, inventory management, CRM platforms, and other industry-specific tools."
-        },
-        {
-            question: "How do you ensure solutions meet industry standards?",
-            answer: "We follow industry best practices, conduct thorough compliance audits, and work closely with your team to ensure all solutions meet required standards and certifications."
-        },
-        {
-            question: "What's your experience in my industry?",
-            answer: "We've delivered 100+ projects across diverse industries. Contact us to discuss specific case studies and references relevant to your sector."
-        }
-    ];
+    
 
     return (
         <div className="min-h-screen bg-[#0E0918]">
@@ -138,7 +118,7 @@ export default function IndustriesPage() {
                     badge="Help Center"
                     title="Frequently Asked Questions"
                     description="Everything you need to know about our industry-specific solutions"
-                    faqs={faqs}
+                    faqs={sampleFAQs["industries"]}
                     columns={1}
                     showContactCTA={true}
                     contactText="Still have questions?"

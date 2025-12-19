@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import aboutUsData from '@/data/aboutUsData.json';
 import faqData from '@/data/faq.json';
 import AboutHero from '@/components/about/AboutHero';
+import sampleFAQs from '@/data/faqs.json';
 import WhyHero from "@/components/about/WhyHero";
 
 
@@ -41,7 +42,7 @@ export default function AboutUs() {
           badge="Frequently Asked Questions"
           title="Why Choose Coreway?"
           description="Discover what makes us different and how we can help transform your business"
-          faqs={faqData}
+          faqs={sampleFAQs["why-coreway-solution"]}
           // columns={2}
         />
         <PageCTA

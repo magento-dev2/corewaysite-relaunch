@@ -6,6 +6,7 @@ import PageCTA from "@/components/PageCTA";
 import FAQ from "@/components/FAQ";
 import aboutUsData from '../../data/aboutUsData.json';
 import faqData from '../../data/faq.json';
+import samplefaqs from '@/data/faqs.json';
 import AboutHero from '@/components/about/AboutHero';
 import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 import Testimonials from "@/components/home/Testimonials";
@@ -80,7 +81,7 @@ export default function AboutUs() {
           badge="Frequently Asked Questions"
           title="Everything You Need to Know About Coreway"
           description="Find answers to common questions about our company, services, and approach"
-          faqs={faqData}
+          faqs={samplefaqs["about"]}
           // columns={2}
         />
       <PageCTA

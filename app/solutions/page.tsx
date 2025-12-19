@@ -5,6 +5,8 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
+import sampleFAQs from '@/data/faqs.json';
+
 
 export const metadata: Metadata = {
     title: "Solutions | Coreway Solution - Digital Transformation & AI Services",
@@ -134,28 +136,7 @@ const whyCorewayReasons = [
 ];
 
 
-    const faqs = [
-        {
-            question: "What types of solutions do you offer?",
-            answer: "We offer comprehensive digital solutions including AI integration, commerce transformation, IoT development, SaaS infrastructure, workflow automation, and custom API development. Our solutions span across 15+ service categories."
-        },
-        {
-            question: "How long does a typical project take?",
-            answer: "Project timelines vary based on complexity and scope. Simple integrations can be completed in 2-4 weeks, while comprehensive solutions typically take 3-6 months. We provide detailed timelines during the discovery phase."
-        },
-        {
-            question: "Do you provide ongoing support?",
-            answer: "Yes, we offer comprehensive support packages including 24/7 monitoring, regular updates, security patches, and performance optimization to ensure your systems run smoothly."
-        },
-        {
-            question: "Can you work with our existing technology stack?",
-            answer: "Absolutely! Our developers are proficient in 50+ technologies and can seamlessly integrate with your existing systems, whether legacy or modern frameworks."
-        },
-        {
-            question: "What industries do you serve?",
-            answer: "We serve diverse industries including eCommerce, automotive, manufacturing, healthcare, food & beverage, fashion, and more. Our solutions are tailored to meet industry-specific requirements."
-        }
-    ];
+
 
     return (
         <div className="min-h-screen bg-[#0E0918]">
@@ -190,7 +171,7 @@ const whyCorewayReasons = [
                     badge="Help Center"
                     title="Frequently Asked Questions"
                     description="Everything you need to know about our solutions and services"
-                    faqs={faqs}
+                    faqs={sampleFAQs["solutions"]}
                     columns={1}
                     showContactCTA={true}
                     contactText="Still have questions?"

@@ -8,6 +8,7 @@ import JourneyTimeline from "@/components/about/JourneyTimeline";
 import PageCTA from "@/components/PageCTA";
 import FAQ from "@/components/FAQ";
 import faqData from "../../../data/faq.json";
+import sampleFAQs from '@/data/faqs.json';
 import SubHeader from "@/components/SubHeader";
 
 export default function CompanyOverview() {
@@ -97,7 +98,7 @@ export default function CompanyOverview() {
           badge="Frequently Asked Questions"
           title="Learn More About Coreway"
           description="Common questions about our company and how we work"
-          faqs={faqData}
+          faqs={sampleFAQs["company-overview"]}
           // columns={2}
         />
 

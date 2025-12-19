@@ -17,6 +17,8 @@ export default function ContactForm() {
     country: '',
     subject: '',
     message: '',
+    ndaAccepted: false,
+
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -52,12 +54,19 @@ export default function ContactForm() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+) => {
+  const { name, value, type } = e.target;
+
+  setFormData({
+    ...formData,
+    [name]: type === 'checkbox'
+      ? (e.target as HTMLInputElement).checked
+      : value,
+  });
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,6 +110,7 @@ export default function ContactForm() {
         country: '',
         subject: '',
         message: '',
+        ndaAccepted: false,
       });
 
       // Reset reCAPTCHA
@@ -284,6 +294,23 @@ export default function ContactForm() {
                 placeholder="Brief your Requirement *"
               />
             </div>
+
+{/* NDA Checkbox */}
+<div className="mb-5 flex items-start gap-3">
+  <input
+    type="checkbox"
+    id="ndaAccepted"
+    name="ndaAccepted"
+    checked={formData.ndaAccepted}
+    onChange={handleChange}
+    className="mt-1 h-5 w-5 cursor-pointer rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+  />
+
+  <label htmlFor="ndaAccepted" className="text-sm text-gray-600 cursor-pointer">
+    All shared details are confidential and
+    protected under NDA.
+  </label>
+</div>
 
             {/* Submit Button */}
             <div className='mb-5'>

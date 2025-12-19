@@ -11,6 +11,35 @@ interface ApplicationModalProps {
     jobId: number;
 }
 
+const technologies = [
+    "React",
+    "React Native",
+    "Next.js",
+    "Node.js",
+    "NestJS",
+    "Angular",
+    "Vue.js",
+    "Svelte",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Django",
+    "Flask",
+    "FastAPI",
+    "Java",
+    "Spring Boot",
+    "PHP",
+    "Laravel",
+    "Dotnet",
+    ".NET Core",
+    "Go",
+    "Rust",
+    "Kotlin",
+    "Swift",
+    "Flutter"
+];
+
+
 export default function ApplicationModal({
     isOpen,
     onClose,
@@ -23,6 +52,13 @@ export default function ApplicationModal({
     const [error, setError] = useState<string | null>(null);
     const [fileName, setFileName] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [query, setQuery] = useState("");
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const filteredTech = technologies.filter((tech) =>
+        tech.toLowerCase().includes(query.toLowerCase())
+    );
+
 
     const [formData, setFormData] = useState({
         // Step 1: Personal Info
@@ -34,6 +70,7 @@ export default function ApplicationModal({
         // Step 2: Experience & Skills
         experience: "",
         currentCompany: "",
+        ctc: "",
         skills: [] as string[],
         primaryTechnology: "",
 
@@ -109,6 +146,7 @@ export default function ApplicationModal({
             data.append("linkedin", formData.linkedin);
             data.append("experience", formData.experience);
             data.append("currentCompany", formData.currentCompany);
+            data.append("ctc", formData.ctc);
             data.append("skills", formData.skills.join(", "));
             data.append("primaryTechnology", formData.primaryTechnology);
             data.append("message", formData.message);
@@ -144,6 +182,7 @@ export default function ApplicationModal({
                     linkedin: "",
                     experience: "",
                     currentCompany: "",
+                    ctc: "",
                     skills: [],
                     primaryTechnology: "",
                     message: "",
@@ -360,21 +399,64 @@ export default function ApplicationModal({
                                                     placeholder="My Company"
                                                 />
                                             </div>
-
                                             <div>
+                                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                                    Expected CTC
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="ctc"
+                                                    value={formData.ctc}
+                                                    onChange={handleInputChange}
+                                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                                    placeholder="e.g., 10 LPA"
+                                                />
+                                            </div>
+
+                                            <div className="relative">
                                                 <label className="block text-sm font-medium text-gray-300 mb-2">
                                                     Primary Technology/Framework *
                                                 </label>
+
                                                 <input
                                                     type="text"
                                                     name="primaryTechnology"
                                                     required
-                                                    value={formData.primaryTechnology}
-                                                    onChange={handleInputChange}
+                                                    value={query}
+                                                    onChange={(e) => {
+                                                        const value = e.target.value;
+                                                        setQuery(value);
+                                                        setFormData({ ...formData, primaryTechnology: value });
+                                                        setShowDropdown(true);
+                                                    }}
+                                                    onBlur={() => {
+                                                        // Delay to allow click selection
+                                                        setTimeout(() => setShowDropdown(false), 150);
+                                                    }}
+                                                    onFocus={() => setShowDropdown(true)}
                                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-                                                    placeholder="e.g., React, Node.js, Python, etc."
+                                                    placeholder="e.g., React, Node.js, CustomTech"
                                                 />
+
+                                                {showDropdown && query && filteredTech.length > 0 && (
+                                                    <ul className="absolute z-10 mt-1 w-full bg-[#1a1a1a] border border-white/10 rounded-lg max-h-48 overflow-auto">
+                                                        {filteredTech.map((tech) => (
+                                                            <li
+                                                                key={tech}
+                                                                onMouseDown={() => {
+                                                                    setQuery(tech);
+                                                                    setFormData({ ...formData, primaryTechnology: tech });
+                                                                    setShowDropdown(false);
+                                                                }}
+                                                                className="px-4 py-2 text-sm text-gray-200 cursor-pointer hover:bg-purple-600/20"
+                                                            >
+                                                                {tech}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </div>
+
 
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-300 mb-2">

@@ -170,6 +170,7 @@ export async function POST(req: NextRequest) {
     const linkedin = formData.get("linkedin") as string;
     const experience = formData.get("experience") as string;
     const currentCompany = formData.get("currentCompany") as string;
+    const ctc = formData.get("ctc") as string;
     const skills = formData.get("skills") as string;
     const primaryTechnology = formData.get("primaryTechnology") as string;
     const message = formData.get("message") as string;
@@ -212,6 +213,7 @@ export async function POST(req: NextRequest) {
           <p><strong>Phone:</strong> ${phone}</p>
           ${linkedin ? `<p><strong>LinkedIn:</strong> <a href="${linkedin}" target="_blank">${linkedin}</a></p>` : ''}
           <p><strong>Experience:</strong> ${experience}</p>
+          ${ctc ? `<p><strong>Current CTC:</strong> ${ctc}</p>` : ''}
           ${currentCompany ? `<p><strong>Current Company:</strong> ${currentCompany}</p>` : ''}
           ${primaryTechnology ? `<p><strong>Primary Technology:</strong> ${primaryTechnology}</p>` : ''}
           ${noticePeriod ? `<p><strong>Notice Period:</strong> ${noticePeriod}</p>` : ''}

@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
+import sampleFAQs from '@/data/faqs.json';
 
 export const metadata: Metadata = {
     title: "Insights | Coreway Solution - Portfolio, Case Studies & Success Stories",
@@ -69,29 +70,7 @@ export default function InsightsPage() {
         }
     ];
 
-    const faqs = [
-        {
-            question: "Can I see examples of your previous work?",
-            answer: "Yes! Browse our portfolio and case studies to see detailed examples of projects across various industries and technologies. We showcase challenges, solutions, and measurable results."
-        },
-        {
-            question: "Do you have client references?",
-            answer: "Absolutely! We have numerous client testimonials and can provide references upon request. Our 95% client retention rate speaks to our quality of service."
-        },
-        {
-            question: "What makes your case studies valuable?",
-            answer: "Our case studies provide in-depth analysis of real projects, including business challenges, technical solutions, implementation process, and quantifiable results with metrics."
-        },
-        {
-            question: "How do dedicated developers work?",
-            answer: "Our dedicated developers integrate with your team, follow your processes, and work exclusively on your projects. They provide the flexibility of in-house talent with the expertise of a specialized agency."
-        },
-        {
-            question: "Can I request a custom project showcase?",
-            answer: "Yes! Contact us to discuss your specific interests, and we can provide relevant case studies and project examples tailored to your industry or technology needs."
-        }
-    ];
-
+  
     return (
         <div className="min-h-screen bg-[#0E0918]">
             <header className="page-content">
@@ -126,7 +105,7 @@ export default function InsightsPage() {
                     badge="Help Center"
                     title="Frequently Asked Questions"
                     description="Everything you need to know about our work and success stories"
-                    faqs={faqs}
+                    faqs={sampleFAQs["insights"]}
                     columns={1}
                     showContactCTA={true}
                     contactText="Still have questions?"

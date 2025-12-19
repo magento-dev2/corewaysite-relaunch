@@ -6,6 +6,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
 
+
 export const metadata: Metadata = {
     title: "Technologies | Coreway Solution - Our Technology Stack & Expertise",
     description: "Explore our technology expertise including React, Node.js, Python, Laravel, PostgreSQL, MongoDB, AWS, IoT protocols, and security tools.",

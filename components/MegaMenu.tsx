@@ -5,23 +5,26 @@ import { ArrowRight } from 'lucide-react';
 import {
   ShoppingCart,
   Rocket,
-  Brain,
+  Cpu,
+  BarChart3,
   Wifi,
-  Cloud,
-  Zap,
+  CloudCog,
+  GitBranch,
+  Layers,
+  Smartphone,
+  Bot,
   Lightbulb,
   Plug,
   RefreshCw,
-  Code,
-  Shield,
-  Server,
-  Code2,
-  Box,
+  Megaphone,
   Database,
-  HardDrive,
-  Radio,
+  FileText,
+  MessageSquare,
+  ScanEye,
+  Code,
   ShieldCheck,
-} from 'lucide-react';
+  Users
+} from "lucide-react";
 
 interface MegaMenuItem {
   label: string;
@@ -41,24 +44,34 @@ interface MegaMenuProps {
 }
 
 const iconMap: Record<string, any> = {
-  'shopping-cart': ShoppingCart,
+  // Digital Solutions
+  "shopping-cart": ShoppingCart,
   rocket: Rocket,
-  brain: Brain,
+  cpu: Cpu,
+  "bar-chart-3": BarChart3,
+
+  // Development & Integration
   wifi: Wifi,
-  cloud: Cloud,
-  zap: Zap,
+  "cloud-cog": CloudCog,
+  "git-branch": GitBranch,
+  layers: Layers,
+  smartphone: Smartphone,
+
+  // AI & Consulting
+  bot: Bot,
   lightbulb: Lightbulb,
   plug: Plug,
-  'refresh-cw': RefreshCw,
-  code: Code,
-  shield: Shield,
-  server: Server,
-  'code-2': Code2,
-  box: Box,
+  "refresh-cw": RefreshCw,
+  megaphone: Megaphone,
   database: Database,
-  'hard-drive': HardDrive,
-  radio: Radio,
-  'shield-check': ShieldCheck,
+  "file-text": FileText,
+  "message-square": MessageSquare,
+  "scan-eye": ScanEye,
+
+  // Infrastructure & Security
+  code: Code,
+  "shield-check": ShieldCheck,
+  users: Users
 };
 
 export default function MegaMenu({ columns, isOpen, menuLabel }: MegaMenuProps) {

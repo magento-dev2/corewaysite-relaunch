@@ -40,38 +40,41 @@ export default function AnalyticsHero() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAyKSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-40 ">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 animate-fade-in">
+          <div className="space-y-8 text-center flex flex-col items-center">
+            <div className="inline-flex items-center justify-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 animate-fade-in">
               <Sparkles className="text-purple-500" size={16} />
               <span className="text-gray-300 text-sm">AI-Powered Analytics</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in-up">
-              Data-Driven <span className="text-purple-500">Insights</span> That Matter
+            Smart Data  <span className="text-purple-500">  Real Impact </span> 
             </h1>
 
             <p className="text-lg text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Transform raw data into actionable intelligence with advanced analytics, real-time dashboards, and predictive insights that drive business growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-             <Link href="/" className="cursor-pointer">
-              <button className="group cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-1">
-                <span>Get Started</span>
-                <TrendingUp className="group-hover:scale-110 transition-transform" size={20} />
-              </button>
-</Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+              <Link href="/" className="cursor-pointer">
+                <button className="group cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-1">
+                  <span>Get Started</span>
+                  <TrendingUp className="group-hover:scale-110 transition-transform" size={20} />
+                </button>
+              </Link>
 
-<Link href="/case-studies" className="cursor-pointer">
-              <button className="group cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg hover:scale-105">
-                Watch Demo
-              </button>
-</Link>
+              <Link href="/case-studies" className="cursor-pointer">
+                <button className="group cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg hover:scale-105">
+                  Watch Demo
+                </button>
+              </Link>
             </div>
 
-            <div ref={statsRef} className="grid grid-cols-3 gap-4 pt-6">
+            <div
+              ref={statsRef}
+              className="grid grid-cols-3 gap-4 pt-6 justify-center max-w-xl"
+            >
               <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-4 text-center hover:border-purple-500/50 transition-all hover:scale-105 opacity-0">
                 <div className="text-2xl font-bold text-white mb-1">99.9%</div>
                 <div className="text-gray-400 text-xs">Accuracy</div>

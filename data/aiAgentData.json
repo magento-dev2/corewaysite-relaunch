@@ -1,0 +1,162 @@
+{
+    "hero": {
+        "title": "Intelligent AI",
+        "title2": "Agent Solutions",
+        "subtitle": "Transform your business with cutting-edge AI agents that automate workflows, enhance decision-making, and deliver exceptional customer experiences.",
+        "buttons": [
+            {
+                "label": "Explore Solutions",
+                "link": "#features"
+            },
+            {
+                "label": "Get Started",
+                "link": "#contact"
+            }
+        ]
+    },
+    "overview": {
+        "title": "Next-Generation AI Agent Platform",
+        "content": "Our AI Agent solutions leverage advanced machine learning and natural language processing to create intelligent systems that understand, learn, and adapt to your business needs. From chatbots to database assistants, we build AI agents that work seamlessly with your existing infrastructure to drive efficiency and innovation.",
+        "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+    },
+    "features": {
+        "title": "AI Agent Solutions",
+        "items": [
+            {
+                "id": "dbdashbot",
+                "title": "DBDashbot",
+                "desc": "Intelligent database assistant that provides natural language queries and automated insights.",
+                "href": "/solution/dbdashbot"
+            },
+            {
+                "id": "rag-chatbot",
+                "title": "RAG Chatbot",
+                "desc": "Retrieval-Augmented Generation chatbot for accurate, context-aware responses.",
+                "href": "/solution/rag-chatbot"
+            },
+            {
+                "id": "ai-chat-pdf",
+                "title": "AI Chat with PDF",
+                "desc": "Extract insights and interact with PDF documents using conversational AI.",
+                "href": "/solution/ai-chat-with-pdf"
+            },
+            {
+                "id": "image-recognition",
+                "title": "Image Recognition Chatbot",
+                "desc": "Advanced visual AI for image analysis, classification, and intelligent responses.",
+                "href": "/solution/image-reorganization-tool"
+            },
+            {
+                "id": "ugs-ads",
+                "title": "UGS Ads",
+                "desc": "AI-powered advertising optimization and user-generated content analysis.",
+                "href": "/solution/ugs-ads"
+            },
+            {
+                "id": "replatforming",
+                "title": "Replatforming & Migration",
+                "desc": "Seamless platform migration with AI-assisted automation and optimization.",
+                "href": "/solution/replatforming-migration"
+            }
+        ]
+    },
+    "technologies": {
+        "title": "Powered by Advanced AI Technologies",
+        "description": "Built on industry-leading AI frameworks and platforms.",
+        "items": [
+            {
+                "name": "OpenAI GPT",
+                "id": "openai"
+            },
+            {
+                "name": "LangChain",
+                "id": "langchain"
+            },
+            {
+                "name": "TensorFlow",
+                "id": "tensorflow"
+            },
+            {
+                "name": "PyTorch",
+                "id": "pytorch"
+            },
+            {
+                "name": "Hugging Face",
+                "id": "huggingface"
+            },
+            {
+                "name": "Vector Databases",
+                "id": "vectordb"
+            }
+        ]
+    },
+    "caseStudies": {
+        "title": "AI Agent Success Stories",
+        "cases": [
+            {
+                "id": "1",
+                "title": "Enterprise Knowledge Assistant",
+                "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+                "description": "Deployed RAG chatbot handling 10K+ queries daily with 95% accuracy"
+            },
+            {
+                "id": "2",
+                "title": "Database Intelligence Platform",
+                "image": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
+                "description": "DBDashbot reduced query time by 80% for data analytics teams"
+            },
+            {
+                "id": "3",
+                "title": "Document Processing Automation",
+                "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+                "description": "AI Chat with PDF processed 100K+ documents, saving 500 hours monthly"
+            }
+        ]
+    },
+    "process": {
+        "title": "Our AI Agent Development Process",
+        "description": "Systematic approach to building intelligent, reliable AI agents.",
+        "steps": [
+            {
+                "id": "discovery",
+                "number": "01",
+                "title": "Discovery & Requirements",
+                "description": "Understand your use case, data sources, and desired outcomes"
+            },
+            {
+                "id": "design",
+                "number": "02",
+                "title": "AI Model Design",
+                "description": "Select optimal AI models, design conversation flows, and plan integrations"
+            },
+            {
+                "id": "development",
+                "number": "03",
+                "title": "Development & Training",
+                "description": "Build, train, and fine-tune AI agents with your specific data"
+            },
+            {
+                "id": "testing",
+                "number": "04",
+                "title": "Testing & Optimization",
+                "description": "Rigorous testing for accuracy, performance, and edge cases"
+            },
+            {
+                "id": "deployment",
+                "number": "05",
+                "title": "Deployment & Monitoring",
+                "description": "Deploy to production with continuous monitoring and improvement"
+            }
+        ]
+    },
+    "capabilities": {
+        "title": "Enterprise-Grade AI Agent Capabilities",
+        "description": "Our AI agents are built with security, scalability, and reliability at their core. They integrate seamlessly with your existing systems while providing intelligent automation that learns and improves over time.",
+        "features": [
+            "Natural language understanding and generation",
+            "Multi-modal processing (text, images, documents)",
+            "Real-time learning and adaptation",
+            "Enterprise security and compliance"
+        ]
+    }
+}

@@ -1,10 +1,12 @@
 
+
 import { prisma } from '@/lib/prisma';
-import { ArrowLeft, Calendar, User, Clock, Facebook, Twitter, Linkedin, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
+import ShareButtons from './ShareButtons';
 
 type RelatedBlog = {
   id: string;
@@ -73,9 +75,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   return {
     title: blog.metaTitle || blog.title,
     description: blog.metaDescription || blog.excerpt,
- keywords: blog.metaKeywords
-  ? blog.metaKeywords.split(',').map((k: string) => k.trim())
-  : [],
+    keywords: blog.metaKeywords
+      ? blog.metaKeywords.split(',').map((k: string) => k.trim())
+      : [],
 
     openGraph: {
       title: blog.metaTitle || blog.title,
@@ -108,10 +110,10 @@ async function getRelatedBlogs(
 
 
 
- 
+
 
 export default async function BlogDetail({ params }: { params: Promise<{ slug: string }> }) {
-  
+
   const { slug } = await params;
   const blog = await getBlog(slug);
 
@@ -119,10 +121,10 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
     notFound();
   }
 
-const relatedBlogs: RelatedBlog[] = await getRelatedBlogs(
-  slug,
-  blog.relatedArticles
-);
+  const relatedBlogs: RelatedBlog[] = await getRelatedBlogs(
+    slug,
+    blog.relatedArticles
+  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -175,37 +177,21 @@ const relatedBlogs: RelatedBlog[] = await getRelatedBlogs(
               <BlockRenderer content={blog.content} />
             </div>
 
+
             {/* Share Buttons */}
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-gray-900">Share this article</h3>
-                <div className="flex gap-3">
-                  <button className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white transition-colors">
-                    <Facebook className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-600 flex items-center justify-center text-white transition-colors">
-                    <Twitter className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center text-white transition-colors">
-                    <Linkedin className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-900 flex items-center justify-center text-white transition-colors">
-                    <LinkIcon className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ShareButtons slug={slug} title={blog.title} />
+
 
             {/* Newsletter Subscription */}
             <div className="mt-16 bg-orange-50 border-l-4 border-purple-600 p-8 rounded-r-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Help?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Help?</h3>
               <p className="text-gray-700 mb-6">
-                  Get expert assistance with your project and technology needs.
-                </p>
-                <Link href="/contact" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
-                  Contact Us
-                </Link>
-              
+                Get expert assistance with your project and technology needs.
+              </p>
+              <Link href="/contact" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                Contact Us
+              </Link>
+
             </div>
           </article>
 

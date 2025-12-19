@@ -346,6 +346,9 @@ import { ArrowRight, Lightbulb, Users, Book, Heart, Globe, Target, MapPin, Clock
 import careersData from "../../data/careersData.json";
 import SplitType from "split-type";
 import ApplicationModal from "@/components/careers/ApplicationModal";
+import FAQ from "@/components/FAQ";
+import sampleFAQs from '@/data/faqs.json';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -989,6 +992,16 @@ export default function CareersPage() {
         </div>
       </main>
 
+      <FAQ
+        badge="Help Center"
+        title="Common Questions & Answers"
+        description="Everything you need to know about our services and how we work"
+        faqs={sampleFAQs["careers"]}
+        columns={1}
+        showContactCTA={true}
+        contactText="Still have questions?"
+        contactButtonText="Contact Our Team"
+      />
       {/* Application Modal */}
       {selectedJob && (
         <ApplicationModal

@@ -2,6 +2,7 @@
 
 import DedicatedDevHero from '@/components/dedicateddev/DedicatedDevHero';
 import DedicatedDevBenefits from '@/components/dedicateddev/DedicatedDevBenefits';
+import HiringSteps from '@/components/dedicateddev/HiringSteps';
 import ComparisonTable from '@/components/dedicateddev/ComparisonTable';
 import MultiTechExpertise from '@/components/dedicateddev/MultiTechExpertise';
 import TechStackShowcase from '@/components/dedicateddev/TechStackShowcase';
@@ -10,15 +11,18 @@ import WhyChooseUs from '@/components/dedicateddev/WhyChooseUs';
 import PageCTA from '@/components/PageCTA';
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import PortfolioHighlights from '@/components/home/PortfolioHighlights';
 
 export default function DedicatedDevelopersPage() {
   return (
     <div className="overflow-hidden">
       <DedicatedDevHero />
       <DedicatedDevBenefits />
+      <HiringSteps />
       <ComparisonTable />
       <MultiTechExpertise />
       <TechStackShowcase />
+      <PortfolioHighlights />
       <HiringModels />
       <WhyChooseUs />
 

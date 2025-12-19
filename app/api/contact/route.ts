@@ -141,10 +141,15 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 // }
 
 
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, company, subject, message } = body;
+    const { name, email, phone, company, subject, message,ndaAccepted  } = body;
+
+    const ndaText = ndaAccepted
+  ? "All shared details are confidential and protected under NDA."
+  : "NDA Accepted: No";
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -171,6 +176,7 @@ Name: ${name}
 Email: ${email}
 ${phone ? `Phone: ${phone}` : ""}
 ${company ? `Company: ${company}` : ""}
+${ndaText}
 Subject: ${subject || "General Inquiry"}
 
 Message:
@@ -197,6 +203,17 @@ const htmlContent = `
       ${message.replace(/\n/g, "<br>")}
     </div>
   </div>
+  ${ndaAccepted ? `
+  <p style="margin-top:10px; padding:10px; background:#f0f9ff; border-left:4px solid #7c3aed; font-size:14px;">
+    <strong>NDA Confirmation:</strong><br />
+     ALl shared details are confidential and protected under NDA.
+  </p>
+` : `
+  <p style="margin-top:10px; font-size:13px; color:#888;">
+    <strong>NDA Confirmation:</strong> Not accepted
+  </p>
+`}
+
 
   <p style="margin-top:30px; text-align:center; font-size:12px; color:#888;">
     Email sent from Coreway Solution Contact Form<br>

@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/about/Breadcrumb";
 import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
+import sampleFAQs from '@/data/faqs.json';
 
 export const metadata: Metadata = {
     title: "AI & Data Engineering | Coreway Solution - AI Solutions & Data Infrastructure",
@@ -75,28 +76,7 @@ export default function AIDataPage() {
         }
     ];
 
-    const faqs = [
-        {
-            question: "What AI technologies do you work with?",
-            answer: "We specialize in GPT models, Vision AI, machine learning frameworks, and custom AI solutions. Our expertise includes OpenAI, TensorFlow, PyTorch, and various cloud AI services."
-        },
-        {
-            question: "How much can I save on cloud storage costs?",
-            answer: "Our clients typically see 50-70% reduction in cloud storage costs through intelligent tiering, lifecycle policies, and multi-cloud optimization strategies."
-        },
-        {
-            question: "Can you handle large-scale datasets?",
-            answer: "Yes, we've successfully managed and delivered datasets ranging from gigabytes to petabytes, with robust version control and secure delivery systems."
-        },
-        {
-            question: "What about data security and compliance?",
-            answer: "We implement enterprise-grade security with encryption at rest and in transit, role-based access controls, and compliance with GDPR, HIPAA, and other regulations."
-        },
-        {
-            question: "Do you provide ongoing support for AI systems?",
-            answer: "Yes, we offer comprehensive support including monitoring, model retraining, performance optimization, and continuous improvement of AI systems."
-        }
-    ];
+   
 
     return (
         <div className="min-h-screen bg-[#0E0918]">
@@ -132,7 +112,7 @@ export default function AIDataPage() {
                     badge="Help Center"
                     title="Frequently Asked Questions"
                     description="Everything you need to know about our AI and data engineering services"
-                    faqs={faqs}
+                    faqs={sampleFAQs["ai-data-services"]}
                     columns={1}
                     showContactCTA={true}
                     contactText="Still have questions?"
