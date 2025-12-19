@@ -53,106 +53,37 @@ Whether you need a single specialist or a full development team, we make hiring 
               className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Step Number Badge */}
-              <div className="absolute top-6 left-6 z-20">
-                <span className={`inline-block px-5 py-2.5 ${step.badge} text-sm font-bold rounded-xl shadow-md`}>
-                  {step.number}
-                </span>
-              </div>
+            
 
               {/* Image Container with Overlay Elements */}
-              <div className={`relative h-[400px] ${step.bgColor} overflow-hidden`}>
-                {/* Background Pattern - Decorative circles */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-10 right-10 w-32 h-32 bg-gray-900 rounded-full blur-2xl"></div>
-                  <div className="absolute bottom-10 left-10 w-24 h-24 bg-cyan-500 rounded-full blur-2xl"></div>
-                </div>
+             {/* Image Container with Overlay Elements */}
+<div className={`relative w-full ${step.bgColor} overflow-hidden aspect-[9/9]`}>
+  {/* Background Pattern - Decorative circles */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute top-10 right-10 w-32 h-32 bg-gray-900 rounded-full blur-2xl"></div>
+    <div className="absolute bottom-10 left-10 w-24 h-24 bg-cyan-500 rounded-full blur-2xl"></div>
+  </div>
 
-                {/* Main Image */}
-                <div className="relative h-full w-full">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
+  {/* Main Image */}
+  <div className="relative w-full h-full">
+    <Image
+      src={step.image}
+      alt={step.title}
+      fill
+      className="object-cover group-hover:scale-105 transition-transform duration-700"
+    />
+  </div>
+</div>
 
-                {/* Floating UI Elements Overlay - Simulating the design */}
-                {/* {index === 0 && (
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="bg-white rounded-2xl shadow-2xl p-6 w-48 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-                        <div className="text-xs font-bold text-gray-700">Document</div>
-                      </div>
-                      <button className="w-full bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                        Share
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {index === 1 && (
-                  <>
-                    <div className="absolute top-8 right-8 z-10">
-                      <div className="bg-white rounded-xl shadow-lg p-3 flex items-center gap-2 animate-bounce-slow">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600"></div>
-                        <div>
-                          <div className="text-xs font-bold text-gray-900">Sara</div>
-                          <div className="text-[10px] text-gray-500">Mobile Dev</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-12 left-8 z-10">
-                      <div className="bg-white rounded-xl shadow-lg p-3 flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-600"></div>
-                        <div>
-                          <div className="text-xs font-bold text-gray-900">Rick</div>
-                          <div className="text-[10px] text-gray-500">Frontend Dev</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-8 right-12 z-10">
-                      <div className="bg-white rounded-xl shadow-lg px-4 py-2">
-                        <div className="text-xs font-bold text-gray-900">Discover</div>
-                        <div className="text-[10px] text-gray-500">Our Talent</div>
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {index === 2 && (
-                  <>
-                    <div className="absolute top-8 left-8 z-10">
-                      <div className="bg-white rounded-xl shadow-lg p-3 animate-pulse-slow">
-                        <div className="text-2xl font-bold text-gray-900">99.9%</div>
-                        <div className="text-[10px] text-gray-500">Customer</div>
-                        <div className="text-[10px] text-gray-500">Satisfaction</div>
-                      </div>
-                    </div>
-                    <div className="absolute top-12 right-8 z-10">
-                      <div className="bg-white rounded-xl shadow-lg p-2 flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-cyan-600"></div>
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-600 -ml-3"></div>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-12 right-8 z-10">
-                      <div className="bg-white rounded-xl shadow-lg p-3">
-                        <div className="text-lg font-bold text-gray-900">400K+</div>
-                        <div className="text-[10px] text-gray-500">Happy Customers</div>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-16 left-8 z-10">
-                      <button className="bg-blue-900 text-white text-sm font-semibold py-2.5 px-5 rounded-lg hover:bg-blue-800 transition-colors shadow-xl">
-                        Start Project
-                      </button>
-                    </div>
-                  </>
-                )} */}
-              </div>
 
               {/* Content */}
+              {/* <div className="flex justify-center items-center">
+                <span className={`inline-block px-5 py-2.5 mt-2 ${step.badge} text-sm font-bold rounded-xl shadow-md`}>
+                  {step.number}
+                </span>
+                </div> */}
               <div className="p-8 bg-white">
+               
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
                   {step.title}
                 </h3>

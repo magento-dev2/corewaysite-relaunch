@@ -112,11 +112,11 @@ export default function MultiTechExpertise() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-400">Expert Developers</span>
-                      <span className="text-2xl font-bold text-white">500+</span>
+                      <span className="text-2xl font-bold text-white">50+</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-400">Years Experience</span>
-                      <span className="text-2xl font-bold text-white">10+</span>
+                      <span className="text-2xl font-bold text-white">13+</span>
                     </div>
                   </div>
                 </div>

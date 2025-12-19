@@ -194,7 +194,7 @@ export default function ComparisonTable() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all">
-            <div className="text-4xl font-bold text-purple-500 mb-2">500+</div>
+            <div className="text-4xl font-bold text-purple-500 mb-2">50+</div>
             <div className="text-gray-400">Expert Developers</div>
           </div>
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all">

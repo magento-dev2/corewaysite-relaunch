@@ -107,7 +107,7 @@ export default function DedicatedDevHero() {
 
             <div ref={statsRef} className="grid grid-cols-2 gap-4 pt-6">
               <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-4">
-                <div className="text-3xl font-bold text-white mb-1">500+</div>
+                <div className="text-3xl font-bold text-white mb-1">50+</div>
                 <div className="text-gray-400 text-sm">Expert Developers</div>
               </div>
               <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-4">
