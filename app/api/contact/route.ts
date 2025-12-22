@@ -227,9 +227,9 @@ const mailOptions = {
   from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
 
   // FIX: Avoid forged freemail reply-to
-  replyTo: `"${name} via Contact Form" <no-reply@corewaysolution.com>`,
+  replyTo: `"${name}" <${email}>`,
 
-  to: process.env.MAIL_TO,
+  to: "info@corewaysolution.com",
   subject: subject || "New Contact Form Submission",
   text: plainText,     // FIX: Add plain text version
   html: htmlContent,   // FIX: Add <html> wrapper

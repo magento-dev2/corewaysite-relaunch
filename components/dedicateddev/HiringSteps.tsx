@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const steps = [
   {
@@ -121,8 +122,9 @@ Whether you need a single specialist or a full development team, we make hiring 
 
               </h3>
 
-              <button className="mt-6 px-8 py-4 bg-cyan-400 text-gray-900 font-bold rounded-xl hover:bg-cyan-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform whitespace-nowrap text-base">
-Build Your Team                 </button>
+<Link href="/dedicated-developers/hire-developers">
+              <button className="mt-6 px-8 py-4 cursor-pointer bg-cyan-400 text-gray-900 font-bold rounded-xl hover:bg-cyan-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform whitespace-nowrap text-base">
+Build Your Team                 </button> </Link>
 
               {/* Trust Indicators */}
               <div className="mt-8 flex items-center gap-4 text-sm text-gray-600">

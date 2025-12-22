@@ -201,7 +201,7 @@ export async function POST(req: NextRequest) {
     // Simple HTML email content
     const mailOptions = {
       from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
-      to: process.env.MAIL_TO,
+  to: "info@corewaysolution.com",
       replyTo: `"${name}" <${email}>`,
       subject: `New Job Application: ${jobTitle} - ${name}`,
       html: `

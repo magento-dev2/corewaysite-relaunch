@@ -1,7 +1,15 @@
 "use client";
+import { ReactNode } from "react";
 
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Tag, Palette } from "lucide-react";
+
+
+type InfoCardProps = {
+  icon: ReactNode;
+  title: string;
+  value: string;
+};
 
 export default function ImageReorgHero() {
   return (
@@ -130,7 +138,7 @@ export default function ImageReorgHero() {
   );
 }
 
-function InfoCard({ icon, title, value }) {
+function InfoCard({ icon, title, value }: InfoCardProps) {
   return (
     <div className="flex items-center gap-4 p-2 bg-purple-200 border border-white/10 rounded-xl">
       <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">

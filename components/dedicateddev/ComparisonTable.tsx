@@ -210,3 +210,6 @@ export default function ComparisonTable() {
     </section>
   );
 }
+
+
+

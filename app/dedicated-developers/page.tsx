@@ -12,19 +12,36 @@ import PageCTA from '@/components/PageCTA';
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import PortfolioHighlights from '@/components/home/PortfolioHighlights';
+import Dedicatedteam from '@/components/dedicateddev/Devloperteam';
+import { useRef } from 'react';
 
 export default function DedicatedDevelopersPage() {
+   const teamRef = useRef<HTMLDivElement | null>(null);
+
+  const handleHeroClick = () => {
+    teamRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <div className="overflow-hidden">
-      <DedicatedDevHero />
+      <DedicatedDevHero onHireClick={handleHeroClick} />
       <DedicatedDevBenefits />
       <HiringSteps />
       <ComparisonTable />
+     <div ref={teamRef}>
+        <Dedicatedteam />
+      </div>
+
       <MultiTechExpertise />
       <TechStackShowcase />
       <PortfolioHighlights />
       <HiringModels />
+
       <WhyChooseUs />
+
 
       <FAQ
         badge="Help Center"

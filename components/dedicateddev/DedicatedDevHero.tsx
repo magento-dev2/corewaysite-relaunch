@@ -3,8 +3,13 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Users, Code2, Sparkles } from "lucide-react";
+import Link from "next/link";
 
-export default function DedicatedDevHero() {
+interface Props {
+  onHireClick?: () => void;
+}
+
+export default function DedicatedDevHero({ onHireClick }: Props) {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -95,12 +100,15 @@ export default function DedicatedDevHero() {
             </p>
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
+              <Link href="/dedicated-developers/hire-developers"> 
               <button className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
                 <span>Start Hiring</span>
                 <Users className="group-hover:scale-110 transition-transform" size={20} />
               </button>
+              </Link>
 
-              <button className="group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
+              <button       onClick={onHireClick}
+ className="group cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
                 View Talent Pool
               </button>
             </div>
