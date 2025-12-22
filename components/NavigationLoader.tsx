@@ -16,35 +16,74 @@ export default function NavigationLoader() {
 
   useEffect(() => {
     // Intercept all link clicks to show loader BEFORE navigation
+    // const handleClick = (e: MouseEvent) => {
+    //   const target = e.target as HTMLElement;
+    //   const link = target.closest('a');
+
+    //   if (link && link.href && !link.target && !link.download) {
+    //     const url = new URL(link.href);
+    //     const currentUrl = new URL(window.location.href);
+
+    //     // Only show loader for internal navigation to different pages
+    //     if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
+    //       // Scroll to top immediately when navigation starts
+    //       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    //       setIsLoading(true);
+    //       setProgress(10);
+
+    //       // Simulate progress
+    //       const interval = setInterval(() => {
+    //         setProgress(prev => {
+    //           if (prev >= 90) {
+    //             clearInterval(interval);
+    //             return 90;
+    //           }
+    //           return prev + 10;
+    //         });
+    //       }, 200);
+    //     }
+    //   }
+    // };
+
     const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a');
+  const target = e.target as HTMLElement;
 
-      if (link && link.href && !link.target && !link.download) {
-        const url = new URL(link.href);
-        const currentUrl = new URL(window.location.href);
+  // ✅ Ignore download buttons
+  if (target.closest('[data-download="true"]')) {
+    return;
+  }
 
-        // Only show loader for internal navigation to different pages
-        if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
-          // Scroll to top immediately when navigation starts
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+  const link = target.closest('a');
+  if (!link || !link.href) return;
 
-          setIsLoading(true);
-          setProgress(10);
+  // ✅ Ignore real downloads
+  if (link.hasAttribute('download')) return;
 
-          // Simulate progress
-          const interval = setInterval(() => {
-            setProgress(prev => {
-              if (prev >= 90) {
-                clearInterval(interval);
-                return 90;
-              }
-              return prev + 10;
-            });
-          }, 200);
+  // ✅ Ignore external links & new tabs
+  if (link.target === '_blank') return;
+
+  const url = new URL(link.href);
+  const currentUrl = new URL(window.location.href);
+
+  if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    setIsLoading(true);
+    setProgress(10);
+
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 90) {
+          clearInterval(interval);
+          return 90;
         }
-      }
-    };
+        return prev + 10;
+      });
+    }, 200);
+  }
+};
+
 
     document.addEventListener('click', handleClick, true);
     return () => document.removeEventListener('click', handleClick, true);
