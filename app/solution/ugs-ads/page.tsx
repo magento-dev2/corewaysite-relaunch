@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Video, Zap, Target, TrendingUp, CheckCircle2, Play, Users, Award, Clock, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Video, Zap, Target, TrendingUp, CheckCircle2, Play, Users, Award, Clock, Star, X } from "lucide-react";
 import Lenis from "@studio-freight/lenis";
 import PageCTA from "@/components/PageCTA";
 import { gsap } from "gsap";
@@ -44,79 +44,79 @@ const processSteps = [
 const showcaseVideos = [
   {
     id: 1,
-    title: "Skincare Product Launch",
-    client: "GlowBeauty Co.",
-    category: "Beauty & Wellness",
+    title: "Necklace Product Showcase",
+    client: "Jewelry Brand",
+    category: "Fashion & Accessories",
     views: "2.4M",
     engagement: "8.5%",
     conversions: "+245%",
-    thumbnail: "https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800",
-    adType: "Product Testimonial",
+    videoSrc: "/assets/ugc/Add5-Necklace.mp4",
+    adType: "Product Showcase",
     duration: "30s",
     platform: "Instagram & TikTok"
   },
   {
     id: 2,
-    title: "Fitness Supplement Review",
-    client: "PowerFuel Nutrition",
-    category: "Health & Fitness",
+    title: "Mixed Product Collection",
+    client: "Lifestyle Brand",
+    category: "Lifestyle",
     views: "1.8M",
     engagement: "12.3%",
     conversions: "+189%",
-    thumbnail: "https://images.pexels.com/photos/4162491/pexels-photo-4162491.jpeg?auto=compress&cs=tinysrgb&w=800",
-    adType: "Unboxing Experience",
+    videoSrc: "/assets/ugc/Add7-Mix.mp4",
+    adType: "Product Collection",
     duration: "45s",
     platform: "YouTube & Facebook"
   },
   {
     id: 3,
-    title: "Tech Gadget Demo",
-    client: "SmartLife Tech",
+    title: "Headphone Review",
+    client: "Audio Tech",
     category: "Technology",
     views: "3.2M",
     engagement: "15.7%",
     conversions: "+312%",
-    thumbnail: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
-    adType: "Tutorial & Demo",
+    videoSrc: "/assets/ugc/UGC-Headphone.mp4",
+    adType: "Product Review",
     duration: "60s",
     platform: "All Platforms"
   },
   {
     id: 4,
-    title: "Fashion Haul",
-    client: "UrbanStyle Boutique",
-    category: "Fashion & Lifestyle",
+    title: "Beverage Showcase",
+    client: "Drink Brand",
+    category: "Food & Beverage",
     views: "4.1M",
     engagement: "18.2%",
     conversions: "+425%",
-    thumbnail: "https://images.pexels.com/photos/972995/pexels-photo-972995.jpeg?auto=compress&cs=tinysrgb&w=800",
+    videoSrc: "/assets/ugc/UGC-Maza.mp4",
     adType: "Lifestyle Showcase",
     duration: "40s",
     platform: "Instagram & TikTok"
   },
   {
     id: 5,
-    title: "Home Decor Transform",
-    client: "CozyHome Living",
-    category: "Home & Decor",
+    title: "Necklace UGC Ad",
+    client: "Jewelry Collection",
+    category: "Fashion & Accessories",
     views: "1.5M",
     engagement: "9.8%",
     conversions: "+178%",
-    thumbnail: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800",
-    adType: "Before & After",
+    videoSrc: "/assets/ugc/UGC-Necklace.mp4",
+    adType: "UGC Testimonial",
     duration: "35s",
     platform: "Pinterest & Instagram"
   },
   {
     id: 6,
-    title: "Food Product Review",
-    client: "NutriSnack Foods",
-    category: "Food & Beverage",
+    title: "Necklace Product Ad",
+    client: "Accessories Brand",
+    category: "Fashion & Lifestyle",
     views: "2.7M",
     engagement: "14.1%",
     conversions: "+267%",
-    thumbnail: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
-    adType: "Taste Test",
+    videoSrc: "/assets/ugc/necklace.mp4",
+    adType: "Product Ad",
     duration: "25s",
     platform: "TikTok & Snapchat"
   },
@@ -139,8 +139,11 @@ export default function UGCAdsPage() {
 
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [visibleVideos, setVisibleVideos] = useState<boolean[]>(new Array(showcaseVideos.length).fill(false));
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState<string>("");
   const showcaseRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
+  const videoModalRef = useRef<HTMLVideoElement>(null);
 
 
 
@@ -223,6 +226,25 @@ export default function UGCAdsPage() {
       observer.disconnect();
     };
   }, []);
+
+  const handleVideoClick = (videoSrc: string) => {
+    setCurrentVideoSrc(videoSrc);
+    setIsVideoModalOpen(true);
+    // Auto-play video when modal opens
+    setTimeout(() => {
+      if (videoModalRef.current) {
+        videoModalRef.current.play();
+      }
+    }, 100);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    setCurrentVideoSrc("");
+    if (videoModalRef.current) {
+      videoModalRef.current.pause();
+    }
+  };
 
   return (
     <div className="min-h-screen  text-white">
@@ -317,16 +339,16 @@ export default function UGCAdsPage() {
 
               <div className="flex justify-center gap-3">
                 <Link href="/contact">
-                <button className="cursor-pointer group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
-                  <span>Get Started Now</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-                </button>
+                  <button className="cursor-pointer group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
+                    <span>Get Started Now</span>
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                  </button>
                 </Link>
                 <Link href="/case-studies">
-                <button className="cursor-pointer px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
-                  <Play className="w-5 h-5" />
-                  Our Work
-                </button>
+                  <button className="cursor-pointer px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
+                    <Play className="w-5 h-5" />
+                    Our Work
+                  </button>
                 </Link>
               </div>
 
@@ -435,14 +457,21 @@ export default function UGCAdsPage() {
                 className={`video-card group cursor-pointer transition-all duration-700 ${visibleVideos[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
-                onClick={() => setSelectedVideo(video.id)}
+                onClick={() => handleVideoClick(video.videoSrc)}
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all hover:transform hover:scale-105">
-                  <div className="relative aspect-[9/16] overflow-hidden">
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all hover:transform hover:scale-105 h-full">
+                  <div className="relative h-[600px] overflow-hidden">
+                    <video
+                      src={video.videoSrc}
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      playsInline
+                      onMouseEnter={(e) => e.currentTarget.play()}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.pause();
+                        e.currentTarget.currentTime = 0;
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
 
@@ -504,17 +533,17 @@ export default function UGCAdsPage() {
       />
 
       <div id="faq">
-            <FAQ
-        badge="Help Center"
-        title="Common Questions & Answers"
-        description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs["ugs-ads"] || []}
-        columns={1}
-        showContactCTA={true}
-        contactText="Still have questions?"
-        contactButtonText="Contact Our Team"
-      />
-          </div>
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs["ugs-ads"] || []}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+      </div>
 
       <PageCTA
         badge="  Ready to Create Your UGC Ads?"
@@ -525,6 +554,40 @@ export default function UGCAdsPage() {
         secondaryButtonText="Our Work"
         footerText="Free migration assessment • Zero downtime • 100% data integrity"
       />
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={closeVideoModal}
+        >
+          <div
+            className="relative w-full max-w-4xl mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeVideoModal}
+              className="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all border border-white/20 z-10"
+              aria-label="Close video"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Video Player */}
+            <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                ref={videoModalRef}
+                src={currentVideoSrc}
+                className="w-full aspect-video"
+                controls
+                autoPlay
+                playsInline
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes fadeInUp {

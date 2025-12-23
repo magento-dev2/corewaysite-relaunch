@@ -4,7 +4,7 @@ import TechHero from "@/components/technologies/TechHero";
 import TechOverview from "@/components/technologies/TechOverview";
 import TechFeatures from "@/components/technologies/TechFeatures";
 import TechStack from "@/components/technologies/TechStack";
-import TechUseCases from "@/components/technologies/TechUseCases";
+
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
@@ -13,6 +13,8 @@ import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import CaseStudySection from "@/components/technologies/CaseStudySection";
+import caseStudiesData from '@/data/caseStudies.json';
 
 export default function NodeJSTechnologyPage() {
   const subHeaderItems = [
@@ -60,97 +62,101 @@ export default function NodeJSTechnologyPage() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Technologies", href: "/technologies" },
-                { label: "Node.js Development" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <TechHero
-            title={nodeData.hero.title}
-            title2={nodeData.hero.title2}
-            subtitle={nodeData.hero.subtitle}
-            buttons={nodeData.hero.buttons}
-            img="/assets/images/nodejs.png"
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Technologies", href: "/technologies" },
+              { label: "Node.js Development" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="Node.js Development" items={subHeaderItems} />
+      <main>
+        <TechHero
+          title={nodeData.hero.title}
+          title2={nodeData.hero.title2}
+          subtitle={nodeData.hero.subtitle}
+          buttons={nodeData.hero.buttons}
+          img="/assets/images/nodejs.png"
+        />
 
-          <div id="overview">
-            <TechOverview
-              title={nodeData.overview.title}
-              content={nodeData.overview.content}
-              image={nodeData.overview.image}
-              stats={nodeData.overview.stats}
-            />
-          </div>
+        <SubHeader title="Node.js Development" items={subHeaderItems} />
 
-          <div id="features">
-            <TechFeatures
-              title={nodeData.features.title}
-              items={nodeData.features.items}
-            />
-          </div>
-
-          <TechStack
-            title={nodeData.technologies.title}
-            description={nodeData.technologies.description}
-            items={nodeData.technologies.items}
+        <div id="overview">
+          <TechOverview
+            title={nodeData.overview.title}
+            content={nodeData.overview.content}
+            image={nodeData.overview.image}
+            stats={nodeData.overview.stats}
           />
+        </div>
 
-          <TechUseCases
-            title={nodeData.useCases.title}
-            cases={nodeData.useCases.cases}
+        <div id="features">
+          <TechFeatures
+            title={nodeData.features.title}
+            items={nodeData.features.items}
           />
+        </div>
 
-          <div id="process">
-            <ProcessDiagram
-              title={nodeData.process.title}
-              description={nodeData.process.description}
-              steps={nodeData.process.steps}
-            />
-          </div>
+        <TechStack
+          title={nodeData.technologies.title}
+          description={nodeData.technologies.description}
+          items={nodeData.technologies.items}
+        />
 
-          <AutomationSection
-            title={nodeData.benefits.title}
-            description={nodeData.benefits.description}
-            features={nodeData.benefits.features}
-          />
 
-          <WhyCorewaySection
-            badge={whyCorewayData["nodejs"].badge}
-            title={whyCorewayData["nodejs"].title}
-            subtitle={whyCorewayData["nodejs"].subtitle}
-            reasons={whyCorewayData["nodejs"].reasons}
+
+        <div id="process">
+          <ProcessDiagram
+            title={nodeData.process.title}
+            description={nodeData.process.description}
+            steps={nodeData.process.steps}
           />
-          <div id="faq">
-            <FAQ
-              badge="Help Center"
-              title="Common Questions & Answers"
-              description="Everything you need to know about our services and how we work"
-              faqs={sampleFAQs["nodejs"]}
-              columns={1}
-              showContactCTA={true}
-              contactText="Still have questions?"
-              contactButtonText="Contact Our Team"
-            />
-          </div>
-          <PageCTA
-            badge="Start Building"
-            title="Ready to Build with Node.js?"
-            description="Let's create scalable, high-performance backend systems that power your applications. Our expert team specializes in modern Node.js architecture and best practices."
-            primaryButtonText="Start Your Project"
-            secondaryButtonText="View Portfolio"
-            secondaryButtonlink="Portfolio"
-            footerText="Free consultation • Expert developers • Proven results"
+        </div>
+
+        <AutomationSection
+          title={nodeData.benefits.title}
+          description={nodeData.benefits.description}
+          features={nodeData.benefits.features}
+        />
+
+        <CaseStudySection
+          technology="Node.js"
+          caseStudies={caseStudiesData}
+          title="Node.js Success Stories"
+          description="Discover how we've built scalable backend systems with Node.js"
+        />
+
+        <WhyCorewaySection
+          badge={whyCorewayData["nodejs"].badge}
+          title={whyCorewayData["nodejs"].title}
+          subtitle={whyCorewayData["nodejs"].subtitle}
+          reasons={whyCorewayData["nodejs"].reasons}
+        />
+        <div id="faq">
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs["nodejs"]}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
           />
-        </main>
-      </div>
+        </div>
+        <PageCTA
+          badge="Start Building"
+          title="Ready to Build with Node.js?"
+          description="Let's create scalable, high-performance backend systems that power your applications. Our expert team specializes in modern Node.js architecture and best practices."
+          primaryButtonText="Start Your Project"
+          secondaryButtonText="View Portfolio"
+          secondaryButtonlink="Portfolio"
+          footerText="Free consultation • Expert developers • Proven results"
+        />
+      </main>
+    </div>
   );
 }

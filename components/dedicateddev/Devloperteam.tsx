@@ -205,20 +205,16 @@ export default function Dedicatedteam() {
 
                                 <div className="mt-6 flex gap-4">
                                     {/* View CV Button */}
-   <button
-  type="button"
-  onClick={() => {
-    const link = document.createElement("a");
-    link.href = developer.cvUrl!;
-    link.setAttribute("download", "");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }}
-  className="flex-1 cursor-pointer text-center px-4 py-2 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 font-medium hover:bg-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
->
-  View CV
-</button>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            window.open(developer.cvUrl!, '_blank', 'noopener,noreferrer');
+                                        }}
+                                        className="flex-1 cursor-pointer text-center px-4 py-2 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 font-medium hover:bg-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
+                                    >
+                                        View CV
+                                    </button>
+
 
 
 

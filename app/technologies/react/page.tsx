@@ -4,7 +4,7 @@ import TechHero from "@/components/technologies/TechHero";
 import TechOverview from "@/components/technologies/TechOverview";
 import TechFeatures from "@/components/technologies/TechFeatures";
 import TechStack from "@/components/technologies/TechStack";
-import TechUseCases from "@/components/technologies/TechUseCases";
+
 import ProcessDiagram from "@/components/commerce/ProcessDiagram";
 import AutomationSection from "@/components/commerce/AutomationSection";
 import PageCTA from "@/components/PageCTA";
@@ -13,6 +13,8 @@ import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import CaseStudySection from "@/components/technologies/CaseStudySection";
+import caseStudiesData from '@/data/caseStudies.json';
 
 export default function ReactTechnologyPage() {
   const subHeaderItems = [
@@ -60,70 +62,75 @@ export default function ReactTechnologyPage() {
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Technologies", href: "/technologies" },
-                { label: "React Development" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <TechHero
-            title={reactData.hero.title}
-            title2={reactData.hero.title2}
-            subtitle={reactData.hero.subtitle}
-            buttons={reactData.hero.buttons}
-            img="/assets/images/react.png"
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Technologies", href: "/technologies" },
+              { label: "React Development" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="React Development" items={subHeaderItems} />
+      <main>
+        <TechHero
+          title={reactData.hero.title}
+          title2={reactData.hero.title2}
+          subtitle={reactData.hero.subtitle}
+          buttons={reactData.hero.buttons}
+          img="/assets/images/react.png"
+        />
 
-          <div id="overview">
-            <TechOverview
+        <SubHeader title="React Development" items={subHeaderItems} />
+
+        <div id="overview">
+          <TechOverview
             title={reactData.overview.title}
             content={reactData.overview.content}
             image={reactData.overview.image}
             stats={reactData.overview.stats}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <TechFeatures
+        <div id="features">
+          <TechFeatures
             title={reactData.features.title}
             items={reactData.features.items}
           />
-          </div>
+        </div>
 
-          <TechStack
-            title={reactData.technologies.title}
-            description={reactData.technologies.description}
-            items={reactData.technologies.items}
-          />
-
-          <TechUseCases
-            title={reactData.useCases.title}
-            cases={reactData.useCases.cases}
-          />
+        <TechStack
+          title={reactData.technologies.title}
+          description={reactData.technologies.description}
+          items={reactData.technologies.items}
+        />
 
 
 
-          <AutomationSection
-            title={reactData.benefits.title}
-            description={reactData.benefits.description}
-            features={reactData.benefits.features}
-          />
-          <WhyCorewaySection
-            badge={whyCorewayData["react"].badge}
-            title={whyCorewayData["react"].title}
-            subtitle={whyCorewayData["react"].subtitle}
-            reasons={whyCorewayData["react"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+
+
+        <AutomationSection
+          title={reactData.benefits.title}
+          description={reactData.benefits.description}
+          features={reactData.benefits.features}
+        />
+
+        <CaseStudySection
+          technology="React"
+          caseStudies={caseStudiesData}
+          title="React Success Stories"
+          description="See how we've built powerful React applications for our clients"
+        />
+
+        <WhyCorewaySection
+          badge={whyCorewayData["react"].badge}
+          title={whyCorewayData["react"].title}
+          subtitle={whyCorewayData["react"].subtitle}
+          reasons={whyCorewayData["react"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -133,18 +140,18 @@ export default function ReactTechnologyPage() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
 
-          <PageCTA
-            badge="Start Building"
-            title="Ready to Build with React?"
-            description="Let's create fast, scalable React applications that deliver exceptional user experiences. Our expert team is ready to bring your vision to life with modern React architecture."
-            primaryButtonText="Start Your Project"
-            secondaryButtonText="View Work"
-            footerText="Free consultation • Expert developers • Proven results"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Start Building"
+          title="Ready to Build with React?"
+          description="Let's create fast, scalable React applications that deliver exceptional user experiences. Our expert team is ready to bring your vision to life with modern React architecture."
+          primaryButtonText="Start Your Project"
+          secondaryButtonText="View Work"
+          footerText="Free consultation • Expert developers • Proven results"
+        />
+      </main>
+    </div>
   );
 }
