@@ -145,7 +145,7 @@ export default function SecurityToolsPage() {
             title="Ready to Secure Your Servers?"
             description="Let's implement comprehensive security with Fail2Ban, UFW, and CrowdSec. Our experts deliver multi-layer protection that blocks 99.9% of attacks automatically."
             primaryButtonText="Secure Your Servers"
-            secondaryButtonText="View Solutions"
+            secondaryButtonText="View Case Studies"
             footerText="Free consultation • Security experts • 24/7 protection"
           />
         </main>

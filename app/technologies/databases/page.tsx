@@ -146,7 +146,7 @@ export default function DatabaseTechnologyPage() {
             title="Ready to Optimize Your Database?"
             description="Let's architect database systems that scale with your business. Our experts deliver PostgreSQL and MongoDB solutions optimized for performance, reliability, and growth."
             primaryButtonText="Start Your Project"
-            secondaryButtonText="View Portfolio"
+            secondaryButtonText="View Work"
             footerText="Free consultation • Expert architects • Proven results"
           />
         </main>

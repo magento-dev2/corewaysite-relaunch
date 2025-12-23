@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Scalable, cost-effective object storage with AWS S3, Wasabi, MinIO, and Cloudflare R2. Expert implementation and optimization.",
     "buttons": [
-      { "label": "Start Your Project", "link": "#contact" },
-      { "label": "Compare Solutions", "link": "#comparison" }
+      { "label": "Start Your Project", "link": "/contact" },
+      { "label": "Compare Solutions", "link": "/solutions" }
     ]
   },
   "overview": {

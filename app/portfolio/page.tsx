@@ -52,8 +52,8 @@ export default function PortfolioPage() {
                 title2="Storytelling"
                 subtitle="Explore our creative work and digital craftsmanship — where strategy, design, and technology come together to deliver impactful experiences."
                 buttons={[
-                    { label: "View Projects", link: "#projects" },
-                    { label: "Contact Us", link: "#contact" },
+                    { label: "View Work", link: "/case-studies" },
+                    { label: "Contact Us", link: "/contact" },
                 ]}
             />
 
@@ -86,6 +86,7 @@ export default function PortfolioPage() {
                     description="Have a project in mind? We'd love to hear about it."
                     primaryButtonText="Start Your Project"
                     secondaryButtonText="View Services"
+                    secondaryButtonlink="/solutions"
                     footerText="Trusted by 100+ companies worldwide"
                 />
             </div>

@@ -145,7 +145,7 @@ export default function MetadataExtractionAI() {
             title="Ready to Automate Metadata Extraction?"
             description="Let's build an AI-powered extraction system that processes your documents, images, and videos at scale. Our GPT-4 and Vision AI solutions deliver 95%+ accuracy with continuous learning."
             primaryButtonText="Get Started"
-            secondaryButtonText="View Demo"
+            secondaryButtonText="View Work"
             footerText="Free proof of concept • 95%+ accuracy • Custom AI models"
           />
         </main>

@@ -147,6 +147,7 @@ export default function NodeJSTechnologyPage() {
             description="Let's create scalable, high-performance backend systems that power your applications. Our expert team specializes in modern Node.js architecture and best practices."
             primaryButtonText="Start Your Project"
             secondaryButtonText="View Portfolio"
+            secondaryButtonlink="Portfolio"
             footerText="Free consultation • Expert developers • Proven results"
           />
         </main>

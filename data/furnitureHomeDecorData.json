@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Transform your furniture business with immersive AR experiences, 3D product visualization, smart inventory management, and seamless omnichannel retail solutions.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Request Demo", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/Solutions" },
+      { "label": "Request Demo", "link": "contact" }
     ]
   },
   "overview": {

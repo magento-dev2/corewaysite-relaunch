@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 export default function GPTAutomation() {
   const subHeaderItems = [
@@ -98,10 +99,13 @@ export default function GPTAutomation() {
             items={gptAutomationData.platforms.items}
           />
 
-          <DatasetCaseStudies
+
+          <PortfolioHighlights/>
+
+          {/* <DatasetCaseStudies
             title={gptAutomationData.caseStudies.title}
             cases={gptAutomationData.caseStudies.cases}
-          />
+          /> */}
 
           <div id="process">
             <DatasetProcess

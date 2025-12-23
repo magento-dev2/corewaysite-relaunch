@@ -147,7 +147,7 @@ export default function PythonTechnologyPage() {
             title="Ready to Build with Python?"
             description="Let's create powerful, scalable Python applications for your business. Our expert team specializes in Flask, FastAPI, Django, data science, and machine learning solutions."
             primaryButtonText="Start Your Project"
-            secondaryButtonText="View Portfolio"
+            secondaryButtonText="View Case-studies"
             footerText="Free consultation • Expert developers • Proven results"
           />
         </main>

@@ -6,11 +6,11 @@
     "buttons": [
       {
         "label": "Explore Solutions",
-        "link": "#features"
+        "link": "/solutions "
       },
       {
         "label": "View Case Studies",
-        "link": "#cases"
+        "link": "/case-studies"
       }
     ],
     "img": "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg"

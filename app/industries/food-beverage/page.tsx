@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 export default function FoodBeveragePage() {
@@ -104,10 +105,12 @@ export default function FoodBeveragePage() {
             items={foodBeverageData.platforms.items}
           />
 
-          <DatasetCaseStudies
+          {/* <DatasetCaseStudies
             title={foodBeverageData.caseStudies.title}
             cases={foodBeverageData.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights/>
 
           <div id="process">
             <DatasetProcess

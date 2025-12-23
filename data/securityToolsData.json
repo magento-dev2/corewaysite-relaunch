@@ -5,8 +5,8 @@
     "img": "/assets/herosection/security-Photoroom.png",
     "subtitle": "Comprehensive server security implementation with intrusion prevention, firewall configuration, and threat intelligence. Protect your infrastructure from attacks.",
     "buttons": [
-      { "label": "Secure Your Servers", "link": "#contact" },
-      { "label": "View Solutions", "link": "#cases" }
+      { "label": "Secure Your Servers", "link": "/contact" },
+      { "label": "View Solutions", "link": "/solutions" }
     ]
   },
   "overview": {

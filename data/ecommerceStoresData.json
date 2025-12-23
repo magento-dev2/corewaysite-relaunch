@@ -6,11 +6,11 @@
     "buttons": [
       {
         "label": "Start Your Store",
-        "link": "#features"
+        "link": "/contact"
       },
       {
         "label": "View Portfolio",
-        "link": "#showcase"
+        "link": "/portfolio"
       }
     ],
     "img": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg"

@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Build scalable, high-performance backend systems with Node.js. Expert development for APIs, microservices, and real-time applications.",
     "buttons": [
-      { "label": "Start Your Project", "link": "#contact" },
-      { "label": "View Portfolio", "link": "#cases" }
+      { "label": "Start Your Project", "link": "/contact" },
+      { "label": "View Portfolio", "link": "/portfolio" }
     ]
   },
   "overview": {

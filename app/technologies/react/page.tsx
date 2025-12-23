@@ -141,7 +141,7 @@ export default function ReactTechnologyPage() {
             title="Ready to Build with React?"
             description="Let's create fast, scalable React applications that deliver exceptional user experiences. Our expert team is ready to bring your vision to life with modern React architecture."
             primaryButtonText="Start Your Project"
-            secondaryButtonText="View Portfolio"
+            secondaryButtonText="View Work"
             footerText="Free consultation • Expert developers • Proven results"
           />
         </main>

@@ -5,8 +5,8 @@
     "img":"/assets/herosection/automatin-Photoroom.png",
     "subtitle": "Build intelligent automation workflows that combine GPT models, external APIs, and workflow orchestration to eliminate manual tasks, accelerate processes, and scale operations efficiently.",
     "buttons": [
-      { "label": "Start Automating", "link": "#features" },
-      { "label": "View Examples", "link": "#cases" }
+      { "label": "Start Automating", "link": "/contact" },
+      { "label": "View Examples", "link": "/case-studies" }
     ]
   },
   "overview": {

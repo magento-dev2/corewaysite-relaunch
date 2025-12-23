@@ -172,19 +172,19 @@ export default function TechStackShowcase() {
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-300 text-xl mb-6">
-            Don't see your technology? <span className="text-purple-400 font-semibold">We've got you covered.</span>
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
-              Request Custom Stack
-            </button>
-            <button className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium">
-              View Full Tech List
-            </button>
-          </div>
-        </div>
+          {/* <div className="mt-16 text-center">
+            <p className="text-gray-300 text-xl mb-6">
+              Don't see your technology? <span className="text-purple-400 font-semibold">We've got you covered.</span>
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
+                Request Custom Stack
+              </button>
+              <button className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium">
+                View Full Tech List
+              </button>
+            </div>
+          </div> */}
       </div>
     </section>
   );

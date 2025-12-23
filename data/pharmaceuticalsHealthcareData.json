@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "HIPAA-compliant platforms, telemedicine integration, patient portals, prescription management, and AI-powered healthcare solutions.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/solutions" },
+      { "label": "Book Consultation", "link": "/contact" }
     ]
   },
   "overview": {

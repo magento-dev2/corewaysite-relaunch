@@ -27,24 +27,24 @@ export default function InsightsPage() {
             href: "/case-studies",
             icon: "trending-up",
         },
-        {
-            title: "Project Snapshots",
-            description: "Quick glimpses of our recent projects with key highlights, technologies used, and outcomes achieved.",
-            href: "/portfolio/projects",
-            icon: "sparkles",
-        },
-        {
-            title: "Testimonials",
-            description: "Hear from our satisfied clients about their experience working with us and the results we delivered.",
-            href: "/testimonials",
-            icon: "users",
-        },
-        {
-            title: "Dedicated Developers",
-            description: "Scale your team with our dedicated developers who integrate seamlessly with your workflow and culture.",
-            href: "/dedicated-developers",
-            icon: "award",
-        },
+        // {
+        //     title: "Project Snapshots",
+        //     description: "Quick glimpses of our recent projects with key highlights, technologies used, and outcomes achieved.",
+        //     href: "/portfolio/projects",
+        //     icon: "sparkles",
+        // },
+        // {
+        //     title: "Testimonials",
+        //     description: "Hear from our satisfied clients about their experience working with us and the results we delivered.",
+        //     href: "/testimonials",
+        //     icon: "users",
+        // },
+        // {
+        //     title: "Dedicated Developers",
+        //     description: "Scale your team with our dedicated developers who integrate seamlessly with your workflow and culture.",
+        //     href: "/dedicated-developers",
+        //     icon: "award",
+        // },
     ];
 
     const whyCorewayReasons = [
@@ -87,7 +87,7 @@ export default function InsightsPage() {
                     subtitle="Real Projects, Real Results"
                     description="Discover how we've helped businesses transform through technology. From detailed case studies to client testimonials, explore the impact of our solutions across industries and technologies."
                     primaryButton={{ label: "Start Your Project", href: "/contact" }}
-                    secondaryButton={{ label: "Talk to Our Team", href: "/contact" }}
+                    secondaryButton={{ label: "Talk to Our Team", href: "/dedicated-developers" }}
                     imageSrc="/assets/images/insights.png"
                     imageAlt="Success Stories"
                 />

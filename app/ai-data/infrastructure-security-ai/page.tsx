@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 
 export default function InfrastructureSecurityAI() {
   const subHeaderItems = [
@@ -52,6 +53,41 @@ export default function InfrastructureSecurityAI() {
     serviceType: "AI Infrastructure Security",
     areaServed: "Worldwide",
   };
+
+
+    const projectData = [
+  {
+    id: 1,
+    language: "Wordpress",
+    images: ["/images/Wordpress/american.png"]
+  },
+  {
+    id: 2,
+    language: "Shopify",
+    images: ["/images/Shopify/aurus.png"]
+  },
+  {
+    id: 3,
+    language: "WooCommerce",
+    images: ["/images/WooCommerce/alhine.png"]
+  },
+  {
+    id: 4,
+    language: "Android",
+    images: ["/images/Android/bapuji-1.png"]
+  },
+  {
+    id: 5,
+    language: "Magento",
+    images: ["/images/Magento/knir.png"]
+  },
+  {
+    id: 6,
+    language: "Laravel",
+    images: ["/images/Laravel/delaware.png"]
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
@@ -97,10 +133,14 @@ export default function InfrastructureSecurityAI() {
             items={infrastructureSecurityData.platforms.items}
           />
 
-          <AISecurityCaseStudies
+          {/* <AISecurityCaseStudies
             title={infrastructureSecurityData.caseStudies.title}
             cases={infrastructureSecurityData.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights data={projectData} highlightCount={6} />
+
+          
 
           <div id="process">
             <AISecurityProcess
@@ -139,8 +179,8 @@ export default function InfrastructureSecurityAI() {
             badge="Secure your infrastructure"
             title="Ready to Deploy AI Security?"
             description="Let's protect your infrastructure with intelligent, AI-powered security solutions. Our expert team delivers 24/7 threat detection, automated response, and continuous protection."
-            primaryButtonText="Start Protection"
-            secondaryButtonText="Get Assessment"
+            primaryButtonText="Start Project"
+            secondaryButtonText=" View Our Work"
             footerText="Free security assessment • 24/7 AI monitoring • 99.9% threat detection"
           />
         </main>

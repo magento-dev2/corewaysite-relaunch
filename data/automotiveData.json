@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Drive innovation in the automotive industry with connected vehicles, smart manufacturing, AI-powered diagnostics, and next-generation mobility solutions.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Schedule Demo", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/solutions" },
+      { "label": "Schedule Demo", "link": "/contact" }
     ]
   },
   "overview": {

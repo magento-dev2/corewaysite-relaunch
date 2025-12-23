@@ -79,10 +79,10 @@ export default function TechUseCases({ title, cases }: TechUseCasesProps) {
                 </h3>
                 <p className="text-gray-400 mb-6">{useCase.description}</p>
 
-                <div className="flex items-center text-purple-400 font-semibold group-hover:gap-2 transition-all">
+                {/* <div className="flex items-center text-purple-400 font-semibold group-hover:gap-2 transition-all">
                   <span>Learn more</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </div> */}
               </div>
 
               <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -mr-20 -mt-20"></div>

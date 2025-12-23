@@ -221,74 +221,75 @@
         }
       ]
     },
+  {
+  "id": "technologies",
+  "label": "Technologies",
+  "type": "mega",
+  "href": "/technologies",
+  "columns": [
     {
-      "id": "technologies",
-      "label": "Technologies",
-      "type": "mega",
-      "href": "/technologies",
-      "columns": [
+      "title": "Frontend & Backend",
+      "items": [
         {
-          "title": "Frontend & Backend",
-          "items": [
-            {
-              "label": "React.js",
-              "href": "/technologies/react",
-              "icon": "code"
-            },
-            {
-              "label": "Node.js",
-              "href": "/technologies/nodejs",
-              "icon": "server"
-            },
-            {
-              "label": "Python (Flask, FastAPI)",
-              "href": "/technologies/python",
-              "icon": "code-2"
-            },
-            {
-              "label": "Laravel / PHP",
-              "href": "/technologies/laravel-php",
-              "icon": "box"
-            }
-          ]
+          "label": "React.js",
+          "href": "/technologies/react",
+          "icon": "atom"
         },
         {
-          "title": "Databases & Storage",
-          "items": [
-            {
-              "label": "PostgreSQL / MongoDB",
-              "href": "/technologies/databases",
-              "icon": "database"
-            },
-            {
-              "label": "AWS / Wasabi / MinIO / Cloudflare R2",
-              "href": "/technologies/cloud-storage",
-              "icon": "hard-drive"
-            },
-            {
-              "label": "S3 Operation",
-              "href": "/technologies/s3-process",
-              "icon": "database"
-            }
-          ]
+          "label": "Node.js",
+          "href": "/technologies/nodejs",
+          "icon": "server"
         },
         {
-          "title": "IoT & Security",
-          "items": [
-            {
-              "label": "MQTT / IoT Protocols / WebSockets",
-              "href": "/technologies/iot-protocols",
-              "icon": "radio"
-            },
-            {
-              "label": "Fail2Ban / UFW / CrowdSec",
-              "href": "/technologies/security-tools",
-              "icon": "shield-check"
-            }
-          ]
+          "label": "Python (Flask, FastAPI)",
+          "href": "/technologies/python",
+          "icon": "code"
+        },
+        {
+          "label": "Laravel / PHP",
+          "href": "/technologies/laravel-php",
+          "icon": "box"
         }
       ]
     },
+    {
+      "title": "Databases & Storage",
+      "items": [
+        {
+          "label": "PostgreSQL / MongoDB",
+          "href": "/technologies/databases",
+          "icon": "database"
+        },
+        {
+          "label": "AWS / Wasabi / MinIO / Cloudflare R2",
+          "href": "/technologies/cloud-storage",
+          "icon": "cloud"
+        },
+        {
+          "label": "S3 Operation",
+          "href": "/technologies/s3-process",
+          "icon": "hard-drive"
+        }
+      ]
+    },
+    {
+      "title": "IoT & Security",
+      "items": [
+        {
+          "label": "MQTT / IoT Protocols / WebSockets",
+          "href": "/technologies/iot-protocols",
+          "icon": "radio"
+        },
+        {
+          "label": "Fail2Ban / UFW / CrowdSec",
+          "href": "/technologies/security-tools",
+          "icon": "shield-check"
+        }
+      ]
+    }
+  ]
+},
+
     {
       "id": "Insights",
       "label": "Insights",

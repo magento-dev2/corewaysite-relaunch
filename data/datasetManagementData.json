@@ -6,8 +6,8 @@
 
     "subtitle": "Build scalable data pipelines, manage massive datasets, and deliver real-time insights with intelligent data infrastructure and AI-powered analytics.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Get Started", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/solutions" },
+      { "label": "Get Started", "link": "/contact" }
     ]
   },
   "overview": {

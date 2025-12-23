@@ -69,7 +69,8 @@ export default function S3ProcessPage() {
         title="Ready to Optimize Your Cloud Storage?"
         description="Let our experts help you build a scalable, secure, and cost-effective S3 infrastructure for your business."
         primaryButtonText="Get Started"
-        secondaryButtonText="Schedule Consultation"
+        secondaryButtonText="Our Portfolio"
+        secondaryButtonlink='/portfolio'
         footerText="Free consultation • Custom solutions • Expert support"
       />
     </div>

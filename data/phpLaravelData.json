@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Build elegant, powerful web applications with Laravel and PHP. Expert development for enterprise platforms, APIs, and full-stack solutions.",
     "buttons": [
-      { "label": "Start Your Project", "link": "#contact" },
-      { "label": "View Portfolio", "link": "#cases" }
+      { "label": "Start Your Project", "link": "/contact" },
+      { "label": "View Portfolio", "link": "/portfolio" }
     ]
   },
   "overview": {

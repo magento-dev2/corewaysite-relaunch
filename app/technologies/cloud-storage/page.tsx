@@ -143,9 +143,10 @@ export default function CloudStorageTechnologyPage() {
           <PageCTA
             badge="Start Optimizing"
             title="Ready to Optimize Your Storage?"
+            
             description="Let's implement cloud storage that scales infinitely while reducing costs by up to 80%. Our experts help you choose between S3, Wasabi, MinIO, or R2 for maximum efficiency."
             primaryButtonText="Start Your Project"
-            secondaryButtonText="Compare Solutions"
+            secondaryButtonText="View Case"
             footerText="Free consultation • Cost analysis • Proven results"
           />
         </main>

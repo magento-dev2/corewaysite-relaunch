@@ -101,9 +101,9 @@ export default function DedicatedDevHero({ onHireClick }: Props) {
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
               <Link href="/dedicated-developers/hire-developers"> 
-              <button className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
+              <button className="cursor-pointer group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
                 <span>Start Hiring</span>
-                <Users className="group-hover:scale-110 transition-transform" size={20} />
+                <Users className="cursor-pointer group-hover:scale-110 transition-transform" size={20} />
               </button>
               </Link>
 

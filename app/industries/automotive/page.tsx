@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 export default function AutomotivePage() {
@@ -99,10 +100,16 @@ export default function AutomotivePage() {
             items={automotiveData.platforms.items}
           />
 
+
+<PortfolioHighlights/>
+
+{/* 
+
+
           <DatasetCaseStudies
             title={automotiveData.caseStudies.title}
             cases={automotiveData.caseStudies.cases}
-          />
+          /> */}
 
           <div id="process">
             <DatasetProcess

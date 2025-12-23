@@ -143,7 +143,7 @@ export default function SecurityToolsComparison({
                 Fail2Ban stops brute-force attempts, and CrowdSec detects advanced threats with community intelligence.
               </p>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500/20 border border-purple-500/30 rounded-xl text-purple-300 hover:bg-purple-500/30 transition-colors"
               >
                 <span className="font-semibold">Get Complete Security Setup</span>

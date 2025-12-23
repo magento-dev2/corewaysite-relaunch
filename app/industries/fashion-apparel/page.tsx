@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 export default function FashionApparelPage() {
@@ -103,11 +104,13 @@ export default function FashionApparelPage() {
             description={fashionApparelData.platforms.description}
             items={fashionApparelData.platforms.items}
           />
-
+{/* 
           <DatasetCaseStudies
             title={fashionApparelData.caseStudies.title}
             cases={fashionApparelData.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights/>
 
           <div id="process">
             <DatasetProcess

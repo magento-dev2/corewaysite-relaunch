@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Clock, CalendarDays, Users, Check } from "lucide-react";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -135,13 +136,15 @@ export default function HiringModels() {
                     ))}
                   </ul>
 
-                  <button className={`w-full py-3 rounded-lg font-medium transition-all ${
+<Link href="/dedicated-developers/hire-developers">
+                  <button className={`w-full cursor-pointer py-3 rounded-lg font-medium transition-all ${
                     model.popular
                       ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-blue-600 hover:to-cyan-700'
                       : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'
                   }`}>
                     Get Started
                   </button>
+                  </Link>
                 </div>
               </div>
             );

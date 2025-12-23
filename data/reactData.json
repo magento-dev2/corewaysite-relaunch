@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Build lightning-fast, scalable web applications with React. Expert development for SPAs, progressive web apps, and enterprise-grade solutions.",
     "buttons": [
-      { "label": "Start Your Project", "link": "#contact" },
-      { "label": "View Portfolio", "link": "#cases" }
+      { "label": "Start Your Project", "link": "/contact" },
+      { "label": "View Portfolio", "link": "/portfolio" }
     ]
   },
   "overview": {

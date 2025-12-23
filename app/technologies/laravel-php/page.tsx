@@ -148,7 +148,7 @@ export default function LaravelPHPTechnologyPage() {
             title="Ready to Build with Laravel?"
             description="Let's create elegant, powerful web applications with Laravel and PHP. Our expert team delivers enterprise-grade solutions with modern architecture and best practices."
             primaryButtonText="Start Your Project"
-            secondaryButtonText="View Portfolio"
+            secondaryButtonText="View Our Work"
             footerText="Free consultation • Expert developers • Proven results"
           />
         </main>

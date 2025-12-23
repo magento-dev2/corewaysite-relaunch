@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Transform your food and beverage operations with smart supply chain, IoT-enabled production, AI-powered demand forecasting, and seamless omnichannel experiences.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/features" },
+      { "label": "Book Consultation", "link": "/contact" }
     ]
   },
   "overview": {

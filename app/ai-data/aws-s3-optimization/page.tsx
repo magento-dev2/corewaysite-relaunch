@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 export default function AWSS3Optimization() {
   const subHeaderItems = [
@@ -97,10 +98,12 @@ export default function AWSS3Optimization() {
             items={awsS3Data.platforms.items}
           />
 
-          <AWSS3CaseStudies
+          {/* <AWSS3CaseStudies
             title={awsS3Data.caseStudies.title}
             cases={awsS3Data.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights/>
 
           <div id="process">
             <AWSS3Process
@@ -137,9 +140,9 @@ export default function AWSS3Optimization() {
 
           <PageCTA
             badge="Optimize Your Storage"
-            title="Ready to Reduce Your S3 Costs?"
+            title="Inquery for storage"
             description="Let's analyze your AWS S3 infrastructure and implement cost-saving strategies. Our expert team delivers optimizations that can reduce your storage costs by up to 70% while improving performance."
-            primaryButtonText="Get Free Audit"
+            primaryButtonText="Contact"
             secondaryButtonText="Schedule Call"
             footerText="Free S3 audit • Cost reduction guarantee • Zero downtime migration"
           />
@@ -147,3 +150,5 @@ export default function AWSS3Optimization() {
       </div>
   );
 }
+
+

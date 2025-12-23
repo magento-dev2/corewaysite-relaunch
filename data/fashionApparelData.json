@@ -5,8 +5,8 @@
     "img": "/assets/herosection/digital.png",
     "subtitle": "Elevate your fashion brand with AI-powered personalization, virtual try-on, smart inventory forecasting, omnichannel retail experiences, and trend prediction analytics.",
     "buttons": [
-      { "label": "Explore Solutions", "link": "#features" },
-      { "label": "Schedule Demo", "link": "#contact" }
+      { "label": "Explore Solutions", "link": "/solutions" },
+      { "label": "Schedule Demo", "link": "/contact" }
     ]
   },
   "overview": {

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Atom, Box, Cloud, HardDrive, Radio, Server } from 'lucide-react';
 import {
   ShoppingCart,
   Rocket,
@@ -71,7 +71,15 @@ const iconMap: Record<string, any> = {
   // Infrastructure & Security
   code: Code,
   "shield-check": ShieldCheck,
-  users: Users
+  users: Users,
+
+  // 🚀 Technologies (NEW)
+  atom: Atom,              // React.js
+  server: Server,          // Node.js
+  box: Box,                // Laravel / PHP
+  cloud: Cloud,            // Cloud Storage
+  "hard-drive": HardDrive, // S3 Operations
+  radio: Radio             // IoT / MQTT
 };
 
 export default function MegaMenu({ columns, isOpen, menuLabel }: MegaMenuProps) {

@@ -104,10 +104,10 @@ export default function PharmaceuticalsHealthcarePage() {
             items={healthcareData.platforms.items}
           />
 
-          <CaseStudies
+          {/* <CaseStudies
             title={healthcareData.caseStudies.title}
             cases={healthcareData.caseStudies.cases}
-          />
+          /> */}
 
           <div id="process">
             <ProcessDiagram

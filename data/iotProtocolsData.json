@@ -5,8 +5,8 @@
     "img": "/assets/herosection/iot-Photoroom.png",
     "subtitle": "Real-time communication protocols for IoT devices, messaging systems, and live applications. Expert implementation of MQTT, WebSockets, and IoT connectivity.",
     "buttons": [
-      { "label": "Start Your Project", "link": "#contact" },
-      { "label": "View Solutions", "link": "#cases" }
+      { "label": "Start Your Project", "link": "/contact" },
+      { "label": "View Solutions", "link": "/solutions" }
     ]
   },
   "overview": {

@@ -77,7 +77,9 @@ export default function DedicatedDevelopersPage() {
         title="Ready to Build Your Dream Team?"
         description="Get access to skilled developers who work exclusively for you. Scale your team up or down based on your needs with complete flexibility."
         primaryButtonText="Start Hiring"
+        primaryButtonlink='/dedicated-developers/hire-developers'
         secondaryButtonText="Schedule Consultation"
+        
         footerText="Flexible engagement • No hidden costs • 100+ tech experts"
       />
     </div>

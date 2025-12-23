@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import WhyCorewaySection from '@/components/WhyCorewaySection';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 
 export default function DatasetManagementDelivery() {
   const subHeaderItems = [
@@ -52,6 +53,39 @@ export default function DatasetManagementDelivery() {
     serviceType: "Data Management & Delivery",
     areaServed: "Worldwide",
   };
+
+   const projectData = [
+  {
+    id: 1,
+    language: "Wordpress",
+    images: ["/images/Wordpress/american.png"]
+  },
+  {
+    id: 2,
+    language: "Shopify",
+    images: ["/images/Shopify/aurus.png"]
+  },
+  {
+    id: 3,
+    language: "WooCommerce",
+    images: ["/images/WooCommerce/alhine.png"]
+  },
+  {
+    id: 4,
+    language: "Android",
+    images: ["/images/Android/bapuji-1.png"]
+  },
+  {
+    id: 5,
+    language: "Magento",
+    images: ["/images/Magento/knir.png"]
+  },
+  {
+    id: 6,
+    language: "Laravel",
+    images: ["/images/Laravel/delaware.png"]
+  }
+];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
@@ -98,10 +132,13 @@ export default function DatasetManagementDelivery() {
             items={datasetManagementData.platforms.items}
           />
 
-          <DatasetCaseStudies
+
+          <PortfolioHighlights data={projectData} highlightCount={6} />
+
+          {/* <DatasetCaseStudies
             title={datasetManagementData.caseStudies.title}
             cases={datasetManagementData.caseStudies.cases}
-          />
+          /> */}
 
           <div id="process">
             <DatasetProcess
@@ -141,7 +178,7 @@ export default function DatasetManagementDelivery() {
             title="Ready to Build Your Data Infrastructure?"
             description="Let's design and implement scalable data pipelines that turn your data into actionable insights. Our expert team delivers enterprise-grade solutions for petabyte-scale processing."
             primaryButtonText="Start Building"
-            secondaryButtonText="View Solutions"
+            secondaryButtonText="View Casestudies"
             footerText="Free architecture consultation • Scalable solutions • 24/7 support"
           />
         </main>
