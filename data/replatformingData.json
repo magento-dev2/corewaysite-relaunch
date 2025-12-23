@@ -4,8 +4,8 @@
     "title2":" Migration Services",
     "subtitle": "Modernize your technology stack with zero downtime. Expert migration services for e-commerce, SaaS, and enterprise applications.",
     "buttons": [
-      { "label": "Start Migration", "link": "#features" },
-      { "label": "Get Assessment", "link": "#contact" }
+      { "label": "Get Started", "link": "/contact" },
+      { "label": "Our Portfolio ", "link": "/portfolio" }
     ]
   },
   "overview": {
@@ -67,19 +67,23 @@
         "id": "1",
         "title": "E-commerce Platform Migration",
         "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
-        "description": "Migrated 500K products from Magento to Shopify Plus with zero downtime"
+        "description": "Migrated 500K products from Magento to Shopify Plus with zero downtime",
+        "link":"/industries/ecommerce-stores"
+        
       },
       {
         "id": "2",
         "title": "Cloud Infrastructure Migration",
         "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg",
-        "description": "Moved enterprise application to AWS, reducing costs by 40%"
+        "description": "Moved enterprise application to AWS, reducing costs by 40%",
+        "link":"/solution/saas-infrastructure-devops"
       },
       {
         "id": "3",
         "title": "Legacy System Modernization",
         "image": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
-        "description": "Transformed 15-year-old system to modern microservices architecture"
+        "description": "Transformed 15-year-old system to modern microservices architecture",
+        "link":"/solution/analytics"
       }
     ]
   },

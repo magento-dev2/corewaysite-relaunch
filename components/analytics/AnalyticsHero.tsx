@@ -57,7 +57,7 @@ export default function AnalyticsHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
-              <Link href="/" className="cursor-pointer">
+              <Link href="/contact" className="cursor-pointer">
                 <button className="group cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-1">
                   <span>Get Started</span>
                   <TrendingUp className="group-hover:scale-110 transition-transform" size={20} />

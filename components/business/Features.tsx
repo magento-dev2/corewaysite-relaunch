@@ -87,10 +87,10 @@ export default function WorkflowZigZagScroll() {
                     {item.description}
                   </p>
 
-                  <div className="flex items-center text-white font-medium group/btn cursor-pointer">
+                  {/* <div className="flex items-center text-white font-medium group/btn cursor-pointer">
                     <span className="mr-2 group-hover/btn:mr-4 transition-all duration-300">Explore template</span>
                     <ArrowRight className="w-5 h-5 text-purple-400 group-hover/btn:text-white transition-colors" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             );

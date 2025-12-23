@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 
 
 export default function AIConsulting() {
@@ -53,6 +54,39 @@ export default function AIConsulting() {
     serviceType: "AI Consulting & Machine Learning",
     areaServed: "Worldwide",
   };
+
+    const projectData = [
+  {
+    id: 1,
+    language: "Wordpress",
+    images: ["/images/Wordpress/american.png"]
+  },
+  {
+    id: 2,
+    language: "Shopify",
+    images: ["/images/Shopify/aurus.png"]
+  },
+  {
+    id: 3,
+    language: "WooCommerce",
+    images: ["/images/WooCommerce/alhine.png"]
+  },
+  {
+    id: 4,
+    language: "Android",
+    images: ["/images/Android/bapuji-1.png"]
+  },
+  {
+    id: 5,
+    language: "Magento",
+    images: ["/images/Magento/knir.png"]
+  },
+  {
+    id: 6,
+    language: "Laravel",
+    images: ["/images/Laravel/delaware.png"]
+  }
+];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
@@ -98,10 +132,12 @@ export default function AIConsulting() {
             items={aiConsultingData.platforms.items}
           />
 
-          <AIConsultingCaseStudies
+          {/* <AIConsultingCaseStudies
             title={aiConsultingData.caseStudies.title}
             cases={aiConsultingData.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights data={projectData} highlightCount={6}/>
 
           <div id="process">
             <AIConsultingProcess
@@ -142,6 +178,7 @@ export default function AIConsulting() {
             primaryButtonText="Start AI Journey"
             secondaryButtonText="View Case Studies"
             footerText="Free AI consultation • Custom ML solutions • Proven expertise"
+            primaryButtonlink="/ai-data"
           />
         </main>
       </div>

@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 
 
 
@@ -54,6 +55,38 @@ export default function IoTApplicationDevelopment() {
     serviceType: "IoT Development",
     areaServed: "Worldwide",
   };
+    const projectData = [
+  {
+    id: 1,
+    language: "Wordpress",
+    images: ["/images/Wordpress/american.png"]
+  },
+  {
+    id: 2,
+    language: "Shopify",
+    images: ["/images/Shopify/aurus.png"]
+  },
+  {
+    id: 3,
+    language: "WooCommerce",
+    images: ["/images/WooCommerce/alhine.png"]
+  },
+  {
+    id: 4,
+    language: "Android",
+    images: ["/images/Android/bapuji-1.png"]
+  },
+  {
+    id: 5,
+    language: "Magento",
+    images: ["/images/Magento/knir.png"]
+  },
+  {
+    id: 6,
+    language: "Laravel",
+    images: ["/images/Laravel/delaware.png"]
+  }
+];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
@@ -99,10 +132,12 @@ export default function IoTApplicationDevelopment() {
             items={iotApplicationsData.platforms.items}
           />
 
-          <IoTCaseStudies
+          <PortfolioHighlights data={projectData} highlightCount={6}/>
+
+          {/* <IoTCaseStudies
             title={iotApplicationsData.caseStudies.title}
             cases={iotApplicationsData.caseStudies.cases}
-          />
+          /> */}
 
           <div id="process">
             <IoTProcess

@@ -8,7 +8,7 @@ const steps = [
     number: "Step 1",
     title: "Tell Us Your Needs",
     description: "Share your project requirements with our experts through a quick consultation.",
-    image: "/assets/agent/dedicated_team.jpg",
+     image: "/assets/agent/share_requirement.png",
     bgColor: "bg-gray-50",
     badge: "bg-gray-200 text-gray-800",
   },
@@ -16,7 +16,8 @@ const steps = [
     number: "Step 2",
     title: "Select & Interview Talent",
     description: "Review profiles, conduct interviews, and choose developers that best fit your project.",
-    image: "/assets/agent/happy_customer.png",
+    image: "/assets/agent/dedicated_team.jpg",
+   
     bgColor: "bg-cyan-400",
     badge: "bg-cyan-500 text-white",
   },
@@ -24,7 +25,8 @@ const steps = [
     number: "Step 3",
     title: "Sign & Start Development",
     description: "Finalize the contract and onboard your dedicated developers to begin work immediately.",
-    image: "/assets/agent/share_requirement.png",
+     image: "/assets/agent/happy_customer.png",
+   
     bgColor: "bg-gray-50",
     badge: "bg-gray-200 text-gray-800",
   },

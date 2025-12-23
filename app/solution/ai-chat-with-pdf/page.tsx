@@ -58,9 +58,10 @@ export default function AIChatWithPDFPage() {
         badge="Start Your Journey"
         title="Let's Talk Your Success!"
         description="Over 250 businesses around the world trust Coreway Solution to transform their document management with AI. Join them and experience the power of AI-driven insights."
-        primaryButtonText="Request for Demo"
-        secondaryButtonText="Contact Us"
+        primaryButtonText="Contact Us"
+        secondaryButtonText="Our Work"
         footerText="No credit card required • Quick setup • Expert support"
+        secondaryButtonlink='/portfolio'
       />
     </div>
   );

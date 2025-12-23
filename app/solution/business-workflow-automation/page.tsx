@@ -70,7 +70,7 @@ export default function HomePage() {
     <>
       <Hero />
       <WorkflowZigZagScroll />
-      <AutomationCarousel />
+      {/* <AutomationCarousel /> */}
       <WorkflowScrollShowcase />
       <UseCases />
       <Integrations />
@@ -97,7 +97,7 @@ export default function HomePage() {
         title="Ready to transform your workflows?"
         description="Join thousands of teams using Coreway to automate their work and focus on what matters most. Build powerful automations in minutes, not hours."
         primaryButtonText="Get started for free"
-        secondaryButtonText="Talk to sales"
+        secondaryButtonText="Our Work"
         footerText="No credit card required • Free forever for core features • Cancel anytime"
       />
     </>

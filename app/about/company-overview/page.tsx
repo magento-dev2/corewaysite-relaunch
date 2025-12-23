@@ -109,6 +109,8 @@ export default function CompanyOverview() {
           primaryButtonText="Start Your Project"
           secondaryButtonText="Meet the Team"
           footerText="Free consultation • Global expertise • Proven track record"
+          secondaryButtonlink="/dedicated-developers"
+
         />
       </main>
     </div>

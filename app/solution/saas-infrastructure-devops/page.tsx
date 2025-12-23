@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 export default function SaaSInfrastructureDevOps() {
@@ -98,10 +99,11 @@ export default function SaaSInfrastructureDevOps() {
             items={saasDevOpsData.platforms.items}
           />
 
-          <SaaSCaseStudies
+          {/* <SaaSCaseStudies
             title={saasDevOpsData.caseStudies.title}
             cases={saasDevOpsData.caseStudies.cases}
-          />
+          /> */}
+          <PortfolioHighlights/>
 
           <div id="process">
             <SaaSProcess

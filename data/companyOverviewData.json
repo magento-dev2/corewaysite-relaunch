@@ -5,7 +5,7 @@
     "subtitle": "Coreway Solution is a global technology partner specializing in AI-powered solutions, custom software development, and digital transformation. From startups to enterprise, we turn ambitious ideas into scalable realities.",
     "buttons": [
       { "label": "Our Story", "link": "#story" },
-      { "label": "Meet the Team", "link": "#team" }
+      { "label": "Meet the Team", "link": "/dedicated-developers" }
     ]
   },
   "story": {

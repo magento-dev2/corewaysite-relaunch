@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Camera, ShoppingBag, Briefcase, Building2, Heart, Newspaper } from "lucide-react";
+import Link from "next/link";
 
 const useCases = [
   {
@@ -133,6 +134,7 @@ export default function ImageReorgUseCases() {
           <div className="inline-flex flex-col items-center gap-4 p-8 bg-gradient-to-br from-purple-900/30 to-violet-900/30 border border-purple-500/30 rounded-2xl backdrop-blur-sm">
             <p className="text-xl text-white font-semibold">Don't see your industry?</p>
             <p className="text-gray-300">Our tool is highly customizable for any image management need</p>
+            <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -140,6 +142,7 @@ export default function ImageReorgUseCases() {
             >
               Contact Us for Custom Solutions
             </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

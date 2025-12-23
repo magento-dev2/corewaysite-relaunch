@@ -1,6 +1,7 @@
 "use client";
 
 import { Smartphone, Zap, Sparkles, TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 export default function MobileAppHero() {
   return (
@@ -29,14 +30,18 @@ export default function MobileAppHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
-                <span>Start Your Project</span>
-                <Zap className="group-hover:scale-110 transition-transform" size={20} />
-              </button>
+              <Link href="/contact">
+                <button className="group cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105">
+                  <span>Start Your Project</span>
+                  <Zap className="group-hover:scale-110 transition-transform" size={20} />
+                </button>
+              </Link>
 
-              <button className="group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
-                View Portfolio
-              </button>
+              <Link href="/portfolio">
+                <button className="group cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg">
+                  View Portfolio
+                </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-6">

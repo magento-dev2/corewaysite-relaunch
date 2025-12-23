@@ -115,8 +115,9 @@ export default function ImageReorganizationToolPage() {
         badge="Get Started Today"
         title="Ready to Transform Your Image Management?"
         description="Join hundreds of companies using our AI-powered image organization tool to save time and streamline their workflows. Get started with a free consultation."
-        primaryButtonText="Schedule Demo"
-        secondaryButtonText="View Pricing"
+        primaryButtonText="Contact us"
+        secondaryButtonText="View Work"
+          
         footerText="Free trial available • No credit card required • Setup in minutes"
       />
     </div>

@@ -14,9 +14,11 @@ import sampleFAQs from '@/data/faqs.json';
 import PortfolioHighlights from '@/components/home/PortfolioHighlights';
 import Dedicatedteam from '@/components/dedicateddev/Devloperteam';
 import { useRef } from 'react';
+import SubHeader from '@/components/SubHeader';
+import { idea } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default function DedicatedDevelopersPage() {
-   const teamRef = useRef<HTMLDivElement | null>(null);
+  const teamRef = useRef<HTMLDivElement | null>(null);
 
   const handleHeroClick = () => {
     teamRef.current?.scrollIntoView({
@@ -24,14 +26,28 @@ export default function DedicatedDevelopersPage() {
       block: "start",
     });
   };
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Hire Process", sectionId: "features" },
+    { label: "Our Team", sectionId: "process" },
+    { label: "FAQ", sectionId: "faq" },
+  ];
+
 
   return (
     <div className="overflow-hidden">
+      <SubHeader title="Hire Dedicated Developers" items={subHeaderItems} />
+
       <DedicatedDevHero onHireClick={handleHeroClick} />
-      <DedicatedDevBenefits />
-      <HiringSteps />
+      <div id="overview">      <DedicatedDevBenefits />
+      </div>
+
+      <div id='features'>
+        <HiringSteps />
+      </div>
+
       <ComparisonTable />
-     <div ref={teamRef}>
+      <div ref={teamRef} id="process">
         <Dedicatedteam />
       </div>
 
@@ -42,17 +58,19 @@ export default function DedicatedDevelopersPage() {
 
       <WhyChooseUs />
 
+      <div id="faq">
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs["dedicated-developers"]}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+      </div>
 
-      <FAQ
-        badge="Help Center"
-        title="Common Questions & Answers"
-        description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs["dedicated-developers"]}
-        columns={1}
-        showContactCTA={true}
-        contactText="Still have questions?"
-        contactButtonText="Contact Our Team"
-      />
 
       <PageCTA
         badge="Hire Dedicated Developers"

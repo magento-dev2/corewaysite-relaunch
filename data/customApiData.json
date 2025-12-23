@@ -4,8 +4,8 @@
     "title2": " Integration",
     "subtitle": "Connect your business systems seamlessly. Expert API development, third-party integrations, and custom middleware solutions.",
     "buttons": [
-      { "label": "Explore Services", "link": "#features" },
-      { "label": "Get Started", "link": "#contact" }
+      { "label": "Explore Services", "link": "/solutions" },
+      { "label": "Get Started", "link": "/contact" }
     ]
   },
   "overview": {

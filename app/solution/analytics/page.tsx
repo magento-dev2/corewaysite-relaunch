@@ -74,6 +74,7 @@ export default function AnalyticsPage() {
         primaryButtonText="Start Analytics Journey"
         secondaryButtonText="Schedule Demo"
         footerText="Free consultation • Custom dashboards • Expert support"
+        primaryButtonlink='/contact'
       />
     </div>
   );

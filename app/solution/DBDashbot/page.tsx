@@ -60,7 +60,9 @@ export default function DBDashbotPage() {
         title="Let's Talk Your Success!"
         description="Transform your database queries with AI-driven intelligence. Get started with our free setup and experience the power of natural language database interactions."
         primaryButtonText="Request for Demo"
-        secondaryButtonText="Get Started"
+        primaryButtonlink='/contact'
+        secondaryButtonText="Our Work"
+        secondaryButtonlink='/case-studies'
         footerText="Free setup • No SQL expertise required • Instant insights"
       />
     </div>

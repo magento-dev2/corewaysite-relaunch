@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 export default function CustomAPISystemsIntegration() {
@@ -98,10 +99,12 @@ export default function CustomAPISystemsIntegration() {
             items={customApiData.platforms.items}
           />
 
-          <CustomAPICaseStudies
+          {/* <CustomAPICaseStudies
             title={customApiData.caseStudies.title}
             cases={customApiData.caseStudies.cases}
-          />
+          /> */}
+
+          <PortfolioHighlights/>
 
           <div id="process">
             <CustomAPIProcess
@@ -140,7 +143,7 @@ export default function CustomAPISystemsIntegration() {
             title="Ready to Build Your Custom API?"
             description="Let's design and develop robust API solutions that connect your systems seamlessly. Our expert team delivers secure, scalable, and well-documented APIs."
             primaryButtonText="Start Integration"
-            secondaryButtonText="View Documentation"
+            secondaryButtonText="View Work"
             footerText="Free API consultation • Comprehensive documentation • 24/7 support"
           />
         </main>

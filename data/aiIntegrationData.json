@@ -4,8 +4,8 @@
     "title2":" Integration Services",
     "subtitle": "Connect artificial intelligence with your existing systems for enhanced automation and intelligent workflows.",
     "buttons": [
-      { "label": "Explore Integration", "link": "#features" },
-      { "label": "Get Started", "link": "#contact" }
+      { "label": "Explore Integration", "link": "/ai-data" },
+      { "label": "Get Started", "link": "/contact" }
     ]
   },
   "overview": {

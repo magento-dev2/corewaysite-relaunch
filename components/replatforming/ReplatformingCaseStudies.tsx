@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
 interface CaseStudy {
   id: string;
   title: string;
   image: string;
   description: string;
+  link:string;
 }
 
 interface ReplatformingCaseStudiesProps {
@@ -106,12 +108,14 @@ export default function ReplatformingCaseStudies({ title, cases }: Replatforming
                   <p className="text-gray-300 mb-4 leading-relaxed">
                     {caseStudy.description}
                   </p>
+                  <Link href={caseStudy.link}>
                   <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
                     }`}>
                     <span className="text-sm font-medium cursor-pointer">View Details</span>
                     <ArrowRight size={16} className={`transition-transform ${isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
                       }`} />
                   </button>
+                  </Link>
 
                   {isActive && (
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-violet-600"></div>

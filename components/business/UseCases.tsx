@@ -12,6 +12,7 @@ import {
   LucideIcon
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface Workflow {
   icon: LucideIcon;
@@ -19,6 +20,7 @@ interface Workflow {
   description: string;
   image: string;
   color: string;
+  link: string;
 }
 
 const workflows: Workflow[] = [
@@ -29,6 +31,7 @@ const workflows: Workflow[] = [
       "Automate order processing, inventory management, and customer communications effortlessly.",
     image: "/images/workflow-ecommerce.jpg",
     color: "text-blue-400",
+    link: "/industries/ecommerce-stores"
   },
   {
     icon: Users,
@@ -37,6 +40,8 @@ const workflows: Workflow[] = [
       "Run omnichannel campaigns that sync your CRM, email, and ad platforms automatically.",
     image: "/images/workflow-marketing.jpg",
     color: "text-pink-400",
+    link: "/industries"
+
   },
   {
     icon: Database,
@@ -45,6 +50,8 @@ const workflows: Workflow[] = [
       "Transform, sync, and clean data pipelines across your internal and external systems.",
     image: "/images/workflow-dataops.jpg",
     color: "text-cyan-400",
+    link: "/ai-data/dataset-management-delivery"
+
   },
 
   {
@@ -54,6 +61,8 @@ const workflows: Workflow[] = [
       "Personalize internal and customer messages across Slack, email, and chatbots.",
     image: "/images/workflow-communication.jpg",
     color: "text-green-400",
+    link: "/contact"
+
   },
   {
     icon: Zap,
@@ -62,6 +71,8 @@ const workflows: Workflow[] = [
       "Deploy, monitor, and resolve infrastructure issues automatically with zero downtime.",
     image: "/images/workflow-devops.jpg",
     color: "text-yellow-400",
+    link: "/solution/saas-infrastructure-devops"
+
   },
 ];
 
@@ -198,10 +209,11 @@ export default function UseCases() {
                       </div>
                       <h3 className="text-4xl font-bold text-white mb-4">{workflows[activeIndex].title}</h3>
                       <p className="text-xl text-gray-300 max-w-md mb-8">{workflows[activeIndex].description}</p>
-
-                      <button className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors flex items-center gap-2">
-                        See {workflows[activeIndex].title} templates <ArrowRight size={18} />
-                      </button>
+                      <Link href={workflows[activeIndex].link}>
+                        <button className="px-6 cursor-pointer py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors flex items-center gap-2">
+                          See {workflows[activeIndex].title} templates <ArrowRight size={18} />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>

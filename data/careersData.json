@@ -5,7 +5,7 @@
     "subtitle": "Shape the Future of Technology",
     "description": "We're looking for talented individuals who are passionate about building innovative solutions and making a real impact.",
     "buttons": [
-      { "label": "See our team", "link": "#features" }
+      { "label": "See our team", "link": "/dedicated-developers" }
     ],
     "stats": [
       { "label": "Team Members", "value": "50+" },

@@ -52,6 +52,7 @@ export default function AboutUs() {
           primaryButtonText="View open positions"
           secondaryButtonText="Learn about our culture"
           footerText="Remote-friendly • Competitive benefits • Growth opportunities"
+          primaryButtonlink="/careers"
         />
       </main>
     </div>

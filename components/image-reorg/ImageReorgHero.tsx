@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Tag, Palette } from "lucide-react";
+import Link from "next/link";
 
 
 type InfoCardProps = {
@@ -62,12 +63,16 @@ export default function ImageReorgHero() {
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30">
-                Contact
-              </button>
-              <button className="px-8 py-4 bg-white/10 border border-white/20 rounded-xl text-white font-semibold">
-                View Demo
-              </button>
+              <Link href="/contact">
+                <button className="px-8 cursor-pointer py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/30">
+                  Contact
+                </button>
+              </Link>
+              <Link href="/portfolio">
+                <button className="px-8 py-4 cursor-pointer bg-white/10 border border-white/20 rounded-xl text-white font-semibold">
+                  View Demo
+                </button>
+              </Link>
             </div>
           </motion.div>
 
@@ -88,48 +93,48 @@ export default function ImageReorgHero() {
               </h3>
             </div> */}
 
-         <div className="relative bg-gradient-to-br from-purple-900/30 mt-8 to-violet-900/30 border border-purple-500/30 rounded-3xl p-6 backdrop-blur-xl overflow-hidden">
+            <div className="relative bg-gradient-to-br from-purple-900/30 mt-8 to-violet-900/30 border border-purple-500/30 rounded-3xl p-6 backdrop-blur-xl overflow-hidden">
 
-  {/* Image */}
-  <img
-    src="/assets/agent/neckless.jpg"
-    alt="Necklace"
-    className="w-full h-[50vh] object-cover object-bottom rounded-2xl"
-  />
+              {/* Image */}
+              <img
+                src="/assets/agent/neckless.jpg"
+                alt="Necklace"
+                className="w-full h-[50vh] object-cover object-bottom rounded-2xl"
+              />
 
-  {/* Overlay Container */}
-  <div className="absolute inset-0 flex justify-between items-center px-6">
+              {/* Overlay Container */}
+              <div className="absolute inset-0 flex justify-between items-center px-6">
 
-    {/* LEFT SIDE INFO */}
-    <div className="flex flex-col gap-4">
-      <InfoCard
-        icon={<Tag className="w-5 h-5 text-purple-400" />}
-        title="Material"
-        value="18K Gold"
-      />
-      <InfoCard
-        icon={<Palette className="w-5 h-5 text-violet-400" />}
-        title="Color"
-        value="Gold #FFD700"
-      />
-    </div>
+                {/* LEFT SIDE INFO */}
+                <div className="flex flex-col gap-4">
+                  <InfoCard
+                    icon={<Tag className="w-5 h-5 text-purple-400" />}
+                    title="Material"
+                    value="18K Gold"
+                  />
+                  <InfoCard
+                    icon={<Palette className="w-5 h-5 text-violet-400" />}
+                    title="Color"
+                    value="Gold #FFD700"
+                  />
+                </div>
 
-    {/* RIGHT SIDE INFO */}
-    <div className="flex flex-col gap-4">
-      <InfoCard
-        icon={<Zap className="w-5 h-5 text-purple-400" />}
-        title="Carat"
-        value="1.5 Carat"
-      />
-      <InfoCard
-        icon={<Tag className="w-5 h-5 text-purple-400" />}
-        title="Cut"
-        value="Round • VS1"
-      />
-    </div>
+                {/* RIGHT SIDE INFO */}
+                <div className="flex flex-col gap-4">
+                  <InfoCard
+                    icon={<Zap className="w-5 h-5 text-purple-400" />}
+                    title="Carat"
+                    value="1.5 Carat"
+                  />
+                  <InfoCard
+                    icon={<Tag className="w-5 h-5 text-purple-400" />}
+                    title="Cut"
+                    value="Round • VS1"
+                  />
+                </div>
 
-  </div>
-</div>
+              </div>
+            </div>
 
           </motion.div>
         </div>

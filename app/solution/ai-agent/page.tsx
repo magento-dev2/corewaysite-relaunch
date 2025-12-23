@@ -53,45 +53,45 @@ export default function AIAgentPage() {
     serviceType: "AI Agent Development",
     areaServed: "Worldwide",
   };
- const solutions = [
-  
-  {
-    title: "Replatforming & Migration",
-    description: "Migrate and modernize your existing platforms with minimal downtime and maximum efficiency.",
-    href: "/solution/replatforming-migration",
-    icon: "refresh-cw",
-  },
-  {
-    title: "UGS Ads",
-    description: "Enhance your marketing campaigns with intelligent ad targeting and performance tracking.",
-    href: "/solution/ugs-ads",
-    icon: "megaphone",
-  },
-  {
-    title: "DBDashbot",
-    description: "Automate and monitor your database operations with real-time insights and notifications.",
-    href: "/solution/dbdashbot",
-    icon: "database",
-  },
-  {
-    title: "AI Chat with PDF",
-    description: "Interact with PDF documents using AI-powered chat for quick data extraction and analysis.",
-    href: "/solution/ai-chat-with-pdf",
-    icon: "file-text",
-  },
-  {
-    title: "RAG Chatbot",
-    description: "Deploy a Retrieval-Augmented Generation chatbot for intelligent, context-aware conversations.",
-    href: "/solution/rag-chatbot",
-    icon: "message-square",
-  },
-  {
-    title: "Image Recognition Chatbot",
-    description: "Use AI-powered image recognition integrated into chat interfaces for smarter user interactions.",
-    href: "/solution/image-reorganization-tool",
-    icon: "scan-eye",
-  }
-];
+  const solutions = [
+
+    {
+      title: "Replatforming & Migration",
+      description: "Migrate and modernize your existing platforms with minimal downtime and maximum efficiency.",
+      href: "/solution/replatforming-migration",
+      icon: "refresh-cw",
+    },
+    {
+      title: "UGS Ads",
+      description: "Enhance your marketing campaigns with intelligent ad targeting and performance tracking.",
+      href: "/solution/ugs-ads",
+      icon: "megaphone",
+    },
+    {
+      title: "DBDashbot",
+      description: "Automate and monitor your database operations with real-time insights and notifications.",
+      href: "/solution/dbdashbot",
+      icon: "database",
+    },
+    {
+      title: "AI Chat with PDF",
+      description: "Interact with PDF documents using AI-powered chat for quick data extraction and analysis.",
+      href: "/solution/ai-chat-with-pdf",
+      icon: "file-text",
+    },
+    {
+      title: "RAG Chatbot",
+      description: "Deploy a Retrieval-Augmented Generation chatbot for intelligent, context-aware conversations.",
+      href: "/solution/rag-chatbot",
+      icon: "message-square",
+    },
+    {
+      title: "Image Recognition Chatbot",
+      description: "Use AI-powered image recognition integrated into chat interfaces for smarter user interactions.",
+      href: "/solution/image-reorganization-tool",
+      icon: "scan-eye",
+    }
+  ];
 
 
 
@@ -110,34 +110,34 @@ export default function AIAgentPage() {
 
 
       <main>
-                      <ReplatformingHero
+        <ReplatformingHero
           title={aiAgentData.hero.title}
           title2={aiAgentData.hero.title2}
           subtitle={aiAgentData.hero.subtitle}
           buttons={aiAgentData.hero.buttons}
         />
-      
-                      <CategoryGrid items={solutions} columns={3} />
-      
-                     <WhyCorewaySection
-                            badge={whyCorewayData["ai-agent"].badge}
-                                   title={whyCorewayData["ai-agent"].title}
-                                   subtitle={whyCorewayData["ai-agent"].subtitle}
-                                   reasons={whyCorewayData["ai-agent"].reasons}
-                               />
-      
-                      <FAQ
-                          badge="Help Center"
-                          title="Frequently Asked Questions"
-                          description="Everything you need to know about our solutions and services"
-                          faqs={sampleFAQs["ai-agent"] }
-                          columns={1}
-                          showContactCTA={true}
-                          contactText="Still have questions?"
-                          contactButtonText="Contact Our Team"
-                      />
-      
-                    
+
+        <CategoryGrid items={solutions} columns={3} />
+
+        <WhyCorewaySection
+          badge={whyCorewayData["ai-agent"].badge}
+          title={whyCorewayData["ai-agent"].title}
+          subtitle={whyCorewayData["ai-agent"].subtitle}
+          reasons={whyCorewayData["ai-agent"].reasons}
+        />
+
+        <FAQ
+          badge="Help Center"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about our solutions and services"
+          faqs={sampleFAQs["ai-agent"]}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+
+
         <PageCTA
           badge="Ready to Deploy AI?"
           title="Transform Your Business with AI Agents"
@@ -146,9 +146,9 @@ export default function AIAgentPage() {
           secondaryButtonText="View Solutions"
           footerText="Custom AI solutions • Enterprise-grade security • Continuous optimization"
         />
-                  </main>
+      </main>
 
-      
+
     </div>
   );
 }

@@ -4,8 +4,8 @@
     "title2" :"AI Experts",   
     "subtitle": "Strategic AI implementation and machine learning solutions that deliver measurable business value.",
     "buttons": [
-      { "label": "Start AI Journey", "link": "#features" },
-      { "label": "Book Consultation", "link": "#contact" }
+      { "label": "Start AI Journey", "link": "/ai-data" },
+      { "label": "Book Consultation", "link": "/contact" }
     ]
   },
   "overview": {

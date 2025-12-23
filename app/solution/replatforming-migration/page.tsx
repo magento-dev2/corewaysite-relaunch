@@ -140,9 +140,11 @@ export default function ReplatformingMigration() {
             badge="Ready to migrate?"
             title="Ready to Modernize Your Platform?"
             description="Let's plan your seamless migration journey. Our expert team ensures zero downtime, complete data integrity, and improved performance on your new platform."
-            primaryButtonText="Start Migration"
-            secondaryButtonText="Get Assessment"
+            primaryButtonText="Get Started"
+            secondaryButtonText="Our portfolio"
             footerText="Free migration assessment • Zero downtime • 100% data integrity"
+            primaryButtonlink="/contact"
+            secondaryButtonlink="/portfolio"
           />
         </main>
       </div>

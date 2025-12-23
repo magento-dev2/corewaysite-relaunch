@@ -139,8 +139,9 @@ export default function InfrastructureSecurityAI() {
             badge="Secure your infrastructure"
             title="Ready to Deploy AI Security?"
             description="Let's protect your infrastructure with intelligent, AI-powered security solutions. Our expert team delivers 24/7 threat detection, automated response, and continuous protection."
-            primaryButtonText="Start Protection"
-            secondaryButtonText="Get Assessment"
+            primaryButtonText="Start Project"
+            secondaryButtonText="View Case-study"
+            primaryButtonlink=""
             footerText="Free security assessment • 24/7 AI monitoring • 99.9% threat detection"
           />
         </main>

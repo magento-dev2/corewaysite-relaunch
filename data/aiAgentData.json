@@ -6,11 +6,11 @@
         "buttons": [
             {
                 "label": "Explore Solutions",
-                "link": "#features"
+                "link": "/solutions"
             },
             {
                 "label": "Get Started",
-                "link": "#contact"
+                "link": "/contact"
             }
         ]
     },

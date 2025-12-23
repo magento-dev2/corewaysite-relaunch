@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Upload, MessageSquare, Zap, CheckCircle, Sparkle } from "lucide-react";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -150,9 +151,11 @@ export default function AIChatProcess() {
           <div className="relative bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your PDFs?</h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Join thousands of users who are already experiencing the power of AI-driven document intelligence</p>
+           <Link href="/contact">
             <button className="cursor-pointer bg-gradient-to-r from-purple-500 to-violet-600 text-white px-10 py-4 rounded-xl hover:from-purple-600 hover:to-violet-700 transition-all font-semibold shadow-lg shadow-purple-500/30 hover:scale-105">
               Get Started Now
             </button>
+            </Link>
           </div>
         </div>
       </div>

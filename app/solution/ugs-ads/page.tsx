@@ -316,14 +316,18 @@ export default function UGCAdsPage() {
                 Transform your product into compelling user-generated content using AI-powered models. Get professional-looking video ads in 24 hours — no filming required.            </p>
 
               <div className="flex justify-center gap-3">
+                <Link href="/contact">
                 <button className="cursor-pointer group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
                   <span>Get Started Now</span>
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
-                <button className="cursor-pointer px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
+                </Link>
+                <Link href="/case-studies">
+                <button className="cursor-pointer px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2">
                   <Play className="w-5 h-5" />
-                  Watch Demo
+                  Our Work
                 </button>
+                </Link>
               </div>
 
 
@@ -517,8 +521,8 @@ export default function UGCAdsPage() {
         title="  Ready to Create Your UGC Ads?"
         description=" Join 500+ brands creating authentic, high-converting UGC ads with AI.
               Get started today and see results in 24 hours."
-        primaryButtonText="Start Your First Campaign"
-        secondaryButtonText="Get Assessment"
+        primaryButtonText="Start Project"
+        secondaryButtonText="Our Work"
         footerText="Free migration assessment • Zero downtime • 100% data integrity"
       />
 

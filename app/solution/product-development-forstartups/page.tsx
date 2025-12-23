@@ -23,6 +23,7 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import PortfolioHighlights from "@/components/home/PortfolioHighlights";
 
 
 const siteUrl = "https://www.corewaysolution.com";
@@ -105,7 +106,8 @@ export default function ProductDevelopmentPage() {
           </div>
         <FeatureGrid data={featuresData} />
         <TechStack data={techData} />
-        <CaseStudiesPreview data={casesData} />
+      <PortfolioHighlights/>
+        {/* <CaseStudiesPreview data={casesData} /> */}
         <div id="process"> 
         <ProcessDiagram data={processData} />
         </div>

@@ -107,7 +107,7 @@ export default function ERPSolutionsPage() {
                     title="Let's Build Your ERP Solution Together"
                     description="Our team of experts is ready to help you implement a powerful ERP system tailored to your business needs."
                     primaryButtonText="Get Started"
-                    secondaryButtonText="Schedule Demo"
+                    secondaryButtonText="Our Work"
                     footerText="Free consultation • Custom implementation • Expert support"
                 />
             </main>

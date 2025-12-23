@@ -28,7 +28,8 @@ export default function PageCTA({
   footerText = "No credit card required • Free forever for core features • Cancel anytime",
 }: PageCTAProps) {
   const pathname = usePathname(); // ✅ detect current page
-  const isHomePage = pathname === "/"; // ✅ check homepage
+const isModalPage =
+  pathname === "/" || pathname === "/solution/analytics" || pathname === "/solution/mobile-application" ;
 
   const [open, setOpen] = useState(false);
   const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
@@ -81,7 +82,7 @@ export default function PageCTA({
           </Link>
 
           {/* Secondary Button — Popup on Home Page Only */}
-          {isHomePage ? (
+          {isModalPage ? (
             <button
               onClick={() => setOpen(true)}
               className="cursor-pointer group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg"
