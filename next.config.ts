@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Image Optimization
   images: {
+    formats: ['image/webp', 'image/avif'], // Modern image formats
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: "https",
@@ -9,7 +14,63 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.corewaysolution.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
+  },
+
+  // Compression
+  compress: true,
+
+  // Production optimizations
+  swcMinify: true,
+  reactStrictMode: true,
+
+  // Performance optimizations
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'gsap'],
+  },
+
+  // Headers for caching and security
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|jpeg|png|gif|webp|avif|ico|woff|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ];
   },
 
   async redirects() {
@@ -62,13 +123,6 @@ const nextConfig: NextConfig = {
         destination: "/blog?page=:page",
         permanent: true,
       },
-
-      // ======== CASE STUDY REDIRECTS ========
-      // {
-      //   source: "/case-study/:slug*",
-      //   destination: "/portfolio/case-studies/:slug*",
-      //   permanent: true,
-      // },
 
       // ======== PORTFOLIO QUERY REDIRECTS ========
       {

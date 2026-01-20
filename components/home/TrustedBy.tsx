@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 const companyLogos = [
   { name: "Boxify", logo: "/assets/brand/boxifylogo.png" },
@@ -86,9 +87,13 @@ export default function TrustedBy() {
                 // onMouseLeave={() => setIsPaused(false)}
                 className="flex-shrink-0 cursor-pointer transition-transform duration-300 hover:scale-110"
               >
-                <img
+                <Image
                   src={company.logo}
                   alt={company.name}
+                  width={120}
+                  height={64}
+                  loading="lazy"
+                  quality={90}
                   className="max-h-16 w-auto object-contain filter invert brightness-0 transition-all duration-300"
                 />
               </div>

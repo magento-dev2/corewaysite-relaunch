@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Quote, Play, X, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Image from 'next/image';
 
 export default function Testimonials() {
   const { t } = useLanguage();
@@ -39,7 +40,7 @@ export default function Testimonials() {
       image: "/assets/review/Alex-Bestall.png",
       video: "https://www.youtube.com/watch?v=QyhwSYhX09s",
       rating: 5,
-    location: "USA"
+      location: "USA"
     },
     {
       quote: t('testimonials.items.2.quote'),
@@ -49,7 +50,7 @@ export default function Testimonials() {
       image: "/assets/review/randy.png",
       video: "https://www.youtube.com/watch?v=H14bBuluwB8",
       rating: 5,
-       location: "USA"
+      location: "USA"
     },
   ];
 
@@ -116,9 +117,13 @@ export default function Testimonials() {
               <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group-hover:border-white/20 transition-all duration-500 flex flex-col">
                 {/* Image with Play Button */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-purple-900/20 to-fuchsia-900/20">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.author}
+                    width={400}
+                    height={300}
+                    loading="lazy"
+                    quality={85}
                     className="w-full h-full object-cover"
                   />
 

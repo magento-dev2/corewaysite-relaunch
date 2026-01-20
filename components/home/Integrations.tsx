@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 const integrations = [
   { name: "Magento", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/magento.svg" },
@@ -40,7 +41,7 @@ const integrations = [
   { name: "WhatsApp", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" },
 ];
 
-function InfiniteScroller({ items, reverse = false }: { items: Array<{name: string; icon: string}>; reverse?: boolean }) {
+function InfiniteScroller({ items, reverse = false }: { items: Array<{ name: string; icon: string }>; reverse?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
 
@@ -67,9 +68,13 @@ function InfiniteScroller({ items, reverse = false }: { items: Array<{name: stri
             key={index}
             className="flex-shrink-0 w-40 h-28 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/10 hover:border-purple-500/50 transition-all hover:scale-105"
           >
-            <img
+            <Image
               src={integration.icon}
               alt={integration.name}
+              width={40}
+              height={40}
+              loading="lazy"
+              quality={90}
               className="w-10 h-10 invert opacity-80"
             />
             <p className="text-white text-sm font-medium">{integration.name}</p>
@@ -97,23 +102,23 @@ export default function Integrations() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
-         
+
           <div className="inline-block px-3 py-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-4">
             <div className='flex items-center gap-1'>
-                        <Sparkles className="text-purple-500" size={16} />
-          
-            <span className="text-xs font-medium text-gray-300">Integrations</span>
-                      </div>
+              <Sparkles className="text-purple-500" size={16} />
+
+              <span className="text-xs font-medium text-gray-300">Integrations</span>
+            </div>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-       Expert Integration Services for Any Platform
+            Expert Integration Services for Any Platform
 
           </h2>
 
           <p className=" text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-We offer integration services that connect third-party tools, APIs, and platforms directly into your existing ERP, CRM, web application, or mobile app.
-           </p>
+            We offer integration services that connect third-party tools, APIs, and platforms directly into your existing ERP, CRM, web application, or mobile app.
+          </p>
         </div>
 
         <div className="space-y-6">

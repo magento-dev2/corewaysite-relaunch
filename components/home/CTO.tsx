@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { PopupModal } from "react-calendly";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function CTOSection() {
   const { t } = useLanguage();
@@ -47,9 +48,13 @@ export default function CTOSection() {
             {/* Right Side Image */}
             <div className="flex-1 flex flex-col gap-4 justify-center md:justify-end mt-8 md:mt-0 ">
               <div className="flex items-center  gap-6 shrink-0">
-                <img
+                <Image
                   src="/coreway_leader.png"
                   alt="CTO"
+                  width={112}
+                  height={112}
+                  loading="lazy"
+                  quality={90}
                   className="h-28 w-28 rounded-full border-4 border-white/80 shadow-lg object-cover"
                 />
                 <div>
@@ -84,7 +89,7 @@ export default function CTOSection() {
         {/* Calendly Popup */}
         {rootEl && (
           <PopupModal
-    url="https://calendly.com/alpeshr2689/30min"
+            url="https://calendly.com/alpeshr2689/30min"
             onModalClose={() => setOpen(false)}
             open={open}
             rootElement={rootEl}

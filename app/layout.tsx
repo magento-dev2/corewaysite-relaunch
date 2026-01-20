@@ -3,18 +3,31 @@ import { Inter } from 'next/font/google';
 import Script from "next/script";
 import './globals.css';
 import LayoutWrapper from './LayoutWrapper';
+import {
+  getOrganizationSchema,
+  getWebSiteSchema,
+  schemaToJsonLd,
+} from '@/lib/schema';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', // Optimize font loading
+  preload: true,
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.corewaysolution.com'),
   title: {
     default: 'Coreway Solution | AI Development, Automation & Digital Transformation',
-    template: '%s',
+    template: '%s | Coreway Solution',
   },
   description:
     "Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.",
   keywords:
-    "AI development, workflow automation, custom software development, digital transformation, AI consulting, software solutions",
+    "coreway solution, AI development, workflow automation, business automation, custom software development, digital transformation, AI consulting, software solutions, coreway",
+  alternates: {
+    canonical: 'https://www.corewaysolution.com',
+  },
   icons: {
     icon: '/favicon_io/favicon.png',
     shortcut: '/favicon_io/favicon.png',
@@ -26,6 +39,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.corewaysolution.com',
     siteName: 'Coreway Solution',
+    title: 'Coreway Solution | AI Development, Automation & Digital Transformation',
+    description:
+      'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
     images: [
       {
         url: 'https://www.corewaysolution.com/og-image.jpg',
@@ -39,6 +55,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@corewaysolution',
     creator: '@corewaysolution',
+    title: 'Coreway Solution | AI Development, Automation & Digital Transformation',
+    description:
+      'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
+    images: ['https://www.corewaysolution.com/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -57,6 +77,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Structured Data - Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={schemaToJsonLd(getOrganizationSchema())}
+        />
+
+        {/* Structured Data - WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={schemaToJsonLd(getWebSiteSchema())}
+        />
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">

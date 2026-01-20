@@ -9,13 +9,29 @@ export async function GET() {
     { url: `${baseUrl}/`, priority: 1.0, changeFreq: 'daily' },
     { url: `${baseUrl}/contact`, priority: 0.9, changeFreq: 'monthly' },
     { url: `${baseUrl}/sitemap`, priority: 0.7, changeFreq: 'monthly' },
+    { url: `${baseUrl}/blog`, priority: 0.8, changeFreq: 'weekly' },
+    { url: `${baseUrl}/case-studies`, priority: 0.8, changeFreq: 'weekly' },
+    { url: `${baseUrl}/portfolio`, priority: 0.8, changeFreq: 'weekly' },
+    { url: `${baseUrl}/community`, priority: 0.7, changeFreq: 'monthly' },
+    { url: `${baseUrl}/insights`, priority: 0.7, changeFreq: 'weekly' },
+    { url: `${baseUrl}/tutorials`, priority: 0.7, changeFreq: 'weekly' },
 
     // About
+    { url: `${baseUrl}/about`, priority: 0.8, changeFreq: 'monthly' },
     { url: `${baseUrl}/about/company-overview`, priority: 0.8, changeFreq: 'monthly' },
     { url: `${baseUrl}/about/why-coreway`, priority: 0.8, changeFreq: 'monthly' },
     { url: `${baseUrl}/careers`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/partners`, priority: 0.8, changeFreq: 'monthly' },
     { url: `${baseUrl}/press-kit`, priority: 0.7, changeFreq: 'monthly' },
+
+    // Developer Resources
+    { url: `${baseUrl}/dedicated-developers`, priority: 0.8, changeFreq: 'monthly' },
+    { url: `${baseUrl}/dedicated-developers/hire-developers`, priority: 0.8, changeFreq: 'monthly' },
+    { url: `${baseUrl}/documentation`, priority: 0.7, changeFreq: 'monthly' },
+    { url: `${baseUrl}/api-reference`, priority: 0.7, changeFreq: 'monthly' },
+
+    // Solutions - Main
+    { url: `${baseUrl}/solutions`, priority: 0.9, changeFreq: 'weekly' },
 
     // Solutions - Digital
     { url: `${baseUrl}/solution/digital-commerce-transformation`, priority: 0.9, changeFreq: 'weekly' },
@@ -26,18 +42,28 @@ export async function GET() {
     { url: `${baseUrl}/solution/iot-application-development`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/saas-infrastructure-devops`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/business-workflow-automation`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/mobile-application`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/erp-solutions`, priority: 0.9, changeFreq: 'weekly' },
 
     // Solutions - AI & Consulting
     { url: `${baseUrl}/solution/ai-consulting`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/ai-integration-services`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/ai-agent`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/ai-agent/rag-chatbot-pdf`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/ai-chat-with-pdf`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/rag-chatbot`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/dbdashbot`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/replatforming-migration`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/ugs-ads`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/analytics`, priority: 0.9, changeFreq: 'weekly' },
 
     // Solutions - Infrastructure & Security
     { url: `${baseUrl}/solution/custom-api-systems-integration`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/infrastructure-security-ai`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/image-reorganization-tool`, priority: 0.8, changeFreq: 'weekly' },
 
     // AI & Data Engineering
+    { url: `${baseUrl}/ai-data`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/ai-data/dataset-management-delivery`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/ai-data/aws-s3-optimization`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/ai-data/metadata-extraction-ai`, priority: 0.8, changeFreq: 'weekly' },
@@ -46,6 +72,7 @@ export async function GET() {
     { url: `${baseUrl}/ai-data/infrastructure-security-ai`, priority: 0.8, changeFreq: 'weekly' },
 
     // Industries
+    { url: `${baseUrl}/industries`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/industries/ecommerce-stores`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/industries/automotive`, priority: 0.8, changeFreq: 'weekly' },
     { url: `${baseUrl}/industries/manufacturing-iot`, priority: 0.8, changeFreq: 'weekly' },
@@ -55,12 +82,14 @@ export async function GET() {
     { url: `${baseUrl}/industries/pharmaceuticals-healthcare`, priority: 0.8, changeFreq: 'weekly' },
 
     // Technologies
+    { url: `${baseUrl}/technologies`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/react`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/nodejs`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/python`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/laravel-php`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/databases`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/cloud-storage`, priority: 0.7, changeFreq: 'monthly' },
+    { url: `${baseUrl}/technologies/s3-process`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/iot-protocols`, priority: 0.7, changeFreq: 'monthly' },
     { url: `${baseUrl}/technologies/security-tools`, priority: 0.7, changeFreq: 'monthly' },
 
@@ -69,6 +98,7 @@ export async function GET() {
     { url: `${baseUrl}/terms-of-service`, priority: 0.5, changeFreq: 'yearly' },
     { url: `${baseUrl}/cookie-policy`, priority: 0.5, changeFreq: 'yearly' },
     { url: `${baseUrl}/gdpr-compliance`, priority: 0.5, changeFreq: 'yearly' },
+    { url: `${baseUrl}/refund-policy`, priority: 0.5, changeFreq: 'yearly' },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

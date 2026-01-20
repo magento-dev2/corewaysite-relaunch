@@ -7,6 +7,7 @@ import SplitType from "split-type";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroData from "@/locales/en/home.json";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Particle {
   id: number;
@@ -134,7 +135,7 @@ export default function Hero() {
   //   );
   // }, []);
 
-  
+
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0E0918] via-[#1a1325] to-[#0E0918]">
@@ -173,11 +174,11 @@ export default function Hero() {
         </svg>
       </div>
 
-        {/* Main content */} 
+      {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between w-full">
-          
-            {/* Left Side Text + Button */}
+
+          {/* Left Side Text + Button */}
           <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
             <h1 ref={textRef} className="text-5xl md:text-7xl font-bold text-white leading-tight">
               {heroItem.title} <span className="text-purple-500">{heroItem.titleHighlight}</span>
@@ -190,12 +191,18 @@ export default function Hero() {
             </button>
           </div>
 
-           {/* Right Side Image */}
+          {/* Right Side Image - Optimized for LCP */}
           <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
-            <img
+            <Image
               src={heroItem.image}
               alt={heroItem.title}
-              className="w-full max-w-4xl rounded-lg shadow-lg" />
+              width={1024}
+              height={768}
+              priority
+              quality={90}
+              className="w-full max-w-4xl rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 1024px"
+            />
           </div>
         </div>
       </div>

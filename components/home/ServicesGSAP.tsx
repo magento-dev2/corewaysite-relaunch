@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 import AnimatedIcon from "./AnimatedIcon";
 
@@ -226,9 +227,13 @@ export default function ServicesGSAP() {
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
                     <div className="w-20 h-20 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300 mb-6  overflow-hidden">
-                      <img
+                      <Image
                         src={service.imagePath}
                         alt={service.ariaLabel}
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        quality={90}
                         className="w-12 h-full object-contain"
                       />
                     </div>
