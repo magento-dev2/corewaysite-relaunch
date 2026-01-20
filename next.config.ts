@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         destination: "/about/company-overview",
         permanent: true,
       },
-   
+
       {
         source: "/portfolio.html",
         destination: "/portfolio/projects",
@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
 
       // ======== BLOG DETAILS (slug based) ========
       {
-        source: "/:slug*.html",
+        source: "/:slug((?!google215537b69b177c9e).*).html",
         destination: "/blog/:slug*",
         permanent: true,
       },
@@ -80,7 +80,7 @@ const nextConfig: NextConfig = {
 
       // ======== FALLBACK: REMOVE .HTML ========
       {
-        source: "/:path*.html",
+        source: "/:path((?!google215537b69b177c9e).*).html",
         destination: "/:path*",
         permanent: true,
       },

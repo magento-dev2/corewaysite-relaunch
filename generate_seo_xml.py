@@ -3,9 +3,11 @@ import re
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, ElementTree, tostring
 from xml.dom import minidom
+from pathlib import Path
 
 # Base directory
-app_dir = Path(r"c:\Users\NIKHIL\Desktop\coreway-new\app")
+app_dir = Path("app")
+
 base_url = "https://www.corewaysolution.com"
 
 def extract_metadata_from_layout(file_path):
@@ -158,7 +160,7 @@ def create_seo_xml():
     xml_str = '\n'.join([line for line in xml_str.split('\n') if line.strip()])
     
     # Write to file
-    output_file = r"c:\Users\NIKHIL\Desktop\coreway-new\seo_metadata.xml"
+    output_file = "seo_metadata_0912.xml"
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(xml_str)
     
