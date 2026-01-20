@@ -14,6 +14,12 @@ Disallow: /_next/
 Disallow: /admin/
 Disallow: /wp-content/plugins/
 Disallow: /wp-includes/
+Disallow: /portfolio_sl/
+Disallow: /erp-solutions/
+Disallow: /analytics/
+Disallow: /offshore-web/
+Disallow: /?page_id
+
 
 # Allow search engines to crawl all public pages
 Allow: /about/
