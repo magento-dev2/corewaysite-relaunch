@@ -11,6 +11,9 @@ Sitemap: https://www.corewaysolution.com/sitemap.xml
 # Disallow admin and internal paths (if any in future)
 Disallow: /api/
 Disallow: /_next/
+Disallow: /admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
 
 # Allow search engines to crawl all public pages
 Allow: /about/
