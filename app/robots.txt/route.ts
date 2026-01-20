@@ -37,6 +37,16 @@ Allow: /cookie-policy
 Allow: /gdpr-compliance
 Allow: /sitemap
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+
 # Crawl-delay (optional, adjust if needed)
 Crawl-delay: 1
 `;
