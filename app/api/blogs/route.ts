@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import fs from 'fs';
+import path from 'path';
 
 export async function GET() {
     try {
@@ -13,52 +15,40 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-    try {
-        const body = await request.json();
+  const body = await request.json();
+  let coverImageUrl = body.coverImage;
 
-        const {
-            title,
-            slug,
-            content,
-            excerpt,
-            coverImage,
-            metaTitle,
-            metaDescription,
-            metaKeywords,
-            relatedArticleIds,
-            isActive
-        } = body;
-
-        // ✅ FORCE content to be STRING
-        const serializedContent =
-            typeof content === 'string'
-                ? content
-                : JSON.stringify(content);
-
-        const blog = await prisma.blog.create({
-            data: {
-                title,
-                slug,
-                content: serializedContent, // 🔥 IMPORTANT
-                excerpt,
-                coverImage,
-                metaTitle,
-                metaDescription,
-                metaKeywords,
-                isActive: isActive ?? true,
-                publishedAt: new Date(),
-                relatedArticles: relatedArticleIds?.length
-                    ? { connect: relatedArticleIds.map((id: string) => ({ id })) }
-                    : undefined,
-            },
-        });
-
-        return NextResponse.json(blog);
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json(
-            { error: 'Error creating blog' },
-            { status: 500 }
-        );
+  if (coverImageUrl && coverImageUrl.startsWith('data:image')) {
+    // Extract base64 part
+    const matches = coverImageUrl.match(/^data:image\/(png|jpeg|jpg);base64,(.+)$/);
+    if (matches) {
+      const ext = matches[1];
+      const base64Data = matches[2];
+      const fileName = `${Date.now()}.${ext}`;
+      const filePath = path.join(
+        '/var/www/html/coreway_relaunch/public/assets/wp-content/uploads',
+        fileName
+      );
+      fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
+      coverImageUrl = `https://www.corewaysolution.com/assets/wp-content/uploads/${fileName}`;
     }
+  }
+
+  // Save blog with coverImageUrl in DB
+  const blog = await prisma.blog.create({
+    data: {
+      title: body.title,
+      slug: body.slug,
+      content: typeof body.content === 'string' ? body.content : JSON.stringify(body.content),
+      excerpt: body.excerpt,
+      coverImage: coverImageUrl,
+      metaTitle: body.metaTitle,
+      metaDescription: body.metaDescription,
+      metaKeywords: body.metaKeywords,
+      isActive: body.isActive ?? true,
+      publishedAt: new Date(),
+    },
+  });
+
+  return NextResponse.json(blog);
 }
