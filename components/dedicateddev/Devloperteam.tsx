@@ -1,5 +1,7 @@
 import { Code2, Briefcase, Award, Zap } from 'lucide-react';
 import Link from 'next/link';
+import PdfModal from './PdfModal';
+import { useState } from 'react';
 
 interface Developer {
     id: number;
@@ -128,12 +130,15 @@ const developers: Developer[] = [
             "Expert in workflow automation & AI agents"
         ],
         gradient: "from-emerald-600 to-teal-600",
-        cvUrl: "/cv/Dhaman-AI & Automation Engineer.pdf"
+        cvUrl: "/cv/Dhaman-AI_&_Automation_Engineer.pdf"
     }
 ];
 
 
 export default function Dedicatedteam() {
+    const [isPdfOpen, setIsPdfOpen] = useState(false);
+const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+
     return (
         <div className="min-h-screendss  text-white py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -205,15 +210,17 @@ export default function Dedicatedteam() {
 
                                 <div className="mt-6 flex gap-4">
                                     {/* View CV Button */}
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            window.open(developer.cvUrl!, '_blank', 'noopener,noreferrer');
-                                        }}
-                                        className="flex-1 cursor-pointer text-center px-4 py-2 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 font-medium hover:bg-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
-                                    >
-                                        View CV
-                                    </button>
+                                  <button
+    type="button"
+    onClick={() => {
+        setSelectedPdf(developer.cvUrl!);
+        setIsPdfOpen(true);
+    }}
+    className="flex-1 cursor-pointer text-center px-4 py-2 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 font-medium hover:bg-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
+>
+    View CV
+</button>
+
 
 
 
@@ -246,9 +253,24 @@ export default function Dedicatedteam() {
                         <span className="text-gray-300 text-sm">Available for new projects</span>
                     </div>
                 </div>
+
+                {selectedPdf && (
+    <PdfModal
+        isOpen={isPdfOpen}
+        pdfUrl={selectedPdf}
+        onClose={() => setIsPdfOpen(false)}
+    />
+)}
+
             </div>
         </div>
+        
+
+
+
     );
+
+    
 }
 
 
