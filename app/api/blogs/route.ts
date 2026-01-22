@@ -16,23 +16,41 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const body = await request.json();
+  
   let coverImageUrl = body.coverImage;
 
-  if (coverImageUrl && coverImageUrl.startsWith('data:image')) {
-    // Extract base64 part
-    const matches = coverImageUrl.match(/^data:image\/(png|jpeg|jpg);base64,(.+)$/);
-    if (matches) {
-      const ext = matches[1];
-      const base64Data = matches[2];
+  if (coverImageUrl) {
+
+    // ✅ CASE 1: Direct image URL → use as-is
+    if (coverImageUrl.startsWith('http://') || coverImageUrl.startsWith('https://')) {
+      // Do nothing, already a valid URL
+    } else {
+      let base64Data = coverImageUrl;
+      let ext = 'png';
+
+      // ✅ CASE 2: data:image/...;base64,
+      if (coverImageUrl.startsWith('data:image')) {
+        const matches = coverImageUrl.match(/^data:image\/(png|jpeg|jpg|webp);base64,(.+)$/);
+        if (!matches) {
+          throw new Error('Invalid base64 image format');
+        }
+        ext = matches[1];
+        base64Data = matches[2];
+      }
+
+      // ✅ CASE 3: raw base64 string (n8n image agent)
       const fileName = `${Date.now()}.${ext}`;
       const filePath = path.join(
         '/var/www/html/coreway_relaunch/public/assets/wp-content/uploads',
         fileName
       );
+
       fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
+
       coverImageUrl = `https://www.corewaysolution.com/assets/wp-content/uploads/${fileName}`;
     }
   }
+
 
   // Save blog with coverImageUrl in DB
   const blog = await prisma.blog.create({
