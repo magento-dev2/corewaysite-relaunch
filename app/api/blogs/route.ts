@@ -38,16 +38,21 @@ export async function POST(request: Request) {
       }
       // ✅ CASE 2: Data URI base64 format (data:image/...)
       else if (coverImageUrl.startsWith('data:image')) {
-        const matches = coverImageUrl.match(/^data:image\/(png|jpeg|jpg|webp|gif|svg);base64,(.+)$/);
+        // Remove newlines and whitespace for robust regex matching
+        const cleanCoverImage = coverImageUrl.replace(/\s/g, '');
+        const matches = cleanCoverImage.match(/^data:image\/(png|jpeg|jpg|webp|gif|svg);base64,(.+)$/);
         if (matches) {
           ext = matches[1];
           buffer = Buffer.from(matches[2], 'base64');
         }
       }
       // ✅ CASE 3: Raw base64 string
-      else if (/^[A-Za-z0-9+/=]+$/.test(coverImageUrl)) {
-        buffer = Buffer.from(coverImageUrl, 'base64');
-        // Default to jpg for raw base64 unless we can detect it (complex, sticking to jpg)
+      else {
+        // Remove newlines and check if it's base64
+        const cleanBase64 = coverImageUrl.replace(/\s/g, '');
+        if (/^[A-Za-z0-9+/=]+$/.test(cleanBase64)) {
+          buffer = Buffer.from(cleanBase64, 'base64');
+        }
       }
 
       // If we successfully got a buffer, save it locally
