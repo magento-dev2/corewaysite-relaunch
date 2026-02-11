@@ -51,9 +51,11 @@ export async function POST(request: Request) {
       else if (coverImageUrl.startsWith('data:image')) {
         // Remove newlines and whitespace for robust regex matching
         const cleanCoverImage = coverImageUrl.replace(/\s/g, '');
-        const matches = cleanCoverImage.match(/^data:image\/(png|jpeg|jpg|webp|gif|svg);base64,(.+)$/);
+        // Updated regex to support svg+xml and simple svg
+        const matches = cleanCoverImage.match(/^data:image\/(png|jpeg|jpg|webp|gif|svg|svg\+xml);base64,(.+)$/);
         if (matches) {
           ext = matches[1];
+          if (ext === 'svg+xml') ext = 'svg'; // Normalizer extension
           buffer = Buffer.from(matches[2], 'base64');
         }
       }
@@ -68,8 +70,15 @@ export async function POST(request: Request) {
 
       // If we successfully got a buffer, save it locally
       if (buffer) {
+        let uploadDir = path.join(process.cwd(), 'public/blog-img');
+        const customPath = '/var/www/html/coreway_relaunch/public/blog-img/';
+
+        // Check if custom server path exists (Production environment)
+        if (fs.existsSync(customPath)) {
+          uploadDir = customPath;
+        }
+
         const fileName = `${Date.now()}.${ext}`;
-        const uploadDir = path.join(process.cwd(), 'public/blog-img');
 
         // Create folder if not exists
         if (!fs.existsSync(uploadDir)) {
@@ -80,7 +89,7 @@ export async function POST(request: Request) {
         fs.writeFileSync(filePath, buffer);
 
         // Update coverImageUrl to the local path
-        coverImageUrl = `/blog-img/${fileName}`;
+        coverImageUrl = `https://www.corewaysolution.com/blog-img/${fileName}`;
       }
     }
 
