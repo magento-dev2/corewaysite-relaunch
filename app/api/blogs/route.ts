@@ -26,14 +26,25 @@ export async function POST(request: Request) {
 
       // ✅ CASE 1: Direct image URL starting with http
       if (coverImageUrl.startsWith('http')) {
-        const res = await fetch(coverImageUrl);
-        if (res.ok) {
-          buffer = Buffer.from(await res.arrayBuffer());
-          // Extract extension from URL if possible
-          const urlMatch = coverImageUrl.match(/\.(png|jpg|jpeg|webp|gif|svg)(?:\?|$)/i);
-          if (urlMatch) {
-            ext = urlMatch[1].toLowerCase();
+        try {
+          const res = await fetch(coverImageUrl, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+          });
+          if (res.ok) {
+            buffer = Buffer.from(await res.arrayBuffer());
+            // Extract extension from URL if possible
+            const urlMatch = coverImageUrl.match(/\.(png|jpg|jpeg|webp|gif|svg)(?:\?|$)/i);
+            if (urlMatch) {
+              ext = urlMatch[1].toLowerCase();
+            }
+          } else {
+            console.error(`Failed to fetch image from URL: ${coverImageUrl}, Status: ${res.status}`);
           }
+        } catch (fetchError) {
+          console.error(`Error fetching image from URL: ${coverImageUrl}`, fetchError);
+          // Fallback: Don't fail the whole request, just proceed without image or with placeholder
         }
       }
       // ✅ CASE 2: Data URI base64 format (data:image/...)
