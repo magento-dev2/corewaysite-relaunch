@@ -68,11 +68,18 @@ export async function POST(request: Request) {
       }
     }
 
+    // Check for unique slug
+    let slug = body.slug;
+    let existingBlog = await prisma.blog.findUnique({ where: { slug } });
+    if (existingBlog) {
+      slug = `${slug}-${Date.now()}`;
+    }
+
     // Save blog with coverImageUrl in DB
     const blog = await prisma.blog.create({
       data: {
         title: body.title,
-        slug: body.slug,
+        slug: slug,
         content: typeof body.content === 'string' ? body.content : JSON.stringify(body.content),
         excerpt: body.excerpt,
         coverImage: coverImageUrl,
