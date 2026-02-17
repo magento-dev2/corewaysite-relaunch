@@ -182,6 +182,10 @@
         {
           "label": "Secure Infrastructure Automation",
           "href": "/ai-data/infrastructure-security-ai"
+        },
+        {
+          "label": "AI Agent Development & Automation Services",
+          "href": "/ai-data/ai-agent-development"
         }
       ]
     },

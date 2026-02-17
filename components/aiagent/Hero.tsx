@@ -6,8 +6,15 @@ import { gsap } from "gsap";
 import SplitType from "split-type";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+interface HeroProps {
+  title: string;
+  title2: string;
+  subtitle: string;
+  buttons: { label: string; link: string }[];
+  img?: string;
+}
 
-export default function Hero() {
+export default function Hero({ title, title2, subtitle, buttons, img }: HeroProps) {
   const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -161,16 +168,28 @@ export default function Hero() {
           {/* Left Side Text + Button */}
           <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight" ref={textRef}>
-              {t('hero.title')} <span className="text-purple-500">{t('hero.titleHighlight')}</span>
+              <span className="block mb-2">{title}</span>
+              <span className="text-purple-500 block">{title2}</span>
             </h1>
             <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
-              {t('hero.description')}
+              {subtitle}
             </p>
 
-            <button className="group bg-purple-500 text-white px-6 py-3 rounded-lg text-center hover:bg-purple-600 transition-all font-medium flex items-center space-x-2 shadow-lg shadow-purple-500/30">
-              <span>{t('hero.button')}</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {buttons?.map((button, index) => (
+                <a
+                  key={index}
+                  href={button.link}
+                  className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
+                    ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                    }`}
+                >
+                  <span>{button.label}</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              ))}
+            </div>
 
           </div>
 

@@ -1,0 +1,226 @@
+{
+    "hero": {
+        "title": "Scale Faster with",
+        "title2": "AI Agents",
+        "subtitle": "We build custom AI agents and automation solutions that help SaaS companies and businesses reduce manual work, save costs, and scale operations faster. From customer support automation to document processing and workflow automation, our AI solutions integrate seamlessly into your existing systems.",
+        "buttons": [
+            {
+                "label": "Get Free Consultation",
+                "link": "/contact?consultation=true"
+            },
+            {
+                "label": "Discuss Your Project",
+                "link": "/contact"
+            }
+        ],
+        "img": "/assets/home/coreway-ai.png"
+    },
+    "overview": {
+        "title": "We Build AI Agents That Automate Your Business Operations",
+        "content": "Many businesses spend hundreds of hours on repetitive tasks such as responding to emails, processing documents, monitoring systems, and managing workflows. Coreway Solution helps automate these operations using custom AI agents designed specifically for your business.",
+        "listItems": [
+            "Automate customer support and email responses",
+            "Process documents such as PDFs, Excel, and CSV files",
+            "Automate internal workflows and repetitive tasks",
+            "Monitor systems, logs, and infrastructure",
+            "Generate reports automatically",
+            "Integrate with your SaaS product or internal tools"
+        ],
+        "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+    },
+    "solutions": {
+        "title": "Custom AI Agents Built for Your Business Needs",
+        "items": [
+            {
+                "id": "support",
+                "title": "Customer Support AI Agent",
+                "desc": "Automatically respond to customer queries via email, chat, or support systems. Reduce support workload and improve response time."
+            },
+            {
+                "id": "document",
+                "title": "Document Processing AI Agent",
+                "desc": "Automatically read and process invoices, contracts, reports, and datasets. Extract data and automate workflows without manual intervention."
+            },
+            {
+                "id": "saas",
+                "title": "SaaS Automation AI Agent",
+                "desc": "Enhance your SaaS product with AI-powered automation, recommendations, intelligent workflows, and automation features."
+            },
+            {
+                "id": "workflow",
+                "title": "Workflow Automation AI Agent",
+                "desc": "Automate repetitive business processes such as data entry, file processing, report generation, and operational workflows."
+            },
+            {
+                "id": "monitoring",
+                "title": "Monitoring and Operations AI Agent",
+                "desc": "Monitor systems, logs, servers, or business operations and trigger alerts or automated actions when issues are detected."
+            },
+            {
+                "id": "custom",
+                "title": "Custom AI Agent Development",
+                "desc": "We design fully customized AI agents based on your unique business workflow and requirements."
+            }
+        ]
+    },
+    "saasSection": {
+        "title": "We Help SaaS Products Integrate and Scale with AI",
+        "subtitle": "If you run a SaaS platform, AI can significantly improve your product capabilities and reduce operational workload.",
+        "items": [
+            "Integrate AI features into their products",
+            "Automate backend processes",
+            "Improve user experience using intelligent automation",
+            "Reduce operational and support costs",
+            "Build scalable AI-powered product features"
+        ],
+        "img": "/assets/home/coreway-ai-3.png"
+    },
+    "caseStudies": {
+        "title": "Real Business Use Cases",
+        "cases": [
+            {
+                "id": "1",
+                "title": "SaaS Platform Automation",
+                "image": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+                "description": "Automated processing of user data, support requests, and reports for a growing SaaS.",
+                "before": "Manual processing of data",
+                "after": "Automated AI workflows",
+                "result": "Reduced manual work by over 70%"
+            },
+            {
+                "id": "2",
+                "title": "Document Processing Automation",
+                "image": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+                "description": "Streamlined data extraction from diverse business documents.",
+                "before": "Staff manual review",
+                "after": "Automated AI extraction",
+                "result": "Saved hundreds of man-hours"
+            },
+            {
+                "id": "3",
+                "title": "Business Workflow Automation",
+                "image": "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+                "description": "Connected multiple internal steps into a single automated pipeline.",
+                "before": "Manual multi-step workflows",
+                "after": "Single automated pipeline",
+                "result": "Improved efficiency & speed"
+            }
+        ]
+    },
+    "process": {
+        "title": "End-to-End AI Solution Development",
+        "description": "We provide complete AI implementation ensuring production-ready results.",
+        "steps": [
+            {
+                "id": "req-analysis",
+                "number": "01",
+                "title": "Requirement Analysis",
+                "description": "We understand your workflow, pain points, and automation goals."
+            },
+            {
+                "id": "design",
+                "number": "02",
+                "title": "Solution Design",
+                "description": "Designing the AI agent architecture tailored to your specific needs."
+            },
+            {
+                "id": "development",
+                "number": "03",
+                "title": "AI Agent Development",
+                "description": "Building the custom AI agent using modern frameworks and tools."
+            },
+            {
+                "id": "integration",
+                "number": "04",
+                "title": "Integration",
+                "description": "Seamlessly integrating the agent with your existing systems and tools."
+            },
+            {
+                "id": "deployment",
+                "number": "05",
+                "title": "Deployment & Testing",
+                "description": "Deploying to production with rigorous testing for reliability."
+            },
+            {
+                "id": "support",
+                "number": "06",
+                "title": "Ongoing Support",
+                "description": "Continuous monitoring, improvements, and maintenance."
+            }
+        ]
+    },
+    "technologies": {
+        "title": "Technologies We Work With",
+        "description": "We use modern and scalable technologies to ensure seamless integration.",
+        "items": [
+            {
+                "name": "AI & Automation Frameworks",
+                "id": "openai"
+            },
+            {
+                "name": "Node.js",
+                "id": "nodejs"
+            },
+            {
+                "name": "Python",
+                "id": "python"
+            },
+            {
+                "name": "Laravel",
+                "id": "laravel"
+            },
+            {
+                "name": "React",
+                "id": "react"
+            },
+            {
+                "name": "Next.js",
+                "id": "nextjs"
+            },
+            {
+                "name": "AWS & DigitalOcean",
+                "id": "aws"
+            },
+            {
+                "name": "PostgreSQL & MongoDB",
+                "id": "postgres"
+            },
+            {
+                "name": "API Integrations",
+                "id": "vectordb"
+            }
+        ]
+    },
+    "engagement": {
+        "title": "Engagement Models",
+        "items": [
+            {
+                "id": "fixed-scope",
+                "title": "Fixed-cost project",
+                "desc": "Defined scope and budget for specific deliverables."
+            },
+            {
+                "id": "dedicated-team",
+                "title": "Dedicated development",
+                "desc": "Hire a dedicated team for ongoing AI development."
+            },
+            {
+                "id": "integration",
+                "title": "AI integration for SaaS",
+                "desc": "Add AI capabilities to your existing product."
+            },
+            {
+                "id": "support",
+                "title": "Long-term support",
+                "desc": "Maintenance and updates for your AI agents."
+            }
+        ]
+    },
+    "cta": {
+        "badge": "Ready to Automate?",
+        "title": "Ready to Automate Your Business with AI?",
+        "description": "Tell us about your workflow or SaaS product, and we will design a custom AI solution tailored to your needs.",
+        "primaryButtonText": "Schedule Free Consultation",
+        "secondaryButtonText": "Contact Us"
+    }
+}

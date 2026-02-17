@@ -112,7 +112,7 @@ export default function WhyCorewaySection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left Column: Header Content */}
-          <div className="why-header-content">
+          <div className="why-header-content lg:sticky lg:top-32 self-start">
             {badge && (
               <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6">
                 <Star className="text-purple-500" size={16} fill="currentColor" />
@@ -120,9 +120,9 @@ export default function WhyCorewaySection({
               </div>
             )}
 
-            <h2 className="text-3xl md:text-4xl  font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-6xl  font-bold text-white mb-6 leading-tight">
               {title.split(' ').map((word, index) => {
-                const shouldHighlight = word.toLowerCase().includes('coreway') || word.toLowerCase().includes('choose');
+                const shouldHighlight = word.toLowerCase().includes('coreway') || word.toLowerCase().includes('choose') || word.toLowerCase().includes('product');
                 return shouldHighlight ? (
                   <span key={index} className="text-purple-500"> {word}</span>
                 ) : (

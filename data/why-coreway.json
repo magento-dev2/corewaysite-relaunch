@@ -1064,31 +1064,68 @@
     ]
    
   },
-    "ai-agent": {
-      "badge": "Why Choose Us",
-      "title": "Why Choose Coreway for AI Agents",
-      "subtitle": "Leading AI agent development with cutting-edge technology and proven expertise.",
-      "reasons": [
-        {
-          "icon": "bot",
-          "title": "Advanced AI Models",
-          "description": "Leverage state-of-the-art LLMs and custom-trained models for superior accuracy and performance."
-        },
-        {
-          "icon": "zap",
-          "title": "Rapid Deployment",
-          "description": "Get your AI agents up and running in weeks, not months, with our streamlined development process."
-        },
-        {
-          "icon": "brain",
-          "title": "Continuous Learning",
-          "description": "AI agents that improve over time through machine learning and user feedback integration."
-        },
-        {
-          "icon": "shield",
-          "title": "Enterprise-Grade Security",
-          "description": "Built with security-first architecture, ensuring data privacy and compliance with industry standards."
-        }
-      ]
-    }
+  "ai-agent": {
+    "badge": "Why Choose Us",
+    "title": "Why Choose Coreway for AI Agents",
+    "subtitle": "Leading AI agent development with cutting-edge technology and proven expertise.",
+    "reasons": [
+      {
+        "icon": "bot",
+        "title": "Advanced AI Models",
+        "description": "Leverage state-of-the-art LLMs and custom-trained models for superior accuracy and performance."
+      },
+      {
+        "icon": "zap",
+        "title": "Rapid Deployment",
+        "description": "Get your AI agents up and running in weeks, not months, with our streamlined development process."
+      },
+      {
+        "icon": "brain",
+        "title": "Continuous Learning",
+        "description": "AI agents that improve over time through machine learning and user feedback integration."
+      },
+      {
+        "icon": "shield",
+        "title": "Enterprise-Grade Security",
+        "description": "Built with security-first architecture, ensuring data privacy and compliance with industry standards."
+      }
+    ]
+  },
+  "ai-agent-development": {
+    "badge": "Why Choose Us",
+    "title": "Experienced Product Development Company",
+    "subtitle": "Coreway Solution has over 10 years of experience building SaaS platforms, automation systems, and enterprise applications. We focus on delivering practical AI solutions that provide real business value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Strong SaaS product development expertise",
+        "description": "Deep understanding of building and scaling modern SaaS platforms for global businesses."
+      },
+      {
+        "icon": "zap",
+        "title": "Experience building scalable platforms",
+        "description": "Proven track record in architecting high-performance digital products and systems."
+      },
+      {
+        "icon": "shield",
+        "title": "Backend, frontend, and cloud expertise",
+        "description": "Comprehensive full-stack technical knowledge across all major cloud platforms."
+      },
+      {
+        "icon": "users",
+        "title": "DevOps and infrastructure knowledge",
+        "description": "Expertise in managing complex infrastructure and automated deployment pipelines."
+      },
+      {
+        "icon": "trending",
+        "title": "Custom automation and system integration",
+        "description": "Tailored automation solutions that connect perfectly with your existing SaaS tools."
+      },
+      {
+        "icon": "clock",
+        "title": "Reliable long-term support",
+        "description": "Dedicated long-term partnership with ongoing maintenance and continuous optimization."
+      }
+    ]
+  }
 }
