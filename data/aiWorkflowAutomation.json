@@ -1,0 +1,251 @@
+{
+    "hero": {
+        "title": "AI-Driven",
+        "title2": "Workflows",
+        "subtitle": "We design AI-powered workflow automation solutions that eliminate manual processes, improve efficiency, and streamline operations across your business. From data entry and approvals to reporting and task management, our AI solutions automate complex workflows and help teams focus on high-value work.",
+        "buttons": [
+            {
+                "label": "Get Free Consultation",
+                "link": "/contact?consultation=true"
+            },
+            {
+                "label": "Discuss Your Workflow",
+                "link": "/contact"
+            }
+        ],
+        "img": "/assets/herosection/automatin-Photoroom.png"
+    },
+    "overview": {
+        "title": "AI Automation That Simplifies Business Operations",
+        "content": "Many businesses rely on manual workflows involving multiple steps, teams, and tools. These processes often cause delays, errors, and increased operational costs. We help companies automate workflows using intelligent AI systems.",
+        "listItems": [
+            "Reduce manual work and human error",
+            "Improve speed and efficiency",
+            "Automate approvals and task routing",
+            "Integrate across tools and platforms",
+            "Enable real-time monitoring and actions",
+            "Improve team productivity"
+        ],
+        "image": "/assets/workflow-automation/overview-3183151.jpeg"
+    },
+    "solutions": {
+        "title": "Intelligent Workflow Automation for Modern Businesses",
+        "items": [
+            {
+                "id": "workflow",
+                "title": "Task Automation",
+                "desc": "Automate repetitive daily tasks like data entry, updates, and notifications."
+            },
+            {
+                "id": "pipeline",
+                "title": "Approval Workflow Automation",
+                "desc": "Route approvals automatically based on rules, triggers, and AI insights."
+            },
+            {
+                "id": "document",
+                "title": "Document Workflow Automation",
+                "desc": "Process documents, extract data, and trigger actions without manual intervention."
+            },
+            {
+                "id": "support",
+                "title": "Email & Communication Automation",
+                "desc": "Automate responses, routing, and follow-ups across email and messaging systems."
+            },
+            {
+                "id": "monitoring",
+                "title": "Operations Automation",
+                "desc": "Automate operational workflows such as onboarding, reporting, and system management."
+            },
+            {
+                "id": "nextjs",
+                "title": "Cross-Platform Workflow Integration",
+                "desc": "Connect CRMs, SaaS tools, databases, and internal systems into a unified automated workflow."
+            }
+        ]
+    },
+    "saasSection": {
+        "title": "Designed for Growing Businesses and SaaS Platforms",
+        "subtitle": "Our AI workflow automation solutions help automate internal and customer-facing workflows. We help:",
+        "items": [
+            "SaaS companies automate backend operations",
+            "Enterprises streamline internal processes",
+            "Startups build scalable operational systems",
+            "Support teams reduce manual workload",
+            "Operations teams improve efficiency"
+        ],
+        "img": "/assets/home/coreway-ai-3.png"
+    },
+    "caseStudies": {
+        "title": "Real Business Use Cases",
+        "cases": [
+            {
+                "id": "internal-ops",
+                "title": "Internal Operations Automation",
+                "image": "/assets/workflow-automation/cases-1.jpeg",
+                "description": "AI automates workflow steps and routes tasks intelligently.",
+                "before": "Manual task management",
+                "after": "Intelligent task routing",
+                "result": "Faster operations"
+            },
+            {
+                "id": "doc-workflow",
+                "title": "Document Workflow Automation",
+                "image": "/assets/workflow-automation/cases-2.jpeg",
+                "description": "AI extracts information and triggers workflow actions automatically.",
+                "before": "Manual document processing",
+                "after": "Automated data extraction",
+                "result": "Reduced manual effort"
+            },
+            {
+                "id": "customer-workflow",
+                "title": "Customer Workflow Automation",
+                "image": "/assets/workflow-automation/cases-3.jpeg",
+                "description": "AI automates onboarding journeys and communication.",
+                "before": "Manual onboarding",
+                "after": "Automated onboarding",
+                "result": "Better experience"
+            },
+            {
+                "id": "reporting-auto",
+                "title": "Reporting Automation",
+                "image": "/assets/saas-products/overview-669615.jpeg",
+                "description": "AI compiles and sends reports automatically.",
+                "before": "Manual report generation",
+                "after": "Automated compiled reports",
+                "result": "Consistent reporting"
+            }
+        ]
+    },
+    "process": {
+        "title": "End-to-End Workflow Automation Implementation",
+        "description": "We deliver complete AI workflow automation services:",
+        "steps": [
+            {
+                "id": "analysis",
+                "number": "01",
+                "title": "Workflow analysis and mapping",
+                "description": "Understanding your existing processes and identifying automation potential."
+            },
+            {
+                "id": "strategy",
+                "number": "02",
+                "title": "Automation strategy planning",
+                "description": "Defining the roadmap and technical approach."
+            },
+            {
+                "id": "design",
+                "number": "03",
+                "title": "AI solution design",
+                "description": "Designing the architecture and intelligent decision points."
+            },
+            {
+                "id": "dev",
+                "number": "04",
+                "title": "Workflow automation development",
+                "description": "Building the automated pipelines and agent logic."
+            },
+            {
+                "id": "integ",
+                "number": "05",
+                "title": "Integration with existing tools",
+                "description": "Connecting the solution to your CRM, ERP, and databases."
+            },
+            {
+                "id": "test",
+                "number": "06",
+                "title": "Testing and deployment",
+                "description": "Ensuring reliability and deploying to production."
+            },
+            {
+                "id": "opt",
+                "number": "07",
+                "title": "Continuous optimization",
+                "description": "Ongoing improvements based on real-world performance."
+            }
+        ]
+    },
+    "whyChoose": {
+        "title": "Workflow Automation Experts",
+        "subtitle": "We combine product development, automation, and AI expertise to build solutions that deliver measurable results. Our solutions feature:",
+        "items": [
+            "Deep experience in workflow automation",
+            "SaaS and enterprise product expertise",
+            "Backend and system integration capabilities",
+            "Cloud and infrastructure knowledge",
+            "Scalable and secure architecture",
+            "Continuous workflow improvement"
+        ],
+        "image": "/assets/workflow-automation/cases-4.jpeg"
+    },
+    "technologies": {
+        "title": "Technologies We Use",
+        "description": "We use modern and scalable technologies to ensure smooth integration.",
+        "items": [
+            {
+                "name": "AI and automation frameworks",
+                "id": "openai"
+            },
+            {
+                "name": "Machine learning and NLP",
+                "id": "huggingface"
+            },
+            {
+                "name": "Node.js, Python, Laravel",
+                "id": "nodejs"
+            },
+            {
+                "name": "React, Next.js",
+                "id": "react"
+            },
+            {
+                "name": "Cloud platforms (AWS, GCP, DigitalOcean)",
+                "id": "aws"
+            },
+            {
+                "name": "PostgreSQL, MongoDB",
+                "id": "postgres"
+            },
+            {
+                "name": "APIs and third-party integrations",
+                "id": "nextjs"
+            }
+        ]
+    },
+    "engagement": {
+        "title": "Engagement Models",
+        "items": [
+            {
+                "id": "fixed-scope",
+                "title": "Workflow automation projects",
+                "desc": "Defined scope for specific automation goals."
+            },
+            {
+                "id": "integration",
+                "title": "AI automation for existing systems",
+                "desc": "Enhance your current tools with AI logic."
+            },
+            {
+                "id": "dedicated-team",
+                "title": "Dedicated automation team",
+                "desc": "Hire experts for long-term automation needs."
+            },
+            {
+                "id": "retainer",
+                "title": "Consulting and strategy",
+                "desc": "Strategic advice on process automation."
+            },
+            {
+                "id": "support",
+                "title": "Ongoing maintenance and support",
+                "desc": "Ensuring your workflows run 24/7 without issues."
+            }
+        ]
+    },
+    "cta": {
+        "badge": "Ready to Automate?",
+        "title": "Ready to Automate Your Workflows with AI?",
+        "description": "Tell us about your current processes and challenges. We’ll design an AI-powered workflow automation solution tailored to your business.",
+        "primaryButtonText": "Schedule Free Consultation",
+        "secondaryButtonText": "Contact Us"
+    }
+}

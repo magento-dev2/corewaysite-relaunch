@@ -26,7 +26,7 @@
             "Generate reports automatically",
             "Integrate with your SaaS product or internal tools"
         ],
-        "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+        "image": "/assets/agent-development/overview-8386440.jpeg"
     },
     "solutions": {
         "title": "Custom AI Agents Built for Your Business Needs",
@@ -81,7 +81,7 @@
             {
                 "id": "1",
                 "title": "SaaS Platform Automation",
-                "image": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+                "image": "/assets/agent-development/cases-1.jpeg",
                 "description": "Automated processing of user data, support requests, and reports for a growing SaaS.",
                 "before": "Manual processing of data",
                 "after": "Automated AI workflows",
@@ -90,7 +90,7 @@
             {
                 "id": "2",
                 "title": "Document Processing Automation",
-                "image": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+                "image": "/assets/agent-development/cases-2.jpeg",
                 "description": "Streamlined data extraction from diverse business documents.",
                 "before": "Staff manual review",
                 "after": "Automated AI extraction",
@@ -99,7 +99,7 @@
             {
                 "id": "3",
                 "title": "Business Workflow Automation",
-                "image": "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+                "image": "/assets/agent-development/cases-3.jpeg",
                 "description": "Connected multiple internal steps into a single automated pipeline.",
                 "before": "Manual multi-step workflows",
                 "after": "Single automated pipeline",

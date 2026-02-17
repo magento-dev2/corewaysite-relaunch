@@ -1060,9 +1060,7 @@
         "title": "Enterprise Security",
         "description": "Bank-level security with SOC 2, GDPR, and HIPAA compliance. Your data is always encrypted and protected."
       }
-     
     ]
-   
   },
   "ai-agent": {
     "badge": "Why Choose Us",
@@ -1125,6 +1123,117 @@
         "icon": "clock",
         "title": "Reliable long-term support",
         "description": "Dedicated long-term partnership with ongoing maintenance and continuous optimization."
+      }
+    ]
+  },
+  "ai-for-saas-products": {
+    "badge": "Why Choose Us",
+    "title": "Expert AI Integration for SaaS Platforms",
+    "subtitle": "At Coreway Solution, we combine our deep SaaS development experience with advanced AI expertise to help you build smarter, more competitive products. We ensure seamless integration that respects your existing architecture while unlocking massive potential.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Specialized SaaS AI Knowledge",
+        "description": "We understand the unique challenges of SaaS products, from multi-tenancy to scalability, and how AI fits in."
+      },
+      {
+        "icon": "zap",
+        "title": "Fast Time-to-Market",
+        "description": "Our pre-built modules and efficient development processes help you launch AI features in weeks, not months."
+      },
+      {
+        "icon": "shield",
+        "title": "Secure and Compliant AI",
+        "description": "We prioritize data privacy and security, ensuring your AI features comply with industry standards and regulations."
+      },
+      {
+        "icon": "users",
+        "title": "Seamless Integration",
+        "description": "We build AI solutions that enhance your product without requiring a complete rewrite of your existing codebase."
+      },
+      {
+        "icon": "trending",
+        "title": "Data-Driven Results",
+        "description": "Our AI implementations are focused on driving real business outcomes, from reduced churn to increased revenue."
+      },
+      {
+        "icon": "clock",
+        "title": "Ongoing Optimization",
+        "description": "We continuously monitor and refine your AI models to ensure they remain accurate and effective as your data grows."
+      }
+    ]
+  },
+  "ai-workflow-automation": {
+    "badge": "Why Choose Us",
+    "title": "Workflow Automation Experts",
+    "subtitle": "We combine product development, automation, and AI expertise to build solutions that deliver measurable results. Our focus is on building automation that creates real business impact.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Deep experience in workflow automation",
+        "description": "Proven track record in mapping and automating complex business processes."
+      },
+      {
+        "icon": "trending",
+        "title": "SaaS and enterprise product expertise",
+        "description": "Understanding the scale and requirements of professional business environments."
+      },
+      {
+        "icon": "cpu",
+        "title": "Backend and system integration capabilities",
+        "description": "Connecting disparate systems into a unified, automated ecosystem."
+      },
+      {
+        "icon": "cloud",
+        "title": "Cloud and infrastructure knowledge",
+        "description": "Building scalable solutions on AWS, Azure, and Google Cloud."
+      },
+      {
+        "icon": "shield",
+        "title": "Scalable and secure architecture",
+        "description": "Ensuring your business data and workflows remain protected and reliable."
+      },
+      {
+        "icon": "clock",
+        "title": "Long-term support and optimization",
+        "description": "Providing continuous maintenance and iterative improvements post-launch."
+      }
+    ]
+  },
+  "ai-document-processing": {
+    "badge": "Why Choose Us",
+    "title": "Experts in Document AI Systems",
+    "subtitle": "At Coreway Solution, we specialize in transforming unstructured document chaos into streamlined automated workflows. We focus on practical AI that improves operations — not just experimentation.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Docment automation expertise",
+        "description": "Extensive experience building high-accuracy OCR and data extraction engines."
+      },
+      {
+        "icon": "trending",
+        "title": "SaaS and enterprise solutions",
+        "description": "Tailored implementations for high-volume document environments."
+      },
+      {
+        "icon": "cpu",
+        "title": "AI and Backend Engineering",
+        "description": "Robut integration of advanced AI models into your core business logic."
+      },
+      {
+        "icon": "cloud",
+        "title": "Secure and scalable architecture",
+        "description": "Protecting sensitive document data with enterprise-grade security protocols."
+      },
+      {
+        "icon": "shield",
+        "title": "Cloud and infrastructure capabilities",
+        "description": "Leveraging global cloud infrastructure for high-performance processing."
+      },
+      {
+        "icon": "clock",
+        "title": "Long-term technical support",
+        "description": "Dedicated partnership with continuous accuracy tuning and system updates."
       }
     ]
   }

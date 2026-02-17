@@ -12,9 +12,10 @@ interface HeroProps {
   subtitle: string;
   buttons: { label: string; link: string }[];
   img?: string;
+  variant?: "saas" | "workflow" | "document" | "default";
 }
 
-export default function Hero({ title, title2, subtitle, buttons, img }: HeroProps) {
+export default function Hero({ title, title2, subtitle, buttons, img, variant = "default" }: HeroProps) {
   const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -39,32 +40,86 @@ export default function Hero({ title, title2, subtitle, buttons, img }: HeroProp
         canvas.height = window.innerHeight;
 
         let time = 0;
-        const drawWaves = () => {
+        const draw = () => {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.strokeStyle = 'rgba(168, 85, 247, 0.15)';
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
 
-          for (let i = 0; i < 3; i++) {
-            ctx.beginPath();
-            for (let x = 0; x < canvas.width; x += 5) {
-              const y = canvas.height / 2 + Math.sin((x + time + i * 100) / 50) * 30 * (i + 1);
-              if (x === 0) {
-                ctx.moveTo(x, y);
-              } else {
-                ctx.lineTo(x, y);
+          if (variant === "workflow") {
+            // Workflow: Geometric Grid/Nodes
+            const spacing = 100;
+            for (let x = 0; x < canvas.width; x += spacing) {
+              for (let y = 0; y < canvas.height; y += spacing) {
+                ctx.beginPath();
+                ctx.arc(x + Math.sin((time + y) / 100) * 10, y + Math.cos((time + x) / 100) * 10, 1, 0, Math.PI * 2);
+                ctx.stroke();
+                if (x + spacing < canvas.width) {
+                  ctx.beginPath();
+                  ctx.moveTo(x + Math.sin((time + y) / 100) * 10, y + Math.cos((time + x) / 100) * 10);
+                  ctx.lineTo(x + spacing + Math.sin((time + y) / 100) * 10, y + Math.cos((time + x + spacing) / 100) * 10);
+                  ctx.stroke();
+                }
               }
             }
-            ctx.stroke();
+          } else if (variant === "document") {
+            // Document: Scanning/Matrix style (Vertical falling bits)
+            const cols = Math.floor(canvas.width / 40);
+            for (let i = 0; i < cols; i++) {
+              const x = i * 40;
+              const y = (time * (2 + (i % 3)) + (i * 100)) % (canvas.height + 200);
+              ctx.strokeRect(x, y - 50, 2, 40);
+              ctx.strokeRect(x, y - 100, 1, 20);
+
+              if (i === 0) {
+                const barY = (time * 5) % canvas.height;
+                ctx.beginPath();
+                ctx.moveTo(0, barY);
+                ctx.lineTo(canvas.width, barY);
+                ctx.stroke();
+              }
+            }
+          } else if (variant === "saas") {
+            // SaaS: Orbitals / Concentric circles
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            for (let i = 1; i <= 5; i++) {
+              ctx.beginPath();
+              ctx.arc(centerX, centerY, i * 100 + Math.sin(time / 20) * 20, 0, Math.PI * 2);
+              ctx.stroke();
+
+              const angle = (time / (20 * i)) + (i * 2);
+              const nx = centerX + Math.cos(angle) * (i * 100 + Math.sin(time / 20) * 20);
+              const ny = centerY + Math.sin(angle) * (i * 100 + Math.sin(time / 20) * 20);
+              ctx.beginPath();
+              ctx.arc(nx, ny, 4, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(168, 85, 247, 0.2)';
+              ctx.fill();
+              ctx.stroke();
+            }
+          } else {
+            // Default: Waves
+            for (let i = 0; i < 3; i++) {
+              ctx.beginPath();
+              for (let x = 0; x < canvas.width; x += 5) {
+                const y = canvas.height / 2 + Math.sin((x + time + i * 100) / 50) * 30 * (i + 1);
+                if (x === 0) {
+                  ctx.moveTo(x, y);
+                } else {
+                  ctx.lineTo(x, y);
+                }
+              }
+              ctx.stroke();
+            }
           }
 
-          time += 2;
-          requestAnimationFrame(drawWaves);
+          time += 1;
+          requestAnimationFrame(draw);
         };
 
-        drawWaves();
+        draw();
       }
     }
-  }, []);
+  }, [variant]);
 
 
 
@@ -196,7 +251,7 @@ export default function Hero({ title, title2, subtitle, buttons, img }: HeroProp
           {/* Right Side Image */}
           <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
             <img
-              src="/assets/home/coreway-ai.png"
+              src={img || "/assets/home/coreway-ai.png"}
               alt="Hero Image"
               className="w-full max-w-4xl rounded-lg shadow-lg"
             />

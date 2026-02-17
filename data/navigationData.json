@@ -21,138 +21,138 @@
       ]
     },
     {
-  "id": "solutions",
-  "label": "Solutions",
-  "type": "mega",
-  "href": "/solutions",
-  "columns": [
-    {
-      "title": "Digital Solutions",
-      "items": [
+      "id": "solutions",
+      "label": "Solutions",
+      "type": "mega",
+      "href": "/solutions",
+      "columns": [
         {
-          "label": "Digital Commerce Transformation",
-          "href": "/solution/digital-commerce-transformation",
-          "icon": "shopping-cart"
+          "title": "Digital Solutions",
+          "items": [
+            {
+              "label": "Digital Commerce Transformation",
+              "href": "/solution/digital-commerce-transformation",
+              "icon": "shopping-cart"
+            },
+            {
+              "label": "Product Development for Startups",
+              "href": "/solution/product-development-forstartups",
+              "icon": "rocket"
+            },
+            {
+              "label": "AI-Powered Application Platforms",
+              "href": "/solution/ai-powered-application-platforms",
+              "icon": "cpu"
+            },
+            {
+              "label": "Analytics Solutions",
+              "href": "/solution/analytics",
+              "icon": "bar-chart-3"
+            }
+          ]
         },
         {
-          "label": "Product Development for Startups",
-          "href": "/solution/product-development-forstartups",
-          "icon": "rocket"
+          "title": "Development & Integration",
+          "items": [
+            {
+              "label": "IoT Application Development",
+              "href": "/solution/iot-application-development",
+              "icon": "wifi"
+            },
+            {
+              "label": "SaaS Infrastructure & DevOps",
+              "href": "/solution/saas-infrastructure-devops",
+              "icon": "cloud-cog"
+            },
+            {
+              "label": "Business Workflow Automation",
+              "href": "/solution/business-workflow-automation",
+              "icon": "git-branch"
+            },
+            {
+              "label": "ERP Solutions",
+              "href": "/solution/erp-solutions",
+              "icon": "layers"
+            },
+            {
+              "label": "Mobile Application Development",
+              "href": "/solution/mobile-application",
+              "icon": "smartphone"
+            }
+          ]
         },
         {
-          "label": "AI-Powered Application Platforms",
-          "href": "/solution/ai-powered-application-platforms",
-          "icon": "cpu"
+          "title": "AI & Consulting",
+          "items": [
+            {
+              "label": "AI Agent",
+              "href": "/solution/ai-agent",
+              "icon": "bot"
+            },
+            {
+              "label": "AI Consulting",
+              "href": "/solution/ai-consulting",
+              "icon": "lightbulb"
+            },
+            {
+              "label": "AI Integration Services",
+              "href": "/solution/ai-integration-services",
+              "icon": "plug"
+            },
+            {
+              "label": "Replatforming & Migration",
+              "href": "/solution/replatforming-migration",
+              "icon": "refresh-cw"
+            },
+            {
+              "label": "UGS Ads",
+              "href": "/solution/ugs-ads",
+              "icon": "megaphone"
+            },
+            {
+              "label": "DBDashbot",
+              "href": "/solution/dbdashbot",
+              "icon": "database"
+            },
+            {
+              "label": "AI Chat with PDF",
+              "href": "/solution/ai-chat-with-pdf",
+              "icon": "file-text"
+            },
+            {
+              "label": "RAG Chatbot",
+              "href": "/solution/rag-chatbot",
+              "icon": "message-square"
+            },
+            {
+              "label": "Image Recognition Chatbot",
+              "href": "/solution/image-reorganization-tool",
+              "icon": "scan-eye"
+            }
+          ]
         },
         {
-          "label": "Analytics Solutions",
-          "href": "/solution/analytics",
-          "icon": "bar-chart-3"
+          "title": "Infrastructure & Security",
+          "items": [
+            {
+              "label": "Custom API & Systems Integration",
+              "href": "/solution/custom-api-systems-integration",
+              "icon": "code"
+            },
+            {
+              "label": "Infrastructure Security Using AI",
+              "href": "/solution/infrastructure-security-ai",
+              "icon": "shield-check"
+            },
+            {
+              "label": "Dedicated Developers",
+              "href": "/dedicated-developers",
+              "icon": "users"
+            }
+          ]
         }
       ]
     },
-    {
-      "title": "Development & Integration",
-      "items": [
-        {
-          "label": "IoT Application Development",
-          "href": "/solution/iot-application-development",
-          "icon": "wifi"
-        },
-        {
-          "label": "SaaS Infrastructure & DevOps",
-          "href": "/solution/saas-infrastructure-devops",
-          "icon": "cloud-cog"
-        },
-        {
-          "label": "Business Workflow Automation",
-          "href": "/solution/business-workflow-automation",
-          "icon": "git-branch"
-        },
-        {
-          "label": "ERP Solutions",
-          "href": "/solution/erp-solutions",
-          "icon": "layers"
-        },
-        {
-          "label": "Mobile Application Development",
-          "href": "/solution/mobile-application",
-          "icon": "smartphone"
-        }
-      ]
-    },
-    {
-      "title": "AI & Consulting",
-      "items": [
-        {
-          "label": "AI Agent",
-          "href": "/solution/ai-agent",
-          "icon": "bot"
-        },
-        {
-          "label": "AI Consulting",
-          "href": "/solution/ai-consulting",
-          "icon": "lightbulb"
-        },
-        {
-          "label": "AI Integration Services",
-          "href": "/solution/ai-integration-services",
-          "icon": "plug"
-        },
-        {
-          "label": "Replatforming & Migration",
-          "href": "/solution/replatforming-migration",
-          "icon": "refresh-cw"
-        },
-        {
-          "label": "UGS Ads",
-          "href": "/solution/ugs-ads",
-          "icon": "megaphone"
-        },
-        {
-          "label": "DBDashbot",
-          "href": "/solution/dbdashbot",
-          "icon": "database"
-        },
-        {
-          "label": "AI Chat with PDF",
-          "href": "/solution/ai-chat-with-pdf",
-          "icon": "file-text"
-        },
-        {
-          "label": "RAG Chatbot",
-          "href": "/solution/rag-chatbot",
-          "icon": "message-square"
-        },
-        {
-          "label": "Image Recognition Chatbot",
-          "href": "/solution/image-reorganization-tool",
-          "icon": "scan-eye"
-        }
-      ]
-    },
-    {
-      "title": "Infrastructure & Security",
-      "items": [
-        {
-          "label": "Custom API & Systems Integration",
-          "href": "/solution/custom-api-systems-integration",
-          "icon": "code"
-        },
-        {
-          "label": "Infrastructure Security Using AI",
-          "href": "/solution/infrastructure-security-ai",
-          "icon": "shield-check"
-        },
-        {
-          "label": "Dedicated Developers",
-          "href": "/dedicated-developers",
-          "icon": "users"
-        }
-      ]
-    }
-  ]
-},
     {
       "id": "ai-data",
       "label": "AI & Data Engineering",
@@ -186,6 +186,18 @@
         {
           "label": "AI Agent Development & Automation Services",
           "href": "/ai-data/ai-agent-development"
+        },
+        {
+          "label": "AI for SaaS Products",
+          "href": "/ai-data/ai-for-saas-products"
+        },
+        {
+          "label": "AI Workflow Automation",
+          "href": "/ai-data/ai-workflow-automation"
+        },
+        {
+          "label": "AI Document Processing",
+          "href": "/ai-data/ai-document-processing"
         }
       ]
     },
@@ -225,75 +237,74 @@
         }
       ]
     },
-  {
-  "id": "technologies",
-  "label": "Technologies",
-  "type": "mega",
-  "href": "/technologies",
-  "columns": [
     {
-      "title": "Frontend & Backend",
-      "items": [
+      "id": "technologies",
+      "label": "Technologies",
+      "type": "mega",
+      "href": "/technologies",
+      "columns": [
         {
-          "label": "React.js",
-          "href": "/technologies/react",
-          "icon": "atom"
+          "title": "Frontend & Backend",
+          "items": [
+            {
+              "label": "React.js",
+              "href": "/technologies/react",
+              "icon": "atom"
+            },
+            {
+              "label": "Node.js",
+              "href": "/technologies/nodejs",
+              "icon": "server"
+            },
+            {
+              "label": "Python (Flask, FastAPI)",
+              "href": "/technologies/python",
+              "icon": "code"
+            },
+            {
+              "label": "Laravel / PHP",
+              "href": "/technologies/laravel-php",
+              "icon": "box"
+            }
+          ]
         },
         {
-          "label": "Node.js",
-          "href": "/technologies/nodejs",
-          "icon": "server"
+          "title": "Databases & Storage",
+          "items": [
+            {
+              "label": "PostgreSQL / MongoDB",
+              "href": "/technologies/databases",
+              "icon": "database"
+            },
+            {
+              "label": "AWS / Wasabi / MinIO / Cloudflare R2",
+              "href": "/technologies/cloud-storage",
+              "icon": "cloud"
+            },
+            {
+              "label": "S3 Operation",
+              "href": "/technologies/s3-process",
+              "icon": "hard-drive"
+            }
+          ]
         },
         {
-          "label": "Python (Flask, FastAPI)",
-          "href": "/technologies/python",
-          "icon": "code"
-        },
-        {
-          "label": "Laravel / PHP",
-          "href": "/technologies/laravel-php",
-          "icon": "box"
+          "title": "IoT & Security",
+          "items": [
+            {
+              "label": "MQTT / IoT Protocols / WebSockets",
+              "href": "/technologies/iot-protocols",
+              "icon": "radio"
+            },
+            {
+              "label": "Fail2Ban / UFW / CrowdSec",
+              "href": "/technologies/security-tools",
+              "icon": "shield-check"
+            }
+          ]
         }
       ]
     },
-    {
-      "title": "Databases & Storage",
-      "items": [
-        {
-          "label": "PostgreSQL / MongoDB",
-          "href": "/technologies/databases",
-          "icon": "database"
-        },
-        {
-          "label": "AWS / Wasabi / MinIO / Cloudflare R2",
-          "href": "/technologies/cloud-storage",
-          "icon": "cloud"
-        },
-        {
-          "label": "S3 Operation",
-          "href": "/technologies/s3-process",
-          "icon": "hard-drive"
-        }
-      ]
-    },
-    {
-      "title": "IoT & Security",
-      "items": [
-        {
-          "label": "MQTT / IoT Protocols / WebSockets",
-          "href": "/technologies/iot-protocols",
-          "icon": "radio"
-        },
-        {
-          "label": "Fail2Ban / UFW / CrowdSec",
-          "href": "/technologies/security-tools",
-          "icon": "shield-check"
-        }
-      ]
-    }
-  ]
-},
-
     {
       "id": "Insights",
       "label": "Insights",
@@ -308,7 +319,6 @@
           "label": "Case Studies",
           "href": "/case-studies"
         }
-        
       ]
     }
   ]
