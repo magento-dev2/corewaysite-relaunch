@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { Calendar, Users, Briefcase, Plus, ArrowRight, LifeBuoy, Zap } from 'lucide-react';
 
@@ -7,6 +8,7 @@ interface EngagementItem {
     id: string;
     title: string;
     desc: string;
+    link?: string;
 }
 
 interface EngagementProps {
@@ -23,6 +25,7 @@ const iconMap: Record<string, any> = {
 };
 
 export default function Engagement({ title, items }: EngagementProps) {
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
 
@@ -65,8 +68,9 @@ export default function Engagement({ title, items }: EngagementProps) {
                             <div
                                 key={item.id}
                                 className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-700 hover:border-purple-500/50 hover:bg-white/10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-                                    }`}
+                                    } ${item.link ? 'cursor-pointer' : ''}`}
                                 style={{ transitionDelay: `${index * 150}ms` }}
+                                onClick={() => item.link && router.push(item.link)}
                             >
                                 <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <Icon className="text-purple-400" size={28} />
@@ -77,10 +81,12 @@ export default function Engagement({ title, items }: EngagementProps) {
                                 <p className="text-gray-300 leading-relaxed mb-6">
                                     {item.desc}
                                 </p>
-                                <div className="flex items-center text-purple-400 font-medium group-hover:text-purple-300 transition-colors cursor-pointer">
-                                    <span>Learn alignment</span>
-                                    <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                                </div>
+                                {item.link && (
+                                    <div className="flex items-center text-purple-400 font-medium group-hover:text-purple-300 transition-colors">
+                                        <span>Learn alignment</span>
+                                        <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                )}
                             </div>
                         );
                     })}

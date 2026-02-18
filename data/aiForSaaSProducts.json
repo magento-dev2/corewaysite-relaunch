@@ -13,7 +13,7 @@
                 "link": "/contact"
             }
         ],
-        "img": "/assets/herosection/sass-Photoroom.png"
+        "img": "/assets/herosection/saas-products.png"
     },
     "overview": {
         "title": "AI Integration That Makes Your SaaS Product More Powerful",
@@ -75,43 +75,25 @@
         "img": "/assets/home/coreway-ai-3.png"
     },
     "caseStudies": {
-        "title": "Real SaaS Use Cases",
+        "title": "Real World Examples",
         "cases": [
             {
                 "id": "analytics",
                 "title": "AI-Powered Analytics",
                 "image": "/assets/saas-products/cases-1.jpeg",
-                "description": "AI generates insights and recommendations automatically.",
-                "before": "Manual dashboard analysis",
-                "after": "Automated AI insights",
-                "result": "Better decisions"
+                "description": "AI generates insights and recommendations automatically."
             },
             {
                 "id": "onboarding",
                 "title": "Smart Onboarding Automation",
                 "image": "/assets/saas-products/cases-2.jpeg",
-                "description": "AI guides users through onboarding steps automatically.",
-                "before": "Manual onboarding",
-                "after": "AI-guided onboarding",
-                "result": "Improved retention"
+                "description": "AI guides users through onboarding steps automatically."
             },
             {
                 "id": "support",
                 "title": "AI Support Integration",
                 "image": "/assets/saas-products/cases-3.jpeg",
-                "description": "AI handles common support requests and automates responses.",
-                "before": "Repetitive support volume",
-                "after": "AI support automation",
-                "result": "Reduced workload"
-            },
-            {
-                "id": "workflow",
-                "title": "Workflow Intelligence",
-                "image": "/assets/saas-products/cases-4.jpeg",
-                "description": "AI optimizes workflows and automates task routing.",
-                "before": "Manual workflow steps",
-                "after": "Intelligent automation",
-                "result": "Faster execution"
+                "description": "AI handles common support requests and automates responses."
             }
         ]
     },

@@ -88,6 +88,7 @@ export default function AiWorkflowAutomation() {
                 <UseCases
                     title={aiWorkflowAutomation.caseStudies.title}
                     cases={aiWorkflowAutomation.caseStudies.cases}
+                    hideButton={true}
                 />
 
                 <Process

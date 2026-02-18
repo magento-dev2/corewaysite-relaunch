@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Cpu, Zap } from 'lucide-react';
 
@@ -10,14 +10,17 @@ interface CaseStudy {
   description: string;
   before?: string;
   after?: string;
+  link?: string;
 }
 
 interface UseCasesProps {
   title: string;
   cases: CaseStudy[];
+  hideButton?: boolean;
 }
 
-export default function UseCases({ title, cases }: UseCasesProps) {
+export default function UseCases({ title, cases, hideButton = false }: UseCasesProps) {
+  const router = useRouter();
   const [visibleCases, setVisibleCases] = useState<string[]>([]);
   const [activeCase, setActiveCase] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -70,14 +73,19 @@ export default function UseCases({ title, cases }: UseCasesProps) {
             return (
               <article
                 key={caseStudy.id}
-                onMouseEnter={() => setActiveCase(caseStudy.id)}
-                onMouseLeave={() => setActiveCase(null)}
-                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                onClick={() => {
+                  if (!hideButton && caseStudy.link) {
+                    router.push(caseStudy.link);
+                  }
+                }}
+                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 h-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                   } ${isActive
                     ? 'border-purple-500/50 scale-105 shadow-2xl shadow-purple-500/20'
                     : 'hover:border-purple-500/30'
-                  }`}
+                  } ${!hideButton && caseStudy.link ? 'cursor-pointer' : ''}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
+                onMouseEnter={() => setActiveCase(caseStudy.id)}
+                onMouseLeave={() => setActiveCase(null)}
               >
                 <div className="relative h-52 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br from-purple-500/20 to-violet-500/20 transition-opacity duration-500 z-10 ${isActive ? 'opacity-100' : 'opacity-0'
@@ -120,12 +128,14 @@ export default function UseCases({ title, cases }: UseCasesProps) {
                     </div>
                   )}
 
-                  <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
-                    }`}>
-                    <span className="text-sm font-medium">Explore Solution</span>
-                    <ArrowRight size={16} className={`transition-transform ${isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
-                      }`} />
-                  </button>
+                  {!hideButton && caseStudy.link && (
+                    <button className={`flex items-center space-x-2 transition-all duration-300 group/btn cursor-pointer ${isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
+                      }`}>
+                      <span className="text-sm font-medium">Explore Solution</span>
+                      <ArrowRight size={16} className={`transition-transform ${isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
+                        }`} />
+                    </button>
+                  )}
 
                   {isActive && (
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-violet-600"></div>

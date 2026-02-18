@@ -88,6 +88,7 @@ export default function AiForSaaSProducts() {
                 <UseCases
                     title={aiForSaaSProducts.caseStudies.title}
                     cases={aiForSaaSProducts.caseStudies.cases}
+                    hideButton={true}
                 />
 
                 <Process

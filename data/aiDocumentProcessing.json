@@ -13,7 +13,7 @@
                 "link": "/contact"
             }
         ],
-        "img": "/assets/herosection/metadata-Photoroom.png"
+        "img": "/assets/herosection/document-processing.png"
     },
     "overview": {
         "title": "Intelligent Document Automation for Modern Businesses",
@@ -77,43 +77,25 @@
         "img": "/assets/home/coreway-ai-3.png"
     },
     "caseStudies": {
-        "title": "Real Business Use Cases",
+        "title": "Real World Examples",
         "cases": [
             {
                 "id": "invoice-auto",
                 "title": "Invoice Automation",
                 "image": "/assets/document-processing/cases-1.jpeg",
-                "description": "AI extracts invoice details and updates systems automatically.",
-                "before": "Manual invoice data entry",
-                "after": "Automated data extraction",
-                "result": "Faster processing"
+                "description": "AI extracts invoice details and updates systems automatically."
             },
             {
                 "id": "contract-ext",
                 "title": "Contract Data Extraction",
                 "image": "/assets/document-processing/cases-2.jpeg",
-                "description": "AI reads contracts and captures key fields instantly.",
-                "before": "Manual contract review",
-                "after": "Instant field capture",
-                "result": "Improved accuracy"
+                "description": "AI reads contracts and captures key fields instantly."
             },
             {
                 "id": "hr-doc",
                 "title": "HR Document Processing",
                 "image": "/assets/document-processing/cases-3.jpeg",
-                "description": "AI organizes and extracts data automatically.",
-                "before": "Manual resume processing",
-                "after": "Automated HR extraction",
-                "result": "Streamlined HR workflows"
-            },
-            {
-                "id": "doc-workflow",
-                "title": "Document-Driven Workflow Automation",
-                "image": "/assets/document-processing/cases-4.jpeg",
-                "description": "AI processes documents and triggers workflows instantly.",
-                "before": "Manual processing steps",
-                "after": "Instant workflow triggers",
-                "result": "Improved operational speed"
+                "description": "AI organizes and extracts data automatically."
             }
         ]
     },

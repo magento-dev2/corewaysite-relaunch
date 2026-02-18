@@ -13,7 +13,7 @@
                 "link": "/contact"
             }
         ],
-        "img": "/assets/home/coreway-ai.png"
+        "img": "/assets/herosection/agent-development.png"
     },
     "overview": {
         "title": "We Build AI Agents That Automate Your Business Operations",
@@ -85,7 +85,8 @@
                 "description": "Automated processing of user data, support requests, and reports for a growing SaaS.",
                 "before": "Manual processing of data",
                 "after": "Automated AI workflows",
-                "result": "Reduced manual work by over 70%"
+                "result": "Reduced manual work by over 70%",
+                "link": "/ai-data/ai-for-saas-products"
             },
             {
                 "id": "2",
@@ -94,7 +95,8 @@
                 "description": "Streamlined data extraction from diverse business documents.",
                 "before": "Staff manual review",
                 "after": "Automated AI extraction",
-                "result": "Saved hundreds of man-hours"
+                "result": "Saved hundreds of man-hours",
+                "link": "/ai-data/ai-document-processing"
             },
             {
                 "id": "3",
@@ -103,7 +105,8 @@
                 "description": "Connected multiple internal steps into a single automated pipeline.",
                 "before": "Manual multi-step workflows",
                 "after": "Single automated pipeline",
-                "result": "Improved efficiency & speed"
+                "result": "Improved efficiency & speed",
+                "link": "/ai-data/ai-workflow-automation"
             }
         ]
     },
@@ -195,24 +198,22 @@
         "title": "Engagement Models",
         "items": [
             {
-                "id": "fixed-scope",
-                "title": "Fixed-cost project",
-                "desc": "Defined scope and budget for specific deliverables."
-            },
-            {
                 "id": "dedicated-team",
                 "title": "Dedicated development",
-                "desc": "Hire a dedicated team for ongoing AI development."
+                "desc": "Hire a dedicated team for ongoing AI development.",
+                "link": "/ai-data/ai-document-processing"
             },
             {
                 "id": "integration",
                 "title": "AI integration for SaaS",
-                "desc": "Add AI capabilities to your existing product."
+                "desc": "Add AI capabilities to your existing product.",
+                "link": "/ai-data/ai-for-saas-products"
             },
             {
                 "id": "support",
                 "title": "Long-term support",
-                "desc": "Maintenance and updates for your AI agents."
+                "desc": "Maintenance and updates for your AI agents.",
+                "link": "/contact"
             }
         ]
     },

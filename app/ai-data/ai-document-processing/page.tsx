@@ -88,6 +88,7 @@ export default function AiDocumentProcessing() {
                 <UseCases
                     title={aiDocumentProcessing.caseStudies.title}
                     cases={aiDocumentProcessing.caseStudies.cases}
+                    hideButton={true}
                 />
 
                 <Process

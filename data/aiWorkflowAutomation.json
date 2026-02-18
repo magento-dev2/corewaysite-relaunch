@@ -13,7 +13,7 @@
                 "link": "/contact"
             }
         ],
-        "img": "/assets/herosection/automatin-Photoroom.png"
+        "img": "/assets/herosection/workflow-automation.png"
     },
     "overview": {
         "title": "AI Automation That Simplifies Business Operations",
@@ -76,43 +76,25 @@
         "img": "/assets/home/coreway-ai-3.png"
     },
     "caseStudies": {
-        "title": "Real Business Use Cases",
+        "title": "Real World Examples",
         "cases": [
             {
                 "id": "internal-ops",
                 "title": "Internal Operations Automation",
                 "image": "/assets/workflow-automation/cases-1.jpeg",
-                "description": "AI automates workflow steps and routes tasks intelligently.",
-                "before": "Manual task management",
-                "after": "Intelligent task routing",
-                "result": "Faster operations"
+                "description": "AI automates workflow steps and routes tasks intelligently."
             },
             {
                 "id": "doc-workflow",
                 "title": "Document Workflow Automation",
                 "image": "/assets/workflow-automation/cases-2.jpeg",
-                "description": "AI extracts information and triggers workflow actions automatically.",
-                "before": "Manual document processing",
-                "after": "Automated data extraction",
-                "result": "Reduced manual effort"
+                "description": "AI extracts information and triggers workflow actions automatically."
             },
             {
                 "id": "customer-workflow",
                 "title": "Customer Workflow Automation",
                 "image": "/assets/workflow-automation/cases-3.jpeg",
-                "description": "AI automates onboarding journeys and communication.",
-                "before": "Manual onboarding",
-                "after": "Automated onboarding",
-                "result": "Better experience"
-            },
-            {
-                "id": "reporting-auto",
-                "title": "Reporting Automation",
-                "image": "/assets/saas-products/overview-669615.jpeg",
-                "description": "AI compiles and sends reports automatically.",
-                "before": "Manual report generation",
-                "after": "Automated compiled reports",
-                "result": "Consistent reporting"
+                "description": "AI automates onboarding journeys and communication."
             }
         ]
     },
