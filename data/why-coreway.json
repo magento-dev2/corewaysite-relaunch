@@ -1126,6 +1126,43 @@
       }
     ]
   },
+  "salesforce-development": {
+    "badge": "Why Choose Coreway Solution",
+    "title": "Salesforce Development Experts",
+    "subtitle": "We combine CRM expertise with product development experience to deliver reliable Salesforce solutions. We focus on practical Salesforce implementations that deliver real business value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "CRM development expertise",
+        "description": "Deep experience implementing Salesforce for sales, service, and operations workflows."
+      },
+      {
+        "icon": "zap",
+        "title": "Custom Salesforce solutions",
+        "description": "Tailored Salesforce customization aligned with your business model and process needs."
+      },
+      {
+        "icon": "shield",
+        "title": "System integration experience",
+        "description": "Reliable integration with ERP, websites, marketing tools, and third-party platforms."
+      },
+      {
+        "icon": "users",
+        "title": "Scalable architecture design",
+        "description": "Architecture designed to scale with growing teams, workflows, and customer data."
+      },
+      {
+        "icon": "trending",
+        "title": "Cloud and backend expertise",
+        "description": "Strong cloud, API, and backend capabilities to support robust CRM implementations."
+      },
+      {
+        "icon": "clock",
+        "title": "Long-term support",
+        "description": "Ongoing maintenance and optimization to keep your Salesforce environment stable and efficient."
+      }
+    ]
+  },
   "ai-for-saas-products": {
     "badge": "Why Choose Us",
     "title": "Expert AI Integration for SaaS Platforms",

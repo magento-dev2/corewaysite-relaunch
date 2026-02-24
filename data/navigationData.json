@@ -78,6 +78,11 @@
               "label": "Mobile Application Development",
               "href": "/solution/mobile-application",
               "icon": "smartphone"
+            },
+            {
+              "label": "Salesforce Development",
+              "href": "/solution/salesforce-development",
+              "icon": "layers"
             }
           ]
         },

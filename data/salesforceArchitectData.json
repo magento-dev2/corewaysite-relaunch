@@ -1,0 +1,265 @@
+{
+  "hero": {
+    "title": "Enterprise CRM",
+    "title2": "Architecture",
+    "subtitle": "We provide expert Salesforce architecture services to design scalable, secure, and high-performance CRM solutions tailored to your business needs. Our Salesforce architects help plan, structure, and optimize your Salesforce environment to ensure reliable integrations, efficient workflows, and long-term scalability. From system design to enterprise-level implementations, we ensure your Salesforce platform is built on a strong technical foundation.",
+    "buttons": [
+      {
+        "label": "Get Free Consultation",
+        "link": "/contact?consultation=true"
+      },
+      {
+        "label": "Discuss Your Project",
+        "link": "/contact"
+      }
+    ],
+    "img": "/assets/herosection/salesforce-architect.png"
+  },
+  "overview": {
+    "title": "Strategic Salesforce Architecture and System Design",
+    "content": "A well-designed Salesforce architecture ensures your CRM system performs efficiently and scales with your business. Our Salesforce architects analyze your business requirements and design optimized Salesforce solutions that improve performance, maintainability, and integration capabilities. Our architecture approach ensures long-term stability and growth.",
+    "listItems": [
+      "Design scalable Salesforce architectures",
+      "Plan CRM data structures and workflows",
+      "Optimize system performance",
+      "Design secure Salesforce environments",
+      "Plan integrations with external systems",
+      "Improve system reliability",
+      "Support enterprise-level implementations"
+    ],
+    "image": "/assets/salesforce-architect/overview.avif"
+  },
+  "solutions": {
+    "title": "Enterprise-Level Salesforce Architecture Solutions",
+    "items": [
+      {
+        "id": "custom",
+        "title": "Salesforce Solution Architecture",
+        "desc": "Design complete Salesforce system architectures aligned with your business processes and long-term goals."
+      },
+      {
+        "id": "workflow",
+        "title": "Technical Architecture Planning",
+        "desc": "Plan system components, integrations, and data flow to ensure optimal performance and scalability."
+      },
+      {
+        "id": "saas",
+        "title": "Salesforce Integration Architecture",
+        "desc": "Design reliable integrations between Salesforce and third-party systems such as ERP, websites, and internal tools."
+      },
+      {
+        "id": "document",
+        "title": "Data Architecture Design",
+        "desc": "Structure Salesforce data models to ensure efficient data storage, reporting, and scalability."
+      },
+      {
+        "id": "monitoring",
+        "title": "Performance Optimization Architecture",
+        "desc": "Improve system performance by optimizing workflows, data structures, and automation."
+      },
+      {
+        "id": "support",
+        "title": "Security Architecture",
+        "desc": "Design secure Salesforce environments with proper access control and data protection."
+      }
+    ]
+  },
+  "saasSection": {
+    "title": "Architecture Built for Scalability",
+    "subtitle": "Our Salesforce architecture services help:",
+    "items": [
+      "Enterprises planning large Salesforce implementations",
+      "Growing businesses scaling CRM systems",
+      "SaaS companies integrating Salesforce",
+      "Organizations with complex workflows",
+      "Businesses requiring secure CRM environments",
+      "Companies migrating to Salesforce"
+    ],
+    "img": "/assets/salesforce-architect/saas-section.avif"
+  },
+  "caseStudies": {
+    "title": "Architectural Success Stories",
+    "cases": [
+      {
+        "id": "enterprise-arch",
+        "title": "Enterprise System Architecture",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+        "description": "Designed a multi-org strategy and robust data model for a global enterprise, ensuring high performance and data integrity."
+      },
+      {
+        "id": "integration-arch",
+        "title": "Complex Integration Design",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+        "description": "Architected a secure, event-driven integration between Salesforce and legacy ERP systems using enterprise patterns."
+      },
+      {
+        "id": "security-arch",
+        "title": "Security & Shield Implementation",
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+        "description": "Designed a comprehensive security architecture utilizing Salesforce Shield for encryption, auditing, and event monitoring."
+      }
+    ]
+  },
+  "process": {
+    "title": "End-to-End Salesforce Architecture Planning",
+    "description": "We provide complete Salesforce architecture services.",
+    "steps": [
+      {
+        "id": "req-analysis",
+        "number": "01",
+        "title": "Business and Technical Analysis",
+        "description": "Understand business goals, existing systems, and technical requirements."
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Architecture Planning",
+        "description": "Define a scalable Salesforce architecture strategy aligned to your operations."
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "System Design",
+        "description": "Design Salesforce components, modules, and interaction patterns."
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "Data Modeling",
+        "description": "Design robust data models for reliability, reporting, and growth."
+      },
+      {
+        "id": "testing",
+        "number": "05",
+        "title": "Integration Planning",
+        "description": "Plan secure and reliable integrations with external systems and tools."
+      },
+      {
+        "id": "support",
+        "number": "06",
+        "title": "Security Design",
+        "description": "Apply access controls, governance, and data protection best practices."
+      },
+      {
+        "id": "deployment",
+        "number": "07",
+        "title": "Implementation Guidance",
+        "description": "Guide implementation teams to execute architecture plans effectively."
+      },
+      {
+        "id": "pipeline",
+        "number": "08",
+        "title": "Performance Optimization",
+        "description": "Improve architecture performance and reliability for production readiness."
+      }
+    ]
+  },
+  "whyChoose": {
+    "badge": "Why Choose Salesforce Architecture Experts",
+    "title": "Experienced Salesforce Architects",
+    "subtitle": "We combine CRM expertise with enterprise architecture experience to deliver reliable Salesforce solutions focused on long-term technical success.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Enterprise Architecture Expertise",
+        "description": "Design architectures that support complexity, governance, and long-term scalability."
+      },
+      {
+        "icon": "users",
+        "title": "Salesforce System Design Experience",
+        "description": "Build practical Salesforce blueprints aligned to business workflows and goals."
+      },
+      {
+        "icon": "zap",
+        "title": "Integration Architecture Knowledge",
+        "description": "Plan reliable integrations across CRM, ERP, websites, and internal tools."
+      },
+      {
+        "icon": "trending",
+        "title": "Scalable Architecture Planning",
+        "description": "Create structures that perform well today and remain stable as usage grows."
+      },
+      {
+        "icon": "shield",
+        "title": "Secure System Design",
+        "description": "Apply robust access models and data protection standards across the platform."
+      },
+      {
+        "icon": "clock",
+        "title": "Long-Term Technical Guidance",
+        "description": "Provide ongoing architecture direction for optimization and future expansion."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Technologies We Work With",
+    "description": "We work with modern Salesforce and enterprise technologies.",
+    "items": [
+      {
+        "name": "Salesforce Platform",
+        "id": "digitalocean"
+      },
+      {
+        "name": "Apex and Lightning",
+        "id": "tensorflow"
+      },
+      {
+        "name": "REST and SOAP APIs",
+        "id": "vectordb"
+      },
+      {
+        "name": "Integration Platforms",
+        "id": "spark"
+      },
+      {
+        "name": "Node.js and Python",
+        "id": "nodejs"
+      },
+      {
+        "name": "Cloud Platforms (AWS, Azure)",
+        "id": "aws"
+      },
+      {
+        "name": "PostgreSQL and MongoDB",
+        "id": "postgres"
+      }
+    ]
+  },
+  "engagement": {
+    "title": "Engagement Models",
+    "items": [
+      {
+        "id": "integration",
+        "title": "Salesforce architecture consulting",
+        "desc": "Get expert guidance to define architecture decisions and technical roadmap."
+      },
+      {
+        "id": "fixed-scope",
+        "title": "Architecture planning projects",
+        "desc": "End-to-end architecture planning for defined Salesforce initiatives."
+      },
+      {
+        "id": "dedicated-team",
+        "title": "Dedicated Salesforce architect",
+        "desc": "Add an experienced Salesforce architect to your team for ongoing guidance."
+      },
+      {
+        "id": "retainer",
+        "title": "Technical architecture audits",
+        "desc": "Assess architecture quality, performance, scalability, and security posture."
+      },
+      {
+        "id": "support",
+        "title": "Long-term architecture support",
+        "desc": "Continuous architectural support for evolving enterprise Salesforce systems."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Need a Salesforce Architecture Expert?",
+    "title": "Need a Salesforce Architecture Expert?",
+    "description": "Tell us about your Salesforce environment and business requirements. Our Salesforce architects will design a scalable and reliable architecture tailored to your needs.",
+    "primaryButtonText": "Schedule Free Consultation",
+    "secondaryButtonText": "Contact Us"
+  }
+}

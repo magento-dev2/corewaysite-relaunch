@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import aiAgentDevelopment from "../../../data/aiAgentDevelopment.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import Hero from "@/components/aiagent/Hero";
@@ -13,6 +12,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import whyCorewayData from "@/data/why-coreway.json";
 import PageCTA from "@/components/PageCTA";
 import { Metadata } from 'next';
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
     title: 'AI Agent Development & Automation Services | Coreway Solution',
@@ -27,6 +27,17 @@ export const metadata: Metadata = {
 };
 
 export default function AiAgentDevelopment() {
+    const subHeaderItems = [
+        { label: "Overview", sectionId: "overview" },
+        { label: "Services", sectionId: "services" },
+        { label: "Industry Solutions", sectionId: "industry-solutions" },
+        { label: "Use Cases", sectionId: "use-cases" },
+        { label: "Approach", sectionId: "approach" },
+        { label: "Tech", sectionId: "tech" },
+        { label: "Engagement", sectionId: "engagement" },
+        { label: "Contact", sectionId: "contact" },
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -65,41 +76,55 @@ export default function AiAgentDevelopment() {
                     img={aiAgentDevelopment.hero.img}
                 />
 
-                <Overview
-                    title={aiAgentDevelopment.overview.title}
-                    content={aiAgentDevelopment.overview.content}
-                    image={aiAgentDevelopment.overview.image}
-                    highlights={aiAgentDevelopment.overview.listItems}
-                />
+                <SubHeader title="AI Agent Development" items={subHeaderItems} />
 
-                <Solutions
-                    title={aiAgentDevelopment.solutions.title}
-                    items={aiAgentDevelopment.solutions.items}
-                />
+                <div id="overview">
+                    <Overview
+                        title={aiAgentDevelopment.overview.title}
+                        content={aiAgentDevelopment.overview.content}
+                        image={aiAgentDevelopment.overview.image}
+                        highlights={aiAgentDevelopment.overview.listItems}
+                    />
+                </div>
 
-                <SaaSIntegration
-                    title={aiAgentDevelopment.saasSection.title}
-                    subtitle={aiAgentDevelopment.saasSection.subtitle}
-                    items={aiAgentDevelopment.saasSection.items}
-                    img={aiAgentDevelopment.saasSection.img}
-                />
+                <div id="services">
+                    <Solutions
+                        title={aiAgentDevelopment.solutions.title}
+                        items={aiAgentDevelopment.solutions.items}
+                    />
+                </div>
 
-                <UseCases
-                    title={aiAgentDevelopment.caseStudies.title}
-                    cases={aiAgentDevelopment.caseStudies.cases}
-                />
+                <div id="industry-solutions">
+                    <SaaSIntegration
+                        title={aiAgentDevelopment.saasSection.title}
+                        subtitle={aiAgentDevelopment.saasSection.subtitle}
+                        items={aiAgentDevelopment.saasSection.items}
+                        img={aiAgentDevelopment.saasSection.img}
+                    />
+                </div>
 
-                <Process
-                    title={aiAgentDevelopment.process.title}
-                    description={aiAgentDevelopment.process.description}
-                    steps={aiAgentDevelopment.process.steps}
-                />
+                <div id="use-cases">
+                    <UseCases
+                        title={aiAgentDevelopment.caseStudies.title}
+                        cases={aiAgentDevelopment.caseStudies.cases}
+                    />
+                </div>
 
-                <Technologies
-                    title={aiAgentDevelopment.technologies.title}
-                    description={aiAgentDevelopment.technologies.description}
-                    items={aiAgentDevelopment.technologies.items}
-                />
+                <div id="approach">
+                    <Process
+                        title={aiAgentDevelopment.process.title}
+                        description={aiAgentDevelopment.process.description}
+                        steps={aiAgentDevelopment.process.steps}
+                    />
+                </div>
+
+                <div id="tech">
+                    <Technologies
+                        title={aiAgentDevelopment.technologies.title}
+                        description={aiAgentDevelopment.technologies.description}
+                        items={aiAgentDevelopment.technologies.items}
+                    />
+                </div>
 
                 <WhyCorewaySection
                     badge={whyCorewayData["ai-agent-development"].badge}
@@ -108,18 +133,22 @@ export default function AiAgentDevelopment() {
                     reasons={whyCorewayData["ai-agent-development"].reasons}
                 />
 
-                <Engagement
-                    title={aiAgentDevelopment.engagement.title}
-                    items={aiAgentDevelopment.engagement.items}
-                />
+                <div id="engagement">
+                    <Engagement
+                        title={aiAgentDevelopment.engagement.title}
+                        items={aiAgentDevelopment.engagement.items}
+                    />
+                </div>
 
-                <PageCTA
-                    badge={aiAgentDevelopment.cta.badge}
-                    title={aiAgentDevelopment.cta.title}
-                    description={aiAgentDevelopment.cta.description}
-                    primaryButtonText={aiAgentDevelopment.cta.primaryButtonText}
-                    secondaryButtonText={aiAgentDevelopment.cta.secondaryButtonText}
-                />
+                <div id="contact">
+                    <PageCTA
+                        badge={aiAgentDevelopment.cta.badge}
+                        title={aiAgentDevelopment.cta.title}
+                        description={aiAgentDevelopment.cta.description}
+                        primaryButtonText={aiAgentDevelopment.cta.primaryButtonText}
+                        secondaryButtonText={aiAgentDevelopment.cta.secondaryButtonText}
+                    />
+                </div>
             </main>
         </div>
     );

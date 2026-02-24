@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import aiForSaaSProducts from "../../../data/aiForSaaSProducts.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import Hero from "@/components/aiagent/Hero";
@@ -13,6 +12,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import whyCorewayData from "@/data/why-coreway.json";
 import PageCTA from "@/components/PageCTA";
 import { Metadata } from 'next';
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
     title: 'AI for SaaS Products | AI Integration for SaaS Platforms | Coreway Solution',
@@ -27,6 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function AiForSaaSProducts() {
+    const subHeaderItems = [
+        { label: "Overview", sectionId: "overview" },
+        { label: "Services", sectionId: "services" },
+        { label: "Industry Solutions", sectionId: "industry-solutions" },
+        { label: "Use Cases", sectionId: "use-cases" },
+        { label: "Approach", sectionId: "approach" },
+        { label: "Why AI", sectionId: "why-ai" },
+        { label: "Tech", sectionId: "tech" },
+        { label: "Engagement", sectionId: "engagement" },
+        { label: "Contact", sectionId: "contact" },
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -66,49 +78,65 @@ export default function AiForSaaSProducts() {
                     variant="saas"
                 />
 
-                <Overview
-                    title={aiForSaaSProducts.overview.title}
-                    content={aiForSaaSProducts.overview.content}
-                    image={aiForSaaSProducts.overview.image}
-                    highlights={aiForSaaSProducts.overview.listItems}
-                />
+                <SubHeader title="AI for SaaS Products" items={subHeaderItems} />
 
-                <Solutions
-                    title={aiForSaaSProducts.solutions.title}
-                    items={aiForSaaSProducts.solutions.items}
-                />
+                <div id="overview">
+                    <Overview
+                        title={aiForSaaSProducts.overview.title}
+                        content={aiForSaaSProducts.overview.content}
+                        image={aiForSaaSProducts.overview.image}
+                        highlights={aiForSaaSProducts.overview.listItems}
+                    />
+                </div>
 
-                <SaaSIntegration
-                    title={aiForSaaSProducts.saasSection.title}
-                    subtitle={aiForSaaSProducts.saasSection.subtitle}
-                    items={aiForSaaSProducts.saasSection.items}
-                    img={aiForSaaSProducts.saasSection.img}
-                />
+                <div id="services">
+                    <Solutions
+                        title={aiForSaaSProducts.solutions.title}
+                        items={aiForSaaSProducts.solutions.items}
+                    />
+                </div>
 
-                <UseCases
-                    title={aiForSaaSProducts.caseStudies.title}
-                    cases={aiForSaaSProducts.caseStudies.cases}
-                    hideButton={true}
-                />
+                <div id="industry-solutions">
+                    <SaaSIntegration
+                        title={aiForSaaSProducts.saasSection.title}
+                        subtitle={aiForSaaSProducts.saasSection.subtitle}
+                        items={aiForSaaSProducts.saasSection.items}
+                        img={aiForSaaSProducts.saasSection.img}
+                    />
+                </div>
 
-                <Process
-                    title={aiForSaaSProducts.process.title}
-                    description={aiForSaaSProducts.process.description}
-                    steps={aiForSaaSProducts.process.steps}
-                />
+                <div id="use-cases">
+                    <UseCases
+                        title={aiForSaaSProducts.caseStudies.title}
+                        cases={aiForSaaSProducts.caseStudies.cases}
+                        hideButton={true}
+                    />
+                </div>
 
-                <Overview
-                    title={aiForSaaSProducts.whyAI.title}
-                    content={aiForSaaSProducts.whyAI.subtitle}
-                    image={aiForSaaSProducts.whyAI.image}
-                    highlights={aiForSaaSProducts.whyAI.items}
-                />
+                <div id="approach">
+                    <Process
+                        title={aiForSaaSProducts.process.title}
+                        description={aiForSaaSProducts.process.description}
+                        steps={aiForSaaSProducts.process.steps}
+                    />
+                </div>
 
-                <Technologies
-                    title={aiForSaaSProducts.technologies.title}
-                    description={aiForSaaSProducts.technologies.description}
-                    items={aiForSaaSProducts.technologies.items}
-                />
+                <div id="why-ai">
+                    <Overview
+                        title={aiForSaaSProducts.whyAI.title}
+                        content={aiForSaaSProducts.whyAI.subtitle}
+                        image={aiForSaaSProducts.whyAI.image}
+                        highlights={aiForSaaSProducts.whyAI.items}
+                    />
+                </div>
+
+                <div id="tech">
+                    <Technologies
+                        title={aiForSaaSProducts.technologies.title}
+                        description={aiForSaaSProducts.technologies.description}
+                        items={aiForSaaSProducts.technologies.items}
+                    />
+                </div>
 
                 <WhyCorewaySection
                     badge={whyCorewayData["ai-for-saas-products"].badge}
@@ -117,18 +145,22 @@ export default function AiForSaaSProducts() {
                     reasons={whyCorewayData["ai-for-saas-products"].reasons}
                 />
 
-                <Engagement
-                    title={aiForSaaSProducts.engagement.title}
-                    items={aiForSaaSProducts.engagement.items}
-                />
+                <div id="engagement">
+                    <Engagement
+                        title={aiForSaaSProducts.engagement.title}
+                        items={aiForSaaSProducts.engagement.items}
+                    />
+                </div>
 
-                <PageCTA
-                    badge={aiForSaaSProducts.cta.badge}
-                    title={aiForSaaSProducts.cta.title}
-                    description={aiForSaaSProducts.cta.description}
-                    primaryButtonText={aiForSaaSProducts.cta.primaryButtonText}
-                    secondaryButtonText={aiForSaaSProducts.cta.secondaryButtonText}
-                />
+                <div id="contact">
+                    <PageCTA
+                        badge={aiForSaaSProducts.cta.badge}
+                        title={aiForSaaSProducts.cta.title}
+                        description={aiForSaaSProducts.cta.description}
+                        primaryButtonText={aiForSaaSProducts.cta.primaryButtonText}
+                        secondaryButtonText={aiForSaaSProducts.cta.secondaryButtonText}
+                    />
+                </div>
             </main>
         </div>
     );

@@ -43,6 +43,7 @@ export async function GET() {
     { url: `${baseUrl}/solution/saas-infrastructure-devops`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/business-workflow-automation`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/mobile-application`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/salesforce-development`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/erp-solutions`, priority: 0.9, changeFreq: 'weekly' },
 
     // Solutions - AI & Consulting

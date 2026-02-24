@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import aiWorkflowAutomation from "../../../data/aiWorkflowAutomation.json";
 import Breadcrumb from "@/components/about/Breadcrumb";
 import Hero from "@/components/aiagent/Hero";
@@ -13,6 +12,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import whyCorewayData from "@/data/why-coreway.json";
 import PageCTA from "@/components/PageCTA";
 import { Metadata } from 'next';
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
     title: 'AI Workflow Automation Services | Business Process Automation | Coreway Solution',
@@ -27,6 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function AiWorkflowAutomation() {
+    const subHeaderItems = [
+        { label: "Overview", sectionId: "overview" },
+        { label: "Services", sectionId: "services" },
+        { label: "Industry Solutions", sectionId: "industry-solutions" },
+        { label: "Use Cases", sectionId: "use-cases" },
+        { label: "Approach", sectionId: "approach" },
+        { label: "Why Coreway", sectionId: "why-coreway" },
+        { label: "Tech", sectionId: "tech" },
+        { label: "Engagement", sectionId: "engagement" },
+        { label: "Contact", sectionId: "contact" },
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -66,49 +78,65 @@ export default function AiWorkflowAutomation() {
                     variant="workflow"
                 />
 
-                <Overview
-                    title={aiWorkflowAutomation.overview.title}
-                    content={aiWorkflowAutomation.overview.content}
-                    image={aiWorkflowAutomation.overview.image}
-                    highlights={aiWorkflowAutomation.overview.listItems}
-                />
+                <SubHeader title="AI Workflow Automation" items={subHeaderItems} />
 
-                <Solutions
-                    title={aiWorkflowAutomation.solutions.title}
-                    items={aiWorkflowAutomation.solutions.items}
-                />
+                <div id="overview">
+                    <Overview
+                        title={aiWorkflowAutomation.overview.title}
+                        content={aiWorkflowAutomation.overview.content}
+                        image={aiWorkflowAutomation.overview.image}
+                        highlights={aiWorkflowAutomation.overview.listItems}
+                    />
+                </div>
 
-                <SaaSIntegration
-                    title={aiWorkflowAutomation.saasSection.title}
-                    subtitle={aiWorkflowAutomation.saasSection.subtitle}
-                    items={aiWorkflowAutomation.saasSection.items}
-                    img={aiWorkflowAutomation.saasSection.img}
-                />
+                <div id="services">
+                    <Solutions
+                        title={aiWorkflowAutomation.solutions.title}
+                        items={aiWorkflowAutomation.solutions.items}
+                    />
+                </div>
 
-                <UseCases
-                    title={aiWorkflowAutomation.caseStudies.title}
-                    cases={aiWorkflowAutomation.caseStudies.cases}
-                    hideButton={true}
-                />
+                <div id="industry-solutions">
+                    <SaaSIntegration
+                        title={aiWorkflowAutomation.saasSection.title}
+                        subtitle={aiWorkflowAutomation.saasSection.subtitle}
+                        items={aiWorkflowAutomation.saasSection.items}
+                        img={aiWorkflowAutomation.saasSection.img}
+                    />
+                </div>
 
-                <Process
-                    title={aiWorkflowAutomation.process.title}
-                    description={aiWorkflowAutomation.process.description}
-                    steps={aiWorkflowAutomation.process.steps}
-                />
+                <div id="use-cases">
+                    <UseCases
+                        title={aiWorkflowAutomation.caseStudies.title}
+                        cases={aiWorkflowAutomation.caseStudies.cases}
+                        hideButton={true}
+                    />
+                </div>
 
-                <Overview
-                    title={whyCorewayData["ai-workflow-automation"].title}
-                    content={whyCorewayData["ai-workflow-automation"].subtitle}
-                    image={aiWorkflowAutomation.whyChoose.image}
-                    highlights={aiWorkflowAutomation.whyChoose.items}
-                />
+                <div id="approach">
+                    <Process
+                        title={aiWorkflowAutomation.process.title}
+                        description={aiWorkflowAutomation.process.description}
+                        steps={aiWorkflowAutomation.process.steps}
+                    />
+                </div>
 
-                <Technologies
-                    title={aiWorkflowAutomation.technologies.title}
-                    description={aiWorkflowAutomation.technologies.description}
-                    items={aiWorkflowAutomation.technologies.items}
-                />
+                <div id="why-coreway">
+                    <Overview
+                        title={whyCorewayData["ai-workflow-automation"].title}
+                        content={whyCorewayData["ai-workflow-automation"].subtitle}
+                        image={aiWorkflowAutomation.whyChoose.image}
+                        highlights={aiWorkflowAutomation.whyChoose.items}
+                    />
+                </div>
+
+                <div id="tech">
+                    <Technologies
+                        title={aiWorkflowAutomation.technologies.title}
+                        description={aiWorkflowAutomation.technologies.description}
+                        items={aiWorkflowAutomation.technologies.items}
+                    />
+                </div>
 
                 <WhyCorewaySection
                     badge={whyCorewayData["ai-workflow-automation"].badge}
@@ -117,18 +145,22 @@ export default function AiWorkflowAutomation() {
                     reasons={whyCorewayData["ai-workflow-automation"].reasons}
                 />
 
-                <Engagement
-                    title={aiWorkflowAutomation.engagement.title}
-                    items={aiWorkflowAutomation.engagement.items}
-                />
+                <div id="engagement">
+                    <Engagement
+                        title={aiWorkflowAutomation.engagement.title}
+                        items={aiWorkflowAutomation.engagement.items}
+                    />
+                </div>
 
-                <PageCTA
-                    badge={aiWorkflowAutomation.cta.badge}
-                    title={aiWorkflowAutomation.cta.title}
-                    description={aiWorkflowAutomation.cta.description}
-                    primaryButtonText={aiWorkflowAutomation.cta.primaryButtonText}
-                    secondaryButtonText={aiWorkflowAutomation.cta.secondaryButtonText}
-                />
+                <div id="contact">
+                    <PageCTA
+                        badge={aiWorkflowAutomation.cta.badge}
+                        title={aiWorkflowAutomation.cta.title}
+                        description={aiWorkflowAutomation.cta.description}
+                        primaryButtonText={aiWorkflowAutomation.cta.primaryButtonText}
+                        secondaryButtonText={aiWorkflowAutomation.cta.secondaryButtonText}
+                    />
+                </div>
             </main>
         </div>
     );
