@@ -112,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <script
-          src="https://app.infracaptain.com/public/js/rum.js"
+          src="https://app.infracaptain.com/api/rum/script"
           async
         />
 
