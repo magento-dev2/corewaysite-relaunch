@@ -1,0 +1,259 @@
+{
+  "hero": {
+    "title": "Omnistudio",
+    "title2": "Solutions",
+    "subtitle": "We provide Salesforce Omnistudio development services to build guided digital experiences, automate complex business processes, and deliver seamless customer interactions. Our team develops Omnistudio solutions using low-code tools to create workflows, integrations, and digital experiences that improve efficiency and user experience across Salesforce platforms. From Omniscripts and FlexCards to data integrations and automation, we build scalable Omnistudio solutions tailored to your business requirements.",
+    "buttons": [
+      {
+        "label": "Get Free Consultation",
+        "link": "/contact?consultation=true"
+      },
+      {
+        "label": "Discuss Your Project",
+        "link": "/contact"
+      }
+    ],
+    "img": "/assets/herosection/salesforce-omnistudio.png"
+  },
+  "overview": {
+    "title": "Omnistudio Solutions for Digital Experiences",
+    "content": "Salesforce Omnistudio is a low-code platform that allows businesses to build guided digital experiences and automate complex processes using visual tools and reusable components. We help businesses design and implement Omnistudio solutions that simplify workflows and improve customer and employee experiences.",
+    "listItems": [
+      "Omnistudio implementation and setup",
+      "Omniscript development",
+      "FlexCard development",
+      "DataRaptor configuration",
+      "Integration Procedures development",
+      "Workflow automation",
+      "Salesforce integration and optimization"
+    ],
+    "image": "/assets/salesforce-omnistudio/overview.avif"
+  },
+  "solutions": {
+    "title": "Complete Omnistudio Development Solutions",
+    "items": [
+      {
+        "id": "workflow",
+        "title": "Omniscript Development",
+        "desc": "We build guided workflows and multi-step digital processes using Omniscripts to simplify complex business interactions."
+      },
+      {
+        "id": "custom",
+        "title": "FlexCard Development",
+        "desc": "Design dynamic user interfaces that display contextual information and enable actions directly within Salesforce."
+      },
+      {
+        "id": "document",
+        "title": "DataRaptor Development",
+        "desc": "Configure DataRaptors to extract, transform, and load data efficiently between Salesforce objects and external systems."
+      },
+      {
+        "id": "saas",
+        "title": "Integration Procedures",
+        "desc": "Develop server-side integrations that connect Salesforce with external systems and optimize data processing."
+      },
+      {
+        "id": "monitoring",
+        "title": "Omnistudio Implementation",
+        "desc": "Set up and configure Omnistudio environments based on your business workflows and requirements."
+      },
+      {
+        "id": "support",
+        "title": "Omnistudio Optimization",
+        "desc": "Improve performance and usability by optimizing workflows, integrations, and user experiences."
+      }
+    ]
+  },
+  "saasSection": {
+    "title": "Omnistudio Built for Complex Business Processes",
+    "subtitle": "Our Omnistudio solutions help:",
+    "items": [
+      "Enterprises automate complex workflows",
+      "Customer service teams improve interactions",
+      "Businesses create guided digital experiences",
+      "Organizations integrate multiple systems",
+      "Companies improve customer onboarding",
+      "Enterprises manage large data workflows"
+    ],
+    "img": "/assets/salesforce-omnistudio/saas-section.avif"
+  },
+  "caseStudies": {
+    "title": "Real Business Use Cases",
+    "cases": [
+      {
+        "id": "onboarding",
+        "title": "Automated Customer Onboarding",
+        "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800",
+        "description": "Streamlined complex onboarding processes using OmniScripts and FlexCards, reducing manual data entry by 70%."
+      },
+      {
+        "id": "digital-service",
+        "title": "Guided Digital Service",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+        "description": "Implemented a self-service portal with guided interactions, allowing customers to resolve requests faster without human intervention."
+      },
+      {
+        "id": "integration-proc",
+        "title": "Enterprise Data Integration",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+        "description": "Utilized Integration Procedures and DataRaptors to synchronize real-time policy data from legacy systems into Salesforce."
+      }
+    ]
+  },
+  "process": {
+    "title": "End-to-End Omnistudio Development",
+    "description": "We provide complete Omnistudio development services.",
+    "steps": [
+      {
+        "id": "req-analysis",
+        "number": "01",
+        "title": "Requirement Analysis",
+        "description": "Define business requirements, user journeys, and process goals."
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "Workflow and Architecture Planning",
+        "description": "Plan Omnistudio workflows, architecture, and reusable component strategy."
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Omnistudio Component Development",
+        "description": "Build Omniscripts, FlexCards, DataRaptors, and Integration Procedures."
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "Integration Design",
+        "description": "Connect Salesforce and external systems for secure and reliable data flows."
+      },
+      {
+        "id": "testing",
+        "number": "05",
+        "title": "Testing and Deployment",
+        "description": "Validate workflows and deploy Omnistudio solutions to production safely."
+      },
+      {
+        "id": "support",
+        "number": "06",
+        "title": "Performance Optimization",
+        "description": "Improve performance, usability, and scalability for production use."
+      },
+      {
+        "id": "pipeline",
+        "number": "07",
+        "title": "Ongoing Support",
+        "description": "Provide post-launch support and iterative improvements as your processes evolve."
+      }
+    ]
+  },
+  "whyChoose": {
+    "badge": "Why Choose Coreway Solution",
+    "title": "Omnistudio Development Experts",
+    "subtitle": "We combine Salesforce expertise with enterprise development experience to deliver reliable Omnistudio solutions that create measurable business value.",
+    "reasons": [
+      {
+        "icon": "trophy",
+        "title": "Salesforce Platform Expertise",
+        "description": "Deep understanding of Salesforce architecture, data models, and enterprise workflows."
+      },
+      {
+        "icon": "users",
+        "title": "Omnistudio Development Experience",
+        "description": "Proven delivery across Omniscripts, FlexCards, DataRaptors, and Integration Procedures."
+      },
+      {
+        "icon": "zap",
+        "title": "Integration Expertise",
+        "description": "Build robust integrations between Salesforce and external systems with clean data movement."
+      },
+      {
+        "icon": "trending",
+        "title": "Scalable Architecture Design",
+        "description": "Design Omnistudio solutions that handle complexity, growth, and long-term maintainability."
+      },
+      {
+        "icon": "shield",
+        "title": "Cloud and Backend Knowledge",
+        "description": "Apply secure backend, API, and cloud practices to support enterprise-grade operations."
+      },
+      {
+        "icon": "clock",
+        "title": "Long-Term Technical Support",
+        "description": "Provide continuous improvement and technical support after deployment."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Technologies We Work With",
+    "description": "We use modern Salesforce and cloud technologies.",
+    "items": [
+      {
+        "name": "Salesforce Platform",
+        "id": "digitalocean"
+      },
+      {
+        "name": "Omnistudio Tools",
+        "id": "tensorflow"
+      },
+      {
+        "name": "Apex and Lightning",
+        "id": "vectordb"
+      },
+      {
+        "name": "REST and SOAP APIs",
+        "id": "spark"
+      },
+      {
+        "name": "Node.js and Python",
+        "id": "nodejs"
+      },
+      {
+        "name": "Cloud Platforms (AWS, Azure)",
+        "id": "aws"
+      },
+      {
+        "name": "PostgreSQL and MongoDB",
+        "id": "postgres"
+      }
+    ]
+  },
+  "engagement": {
+    "title": "Engagement Models",
+    "items": [
+      {
+        "id": "fixed-scope",
+        "title": "Omnistudio development projects",
+        "desc": "End-to-end Omnistudio delivery for clearly defined business workflows and outcomes."
+      },
+      {
+        "id": "dedicated-team",
+        "title": "Dedicated Omnistudio developers",
+        "desc": "Extend your team with Omnistudio specialists for ongoing development needs."
+      },
+      {
+        "id": "integration",
+        "title": "Omnistudio consulting",
+        "desc": "Get expert guidance for architecture, workflow strategy, and implementation planning."
+      },
+      {
+        "id": "retainer",
+        "title": "Salesforce integrations",
+        "desc": "Build and optimize integrations between Salesforce, external tools, and internal platforms."
+      },
+      {
+        "id": "support",
+        "title": "Ongoing support and maintenance",
+        "desc": "Continuous optimization, monitoring, and support to keep Omnistudio solutions reliable."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Need Salesforce Omnistudio Experts?",
+    "title": "Need Salesforce Omnistudio Experts?",
+    "description": "Tell us about your Salesforce environment and business requirements. We will design Omnistudio solutions tailored to your workflows and goals.",
+    "primaryButtonText": "Schedule Free Consultation",
+    "secondaryButtonText": "Contact Us"
+  }
+}

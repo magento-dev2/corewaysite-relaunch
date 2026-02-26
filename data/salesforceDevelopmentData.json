@@ -1,0 +1,215 @@
+{
+  "hero": {
+    "title": "Smart Salesforce",
+    "title2": "Solutions",
+    "subtitle": "We offer expert Salesforce development services including CRM implementation, customization, integrations, and automation to help businesses improve customer management and operational efficiency. Our Salesforce solutions are designed to fit your business workflows and scale as your business grows.",
+    "buttons": [
+      {
+        "label": "Get Free Consultation",
+        "link": "/contact?consultation=true"
+      },
+      {
+        "label": "Discuss Your Project",
+        "link": "/contact"
+      }
+    ],
+    "img": "/assets/herosection/salesforce-Development.png"
+  },
+  "overview": {
+    "title": "Salesforce Development for Modern Businesses",
+    "content": "Salesforce is a powerful CRM platform that helps businesses manage customer relationships, automate operations, and improve productivity. We help companies implement and customize Salesforce to match their exact business requirements and workflows.",
+    "listItems": [
+      "Salesforce CRM implementation",
+      "Custom Salesforce development",
+      "Salesforce integrations",
+      "Workflow automation",
+      "Dashboard and report customization",
+      "Salesforce app development",
+      "Data migration and optimization"
+    ],
+    "image": "/assets/salesforce-Development/overview-8386440.avif"
+  },
+  "solutions": {
+    "title": "Complete Salesforce Solutions",
+    "items": [
+      {
+        "id": "custom",
+        "title": "Salesforce Implementation",
+        "desc": "We implement Salesforce solutions based on your business processes and operational requirements to ensure a smooth and efficient CRM setup."
+      },
+      {
+        "id": "workflow",
+        "title": "Salesforce Customization",
+        "desc": "Customize dashboards, objects, workflows, and logic to match your business model and improve productivity."
+      },
+      {
+        "id": "saas",
+        "title": "Salesforce Integration",
+        "desc": "Integrate Salesforce with ERP systems, marketing tools, websites, and third-party applications for seamless data flow."
+      },
+      {
+        "id": "support",
+        "title": "Salesforce App Development",
+        "desc": "Build custom applications and features on the Salesforce platform to extend functionality."
+      },
+      {
+        "id": "monitoring",
+        "title": "Workflow Automation",
+        "desc": "Automate repetitive CRM tasks and workflows to improve operational efficiency."
+      },
+      {
+        "id": "document",
+        "title": "Salesforce Support & Maintenance",
+        "desc": "Ensure stable performance with ongoing monitoring, updates, and improvements."
+      }
+    ]
+  },
+  "saasSection": {
+    "title": "CRM Solutions That Scale with Your Business",
+    "subtitle": "Our Salesforce development solutions help:",
+    "items": [
+      "SaaS companies manage customers efficiently",
+      "Sales teams improve performance",
+      "Service teams manage support operations",
+      "Enterprises centralize customer data",
+      "Growing businesses automate processes"
+    ],
+    "img": "/assets/salesforce-Development/cases-1.avif"
+  },
+  "caseStudies": {
+    "title": "Real Business Use Cases",
+    "cases": [
+      {
+        "id": "sales-automation",
+        "title": "Sales Process Automation",
+        "image": "/assets/salesforce-Development/cases-1.avif",
+        "description": "Salesforce automates lead tracking and sales pipelines to improve visibility and faster conversions."
+      },
+      {
+        "id": "workflow",
+        "title": "Workflow Automation",
+        "image": "/assets/salesforce-Development/cases-2.avif",
+        "description": "Automated workflows update CRM records automatically, reducing manual work and improving accuracy."
+      },
+      {
+        "id": "custom-features",
+        "title": "Custom Salesforce Features",
+        "image": "/assets/salesforce-Development/cases-3.avif",
+        "description": "Custom Salesforce modules and features built to match specific business needs and improve user experience."
+      }
+    ]
+  },
+  "process": {
+    "title": "End-to-End Salesforce Development",
+    "description": "We provide complete Salesforce implementation services.",
+    "steps": [
+      {
+        "id": "req-analysis",
+        "number": "01",
+        "title": "Requirement Analysis",
+        "description": "Understand CRM requirements, workflows, and business goals."
+      },
+      {
+        "id": "design",
+        "number": "02",
+        "title": "CRM Architecture Planning",
+        "description": "Plan Salesforce architecture, object model, and process flows."
+      },
+      {
+        "id": "development",
+        "number": "03",
+        "title": "Salesforce Customization",
+        "description": "Configure and develop custom workflows, dashboards, and business logic."
+      },
+      {
+        "id": "integration",
+        "number": "04",
+        "title": "Integration Development",
+        "description": "Connect Salesforce with third-party platforms and existing systems."
+      },
+      {
+        "id": "testing",
+        "number": "05",
+        "title": "Data Migration, Testing & Deployment",
+        "description": "Migrate data safely, test thoroughly, and deploy to production."
+      },
+      {
+        "id": "support",
+        "number": "06",
+        "title": "Ongoing Support",
+        "description": "Provide continuous optimization, monitoring, and maintenance."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Technologies We Work With",
+    "description": "We use modern Salesforce and cloud technologies.",
+    "items": [
+      {
+        "name": "Salesforce CRM",
+        "id": "digitalocean"
+      },
+      {
+        "name": "Apex and Lightning",
+        "id": "tensorflow"
+      },
+      {
+        "name": "REST and SOAP APIs",
+        "id": "vectordb"
+      },
+      {
+        "name": "Node.js and Python",
+        "id": "nodejs"
+      },
+      {
+        "name": "React and Next.js",
+        "id": "react"
+      },
+      {
+        "name": "Cloud Platforms (AWS, DigitalOcean)",
+        "id": "aws"
+      },
+      {
+        "name": "PostgreSQL and MongoDB",
+        "id": "postgres"
+      }
+    ]
+  },
+  "engagement": {
+    "title": "Engagement Models",
+    "items": [
+      {
+        "id": "fixed-scope",
+        "title": "Salesforce development projects",
+        "desc": "End-to-end Salesforce delivery for defined project scope and outcomes."
+      },
+      {
+        "id": "retainer",
+        "title": "Salesforce customization",
+        "desc": "Continuous CRM improvements and custom workflow enhancements."
+      },
+      {
+        "id": "dedicated-team",
+        "title": "Dedicated Salesforce developers",
+        "desc": "Extend your team with experienced Salesforce specialists."
+      },
+      {
+        "id": "integration",
+        "title": "CRM consulting",
+        "desc": "Get architecture and implementation guidance from CRM experts."
+      },
+      {
+        "id": "support",
+        "title": "Ongoing support and maintenance",
+        "desc": "Long-term support to keep Salesforce secure, stable, and scalable."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Ready to Build Your Salesforce Solution?",
+    "title": "Ready to Build Your Salesforce Solution?",
+    "description": "Tell us about your CRM requirements and business goals. We will design a Salesforce solution tailored to your needs.",
+    "primaryButtonText": "Schedule Free Consultation",
+    "secondaryButtonText": "Contact Us"
+  }
+}

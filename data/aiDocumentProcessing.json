@@ -1,0 +1,234 @@
+{
+    "hero": {
+        "title": "AI Document",
+        "title2": "Intelligence",
+        "subtitle": "We build AI-powered document processing solutions that automatically read, extract, classify, and process business documents — reducing manual work and improving accuracy. From invoices and contracts to reports and forms, our AI systems transform unstructured documents into structured data and automate the workflows connected to them.",
+        "buttons": [
+            {
+                "label": "Get Free Consultation",
+                "link": "/contact?consultation=true"
+            },
+            {
+                "label": "Discuss Your Requirement",
+                "link": "/contact"
+            }
+        ],
+        "img": "/assets/herosection/document-processing.png"
+    },
+    "overview": {
+        "title": "Intelligent Document Automation for Modern Businesses",
+        "content": "Manual document handling slows operations, increases costs, and leads to human errors. AI document processing automates the entire lifecycle — from reading documents to triggering workflows.",
+        "listItems": [
+            "Extract data from PDFs, scans, and images",
+            "Automate document classification and tagging",
+            "Process invoices, contracts, and reports",
+            "Reduce manual data entry",
+            "Improve accuracy and compliance",
+            "Integrate document data into internal systems"
+        ],
+        "image": "/assets/document-processing/overview-2041627.jpeg"
+    },
+    "solutions": {
+        "title": "Automate Document Workflows with Intelligence",
+        "items": [
+            {
+                "id": "document",
+                "title": "Invoice Processing Automation",
+                "desc": "Extract and validate invoice data automatically and push it into accounting or ERP systems."
+            },
+            {
+                "id": "analytics",
+                "title": "Contract Analysis & Data Extraction",
+                "desc": "Read contracts, extract key information, and trigger workflows or alerts."
+            },
+            {
+                "id": "dbdashbot",
+                "title": "Report & Form Processing",
+                "desc": "Convert structured and unstructured forms into usable digital data."
+            },
+            {
+                "id": "monitoring",
+                "title": "OCR & Image-to-Data Automation",
+                "desc": "Extract information from scanned documents and images with high accuracy."
+            },
+            {
+                "id": "workflow",
+                "title": "Document Classification",
+                "desc": "Automatically identify document types and organize them."
+            },
+            {
+                "id": "governance",
+                "title": "Compliance & Audit Support",
+                "desc": "Maintain document trails, validations, and automated checks for compliance."
+            }
+        ]
+    },
+    "saasSection": {
+        "title": "Designed for Document-Heavy Industries",
+        "subtitle": "Our AI document processing solutions help businesses that handle high document volumes. We help:",
+        "items": [
+            "SaaS platforms managing user data and files",
+            "Finance and accounting teams handling invoices",
+            "HR teams processing employee documents",
+            "Legal teams managing contracts",
+            "Operations teams handling reports and forms",
+            "Enterprises with large document workflows"
+        ],
+        "img": "/assets/home/coreway-ai-3.png"
+    },
+    "caseStudies": {
+        "title": "Real World Examples",
+        "cases": [
+            {
+                "id": "invoice-auto",
+                "title": "Invoice Automation",
+                "image": "/assets/document-processing/cases-1.jpeg",
+                "description": "AI extracts invoice details and updates systems automatically."
+            },
+            {
+                "id": "contract-ext",
+                "title": "Contract Data Extraction",
+                "image": "/assets/document-processing/cases-2.jpeg",
+                "description": "AI reads contracts and captures key fields instantly."
+            },
+            {
+                "id": "hr-doc",
+                "title": "HR Document Processing",
+                "image": "/assets/document-processing/cases-3.jpeg",
+                "description": "AI organizes and extracts data automatically."
+            }
+        ]
+    },
+    "process": {
+        "title": "End-to-End AI Document Automation",
+        "description": "We deliver complete document processing solutions:",
+        "steps": [
+            {
+                "id": "analysis",
+                "number": "01",
+                "title": "Document workflow analysis",
+                "description": "Analyzing your current document lifecycle."
+            },
+            {
+                "id": "strategy",
+                "number": "02",
+                "title": "AI strategy and planning",
+                "description": "Designing the automation roadmap."
+            },
+            {
+                "id": "ocr-nlp",
+                "number": "03",
+                "title": "OCR and NLP integration",
+                "description": "Implementing vision and language models."
+            },
+            {
+                "id": "modeling",
+                "number": "04",
+                "title": "AI model development",
+                "description": "Training models on your specific documents."
+            },
+            {
+                "id": "integration",
+                "number": "05",
+                "title": "System and API integration",
+                "description": "Connecting to your internal business tools."
+            },
+            {
+                "id": "deployment",
+                "number": "06",
+                "title": "Testing and deployment",
+                "description": "Rigorous verification and production launch."
+            },
+            {
+                "id": "optimization",
+                "number": "07",
+                "title": "Continuous optimization",
+                "description": "Iterative scaling and accuracy improvements."
+            }
+        ]
+    },
+    "whyChoose": {
+        "title": "Experts in Automation and AI Systems",
+        "subtitle": "We combine automation expertise with product development experience to deliver real business impact. Our strengths:",
+        "items": [
+            "Experience with document automation systems",
+            "SaaS and enterprise solution expertise",
+            "AI integration and backend engineering",
+            "Secure and scalable architecture",
+            "Cloud and infrastructure capabilities",
+            "High-accuracy data verification"
+        ],
+        "image": "/assets/document-processing/cases-5.jpeg"
+    },
+    "technologies": {
+        "title": "Technologies We Use",
+        "description": "We use modern AI and automation technologies to ensure seamless integration.",
+        "items": [
+            {
+                "name": "OCR and NLP technologies",
+                "id": "huggingface"
+            },
+            {
+                "name": "Machine learning frameworks",
+                "id": "openai"
+            },
+            {
+                "name": "Node.js, Python, Laravel",
+                "id": "nodejs"
+            },
+            {
+                "name": "React, Next.js",
+                "id": "react"
+            },
+            {
+                "name": "Cloud platforms (AWS, GCP, DigitalOcean)",
+                "id": "aws"
+            },
+            {
+                "name": "PostgreSQL, MongoDB",
+                "id": "postgres"
+            },
+            {
+                "name": "API and system integrations",
+                "id": "nextjs"
+            }
+        ]
+    },
+    "engagement": {
+        "title": "Engagement Models",
+        "items": [
+            {
+                "id": "integration",
+                "title": "AI document processing",
+                "desc": "Full implementation of document automation."
+            },
+            {
+                "id": "fixed-scope",
+                "title": "Workflow optimization",
+                "desc": "Enhancing existing manual processes."
+            },
+            {
+                "id": "dedicated-team",
+                "title": "Dedicated AI team",
+                "desc": "Expert support for document-heavy projects."
+            },
+            {
+                "id": "retainer",
+                "title": "Consulting & Architecture",
+                "desc": "Strategic planning for enterprise automation."
+            },
+            {
+                "id": "support",
+                "title": "Ongoing Maintenance",
+                "desc": "Continuous monitoring and accuracy tuning."
+            }
+        ]
+    },
+    "cta": {
+        "badge": "Ready to Automate?",
+        "title": "Ready to Automate Document Processing with AI?",
+        "description": "Tell us about your document workflows, and we’ll design an intelligent automation solution tailored to your business.",
+        "primaryButtonText": "Schedule Free Consultation",
+        "secondaryButtonText": "Contact Us"
+    }
+}

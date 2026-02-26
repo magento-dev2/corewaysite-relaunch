@@ -54,6 +54,12 @@ export default function SolutionsPage() {
             href: "/solution/business-workflow-automation",
             icon: "zap",
         },
+        {
+            title: "Salesforce Development",
+            description: "Implement, customize, and integrate Salesforce CRM to improve customer management and operational efficiency.",
+            href: "/solution/salesforce-development",
+            icon: "layers",
+        },
         // AI & Consulting
         {
             title: "AI Agent",
