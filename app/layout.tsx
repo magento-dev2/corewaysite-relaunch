@@ -101,6 +101,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         {/* End Google Tag Manager */}
 
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.InfraCaptainConfig = {
+                token: "908a3458-13cd-4b93-8382-aa97d7dc7e38",
+                endpoint: "https://app.infracaptain.com/api/rum/collect"
+              };
+            `,
+          }}
+        />
+        <script
+          src="https://app.infracaptain.com/public/js/rum.js"
+          async
+        />
+
       </head>
 
       <body className={inter.className} suppressHydrationWarning>
