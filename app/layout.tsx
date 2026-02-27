@@ -102,19 +102,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* End Google Tag Manager */}
 
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.InfraCaptainConfig = {
-                token: "908a3458-13cd-4b93-8382-aa97d7dc7e38",
-                endpoint: "https://app.infracaptain.com/api/rum/collect"
-              };
-            `,
-          }}
-        />
-        <script
           src="https://app.infracaptain.com/api/rum/script"
+          data-token="908a3458-13cd-4b93-8382-aa97d7dc7e38"
+          data-endpoint="https://app.infracaptain.com/api/rum/collect"
           async
-        />
+        ></script>
+
 
       </head>
 
