@@ -28,19 +28,26 @@ export default function PortfolioCard({ project, index, onClick }: PortfolioCard
     const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
 
+    const rafId = useRef<number | null>(null);
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || window.innerWidth < 768) return;
 
-        const rect = cardRef.current.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        if (rafId.current) cancelAnimationFrame(rafId.current);
 
-        gsap.to(cardRef.current, {
-            rotationY: x * 10,
-            rotationX: -y * 10,
-            transformPerspective: 1000,
-            ease: "power2.out",
-            duration: 0.3,
+        rafId.current = requestAnimationFrame(() => {
+            if (!cardRef.current) return;
+            const rect = cardRef.current.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            gsap.to(cardRef.current, {
+                rotationY: x * 10,
+                rotationX: -y * 10,
+                transformPerspective: 1000,
+                ease: "power2.out",
+                duration: 0.3,
+            });
         });
     };
 

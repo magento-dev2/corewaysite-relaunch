@@ -32,12 +32,20 @@ export default function AIIntegrationAutomation({ title, description, features }
     return () => observer.disconnect();
   }, []);
 
+  const rafId = useRef<number | null>(null);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!visualRef.current) return;
-    const rect = visualRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 30;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 30;
-    setMousePosition({ x, y });
+
+    if (rafId.current) cancelAnimationFrame(rafId.current);
+
+    rafId.current = requestAnimationFrame(() => {
+      if (!visualRef.current) return;
+      const rect = visualRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 30;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 30;
+      setMousePosition({ x, y });
+    });
   };
 
   return (
@@ -54,9 +62,8 @@ export default function AIIntegrationAutomation({ title, description, features }
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-            }`}
+            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+              }`}
             style={{
               transform: isVisible ? 'translateZ(30px)' : 'translateZ(-50px)',
               transformStyle: 'preserve-3d'
@@ -84,9 +91,8 @@ export default function AIIntegrationAutomation({ title, description, features }
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex items-start space-x-3 transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                  }`}
+                  className={`flex items-start space-x-3 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                    }`}
                   style={{
                     transitionDelay: `${400 + index * 150}ms`,
                     transform: `translateZ(${15 - index * 3}px)`
@@ -108,9 +114,8 @@ export default function AIIntegrationAutomation({ title, description, features }
             ref={visualRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={() => setMousePosition({ x: 0, y: 0 })}
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-            }`}
+            className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+              }`}
             style={{
               transform: isVisible ? 'translateZ(30px)' : 'translateZ(-50px)',
               transformStyle: 'preserve-3d',

@@ -3,13 +3,6 @@ import { Inter } from 'next/font/google';
 import Script from "next/script";
 import './globals.css';
 import LayoutWrapper from './LayoutWrapper';
-import {
-  getOrganizationSchema,
-  getWebSiteSchema,
-  schemaToJsonLd,
-} from '@/lib/schema';
-import { headers } from 'next/headers';
-import { getPageSchemas } from '@/lib/page-schemas';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,25 +68,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname') || '/';
-  const pageSchemas = getPageSchemas(pathname);
+import JsonLd from '@/components/JsonLd';
 
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Unified Structured Data using @graph */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={schemaToJsonLd({
-            '@graph': [
-              getOrganizationSchema(),
-              getWebSiteSchema(),
-              ...pageSchemas
-            ]
-          })}
-        />
+        <JsonLd />
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">
