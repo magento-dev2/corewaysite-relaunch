@@ -20,13 +20,15 @@ interface Particle {
 
 export default function Hero() {
   const heroItems = heroData.hero.items;
-  const [heroIndex] = useState(() => {
-    if (typeof window === "undefined") return 0;
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  // Load stored index only after hydration to avoid LCP delay and hydration mismatch
+  useEffect(() => {
     const storedIndex = localStorage.getItem("heroIndex");
     const nextIndex = storedIndex ? (parseInt(storedIndex) + 1) % heroItems.length : 0;
     localStorage.setItem("heroIndex", nextIndex.toString());
-    return nextIndex;
-  });
+    setHeroIndex(nextIndex);
+  }, [heroItems.length]);
   const { t } = useLanguage();
   const [particles, setParticles] = useState<Particle[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);

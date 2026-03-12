@@ -27,25 +27,34 @@ export default function TrustedBy() {
   useEffect(() => {
     let animationFrame: number;
     let position = 0;
-    const speed = 0.6; // adjust speed here
+    const speed = 0.6;
+    let width = 0;
+
+    const updateWidth = () => {
+      if (containerRef.current) {
+        width = containerRef.current.scrollWidth / 2;
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
 
     const animate = () => {
       if (!isPaused && containerRef.current) {
         position -= speed;
-        const width = containerRef.current.scrollWidth / 2;
-
-        if (Math.abs(position) >= width) {
+        if (width > 0 && Math.abs(position) >= width) {
           position = 0;
         }
-
         containerRef.current.style.transform = `translateX(${position}px)`;
       }
-
       animationFrame = requestAnimationFrame(animate);
     };
 
     animate();
-    return () => cancelAnimationFrame(animationFrame);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener('resize', updateWidth);
+    };
   }, [isPaused]);
 
   return (

@@ -26,14 +26,25 @@ export interface PostalAddressSchema {
 }
 
 export interface OrganizationSchema {
-  '@type': string;
+  '@type': string | string[];
   '@id': string;
   name: string;
   url: string;
   logo: string;
+  image?: string;
   description: string;
   sameAs: string[];
   knowsAbout?: string[];
+  hasOfferCatalog?: {
+    '@type': 'OfferCatalog';
+    name: string;
+    itemListElement: Array<{
+      '@type': 'OfferCatalog' | 'ListItem';
+      name: string;
+      item?: any;
+      itemListElement?: any[];
+    }>;
+  };
   contactPoint: {
     '@type': string;
     telephone: string;
@@ -44,6 +55,7 @@ export interface OrganizationSchema {
   address?: PostalAddressSchema;
   founder?: PersonSchema;
   foundingDate?: string;
+  priceRange?: string;
 }
 
 export interface ProfessionalServiceSchema extends OrganizationSchema {
@@ -88,10 +100,7 @@ export interface ServiceSchema {
   '@type': string;
   name: string;
   serviceType: string;
-  provider: {
-    '@type': string;
-    name: string;
-  };
+  provider: { '@id': string } | { '@type': string; name: string };
   areaServed: string;
   description: string;
 }
@@ -187,13 +196,15 @@ export const getFounderSchema = (): PersonSchema => ({
 
 // Organization Schema for Coreway Solution
 export const getOrganizationSchema = (): OrganizationSchema => ({
-  '@type': 'Organization',
+  '@type': ['Organization', 'LocalBusiness'],
   '@id': `${SITE_URL}/#organization`,
   name: 'Coreway Solution',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/logo.png`,
   description:
     'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
+  priceRange: '$$$',
   knowsAbout: [
     'Artificial Intelligence',
     'Machine Learning',
@@ -203,6 +214,38 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
     'Custom Software Development',
     'Cloud Infrastructure'
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Software Development & AI Services',
+    itemListElement: [
+      {
+        '@type': 'OfferCatalog',
+        name: 'AI Solutions',
+        itemListElement: [
+          { '@type': 'ListItem', name: 'AI Consulting' },
+          { '@type': 'ListItem', name: 'RAG Chatbot Development' },
+          { '@type': 'ListItem', name: 'AI Workflow Automation' }
+        ]
+      },
+      {
+        '@type': 'OfferCatalog',
+        name: 'SaaS & Web',
+        itemListElement: [
+          { '@type': 'ListItem', name: 'SaaS Infrastructure' },
+          { '@type': 'ListItem', name: 'Custom Web Development' },
+          { '@type': 'ListItem', name: 'Product Engineering' }
+        ]
+      },
+      {
+        '@type': 'OfferCatalog',
+        name: 'Mobile & IoT',
+        itemListElement: [
+          { '@type': 'ListItem', name: 'Mobile App Development' },
+          { '@type': 'ListItem', name: 'IoT Application Systems' }
+        ]
+      }
+    ]
+  },
   sameAs: [
     'https://twitter.com/corewaysolution',
     'https://www.linkedin.com/company/coreway-solution/',
@@ -389,10 +432,7 @@ export const getServiceSchema = (
   '@type': 'Service',
   name: serviceType,
   serviceType,
-  provider: {
-    '@type': 'Organization',
-    name: 'Coreway Solution',
-  },
+  provider: { '@id': `${SITE_URL}/#organization` },
   areaServed: 'Worldwide',
   description,
   // We can add more specific service fields if needed

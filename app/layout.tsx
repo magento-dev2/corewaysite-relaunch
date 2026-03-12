@@ -108,15 +108,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           `}
         </Script>
         {/* End Google Tag Manager */}
-
-        <script
+        <Script
+          id="infracaptain-rum"
           src="https://app.infracaptain.com/api/rum/script"
           data-token="908a3458-13cd-4b93-8382-aa97d7dc7e38"
           data-endpoint="https://app.infracaptain.com/api/rum/collect"
-          async
-        ></script>
-
-
+          strategy="lazyOnload"
+        />
       </head>
 
       <body className={inter.className} suppressHydrationWarning>

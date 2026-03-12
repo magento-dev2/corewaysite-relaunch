@@ -85,6 +85,17 @@ export const getPageSchemas = (pathname: string) => {
 
     // Specialized Pages
     switch (pathname) {
+        case '/':
+            schemas.push(getWebPageSchema(
+                "Coreway Solution | Software Development & AI Automation Company",
+                "Leading software development company specializing in AI-powered solutions, custom software engineering, and digital transformation services worldwide.",
+                "/",
+                [{ name: "Home", url: "/" }],
+                "software development company, IT services, technology solutions, AI development, custom software engineering, digital transformation",
+                ["Software Development", "Artificial Intelligence", "Information Technology", "Business Automation"]
+            ));
+            break;
+
         case '/about':
             schemas.push(getAboutPageSchema(
                 "Coreway Solution is a leading software development company specializing in AI-powered solutions, custom software, and digital transformation.",
@@ -183,7 +194,14 @@ export const getPageSchemas = (pathname: string) => {
         const slug = pathname.replace('/technologies/', '');
         const techData = getTechnologyData(slug);
         if (techData) {
-            schemas.push(getWebPageSchema(techData.name, techData.description, pathname, techData.breadcrumbs));
+            schemas.push(getWebPageSchema(
+                techData.name,
+                techData.description,
+                pathname,
+                techData.breadcrumbs,
+                techData.keywords || "software development company, IT services, technology solutions",
+                techData.about
+            ));
             schemas.push(getServiceSchema(techData.serviceType, techData.description));
             schemas.push(getFallbackFAQ(techData.serviceType));
         }
@@ -194,7 +212,14 @@ export const getPageSchemas = (pathname: string) => {
         const slug = pathname.replace('/industries/', '');
         const industryData = getIndustryData(slug);
         if (industryData) {
-            schemas.push(getWebPageSchema(industryData.name, industryData.description, pathname, industryData.breadcrumbs));
+            schemas.push(getWebPageSchema(
+                industryData.name,
+                industryData.description,
+                pathname,
+                industryData.breadcrumbs,
+                industryData.keywords || "software development company, IT solutions, industry digital transformation",
+                industryData.about
+            ));
             schemas.push(getServiceSchema(industryData.serviceType, industryData.description));
             schemas.push(getFallbackFAQ(industryData.serviceType));
         }
@@ -205,7 +230,14 @@ export const getPageSchemas = (pathname: string) => {
         const slug = pathname.replace('/dedicated-developers/', '');
         const devData = getDedicatedDevData(slug);
         if (devData) {
-            schemas.push(getWebPageSchema(devData.name, devData.description, pathname, devData.breadcrumbs));
+            schemas.push(getWebPageSchema(
+                devData.name,
+                devData.description,
+                pathname,
+                devData.breadcrumbs,
+                devData.keywords || "hire software developers, dedicated development team, software company",
+                devData.about
+            ));
             schemas.push(getServiceSchema(devData.serviceType, devData.description));
             schemas.push(getFallbackFAQ(devData.serviceType));
         }
@@ -274,6 +306,8 @@ function getSolutionData(slug: string) {
             description: "End-to-end product development services from concept to launch and scale.",
             serviceType: "Custom Product Development",
             faqKey: "solutions",
+            keywords: "software development company, custom product engineering, enterprise software development, IT services company",
+            about: ["Software Development", "Product Management", "Innovation"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "Solutions", url: "/solutions" }, { name: "Product Development", url: "/solution/product-development" }]
         },
         'digital-commerce-transformation': {
@@ -615,6 +649,8 @@ function getDedicatedDevData(slug: string) {
             name: "Hire Dedicated Developers | Coreway Solution",
             description: "Get access to skilled developers who work exclusively for you. Scale your team up or down based on your needs with complete flexibility.",
             serviceType: "Staff Augmentation",
+            keywords: "hire software developers, dedicated development team, offshore development company, remote software engineers",
+            about: ["Recruitment", "Software Engineering", "Resource Management"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "Dedicated Developers", url: "/dedicated-developers" }, { name: "Hire Developers", url: "/dedicated-developers/hire-developers" }]
         }
     };
