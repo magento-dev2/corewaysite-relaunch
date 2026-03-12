@@ -77,10 +77,10 @@ export default function Services() {
               <span className="text-sm font-medium text-gray-300">What We Do</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Our Services
+              How we help you scale with AI & Automation
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed max-w-md">
-              From strategy to automation — we engineer complete digital ecosystems that scale intelligently.
+              We solve complex business challenges by architecting, building, and automating intelligent digital ecosystems designed for enterprise scale.
             </p>
           </motion.div>
 
@@ -94,16 +94,16 @@ export default function Services() {
           >
             {/* Example: 3 service cards */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
-              <h3 className="text-lg font-bold text-white mb-2">Strategy</h3>
-              <p className="text-gray-300">We craft solutions that fit your business goals and scale intelligently.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Digital Strategy</h3>
+              <p className="text-gray-300">We craft AI-first solutions that align with your business goals and scale intelligently.</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
-              <h3 className="text-lg font-bold text-white mb-2">Automation</h3>
-              <p className="text-gray-300">We streamline processes to reduce manual work and increase efficiency.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Workflow Automation</h3>
+              <p className="text-gray-300">We streamline enterprise processes to eliminate manual bottlenecks and maximize efficiency.</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all">
-              <h3 className="text-lg font-bold text-white mb-2">Analytics</h3>
-              <p className="text-gray-300">Data-driven insights to make smarter business decisions quickly.</p>
+              <h3 className="text-lg font-bold text-white mb-2">AI-Powered Analytics</h3>
+              <p className="text-gray-300">Turn complex data into actionable insights for faster, smarter business decisions.</p>
             </div>
           </motion.div>
 

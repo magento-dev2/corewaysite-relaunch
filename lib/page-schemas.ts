@@ -13,6 +13,18 @@ const faqData = faqDataRaw as Record<string, Array<{ question: string; answer: s
 export const getPageSchemas = (pathname: string) => {
     const schemas: any[] = [];
 
+    // Fallback FAQ for Authority
+    const getFallbackFAQ = (serviceName: string) => getFAQSchema([
+        {
+            question: `What makes Coreway Solution's ${serviceName} unique?`,
+            answer: `Coreway Solution combines deep technical expertise with AI-driven innovation to deliver ${serviceName} that scales intelligently and aligns perfectly with your business goals.`
+        },
+        {
+            question: `How do I start a ${serviceName} project?`,
+            answer: `You can reach out to our team through the contact page for a free consultation. We follow an Architect-Build-Automate methodology to ensure project success.`
+        }
+    ]);
+
     // Solution Pages
     if (pathname.startsWith('/solution/')) {
         const slug = pathname.replace('/solution/', '');
@@ -24,7 +36,9 @@ export const getPageSchemas = (pathname: string) => {
                 solutionData.name,
                 solutionData.description,
                 pathname,
-                solutionData.breadcrumbs
+                solutionData.breadcrumbs,
+                solutionData.keywords,
+                solutionData.about
             ));
 
             // 2. Service Schema
@@ -33,9 +47,10 @@ export const getPageSchemas = (pathname: string) => {
                 solutionData.description
             ));
 
-            // 3. FAQ Schema
             if (faqData[solutionData.faqKey]) {
                 schemas.push(getFAQSchema(faqData[solutionData.faqKey]));
+            } else {
+                schemas.push(getFallbackFAQ(solutionData.serviceType));
             }
         }
     }
@@ -50,7 +65,9 @@ export const getPageSchemas = (pathname: string) => {
                 solutionData.name,
                 solutionData.description,
                 pathname,
-                solutionData.breadcrumbs
+                solutionData.breadcrumbs,
+                solutionData.keywords,
+                solutionData.about
             ));
 
             schemas.push(getServiceSchema(
@@ -60,6 +77,8 @@ export const getPageSchemas = (pathname: string) => {
 
             if (faqData[solutionData.faqKey]) {
                 schemas.push(getFAQSchema(faqData[solutionData.faqKey]));
+            } else {
+                schemas.push(getFallbackFAQ(solutionData.serviceType));
             }
         }
     }
@@ -166,6 +185,7 @@ export const getPageSchemas = (pathname: string) => {
         if (techData) {
             schemas.push(getWebPageSchema(techData.name, techData.description, pathname, techData.breadcrumbs));
             schemas.push(getServiceSchema(techData.serviceType, techData.description));
+            schemas.push(getFallbackFAQ(techData.serviceType));
         }
     }
 
@@ -176,6 +196,7 @@ export const getPageSchemas = (pathname: string) => {
         if (industryData) {
             schemas.push(getWebPageSchema(industryData.name, industryData.description, pathname, industryData.breadcrumbs));
             schemas.push(getServiceSchema(industryData.serviceType, industryData.description));
+            schemas.push(getFallbackFAQ(industryData.serviceType));
         }
     }
 
@@ -186,6 +207,7 @@ export const getPageSchemas = (pathname: string) => {
         if (devData) {
             schemas.push(getWebPageSchema(devData.name, devData.description, pathname, devData.breadcrumbs));
             schemas.push(getServiceSchema(devData.serviceType, devData.description));
+            schemas.push(getFallbackFAQ(devData.serviceType));
         }
     }
 
@@ -199,6 +221,8 @@ function getSolutionData(slug: string) {
             description: "Expert AI consulting services to help your business leverage machine learning, data science, and intelligent automation.",
             serviceType: "AI Consulting",
             faqKey: "ai-consulting",
+            keywords: "AI consulting, artificial intelligence strategy, enterprise AI, digital transformation, machine learning consulting",
+            about: ["Artificial Intelligence", "Management Consulting", "Business Transformation"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "Solutions", url: "/solutions" }, { name: "AI Consulting", url: "/solution/ai-consulting" }]
         },
         'rag-chatbot': {
@@ -206,6 +230,8 @@ function getSolutionData(slug: string) {
             description: "Transform your PDFs into intelligent conversational assistants using advanced Retrieval Augmented Generation (RAG) technology.",
             serviceType: "RAG Chatbot Development",
             faqKey: "ai-consulting",
+            keywords: "RAG chatbot, retrieval augmented generation, AI PDF chat, intelligent chatbot, vector database",
+            about: ["Natural Language Processing", "Information Retrieval", "Artificial Intelligence"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "Solutions", url: "/solutions" }, { name: "AI Consulting", url: "/solution/ai-consulting" }, { name: "RAG Chatbot", url: "/solution/rag-chatbot" }]
         },
         'ugs-ads': {
@@ -401,6 +427,8 @@ function getAiData(slug: string) {
             description: "Replace manual work with intelligent AI agents. Custom development and SaaS integration experts.",
             serviceType: "AI Agent Development",
             faqKey: "ai-agent-development",
+            keywords: "AI agent development, autonomous agents, business automation, AI task automation, custom LLM agents",
+            about: ["Automated Reasoning", "Artificial Intelligence", "Business Process Management"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "AI & Data", url: "/ai-data" }, { name: "AI Agent Development", url: "/ai-data/ai-agent-development" }]
         },
         'ai-document-processing': {
@@ -422,6 +450,8 @@ function getAiData(slug: string) {
             description: "Automate your business workflows with intelligent AI logic. Expert automation solutions for modern businesses.",
             serviceType: "AI Workflow Automation",
             faqKey: "ai-workflow-automation",
+            keywords: "AI workflow automation, intelligent process automation, enterprise automation, AI operational efficiency",
+            about: ["Workflow Management System", "Artificial Intelligence", "Operational Excellence"],
             breadcrumbs: [{ name: "Home", url: "/" }, { name: "AI & Data", url: "/ai-data" }, { name: "AI Workflow Automation", url: "/ai-data/ai-workflow-automation" }]
         },
         'aws-s3-optimization': {

@@ -4,6 +4,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.corewaysolutio
 
 export interface PersonSchema {
   '@type': string;
+  '@id'?: string;
   name: string;
   jobTitle?: string;
   worksFor?: {
@@ -12,6 +13,7 @@ export interface PersonSchema {
   };
   sameAs?: string[];
   image?: string;
+  description?: string;
 }
 
 export interface PostalAddressSchema {
@@ -25,11 +27,13 @@ export interface PostalAddressSchema {
 
 export interface OrganizationSchema {
   '@type': string;
+  '@id': string;
   name: string;
   url: string;
   logo: string;
   description: string;
   sameAs: string[];
+  knowsAbout?: string[];
   contactPoint: {
     '@type': string;
     telephone: string;
@@ -57,6 +61,7 @@ export interface ProfessionalServiceSchema extends OrganizationSchema {
 
 export interface WebSiteSchema {
   '@type': string;
+  '@id': string;
   name: string;
   url: string;
   potentialAction?: {
@@ -93,10 +98,19 @@ export interface ServiceSchema {
 
 export interface WebPageSchema {
   '@type': string;
+  '@id': string;
   name: string;
   description: string;
   url: string;
+  isPartOf?: { '@id': string };
   breadcrumb?: BreadcrumbSchema;
+  publisher?: { '@id': string };
+  about?: Array<{ '@type': string; name: string }>;
+  keywords?: string;
+  speakable?: {
+    '@type': string;
+    cssSelector: string[];
+  };
 }
 
 export interface AboutPageSchema extends WebPageSchema {
@@ -106,11 +120,12 @@ export interface AboutPageSchema extends WebPageSchema {
 
 export interface BlogPostingSchema {
   '@type': 'BlogPosting';
+  '@id': string;
   headline: string;
   description: string;
   image: string;
-  author: PersonSchema | OrganizationSchema;
-  publisher: OrganizationSchema;
+  author: { '@id': string };
+  publisher: { '@id': string };
   datePublished: string;
   dateModified?: string;
   mainEntityOfPage: {
@@ -121,12 +136,13 @@ export interface BlogPostingSchema {
 
 export interface JobPostingSchema {
   '@type': 'JobPosting';
+  '@id': string;
   title: string;
   description: string;
   datePosted: string;
   validThrough?: string;
   employmentType: string | string[];
-  hiringOrganization: OrganizationSchema;
+  hiringOrganization: { '@id': string };
   jobLocation: {
     '@type': string;
     address: PostalAddressSchema;
@@ -155,16 +171,41 @@ export interface FAQSchema {
 }
 
 // Organization Schema for Coreway Solution
+// Founder Schema
+export const getFounderSchema = (): PersonSchema => ({
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#founder`,
+  name: 'Mr. Alpesh Radadiya',
+  jobTitle: 'Founder',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Coreway Solution'
+  },
+  sameAs: ['https://www.linkedin.com/company/coreway-solution/'], // To be populated with social links
+  description: 'Founder of Coreway Solution, leading digital transformation and AI innovation.'
+});
+
+// Organization Schema for Coreway Solution
 export const getOrganizationSchema = (): OrganizationSchema => ({
   '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
   name: 'Coreway Solution',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   description:
     'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
+  knowsAbout: [
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Workflow Automation',
+    'SaaS Development',
+    'Digital Transformation',
+    'Custom Software Development',
+    'Cloud Infrastructure'
+  ],
   sameAs: [
     'https://twitter.com/corewaysolution',
-    'https://www.linkedin.com/company/coreway-solution',
+    'https://www.linkedin.com/company/coreway-solution/',
     'https://www.facebook.com/corewaysolution',
   ],
   contactPoint: {
@@ -182,17 +223,14 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
     postalCode: '382350',
     addressCountry: 'IN',
   },
-  founder: {
-    '@type': 'Person',
-    name: 'Mr. Alpesh Radadiya',
-  },
-
+  founder: getFounderSchema(),
 });
 
 // Professional Service Schema
 export const getProfessionalServiceSchema = (): ProfessionalServiceSchema => ({
   ...getOrganizationSchema(),
   '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#service`,
   image: `${SITE_URL}/logo.png`,
   openingHours: 'Mo-Fr 10:00-19:00',
 });
@@ -200,6 +238,7 @@ export const getProfessionalServiceSchema = (): ProfessionalServiceSchema => ({
 // Website Schema with Search Action
 export const getWebSiteSchema = (): WebSiteSchema => ({
   '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
   name: 'Coreway Solution',
   url: SITE_URL,
   potentialAction: {
@@ -228,12 +267,28 @@ export const getWebPageSchema = (
   name: string,
   description: string,
   path: string,
-  breadcrumbItems?: Array<{ name: string; url?: string }>
+  breadcrumbItems?: Array<{ name: string; url?: string }>,
+  keywords?: string,
+  aboutNames?: string[]
 ): WebPageSchema => ({
   '@type': 'WebPage',
+  '@id': `${SITE_URL}${path}#webpage`,
   name,
   description,
   url: `${SITE_URL}${path}`,
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  ...(keywords && { keywords }),
+  ...(aboutNames && {
+    about: aboutNames.map((name) => ({
+      '@type': 'Thing',
+      name,
+    })),
+  }),
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'h2'],
+  },
   ...(breadcrumbItems && { breadcrumb: getBreadcrumbSchema(breadcrumbItems) }),
 });
 
@@ -268,24 +323,21 @@ export const getBlogPostingSchema = (blog: {
   slug: string;
   authorName?: string;
 }): BlogPostingSchema => {
-  const organization = getOrganizationSchema();
-  const siteUrl = organization.url;
+  const siteUrl = SITE_URL;
   return {
     '@type': 'BlogPosting',
+    '@id': `${siteUrl}/blog/${blog.slug}#blogposting`,
     headline: blog.title,
     description: blog.excerpt || blog.title,
     image: blog.coverImage
       ? (blog.coverImage.startsWith('http') ? blog.coverImage : `${siteUrl}/${blog.coverImage}`)
       : `${siteUrl}/og-image.jpg`,
-    author: {
-      '@type': 'Organization',
-      name: 'Coreway Solution',
-    },
-    publisher: organization,
+    author: { '@id': `${siteUrl}/#founder` },
+    publisher: { '@id': `${siteUrl}/#organization` },
     datePublished: new Date(blog.createdAt).toISOString(),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${siteUrl}/blog/${blog.slug}`,
+      '@id': `${siteUrl}/blog/${blog.slug}#webpage`,
     },
   };
 };
@@ -298,15 +350,17 @@ export const getJobPostingSchema = (job: {
   department: string;
   location: string;
   type: string;
+  slug?: string;
 }): JobPostingSchema => {
   const organization = getOrganizationSchema();
   return {
     '@type': 'JobPosting',
+    '@id': `${SITE_URL}/careers/${job.slug || job.title.toLowerCase().replace(/ /g, '-')}#jobposting`,
     title: job.title,
     description: job.description,
     datePosted: new Date(job.datePosted).toISOString(),
     employmentType: job.type,
-    hiringOrganization: organization,
+    hiringOrganization: { '@id': `${SITE_URL}/#organization` },
     jobLocation: {
       '@type': 'Place',
       address: organization.address!,
