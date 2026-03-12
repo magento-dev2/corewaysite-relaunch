@@ -56,20 +56,17 @@ export interface OrganizationSchema {
   founder?: PersonSchema;
   foundingDate?: string;
   priceRange?: string;
-}
-
-export interface ProfessionalServiceSchema extends OrganizationSchema {
-  image?: string;
-  priceRange?: string;
   openingHours?: string | string[];
   currenciesAccepted?: string;
   paymentAccepted?: string;
   geo?: {
-    '@type': string;
+    '@type': 'GeoCoordinates';
     latitude: number;
     longitude: number;
   };
+  hasMap?: string;
 }
+
 
 export interface WebSiteSchema {
   '@type': string;
@@ -194,9 +191,9 @@ export const getFounderSchema = (): PersonSchema => ({
   description: 'Founder of Coreway Solution, leading digital transformation and AI innovation.'
 });
 
-// Organization Schema for Coreway Solution
+// Organization & Local Business Schema for Coreway Solution
 export const getOrganizationSchema = (): OrganizationSchema => ({
-  '@type': ['Organization', 'LocalBusiness'],
+  '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
   '@id': `${SITE_URL}/#organization`,
   name: 'Coreway Solution',
   url: SITE_URL,
@@ -204,7 +201,8 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
   image: `${SITE_URL}/logo.png`,
   description:
     'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
-  priceRange: '$$$',
+
+  openingHours: 'Mo-Fr 10:00-19:00',
   knowsAbout: [
     'Artificial Intelligence',
     'Machine Learning',
@@ -266,17 +264,15 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
     postalCode: '382350',
     addressCountry: 'IN',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 23.0396,
+    longitude: 72.6800,
+  },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=Coreway+Solution+Leela+Plaza+Nikol+Ahmedabad`,
   founder: getFounderSchema(),
 });
 
-// Professional Service Schema
-export const getProfessionalServiceSchema = (): ProfessionalServiceSchema => ({
-  ...getOrganizationSchema(),
-  '@type': 'ProfessionalService',
-  '@id': `${SITE_URL}/#service`,
-  image: `${SITE_URL}/logo.png`,
-  openingHours: 'Mo-Fr 10:00-19:00',
-});
 
 // Website Schema with Search Action
 export const getWebSiteSchema = (): WebSiteSchema => ({

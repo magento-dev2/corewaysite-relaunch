@@ -53,7 +53,24 @@ export default function Hero() {
         canvas.height = window.innerHeight;
 
         let time = 0;
+        let animationFrame: number;
+        let isVisible = true;
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            isVisible = entry.isIntersecting;
+          },
+          { threshold: 0.1 }
+        );
+
+        observer.observe(canvas);
+
         const drawWaves = () => {
+          if (!isVisible) {
+            animationFrame = requestAnimationFrame(drawWaves);
+            return;
+          }
+
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.strokeStyle = "rgba(168, 85, 247, 0.15)";
           ctx.lineWidth = 2;
@@ -71,10 +88,15 @@ export default function Hero() {
           }
 
           time += 2;
-          requestAnimationFrame(drawWaves);
+          animationFrame = requestAnimationFrame(drawWaves);
         };
 
         drawWaves();
+
+        return () => {
+          cancelAnimationFrame(animationFrame);
+          observer.disconnect();
+        };
       }
     }
   }, []);
@@ -94,23 +116,29 @@ export default function Hero() {
       ease: "power4.out",
     });
 
+    let rafId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 20;
-      const y = (e.clientY / innerHeight - 0.5) * 20;
+      if (rafId) cancelAnimationFrame(rafId);
 
-      gsap.to(textRef.current, {
-        rotationY: x,
-        rotationX: -y,
-        transformPerspective: 800,
-        ease: "power2.out",
-        duration: 0.6,
+      rafId = requestAnimationFrame(() => {
+        const { innerWidth, innerHeight } = window;
+        const x = (e.clientX / innerWidth - 0.5) * 20;
+        const y = (e.clientY / innerHeight - 0.5) * 20;
+
+        gsap.to(textRef.current, {
+          rotationY: x,
+          rotationX: -y,
+          transformPerspective: 800,
+          ease: "power2.out",
+          duration: 0.6,
+        });
       });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
       split.revert();
     };
   }, []);

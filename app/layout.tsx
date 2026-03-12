@@ -6,7 +6,6 @@ import LayoutWrapper from './LayoutWrapper';
 import {
   getOrganizationSchema,
   getWebSiteSchema,
-  getProfessionalServiceSchema,
   schemaToJsonLd,
 } from '@/lib/schema';
 import { headers } from 'next/headers';
@@ -91,7 +90,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             '@graph': [
               getOrganizationSchema(),
               getWebSiteSchema(),
-              getProfessionalServiceSchema(),
               ...pageSchemas
             ]
           })}
