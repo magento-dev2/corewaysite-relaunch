@@ -180,7 +180,7 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
     addressLocality: 'Ahmedabad',
     addressRegion: 'Gujarat',
     postalCode: '382350',
-    addressCountry: 'India',
+    addressCountry: 'IN',
   },
   founder: {
     '@type': 'Person',
