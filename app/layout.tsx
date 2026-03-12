@@ -84,28 +84,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
-        {/* Global Structured Data */}
+        {/* Unified Structured Data using @graph */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={schemaToJsonLd(getOrganizationSchema())}
+          dangerouslySetInnerHTML={schemaToJsonLd({
+            '@graph': [
+              getOrganizationSchema(),
+              getWebSiteSchema(),
+              getProfessionalServiceSchema(),
+              ...pageSchemas
+            ]
+          })}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={schemaToJsonLd(getWebSiteSchema())}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={schemaToJsonLd(getProfessionalServiceSchema())}
-        />
-
-        {/* Page-Specific Structured Data */}
-        {pageSchemas.map((schema, index) => (
-          <script
-            key={`${pathname}-schema-${index}`}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={schemaToJsonLd(schema)}
-          />
-        ))}
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">

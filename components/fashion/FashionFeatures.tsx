@@ -117,7 +117,7 @@ export default function FashionFeatures({ title, items }: FashionFeaturesProps) 
                 </p>
 
                 <div className="mt-6 flex items-center text-purple-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Learn more</span>
+                  <span>Learn more about {item.title}</span>
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

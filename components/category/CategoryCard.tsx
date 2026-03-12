@@ -72,8 +72,8 @@ export default function CategoryCard({
                     {/* <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} opacity-20 mb-4 flex items-center justify-center group-hover:opacity-30 transition-opacity`}>
                         <IconComponent className="w-6 h-6 text-white" />
                     </div> */}
-                     <div className="w-12 h-12  bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-lg flex mb-4 items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors" strokeWidth={1.5} />
+                    <div className="w-12 h-12  bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-lg flex mb-4 items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors" strokeWidth={1.5} />
                     </div>
 
                     {/* Title */}
@@ -88,7 +88,7 @@ export default function CategoryCard({
 
                     {/* CTA */}
                     <div className="flex items-center gap-2 text-purple-400 group-hover:text-purple-300 font-medium text-sm transition-colors">
-                        <span>Learn more</span>
+                        <span>Learn more about {title}</span>
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </div>
                 </div>

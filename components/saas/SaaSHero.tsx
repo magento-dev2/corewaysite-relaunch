@@ -149,8 +149,8 @@ export default function SaaSHero({ title, subtitle, buttons, title2 }: SaaSHeroP
                   key={index}
                   href={button.link}
                   className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
-                      ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
-                      : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                    ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
                     }`}
                 >
                   <span>{button.label}</span>
@@ -166,7 +166,7 @@ export default function SaaSHero({ title, subtitle, buttons, title2 }: SaaSHeroP
             <img
               // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
               src="/assets/herosection/sass-Photoroom.png"
-              alt="Hero Image"
+              alt="SaaS and DevOps integration and cloud services illustration"
               className="w-full max-w-4xl rounded-lg shadow-lg"
             />
           </div>

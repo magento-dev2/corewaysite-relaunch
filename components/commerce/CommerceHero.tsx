@@ -14,11 +14,11 @@ interface CommerceHeroProps {
 
 export default function CommerceHero({ title, title2, subtitle, buttons }: CommerceHeroProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
 
 
 
-   useEffect(() => {
+  useEffect(() => {
     if (!textRef.current) return;
     // 🌀 Split text into individual characters
     const split = new SplitType(textRef.current, { types: "chars,words" });
@@ -130,7 +130,7 @@ export default function CommerceHero({ title, title2, subtitle, buttons }: Comme
           {/* Left Side Text + Button */}
           <div className="flex-1 flex flex-col justify-start items-center text-center mb-8 md:mb-0 space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight" ref={textRef} >
-           {title}<span className="text-purple-500">{title2}</span>
+              {title}<span className="text-purple-500">{title2}</span>
             </h1>
             <p className="text-lg text-gray-300 max-w-md mt-2 leading-relaxed">
               {subtitle}
@@ -141,21 +141,20 @@ export default function CommerceHero({ title, title2, subtitle, buttons }: Comme
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button> */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {buttons.map((button, index) => (
-            <a
-              key={index}
-              href={button.link}
-              className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${
-                index === 0
-                  ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
-                  : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
-              }`}
-            >
-              <span>{button.label}</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          ))}
-        </div>
+              {buttons.map((button, index) => (
+                <a
+                  key={index}
+                  href={button.link}
+                  className={`group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all ${index === 0
+                      ? 'bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105'
+                      : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50'
+                    }`}
+                >
+                  <span>{button.label}</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              ))}
+            </div>
 
           </div>
 
@@ -163,8 +162,8 @@ export default function CommerceHero({ title, title2, subtitle, buttons }: Comme
           <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 ">
             <img
               // src="/assets/herosection/digital-commerce-transformation-removebg-preview.png"
-             src="/assets/images/digital12-removebg.png"
-              alt="Hero Image"
+              src="/assets/images/digital12-removebg.png"
+              alt="Digital commerce transformation and online retail illustration"
               className="w-full max-w-4xl rounded-lg shadow-lg"
             />
           </div>

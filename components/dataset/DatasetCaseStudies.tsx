@@ -70,25 +70,21 @@ export default function DatasetCaseStudies({ title, cases }: DatasetCaseStudiesP
                 key={caseStudy.id}
                 onMouseEnter={() => setActiveCase(caseStudy.id)}
                 onMouseLeave={() => setActiveCase(null)}
-                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-                } ${
-                  isActive
+                className={`relative group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                  } ${isActive
                     ? 'border-purple-500/50 scale-105 shadow-2xl shadow-purple-500/20'
                     : 'hover:border-purple-500/30 hover:scale-102'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="relative h-56 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br from-purple-500/20 to-violet-500/20 transition-opacity duration-500 z-10 ${
-                    isActive ? 'opacity-100' : 'opacity-0'
-                  }`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br from-purple-500/20 to-violet-500/20 transition-opacity duration-500 z-10 ${isActive ? 'opacity-100' : 'opacity-0'
+                    }`}></div>
                   <img
                     src={caseStudy.image}
                     alt={caseStudy.title}
-                    className={`w-full h-full object-cover transition-transform duration-700 ${
-                      isActive ? 'scale-120' : 'group-hover:scale-110'
-                    }`}
+                    className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-120' : 'group-hover:scale-110'
+                      }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E0918] via-[#0E0918]/50 to-transparent"></div>
 
@@ -100,21 +96,18 @@ export default function DatasetCaseStudies({ title, cases }: DatasetCaseStudiesP
                 </div>
 
                 <div className="p-6 relative">
-                  <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${
-                    isActive ? 'text-purple-300' : 'text-white'
-                  }`}>
+                  <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-purple-300' : 'text-white'
+                    }`}>
                     {caseStudy.title}
                   </h3>
                   <p className="text-gray-300 mb-4 leading-relaxed">
                     {caseStudy.description}
                   </p>
-                  <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${
-                    isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
-                  }`}>
-                    <span className="text-sm font-medium">Learn More</span>
-                    <ArrowRight size={16} className={`transition-transform ${
-                      isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
-                    }`} />
+                  <button className={`flex items-center space-x-2 transition-all duration-300 group/btn ${isActive ? 'text-purple-300' : 'text-purple-400 hover:text-purple-300'
+                    }`}>
+                    <span className="text-sm font-medium">Learn more about {caseStudy.title}</span>
+                    <ArrowRight size={16} className={`transition-transform ${isActive ? 'translate-x-2' : 'group-hover/btn:translate-x-1'
+                      }`} />
                   </button>
 
                   {isActive && (

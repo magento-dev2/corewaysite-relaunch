@@ -87,7 +87,7 @@ export default function CookieConsent() {
                                             We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
                                             By clicking "Accept All", you consent to our use of cookies.{" "}
                                             <Link href="/cookie-policy" className="text-purple-400 hover:text-purple-300 underline">
-                                                Learn more
+                                                Learn more in our Cookie Policy
                                             </Link>
                                         </p>
 

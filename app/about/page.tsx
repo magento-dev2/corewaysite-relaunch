@@ -81,7 +81,7 @@ export default function AboutUs() {
           badge="About Us"
           title="Empowering Growth"
           description="we specialize in creating innovative workflow automation solutions that streamline processes, boost efficiency, and drive growth. Our mission is to help businesses harness technology to achieve more, faster, and smarter."
-          primaryButtonText="Learn More"
+          primaryButtonText="Learn more about company"
           secondaryButtonText="Why Coreway"
           footerText=" • Innovative solutions • Proven results • Customer-focused"
           primaryButtonlink="/about/company-overview"

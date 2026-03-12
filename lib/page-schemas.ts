@@ -139,6 +139,24 @@ export const getPageSchemas = (pathname: string) => {
             ));
             if (faqData['dedicated-developers']) schemas.push(getFAQSchema(faqData['dedicated-developers']));
             break;
+
+        case '/privacy-policy':
+            schemas.push(getWebPageSchema(
+                "Privacy Policy | Coreway Solution",
+                "Learn about how we collect, use, and protect your personal information at Coreway Solution.",
+                "/privacy-policy",
+                [{ name: "Home", url: "/" }, { name: "Privacy Policy", url: "/privacy-policy" }]
+            ));
+            break;
+
+        case '/refund-policy':
+            schemas.push(getWebPageSchema(
+                "Refund Policy | Coreway Solution",
+                "Learn about our refund policies and terms at Coreway Solution.",
+                "/refund-policy",
+                [{ name: "Home", url: "/" }, { name: "Refund Policy", url: "/refund-policy" }]
+            ));
+            break;
     }
 
     // Technology Subpages

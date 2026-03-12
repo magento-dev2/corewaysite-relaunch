@@ -3,7 +3,6 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.corewaysolution.com';
 
 export interface PersonSchema {
-  '@context'?: string;
   '@type': string;
   name: string;
   jobTitle?: string;
@@ -25,7 +24,6 @@ export interface PostalAddressSchema {
 }
 
 export interface OrganizationSchema {
-  '@context'?: string;
   '@type': string;
   name: string;
   url: string;
@@ -58,7 +56,6 @@ export interface ProfessionalServiceSchema extends OrganizationSchema {
 }
 
 export interface WebSiteSchema {
-  '@context': string;
   '@type': string;
   name: string;
   url: string;
@@ -73,7 +70,6 @@ export interface WebSiteSchema {
 }
 
 export interface BreadcrumbSchema {
-  '@context': string;
   '@type': string;
   itemListElement: Array<{
     '@type': string;
@@ -84,8 +80,8 @@ export interface BreadcrumbSchema {
 }
 
 export interface ServiceSchema {
-  '@context': string;
   '@type': string;
+  name: string;
   serviceType: string;
   provider: {
     '@type': string;
@@ -96,7 +92,6 @@ export interface ServiceSchema {
 }
 
 export interface WebPageSchema {
-  '@context': string;
   '@type': string;
   name: string;
   description: string;
@@ -110,7 +105,6 @@ export interface AboutPageSchema extends WebPageSchema {
 }
 
 export interface BlogPostingSchema {
-  '@context': string;
   '@type': 'BlogPosting';
   headline: string;
   description: string;
@@ -126,7 +120,6 @@ export interface BlogPostingSchema {
 }
 
 export interface JobPostingSchema {
-  '@context': string;
   '@type': 'JobPosting';
   title: string;
   description: string;
@@ -150,7 +143,6 @@ export interface JobPostingSchema {
 }
 
 export interface FAQSchema {
-  '@context': string;
   '@type': string;
   mainEntity: Array<{
     '@type': string;
@@ -164,7 +156,6 @@ export interface FAQSchema {
 
 // Organization Schema for Coreway Solution
 export const getOrganizationSchema = (): OrganizationSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Coreway Solution',
   url: SITE_URL,
@@ -202,13 +193,12 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
 export const getProfessionalServiceSchema = (): ProfessionalServiceSchema => ({
   ...getOrganizationSchema(),
   '@type': 'ProfessionalService',
-  image: `${SITE_URL}/og-image.jpg`,
+  image: `${SITE_URL}/logo.png`,
   openingHours: 'Mo-Fr 10:00-19:00',
 });
 
 // Website Schema with Search Action
 export const getWebSiteSchema = (): WebSiteSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Coreway Solution',
   url: SITE_URL,
@@ -224,7 +214,6 @@ export const getWebSiteSchema = (): WebSiteSchema => ({
 
 // Generate Breadcrumb Schema
 export const getBreadcrumbSchema = (items: Array<{ name: string; url?: string }>): BreadcrumbSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: items.map((item, index) => ({
     '@type': 'ListItem',
@@ -241,7 +230,6 @@ export const getWebPageSchema = (
   path: string,
   breadcrumbItems?: Array<{ name: string; url?: string }>
 ): WebPageSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'WebPage',
   name,
   description,
@@ -283,7 +271,6 @@ export const getBlogPostingSchema = (blog: {
   const organization = getOrganizationSchema();
   const siteUrl = organization.url;
   return {
-    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: blog.title,
     description: blog.excerpt || blog.title,
@@ -314,7 +301,6 @@ export const getJobPostingSchema = (job: {
 }): JobPostingSchema => {
   const organization = getOrganizationSchema();
   return {
-    '@context': 'https://schema.org',
     '@type': 'JobPosting',
     title: job.title,
     description: job.description,
@@ -346,8 +332,8 @@ export const getServiceSchema = (
   path?: string,
   breadcrumbItems?: Array<{ name: string; url?: string }>
 ): ServiceSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'Service',
+  name: serviceType,
   serviceType,
   provider: {
     '@type': 'Organization',
@@ -362,7 +348,6 @@ export const getServiceSchema = (
 export const getFAQSchema = (
   faqs: Array<{ question: string; answer: string }>
 ): FAQSchema => ({
-  '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faqs.map((faq) => ({
     '@type': 'Question',
@@ -377,6 +362,9 @@ export const getFAQSchema = (
 // Helper to convert schema to JSON-LD script
 export const schemaToJsonLd = (schema: any) => {
   return {
-    __html: JSON.stringify(schema),
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      ...schema,
+    }),
   };
 };

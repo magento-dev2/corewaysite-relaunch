@@ -4,7 +4,7 @@ import { Github, Twitter, Linkedin, Youtube, X, Facebook } from 'lucide-react';
 import Link from 'next/link';
 
 const footerLinks = {
- 
+
   Company: [
     { name: "About", url: "/about" },
     { name: "Careers", url: "/careers" },
@@ -39,9 +39,9 @@ export default function Footer() {
               </div>
               <span className="text-white font-bold text-xl">Coreway</span> */}
               <Link href="/">
-                <img src="/assets/logo/logo.png" className=' h-8 cursor-pointer' />
-                <p className='text-[23px] flex justify-center font-bold text-white'>SOLUTION</p>
-                </Link>
+                <img src="/assets/logo/logo.png" alt="Coreway Solution Logo" className="h-8 cursor-pointer" />
+                <p className="text-[23px] flex justify-center font-bold text-white">SOLUTION</p>
+              </Link>
 
             </div>
             <p className="text-gray-400 text-sm mb-6">
@@ -49,22 +49,22 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               {/* X (Twitter new logo) */}
-              <a href="https://twitter.com/corewaysolution" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://twitter.com/corewaysolution" aria-label="Follow us on X (formerly Twitter)" className="text-gray-400 hover:text-white transition-colors">
                 <X size={20} />
               </a>
 
               {/* Facebook */}
-              <a href="https://www.facebook.com/corewaysolution" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/corewaysolution" aria-label="Follow us on Facebook" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
 
               {/* LinkedIn */}
-              <a href="https://www.linkedin.com/company/coreway-solution" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/coreway-solution" aria-label="Follow us on LinkedIn" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
 
               {/* Behance */}
-              <a href="https://www.behance.net/corewaysolution" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.behance.net/corewaysolution" aria-label="Follow us on Behance" className="text-gray-400 hover:text-white transition-colors">
                 <svg
                   width="20"
                   height="20"
@@ -107,7 +107,7 @@ export default function Footer() {
             <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
               Status
             </a>
-            
+
             <a href="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm">
               Sitemap
             </a>

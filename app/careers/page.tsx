@@ -527,7 +527,7 @@ function CareerHero({ title, title2, subtitle, buttons }: CareerHeroProps) {
           </div>
 
           <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-            <img src="/assets/images/careers.png" className="  rounded-lg shadow-lg" style={{
+            <img src="/assets/images/careers.png" alt="Collaborative team working on innovative technology projects" className="  rounded-lg shadow-lg" style={{
               width: "auto",
               height: "auto",
               maxWidth: "100%", // prevents overflow on small screens
