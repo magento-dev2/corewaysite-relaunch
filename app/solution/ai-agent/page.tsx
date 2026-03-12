@@ -23,36 +23,6 @@ export default function AIAgentPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "AI Agent",
-        item: `${siteUrl}/solution/ai-agent`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "AI Agent Solutions",
-    description:
-      "Intelligent AI agents for automation, customer service, data analysis, and business process optimization",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "AI Agent Development",
-    areaServed: "Worldwide",
-  };
   const solutions = [
 
     {

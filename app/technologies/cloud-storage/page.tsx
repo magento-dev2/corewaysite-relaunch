@@ -24,42 +24,6 @@ export default function CloudStorageTechnologyPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Technologies",
-        item: `${siteUrl}/technologies`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Cloud Storage Solutions",
-        item: `${siteUrl}/technologies/cloud-storage`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Cloud Storage Solutions - AWS S3, Wasabi, MinIO, Cloudflare R2",
-    description:
-      "Expert cloud storage implementation with AWS S3, Wasabi, MinIO, and Cloudflare R2. Scalable, cost-effective object storage.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Cloud Storage Solutions",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

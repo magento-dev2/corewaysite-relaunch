@@ -25,143 +25,115 @@ export default function DatasetManagementDelivery() {
 
   const siteUrl = "https://www.corewaysolution.com";
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "AI & Data", item: `${siteUrl}/ai-data` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Dataset Management & Delivery",
-        item: `${siteUrl}/ai-data/dataset-management-delivery`,
-      },
-    ],
-  };
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Dataset Management & Delivery Systems",
-    description:
-      "Enterprise-grade data management systems handling petabyte-scale datasets with real-time delivery, AI-powered processing, and intelligent analytics.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
+  const projectData = [
+    {
+      id: 1,
+      language: "Wordpress",
+      images: ["/images/Wordpress/american.png"]
     },
-    serviceType: "Data Management & Delivery",
-    areaServed: "Worldwide",
-  };
-
-   const projectData = [
-  {
-    id: 1,
-    language: "Wordpress",
-    images: ["/images/Wordpress/american.png"]
-  },
-  {
-    id: 2,
-    language: "Shopify",
-    images: ["/images/Shopify/aurus.png"]
-  },
-  {
-    id: 3,
-    language: "WooCommerce",
-    images: ["/images/WooCommerce/alhine.png"]
-  },
-  {
-    id: 4,
-    language: "Android",
-    images: ["/images/Android/bapuji-1.png"]
-  },
-  {
-    id: 5,
-    language: "Magento",
-    images: ["/images/Magento/knir.png"]
-  },
-  {
-    id: 6,
-    language: "Laravel",
-    images: ["/images/Laravel/delaware.png"]
-  }
-];
+    {
+      id: 2,
+      language: "Shopify",
+      images: ["/images/Shopify/aurus.png"]
+    },
+    {
+      id: 3,
+      language: "WooCommerce",
+      images: ["/images/WooCommerce/alhine.png"]
+    },
+    {
+      id: 4,
+      language: "Android",
+      images: ["/images/Android/bapuji-1.png"]
+    },
+    {
+      id: 5,
+      language: "Magento",
+      images: ["/images/Magento/knir.png"]
+    },
+    {
+      id: 6,
+      language: "Laravel",
+      images: ["/images/Laravel/delaware.png"]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "AI & Data", href: "/ai-data" },
-                { label: "Dataset Management & Delivery" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <DatasetHero
-            title={datasetManagementData.hero.title}
-            title2={datasetManagementData.hero.title2}
-            subtitle={datasetManagementData.hero.subtitle}
-            buttons={datasetManagementData.hero.buttons}
-            img={datasetManagementData.hero.img}
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "AI & Data", href: "/ai-data" },
+              { label: "Dataset Management & Delivery" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="Dataset Management & Delivery" items={subHeaderItems} />
+      <main>
+        <DatasetHero
+          title={datasetManagementData.hero.title}
+          title2={datasetManagementData.hero.title2}
+          subtitle={datasetManagementData.hero.subtitle}
+          buttons={datasetManagementData.hero.buttons}
+          img={datasetManagementData.hero.img}
+        />
 
-          <div id="overview">
-            <DatasetOverview
+        <SubHeader title="Dataset Management & Delivery" items={subHeaderItems} />
+
+        <div id="overview">
+          <DatasetOverview
             title={datasetManagementData.overview.title}
             content={datasetManagementData.overview.content}
             image={datasetManagementData.overview.image}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <DatasetFeatures
+        <div id="features">
+          <DatasetFeatures
             title={datasetManagementData.features.title}
             items={datasetManagementData.features.items}
           />
-          </div>
+        </div>
 
-          <DatasetTechnologies
-            title={datasetManagementData.platforms.title}
-            description={datasetManagementData.platforms.description}
-            items={datasetManagementData.platforms.items}
-          />
+        <DatasetTechnologies
+          title={datasetManagementData.platforms.title}
+          description={datasetManagementData.platforms.description}
+          items={datasetManagementData.platforms.items}
+        />
 
 
-          <PortfolioHighlights data={projectData} highlightCount={6} />
+        <PortfolioHighlights data={projectData} highlightCount={6} />
 
-          {/* <DatasetCaseStudies
+        {/* <DatasetCaseStudies
             title={datasetManagementData.caseStudies.title}
             cases={datasetManagementData.caseStudies.cases}
           /> */}
 
-          <div id="process">
-            <DatasetProcess
+        <div id="process">
+          <DatasetProcess
             title={datasetManagementData.process.title}
             description={datasetManagementData.process.description}
             steps={datasetManagementData.process.steps}
           />
-          </div>
+        </div>
 
-          <DatasetAutomation
-            title={datasetManagementData.automation.title}
-            description={datasetManagementData.automation.description}
-            features={datasetManagementData.automation.features}
-          />
+        <DatasetAutomation
+          title={datasetManagementData.automation.title}
+          description={datasetManagementData.automation.description}
+          features={datasetManagementData.automation.features}
+        />
 
-          <WhyCorewaySection
-            badge={whyCorewayData["dataset-management-delivery"].badge}
-            title={whyCorewayData["dataset-management-delivery"].title}
-            subtitle={whyCorewayData["dataset-management-delivery"].subtitle}
-            reasons={whyCorewayData["dataset-management-delivery"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+        <WhyCorewaySection
+          badge={whyCorewayData["dataset-management-delivery"].badge}
+          title={whyCorewayData["dataset-management-delivery"].title}
+          subtitle={whyCorewayData["dataset-management-delivery"].subtitle}
+          reasons={whyCorewayData["dataset-management-delivery"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -171,17 +143,17 @@ export default function DatasetManagementDelivery() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
-          <PageCTA
-            badge="Transform your data"
-            title="Ready to Build Your Data Infrastructure?"
-            description="Let's design and implement scalable data pipelines that turn your data into actionable insights. Our expert team delivers enterprise-grade solutions for petabyte-scale processing."
-            primaryButtonText="Start Building"
-            secondaryButtonText="View Casestudies"
-            footerText="Free architecture consultation • Scalable solutions • 24/7 support"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Transform your data"
+          title="Ready to Build Your Data Infrastructure?"
+          description="Let's design and implement scalable data pipelines that turn your data into actionable insights. Our expert team delivers enterprise-grade solutions for petabyte-scale processing."
+          primaryButtonText="Start Building"
+          secondaryButtonText="View Casestudies"
+          footerText="Free architecture consultation • Scalable solutions • 24/7 support"
+        />
+      </main>
+    </div>
   );
 }

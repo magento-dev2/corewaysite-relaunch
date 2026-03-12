@@ -137,6 +137,12 @@ export default function UGCAdsPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "UGC Ads", url: "/solution/ugs-ads" },
+  ];
+
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [visibleVideos, setVisibleVideos] = useState<boolean[]>(new Array(showcaseVideos.length).fill(false));
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);

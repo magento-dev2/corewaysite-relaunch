@@ -18,39 +18,9 @@ import whyCorewayData from '@/data/why-coreway.json';
 
 import SubHeader from "@/components/SubHeader";
 import TestimonialHero from "@/components/TestimonialHero";
+import Script from "next/script";
 
 export default function DigitalCommerce() {
-  const siteUrl = "https://www.corewaysolution.com"; // absolute URL
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Digital Commerce Transformation",
-        item: `${siteUrl}/solution/digital-commerce-transformation`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Digital Commerce Transformation",
-    description:
-      "Headless, AI-driven, and composable commerce solutions for modern businesses",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "E-commerce Development",
-    areaServed: "Worldwide",
-  };
-
   const subHeaderItems = [
     { label: "Overview", sectionId: "overview" },
     { label: "Capabilities", sectionId: "features" },

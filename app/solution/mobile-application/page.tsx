@@ -20,6 +20,12 @@ export default function MobileApplicationsPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "Mobile Applications", url: "/solution/mobile-application" },
+  ];
+
   return (
     <div className="overflow-hidden">
       <div id="overview">

@@ -12,6 +12,12 @@ import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import {
+  getServiceSchema,
+  getWebPageSchema,
+  schemaToJsonLd
+} from "@/lib/schema";
+import Script from "next/script";
 
 export default function ImageReorganizationToolPage() {
   const subHeaderItems = [
@@ -22,14 +28,42 @@ export default function ImageReorganizationToolPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "Image Recognition Tool", url: "/solution/image-reorganization-tool" },
+  ];
+
+  const webPageSchema = getWebPageSchema(
+    "Image Recognition Tool | Coreway Solution",
+    "Tailored image recognition and organization solutions to your specific workflow, branding guidelines, and organizational needs.",
+    "/solution/image-reorganization-tool",
+    breadcrumbItems
+  );
+
+  const serviceSchema = getServiceSchema(
+    "AI Image Recognition & Organization",
+    "Tailored image recognition and organization solutions to your specific workflow, branding guidelines, and organizational needs."
+  );
+
   return (
     <div className="overflow-hidden">
+      <Script
+        id="image-reorg-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(webPageSchema)}
+      />
+      <Script
+        id="image-reorg-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(serviceSchema)}
+      />
       <div id="overview">
         <ImageReorgHero />
       </div>
 
       <SubHeader title="Image Recognition Tool" items={subHeaderItems} />
-{/* 
+      {/* 
       <div id="demo">
         <ImageReorgDemo />
       </div> */}
@@ -117,7 +151,7 @@ export default function ImageReorganizationToolPage() {
         description="Join hundreds of companies using our AI-powered image organization tool to save time and streamline their workflows. Get started with a free consultation."
         primaryButtonText="Contact us"
         secondaryButtonText="View Work"
-          
+
         footerText="Free trial available • No credit card required • Setup in minutes"
       />
     </div>

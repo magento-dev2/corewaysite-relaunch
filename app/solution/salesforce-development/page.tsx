@@ -14,6 +14,12 @@ import PageCTA from "@/components/PageCTA";
 import { Metadata } from "next";
 import CategoryGrid from "@/components/category/CategoryGrid";
 import SubHeader from "@/components/SubHeader";
+import {
+  getServiceSchema,
+  getWebPageSchema,
+  schemaToJsonLd
+} from "@/lib/schema";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Salesforce Development Services | Salesforce CRM Solutions | Coreway Solution",
@@ -31,17 +37,34 @@ export const metadata: Metadata = {
 };
 
 export default function SalesforceDevelopmentPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Salesforce Development",
-    description:
-      "Professional Salesforce development services including CRM implementation, customization, integrations, and automation.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-  };
+  const subHeaderItems = [
+    { label: "Overview", sectionId: "overview" },
+    { label: "Services", sectionId: "services" },
+    { label: "Industry Solutions", sectionId: "industry-solutions" },
+    { label: "Use Cases", sectionId: "use-cases" },
+    { label: "Approach", sectionId: "approach" },
+    { label: "Tech", sectionId: "tech" },
+    { label: "Engagement", sectionId: "engagement" },
+    { label: "Contact", sectionId: "contact" },
+  ];
+
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "Salesforce Development", url: "/solution/salesforce-development" },
+  ];
+
+  const webPageSchema = getWebPageSchema(
+    "Salesforce Development Services | Salesforce CRM Solutions | Coreway Solution",
+    "Coreway Solution provides Salesforce development services including CRM implementation, customization, integrations, and automation to improve business operations.",
+    "/solution/salesforce-development",
+    breadcrumbItems
+  );
+
+  const serviceSchema = getServiceSchema(
+    "Salesforce Development",
+    "Professional Salesforce development services including CRM implementation, customization, integrations, and automation."
+  );
 
   const subServices = [
     {
@@ -60,22 +83,17 @@ export default function SalesforceDevelopmentPage() {
     },
   ];
 
-  const subHeaderItems = [
-    { label: "Overview", sectionId: "overview" },
-    { label: "Services", sectionId: "services" },
-    { label: "Industry Solutions", sectionId: "industry-solutions" },
-    { label: "Use Cases", sectionId: "use-cases" },
-    { label: "Approach", sectionId: "approach" },
-    { label: "Tech", sectionId: "tech" },
-    { label: "Engagement", sectionId: "engagement" },
-    { label: "Contact", sectionId: "contact" },
-  ];
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
-      <script
+      <Script
+        id="salesforce-webpage-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={schemaToJsonLd(webPageSchema)}
+      />
+      <Script
+        id="salesforce-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(serviceSchema)}
       />
 
       <header className="page-content">

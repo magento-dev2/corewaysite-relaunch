@@ -1,7 +1,31 @@
 // Structured Data (Schema.org) utilities for SEO
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.corewaysolution.com';
+
+export interface PersonSchema {
+  '@context'?: string;
+  '@type': string;
+  name: string;
+  jobTitle?: string;
+  worksFor?: {
+    '@type': string;
+    name: string;
+  };
+  sameAs?: string[];
+  image?: string;
+}
+
+export interface PostalAddressSchema {
+  '@type': string;
+  streetAddress?: string;
+  addressLocality?: string;
+  addressRegion?: string;
+  postalCode?: string;
+  addressCountry: string;
+}
+
 export interface OrganizationSchema {
-  '@context': string;
+  '@context'?: string;
   '@type': string;
   name: string;
   url: string;
@@ -15,9 +39,21 @@ export interface OrganizationSchema {
     areaServed: string;
     availableLanguage: string[];
   };
-  address?: {
+  address?: PostalAddressSchema;
+  founder?: PersonSchema;
+  foundingDate?: string;
+}
+
+export interface ProfessionalServiceSchema extends OrganizationSchema {
+  image?: string;
+  priceRange?: string;
+  openingHours?: string | string[];
+  currenciesAccepted?: string;
+  paymentAccepted?: string;
+  geo?: {
     '@type': string;
-    addressCountry: string;
+    latitude: number;
+    longitude: number;
   };
 }
 
@@ -59,6 +95,60 @@ export interface ServiceSchema {
   description: string;
 }
 
+export interface WebPageSchema {
+  '@context': string;
+  '@type': string;
+  name: string;
+  description: string;
+  url: string;
+  breadcrumb?: BreadcrumbSchema;
+}
+
+export interface AboutPageSchema extends WebPageSchema {
+  '@type': 'AboutPage';
+  mainEntity?: PersonSchema | OrganizationSchema;
+}
+
+export interface BlogPostingSchema {
+  '@context': string;
+  '@type': 'BlogPosting';
+  headline: string;
+  description: string;
+  image: string;
+  author: PersonSchema | OrganizationSchema;
+  publisher: OrganizationSchema;
+  datePublished: string;
+  dateModified?: string;
+  mainEntityOfPage: {
+    '@type': string;
+    '@id': string;
+  };
+}
+
+export interface JobPostingSchema {
+  '@context': string;
+  '@type': 'JobPosting';
+  title: string;
+  description: string;
+  datePosted: string;
+  validThrough?: string;
+  employmentType: string | string[];
+  hiringOrganization: OrganizationSchema;
+  jobLocation: {
+    '@type': string;
+    address: PostalAddressSchema;
+  };
+  baseSalary?: {
+    '@type': string;
+    currency: string;
+    value: {
+      '@type': string;
+      value: number;
+      unitText: string;
+    };
+  };
+}
+
 export interface FAQSchema {
   '@context': string;
   '@type': string;
@@ -77,8 +167,8 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Coreway Solution',
-  url: 'https://www.corewaysolution.com',
-  logo: 'https://www.corewaysolution.com/logo.png',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
   description:
     'Transform your business with AI-powered solutions, custom software development, and workflow automation. Expert team delivering cutting-edge technology solutions worldwide.',
   sameAs: [
@@ -88,15 +178,32 @@ export const getOrganizationSchema = (): OrganizationSchema => ({
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+1-XXX-XXX-XXXX', // Update with actual phone
+    telephone: '+91 81608 80977',
     contactType: 'Customer Service',
     areaServed: 'Worldwide',
-    availableLanguage: ['English'],
+    availableLanguage: ['English', 'Hindi', 'Gujarati'],
   },
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'US',
+    streetAddress: 'Leela Plaza, 602, near TNTC, Nikol',
+    addressLocality: 'Ahmedabad',
+    addressRegion: 'Gujarat',
+    postalCode: '382350',
+    addressCountry: 'India',
   },
+  founder: {
+    '@type': 'Person',
+    name: 'Mr. Alpesh Radadiya',
+  },
+
+});
+
+// Professional Service Schema
+export const getProfessionalServiceSchema = (): ProfessionalServiceSchema => ({
+  ...getOrganizationSchema(),
+  '@type': 'ProfessionalService',
+  image: `${SITE_URL}/og-image.jpg`,
+  openingHours: 'Mo-Fr 10:00-19:00',
 });
 
 // Website Schema with Search Action
@@ -104,12 +211,12 @@ export const getWebSiteSchema = (): WebSiteSchema => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Coreway Solution',
-  url: 'https://www.corewaysolution.com',
+  url: SITE_URL,
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://www.corewaysolution.com/search?q={search_term_string}',
+      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
     },
     'query-input': 'required name=search_term_string',
   },
@@ -123,14 +230,121 @@ export const getBreadcrumbSchema = (items: Array<{ name: string; url?: string }>
     '@type': 'ListItem',
     position: index + 1,
     name: item.name,
-    ...(item.url && { item: item.url }),
+    ...(item.url && { item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}` }),
   })),
+});
+
+// WebPage Schema Generator
+export const getWebPageSchema = (
+  name: string,
+  description: string,
+  path: string,
+  breadcrumbItems?: Array<{ name: string; url?: string }>
+): WebPageSchema => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name,
+  description,
+  url: `${SITE_URL}${path}`,
+  ...(breadcrumbItems && { breadcrumb: getBreadcrumbSchema(breadcrumbItems) }),
+});
+
+// ContactPage Schema
+export const getContactPageSchema = (
+  description: string,
+  breadcrumbItems?: Array<{ name: string; url?: string }>
+): WebPageSchema => ({
+  ...getWebPageSchema('Contact Us | Coreway Solution', description, '/contact', breadcrumbItems),
+  '@type': 'ContactPage',
+});
+
+// AboutPage Schema
+export const getAboutPageSchema = (
+  description: string,
+  breadcrumbItems?: Array<{ name: string; url?: string }>
+): AboutPageSchema => {
+  const organization = getOrganizationSchema();
+  return {
+    ...getWebPageSchema('About Us | Coreway Solution', description, '/about', breadcrumbItems),
+    '@type': 'AboutPage',
+    mainEntity: organization,
+  };
+};
+
+// BlogPosting Schema
+export const getBlogPostingSchema = (blog: {
+  title: string;
+  excerpt?: string;
+  coverImage?: string;
+  createdAt: string | Date;
+  slug: string;
+  authorName?: string;
+}): BlogPostingSchema => {
+  const organization = getOrganizationSchema();
+  const siteUrl = organization.url;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: blog.title,
+    description: blog.excerpt || blog.title,
+    image: blog.coverImage
+      ? (blog.coverImage.startsWith('http') ? blog.coverImage : `${siteUrl}/${blog.coverImage}`)
+      : `${siteUrl}/og-image.jpg`,
+    author: {
+      '@type': 'Organization',
+      name: 'Coreway Solution',
+    },
+    publisher: organization,
+    datePublished: new Date(blog.createdAt).toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blog/${blog.slug}`,
+    },
+  };
+};
+
+// JobPosting Schema
+export const getJobPostingSchema = (job: {
+  title: string;
+  description: string;
+  datePosted: string | Date;
+  department: string;
+  location: string;
+  type: string;
+}): JobPostingSchema => {
+  const organization = getOrganizationSchema();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: job.title,
+    description: job.description,
+    datePosted: new Date(job.datePosted).toISOString(),
+    employmentType: job.type,
+    hiringOrganization: organization,
+    jobLocation: {
+      '@type': 'Place',
+      address: organization.address!,
+    },
+  };
+};
+
+// CollectionPage Schema
+export const getCollectionPageSchema = (
+  name: string,
+  description: string,
+  path: string,
+  breadcrumbItems?: Array<{ name: string; url?: string }>
+): WebPageSchema => ({
+  ...getWebPageSchema(name, description, path, breadcrumbItems),
+  '@type': 'CollectionPage',
 });
 
 // Service Schema Generator
 export const getServiceSchema = (
   serviceType: string,
-  description: string
+  description: string,
+  path?: string,
+  breadcrumbItems?: Array<{ name: string; url?: string }>
 ): ServiceSchema => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -141,6 +355,7 @@ export const getServiceSchema = (
   },
   areaServed: 'Worldwide',
   description,
+  // We can add more specific service fields if needed
 });
 
 // FAQ Schema Generator

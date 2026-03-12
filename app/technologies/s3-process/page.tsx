@@ -9,6 +9,7 @@ import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import Breadcrumb from "@/components/about/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,7 +27,17 @@ export default function S3ProcessPage() {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden min-h-screen">
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Technologies", href: "/technologies" },
+              { label: "S3 Operations" },
+            ]}
+          />
+        </div>
+      </header>
       <div id="overview">
         <S3ProcessHero />
       </div>

@@ -24,42 +24,6 @@ export default function ReactTechnologyPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Technologies",
-        item: `${siteUrl}/technologies`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "React Development",
-        item: `${siteUrl}/technologies/react`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "React Development Services",
-    description:
-      "Expert React development for SPAs, progressive web apps, and enterprise solutions. Build fast, scalable applications.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "React Development",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

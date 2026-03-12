@@ -189,6 +189,13 @@ export default function RAGChatbotPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "AI Consulting", url: "/solution/ai-consulting" },
+    { name: "RAG Chatbot", url: "/solution/rag-chatbot" },
+  ];
+
   const [expandedSteps, setExpandedSteps] = useState([1, 2, 3, 4]);
 
   const toggleStep = (stepId: number) => {
@@ -228,49 +235,49 @@ export default function RAGChatbotPage() {
 
       <main>
         {/* Hero Section */}
-       <section className="relative overflow-hidden border-b border-gray-800/50">
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-blue-600/5"></div>
+        <section className="relative overflow-hidden border-b border-gray-800/50">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-blue-600/5"></div>
 
-  <div className="max-w-7xl mx-auto px-6 py-10 lg:py-15 relative z-10">
-    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="max-w-7xl mx-auto px-6 py-10 lg:py-15 relative z-10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
-      {/* LEFT CONTENT – CENTERED */}
-      <div className="flex-1 flex flex-col items-center space-y-6 text-center">
+              {/* LEFT CONTENT – CENTERED */}
+              <div className="flex-1 flex flex-col items-center space-y-6 text-center">
 
-        <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-          RAG Chatbot
-          <span className="block text-transparent bg-clip-text bg-purple-500 mt-2">
-           Smart PDFs
-          </span>
-        </h1>
+                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                  RAG Chatbot
+                  <span className="block text-transparent bg-clip-text bg-purple-500 mt-2">
+                    Smart PDFs
+                  </span>
+                </h1>
 
-        <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-          Transform your PDFs into intelligent conversational assistants.
-          Ask questions, extract insights, and get instant answers from your
-          documents using advanced Retrieval Augmented Generation (RAG) technology.
-        </p>
+                <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+                  Transform your PDFs into intelligent conversational assistants.
+                  Ask questions, extract insights, and get instant answers from your
+                  documents using advanced Retrieval Augmented Generation (RAG) technology.
+                </p>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap gap-4 pt-4 justify-center">
-          <Link
-            href="/contact"
-            className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 shadow-lg shadow-purple-500/20"
-          >
-            Get Started
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-4 pt-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 shadow-lg shadow-purple-500/20"
+                  >
+                    Get Started
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
 
-          <Link
-            href="/case-studies/ai-agent-rag-chatbot"
-            className="px-8 py-4 bg-white/5 border border-gray-700 hover:border-purple-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2"
-          >
-            <BookOpen className="w-5 h-5" />
-            View Case Study
-          </Link>
-        </div>
+                  <Link
+                    href="/case-studies/ai-agent-rag-chatbot"
+                    className="px-8 py-4 bg-white/5 border border-gray-700 hover:border-purple-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center gap-2"
+                  >
+                    <BookOpen className="w-5 h-5" />
+                    View Case Study
+                  </Link>
+                </div>
 
-        {/* Stats */}
-        {/* <div className="grid grid-cols-3 gap-6 pt-8">
+                {/* Stats */}
+                {/* <div className="grid grid-cols-3 gap-6 pt-8">
           <div>
             <div className="text-3xl font-bold text-purple-400">99.9%</div>
             <div className="text-sm text-gray-400">Accuracy Rate</div>
@@ -284,23 +291,23 @@ export default function RAGChatbotPage() {
             <div className="text-sm text-gray-400">Availability</div>
           </div>
         </div> */}
-      </div>
+              </div>
 
-      {/* RIGHT IMAGE – SAME AS BEFORE */}
-      <div className="flex-1 flex justify-center md:justify-end">
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-3xl"></div>
-          <img
-            src="/assets/home/coreway-ai.png"
-            alt="RAG Chatbot Illustration"
-            className="relative w-full max-w-2xl rounded-2xl shadow-2xl"
-          />
-        </div>
-      </div>
+              {/* RIGHT IMAGE – SAME AS BEFORE */}
+              <div className="flex-1 flex justify-center md:justify-end">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-3xl"></div>
+                  <img
+                    src="/assets/home/coreway-ai.png"
+                    alt="RAG Chatbot Illustration"
+                    className="relative w-full max-w-2xl rounded-2xl shadow-2xl"
+                  />
+                </div>
+              </div>
 
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
 
 
 

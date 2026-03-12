@@ -24,6 +24,7 @@ import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
 import PortfolioHighlights from "@/components/home/PortfolioHighlights";
+import Script from "next/script";
 
 
 const siteUrl = "https://www.corewaysolution.com";
@@ -39,42 +40,10 @@ export const metadata = {
     description:
       "Turn product ideas into investor-ready MVPs. Agile teams, rapid prototyping, and scalable engineering for early-stage startups.",
     type: "website",
-    url: `${siteUrl}/solution/product-development-forstartups`,
-  },
-  canonical: `${siteUrl}/solution/product-development-forstartups`,
-  scripts: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-          { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Product Development for Startups",
-            item: `${siteUrl}/solution/product-development-forstartups`,
-          },
-        ],
-      }),
-    },
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: "Product Development for Startups",
-        description:
-          "Turn product ideas into investor-ready MVPs. Agile teams, rapid prototyping, and scalable engineering for early-stage startups.",
-        provider: { "@type": "Organization", name: "Coreway Solution" },
-        serviceType: "Software Development",
-        areaServed: "Worldwide",
-      }),
-    },
-  ],
-};
+    url: `${siteUrl}/solution/product-development-forstartups`, // Changed 'canonical' to 'url' for openGraph
+  }, // Closing brace for openGraph object, and comma for next property
+  canonical: `${siteUrl}/solution/product-development-forstartups`, // Top-level canonical property
+}; // Closing brace for metadata object
 
 export default function ProductDevelopmentPage() {
   const subHeaderItems = [
@@ -100,16 +69,16 @@ export default function ProductDevelopmentPage() {
       <main>
         <StartupHero data={heroData} />
 
-          <SubHeader title="Product Development for Startups" items={subHeaderItems} />
+        <SubHeader title="Product Development for Startups" items={subHeaderItems} />
         <div id="overview">
-            <StartupOverview data={overviewData} />
-          </div>
+          <StartupOverview data={overviewData} />
+        </div>
         <FeatureGrid data={featuresData} />
         <TechStack data={techData} />
-      <PortfolioHighlights/>
+        <PortfolioHighlights />
         {/* <CaseStudiesPreview data={casesData} /> */}
-        <div id="process"> 
-        <ProcessDiagram data={processData} />
+        <div id="process">
+          <ProcessDiagram data={processData} />
         </div>
         {/* <AcceleratorSection data={acceleratorData} /> */}
         <WhyCorewaySection
@@ -119,17 +88,17 @@ export default function ProductDevelopmentPage() {
           reasons={whyCorewayData["product-development-forstartups"].reasons}
         />
         <div id="faq">
-            <FAQ
-          badge="Help Center"
-          title="Common Questions & Answers"
-          description="Everything you need to know about our services and how we work"
-          faqs={sampleFAQs["product-development-for-startups"]}
-          columns={1}
-          showContactCTA={true}
-          contactText="Still have questions?"
-          contactButtonText="Contact Our Team"
-        />
-          </div>
+          <FAQ
+            badge="Help Center"
+            title="Common Questions & Answers"
+            description="Everything you need to know about our services and how we work"
+            faqs={sampleFAQs["product-development-for-startups"]}
+            columns={1}
+            showContactCTA={true}
+            contactText="Still have questions?"
+            contactButtonText="Contact Our Team"
+          />
+        </div>
         <PageCTA
           badge="Ready to build?"
           title={ctaData.text}

@@ -6,8 +6,11 @@ import LayoutWrapper from './LayoutWrapper';
 import {
   getOrganizationSchema,
   getWebSiteSchema,
+  getProfessionalServiceSchema,
   schemaToJsonLd,
 } from '@/lib/schema';
+import { headers } from 'next/headers';
+import { getPageSchemas } from '@/lib/page-schemas';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -73,21 +76,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '/';
+  const pageSchemas = getPageSchemas(pathname);
+
   return (
     <html lang="en">
       <head>
-        {/* Structured Data - Organization Schema */}
+        {/* Global Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={schemaToJsonLd(getOrganizationSchema())}
         />
-
-        {/* Structured Data - WebSite Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={schemaToJsonLd(getWebSiteSchema())}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={schemaToJsonLd(getProfessionalServiceSchema())}
+        />
+
+        {/* Page-Specific Structured Data */}
+        {pageSchemas.map((schema, index) => (
+          <script
+            key={`${pathname}-schema-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={schemaToJsonLd(schema)}
+          />
+        ))}
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">

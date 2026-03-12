@@ -21,37 +21,6 @@ export default function ManufacturingIoT() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Industries", item: `${siteUrl}/industries` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Manufacturing & Industrial IoT",
-        item: `${siteUrl}/industries/manufacturing-iot`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Manufacturing & Industrial IoT",
-    description:
-      "Transform your factory floor with smart sensors, predictive maintenance, and real-time production monitoring. Industry 4.0 IoT solutions.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Industrial IoT Solutions",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

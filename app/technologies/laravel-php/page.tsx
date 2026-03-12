@@ -24,42 +24,6 @@ export default function LaravelPHPTechnologyPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Technologies",
-        item: `${siteUrl}/technologies`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Laravel / PHP Development",
-        item: `${siteUrl}/technologies/laravel-php`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Laravel / PHP Development Services",
-    description:
-      "Expert Laravel and PHP development for web applications, APIs, e-commerce, and SaaS platforms. Modern PHP solutions.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Laravel / PHP Development",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

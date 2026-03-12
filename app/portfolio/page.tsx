@@ -10,6 +10,7 @@ import portfolioData from "@/data/portfolio.json";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 
+
 interface Project {
     id: number;
     title: string;

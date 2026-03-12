@@ -22,107 +22,82 @@ export default function AIIntegrationServices() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "AI Integration Services",
-        item: `${siteUrl}/solution/ai-integration-services`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "AI Integration Services",
-    description:
-      "Connect artificial intelligence with your existing systems for enhanced automation and intelligent workflows",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "AI Integration & API Connectivity",
-    areaServed: "Worldwide",
-  };
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "AI Integration Services", url: "/solution/ai-integration-services" },
+  ];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Solutions", href: "/solutions" },
-                { label: "AI Integration Services" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <AIIntegrationHero
-            title={aiIntegrationData.hero.title}
-            title2={aiIntegrationData.hero.title2}
-            subtitle={aiIntegrationData.hero.subtitle}
-            buttons={aiIntegrationData.hero.buttons}
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Solutions", href: "/solutions" },
+              { label: "AI Integration Services" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="AI Integration Services" items={subHeaderItems} />
+      <main>
+        <AIIntegrationHero
+          title={aiIntegrationData.hero.title}
+          title2={aiIntegrationData.hero.title2}
+          subtitle={aiIntegrationData.hero.subtitle}
+          buttons={aiIntegrationData.hero.buttons}
+        />
 
-          <div id="overview">
-            <AIIntegrationOverview
+        <SubHeader title="AI Integration Services" items={subHeaderItems} />
+
+        <div id="overview">
+          <AIIntegrationOverview
             title={aiIntegrationData.overview.title}
             content={aiIntegrationData.overview.content}
             image={aiIntegrationData.overview.image}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <AIIntegrationFeatures
+        <div id="features">
+          <AIIntegrationFeatures
             title={aiIntegrationData.features.title}
             items={aiIntegrationData.features.items}
           />
-          </div>
+        </div>
 
-          <AIIntegrationTechnologies
-            title={aiIntegrationData.platforms.title}
-            description={aiIntegrationData.platforms.description}
-            items={aiIntegrationData.platforms.items}
-          />
+        <AIIntegrationTechnologies
+          title={aiIntegrationData.platforms.title}
+          description={aiIntegrationData.platforms.description}
+          items={aiIntegrationData.platforms.items}
+        />
 
-          <AIIntegrationCaseStudies
-            title={aiIntegrationData.caseStudies.title}
-            cases={aiIntegrationData.caseStudies.cases}
-          />
+        <AIIntegrationCaseStudies
+          title={aiIntegrationData.caseStudies.title}
+          cases={aiIntegrationData.caseStudies.cases}
+        />
 
-          <div id="process">
-            <AIIntegrationProcess
+        <div id="process">
+          <AIIntegrationProcess
             title={aiIntegrationData.process.title}
             description={aiIntegrationData.process.description}
             steps={aiIntegrationData.process.steps}
           />
-          </div>
+        </div>
 
-          <AIIntegrationAutomation
-            title={aiIntegrationData.automation.title}
-            description={aiIntegrationData.automation.description}
-            features={aiIntegrationData.automation.features}
-          />
-          <WhyCorewaySection
-            badge={whyCorewayData["ai-integration-services"].badge}
-            title={whyCorewayData["ai-integration-services"].title}
-            subtitle={whyCorewayData["ai-integration-services"].subtitle}
-            reasons={whyCorewayData["ai-integration-services"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+        <AIIntegrationAutomation
+          title={aiIntegrationData.automation.title}
+          description={aiIntegrationData.automation.description}
+          features={aiIntegrationData.automation.features}
+        />
+        <WhyCorewaySection
+          badge={whyCorewayData["ai-integration-services"].badge}
+          title={whyCorewayData["ai-integration-services"].title}
+          subtitle={whyCorewayData["ai-integration-services"].subtitle}
+          reasons={whyCorewayData["ai-integration-services"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -132,18 +107,18 @@ export default function AIIntegrationServices() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
 
-          <PageCTA
-            badge="Ready to integrate?"
-            title="Ready to Integrate AI into Your Systems?"
-            description="Let's connect intelligent AI capabilities with your existing infrastructure. Our integration experts are ready to help you unlock the power of AI without disrupting your operations."
-            primaryButtonText="Start Integration"
-            secondaryButtonText="View Integrations"
-            footerText="Free consultation • Expert integration • Zero downtime"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Ready to integrate?"
+          title="Ready to Integrate AI into Your Systems?"
+          description="Let's connect intelligent AI capabilities with your existing infrastructure. Our integration experts are ready to help you unlock the power of AI without disrupting your operations."
+          primaryButtonText="Start Integration"
+          secondaryButtonText="View Integrations"
+          footerText="Free consultation • Expert integration • Zero downtime"
+        />
+      </main>
+    </div>
   );
 }

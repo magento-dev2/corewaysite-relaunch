@@ -27,67 +27,39 @@ export default function MetadataExtractionAI() {
 
   const siteUrl = "https://www.corewaysolution.com";
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solution` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Metadata Extraction using GPT & Vision AI",
-        item: `${siteUrl}/solution/metadata-extraction-ai`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Metadata Extraction using GPT & Vision AI",
-    description:
-      "Automatically extract, classify, and enrich metadata from documents, images, and videos using advanced GPT-4 and Vision AI models.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "AI Metadata Extraction",
-    areaServed: "Worldwide",
-  };
 
   const projectData = [
-  {
-    id: 1,
-    language: "Wordpress",
-    images: ["/images/Wordpress/american.png"]
-  },
-  {
-    id: 2,
-    language: "Shopify",
-    images: ["/images/Shopify/aurus.png"]
-  },
-  {
-    id: 3,
-    language: "WooCommerce",
-    images: ["/images/WooCommerce/alhine.png"]
-  },
-  {
-    id: 4,
-    language: "Android",
-    images: ["/images/Android/bapuji-1.png"]
-  },
-  {
-    id: 5,
-    language: "Magento",
-    images: ["/images/Magento/knir.png"]
-  },
-  {
-    id: 6,
-    language: "Laravel",
-    images: ["/images/Laravel/delaware.png"]
-  }
-];
+    {
+      id: 1,
+      language: "Wordpress",
+      images: ["/images/Wordpress/american.png"]
+    },
+    {
+      id: 2,
+      language: "Shopify",
+      images: ["/images/Shopify/aurus.png"]
+    },
+    {
+      id: 3,
+      language: "WooCommerce",
+      images: ["/images/WooCommerce/alhine.png"]
+    },
+    {
+      id: 4,
+      language: "Android",
+      images: ["/images/Android/bapuji-1.png"]
+    },
+    {
+      id: 5,
+      language: "Magento",
+      images: ["/images/Magento/knir.png"]
+    },
+    {
+      id: 6,
+      language: "Laravel",
+      images: ["/images/Laravel/delaware.png"]
+    }
+  ];
 
   return (
     <>
@@ -117,17 +89,17 @@ export default function MetadataExtractionAI() {
 
           <div id="overview">
             <DatasetOverview
-            title={metadataExtractionData.overview.title}
-            content={metadataExtractionData.overview.content}
-            image={metadataExtractionData.overview.image}
-          />
+              title={metadataExtractionData.overview.title}
+              content={metadataExtractionData.overview.content}
+              image={metadataExtractionData.overview.image}
+            />
           </div>
 
           <div id="features">
             <DatasetFeatures
-            title={metadataExtractionData.features.title}
-            items={metadataExtractionData.features.items}
-          />
+              title={metadataExtractionData.features.title}
+              items={metadataExtractionData.features.items}
+            />
           </div>
 
           <DatasetTechnologies
@@ -140,15 +112,15 @@ export default function MetadataExtractionAI() {
             title={metadataExtractionData.caseStudies.title}
             cases={metadataExtractionData.caseStudies.cases}
           /> */}
-          <PortfolioHighlights data={projectData} highlightCount={6}/>
+          <PortfolioHighlights data={projectData} highlightCount={6} />
 
 
           <div id="process">
             <DatasetProcess
-            title={metadataExtractionData.process.title}
-            description={metadataExtractionData.process.description}
-            steps={metadataExtractionData.process.steps}
-          />
+              title={metadataExtractionData.process.title}
+              description={metadataExtractionData.process.description}
+              steps={metadataExtractionData.process.steps}
+            />
           </div>
 
           <DatasetAutomation
@@ -165,15 +137,15 @@ export default function MetadataExtractionAI() {
           />
           <div id="faq">
             <FAQ
-            badge="Help Center"
-            title="Common Questions & Answers"
-            description="Everything you need to know about our services and how we work"
-            faqs={sampleFAQs["metadata-extraction-ai"]}
-            columns={1}
-            showContactCTA={true}
-            contactText="Still have questions?"
-            contactButtonText="Contact Our Team"
-          />
+              badge="Help Center"
+              title="Common Questions & Answers"
+              description="Everything you need to know about our services and how we work"
+              faqs={sampleFAQs["metadata-extraction-ai"]}
+              columns={1}
+              showContactCTA={true}
+              contactText="Still have questions?"
+              contactButtonText="Contact Our Team"
+            />
           </div>
 
           <PageCTA

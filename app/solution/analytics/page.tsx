@@ -11,6 +11,12 @@ import WhyCorewaySection from '@/components/WhyCorewaySection';
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
+import {
+  getServiceSchema,
+  getWebPageSchema,
+  schemaToJsonLd
+} from "@/lib/schema";
+import Script from "next/script";
 
 export default function AnalyticsPage() {
   const subHeaderItems = [
@@ -21,8 +27,36 @@ export default function AnalyticsPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "Analytics & BI", url: "/solution/analytics" },
+  ];
+
+  const webPageSchema = getWebPageSchema(
+    "Analytics & BI Services | Coreway Solution",
+    "Unlock the full potential of your data with powerful analytics and insights.",
+    "/solution/analytics",
+    breadcrumbItems
+  );
+
+  const serviceSchema = getServiceSchema(
+    "Data Analytics & Business Intelligence",
+    "Unlock the full potential of your data with powerful analytics and insights."
+  );
+
   return (
     <div className="overflow-hidden">
+      <Script
+        id="analytics-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(webPageSchema)}
+      />
+      <Script
+        id="analytics-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(serviceSchema)}
+      />
       <div id="overview">
         <AnalyticsHero />
       </div>

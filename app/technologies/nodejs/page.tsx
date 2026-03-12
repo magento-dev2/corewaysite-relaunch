@@ -24,42 +24,6 @@ export default function NodeJSTechnologyPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Technologies",
-        item: `${siteUrl}/technologies`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Node.js Development",
-        item: `${siteUrl}/technologies/nodejs`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Node.js Development Services",
-    description:
-      "Expert Node.js development for APIs, microservices, and real-time applications. Build scalable backend systems.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Node.js Development",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

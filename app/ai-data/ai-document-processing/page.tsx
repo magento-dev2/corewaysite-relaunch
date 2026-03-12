@@ -52,10 +52,6 @@ export default function AiDocumentProcessing() {
 
     return (
         <div className="min-h-screen bg-[#0E0918]">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
 
             <header className="page-content">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

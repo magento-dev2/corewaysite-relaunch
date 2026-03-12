@@ -57,37 +57,6 @@ export default function EcommerceStores() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Industries", item: `${siteUrl}/industries` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "eCommerce & Virtual Product Stores",
-        item: `${siteUrl}/industries/ecommerce-stores`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "eCommerce & Virtual Product Stores",
-    description:
-      "Build high-converting online stores with AI-powered personalization, seamless checkout experiences, and omnichannel integration.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "eCommerce Development",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">
@@ -138,7 +107,7 @@ export default function EcommerceStores() {
           stores={ecommerceStoresData.showcase.stores}
         /> */}
 
-        <PortfolioHighlights data={projectData} highlightCount={6}/>
+        <PortfolioHighlights data={projectData} highlightCount={6} />
 
         <div id="process">
           <AISecurityProcess

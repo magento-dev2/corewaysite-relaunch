@@ -25,141 +25,117 @@ export default function IoTApplicationDevelopment() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "IoT Application Development", url: "/solution/iot-application-development" },
+  ];
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "IoT Application Development",
-        item: `${siteUrl}/solution/iot-application-development`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "IoT Application Development",
-    description:
-      "End-to-end IoT solutions connecting devices to cloud platforms with real-time monitoring, analytics, and automation",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
+  const projectData = [
+    {
+      id: 1,
+      language: "Wordpress",
+      images: ["/images/Wordpress/american.png"]
     },
-    serviceType: "IoT Development",
-    areaServed: "Worldwide",
-  };
-    const projectData = [
-  {
-    id: 1,
-    language: "Wordpress",
-    images: ["/images/Wordpress/american.png"]
-  },
-  {
-    id: 2,
-    language: "Shopify",
-    images: ["/images/Shopify/aurus.png"]
-  },
-  {
-    id: 3,
-    language: "WooCommerce",
-    images: ["/images/WooCommerce/alhine.png"]
-  },
-  {
-    id: 4,
-    language: "Android",
-    images: ["/images/Android/bapuji-1.png"]
-  },
-  {
-    id: 5,
-    language: "Magento",
-    images: ["/images/Magento/knir.png"]
-  },
-  {
-    id: 6,
-    language: "Laravel",
-    images: ["/images/Laravel/delaware.png"]
-  }
-];
+    {
+      id: 2,
+      language: "Shopify",
+      images: ["/images/Shopify/aurus.png"]
+    },
+    {
+      id: 3,
+      language: "WooCommerce",
+      images: ["/images/WooCommerce/alhine.png"]
+    },
+    {
+      id: 4,
+      language: "Android",
+      images: ["/images/Android/bapuji-1.png"]
+    },
+    {
+      id: 5,
+      language: "Magento",
+      images: ["/images/Magento/knir.png"]
+    },
+    {
+      id: 6,
+      language: "Laravel",
+      images: ["/images/Laravel/delaware.png"]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Solutions", href: "/solutions" },
-                { label: "IoT Application Development" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <IoTHero
-            title={iotApplicationsData.hero.title}
-            title2={iotApplicationsData.hero.title2}
-            subtitle={iotApplicationsData.hero.subtitle}
-            buttons={iotApplicationsData.hero.buttons}
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Solutions", href: "/solutions" },
+              { label: "IoT Application Development" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="IoT Application Development" items={subHeaderItems} />
+      <main>
+        <IoTHero
+          title={iotApplicationsData.hero.title}
+          title2={iotApplicationsData.hero.title2}
+          subtitle={iotApplicationsData.hero.subtitle}
+          buttons={iotApplicationsData.hero.buttons}
+        />
 
-          <div id="overview">
-            <IoTOverview
+        <SubHeader title="IoT Application Development" items={subHeaderItems} />
+
+        <div id="overview">
+          <IoTOverview
             title={iotApplicationsData.overview.title}
             content={iotApplicationsData.overview.content}
             image={iotApplicationsData.overview.image}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <IoTFeatures
+        <div id="features">
+          <IoTFeatures
             title={iotApplicationsData.features.title}
             items={iotApplicationsData.features.items}
           />
-          </div>
+        </div>
 
-          <IoTTechnologies
-            title={iotApplicationsData.platforms.title}
-            description={iotApplicationsData.platforms.description}
-            items={iotApplicationsData.platforms.items}
-          />
+        <IoTTechnologies
+          title={iotApplicationsData.platforms.title}
+          description={iotApplicationsData.platforms.description}
+          items={iotApplicationsData.platforms.items}
+        />
 
-          <PortfolioHighlights data={projectData} highlightCount={6}/>
+        <PortfolioHighlights data={projectData} highlightCount={6} />
 
-          {/* <IoTCaseStudies
+        {/* <IoTCaseStudies
             title={iotApplicationsData.caseStudies.title}
             cases={iotApplicationsData.caseStudies.cases}
           /> */}
 
-          <div id="process">
-            <IoTProcess
+        <div id="process">
+          <IoTProcess
             title={iotApplicationsData.process.title}
             description={iotApplicationsData.process.description}
             steps={iotApplicationsData.process.steps}
           />
-          </div>
+        </div>
 
-          <IoTAutomation
-            title={iotApplicationsData.automation.title}
-            description={iotApplicationsData.automation.description}
-            features={iotApplicationsData.automation.features}
-          />
-          <WhyCorewaySection
-            badge={whyCorewayData["iot-application-development"].badge}
-            title={whyCorewayData["iot-application-development"].title}
-            subtitle={whyCorewayData["iot-application-development"].subtitle}
-            reasons={whyCorewayData["iot-application-development"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+        <IoTAutomation
+          title={iotApplicationsData.automation.title}
+          description={iotApplicationsData.automation.description}
+          features={iotApplicationsData.automation.features}
+        />
+        <WhyCorewaySection
+          badge={whyCorewayData["iot-application-development"].badge}
+          title={whyCorewayData["iot-application-development"].title}
+          subtitle={whyCorewayData["iot-application-development"].subtitle}
+          reasons={whyCorewayData["iot-application-development"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -169,17 +145,17 @@ export default function IoTApplicationDevelopment() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
-          <PageCTA
-            badge="Ready to connect?"
-            title="Ready to Build Your IoT Solution?"
-            description="Let's create intelligent IoT systems that transform your operations and unlock real-time insights. Our team is ready to help you connect devices to powerful cloud platforms."
-            primaryButtonText="Book Consultation"
-            secondaryButtonText="View IoT Projects"
-            footerText="Free consultation • Custom IoT solutions • Proven expertise"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Ready to connect?"
+          title="Ready to Build Your IoT Solution?"
+          description="Let's create intelligent IoT systems that transform your operations and unlock real-time insights. Our team is ready to help you connect devices to powerful cloud platforms."
+          primaryButtonText="Book Consultation"
+          secondaryButtonText="View IoT Projects"
+          footerText="Free consultation • Custom IoT solutions • Proven expertise"
+        />
+      </main>
+    </div>
   );
 }

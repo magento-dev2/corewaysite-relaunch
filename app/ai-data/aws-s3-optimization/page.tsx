@@ -25,108 +25,80 @@ export default function AWSS3Optimization() {
 
   const siteUrl = "https://www.corewaysolution.com";
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "AI & Data", item: `${siteUrl}/ai-data` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "AWS S3 Architecture & Cost Optimization",
-        item: `${siteUrl}/ai-data/aws-s3-optimization`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "AWS S3 Architecture & Cost Optimization",
-    description:
-      "Design scalable S3 architectures, optimize storage costs by up to 70%, and implement best practices for performance, security, and data lifecycle management.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "AWS S3 Optimization",
-    areaServed: "Worldwide",
-  };
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "AI & Data", href: "/ai-data" },
-                { label: "AWS S3 Architecture & Cost Optimization" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <AWSS3Hero
-            title={awsS3Data.hero.title}
-            title2={awsS3Data.hero.title2}
-            subtitle={awsS3Data.hero.subtitle}
-            buttons={awsS3Data.hero.buttons}
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "AI & Data", href: "/ai-data" },
+              { label: "AWS S3 Architecture & Cost Optimization" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="AWS S3 Optimization" items={subHeaderItems} />
+      <main>
+        <AWSS3Hero
+          title={awsS3Data.hero.title}
+          title2={awsS3Data.hero.title2}
+          subtitle={awsS3Data.hero.subtitle}
+          buttons={awsS3Data.hero.buttons}
+        />
 
-          <div id="overview">
-            <AWSS3Overview
+        <SubHeader title="AWS S3 Optimization" items={subHeaderItems} />
+
+        <div id="overview">
+          <AWSS3Overview
             title={awsS3Data.overview.title}
             content={awsS3Data.overview.content}
             image={awsS3Data.overview.image}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <AWSS3Features
+        <div id="features">
+          <AWSS3Features
             title={awsS3Data.features.title}
             items={awsS3Data.features.items}
           />
-          </div>
+        </div>
 
-          <AWSS3Technologies
-            title={awsS3Data.platforms.title}
-            description={awsS3Data.platforms.description}
-            items={awsS3Data.platforms.items}
-          />
+        <AWSS3Technologies
+          title={awsS3Data.platforms.title}
+          description={awsS3Data.platforms.description}
+          items={awsS3Data.platforms.items}
+        />
 
-          {/* <AWSS3CaseStudies
+        {/* <AWSS3CaseStudies
             title={awsS3Data.caseStudies.title}
             cases={awsS3Data.caseStudies.cases}
           /> */}
 
-          <PortfolioHighlights/>
+        <PortfolioHighlights />
 
-          <div id="process">
-            <AWSS3Process
+        <div id="process">
+          <AWSS3Process
             title={awsS3Data.process.title}
             description={awsS3Data.process.description}
             steps={awsS3Data.process.steps}
           />
-          </div>
+        </div>
 
-          <AWSS3Automation
-            title={awsS3Data.automation.title}
-            description={awsS3Data.automation.description}
-            features={awsS3Data.automation.features}
-          />
+        <AWSS3Automation
+          title={awsS3Data.automation.title}
+          description={awsS3Data.automation.description}
+          features={awsS3Data.automation.features}
+        />
 
-          <WhyCorewaySection
-            badge={whyCorewayData["aws-s3-optimization"].badge}
-            title={whyCorewayData["aws-s3-optimization"].title}
-            subtitle={whyCorewayData["aws-s3-optimization"].subtitle}
-            reasons={whyCorewayData["aws-s3-optimization"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+        <WhyCorewaySection
+          badge={whyCorewayData["aws-s3-optimization"].badge}
+          title={whyCorewayData["aws-s3-optimization"].title}
+          subtitle={whyCorewayData["aws-s3-optimization"].subtitle}
+          reasons={whyCorewayData["aws-s3-optimization"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -136,18 +108,18 @@ export default function AWSS3Optimization() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
-          <PageCTA
-            badge="Optimize Your Storage"
-            title="Inquery for storage"
-            description="Let's analyze your AWS S3 infrastructure and implement cost-saving strategies. Our expert team delivers optimizations that can reduce your storage costs by up to 70% while improving performance."
-            primaryButtonText="Contact"
-            secondaryButtonText="Schedule Call"
-            footerText="Free S3 audit • Cost reduction guarantee • Zero downtime migration"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Optimize Your Storage"
+          title="Inquery for storage"
+          description="Let's analyze your AWS S3 infrastructure and implement cost-saving strategies. Our expert team delivers optimizations that can reduce your storage costs by up to 70% while improving performance."
+          primaryButtonText="Contact"
+          secondaryButtonText="Schedule Call"
+          footerText="Free S3 audit • Cost reduction guarantee • Zero downtime migration"
+        />
+      </main>
+    </div>
   );
 }
 

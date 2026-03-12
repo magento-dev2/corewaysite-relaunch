@@ -20,6 +20,12 @@ export const metadata: Metadata = {
 };
 
 export default function ERPSolutionsPage() {
+    const breadcrumbItems = [
+        { name: "Home", url: "/" },
+        { name: "Solutions", url: "/solutions" },
+        { name: "ERP Solutions", url: "/solution/erp-solutions" },
+    ];
+
     const subHeaderItems = [
         { label: "Overview", sectionId: "overview" },
         { label: "Modules", sectionId: "modules" },

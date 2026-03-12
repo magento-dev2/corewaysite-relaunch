@@ -348,6 +348,7 @@ import SplitType from "split-type";
 import ApplicationModal from "@/components/careers/ApplicationModal";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
+import Script from "next/script";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -585,6 +586,7 @@ export default function CareersPage() {
     setSelectedJob({ id: jobId, title: jobTitle });
     setIsModalOpen(true);
   };
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {

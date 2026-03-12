@@ -24,42 +24,6 @@ export default function PythonTechnologyPage() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Technologies",
-        item: `${siteUrl}/technologies`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Python Development",
-        item: `${siteUrl}/technologies/python`,
-      },
-    ],
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Python Development Services",
-    description:
-      "Expert Python development for web APIs, data science, machine learning, and automation. Flask, FastAPI, Django development.",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Python Development",
-    areaServed: "Worldwide",
-  };
-
   return (
     <div className="min-h-screen bg-[#0E0918]">
       <header className="page-content">

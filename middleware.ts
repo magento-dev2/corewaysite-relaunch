@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next();
   const { pathname, host } = request.nextUrl;
 
   // 1. URL Canonicalization: Redirect non-www to www
@@ -11,6 +10,16 @@ export function middleware(request: NextRequest) {
     url.host = 'www.corewaysolution.com';
     return NextResponse.redirect(url, 301);
   }
+
+  // Set x-pathname header to be accessible in layout
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
 
   // 2. Security Headers
   // HSTS (HTTP Strict Transport Security)

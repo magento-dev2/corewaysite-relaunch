@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Pagination from '@/components/ui/Pagination';
+import Script from 'next/script';
 
 export const dynamic = 'force-dynamic';
 

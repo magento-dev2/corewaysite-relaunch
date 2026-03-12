@@ -12,22 +12,15 @@ import { RecaptchaProvider } from "@/contexts/RecaptchaContext";
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const hideFooterRoutes = [
-    "/contact",
-    "/login",
-    "/register",
-    "/demo",
-  ];
+  const hideFooterRoutes: string[] = [];
 
-  const hideHeaderFooterRoutes = [
-    "/contact"
-  ];
+  const hideHeaderFooterRoutes: string[] = [];
 
   const hideFooter = hideFooterRoutes.includes(pathname);
-const hideHeaderFooter =
-  pathname.startsWith("/admin") ||
-  hideHeaderFooterRoutes.includes(pathname);
-  
+  const hideHeaderFooter =
+    pathname.startsWith("/admin") ||
+    hideHeaderFooterRoutes.includes(pathname);
+
   return (
     <LanguageProvider>
       <RecaptchaProvider>

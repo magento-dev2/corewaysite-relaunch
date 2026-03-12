@@ -12,7 +12,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
-import SubHeader from "@/components/SubHeader";
+import Script from "next/script";
 
 
 
@@ -24,107 +24,82 @@ export default function ReplatformingMigration() {
     { label: "FAQ", sectionId: "faq" },
   ];
 
-  const siteUrl = "https://www.corewaysolution.com";
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Solutions", url: "/solutions" },
+    { name: "Replatforming & Migration", url: "/solution/replatforming-migration" },
+  ];
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${siteUrl}/solutions` },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Replatforming & Migration",
-        item: `${siteUrl}/solution/replatforming-migration`,
-      },
-    ],
-  };
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Platform Migration & Replatforming Services",
-    description:
-      "Seamless platform migration and replatforming services with zero downtime for e-commerce, SaaS, and enterprise applications",
-    provider: {
-      "@type": "Organization",
-      name: "Coreway Solution",
-    },
-    serviceType: "Platform Migration & Replatforming",
-    areaServed: "Worldwide",
-  };
 
   return (
     <div className="min-h-screen bg-[#0E0918]">
-        <header className="page-content">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Solutions", href: "/solutions" },
-                { label: "Replatforming & Migration" },
-              ]}
-            />
-          </div>
-        </header>
-
-        <main>
-          <ReplatformingHero
-            title={replatformingData.hero.title}
-            title2={replatformingData.hero.title2}
-            subtitle={replatformingData.hero.subtitle}
-            buttons={replatformingData.hero.buttons}
+      <header className="page-content">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Solutions", href: "/solutions" },
+              { label: "Replatforming & Migration" },
+            ]}
           />
+        </div>
+      </header>
 
-          <SubHeader title="Replatforming & Migration" items={subHeaderItems} />
+      <main>
+        <ReplatformingHero
+          title={replatformingData.hero.title}
+          title2={replatformingData.hero.title2}
+          subtitle={replatformingData.hero.subtitle}
+          buttons={replatformingData.hero.buttons}
+        />
 
-          <div id="overview">
-            <ReplatformingOverview
+        <div id="overview">
+          <ReplatformingOverview
             title={replatformingData.overview.title}
             content={replatformingData.overview.content}
             image={replatformingData.overview.image}
           />
-          </div>
+        </div>
 
-          <div id="features">
-            <ReplatformingFeatures
+        <div id="features">
+          <ReplatformingFeatures
             title={replatformingData.features.title}
             items={replatformingData.features.items}
           />
-          </div>
+        </div>
 
-          <ReplatformingTechnologies
-            title={replatformingData.platforms.title}
-            description={replatformingData.platforms.description}
-            items={replatformingData.platforms.items}
-          />
+        <ReplatformingTechnologies
+          title={replatformingData.platforms.title}
+          description={replatformingData.platforms.description}
+          items={replatformingData.platforms.items}
+        />
 
-          <ReplatformingCaseStudies
-            title={replatformingData.caseStudies.title}
-            cases={replatformingData.caseStudies.cases}
-          />
+        <ReplatformingCaseStudies
+          title={replatformingData.caseStudies.title}
+          cases={replatformingData.caseStudies.cases}
+        />
 
-          <div id="process">
-            <ReplatformingProcess
+        <div id="process">
+          <ReplatformingProcess
             title={replatformingData.process.title}
             description={replatformingData.process.description}
             steps={replatformingData.process.steps}
           />
-          </div>
+        </div>
 
-          <ReplatformingAutomation
-            title={replatformingData.automation.title}
-            description={replatformingData.automation.description}
-            features={replatformingData.automation.features}
-          />
-          <WhyCorewaySection
-            badge={whyCorewayData["replatforming-migration"].badge}
-            title={whyCorewayData["replatforming-migration"].title}
-            subtitle={whyCorewayData["replatforming-migration"].subtitle}
-            reasons={whyCorewayData["replatforming-migration"].reasons}
-          />
-          <div id="faq">
-            <FAQ
+        <ReplatformingAutomation
+          title={replatformingData.automation.title}
+          description={replatformingData.automation.description}
+          features={replatformingData.automation.features}
+        />
+        <WhyCorewaySection
+          badge={whyCorewayData["replatforming-migration"].badge}
+          title={whyCorewayData["replatforming-migration"].title}
+          subtitle={whyCorewayData["replatforming-migration"].subtitle}
+          reasons={whyCorewayData["replatforming-migration"].reasons}
+        />
+        <div id="faq">
+          <FAQ
             badge="Help Center"
             title="Common Questions & Answers"
             description="Everything you need to know about our services and how we work"
@@ -134,19 +109,19 @@ export default function ReplatformingMigration() {
             contactText="Still have questions?"
             contactButtonText="Contact Our Team"
           />
-          </div>
+        </div>
 
-          <PageCTA
-            badge="Ready to migrate?"
-            title="Ready to Modernize Your Platform?"
-            description="Let's plan your seamless migration journey. Our expert team ensures zero downtime, complete data integrity, and improved performance on your new platform."
-            primaryButtonText="Get Started"
-            secondaryButtonText="Our portfolio"
-            footerText="Free migration assessment • Zero downtime • 100% data integrity"
-            primaryButtonlink="/contact"
-            secondaryButtonlink="/portfolio"
-          />
-        </main>
-      </div>
+        <PageCTA
+          badge="Ready to migrate?"
+          title="Ready to Modernize Your Platform?"
+          description="Let's plan your seamless migration journey. Our expert team ensures zero downtime, complete data integrity, and improved performance on your new platform."
+          primaryButtonText="Get Started"
+          secondaryButtonText="Our portfolio"
+          footerText="Free migration assessment • Zero downtime • 100% data integrity"
+          primaryButtonlink="/contact"
+          secondaryButtonlink="/portfolio"
+        />
+      </main>
+    </div>
   );
 }

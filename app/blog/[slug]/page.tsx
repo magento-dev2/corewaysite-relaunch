@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
+import { getBlogPostingSchema, schemaToJsonLd } from '@/lib/schema';
 
 type RelatedBlog = {
   id: string;
@@ -126,8 +127,20 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
     blog.relatedArticles
   );
 
+  const blogSchema = getBlogPostingSchema({
+    title: blog.title,
+    excerpt: blog.excerpt,
+    coverImage: blog.coverImage,
+    createdAt: blog.createdAt,
+    slug: slug
+  });
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={schemaToJsonLd(blogSchema)}
+      />
       {/* Hero Section with Cover Image */}
       <div className="relative bg-black text-white" style={{ minHeight: "650px" }}>
         <div className="absolute inset-0 bg-black/60 z-10" />

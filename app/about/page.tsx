@@ -10,54 +10,47 @@ import samplefaqs from '@/data/faqs.json';
 import AboutHero from '@/components/about/AboutHero';
 import PortfolioHighlights from "@/components/about/PortfolioHighlights";
 import Testimonials from "@/components/home/Testimonials";
+import Script from "next/script";
 
 
 export default function AboutUs() {
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Coreway Solution',
-    url: 'https://www.corewaysolution.com',
-    logo: 'https://www.corewaysolution.com/logo.png',
-    description: aboutUsData.companyOverview.description,
-    foundingDate: '2020',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'US',
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' },
+  ];
+
+  const projectData = [
+    {
+      id: 1,
+      language: "Wordpress",
+      images: ["/images/Wordpress/american.png"]
     },
-  };
-   const projectData = [
-  {
-    id: 1,
-    language: "Wordpress",
-    images: ["/images/Wordpress/american.png"]
-  },
-  {
-    id: 2,
-    language: "Shopify",
-    images: ["/images/Shopify/aurus.png"]
-  },
-  {
-    id: 3,
-    language: "WooCommerce",
-    images: ["/images/WooCommerce/alhine.png"]
-  },
-  {
-    id: 4,
-    language: "Android",
-    images: ["/images/Android/bapuji-1.png"]
-  },
-  {
-    id: 5,
-    language: "Magento",
-    images: ["/images/Magento/knir.png"]
-  },
-  {
-    id: 6,
-    language: "Laravel",
-    images: ["/images/Laravel/delaware.png"]
-  }
-];
+    {
+      id: 2,
+      language: "Shopify",
+      images: ["/images/Shopify/aurus.png"]
+    },
+    {
+      id: 3,
+      language: "WooCommerce",
+      images: ["/images/WooCommerce/alhine.png"]
+    },
+    {
+      id: 4,
+      language: "Android",
+      images: ["/images/Android/bapuji-1.png"]
+    },
+    {
+      id: 5,
+      language: "Magento",
+      images: ["/images/Magento/knir.png"]
+    },
+    {
+      id: 6,
+      language: "Laravel",
+      images: ["/images/Laravel/delaware.png"]
+    }
+  ];
 
 
   return (
@@ -75,25 +68,25 @@ export default function AboutUs() {
         <CompanyOverview data={aboutUsData.companyOverview} />
         <JourneyTimeline />
         <OurProcess />
-              <PortfolioHighlights data={projectData} highlightCount={6} />
-<Testimonials/>
+        <PortfolioHighlights data={projectData} highlightCount={6} />
+        <Testimonials />
         <FAQ
           badge="Frequently Asked Questions"
           title="Everything You Need to Know About Coreway"
           description="Find answers to common questions about our company, services, and approach"
           faqs={samplefaqs["about"]}
-          // columns={2}
+        // columns={2}
         />
-      <PageCTA
-  badge="About Us"
-  title="Empowering Growth"
-  description="we specialize in creating innovative workflow automation solutions that streamline processes, boost efficiency, and drive growth. Our mission is to help businesses harness technology to achieve more, faster, and smarter."
-  primaryButtonText="Learn More"
-  secondaryButtonText="Why Coreway"
-  footerText=" • Innovative solutions • Proven results • Customer-focused"
-  primaryButtonlink="/about/company-overview"
-  secondaryButtonlink="/about/why-coreway"
-/>
+        <PageCTA
+          badge="About Us"
+          title="Empowering Growth"
+          description="we specialize in creating innovative workflow automation solutions that streamline processes, boost efficiency, and drive growth. Our mission is to help businesses harness technology to achieve more, faster, and smarter."
+          primaryButtonText="Learn More"
+          secondaryButtonText="Why Coreway"
+          footerText=" • Innovative solutions • Proven results • Customer-focused"
+          primaryButtonlink="/about/company-overview"
+          secondaryButtonlink="/about/why-coreway"
+        />
 
       </main>
     </div>

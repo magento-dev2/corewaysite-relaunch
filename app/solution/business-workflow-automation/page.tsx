@@ -9,7 +9,7 @@ import WhyCorewaySection from "@/components/WhyCorewaySection";
 import FAQ from "@/components/FAQ";
 import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
-import SubHeader from "@/components/SubHeader";
+import Script from "next/script";
 
 const siteUrl = "https://www.corewaysolution.com";
 
@@ -35,37 +35,8 @@ export const metadata = {
     canonical: siteUrl,
   },
 };
-const defaultReasons: { icon: string, title: string, description: string }[] = [
-  {
-    icon: "agency",
-    title: "Award  Agency",
-    description: "Recognized for excellence in digital innovation and software development.",
-  },
-  {
-    icon: "zap",
-    title: "Fast Delivery",
-    description: "Rapid prototyping and agile development to get your product to market sooner.",
-  },
-  {
-    icon: "shield",
-    title: "Enterprise Security",
-    description: "Bank-grade security protocols ensuring your data remains protected at all times.",
-  },
-  {
-    icon: "users",
-    title: "Expert Team",
-    description: "A dedicated team of senior developers and designers working on your project.",
-  }
-];
 
 export default function HomePage() {
-  const subHeaderItems = [
-    { label: "Overview", sectionId: "overview" },
-    { label: "Capabilities", sectionId: "features" },
-    { label: "Our Process", sectionId: "process" },
-    { label: "FAQ", sectionId: "faq" },
-  ];
-
   return (
     <>
       <Hero />
@@ -81,17 +52,17 @@ export default function HomePage() {
         reasons={whyCorewayData["business-workflow-automation"].reasons}
       />
       <div id="faq">
-            <FAQ
-        badge="Help Center"
-        title="Common Questions & Answers"
-        description="Everything you need to know about our services and how we work"
-        faqs={sampleFAQs["business-workflow-automation"]}
-        columns={1}
-        showContactCTA={true}
-        contactText="Still have questions?"
-        contactButtonText="Contact Our Team"
-      />
-          </div>
+        <FAQ
+          badge="Help Center"
+          title="Common Questions & Answers"
+          description="Everything you need to know about our services and how we work"
+          faqs={sampleFAQs["business-workflow-automation"]}
+          columns={1}
+          showContactCTA={true}
+          contactText="Still have questions?"
+          contactButtonText="Contact Our Team"
+        />
+      </div>
       <PageCTA
         badge="Start automating today"
         title="Ready to transform your workflows?"
