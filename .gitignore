@@ -42,3 +42,25 @@ next-env.d.ts
 .env
 
 /app/generated/prisma
+
+# History and config files
+.bash_history
+.config/
+.lesshst
+.npm/
+.pm2/
+
+# Database dumps
+coreway_admin.sql
+
+# Large assets and case studies
+public/assets/case-studies.zip
+public/assets/case-studies/boxify/
+public/assets/case-studies/qrgenrater/
+public/assets/case-studies/rga/
+public/assets/case-studies/solar/
+public/assets/wp-content.zip
+public/assets/wp-content/
+public/blog-img/
+
+
