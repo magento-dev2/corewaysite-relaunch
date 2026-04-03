@@ -1,13 +1,12 @@
 
-
 import { prisma } from '@/lib/prisma';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
-import { getBlogPostingSchema, schemaToJsonLd } from '@/lib/schema';
+import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
 
 type RelatedBlog = {
   id: string;
@@ -18,39 +17,164 @@ type RelatedBlog = {
   createdAt: Date;
 };
 
+type BlogWithRelations = {
+  id: string;
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string | null;
+  coverImage: string | null;
+  readTime?: number | null;
+  faqSchema?: string | null;
+  createdAt: Date;
+  metaTitle: string | null;
+  metaDescription: string | null;
+  metaKeywords: string | null;
+  ctaTitle: string | null;
+  ctaDescription: string | null;
+  ctaButton1Text: string | null;
+  ctaButton1Link: string | null;
+  ctaButton2Text: string | null;
+  ctaButton2Link: string | null;
+  relatedArticles: RelatedBlog[];
+  relatedTo?: RelatedBlog[];
+};
+
+const relatedBlogSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  excerpt: true,
+  coverImage: true,
+  createdAt: true,
+} as const;
+
+const blogDetailSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  content: true,
+  excerpt: true,
+  coverImage: true,
+  readTime: true,
+  faqSchema: true,
+  createdAt: true,
+  metaTitle: true,
+  metaDescription: true,
+  metaKeywords: true,
+  ctaTitle: true,
+  ctaDescription: true,
+  ctaButton1Text: true,
+  ctaButton1Link: true,
+  ctaButton2Text: true,
+  ctaButton2Link: true,
+} as const;
+
+const blogDetailFallbackSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  content: true,
+  excerpt: true,
+  coverImage: true,
+  createdAt: true,
+  metaTitle: true,
+  metaDescription: true,
+  metaKeywords: true,
+  ctaTitle: true,
+  ctaDescription: true,
+  ctaButton1Text: true,
+  ctaButton1Link: true,
+  ctaButton2Text: true,
+  ctaButton2Link: true,
+} as const;
+
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+function hasMissingColumn(error: unknown, columnName: string) {
+  return error instanceof Error && error.message.includes(columnName);
+}
+
+function isMissingBlogOptionalColumn(error: unknown) {
+  return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
+}
+
+function parseFAQSchema(faqSchema?: string | null): FAQItem[] {
+  if (!faqSchema?.trim()) {
+    return [];
+  }
+
+  try {
+    const parsed = JSON.parse(faqSchema);
+
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+
+    return parsed.filter((item): item is FAQItem => {
+      return typeof item === 'object'
+        && item !== null
+        && typeof item.question === 'string'
+        && typeof item.answer === 'string';
+    });
+  } catch {
+    return [];
+  }
+}
 
 export const revalidate = 60;
 
-async function getBlog(slug: string): Promise<{
-  relatedArticles: RelatedBlog[];
-} & Record<string, any> | null> {
-  const blog = await prisma.blog.findUnique({
-    where: { slug, isActive: true },
-    include: {
-      relatedArticles: {
-        where: { isActive: true },
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          excerpt: true,
-          coverImage: true,
-          createdAt: true,
+async function getBlog(slug: string): Promise<BlogWithRelations | null> {
+  let blog: BlogWithRelations | null = null;
+
+  try {
+    blog = await prisma.blog.findFirst({
+      where: { slug, isActive: true },
+      select: {
+        ...blogDetailSelect,
+        relatedArticles: {
+          where: { isActive: true },
+          select: relatedBlogSelect,
+        },
+        relatedTo: {
+          where: { isActive: true },
+          select: relatedBlogSelect,
         },
       },
-      relatedTo: {
-        where: { isActive: true },
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          excerpt: true,
-          coverImage: true,
-          createdAt: true,
+    });
+  } catch (error) {
+    if (!isMissingBlogOptionalColumn(error)) {
+      throw error;
+    }
+
+    const fallbackBlog = await prisma.blog.findFirst({
+      where: { slug, isActive: true },
+      select: {
+        ...blogDetailFallbackSelect,
+        relatedArticles: {
+          where: { isActive: true },
+          select: relatedBlogSelect,
+        },
+        relatedTo: {
+          where: { isActive: true },
+          select: relatedBlogSelect,
         },
       },
-    },
-  });
+    });
+
+    if (!fallbackBlog) {
+      return null;
+    }
+
+    blog = {
+      ...fallbackBlog,
+      readTime: null,
+      faqSchema: null,
+    };
+  }
 
   if (!blog) return null;
 
@@ -105,6 +229,7 @@ async function getRelatedBlogs(
     },
     take: 3,
     orderBy: { createdAt: 'desc' },
+    select: relatedBlogSelect,
   });
   return blogs;
 }
@@ -134,6 +259,8 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
     createdAt: blog.createdAt,
     slug: slug
   });
+  const faqItems = parseFAQSchema(blog.faqSchema);
+  const faqSchema = faqItems.length > 0 ? getFAQSchema(faqItems) : null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,6 +268,12 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
         type="application/ld+json"
         dangerouslySetInnerHTML={schemaToJsonLd(blogSchema)}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={schemaToJsonLd(faqSchema)}
+        />
+      )}
       {/* Hero Section with Cover Image */}
       <div className="relative bg-black text-white" style={{ minHeight: "650px" }}>
         <div className="absolute inset-0 bg-black/60 z-10" />
@@ -174,7 +307,7 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span>5 min read</span>
+                <span>{blog.readTime ?? 9} min read</span>
               </div>
             </div>
           </div>
@@ -251,6 +384,62 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
             </div>
           </aside>
         </div>
+
+        {/* Dynamic CTA Section at the Bottom */}
+        {(blog.ctaTitle || blog.ctaButton1Text) && (
+          <div className="mt-32 mb-20">
+            <div className="relative group overflow-hidden">
+              {/* Outer Decorative Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              
+              <div className="relative bg-[#0E0918] rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
+                {/* Dynamic Background Patterns */}
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
+                
+                {/* SVG Decorative Grid */}
+                <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+
+                <div className="relative z-10 px-8 py-16 md:px-20 md:py-24 text-center max-w-5xl mx-auto flex flex-col items-center">
+                  <div className="space-y-10 group/content">
+                    <div className="space-y-6">
+                      {blog.ctaTitle && (
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
+                          {blog.ctaTitle}
+                        </h2>
+                      )}
+                      {blog.ctaDescription && (
+                        <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto font-medium">
+                          {blog.ctaDescription}
+                        </p>
+                      )}
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+                      {blog.ctaButton1Text && (
+                        <Link
+                          href={blog.ctaButton1Link || '#'}
+                          className="group/btn relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-purple-600 rounded-2xl hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] active:scale-95 min-w-[240px]"
+                        >
+                          <span className="relative z-10 text-lg">{blog.ctaButton1Text}</span>
+                          <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
+                        </Link>
+                      )}
+                      {blog.ctaButton2Text && (
+                        <Link
+                          href={blog.ctaButton2Link || '#'}
+                          className="group/btn relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 backdrop-blur-md active:scale-95 min-w-[240px] text-lg"
+                        >
+                          {blog.ctaButton2Text}
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
