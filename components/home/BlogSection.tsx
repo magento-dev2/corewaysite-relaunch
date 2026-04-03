@@ -16,7 +16,7 @@ interface BlogPost {
   excerpt: string;
   coverImage: string | null;
   createdAt: string;
-  // Add other DB fields if needed, but these seem to be what we have
+  readTime?: number | null;
 }
 
 interface UIBlogPost {
@@ -65,7 +65,7 @@ export default function BlogSection() {
             day: 'numeric',
             year: 'numeric'
           }),
-          readTime: '5 min read', // Default read time
+          readTime: `${blog.readTime ?? 9} min read`,
           image: blog.coverImage || 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800', // Default image
           featured: index === 0, // First item is featured
         })).slice(0, 4); // Limit to 4 posts
@@ -95,7 +95,7 @@ export default function BlogSection() {
       if (!section || !header) return;
 
       // Clear any previous ScrollTriggers to avoid duplicates on re-renders
-      ScrollTrigger.getAll().forEach(trigger => {
+      ScrollTrigger.getAll().forEach(() => {
         // We could be more selective here, but for this component, cleaning all might refer to global ones. 
         // Better to let gsap.context handle cleanup if possible, but existing code used getAll().kill().
         // Let's use gsap.context for safety.
@@ -287,7 +287,6 @@ export default function BlogSection() {
                           <p className="text-xs text-slate-500">{post.date}</p>
                         </div>
                       </div>
-
                       <span className="text-xs text-slate-500">{post.readTime}</span>
                     </div>
                   </div>

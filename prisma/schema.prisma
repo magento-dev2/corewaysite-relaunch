@@ -14,6 +14,8 @@ model Blog {
   content         String
   excerpt         String?
   coverImage      String?
+  readTime        Int?      @default(9)
+  faqSchema       String?
   publishedAt     DateTime?
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
@@ -21,6 +23,12 @@ model Blog {
   metaDescription String?
   metaKeywords    String?
   metaTitle       String?
+  ctaTitle        String?
+  ctaDescription  String?
+  ctaButton1Text  String?
+  ctaButton1Link  String?
+  ctaButton2Text  String?
+  ctaButton2Link  String?
   relatedArticles Blog[]    @relation("RelatedBlogs")
   relatedTo       Blog[]    @relation("RelatedBlogs")
 }

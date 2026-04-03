@@ -4,13 +4,75 @@ import fs from 'fs';
 import path from 'path';
 import { Buffer } from 'buffer';
 
+const blogListSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  excerpt: true,
+  coverImage: true,
+  createdAt: true,
+  readTime: true,
+  faqSchema: true,
+  isActive: true,
+  metaTitle: true,
+  metaDescription: true,
+  metaKeywords: true,
+  ctaTitle: true,
+  ctaDescription: true,
+  ctaButton1Text: true,
+  ctaButton1Link: true,
+  ctaButton2Text: true,
+  ctaButton2Link: true,
+} as const;
+
+const blogListFallbackSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  excerpt: true,
+  coverImage: true,
+  createdAt: true,
+  isActive: true,
+  metaTitle: true,
+  metaDescription: true,
+  metaKeywords: true,
+  ctaTitle: true,
+  ctaDescription: true,
+  ctaButton1Text: true,
+  ctaButton1Link: true,
+  ctaButton2Text: true,
+  ctaButton2Link: true,
+} as const;
+
+function hasMissingColumn(error: unknown, columnName: string) {
+  return error instanceof Error && error.message.includes(columnName);
+}
+
+function isMissingBlogOptionalColumn(error: unknown) {
+  return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
+}
+
 export async function GET() {
   try {
     const blogs = await prisma.blog.findMany({
+      select: blogListSelect,
       orderBy: { createdAt: 'desc' },
     });
     return NextResponse.json(blogs);
   } catch (error) {
+    if (isMissingBlogOptionalColumn(error)) {
+      const blogs = await prisma.blog.findMany({
+        select: blogListFallbackSelect,
+        orderBy: { createdAt: 'desc' },
+      });
+
+      return NextResponse.json(blogs.map((blog) => ({
+        ...blog,
+        readTime: null,
+        faqSchema: null,
+      })));
+    }
+
     return NextResponse.json({ error: 'Error fetching blogs' }, { status: 500 });
   }
 }
@@ -95,30 +157,59 @@ export async function POST(request: Request) {
 
     // Check for unique slug
     let slug = body.slug;
-    let existingBlog = await prisma.blog.findUnique({ where: { slug } });
+    const existingBlog = await prisma.blog.findUnique({
+      where: { slug },
+      select: { id: true },
+    });
     if (existingBlog) {
       slug = `${slug}-${Date.now()}`;
     }
 
     // Save blog with coverImageUrl in DB
-    const blog = await prisma.blog.create({
-      data: {
-        title: body.title,
-        slug: slug,
-        content: typeof body.content === 'string' ? body.content : JSON.stringify(body.content),
-        excerpt: body.excerpt,
-        coverImage: coverImageUrl,
-        metaTitle: body.metaTitle,
-        metaDescription: body.metaDescription,
-        metaKeywords: body.metaKeywords,
-        isActive: body.isActive ?? true,
-        publishedAt: new Date(),
-      },
-    });
+    const baseData = {
+      title: body.title,
+      slug: slug,
+      content: typeof body.content === 'string' ? body.content : JSON.stringify(body.content),
+      excerpt: body.excerpt,
+      coverImage: coverImageUrl,
+      faqSchema: body.faqSchema,
+      metaTitle: body.metaTitle,
+      metaDescription: body.metaDescription,
+      metaKeywords: body.metaKeywords,
+      isActive: body.isActive ?? true,
+      publishedAt: new Date(),
+      ctaTitle: body.ctaTitle,
+      ctaDescription: body.ctaDescription,
+      ctaButton1Text: body.ctaButton1Text,
+      ctaButton1Link: body.ctaButton1Link,
+      ctaButton2Text: body.ctaButton2Text,
+      ctaButton2Link: body.ctaButton2Link,
+    };
+
+    let blog;
+
+    try {
+      blog = await prisma.blog.create({
+        data: {
+          ...baseData,
+          readTime: body.readTime ? Number(body.readTime) : 9,
+        },
+        select: { id: true, slug: true },
+      });
+    } catch (error) {
+      if (!isMissingBlogOptionalColumn(error)) {
+        throw error;
+      }
+
+      blog = await prisma.blog.create({
+        data: baseData,
+        select: { id: true, slug: true },
+      });
+    }
 
     return NextResponse.json(blog);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in POST /api/blogs:', error);
-    return NextResponse.json({ error: error.message || 'Error creating blog' }, { status: 500 });
+    return NextResponse.json({ error: error instanceof Error ? error.message : 'Error creating blog' }, { status: 500 });
   }
 }

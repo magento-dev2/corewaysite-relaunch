@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState, use } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import Link from 'next/link';
-import { ArrowLeft, Save } from 'lucide-react';
+import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
 
@@ -15,17 +14,26 @@ export default function EditBlog() {
 
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
+    type RelatedArticle = { id: string };
     const [formData, setFormData] = useState({
         title: '',
         slug: '',
         excerpt: '',
         coverImage: '',
+        readTime: 9,
         content: '',
         isActive: true,
         relatedArticleIds: [] as string[],
         metaTitle: '',
         metaDescription: '',
         metaKeywords: '',
+        faqSchema: '',
+        ctaTitle: '',
+        ctaDescription: '',
+        ctaButton1Text: '',
+        ctaButton1Link: '',
+        ctaButton2Text: '',
+        ctaButton2Link: '',
     });
 
     useEffect(() => {
@@ -41,12 +49,20 @@ export default function EditBlog() {
                         slug: data.slug,
                         excerpt: data.excerpt || '',
                         coverImage: data.coverImage || '',
+                        readTime: data.readTime || 9,
                         content: data.content,
                         isActive: data.isActive ?? true,
-                        relatedArticleIds: data.relatedArticles?.map((article: any) => article.id) || [],
+                        relatedArticleIds: data.relatedArticles?.map((article: RelatedArticle) => article.id) || [],
                         metaTitle: data.metaTitle || '',
                         metaDescription: data.metaDescription || '',
                         metaKeywords: data.metaKeywords || '',
+                        faqSchema: data.faqSchema || '',
+                        ctaTitle: data.ctaTitle || '',
+                        ctaDescription: data.ctaDescription || '',
+                        ctaButton1Text: data.ctaButton1Text || '',
+                        ctaButton1Link: data.ctaButton1Link || '',
+                        ctaButton2Text: data.ctaButton2Text || '',
+                        ctaButton2Link: data.ctaButton2Link || '',
                     });
                 } else {
                     // alert('Blog not found');
@@ -143,6 +159,18 @@ export default function EditBlog() {
                     </div>
 
                     <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-700">Read Time (minutes)</label>
+                        <input
+                            type="number"
+                            min="1"
+                            value={formData.readTime}
+                            onChange={(e) => setFormData({ ...formData, readTime: Number(e.target.value) || 9 })}
+                            className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                            placeholder="9"
+                        />
+                    </div>
+
+                    <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">Content</label>
                         <Editor
                             content={formData.content}
@@ -191,6 +219,85 @@ export default function EditBlog() {
                                 className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                                 placeholder="keyword1, keyword2, keyword3"
                             />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">FAQ Schema JSON</label>
+                            <textarea
+                                rows={6}
+                                value={formData.faqSchema}
+                                onChange={(e) => setFormData({ ...formData, faqSchema: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 font-mono text-sm text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder='[{"question":"What is AI audit?","answer":"AI audit helps identify automation opportunities."}]'
+                            />
+                        </div>
+                    </div>
+
+                    {/* CTA Settings */}
+                    <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 space-y-4">
+                        <h2 className="text-lg font-semibold text-purple-900">CTA Section Settings</h2>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">CTA Title</label>
+                            <input
+                                type="text"
+                                value={formData.ctaTitle}
+                                onChange={(e) => setFormData({ ...formData, ctaTitle: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="Ready to start your project?"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">CTA Description</label>
+                            <textarea
+                                rows={2}
+                                value={formData.ctaDescription}
+                                onChange={(e) => setFormData({ ...formData, ctaDescription: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="Contact our experts today for a free consultation."
+                            />
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-700">Button 1 Text</label>
+                                <input
+                                    type="text"
+                                    value={formData.ctaButton1Text}
+                                    onChange={(e) => setFormData({ ...formData, ctaButton1Text: e.target.value })}
+                                    className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                    placeholder="Contact Us"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-700">Button 1 Link</label>
+                                <input
+                                    type="text"
+                                    value={formData.ctaButton1Link}
+                                    onChange={(e) => setFormData({ ...formData, ctaButton1Link: e.target.value })}
+                                    className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                    placeholder="/contact"
+                                />
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-700">Button 2 Text</label>
+                                <input
+                                    type="text"
+                                    value={formData.ctaButton2Text}
+                                    onChange={(e) => setFormData({ ...formData, ctaButton2Text: e.target.value })}
+                                    className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                    placeholder="Learn More"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-gray-700">Button 2 Link</label>
+                                <input
+                                    type="text"
+                                    value={formData.ctaButton2Link}
+                                    onChange={(e) => setFormData({ ...formData, ctaButton2Link: e.target.value })}
+                                    className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                    placeholder="/about"
+                                />
+                            </div>
                         </div>
                     </div>
 

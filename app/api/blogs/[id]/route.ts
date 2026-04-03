@@ -1,30 +1,108 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
+const relatedArticleSelect = {
+    id: true,
+    title: true,
+    slug: true,
+    excerpt: true,
+    coverImage: true,
+    createdAt: true,
+    isActive: true,
+} as const;
+
+const blogEditSelect = {
+    id: true,
+    title: true,
+    slug: true,
+    content: true,
+    excerpt: true,
+    coverImage: true,
+    readTime: true,
+    faqSchema: true,
+    isActive: true,
+    metaTitle: true,
+    metaDescription: true,
+    metaKeywords: true,
+    ctaTitle: true,
+    ctaDescription: true,
+    ctaButton1Text: true,
+    ctaButton1Link: true,
+    ctaButton2Text: true,
+    ctaButton2Link: true,
+} as const;
+
+const blogEditFallbackSelect = {
+    id: true,
+    title: true,
+    slug: true,
+    content: true,
+    excerpt: true,
+    coverImage: true,
+    isActive: true,
+    metaTitle: true,
+    metaDescription: true,
+    metaKeywords: true,
+    ctaTitle: true,
+    ctaDescription: true,
+    ctaButton1Text: true,
+    ctaButton1Link: true,
+    ctaButton2Text: true,
+    ctaButton2Link: true,
+} as const;
+
+function hasMissingColumn(error: unknown, columnName: string) {
+    return error instanceof Error && error.message.includes(columnName);
+}
+
+function isMissingBlogOptionalColumn(error: unknown) {
+    return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
+}
+
+export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
-        const blog = await prisma.blog.findUnique({
-            where: { id },
-            include: {
-                relatedArticles: {
-                    select: {
-                        id: true,
-                        title: true,
-                        slug: true,
-                        excerpt: true,
-                        coverImage: true,
-                        createdAt: true,
-                        isActive: true,
+        let blog;
+
+        try {
+            blog = await prisma.blog.findUnique({
+                where: { id },
+                select: {
+                    ...blogEditSelect,
+                    relatedArticles: {
+                        select: relatedArticleSelect,
                     },
                 },
-            },
-        });
+            });
+        } catch (error) {
+            if (!isMissingBlogOptionalColumn(error)) {
+                throw error;
+            }
+
+            const fallbackBlog = await prisma.blog.findUnique({
+                where: { id },
+                select: {
+                    ...blogEditFallbackSelect,
+                    relatedArticles: {
+                        select: relatedArticleSelect,
+                    },
+                },
+            });
+
+            blog = fallbackBlog
+                ? {
+                    ...fallbackBlog,
+                    readTime: null,
+                    faqSchema: null,
+                }
+                : null;
+        }
+
         if (!blog) {
             return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
         }
         return NextResponse.json(blog);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Error fetching blog' }, { status: 500 });
     }
 }
@@ -33,39 +111,70 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     try {
         const { id } = await params;
         const body = await request.json();
-        const { title, slug, content, excerpt, coverImage, metaTitle, metaDescription, metaKeywords, relatedArticleIds, isActive } = body;
+        const { title, slug, content, excerpt, coverImage, readTime, faqSchema, metaTitle, metaDescription, metaKeywords, relatedArticleIds, isActive,
+            ctaTitle, ctaDescription, ctaButton1Text, ctaButton1Link, ctaButton2Text, ctaButton2Link
+        } = body;
 
-        const blog = await prisma.blog.update({
-            where: { id },
-            data: {
-                title,
-                slug,
-                content,
-                excerpt,
-                coverImage,
-                isActive,
-                metaTitle,
-                metaDescription,
-                metaKeywords,
-                relatedArticles: relatedArticleIds !== undefined
-                    ? { set: relatedArticleIds.map((articleId: string) => ({ id: articleId })) }
-                    : undefined,
-            },
-        });
+        const baseData = {
+            title,
+            slug,
+            content,
+            excerpt,
+            coverImage,
+            faqSchema,
+            isActive,
+            metaTitle,
+            metaDescription,
+            metaKeywords,
+            ctaTitle,
+            ctaDescription,
+            ctaButton1Text,
+            ctaButton1Link,
+            ctaButton2Text,
+            ctaButton2Link,
+            relatedArticles: relatedArticleIds !== undefined
+                ? { set: relatedArticleIds.map((articleId: string) => ({ id: articleId })) }
+                : undefined,
+        };
+
+        let blog;
+
+        try {
+            blog = await prisma.blog.update({
+                where: { id },
+                data: {
+                    ...baseData,
+                    readTime: readTime ? Number(readTime) : 9,
+                },
+                select: { id: true, slug: true },
+            });
+        } catch (error) {
+            if (!isMissingBlogOptionalColumn(error)) {
+                throw error;
+            }
+
+            blog = await prisma.blog.update({
+                where: { id },
+                data: baseData,
+                select: { id: true, slug: true },
+            });
+        }
+
         return NextResponse.json(blog);
-    } catch (error) {
-        return NextResponse.json({ error: 'Error updating blog' }, { status: 500 });
+    } catch (error: unknown) {
+        console.error('Error updating blog:', error);
+        return NextResponse.json({ error: error instanceof Error ? error.message : 'Error updating blog' }, { status: 500 });
     }
 }
 
-export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function DELETE(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
         await prisma.blog.delete({
             where: { id },
         });
         return NextResponse.json({ message: 'Blog deleted' });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Error deleting blog' }, { status: 500 });
     }
 }
@@ -79,9 +188,10 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         const blog = await prisma.blog.update({
             where: { id },
             data: { isActive },
+            select: { id: true, isActive: true },
         });
         return NextResponse.json(blog);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Error updating blog status' }, { status: 500 });
     }
 }

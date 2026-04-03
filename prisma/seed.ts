@@ -11,6 +11,7 @@ async function main() {
             title: 'The Future of AI in Enterprise Automation',
             slug: 'future-of-ai-enterprise-automation',
             excerpt: 'Discover how Artificial Intelligence is reshaping business workflows and driving efficiency at scale.',
+            readTime: 9,
             content: `
         <h2>The AI Revolution is Here</h2>
         <p>Artificial Intelligence is no longer just a buzzword; it's a fundamental driver of business transformation. From predictive analytics to automated customer support, AI is enabling enterprises to operate smarter and faster.</p>
@@ -28,6 +29,7 @@ async function main() {
             title: 'Building Scalable Microservices with Node.js',
             slug: 'building-scalable-microservices-nodejs',
             excerpt: 'A deep dive into architectural patterns for building resilient and high-performance microservices.',
+            readTime: 9,
             content: `
         <h2>Why Microservices?</h2>
         <p>Monolithic architectures often become bottlenecks as applications grow. Microservices offer a way to decouple components, allowing for independent scaling and deployment.</p>
@@ -46,6 +48,7 @@ async function main() {
             title: 'Optimizing React Performance for Large Apps',
             slug: 'optimizing-react-performance',
             excerpt: 'Tips and techniques to ensure your React applications remain fast and responsive as they grow.',
+            readTime: 9,
             content: `
         <h2>Performance Matters</h2>
         <p>User experience is directly tied to application performance. Slow load times and laggy interactions can drive users away.</p>
