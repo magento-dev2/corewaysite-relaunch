@@ -254,8 +254,8 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
 
   const blogSchema = getBlogPostingSchema({
     title: blog.title,
-    excerpt: blog.excerpt,
-    coverImage: blog.coverImage,
+    excerpt: blog.excerpt ?? undefined,
+    coverImage: blog.coverImage ?? undefined,
     createdAt: blog.createdAt,
     slug: slug
   });
