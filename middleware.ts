@@ -29,10 +29,43 @@ export function middleware(request: NextRequest) {
   );
 
   // Content Security Policy
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://app.infracaptain.com https://www.clarity.ms https://scripts.clarity.ms https://www.google.com https://www.gstatic.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://app.infracaptain.com https://www.clarity.ms https://b.clarity.ms https://c.clarity.ms https://www.google.com https://www.gstatic.com https://www.recaptcha.net; frame-src 'self' https://www.googletagmanager.com https://www.google.com https://recaptcha.google.com https://www.recaptcha.net; object-src 'none'; base-uri 'self'; form-action 'self';"
-  );
+ response.headers.set(
+  'Content-Security-Policy',
+  `
+default-src 'self';
+script-src 'self' 'unsafe-inline' 'unsafe-eval'
+  https://www.googletagmanager.com
+  https://www.google-analytics.com
+  https://cdn.jsdelivr.net
+  https://app.infracaptain.com
+  https://www.clarity.ms
+  https://scripts.clarity.ms
+  https://www.google.com
+  https://www.gstatic.com
+  https://www.recaptcha.net;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+img-src 'self' data: blob: https:;
+font-src 'self' data: https://fonts.gstatic.com;
+connect-src 'self'
+  https://www.google-analytics.com
+  https://www.googletagmanager.com
+  https://app.infracaptain.com
+  https://www.clarity.ms
+  https://b.clarity.ms
+  https://c.clarity.ms
+  https://www.google.com
+  https://www.gstatic.com
+  https://www.recaptcha.net;
+frame-src 'self'
+  https://www.google.com
+  https://www.gstatic.com
+  https://recaptcha.google.com
+  https://www.recaptcha.net;
+object-src 'none';
+base-uri 'self';
+form-action 'self';
+  `.replace(/\n/g, '')
+);
 
   // X-Frame-Options
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
