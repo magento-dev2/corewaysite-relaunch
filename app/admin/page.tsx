@@ -99,13 +99,24 @@ export default function AdminDashboard() {
                                 {blogs?.map((blog) => (
                                     <tr key={blog.id} className="hover:bg-gray-50 transition-colors">
                                         <td className="px-6 py-4">
-                                            <Link
-                                                href={`/blog/${blog.slug}?preview=1`}
-                                                target="_blank"
-                                                className="text-gray-900 hover:text-purple-600 transition-colors font-medium"
-                                            >
-                                                {blog.title}
-                                            </Link>
+                                            <div className="space-y-1">
+                                                {blog.isActive ? (
+                                                    <Link
+                                                        href={`/blog/${blog.slug}`}
+                                                        target="_blank"
+                                                        className="text-gray-900 hover:text-purple-600 transition-colors font-medium"
+                                                    >
+                                                        {blog.title}
+                                                    </Link>
+                                                ) : (
+                                                    <p className="text-gray-900 font-medium">{blog.title}</p>
+                                                )}
+                                                <p className="text-xs text-gray-500">
+                                                    {blog.isActive
+                                                        ? 'Live on frontend'
+                                                        : 'Hidden from frontend. Use Preview to view as admin.'}
+                                                </p>
+                                            </div>
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-600">{blog.slug}</td>
                                         <td className="px-6 py-4">
@@ -125,10 +136,10 @@ export default function AdminDashboard() {
                                         <td className="px-6 py-4">
                                             <div className="flex justify-end gap-3">
                                                 <Link
-                                                    href={`/blog/${blog.slug}?preview=1`}
+                                                    href={blog.isActive ? `/blog/${blog.slug}` : `/blog/${blog.slug}?preview=1`}
                                                     target="_blank"
                                                     className="text-blue-600 hover:text-blue-700 transition-colors"
-                                                    title="View"
+                                                    title={blog.isActive ? 'View live page' : 'Preview hidden page'}
                                                 >
                                                     <Eye size={18} />
                                                 </Link>
