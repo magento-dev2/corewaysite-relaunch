@@ -53,47 +53,25 @@ async function getBlogs(
       where: { isActive: true },
     });
 
-    try {
-      blogs = await prisma.blog.findMany({
-        where: { isActive: true },
-        orderBy: { createdAt: 'desc' },
-        skip,
-        take: ITEMS_PER_PAGE,
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          author: true,
-          excerpt: true,
-          coverImage: true,
-          createdAt: true,
-        },
-      });
-    } catch (error) {
-      if (!isMissingBlogAuthorColumn(error)) {
-        throw error;
-      }
+    const rows = await prisma.blog.findMany({
+      where: { isActive: true },
+      orderBy: { createdAt: 'desc' },
+      skip,
+      take: ITEMS_PER_PAGE,
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        coverImage: true,
+        createdAt: true,
+      },
+    });
 
-      const fallbackBlogs = await prisma.blog.findMany({
-        where: { isActive: true },
-        orderBy: { createdAt: 'desc' },
-        skip,
-        take: ITEMS_PER_PAGE,
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          excerpt: true,
-          coverImage: true,
-          createdAt: true,
-        },
-      });
-
-      blogs = fallbackBlogs.map((blog) => ({
-        ...blog,
-        author: null,
-      }));
-    }
+    blogs = rows.map((blog) => ({
+      ...blog,
+      author: null,
+    }));
 
     const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
