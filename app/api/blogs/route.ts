@@ -13,6 +13,7 @@ const blogListSelect = {
   createdAt: true,
   readTime: true,
   faqSchema: true,
+  author: true,
   isActive: true,
   metaTitle: true,
   metaDescription: true,
@@ -45,11 +46,32 @@ const blogListFallbackSelect = {
 } as const;
 
 function hasMissingColumn(error: unknown, columnName: string) {
-  return error instanceof Error && error.message.includes(columnName);
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return error.message.includes(columnName)
+    || error.message.includes(`column \`${columnName}\` does not exist`)
+    || error.message.includes(`column: '${columnName}'`)
+    || error.message.includes(`column: "${columnName}"`);
+}
+
+function hasUnknownBlogField(error: unknown, fieldName: string) {
+  return error instanceof Error
+    && (error.message.includes(`Unknown field \`${fieldName}\``)
+      || error.message.includes(`Unknown argument \`${fieldName}\``));
 }
 
 function isMissingBlogOptionalColumn(error: unknown) {
-  return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
+  return hasMissingColumn(error, 'Blog.readTime')
+    || hasMissingColumn(error, 'Blog.faqSchema')
+    || hasMissingColumn(error, 'Blog.author')
+    || hasMissingColumn(error, 'readTime')
+    || hasMissingColumn(error, 'faqSchema')
+    || hasMissingColumn(error, 'author')
+    || hasUnknownBlogField(error, 'readTime')
+    || hasUnknownBlogField(error, 'faqSchema')
+    || hasUnknownBlogField(error, 'author');
 }
 
 function normalizeReadTime(value: unknown) {
@@ -95,6 +117,7 @@ export async function GET() {
         ...blog,
         readTime: null,
         faqSchema: null,
+        author: null,
       })));
     }
 
@@ -198,6 +221,7 @@ export async function POST(request: Request) {
       excerpt: body.excerpt,
       coverImage: coverImageUrl,
       faqSchema: normalizeFAQSchema(body.faqSchema),
+      author: body.author || null,
       metaTitle: body.metaTitle,
       metaDescription: body.metaDescription,
       metaKeywords: body.metaKeywords,
@@ -226,8 +250,11 @@ export async function POST(request: Request) {
         throw error;
       }
 
+      const legacyBaseData = { ...baseData } as typeof baseData & { faqSchema?: string | null; author?: string | null };
+      delete legacyBaseData.faqSchema;
+      delete legacyBaseData.author;
       blog = await prisma.blog.create({
-        data: baseData,
+        data: legacyBaseData,
         select: { id: true, slug: true },
       });
     }

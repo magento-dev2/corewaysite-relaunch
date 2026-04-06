@@ -9,12 +9,34 @@ import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector'
 export default function CreateBlog() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    const [formData, setFormData] = useState({
+    type BlogFormData = {
+        title: string;
+        author: string;
+        slug: string;
+        excerpt: string;
+        coverImage: string;
+        readTime: string;
+        content: string;
+        isActive: boolean;
+        relatedArticleIds: string[];
+        metaTitle: string;
+        metaDescription: string;
+        metaKeywords: string;
+        faqSchema: string;
+        ctaTitle: string;
+        ctaDescription: string;
+        ctaButton1Text: string;
+        ctaButton1Link: string;
+        ctaButton2Text: string;
+        ctaButton2Link: string;
+    };
+    const [formData, setFormData] = useState<BlogFormData>({
         title: '',
+        author: '',
         slug: '',
         excerpt: '',
         coverImage: '',
-        readTime: 9,
+        readTime: '9',
         content: '',
         isActive: true,
         relatedArticleIds: [] as string[],
@@ -85,6 +107,16 @@ export default function CreateBlog() {
                                 placeholder="url-friendly-slug"
                             />
                         </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700">Author</label>
+                            <input
+                                type="text"
+                                value={formData.author}
+                                onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="Coreway Team"
+                            />
+                        </div>
                     </div>
 
                     <div className="space-y-2">
@@ -115,7 +147,7 @@ export default function CreateBlog() {
                             type="number"
                             min="1"
                             value={formData.readTime}
-                            onChange={(e) => setFormData({ ...formData, readTime: Number(e.target.value) || 9 })}
+                            onChange={(e) => setFormData({ ...formData, readTime: e.target.value })}
                             className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                             placeholder="9"
                         />

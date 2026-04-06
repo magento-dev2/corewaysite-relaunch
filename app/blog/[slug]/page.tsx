@@ -1,8 +1,9 @@
 
 import { prisma } from '@/lib/prisma';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { cookies } from 'next/headers';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
@@ -22,6 +23,7 @@ type BlogWithRelations = {
   title: string;
   slug: string;
   content: string;
+  author: string | null;
   excerpt: string | null;
   coverImage: string | null;
   readTime?: number | null;
@@ -54,6 +56,7 @@ const blogDetailSelect = {
   title: true,
   slug: true,
   content: true,
+  author: true,
   excerpt: true,
   coverImage: true,
   readTime: true,
@@ -89,50 +92,123 @@ const blogDetailFallbackSelect = {
   ctaButton2Link: true,
 } as const;
 
+const blogDetailNoAuthorSelect = {
+  id: true,
+  title: true,
+  slug: true,
+  content: true,
+  excerpt: true,
+  coverImage: true,
+  readTime: true,
+  faqSchema: true,
+  createdAt: true,
+  metaTitle: true,
+  metaDescription: true,
+  metaKeywords: true,
+  ctaTitle: true,
+  ctaDescription: true,
+  ctaButton1Text: true,
+  ctaButton1Link: true,
+  ctaButton2Text: true,
+  ctaButton2Link: true,
+} as const;
+
 type FAQItem = {
   question: string;
   answer: string;
 };
 
+type BlogAdjacentNav = {
+  previous: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
+};
+
+function cleanCtaButtonLabel(text: string | null) {
+  if (!text) return '';
+  return text.replace(/\s*[→➡➜]+$/u, '').trim();
+}
+
 function hasMissingColumn(error: unknown, columnName: string) {
-  return error instanceof Error && error.message.includes(columnName);
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return error.message.includes(columnName)
+    || error.message.includes(`column \`${columnName}\` does not exist`)
+    || error.message.includes(`column: '${columnName}'`)
+    || error.message.includes(`column: "${columnName}"`);
+}
+
+function hasUnknownBlogField(error: unknown, fieldName: string) {
+  return error instanceof Error
+    && (error.message.includes(`Unknown field \`${fieldName}\``)
+      || error.message.includes(`Unknown argument \`${fieldName}\``));
 }
 
 function isMissingBlogOptionalColumn(error: unknown) {
-  return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
+  return hasMissingColumn(error, 'Blog.readTime')
+    || hasMissingColumn(error, 'Blog.faqSchema')
+    || hasMissingColumn(error, 'Blog.author')
+    || hasMissingColumn(error, 'readTime')
+    || hasMissingColumn(error, 'faqSchema')
+    || hasMissingColumn(error, 'author')
+    || hasUnknownBlogField(error, 'readTime')
+    || hasUnknownBlogField(error, 'faqSchema')
+    || hasUnknownBlogField(error, 'author');
 }
 
-function parseFAQSchema(faqSchema?: string | null): FAQItem[] {
-  if (!faqSchema?.trim()) {
+function parseFAQSchema(faqSchema: unknown): FAQItem[] {
+  if (faqSchema === undefined || faqSchema === null || faqSchema === '') {
     return [];
   }
 
-  try {
-    const parsed = JSON.parse(faqSchema);
-
-    if (!Array.isArray(parsed)) {
+  const toFAQItems = (value: unknown): FAQItem[] => {
+    if (!Array.isArray(value)) {
       return [];
     }
 
-    return parsed.filter((item): item is FAQItem => {
+    return value.filter((item): item is FAQItem => {
       return typeof item === 'object'
         && item !== null
-        && typeof item.question === 'string'
-        && typeof item.answer === 'string';
+        && typeof (item as { question?: unknown }).question === 'string'
+        && typeof (item as { answer?: unknown }).answer === 'string';
     });
-  } catch {
-    return [];
+  };
+
+  if (typeof faqSchema === 'string') {
+    if (!faqSchema.trim()) {
+      return [];
+    }
+
+    try {
+      const parsed = JSON.parse(faqSchema);
+      return toFAQItems(parsed);
+    } catch {
+      return [];
+    }
   }
+
+  return toFAQItems(faqSchema);
 }
 
 export const revalidate = 60;
 
-async function getBlog(slug: string): Promise<BlogWithRelations | null> {
+async function isAdminPreviewEnabled(preview?: string | string[]) {
+  if (preview !== '1') {
+    return false;
+  }
+
+  const cookieStore = await cookies();
+  return cookieStore.get('admin_session')?.value === 'true';
+}
+
+async function getBlog(slug: string, includeInactive = false): Promise<BlogWithRelations | null> {
+  const where = includeInactive ? { slug } : { slug, isActive: true };
   let blog: BlogWithRelations | null = null;
 
   try {
     blog = await prisma.blog.findFirst({
-      where: { slug, isActive: true },
+      where,
       select: {
         ...blogDetailSelect,
         relatedArticles: {
@@ -150,30 +226,62 @@ async function getBlog(slug: string): Promise<BlogWithRelations | null> {
       throw error;
     }
 
-    const fallbackBlog = await prisma.blog.findFirst({
-      where: { slug, isActive: true },
-      select: {
-        ...blogDetailFallbackSelect,
-        relatedArticles: {
-          where: { isActive: true },
-          select: relatedBlogSelect,
+    // First fallback: keep readTime + faqSchema and only skip author selection
+    try {
+      const noAuthorBlog = await prisma.blog.findFirst({
+        where,
+        select: {
+          ...blogDetailNoAuthorSelect,
+          relatedArticles: {
+            where: { isActive: true },
+            select: relatedBlogSelect,
+          },
+          relatedTo: {
+            where: { isActive: true },
+            select: relatedBlogSelect,
+          },
         },
-        relatedTo: {
-          where: { isActive: true },
-          select: relatedBlogSelect,
-        },
-      },
-    });
+      });
 
-    if (!fallbackBlog) {
-      return null;
+      if (!noAuthorBlog) {
+        return null;
+      }
+
+      blog = {
+        ...noAuthorBlog,
+        author: null,
+      };
+    } catch (innerError) {
+      if (!isMissingBlogOptionalColumn(innerError)) {
+        throw innerError;
+      }
+
+      const fallbackBlog = await prisma.blog.findFirst({
+        where,
+        select: {
+          ...blogDetailFallbackSelect,
+          relatedArticles: {
+            where: { isActive: true },
+            select: relatedBlogSelect,
+          },
+          relatedTo: {
+            where: { isActive: true },
+            select: relatedBlogSelect,
+          },
+        },
+      });
+
+      if (!fallbackBlog) {
+        return null;
+      }
+
+      blog = {
+        ...fallbackBlog,
+        readTime: null,
+        faqSchema: null,
+        author: null,
+      };
     }
-
-    blog = {
-      ...fallbackBlog,
-      readTime: null,
-      faqSchema: null,
-    };
   }
 
   if (!blog) return null;
@@ -187,9 +295,14 @@ async function getBlog(slug: string): Promise<BlogWithRelations | null> {
   };
 }
 
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ preview?: string | string[] }>;
+}) {
   const params = await props.params;
-  const blog = await getBlog(params.slug);
+  const searchParams = await props.searchParams;
+  const includeInactive = await isAdminPreviewEnabled(searchParams.preview);
+  const blog = await getBlog(params.slug, includeInactive);
 
   if (!blog) {
     return {
@@ -234,23 +347,61 @@ async function getRelatedBlogs(
   return blogs;
 }
 
+async function getPrevNextBlogs(
+  currentBlog: Pick<BlogWithRelations, 'slug' | 'createdAt'>,
+  includeInactive: boolean
+): Promise<BlogAdjacentNav> {
+  const baseWhere = includeInactive ? {} : { isActive: true };
+
+  const [previous, next] = await Promise.all([
+    prisma.blog.findFirst({
+      where: {
+        ...baseWhere,
+        slug: { not: currentBlog.slug },
+        createdAt: { lt: currentBlog.createdAt },
+      },
+      orderBy: { createdAt: 'desc' },
+      select: { slug: true, title: true },
+    }),
+    prisma.blog.findFirst({
+      where: {
+        ...baseWhere,
+        slug: { not: currentBlog.slug },
+        createdAt: { gt: currentBlog.createdAt },
+      },
+      orderBy: { createdAt: 'asc' },
+      select: { slug: true, title: true },
+    }),
+  ]);
+
+  return { previous, next };
+}
 
 
 
 
-export default async function BlogDetail({ params }: { params: Promise<{ slug: string }> }) {
+
+export default async function BlogDetail({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ preview?: string | string[] }>;
+}) {
 
   const { slug } = await params;
-  const blog = await getBlog(slug);
+  const query = await searchParams;
+  const includeInactive = await isAdminPreviewEnabled(query.preview);
+  const blog = await getBlog(slug, includeInactive);
 
   if (!blog) {
     notFound();
   }
 
-  const relatedBlogs: RelatedBlog[] = await getRelatedBlogs(
-    slug,
-    blog.relatedArticles
-  );
+  const [relatedBlogs, adjacentBlogs] = await Promise.all([
+    getRelatedBlogs(slug, blog.relatedArticles),
+    getPrevNextBlogs(blog, includeInactive),
+  ]);
 
   const blogSchema = getBlogPostingSchema({
     title: blog.title,
@@ -302,6 +453,10 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
             )}
             <div className="flex flex-wrap items-center gap-6 text-gray-300">
               <div className="flex items-center gap-2">
+                <User className="w-5 h-5" />
+                <span>{blog.author || 'Coreway Team'}</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
                 <span>{new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
               </div>
@@ -323,6 +478,121 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
               <BlockRenderer content={blog.content} />
             </div>
 
+            {/* Dynamic CTA Section */}
+            {(blog.ctaTitle || blog.ctaButton1Text) && (
+              <div className="mt-14 mb-10">
+                <div className="relative group overflow-hidden rounded-[2.5rem]">
+
+                  <div className="relative bg-[#0E0918] rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
+                    {/* Dynamic Background Patterns */}
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse" />
+                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
+
+                    {/* SVG Decorative Grid */}
+                    <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+
+                    <div className="relative z-10 px-8 py-16 md:px-20 md:py-24 text-center max-w-5xl mx-auto flex flex-col items-center">
+                      <div className="space-y-10 group/content">
+                        <div className="space-y-6">
+                          {blog.ctaTitle && (
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
+                              {blog.ctaTitle}
+                            </h2>
+                          )}
+                          {blog.ctaDescription && (
+                            <p className="text-base md:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto font-medium">
+                              {blog.ctaDescription}
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+                          {blog.ctaButton1Text && (
+                            <Link
+                              href={blog.ctaButton1Link || '#'}
+                              className="group/btn relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 bg-purple-600 rounded-2xl hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] active:scale-95 min-w-[220px]"
+                            >
+                              <span className="relative z-10 text-base md:text-lg">{cleanCtaButtonLabel(blog.ctaButton1Text)}</span>
+                              {/* <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-1.5 transition-transform duration-300" /> */}
+                            </Link>
+                          )}
+                          {blog.ctaButton2Text && (
+                            <Link
+                              href={blog.ctaButton2Link || '#'}
+                              className="group/btn relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 backdrop-blur-md active:scale-95 min-w-[220px] text-base md:text-lg"
+                            >
+                              {cleanCtaButtonLabel(blog.ctaButton2Text)}
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* {faqItems.length > 0 && ( */}
+              <section className="mt-14 mb-10 rounded-2xl border border-purple-100 bg-gradient-to-b from-purple-50/70 to-white p-6 md:p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Frequently Asked Questions</h3>
+                  <p className="mt-2 text-gray-600">Quick answers to common questions about this topic.</p>
+                </div>
+
+                <div className="space-y-4">
+                  {faqItems.map((item, index) => (
+                    <details
+                      key={`${item.question}-${index}`}
+                      className="group rounded-xl border border-gray-200 bg-white px-5 py-4 open:border-purple-300 open:shadow-sm transition-colors"
+                    >
+                      <summary className="cursor-pointer list-none font-semibold text-gray-900 pr-8 relative">
+                        {item.question}
+                        <span className="absolute right-0 top-0 text-purple-600 transition-transform duration-200 group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-3 text-gray-700 leading-relaxed">{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            {/* )} */}
+
+            {(adjacentBlogs.previous || adjacentBlogs.next) && (
+              <section className="mt-10 mb-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {adjacentBlogs.previous ? (
+                  <Link
+                    href={`/blog/${adjacentBlogs.previous.slug}`}
+                    className="group rounded-xl border border-gray-200 bg-white p-5 hover:border-purple-300 hover:shadow-sm transition-all"
+                  >
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-purple-700 mb-2">
+                      <ArrowLeft className="w-4 h-4" />
+                      Previous Blog
+                    </span>
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                      {adjacentBlogs.previous.title}
+                    </h3>
+                  </Link>
+                ) : (
+                  <div className="hidden md:block" />
+                )}
+
+                {adjacentBlogs.next ? (
+                  <Link
+                    href={`/blog/${adjacentBlogs.next.slug}`}
+                    className="group rounded-xl border border-gray-200 bg-white p-5 hover:border-purple-300 hover:shadow-sm transition-all md:text-right"
+                  >
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-purple-700 mb-2 md:justify-end">
+                      Next Blog
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                    <h4 className="text-sm md:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                      {adjacentBlogs.next.title}
+                    </h4>
+                  </Link>
+                ) : (
+                  <div className="hidden md:block" />
+                )}
+              </section>
+            )}
 
             {/* Share Buttons */}
             <ShareButtons slug={slug} title={blog.title} />
@@ -384,62 +654,6 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
             </div>
           </aside>
         </div>
-
-        {/* Dynamic CTA Section at the Bottom */}
-        {(blog.ctaTitle || blog.ctaButton1Text) && (
-          <div className="mt-32 mb-20">
-            <div className="relative group overflow-hidden">
-              {/* Outer Decorative Glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-              
-              <div className="relative bg-[#0E0918] rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
-                {/* Dynamic Background Patterns */}
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
-                
-                {/* SVG Decorative Grid */}
-                <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-
-                <div className="relative z-10 px-8 py-16 md:px-20 md:py-24 text-center max-w-5xl mx-auto flex flex-col items-center">
-                  <div className="space-y-10 group/content">
-                    <div className="space-y-6">
-                      {blog.ctaTitle && (
-                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
-                          {blog.ctaTitle}
-                        </h2>
-                      )}
-                      {blog.ctaDescription && (
-                        <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto font-medium">
-                          {blog.ctaDescription}
-                        </p>
-                      )}
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-                      {blog.ctaButton1Text && (
-                        <Link
-                          href={blog.ctaButton1Link || '#'}
-                          className="group/btn relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-purple-600 rounded-2xl hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] active:scale-95 min-w-[240px]"
-                        >
-                          <span className="relative z-10 text-lg">{blog.ctaButton1Text}</span>
-                          <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
-                        </Link>
-                      )}
-                      {blog.ctaButton2Text && (
-                        <Link
-                          href={blog.ctaButton2Link || '#'}
-                          className="group/btn relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 backdrop-blur-md active:scale-95 min-w-[240px] text-lg"
-                        >
-                          {blog.ctaButton2Text}
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -100,7 +100,7 @@ export default function AdminDashboard() {
                                     <tr key={blog.id} className="hover:bg-gray-50 transition-colors">
                                         <td className="px-6 py-4">
                                             <Link
-                                                href={`/blog/${blog.slug}`}
+                                                href={`/blog/${blog.slug}?preview=1`}
                                                 target="_blank"
                                                 className="text-gray-900 hover:text-purple-600 transition-colors font-medium"
                                             >
@@ -125,7 +125,7 @@ export default function AdminDashboard() {
                                         <td className="px-6 py-4">
                                             <div className="flex justify-end gap-3">
                                                 <Link
-                                                    href={`/blog/${blog.slug}`}
+                                                    href={`/blog/${blog.slug}?preview=1`}
                                                     target="_blank"
                                                     className="text-blue-600 hover:text-blue-700 transition-colors"
                                                     title="View"
