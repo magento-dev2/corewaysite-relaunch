@@ -202,9 +202,9 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 throw error;
             }
 
-            const legacyBaseData = { ...baseData } as typeof baseData & { faqSchema?: string | null; author?: string | null };
-            delete legacyBaseData.faqSchema;
-            delete legacyBaseData.author;
+            const { faqSchema: legacyFaqSchema, author: legacyAuthor, ...legacyBaseData } = baseData;
+            void legacyFaqSchema;
+            void legacyAuthor;
             blog = await prisma.blog.update({
                 where: { id },
                 data: legacyBaseData,
