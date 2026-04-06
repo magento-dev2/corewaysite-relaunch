@@ -18,6 +18,7 @@ interface BlogPost {
   coverImage: string | null;
   createdAt: string;
   readTime?: number | null;
+  isActive: boolean;
 }
 
 interface UIBlogPost {
@@ -52,9 +53,10 @@ export default function BlogSection() {
           throw new Error('Failed to fetch blogs');
         }
         const data: BlogPost[] = await response.json();
+        const activeBlogs = data.filter((blog) => blog.isActive);
 
         // Map DB data to UI data
-        const mappedPosts: UIBlogPost[] = data.map((blog, index) => ({
+        const mappedPosts: UIBlogPost[] = activeBlogs.map((blog, index) => ({
           id: blog.id,
           category: 'Insights', // Default category
           title: blog.title,
