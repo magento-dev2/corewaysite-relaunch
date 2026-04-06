@@ -52,6 +52,31 @@ function isMissingBlogOptionalColumn(error: unknown) {
   return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
 }
 
+function normalizeReadTime(value: unknown) {
+  if (value === undefined || value === null || value === '') {
+    return 9;
+  }
+
+  const parsed = typeof value === 'string' ? Number.parseInt(value, 10) : Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
+}
+
+function normalizeFAQSchema(value: unknown): string | null {
+  if (value === undefined || value === null || value === '') {
+    return null;
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return null;
+  }
+}
+
 export async function GET() {
   try {
     const blogs = await prisma.blog.findMany({
@@ -172,7 +197,7 @@ export async function POST(request: Request) {
       content: typeof body.content === 'string' ? body.content : JSON.stringify(body.content),
       excerpt: body.excerpt,
       coverImage: coverImageUrl,
-      faqSchema: body.faqSchema,
+      faqSchema: normalizeFAQSchema(body.faqSchema),
       metaTitle: body.metaTitle,
       metaDescription: body.metaDescription,
       metaKeywords: body.metaKeywords,
@@ -192,7 +217,7 @@ export async function POST(request: Request) {
       blog = await prisma.blog.create({
         data: {
           ...baseData,
-          readTime: body.readTime ? Number(body.readTime) : 9,
+          readTime: normalizeReadTime(body.readTime),
         },
         select: { id: true, slug: true },
       });

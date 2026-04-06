@@ -59,6 +59,31 @@ function isMissingBlogOptionalColumn(error: unknown) {
     return hasMissingColumn(error, 'Blog.readTime') || hasMissingColumn(error, 'Blog.faqSchema');
 }
 
+function normalizeReadTime(value: unknown) {
+    if (value === undefined || value === null || value === '') {
+        return 9;
+    }
+
+    const parsed = typeof value === 'string' ? Number.parseInt(value, 10) : Number(value);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
+}
+
+function normalizeFAQSchema(value: unknown): string | null {
+    if (value === undefined || value === null || value === '') {
+        return null;
+    }
+
+    if (typeof value === 'string') {
+        return value;
+    }
+
+    try {
+        return JSON.stringify(value);
+    } catch {
+        return null;
+    }
+}
+
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
@@ -118,10 +143,10 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         const baseData = {
             title,
             slug,
-            content,
+            content: typeof content === 'string' ? content : JSON.stringify(content),
             excerpt,
             coverImage,
-            faqSchema,
+            faqSchema: normalizeFAQSchema(faqSchema),
             isActive,
             metaTitle,
             metaDescription,
@@ -144,7 +169,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 where: { id },
                 data: {
                     ...baseData,
-                    readTime: readTime ? Number(readTime) : 9,
+                    readTime: normalizeReadTime(readTime),
                 },
                 select: { id: true, slug: true },
             });
