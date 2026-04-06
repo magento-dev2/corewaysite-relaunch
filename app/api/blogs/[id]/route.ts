@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 
 const relatedArticleSelect = {
@@ -212,6 +213,9 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
             });
         }
 
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${blog.slug}`);
+
         return NextResponse.json(blog);
     } catch (error: unknown) {
         console.error('Error updating blog:', error);
@@ -222,9 +226,14 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 export async function DELETE(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
-        await prisma.blog.delete({
+        const deletedBlog = await prisma.blog.delete({
             where: { id },
+            select: { slug: true },
         });
+
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${deletedBlog.slug}`);
+
         return NextResponse.json({ message: 'Blog deleted' });
     } catch {
         return NextResponse.json({ error: 'Error deleting blog' }, { status: 500 });
@@ -240,8 +249,12 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         const blog = await prisma.blog.update({
             where: { id },
             data: { isActive },
-            select: { id: true, isActive: true },
+            select: { id: true, isActive: true, slug: true },
         });
+
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${blog.slug}`);
+
         return NextResponse.json(blog);
     } catch {
         return NextResponse.json({ error: 'Error updating blog status' }, { status: 500 });

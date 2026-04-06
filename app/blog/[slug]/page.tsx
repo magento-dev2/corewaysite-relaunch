@@ -2,6 +2,7 @@
 import { prisma } from '@/lib/prisma';
 import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import BlockRenderer from '@/components/blog/BlockRenderer';
@@ -298,7 +299,7 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ preview?: string | string[] }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
   const searchParams = await props.searchParams;
   const includeInactive = await isAdminPreviewEnabled(searchParams.preview);
@@ -307,21 +308,46 @@ export async function generateMetadata(props: {
   if (!blog) {
     return {
       title: 'Blog Not Found',
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const metadataDescription = blog.metaDescription ?? blog.excerpt ?? undefined;
+  const metadataImage = blog.coverImage ?? undefined;
+
   return {
     title: blog.metaTitle || blog.title,
-    description: blog.metaDescription || blog.excerpt,
+    description: metadataDescription,
     keywords: blog.metaKeywords
       ? blog.metaKeywords.split(',').map((k: string) => k.trim())
       : [],
 
     openGraph: {
       title: blog.metaTitle || blog.title,
-      description: blog.metaDescription || blog.excerpt,
-      images: [blog.coverImage || ''],
+      description: metadataDescription,
+      images: metadataImage ? [metadataImage] : undefined,
     },
+    alternates: {
+      canonical: `https://www.corewaysolution.com/blog/${blog.slug}`,
+    },
+    robots: includeInactive
+      ? {
+        index: false,
+        follow: false,
+        nocache: true,
+        googleBot: {
+          index: false,
+          follow: false,
+          noimageindex: true,
+        },
+      }
+      : {
+        index: true,
+        follow: true,
+      },
   };
 }
 
@@ -584,9 +610,9 @@ export default async function BlogDetail({
                       Next Blog
                       <ArrowRight className="w-4 h-4" />
                     </span>
-                    <h4 className="text-sm md:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h3 className="text-sm md:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {adjacentBlogs.next.title}
-                    </h4>
+                    </h3>
                   </Link>
                 ) : (
                   <div className="hidden md:block" />

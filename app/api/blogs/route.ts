@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import fs from 'fs';
 import path from 'path';
@@ -258,6 +259,9 @@ export async function POST(request: Request) {
         select: { id: true, slug: true },
       });
     }
+
+    revalidatePath('/blog');
+    revalidatePath(`/blog/${blog.slug}`);
 
     return NextResponse.json(blog);
   } catch (error: unknown) {

@@ -300,7 +300,12 @@ export default function CreateBlog() {
                     {/* FAQ Section Settings */}
                     <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 space-y-4">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                            <div>
+                                <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                                <p className="text-sm text-gray-600 mt-1">
+                                    These FAQ items will be shown on the frontend blog page under the article.
+                                </p>
+                            </div>
                             <button
                                 type="button"
                                 onClick={() => updateFaqItems([...faqItems, { question: '', answer: '' }])}
@@ -310,8 +315,12 @@ export default function CreateBlog() {
                             </button>
                         </div>
 
+                        <div className="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-medium text-purple-700 border border-purple-200">
+                            {faqItems.length} FAQ {faqItems.length === 1 ? 'item' : 'items'} ready for frontend
+                        </div>
+
                         {faqItems.length === 0 && (
-                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields.</p>
+                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields for the frontend FAQ section.</p>
                         )}
 
                         <div className="space-y-4">

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Careers at Coreway | Join Our Team of Innovators",
-  description: "Join Coreway Solution and work on cutting-edge AI and software development projects. Explore career opportunities with our global team.",
-  keywords: "careers, jobs, AI developer jobs, software engineer careers, remote work, technology jobs",
+export const metadata: Metadata = {
+  title: "Blog | Coreway Solution",
+  description: "Insights from Coreway Solution on AI, automation, software engineering, and digital transformation.",
+  keywords: "blog, ai, automation, software engineering, digital transformation, coreway solution",
   openGraph: {
-    title: "Careers at Coreway | Join Our Team of Innovators",
-    description: "Join Coreway Solution and work on cutting-edge AI and software development projects. Explore career opportunities with our global team.",
+    title: "Blog | Coreway Solution",
+    description: "Insights from Coreway Solution on AI, automation, software engineering, and digital transformation.",
     type: "website",
-    url: "https://www.corewaysolution.com/careers",
+    url: "https://www.corewaysolution.com/blog",
     images: [{
       url: "https://www.corewaysolution.com/og-image.jpg",
       width: 1200,
@@ -18,12 +18,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Careers at Coreway | Join Our Team of Innovators",
-    description: "Join Coreway Solution and work on cutting-edge AI and software development projects. Explore career opportunities with our global team.",
+    title: "Blog | Coreway Solution",
+    description: "Insights from Coreway Solution on AI, automation, software engineering, and digital transformation.",
     images: ["https://www.corewaysolution.com/og-image.jpg"]
   },
   alternates: {
-    canonical: "https://www.corewaysolution.com/careers"
+    canonical: "https://www.corewaysolution.com/blog"
   }
 };
 
