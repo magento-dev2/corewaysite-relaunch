@@ -532,7 +532,7 @@ export default async function BlogDetail({
               </div>
             )}
 
-            {/* {faqItems.length > 0 && ( */}
+            {faqItems.length > 0 && (
               <section className="mt-14 mb-10 rounded-2xl border border-purple-100 bg-gradient-to-b from-purple-50/70 to-white p-6 md:p-8">
                 <div className="mb-6">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Frequently Asked Questions</h3>
@@ -554,7 +554,7 @@ export default async function BlogDetail({
                   ))}
                 </div>
               </section>
-            {/* )} */}
+            )}
 
             {(adjacentBlogs.previous || adjacentBlogs.next) && (
               <section className="mt-10 mb-10 grid grid-cols-1 md:grid-cols-2 gap-4">

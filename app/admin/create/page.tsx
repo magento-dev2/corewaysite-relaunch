@@ -9,6 +9,10 @@ import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector'
 export default function CreateBlog() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    type FAQItem = {
+        question: string;
+        answer: string;
+    };
     type BlogFormData = {
         title: string;
         author: string;
@@ -51,6 +55,26 @@ export default function CreateBlog() {
         ctaButton2Text: '',
         ctaButton2Link: '',
     });
+    const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
+
+    const serializeFaqItems = (items: FAQItem[]) => {
+        const validItems = items
+            .map((item) => ({
+                question: item.question.trim(),
+                answer: item.answer.trim(),
+            }))
+            .filter((item) => item.question && item.answer);
+
+        return validItems.length > 0 ? JSON.stringify(validItems) : '';
+    };
+
+    const updateFaqItems = (items: FAQItem[]) => {
+        setFaqItems(items);
+        setFormData((prev) => ({
+            ...prev,
+            faqSchema: serializeFaqItems(items),
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -202,16 +226,6 @@ export default function CreateBlog() {
                                 placeholder="keyword1, keyword2, keyword3"
                             />
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-700">FAQ Schema JSON</label>
-                            <textarea
-                                rows={6}
-                                value={formData.faqSchema}
-                                onChange={(e) => setFormData({ ...formData, faqSchema: e.target.value })}
-                                className="w-full bg-white border border-gray-300 rounded-lg p-3 font-mono text-sm text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
-                                placeholder='[{"question":"What is AI audit?","answer":"AI audit helps identify automation opportunities."}]'
-                            />
-                        </div>
                     </div>
 
                     {/* CTA Settings */}
@@ -280,6 +294,79 @@ export default function CreateBlog() {
                                     placeholder="/about"
                                 />
                             </div>
+                        </div>
+                    </div>
+
+                    {/* FAQ Section Settings */}
+                    <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 space-y-4">
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                            <button
+                                type="button"
+                                onClick={() => updateFaqItems([...faqItems, { question: '', answer: '' }])}
+                                className="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                            >
+                                + Add More
+                            </button>
+                        </div>
+
+                        {faqItems.length === 0 && (
+                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields.</p>
+                        )}
+
+                        <div className="space-y-4">
+                            {faqItems.map((item, index) => (
+                                <details key={index} className="group bg-white border border-blue-100 rounded-lg p-4" open={index === faqItems.length - 1}>
+                                    <summary className="flex items-center justify-between list-none cursor-pointer">
+                                        <p className="text-sm font-medium text-gray-700">FAQ #{index + 1}</p>
+                                        <div className="flex items-center gap-4">
+                                            {/* <span className="text-xs text-blue-700 group-open:hidden">Open</span>
+                                            <span className="text-xs text-blue-700 hidden group-open:inline">Close</span> */}
+                                            <span className="text-blue-700 transition-transform duration-200 group-open:rotate-45">+</span>
+                                        </div>
+                                    </summary>
+
+                                    <div className="mt-4 space-y-3">
+                                        <div className="flex justify-end">
+                                            <button
+                                                type="button"
+                                                onClick={() => updateFaqItems(faqItems.filter((_, i) => i !== index))}
+                                                className="text-red-600 hover:text-red-700 text-sm font-medium cursor-pointer"
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700">Question</label>
+                                            <input
+                                                type="text"
+                                                value={item.question}
+                                                onChange={(e) => {
+                                                    const updated = [...faqItems];
+                                                    updated[index] = { ...updated[index], question: e.target.value };
+                                                    updateFaqItems(updated);
+                                                }}
+                                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                                                placeholder="How much does a custom AI tool cost?"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium text-gray-700">Answer</label>
+                                            <textarea
+                                                rows={4}
+                                                value={item.answer}
+                                                onChange={(e) => {
+                                                    const updated = [...faqItems];
+                                                    updated[index] = { ...updated[index], answer: e.target.value };
+                                                    updateFaqItems(updated);
+                                                }}
+                                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                                                placeholder="Write a detailed answer..."
+                                            />
+                                        </div>
+                                    </div>
+                                </details>
+                            ))}
                         </div>
                     </div>
 
