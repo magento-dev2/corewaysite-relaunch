@@ -5,14 +5,11 @@ import { useRouter } from 'next/navigation';
 import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
+import { serializeFAQItems, type FAQItem } from '@/lib/faq-schema';
 
 export default function CreateBlog() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    type FAQItem = {
-        question: string;
-        answer: string;
-    };
     type BlogFormData = {
         title: string;
         author: string;
@@ -57,22 +54,11 @@ export default function CreateBlog() {
     });
     const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
 
-    const serializeFaqItems = (items: FAQItem[]) => {
-        const validItems = items
-            .map((item) => ({
-                question: item.question.trim(),
-                answer: item.answer.trim(),
-            }))
-            .filter((item) => item.question && item.answer);
-
-        return validItems.length > 0 ? JSON.stringify(validItems) : '';
-    };
-
     const updateFaqItems = (items: FAQItem[]) => {
         setFaqItems(items);
         setFormData((prev) => ({
             ...prev,
-            faqSchema: serializeFaqItems(items),
+            faqSchema: serializeFAQItems(items),
         }));
     };
 

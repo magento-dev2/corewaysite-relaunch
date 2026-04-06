@@ -9,6 +9,7 @@ import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
+import { parseFAQItems } from '@/lib/faq-schema';
 
 type RelatedBlog = {
   id: string;
@@ -114,11 +115,6 @@ const blogDetailNoAuthorSelect = {
   ctaButton2Link: true,
 } as const;
 
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
 type BlogAdjacentNav = {
   previous: { slug: string; title: string } | null;
   next: { slug: string; title: string } | null;
@@ -156,40 +152,6 @@ function isMissingBlogOptionalColumn(error: unknown) {
     || hasUnknownBlogField(error, 'readTime')
     || hasUnknownBlogField(error, 'faqSchema')
     || hasUnknownBlogField(error, 'author');
-}
-
-function parseFAQSchema(faqSchema: unknown): FAQItem[] {
-  if (faqSchema === undefined || faqSchema === null || faqSchema === '') {
-    return [];
-  }
-
-  const toFAQItems = (value: unknown): FAQItem[] => {
-    if (!Array.isArray(value)) {
-      return [];
-    }
-
-    return value.filter((item): item is FAQItem => {
-      return typeof item === 'object'
-        && item !== null
-        && typeof (item as { question?: unknown }).question === 'string'
-        && typeof (item as { answer?: unknown }).answer === 'string';
-    });
-  };
-
-  if (typeof faqSchema === 'string') {
-    if (!faqSchema.trim()) {
-      return [];
-    }
-
-    try {
-      const parsed = JSON.parse(faqSchema);
-      return toFAQItems(parsed);
-    } catch {
-      return [];
-    }
-  }
-
-  return toFAQItems(faqSchema);
 }
 
 export const revalidate = 60;
@@ -436,7 +398,7 @@ export default async function BlogDetail({
     createdAt: blog.createdAt,
     slug: slug
   });
-  const faqItems = parseFAQSchema(blog.faqSchema);
+  const faqItems = parseFAQItems(blog.faqSchema);
   const faqSchema = faqItems.length > 0 ? getFAQSchema(faqItems) : null;
 
   return (

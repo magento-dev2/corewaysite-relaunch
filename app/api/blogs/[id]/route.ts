@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
+import { normalizeFAQSchema } from '@/lib/faq-schema';
 
 const relatedArticleSelect = {
     id: true,
@@ -89,22 +90,6 @@ function normalizeReadTime(value: unknown) {
 
     const parsed = typeof value === 'string' ? Number.parseInt(value, 10) : Number(value);
     return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
-}
-
-function normalizeFAQSchema(value: unknown): string | null {
-    if (value === undefined || value === null || value === '') {
-        return null;
-    }
-
-    if (typeof value === 'string') {
-        return value;
-    }
-
-    try {
-        return JSON.stringify(value);
-    } catch {
-        return null;
-    }
 }
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {

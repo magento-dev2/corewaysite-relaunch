@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
+import { parseFAQItems, serializeFAQItems, type FAQItem } from '@/lib/faq-schema';
 
 export default function EditBlog() {
     const router = useRouter();
@@ -15,10 +16,6 @@ export default function EditBlog() {
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
     type RelatedArticle = { id: string };
-    type FAQItem = {
-        question: string;
-        answer: string;
-    };
     type BlogFormData = {
         title: string;
         author: string;
@@ -63,49 +60,11 @@ export default function EditBlog() {
     });
     const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
 
-    const parseFaqSchema = useCallback((value: unknown): FAQItem[] => {
-        if (!value) {
-            return [];
-        }
-
-        let parsed: unknown = value;
-
-        if (typeof value === 'string') {
-            try {
-                parsed = JSON.parse(value);
-            } catch {
-                return [];
-            }
-        }
-
-        if (!Array.isArray(parsed)) {
-            return [];
-        }
-
-        return parsed.filter((item): item is FAQItem => {
-            return typeof item === 'object'
-                && item !== null
-                && typeof (item as { question?: unknown }).question === 'string'
-                && typeof (item as { answer?: unknown }).answer === 'string';
-        });
-    }, []);
-
-    const serializeFaqItems = useCallback((items: FAQItem[]) => {
-        const validItems = items
-            .map((item) => ({
-                question: item.question.trim(),
-                answer: item.answer.trim(),
-            }))
-            .filter((item) => item.question && item.answer);
-
-        return validItems.length > 0 ? JSON.stringify(validItems) : '';
-    }, []);
-
     const updateFaqItems = (items: FAQItem[]) => {
         setFaqItems(items);
         setFormData((prev) => ({
             ...prev,
-            faqSchema: serializeFaqItems(items),
+            faqSchema: serializeFAQItems(items),
         }));
     };
 
@@ -117,7 +76,7 @@ export default function EditBlog() {
                 const res = await fetch(`/api/blogs/${id}`);
                 if (res.ok) {
                     const data = await res.json();
-                    const parsedFaqItems = parseFaqSchema(data.faqSchema);
+                    const parsedFaqItems = parseFAQItems(data.faqSchema);
                     setFormData({
                         title: data.title,
                         author: data.author || '',
@@ -131,7 +90,7 @@ export default function EditBlog() {
                         metaTitle: data.metaTitle || '',
                         metaDescription: data.metaDescription || '',
                         metaKeywords: data.metaKeywords || '',
-                        faqSchema: serializeFaqItems(parsedFaqItems),
+                        faqSchema: serializeFAQItems(parsedFaqItems),
                         ctaTitle: data.ctaTitle || '',
                         ctaDescription: data.ctaDescription || '',
                         ctaButton1Text: data.ctaButton1Text || '',
@@ -153,7 +112,7 @@ export default function EditBlog() {
         };
 
         fetchBlog();
-    }, [id, router, parseFaqSchema, serializeFaqItems]);
+    }, [id, router]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
