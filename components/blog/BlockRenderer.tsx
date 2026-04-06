@@ -6,6 +6,13 @@ interface BlockRendererProps {
     content: string;
 }
 
+function cleanHtmlCtaButtonArrows(html: string) {
+    return html.replace(
+        />([^<]*?)\s*(?:→|➡|➜|&rarr;|&#8594;)\s*<\/a>/giu,
+        (_match, label: string) => `>${label.trim()}</a>`
+    );
+}
+
 export default function BlockRenderer({ content }: BlockRendererProps) {
     let blocks: Block[] = [];
     let isHTML = false;
@@ -23,14 +30,14 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
 
     if (isHTML) {
         // Fix relative image paths
-        const fixedContent = content.replace(
+        const fixedContent = cleanHtmlCtaButtonArrows(content.replace(
             /src=["']assets\//g, // Match src="assets/ or src='assets/
             'src="/assets/'
-        );
+        ));
 
         return (
             <div
-                className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-strong:text-white"
+                className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-strong:text-white blog-html-content"
                 dangerouslySetInnerHTML={{ __html: fixedContent }}
             />
         );
@@ -106,7 +113,7 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                         return (
                             <blockquote key={block.id} className="border-l-4 border-purple-500 pl-6 py-4 my-6 bg-white/5 rounded-r-lg">
                                 <p className="text-white text-xl italic leading-relaxed mb-2">
-                                    "{block.content}"
+                                    &ldquo;{block.content}&rdquo;
                                 </p>
                                 {block.author && (
                                     <cite className="text-gray-400 text-sm not-italic">
@@ -134,8 +141,8 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                         return (
                             <div
                                 key={block.id}
-                                className="my-6"
-                                dangerouslySetInnerHTML={{ __html: block.html }}
+                                className="my-6 blog-html-content"
+                                dangerouslySetInnerHTML={{ __html: cleanHtmlCtaButtonArrows(block.html) }}
                             />
                         );
 

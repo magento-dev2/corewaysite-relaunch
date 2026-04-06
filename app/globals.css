@@ -88,6 +88,114 @@ body {
   text-decoration: underline;
 }
 
+.prose .cta-block,
+.blog-html-content .cta-block {
+  margin: 36px 0;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e9d5ff;
+  background: radial-gradient(circle at top right, #f3e8ff 0%, #faf5ff 35%, #fff 100%);
+  display: grid;
+  gap: 16px;
+}
+
+.prose .cta-block .cta-primary,
+.blog-html-content .cta-block .cta-primary {
+  background: #fff;
+  border: 1px solid #ede9fe;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.prose .cta-block .cta-primary h3,
+.blog-html-content .cta-block .cta-primary h3 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.prose .cta-block .cta-primary p,
+.blog-html-content .cta-block .cta-primary p {
+  margin: 0 0 16px;
+  color: #4b5563;
+}
+
+.prose .cta-block .cta-secondary,
+.blog-html-content .cta-block .cta-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px dashed #d8b4fe;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.prose .cta-block .cta-secondary p,
+.blog-html-content .cta-block .cta-secondary p {
+  margin: 0;
+  color: #5b21b6;
+  font-weight: 500;
+}
+
+.prose .cta-block .btn-primary,
+.prose .cta-block .btn-secondary,
+.blog-html-content .cta-block .btn-primary,
+.blog-html-content .cta-block .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.prose .cta-block .btn-primary,
+.blog-html-content .cta-block .btn-primary {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.prose .cta-block .btn-primary:hover,
+.blog-html-content .cta-block .btn-primary:hover {
+  background: #6d28d9;
+  text-decoration: none;
+}
+
+.prose .cta-block .btn-secondary,
+.blog-html-content .cta-block .btn-secondary {
+  color: #6d28d9;
+  border: 1px solid #d8b4fe;
+  background: #fff;
+}
+
+.prose .cta-block .btn-secondary:hover,
+.blog-html-content .cta-block .btn-secondary:hover {
+  background: #f5f3ff;
+  text-decoration: none;
+}
+
+.prose .cta-inline,
+.blog-html-content .cta-inline {
+  margin: 28px 0;
+  padding: 14px 18px;
+  border-left: 3px solid #7c3aed;
+  background: #faf5ff;
+  border-radius: 0 10px 10px 0;
+}
+
+.prose .cta-inline p,
+.blog-html-content .cta-inline p {
+  margin: 0;
+  color: #4b5563;
+  font-weight: 500;
+}
+
 html.lenis {
   height: auto;
 }

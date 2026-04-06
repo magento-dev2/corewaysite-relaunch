@@ -13,6 +13,7 @@ interface BlogPost {
   id: string;
   title: string;
   slug: string;
+  author?: string | null;
   excerpt: string;
   coverImage: string | null;
   createdAt: string;
@@ -59,7 +60,7 @@ export default function BlogSection() {
           title: blog.title,
           slug: blog.slug,
           excerpt: blog.excerpt || 'No excerpt available',
-          author: 'Coreway Team', // Default author
+          author: blog.author || 'Coreway Team',
           date: new Date(blog.createdAt).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',

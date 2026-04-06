@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function NavigationLoader() {
   const pathname = usePathname();
@@ -10,8 +10,11 @@ export default function NavigationLoader() {
 
   useEffect(() => {
     // Reset loading state when pathname changes (navigation complete)
-    setIsLoading(false);
-    setProgress(0);
+    const frame = window.requestAnimationFrame(() => {
+      setIsLoading(false);
+      setProgress(0);
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {
@@ -47,42 +50,51 @@ export default function NavigationLoader() {
     // };
 
     const handleClick = (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
+      const target = e.target as HTMLElement;
 
-  // ✅ Ignore download buttons
-  if (target.closest('[data-download="true"]')) {
-    return;
-  }
+      // Ignore modified/middle clicks (new tab/window actions)
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+        return;
+      }
 
-  const link = target.closest('a');
-  if (!link || !link.href) return;
+      // Ignore download buttons
+      if (target.closest('[data-download="true"]')) {
+        return;
+      }
 
-  // ✅ Ignore real downloads
-  if (link.hasAttribute('download')) return;
+      const link = target.closest('a');
+      if (!link || !link.href) return;
 
-  // ✅ Ignore external links & new tabs
-  if (link.target === '_blank') return;
+      // Ignore real downloads
+      if (link.hasAttribute('download')) return;
 
-  const url = new URL(link.href);
-  const currentUrl = new URL(window.location.href);
+      // Ignore external links & explicit new-tab links
+      if (link.target === '_blank') return;
 
-  if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+      const url = new URL(link.href, window.location.href);
+      const currentUrl = new URL(window.location.href);
 
-    setIsLoading(true);
-    setProgress(10);
+      // Only show loader for internal same-tab navigation to another route/query
+      if (
+        url.origin === currentUrl.origin
+        && (url.pathname !== currentUrl.pathname || url.search !== currentUrl.search)
+      ) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 90) {
-          clearInterval(interval);
-          return 90;
-        }
-        return prev + 10;
-      });
-    }, 200);
-  }
-};
+        setIsLoading(true);
+        setProgress(10);
+
+        const interval = setInterval(() => {
+          setProgress(prev => {
+            if (prev >= 90) {
+              clearInterval(interval);
+              return 90;
+            }
+            return prev + 10;
+          });
+        }, 200);
+      }
+    };
 
 
     document.addEventListener('click', handleClick, true);

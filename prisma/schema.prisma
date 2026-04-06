@@ -29,6 +29,7 @@ model Blog {
   ctaButton1Link  String?
   ctaButton2Text  String?
   ctaButton2Link  String?
+  author          String?
   relatedArticles Blog[]    @relation("RelatedBlogs")
   relatedTo       Blog[]    @relation("RelatedBlogs")
 }

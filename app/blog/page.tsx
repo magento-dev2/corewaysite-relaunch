@@ -10,11 +10,34 @@ type BlogListItem = {
   id: string;
   title: string;
   slug: string;
+  author: string | null;
   excerpt: string | null;
   coverImage: string | null;
   createdAt: Date;
 };
 
+function hasMissingColumn(error: unknown, columnName: string) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return error.message.includes(columnName)
+    || error.message.includes(`column \`${columnName}\` does not exist`)
+    || error.message.includes(`column: '${columnName}'`)
+    || error.message.includes(`column: "${columnName}"`);
+}
+
+function hasUnknownBlogField(error: unknown, fieldName: string) {
+  return error instanceof Error
+    && (error.message.includes(`Unknown field \`${fieldName}\``)
+      || error.message.includes(`Unknown argument \`${fieldName}\``));
+}
+
+function isMissingBlogAuthorColumn(error: unknown) {
+  return hasMissingColumn(error, 'Blog.author')
+    || hasMissingColumn(error, 'author')
+    || hasUnknownBlogField(error, 'author');
+}
 
 
 const ITEMS_PER_PAGE = 12;
@@ -25,8 +48,33 @@ async function getBlogs(
   try {
     const skip = (page - 1) * ITEMS_PER_PAGE;
 
-    const [blogs, totalCount] = await Promise.all([
-      prisma.blog.findMany({
+    let blogs: BlogListItem[] = [];
+    const totalCount = await prisma.blog.count({
+      where: { isActive: true },
+    });
+
+    try {
+      blogs = await prisma.blog.findMany({
+        where: { isActive: true },
+        orderBy: { createdAt: 'desc' },
+        skip,
+        take: ITEMS_PER_PAGE,
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          author: true,
+          excerpt: true,
+          coverImage: true,
+          createdAt: true,
+        },
+      });
+    } catch (error) {
+      if (!isMissingBlogAuthorColumn(error)) {
+        throw error;
+      }
+
+      const fallbackBlogs = await prisma.blog.findMany({
         where: { isActive: true },
         orderBy: { createdAt: 'desc' },
         skip,
@@ -39,11 +87,13 @@ async function getBlogs(
           coverImage: true,
           createdAt: true,
         },
-      }),
-      prisma.blog.count({
-        where: { isActive: true },
-      }),
-    ]);
+      });
+
+      blogs = fallbackBlogs.map((blog) => ({
+        ...blog,
+        author: null,
+      }));
+    }
 
     const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
@@ -98,6 +148,8 @@ export default async function BlogListing(props: {
                   <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
                     <Calendar size={14} />
                     {new Date(blog.createdAt).toLocaleDateString()}
+                    <span>•</span>
+                    <span>{blog.author || 'Coreway Team'}</span>
                   </div>
                   <h2 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors line-clamp-2">
                     {blog.title}
@@ -146,4 +198,3 @@ export const metadata = {
     canonical: "https://www.corewaysolution.com/blog/"
   }
 };
-
