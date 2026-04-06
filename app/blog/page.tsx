@@ -10,7 +10,7 @@ type BlogListItem = {
   id: string;
   title: string;
   slug: string;
-  author: string | null;
+  author?: string | null;
   excerpt: string | null;
   coverImage: string | null;
   createdAt: Date;
