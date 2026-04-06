@@ -10,6 +10,12 @@ import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
 import { parseFAQItems } from '@/lib/faq-schema';
+import {
+  getMissingBlogOptionalFields,
+  isMissingBlogOptionalColumn,
+  omitBlogOptionalFields,
+  withMissingBlogOptionalFields,
+} from '@/lib/blog-optional-fields';
 
 type RelatedBlog = {
   id: string;
@@ -75,46 +81,6 @@ const blogDetailSelect = {
   ctaButton2Link: true,
 } as const;
 
-const blogDetailFallbackSelect = {
-  id: true,
-  title: true,
-  slug: true,
-  content: true,
-  excerpt: true,
-  coverImage: true,
-  createdAt: true,
-  metaTitle: true,
-  metaDescription: true,
-  metaKeywords: true,
-  ctaTitle: true,
-  ctaDescription: true,
-  ctaButton1Text: true,
-  ctaButton1Link: true,
-  ctaButton2Text: true,
-  ctaButton2Link: true,
-} as const;
-
-const blogDetailNoAuthorSelect = {
-  id: true,
-  title: true,
-  slug: true,
-  content: true,
-  excerpt: true,
-  coverImage: true,
-  readTime: true,
-  faqSchema: true,
-  createdAt: true,
-  metaTitle: true,
-  metaDescription: true,
-  metaKeywords: true,
-  ctaTitle: true,
-  ctaDescription: true,
-  ctaButton1Text: true,
-  ctaButton1Link: true,
-  ctaButton2Text: true,
-  ctaButton2Link: true,
-} as const;
-
 type BlogAdjacentNav = {
   previous: { slug: string; title: string } | null;
   next: { slug: string; title: string } | null;
@@ -123,35 +89,6 @@ type BlogAdjacentNav = {
 function cleanCtaButtonLabel(text: string | null) {
   if (!text) return '';
   return text.replace(/\s*[→➡➜]+$/u, '').trim();
-}
-
-function hasMissingColumn(error: unknown, columnName: string) {
-  if (!(error instanceof Error)) {
-    return false;
-  }
-
-  return error.message.includes(columnName)
-    || error.message.includes(`column \`${columnName}\` does not exist`)
-    || error.message.includes(`column: '${columnName}'`)
-    || error.message.includes(`column: "${columnName}"`);
-}
-
-function hasUnknownBlogField(error: unknown, fieldName: string) {
-  return error instanceof Error
-    && (error.message.includes(`Unknown field \`${fieldName}\``)
-      || error.message.includes(`Unknown argument \`${fieldName}\``));
-}
-
-function isMissingBlogOptionalColumn(error: unknown) {
-  return hasMissingColumn(error, 'Blog.readTime')
-    || hasMissingColumn(error, 'Blog.faqSchema')
-    || hasMissingColumn(error, 'Blog.author')
-    || hasMissingColumn(error, 'readTime')
-    || hasMissingColumn(error, 'faqSchema')
-    || hasMissingColumn(error, 'author')
-    || hasUnknownBlogField(error, 'readTime')
-    || hasUnknownBlogField(error, 'faqSchema')
-    || hasUnknownBlogField(error, 'author');
 }
 
 export const revalidate = 60;
@@ -189,61 +126,47 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
       throw error;
     }
 
-    // First fallback: keep readTime + faqSchema and only skip author selection
-    try {
-      const noAuthorBlog = await prisma.blog.findFirst({
-        where,
-        select: {
-          ...blogDetailNoAuthorSelect,
-          relatedArticles: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-          relatedTo: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-        },
-      });
+    let missingFields = getMissingBlogOptionalFields(error);
 
-      if (!noAuthorBlog) {
-        return null;
+    while (true) {
+      try {
+        const fallbackBlog = await prisma.blog.findFirst({
+          where,
+          select: {
+            ...omitBlogOptionalFields(blogDetailSelect, missingFields),
+            relatedArticles: {
+              where: { isActive: true },
+              select: relatedBlogSelect,
+            },
+            relatedTo: {
+              where: { isActive: true },
+              select: relatedBlogSelect,
+            },
+          },
+        });
+
+        if (!fallbackBlog) {
+          return null;
+        }
+
+        blog = withMissingBlogOptionalFields(fallbackBlog, missingFields);
+        break;
+      } catch (innerError) {
+        if (!isMissingBlogOptionalColumn(innerError)) {
+          throw innerError;
+        }
+
+        const nextMissingFields = Array.from(new Set([
+          ...missingFields,
+          ...getMissingBlogOptionalFields(innerError),
+        ]));
+
+        if (nextMissingFields.length === missingFields.length) {
+          throw innerError;
+        }
+
+        missingFields = nextMissingFields;
       }
-
-      blog = {
-        ...noAuthorBlog,
-        author: null,
-      };
-    } catch (innerError) {
-      if (!isMissingBlogOptionalColumn(innerError)) {
-        throw innerError;
-      }
-
-      const fallbackBlog = await prisma.blog.findFirst({
-        where,
-        select: {
-          ...blogDetailFallbackSelect,
-          relatedArticles: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-          relatedTo: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-        },
-      });
-
-      if (!fallbackBlog) {
-        return null;
-      }
-
-      blog = {
-        ...fallbackBlog,
-        readTime: null,
-        faqSchema: null,
-        author: null,
-      };
     }
   }
 

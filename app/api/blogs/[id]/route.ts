@@ -2,6 +2,12 @@ import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { normalizeFAQSchema } from '@/lib/faq-schema';
+import {
+    getMissingBlogOptionalFields,
+    isMissingBlogOptionalColumn,
+    omitBlogOptionalFields,
+    withMissingBlogOptionalFields,
+} from '@/lib/blog-optional-fields';
 
 const relatedArticleSelect = {
     id: true,
@@ -35,54 +41,6 @@ const blogEditSelect = {
     ctaButton2Link: true,
 } as const;
 
-const blogEditFallbackSelect = {
-    id: true,
-    title: true,
-    slug: true,
-    content: true,
-    excerpt: true,
-    coverImage: true,
-    isActive: true,
-    metaTitle: true,
-    metaDescription: true,
-    metaKeywords: true,
-    ctaTitle: true,
-    ctaDescription: true,
-    ctaButton1Text: true,
-    ctaButton1Link: true,
-    ctaButton2Text: true,
-    ctaButton2Link: true,
-} as const;
-
-function hasMissingColumn(error: unknown, columnName: string) {
-    if (!(error instanceof Error)) {
-        return false;
-    }
-
-    return error.message.includes(columnName)
-        || error.message.includes(`column \`${columnName}\` does not exist`)
-        || error.message.includes(`column: '${columnName}'`)
-        || error.message.includes(`column: "${columnName}"`);
-}
-
-function hasUnknownBlogField(error: unknown, fieldName: string) {
-    return error instanceof Error
-        && (error.message.includes(`Unknown field \`${fieldName}\``)
-            || error.message.includes(`Unknown argument \`${fieldName}\``));
-}
-
-function isMissingBlogOptionalColumn(error: unknown) {
-    return hasMissingColumn(error, 'Blog.readTime')
-        || hasMissingColumn(error, 'Blog.faqSchema')
-        || hasMissingColumn(error, 'Blog.author')
-        || hasMissingColumn(error, 'readTime')
-        || hasMissingColumn(error, 'faqSchema')
-        || hasMissingColumn(error, 'author')
-        || hasUnknownBlogField(error, 'readTime')
-        || hasUnknownBlogField(error, 'faqSchema')
-        || hasUnknownBlogField(error, 'author');
-}
-
 function normalizeReadTime(value: unknown) {
     if (value === undefined || value === null || value === '') {
         return 9;
@@ -112,24 +70,39 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
                 throw error;
             }
 
-            const fallbackBlog = await prisma.blog.findUnique({
-                where: { id },
-                select: {
-                    ...blogEditFallbackSelect,
-                    relatedArticles: {
-                        select: relatedArticleSelect,
-                    },
-                },
-            });
+            let missingFields = getMissingBlogOptionalFields(error);
 
-            blog = fallbackBlog
-                ? {
-                    ...fallbackBlog,
-                    readTime: null,
-                    faqSchema: null,
-                    author: null,
+            while (true) {
+                try {
+                    const fallbackBlog = await prisma.blog.findUnique({
+                        where: { id },
+                        select: {
+                            ...omitBlogOptionalFields(blogEditSelect, missingFields),
+                            relatedArticles: {
+                                select: relatedArticleSelect,
+                            },
+                        },
+                    });
+
+                    blog = fallbackBlog ? withMissingBlogOptionalFields(fallbackBlog, missingFields) : null;
+                    break;
+                } catch (innerError) {
+                    if (!isMissingBlogOptionalColumn(innerError)) {
+                        throw innerError;
+                    }
+
+                    const nextMissingFields = Array.from(new Set([
+                        ...missingFields,
+                        ...getMissingBlogOptionalFields(innerError),
+                    ]));
+
+                    if (nextMissingFields.length === missingFields.length) {
+                        throw innerError;
+                    }
+
+                    missingFields = nextMissingFields;
                 }
-                : null;
+            }
         }
 
         if (!blog) {
@@ -188,14 +161,36 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 throw error;
             }
 
-            const { faqSchema: legacyFaqSchema, author: legacyAuthor, ...legacyBaseData } = baseData;
-            void legacyFaqSchema;
-            void legacyAuthor;
-            blog = await prisma.blog.update({
-                where: { id },
-                data: legacyBaseData,
-                select: { id: true, slug: true },
-            });
+            let missingFields = getMissingBlogOptionalFields(error);
+
+            while (true) {
+                try {
+                    blog = await prisma.blog.update({
+                        where: { id },
+                        data: omitBlogOptionalFields({
+                            ...baseData,
+                            readTime: normalizeReadTime(readTime),
+                        }, missingFields),
+                        select: { id: true, slug: true },
+                    });
+                    break;
+                } catch (innerError) {
+                    if (!isMissingBlogOptionalColumn(innerError)) {
+                        throw innerError;
+                    }
+
+                    const nextMissingFields = Array.from(new Set([
+                        ...missingFields,
+                        ...getMissingBlogOptionalFields(innerError),
+                    ]));
+
+                    if (nextMissingFields.length === missingFields.length) {
+                        throw innerError;
+                    }
+
+                    missingFields = nextMissingFields;
+                }
+            }
         }
 
         revalidatePath('/blog');
