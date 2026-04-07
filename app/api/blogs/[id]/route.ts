@@ -77,6 +77,12 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
                 throw error;
             }
 
+            console.error('[blogs/:id GET] Optional blog field fallback triggered', {
+                id,
+                error: error instanceof Error ? error.message : String(error),
+                fields: getMissingBlogOptionalFields(error),
+            });
+
             let missingFields = getMissingBlogOptionalFields(error);
 
             while (true) {
@@ -92,11 +98,22 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
                     });
 
                     blog = fallbackBlog ? withMissingBlogOptionalFields(fallbackBlog, missingFields) : null;
+                    console.error('[blogs/:id GET] Returning fallback blog data with optional fields nulled', {
+                        id,
+                        missingFields,
+                        found: Boolean(fallbackBlog),
+                    });
                     break;
                 } catch (innerError) {
                     if (!isMissingBlogOptionalColumn(innerError)) {
                         throw innerError;
                     }
+
+                    console.error('[blogs/:id GET] Additional optional blog fields missing during fallback', {
+                        id,
+                        error: innerError instanceof Error ? innerError.message : String(innerError),
+                        fields: getMissingBlogOptionalFields(innerError),
+                    });
 
                     const nextMissingFields = Array.from(new Set([
                         ...missingFields,
@@ -113,10 +130,15 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
         }
 
         if (!blog) {
+            console.error('[blogs/:id GET] Blog not found after query', { id });
             return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
         }
         return NextResponse.json(normalizeBlogFaqSchema(blog));
-    } catch {
+    } catch (error) {
+        console.error('[blogs/:id GET] Unhandled error fetching blog', {
+            id: await params.then((value) => value.id).catch(() => 'unknown'),
+            error: error instanceof Error ? error.message : String(error),
+        });
         return NextResponse.json({ error: 'Error fetching blog' }, { status: 500 });
     }
 }

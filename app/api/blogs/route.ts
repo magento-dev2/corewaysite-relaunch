@@ -59,6 +59,11 @@ export async function GET() {
     return NextResponse.json(blogs.map(normalizeBlogFaqSchema));
   } catch (error) {
     if (isMissingBlogOptionalColumn(error)) {
+      console.error('[blogs GET] Optional blog field fallback triggered', {
+        error: error instanceof Error ? error.message : String(error),
+        fields: getMissingBlogOptionalFields(error),
+      });
+
       let missingFields = getMissingBlogOptionalFields(error);
 
       while (true) {
@@ -78,6 +83,11 @@ export async function GET() {
             throw innerError;
           }
 
+          console.error('[blogs GET] Additional optional blog fields missing during fallback', {
+            error: innerError instanceof Error ? innerError.message : String(innerError),
+            fields: getMissingBlogOptionalFields(innerError),
+          });
+
           const nextMissingFields = Array.from(new Set([
             ...missingFields,
             ...getMissingBlogOptionalFields(innerError),
@@ -92,6 +102,9 @@ export async function GET() {
       }
     }
 
+    console.error('[blogs GET] Unhandled error fetching blogs', {
+      error: error instanceof Error ? error.message : String(error),
+    });
     return NextResponse.json({ error: 'Error fetching blogs' }, { status: 500 });
   }
 }
