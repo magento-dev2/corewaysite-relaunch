@@ -15,7 +15,6 @@ export default function EditBlog() {
 
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
-    const [rawFaqSchema, setRawFaqSchema] = useState<string>('');
     type RelatedArticle = { id: string };
     type BlogFormData = {
         title: string;
@@ -77,7 +76,6 @@ export default function EditBlog() {
                 const res = await fetch(`/api/blogs/${id}`);
                 if (res.ok) {
                     const data = await res.json();
-                    setRawFaqSchema(typeof data.faqSchema === 'string' ? data.faqSchema : JSON.stringify(data.faqSchema ?? null));
                     const parsedFaqItems = parseFAQItems(data.faqSchema);
                     setFormData({
                         title: data.title,
@@ -363,13 +361,6 @@ export default function EditBlog() {
                         {faqItems.length === 0 && (
                             <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields for the frontend FAQ section.</p>
                         )}
-
-                        <div className="rounded-lg border border-dashed border-purple-200 bg-white/80 p-3">
-                            <p className="text-xs font-medium text-gray-700">Raw FAQ schema from API</p>
-                            <p className="mt-1 break-all text-xs text-gray-500">
-                                {rawFaqSchema || 'null'}
-                            </p>
-                        </div>
 
                         <div className="space-y-4">
                             {faqItems.map((item, index) => (
