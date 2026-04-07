@@ -479,7 +479,7 @@ export default async function BlogDetail({
                       <ArrowLeft className="w-4 h-4" />
                       Previous Blog
                     </span>
-                    <h4 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h4 className="text-sm  font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {adjacentBlogs.previous.title}
                     </h4>
                   </Link>
@@ -496,7 +496,7 @@ export default async function BlogDetail({
                       Next Blog
                       <ArrowRight className="w-4 h-4" />
                     </span>
-                    <h4 className="text-sm md:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h4 className="text-sm  font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {adjacentBlogs.next.title}
                     </h4>
                   </Link>
