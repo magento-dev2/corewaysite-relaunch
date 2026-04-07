@@ -475,7 +475,7 @@ export default async function BlogDetail({
                     href={`/blog/${adjacentBlogs.previous.slug}`}
                     className="group rounded-xl border border-gray-200 bg-white p-5 hover:border-purple-300 hover:shadow-sm transition-all"
                   >
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-purple-700 mb-2">
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-purple-700 mb-2 md:justify-end">
                       <ArrowLeft className="w-4 h-4" />
                       Previous Blog
                     </span>
