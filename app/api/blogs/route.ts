@@ -43,13 +43,20 @@ function normalizeReadTime(value: unknown) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
 }
 
+function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
+  return {
+    ...blog,
+    faqSchema: normalizeFAQSchema(blog.faqSchema),
+  };
+}
+
 export async function GET() {
   try {
     const blogs = await prisma.blog.findMany({
       select: blogListSelect,
       orderBy: { createdAt: 'desc' },
     });
-    return NextResponse.json(blogs);
+    return NextResponse.json(blogs.map(normalizeBlogFaqSchema));
   } catch (error) {
     if (isMissingBlogOptionalColumn(error)) {
       let missingFields = getMissingBlogOptionalFields(error);
@@ -61,7 +68,11 @@ export async function GET() {
             orderBy: { createdAt: 'desc' },
           });
 
-          return NextResponse.json(blogs.map((blog) => withMissingBlogOptionalFields(blog, missingFields)));
+          return NextResponse.json(
+            blogs
+              .map((blog) => withMissingBlogOptionalFields(blog, missingFields))
+              .map(normalizeBlogFaqSchema),
+          );
         } catch (innerError) {
           if (!isMissingBlogOptionalColumn(innerError)) {
             throw innerError;

@@ -92,6 +92,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/contact",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
         source: "/career.html",
         destination: "/careers",
         permanent: true,
@@ -642,4 +647,3 @@ export default nextConfig;
 // };
 
 // export default nextConfig;
-

@@ -3,11 +3,44 @@ export type FAQItem = {
   answer: string;
 };
 
+function normalizeText(value: unknown): string | null {
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed || null;
+  }
+
+  if (typeof value === 'number' || typeof value === 'boolean') {
+    return String(value);
+  }
+
+  if (typeof value === 'object' && value !== null) {
+    const textLikeValue = (value as {
+      text?: unknown;
+      value?: unknown;
+      answer?: unknown;
+      name?: unknown;
+      question?: unknown;
+    }).text
+      ?? (value as { value?: unknown }).value
+      ?? (value as { answer?: unknown }).answer
+      ?? (value as { name?: unknown }).name
+      ?? (value as { question?: unknown }).question;
+
+    if (textLikeValue !== undefined) {
+      return normalizeText(textLikeValue);
+    }
+  }
+
+  return null;
+}
+
 function isFAQItem(value: unknown): value is FAQItem {
-  return typeof value === 'object'
-    && value !== null
-    && typeof (value as { question?: unknown }).question === 'string'
-    && typeof (value as { answer?: unknown }).answer === 'string';
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+
+  return normalizeText((value as { question?: unknown }).question) !== null
+    && normalizeText((value as { answer?: unknown }).answer) !== null;
 }
 
 function fromSchemaOrgItem(value: unknown): FAQItem | null {
@@ -15,13 +48,17 @@ function fromSchemaOrgItem(value: unknown): FAQItem | null {
     return null;
   }
 
-  const question = (value as { name?: unknown }).name;
-  const acceptedAnswer = (value as { acceptedAnswer?: unknown }).acceptedAnswer;
-  const answer = typeof acceptedAnswer === 'object' && acceptedAnswer !== null
-    ? (acceptedAnswer as { text?: unknown }).text
-    : undefined;
+  const question = normalizeText(
+    (value as { question?: unknown; name?: unknown; title?: unknown }).question
+      ?? (value as { name?: unknown }).name
+      ?? (value as { title?: unknown }).title,
+  );
+  const answer = normalizeText(
+    (value as { answer?: unknown; acceptedAnswer?: unknown }).answer
+      ?? (value as { acceptedAnswer?: unknown }).acceptedAnswer,
+  );
 
-  if (typeof question !== 'string' || typeof answer !== 'string') {
+  if (!question || !answer) {
     return null;
   }
 
@@ -33,7 +70,14 @@ function fromSchemaOrgItem(value: unknown): FAQItem | null {
 
 function extractFAQItems(value: unknown): FAQItem[] {
   if (Array.isArray(value)) {
-    const directItems = value.filter(isFAQItem);
+    const directItems = value
+      .filter(isFAQItem)
+      .map((item) => ({
+        question: normalizeText(item.question) ?? '',
+        answer: normalizeText(item.answer) ?? '',
+      }))
+      .filter((item) => item.question && item.answer);
+
     if (directItems.length > 0) {
       return directItems;
     }
@@ -44,10 +88,34 @@ function extractFAQItems(value: unknown): FAQItem[] {
   }
 
   if (typeof value === 'object' && value !== null) {
-    const mainEntity = (value as { mainEntity?: unknown }).mainEntity;
-    if (Array.isArray(mainEntity)) {
-      return extractFAQItems(mainEntity);
+    const container = value as {
+      mainEntity?: unknown;
+      faqs?: unknown;
+      faq?: unknown;
+      faqSchema?: unknown;
+      questions?: unknown;
+      items?: unknown;
+      data?: unknown;
+    };
+
+    const nestedCollections = [
+      container.mainEntity,
+      container.faqs,
+      container.faq,
+      container.faqSchema,
+      container.questions,
+      container.items,
+      container.data,
+    ];
+
+    for (const nestedValue of nestedCollections) {
+      const items = extractFAQItems(nestedValue);
+      if (items.length > 0) {
+        return items;
+      }
     }
+
+    return fromSchemaOrgItem(value) ? [fromSchemaOrgItem(value)!] : [];
   }
 
   return [];
@@ -59,16 +127,29 @@ export function parseFAQItems(value: unknown): FAQItem[] {
   }
 
   if (typeof value === 'string') {
-    const trimmed = value.trim();
-    if (!trimmed) {
+    let currentValue: unknown = value.trim();
+    if (!currentValue) {
       return [];
     }
 
-    try {
-      return parseFAQItems(JSON.parse(trimmed));
-    } catch {
+    for (let depth = 0; depth < 3 && typeof currentValue === 'string'; depth += 1) {
+      const trimmed = currentValue.trim();
+      if (!trimmed) {
+        return [];
+      }
+
+      try {
+        currentValue = JSON.parse(trimmed);
+      } catch {
+        break;
+      }
+    }
+
+    if (typeof currentValue === 'string') {
       return [];
     }
+
+    return extractFAQItems(currentValue);
   }
 
   return extractFAQItems(value);

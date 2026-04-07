@@ -9,7 +9,7 @@ import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
-import { parseFAQItems } from '@/lib/faq-schema';
+import { normalizeFAQSchema, parseFAQItems } from '@/lib/faq-schema';
 import {
   getMissingBlogOptionalFields,
   isMissingBlogOptionalColumn,
@@ -177,6 +177,7 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
 
   return {
     ...blog,
+    faqSchema: normalizeFAQSchema(blog.faqSchema),
     relatedArticles: uniqueRelated
   };
 }

@@ -50,6 +50,13 @@ function normalizeReadTime(value: unknown) {
     return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
 }
 
+function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
+    return {
+        ...blog,
+        faqSchema: normalizeFAQSchema(blog.faqSchema),
+    };
+}
+
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
@@ -108,7 +115,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
         if (!blog) {
             return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
         }
-        return NextResponse.json(blog);
+        return NextResponse.json(normalizeBlogFaqSchema(blog));
     } catch {
         return NextResponse.json({ error: 'Error fetching blog' }, { status: 500 });
     }
