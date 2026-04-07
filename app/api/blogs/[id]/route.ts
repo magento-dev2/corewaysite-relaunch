@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { normalizeFAQSchema } from '@/lib/faq-schema';
+import { normalizeReadTimeValue } from '@/lib/read-time';
 import {
     getMissingBlogOptionalFields,
     isMissingBlogOptionalColumn,
@@ -40,15 +41,6 @@ const blogEditSelect = {
     ctaButton2Text: true,
     ctaButton2Link: true,
 } as const;
-
-function normalizeReadTime(value: unknown) {
-    if (value === undefined || value === null || value === '') {
-        return 9;
-    }
-
-    const parsed = typeof value === 'string' ? Number.parseInt(value, 10) : Number(value);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
-}
 
 function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
     return {
@@ -181,7 +173,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 where: { id },
                 data: {
                     ...baseData,
-                    readTime: normalizeReadTime(readTime),
+                    readTime: normalizeReadTimeValue(readTime),
                 },
                 select: { id: true, slug: true },
             });
@@ -198,7 +190,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                         where: { id },
                         data: omitBlogOptionalFields({
                             ...baseData,
-                            readTime: normalizeReadTime(readTime),
+                            readTime: normalizeReadTimeValue(readTime),
                         }, missingFields),
                         select: { id: true, slug: true },
                     });

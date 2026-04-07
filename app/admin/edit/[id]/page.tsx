@@ -6,6 +6,7 @@ import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
 import { parseFAQItems, serializeFAQItems, type FAQItem } from '@/lib/faq-schema';
+import { normalizeReadTimeValue, toReadTimeInput } from '@/lib/read-time';
 
 export default function EditBlog() {
     const router = useRouter();
@@ -83,7 +84,7 @@ export default function EditBlog() {
                         slug: data.slug,
                         excerpt: data.excerpt || '',
                         coverImage: data.coverImage || '',
-                        readTime: String(data.readTime ?? 9),
+                        readTime: toReadTimeInput(data.readTime),
                         content: data.content,
                         isActive: data.isActive ?? true,
                         relatedArticleIds: data.relatedArticles?.map((article: RelatedArticle) => article.id) || [],
@@ -122,7 +123,10 @@ export default function EditBlog() {
             const res = await fetch(`/api/blogs/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    readTime: normalizeReadTimeValue(formData.readTime),
+                }),
             });
 
             if (res.ok) {
@@ -205,14 +209,14 @@ export default function EditBlog() {
 
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">Read Time (minutes)</label>
-                        <input
-                            type="number"
-                            min="1"
-                            value={formData.readTime}
-                            onChange={(e) => setFormData({ ...formData, readTime: e.target.value })}
-                            className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
-                            placeholder="9"
-                        />
+                            <input
+                                type="number"
+                                min="1"
+                                value={formData.readTime}
+                                onChange={(e) => setFormData({ ...formData, readTime: toReadTimeInput(e.target.value.replace(/[^\d]/g, '')) })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="9"
+                            />
                     </div>
 
                     <div className="space-y-2">

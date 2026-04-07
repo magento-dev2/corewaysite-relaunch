@@ -10,6 +10,7 @@ import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
 import { normalizeFAQSchema, parseFAQItems } from '@/lib/faq-schema';
+import { formatReadTimeDisplay } from '@/lib/read-time';
 import {
   getMissingBlogOptionalFields,
   isMissingBlogOptionalColumn,
@@ -34,7 +35,7 @@ type BlogWithRelations = {
   author: string | null;
   excerpt: string | null;
   coverImage: string | null;
-  readTime?: number | null;
+  readTime?: string | number | null;
   faqSchema?: string | null;
   createdAt: Date;
   metaTitle: string | null;
@@ -374,7 +375,7 @@ export default async function BlogDetail({
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span>{blog.readTime ?? 9} min read</span>
+                <span>{formatReadTimeDisplay(blog.readTime)}</span>
               </div>
             </div>
           </div>
@@ -391,16 +392,15 @@ export default async function BlogDetail({
             </div>
 
             {/* Dynamic CTA Section */}
+           {/*
             {(blog.ctaTitle || blog.ctaButton1Text) && (
               <div className="mt-14 mb-10">
                 <div className="relative group overflow-hidden rounded-[2.5rem]">
 
                   <div className="relative bg-[#0E0918] rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
-                    {/* Dynamic Background Patterns */}
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse" />
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
 
-                    {/* SVG Decorative Grid */}
                     <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
 
                     <div className="relative z-10 px-8 py-16 md:px-20 md:py-24 text-center max-w-5xl mx-auto flex flex-col items-center">
@@ -425,7 +425,6 @@ export default async function BlogDetail({
                               className="group/btn relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 bg-purple-600 rounded-2xl hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] active:scale-95 min-w-[220px]"
                             >
                               <span className="relative z-10 text-base md:text-lg">{cleanCtaButtonLabel(blog.ctaButton1Text)}</span>
-                              {/* <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-1.5 transition-transform duration-300" /> */}
                             </Link>
                           )}
                           {blog.ctaButton2Text && (
@@ -443,6 +442,7 @@ export default async function BlogDetail({
                 </div>
               </div>
             )}
+            */}
 
             {faqItems.length > 0 && (
               <section className="mt-14 mb-10 rounded-2xl border border-purple-100 bg-gradient-to-b from-purple-50/70 to-white p-6 md:p-8">

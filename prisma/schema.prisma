@@ -14,7 +14,7 @@ model Blog {
   content         String
   excerpt         String?
   coverImage      String?
-  readTime        Int?      @default(9)
+  readTime        String?   @default("9 min read")
   faqSchema       String?
   publishedAt     DateTime?
   createdAt       DateTime  @default(now())
