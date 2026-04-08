@@ -29,9 +29,9 @@ export function middleware(request: NextRequest) {
   );
 
   // Content Security Policy
- response.headers.set(
-  'Content-Security-Policy',
-  `
+  response.headers.set(
+    'Content-Security-Policy',
+    `
 default-src 'self';
 script-src 'self' 'unsafe-inline' 'unsafe-eval'
   https://www.googletagmanager.com
@@ -47,6 +47,8 @@ style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
 img-src 'self' data: blob: https:;
 font-src 'self' data: https://fonts.gstatic.com;
 connect-src 'self'
+  https://eu.i.posthog.com
+  https://us.i.posthog.com
   https://www.google-analytics.com
   https://www.googletagmanager.com
   https://app.infracaptain.com
@@ -65,7 +67,7 @@ object-src 'none';
 base-uri 'self';
 form-action 'self';
   `.replace(/\n/g, '')
-);
+  );
 
   // X-Frame-Options
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');

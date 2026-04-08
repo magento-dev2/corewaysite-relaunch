@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import Script from "next/script";
 import './globals.css';
 import LayoutWrapper from './LayoutWrapper';
+import PostHogProvider from './providers';
+import PostHogPageView from './PostHogPageView';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,7 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <head>
         <JsonLd />
-     
+
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">
@@ -120,7 +122,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* End Google Tag Manager (noscript) */}
 
         <div className="min-h-screen bg-[#0E0918]">
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <PostHogProvider>
+            <PostHogPageView />
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </PostHogProvider>
         </div>
 
       </body>
