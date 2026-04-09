@@ -183,15 +183,10 @@ export async function POST(req: Request) {
       : "NDA Accepted: No";
 
     const transporter = nodemailer.createTransport({
-<<<<<<< HEAD
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true,
-=======
+
       host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
       port: Number(process.env.SMTP_PORT) || 2525,
       secure: false, // Brevo on 2525 usually uses STARTTLS rather than implicit TLS
->>>>>>> 76df3589ef541be8c6db2194ad1525fe9ca8f739
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
