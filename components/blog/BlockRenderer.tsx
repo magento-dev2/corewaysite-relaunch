@@ -1,4 +1,6 @@
+'use client';
 import { Block } from '@/types/blocks';
+import { useEffect, useRef } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -7,9 +9,111 @@ interface BlockRendererProps {
 }
 
 function cleanHtmlCtaButtonArrows(html: string) {
+    if (!html) return '';
     return html.replace(
         />([^<]*?)\s*(?:→|➡|➜|&rarr;|&#8594;)\s*<\/a>/giu,
         (_match, label: string) => `>${label.trim()}</a>`
+    );
+}
+
+function processHtml(html: string) {
+    if (!html) return '';
+    return cleanHtmlCtaButtonArrows(html)
+        .replace(/src=["']assets\//g, 'src="/assets/')
+        .replace(/class="([^"]*)"/g, (match, classNames) => {
+            let style = '';
+
+            if (/\btext-sm\b/.test(classNames)) {
+                style += 'font-size: 14px; ';
+                if (/\btext-gray-(300|400)\b/.test(classNames) || /\btext\s+gray-400\b/.test(classNames)) {
+                    style += 'color: gray; ';
+                }
+            }
+
+            if (/\btext-white\b/.test(classNames)) {
+                style += 'color: white; ';
+            }
+
+            if (style) {
+                return `class="${classNames}" style="${style.trim()}"`;
+            }
+            return match;
+        });
+}
+
+function HtmlBlock({ html, className }: { html: string; className?: string }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        const form = containerRef.current.querySelector('form');
+        if (!form) return;
+
+        // Check if this is the "Talk to an AI Expert" form
+        const isAIExpertForm = containerRef.current.textContent?.includes('Talk to an AI Expert');
+        if (!isAIExpertForm) return;
+
+        const handleSubmit = async (e: Event) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+            const originalBtnText = submitBtn?.innerText || 'Submit Inquiry';
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Sending...';
+            }
+
+            try {
+                const inputs = form.querySelectorAll('input');
+                const textarea = form.querySelector('textarea');
+
+                const data = {
+                    name: inputs[0]?.value,
+                    email: inputs[1]?.value,
+                    message: textarea?.value,
+                    subject: 'AI Expert Inquiry from Blog',
+                    source: 'blog_ai_expert_form'
+                };
+
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    if (submitBtn) {
+                        submitBtn.innerText = 'Sent Successfully!';
+                        submitBtn.style.backgroundColor = '#10b981'; // Green
+                    }
+                    form.reset();
+                    alert('Thank you! Your inquiry has been sent to our AI experts.');
+                } else {
+                    throw new Error(result.error || 'Failed to send');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+            }
+        };
+
+        form.addEventListener('submit', handleSubmit);
+        return () => form.removeEventListener('submit', handleSubmit);
+    }, [html]);
+
+    return (
+        <div
+            ref={containerRef}
+            className={className}
+            dangerouslySetInnerHTML={{ __html: processHtml(html) }}
+        />
     );
 }
 
@@ -29,16 +133,10 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
     }
 
     if (isHTML) {
-        // Fix relative image paths
-        const fixedContent = cleanHtmlCtaButtonArrows(content.replace(
-            /src=["']assets\//g, // Match src="assets/ or src='assets/
-            'src="/assets/'
-        ));
-
         return (
-            <div
+            <HtmlBlock
                 className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-strong:text-white blog-html-content"
-                dangerouslySetInnerHTML={{ __html: fixedContent }}
+                html={content}
             />
         );
     }
@@ -139,10 +237,10 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
 
                     case 'html':
                         return (
-                            <div
+                            <HtmlBlock
                                 key={block.id}
                                 className="my-6 blog-html-content"
-                                dangerouslySetInnerHTML={{ __html: cleanHtmlCtaButtonArrows(block.html) }}
+                                html={block.html}
                             />
                         );
 

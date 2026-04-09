@@ -125,7 +125,7 @@ export default async function BlogListing(props: {
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
                     <Calendar size={14} />
-                    {new Date(blog.createdAt).toLocaleDateString()}
+                    {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     <span>•</span>
                     <span>{blog.author || 'Alpesh'}</span>
                   </div>

@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 async function verifyRecaptcha(token: string): Promise<boolean> {
   try {
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-    
+
     if (!secretKey) {
       console.warn('RECAPTCHA_SECRET_KEY not configured');
       return true; // Allow submission if reCAPTCHA is not configured
@@ -91,9 +91,9 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 //       subject: subject || "New Contact Form Submission",
 //       html: `
 //         <div style="font-family:Arial, sans-serif; max-width:600px; margin:auto; padding:20px; background:#ffffff; border-radius:8px; border:1px solid #eee">
-          
+
 //           <h2 style="text-align:center; color:#4B4B4B;">New Contact Submission</h2>
-          
+
 //           <p><strong>Name:</strong> ${name}</p>
 //           <p><strong>Email:</strong> ${email}</p>
 //           ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
@@ -125,7 +125,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 //     });
 //   } catch (error) {
 //     console.error('Error sending email:', error);
-    
+
 //     // Provide more specific error messages
 //     if (error instanceof Error) {
 //       if (error.message.includes('Invalid login')) {
@@ -135,7 +135,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 //         );
 //       }
 //     }
-    
+
 //     return NextResponse.json(
 //       { error: 'Failed to send your message. Please try again later or contact us directly.' },
 //       { status: 500 }
@@ -185,7 +185,7 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: true, 
+      secure: true,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -209,7 +209,7 @@ ${message}
 Sent on: ${new Date().toLocaleString()}
 `;
 
-const htmlContent = `
+    const htmlContent = `
 <html>
 <body style="font-family:Arial, sans-serif; max-width:600px; margin:auto; padding:20px; background:#ffffff; border-radius:8px; border:1px solid #eee">
 
@@ -247,24 +247,24 @@ const htmlContent = `
 </html>
 `;
 
-const mailOptions = {
-  from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
+    const mailOptions = {
+      from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
 
-  // FIX: Avoid forged freemail reply-to
-  replyTo: `"${name}" <${email}>`,
+      // FIX: Avoid forged freemail reply-to
+      replyTo: `"${name}" <${email}>`,
 
-  to: "info@corewaysolution.com",
-  subject: subject || "New Contact Form Submission",
-  text: plainText,     // FIX: Add plain text version
-  html: htmlContent,   // FIX: Add <html> wrapper
+      to: process.env.MAIL_TO || "d.developer002@gmail.com",
+      subject: subject || "New Contact Form Submission",
+      text: plainText,     // FIX: Add plain text version
+      html: htmlContent,   // FIX: Add <html> wrapper
 
-  // FIX: Improve spam score
-  headers: {
-    "List-Unsubscribe": `<mailto:no-reply@corewaysolution.com>`,
-  }
-};
+      // FIX: Improve spam score
+      headers: {
+        "List-Unsubscribe": `<mailto:no-reply@corewaysolution.com>`,
+      }
+    };
 
-await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
 
 
     return NextResponse.json({
