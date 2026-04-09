@@ -127,7 +127,7 @@ export default async function BlogListing(props: {
                     <Calendar size={14} />
                     {new Date(blog.createdAt).toLocaleDateString()}
                     <span>•</span>
-                    <span>{blog.author || 'Coreway Team'}</span>
+                    <span>{blog.author || 'Alpesh'}</span>
                   </div>
                   <h2 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors line-clamp-2">
                     {blog.title}
