@@ -183,14 +183,19 @@ export async function POST(req: Request) {
       : "NDA Accepted: No";
 
     const transporter = nodemailer.createTransport({
+<<<<<<< HEAD
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
       secure: true,
+=======
+      host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
+      port: Number(process.env.SMTP_PORT) || 2525,
+      secure: false, // Brevo on 2525 usually uses STARTTLS rather than implicit TLS
+>>>>>>> 76df3589ef541be8c6db2194ad1525fe9ca8f739
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-      tls: { rejectUnauthorized: false },
     });
 
     const plainText = `
@@ -247,24 +252,43 @@ Sent on: ${new Date().toLocaleString()}
 </html>
 `;
 
-    const mailOptions = {
-      from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
-
-      // FIX: Avoid forged freemail reply-to
-      replyTo: `"${name}" <${email}>`,
-
-      to: process.env.MAIL_TO || "d.developer002@gmail.com",
-      subject: subject || "New Contact Form Submission",
-      text: plainText,     // FIX: Add plain text version
-      html: htmlContent,   // FIX: Add <html> wrapper
-
-      // FIX: Improve spam score
+    const adminMailOptions = {
+      from: `"Coreway Solution" <${process.env.SMTP_FROM}>`,
+      replyTo: `<${process.env.REPLY_EMAIL}>`,
+      to: process.env.ADMIN_EMAIL || "info@corewaysolution.com",
+      subject: subject || "New Contact Form Submission - Admin",
+      text: plainText,
+      html: htmlContent,
       headers: {
         "List-Unsubscribe": `<mailto:no-reply@corewaysolution.com>`,
       }
     };
 
-    await transporter.sendMail(mailOptions);
+    const userMailOptions = {
+      from: `"Coreway Team" <${process.env.SMTP_FROM}>`,
+      to: email,
+      subject: "Thank You for Contacting Coreway Solution",
+      text: `Hi ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest Regards,\nCoreway Solution`,
+      html: `
+    <html>
+    <body style="font-family:Arial, sans-serif; max-width:600px; margin:auto; padding:20px; background:#ffffff; border-radius:8px; border:1px solid #eee">
+      <h2 style="text-align:center; color:#4B4B4B;">Thank You for Reaching Out!</h2>
+      <p>Hi <strong>${name}</strong>,</p>
+      <p>We wanted to let you know that we've received your message. Our team is reviewing it and will get back to you as soon as possible.</p>
+      <p><strong>Your Message:</strong></p>
+      <blockquote style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 4px solid #7c3aed;">
+        ${message.replace(/\n/g, "<br>")}
+      </blockquote>
+      <p>Best Regards,<br><strong>Coreway Solution Team</strong></p>
+    </body>
+    </html>
+  `,
+    };
+
+    await Promise.all([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(userMailOptions),
+    ]);
 
 
     return NextResponse.json({
