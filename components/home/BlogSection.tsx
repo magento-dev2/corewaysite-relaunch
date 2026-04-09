@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Sparkles } from 'lucide-react';
+import { formatReadTimeDisplay } from '@/lib/read-time';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,8 @@ interface BlogPost {
   excerpt: string;
   coverImage: string | null;
   createdAt: string;
-  readTime?: number | null;
+  readTime?: string | number | null;
+  isActive: boolean;
 }
 
 interface UIBlogPost {
@@ -52,9 +54,10 @@ export default function BlogSection() {
           throw new Error('Failed to fetch blogs');
         }
         const data: BlogPost[] = await response.json();
+        const activeBlogs = data.filter((blog) => blog.isActive);
 
         // Map DB data to UI data
-        const mappedPosts: UIBlogPost[] = data.map((blog, index) => ({
+        const mappedPosts: UIBlogPost[] = activeBlogs.map((blog, index) => ({
           id: blog.id,
           category: 'Insights', // Default category
           title: blog.title,
@@ -66,7 +69,7 @@ export default function BlogSection() {
             day: 'numeric',
             year: 'numeric'
           }),
-          readTime: `${blog.readTime ?? 9} min read`,
+          readTime: formatReadTimeDisplay(blog.readTime),
           image: blog.coverImage || 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800', // Default image
           featured: index === 0, // First item is featured
         })).slice(0, 4); // Limit to 4 posts

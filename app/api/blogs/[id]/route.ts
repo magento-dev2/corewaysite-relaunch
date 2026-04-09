@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
+import { normalizeFAQSchema } from '@/lib/faq-schema';
+import { normalizeReadTimeValue } from '@/lib/read-time';
+import {
+    getMissingBlogOptionalFields,
+    isMissingBlogOptionalColumn,
+    omitBlogOptionalFields,
+    withMissingBlogOptionalFields,
+} from '@/lib/blog-optional-fields';
 
 const relatedArticleSelect = {
     id: true,
@@ -33,77 +42,11 @@ const blogEditSelect = {
     ctaButton2Link: true,
 } as const;
 
-const blogEditFallbackSelect = {
-    id: true,
-    title: true,
-    slug: true,
-    content: true,
-    excerpt: true,
-    coverImage: true,
-    isActive: true,
-    metaTitle: true,
-    metaDescription: true,
-    metaKeywords: true,
-    ctaTitle: true,
-    ctaDescription: true,
-    ctaButton1Text: true,
-    ctaButton1Link: true,
-    ctaButton2Text: true,
-    ctaButton2Link: true,
-} as const;
-
-function hasMissingColumn(error: unknown, columnName: string) {
-    if (!(error instanceof Error)) {
-        return false;
-    }
-
-    return error.message.includes(columnName)
-        || error.message.includes(`column \`${columnName}\` does not exist`)
-        || error.message.includes(`column: '${columnName}'`)
-        || error.message.includes(`column: "${columnName}"`);
-}
-
-function hasUnknownBlogField(error: unknown, fieldName: string) {
-    return error instanceof Error
-        && (error.message.includes(`Unknown field \`${fieldName}\``)
-            || error.message.includes(`Unknown argument \`${fieldName}\``));
-}
-
-function isMissingBlogOptionalColumn(error: unknown) {
-    return hasMissingColumn(error, 'Blog.readTime')
-        || hasMissingColumn(error, 'Blog.faqSchema')
-        || hasMissingColumn(error, 'Blog.author')
-        || hasMissingColumn(error, 'readTime')
-        || hasMissingColumn(error, 'faqSchema')
-        || hasMissingColumn(error, 'author')
-        || hasUnknownBlogField(error, 'readTime')
-        || hasUnknownBlogField(error, 'faqSchema')
-        || hasUnknownBlogField(error, 'author');
-}
-
-function normalizeReadTime(value: unknown) {
-    if (value === undefined || value === null || value === '') {
-        return 9;
-    }
-
-    const parsed = typeof value === 'string' ? Number.parseInt(value, 10) : Number(value);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : 9;
-}
-
-function normalizeFAQSchema(value: unknown): string | null {
-    if (value === undefined || value === null || value === '') {
-        return null;
-    }
-
-    if (typeof value === 'string') {
-        return value;
-    }
-
-    try {
-        return JSON.stringify(value);
-    } catch {
-        return null;
-    }
+function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
+    return {
+        ...blog,
+        faqSchema: normalizeFAQSchema(blog.faqSchema),
+    };
 }
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
@@ -126,31 +69,68 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
                 throw error;
             }
 
-            const fallbackBlog = await prisma.blog.findUnique({
-                where: { id },
-                select: {
-                    ...blogEditFallbackSelect,
-                    relatedArticles: {
-                        select: relatedArticleSelect,
-                    },
-                },
+            console.error('[blogs/:id GET] Optional blog field fallback triggered', {
+                id,
+                error: error instanceof Error ? error.message : String(error),
+                fields: getMissingBlogOptionalFields(error),
             });
 
-            blog = fallbackBlog
-                ? {
-                    ...fallbackBlog,
-                    readTime: null,
-                    faqSchema: null,
-                    author: null,
+            let missingFields = getMissingBlogOptionalFields(error);
+
+            while (true) {
+                try {
+                    const fallbackBlog = await prisma.blog.findUnique({
+                        where: { id },
+                        select: {
+                            ...omitBlogOptionalFields(blogEditSelect, missingFields),
+                            relatedArticles: {
+                                select: relatedArticleSelect,
+                            },
+                        },
+                    });
+
+                    blog = fallbackBlog ? withMissingBlogOptionalFields(fallbackBlog, missingFields) : null;
+                    console.error('[blogs/:id GET] Returning fallback blog data with optional fields nulled', {
+                        id,
+                        missingFields,
+                        found: Boolean(fallbackBlog),
+                    });
+                    break;
+                } catch (innerError) {
+                    if (!isMissingBlogOptionalColumn(innerError)) {
+                        throw innerError;
+                    }
+
+                    console.error('[blogs/:id GET] Additional optional blog fields missing during fallback', {
+                        id,
+                        error: innerError instanceof Error ? innerError.message : String(innerError),
+                        fields: getMissingBlogOptionalFields(innerError),
+                    });
+
+                    const nextMissingFields = Array.from(new Set([
+                        ...missingFields,
+                        ...getMissingBlogOptionalFields(innerError),
+                    ]));
+
+                    if (nextMissingFields.length === missingFields.length) {
+                        throw innerError;
+                    }
+
+                    missingFields = nextMissingFields;
                 }
-                : null;
+            }
         }
 
         if (!blog) {
+            console.error('[blogs/:id GET] Blog not found after query', { id });
             return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
         }
-        return NextResponse.json(blog);
-    } catch {
+        return NextResponse.json(normalizeBlogFaqSchema(blog));
+    } catch (error) {
+        console.error('[blogs/:id GET] Unhandled error fetching blog', {
+            id: await params.then((value) => value.id).catch(() => 'unknown'),
+            error: error instanceof Error ? error.message : String(error),
+        });
         return NextResponse.json({ error: 'Error fetching blog' }, { status: 500 });
     }
 }
@@ -193,7 +173,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 where: { id },
                 data: {
                     ...baseData,
-                    readTime: normalizeReadTime(readTime),
+                    readTime: normalizeReadTimeValue(readTime),
                 },
                 select: { id: true, slug: true },
             });
@@ -202,15 +182,40 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
                 throw error;
             }
 
-            const { faqSchema: legacyFaqSchema, author: legacyAuthor, ...legacyBaseData } = baseData;
-            void legacyFaqSchema;
-            void legacyAuthor;
-            blog = await prisma.blog.update({
-                where: { id },
-                data: legacyBaseData,
-                select: { id: true, slug: true },
-            });
+            let missingFields = getMissingBlogOptionalFields(error);
+
+            while (true) {
+                try {
+                    blog = await prisma.blog.update({
+                        where: { id },
+                        data: omitBlogOptionalFields({
+                            ...baseData,
+                            readTime: normalizeReadTimeValue(readTime),
+                        }, missingFields),
+                        select: { id: true, slug: true },
+                    });
+                    break;
+                } catch (innerError) {
+                    if (!isMissingBlogOptionalColumn(innerError)) {
+                        throw innerError;
+                    }
+
+                    const nextMissingFields = Array.from(new Set([
+                        ...missingFields,
+                        ...getMissingBlogOptionalFields(innerError),
+                    ]));
+
+                    if (nextMissingFields.length === missingFields.length) {
+                        throw innerError;
+                    }
+
+                    missingFields = nextMissingFields;
+                }
+            }
         }
+
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${blog.slug}`);
 
         return NextResponse.json(blog);
     } catch (error: unknown) {
@@ -222,9 +227,14 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 export async function DELETE(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const { id } = await params;
-        await prisma.blog.delete({
+        const deletedBlog = await prisma.blog.delete({
             where: { id },
+            select: { slug: true },
         });
+
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${deletedBlog.slug}`);
+
         return NextResponse.json({ message: 'Blog deleted' });
     } catch {
         return NextResponse.json({ error: 'Error deleting blog' }, { status: 500 });
@@ -240,8 +250,12 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         const blog = await prisma.blog.update({
             where: { id },
             data: { isActive },
-            select: { id: true, isActive: true },
+            select: { id: true, isActive: true, slug: true },
         });
+
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${blog.slug}`);
+
         return NextResponse.json(blog);
     } catch {
         return NextResponse.json({ error: 'Error updating blog status' }, { status: 500 });

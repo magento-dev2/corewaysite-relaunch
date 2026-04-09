@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { parseFAQItems } from '@/lib/faq-schema';
 
 interface Blog {
     id: string;
@@ -12,6 +13,7 @@ interface Blog {
     isActive: boolean;
     createdAt: string;
     publishedAt: string | null;
+    faqSchema?: string | null;
 }
 
 export default function AdminDashboard() {
@@ -90,69 +92,102 @@ export default function AdminDashboard() {
                                 <tr>
                                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Title</th>
                                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Slug</th>
+                                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">FAQ</th>
                                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Status</th>
                                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Date</th>
                                     <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
-                                {blogs?.map((blog) => (
-                                    <tr key={blog.id} className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4">
-                                            <Link
-                                                href={`/blog/${blog.slug}?preview=1`}
-                                                target="_blank"
-                                                className="text-gray-900 hover:text-purple-600 transition-colors font-medium"
-                                            >
-                                                {blog.title}
-                                            </Link>
-                                        </td>
-                                        <td className="px-6 py-4 text-sm text-gray-600">{blog.slug}</td>
-                                        <td className="px-6 py-4">
-                                            <button
-                                                onClick={() => toggleActive(blog.id, blog.isActive)}
-                                                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${blog.isActive
-                                                    ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                                    }`}
-                                            >
-                                                {blog.isActive ? 'Active' : 'Inactive'}
-                                            </button>
-                                        </td>
-                                        <td className="px-6 py-4 text-sm text-gray-600">
-                                            {new Date(blog.createdAt).toLocaleDateString()}
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex justify-end gap-3">
-                                                <Link
-                                                    href={`/blog/${blog.slug}?preview=1`}
-                                                    target="_blank"
-                                                    className="text-blue-600 hover:text-blue-700 transition-colors"
-                                                    title="View"
-                                                >
-                                                    <Eye size={18} />
-                                                </Link>
-                                                <Link
-                                                    href={`/admin/edit/${blog.id}`}
-                                                    className="text-amber-600 hover:text-amber-700 transition-colors"
-                                                    title="Edit"
-                                                >
-                                                    <Edit size={18} />
-                                                </Link>
+                                {blogs?.map((blog) => {
+                                    const faqItems = parseFAQItems(blog.faqSchema);
+                                    const firstQuestion = faqItems[0]?.question;
+
+                                    return (
+                                        <tr key={blog.id} className="hover:bg-gray-50 transition-colors">
+                                            <td className="px-6 py-4">
+                                                <div className="space-y-1">
+                                                    {blog.isActive ? (
+                                                        <Link
+                                                            href={`/blog/${blog.slug}`}
+                                                            target="_blank"
+                                                            className="text-gray-900 hover:text-purple-600 transition-colors font-medium"
+                                                        >
+                                                            {blog.title}
+                                                        </Link>
+                                                    ) : (
+                                                        <p className="text-gray-900 font-medium">{blog.title}</p>
+                                                    )}
+                                                    <p className="text-xs text-gray-500">
+                                                        {blog.isActive
+                                                            ? 'Live on frontend'
+                                                            : 'Hidden from frontend. Use Preview to view as admin.'}
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-sm text-gray-600">{blog.slug}</td>
+                                            <td className="px-6 py-4">
+                                                {faqItems.length > 0 ? (
+                                                    <div className="space-y-1">
+                                                        <span className="inline-flex rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
+                                                            {faqItems.length} FAQ {faqItems.length === 1 ? 'item' : 'items'}
+                                                        </span>
+                                                        {firstQuestion && (
+                                                            <p className="max-w-xs text-xs text-gray-500 line-clamp-2">
+                                                                {firstQuestion}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                ) : (
+                                                    <span className="text-sm text-gray-400">No FAQ</span>
+                                                )}
+                                            </td>
+                                            <td className="px-6 py-4">
                                                 <button
-                                                    onClick={() => deleteBlog(blog.id)}
-                                                    className="text-red-600 hover:text-red-700 transition-colors"
-                                                    title="Delete"
+                                                    onClick={() => toggleActive(blog.id, blog.isActive)}
+                                                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${blog.isActive
+                                                        ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                        }`}
                                                 >
-                                                    <Trash2 size={18} />
+                                                    {blog.isActive ? 'Active' : 'Inactive'}
                                                 </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
+                                            </td>
+                                            <td className="px-6 py-4 text-sm text-gray-600">
+                                                {new Date(blog.createdAt).toLocaleDateString()}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                <div className="flex justify-end gap-3">
+                                                    <Link
+                                                        href={blog.isActive ? `/blog/${blog.slug}` : `/blog/${blog.slug}?preview=1`}
+                                                        target="_blank"
+                                                        className="text-blue-600 hover:text-blue-700 transition-colors"
+                                                        title={blog.isActive ? 'View live page' : 'Preview hidden page'}
+                                                    >
+                                                        <Eye size={18} />
+                                                    </Link>
+                                                    <Link
+                                                        href={`/admin/edit/${blog.id}`}
+                                                        className="text-amber-600 hover:text-amber-700 transition-colors"
+                                                        title="Edit"
+                                                    >
+                                                        <Edit size={18} />
+                                                    </Link>
+                                                    <button
+                                                        onClick={() => deleteBlog(blog.id)}
+                                                        className="text-red-600 hover:text-red-700 transition-colors"
+                                                        title="Delete"
+                                                    >
+                                                        <Trash2 size={18} />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                                 {blogs.length === 0 && (
                                     <tr>
-                                        <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                        <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
                                             No blogs found. Create your first post!
                                         </td>
                                     </tr>

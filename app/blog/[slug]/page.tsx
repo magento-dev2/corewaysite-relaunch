@@ -2,12 +2,21 @@
 import { prisma } from '@/lib/prisma';
 import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import BlockRenderer from '@/components/blog/BlockRenderer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
+import { normalizeFAQSchema, parseFAQItems } from '@/lib/faq-schema';
+import { formatReadTimeDisplay } from '@/lib/read-time';
+import {
+  getMissingBlogOptionalFields,
+  isMissingBlogOptionalColumn,
+  omitBlogOptionalFields,
+  withMissingBlogOptionalFields,
+} from '@/lib/blog-optional-fields';
 
 type RelatedBlog = {
   id: string;
@@ -26,7 +35,7 @@ type BlogWithRelations = {
   author: string | null;
   excerpt: string | null;
   coverImage: string | null;
-  readTime?: number | null;
+  readTime?: string | number | null;
   faqSchema?: string | null;
   createdAt: Date;
   metaTitle: string | null;
@@ -73,51 +82,6 @@ const blogDetailSelect = {
   ctaButton2Link: true,
 } as const;
 
-const blogDetailFallbackSelect = {
-  id: true,
-  title: true,
-  slug: true,
-  content: true,
-  excerpt: true,
-  coverImage: true,
-  createdAt: true,
-  metaTitle: true,
-  metaDescription: true,
-  metaKeywords: true,
-  ctaTitle: true,
-  ctaDescription: true,
-  ctaButton1Text: true,
-  ctaButton1Link: true,
-  ctaButton2Text: true,
-  ctaButton2Link: true,
-} as const;
-
-const blogDetailNoAuthorSelect = {
-  id: true,
-  title: true,
-  slug: true,
-  content: true,
-  excerpt: true,
-  coverImage: true,
-  readTime: true,
-  faqSchema: true,
-  createdAt: true,
-  metaTitle: true,
-  metaDescription: true,
-  metaKeywords: true,
-  ctaTitle: true,
-  ctaDescription: true,
-  ctaButton1Text: true,
-  ctaButton1Link: true,
-  ctaButton2Text: true,
-  ctaButton2Link: true,
-} as const;
-
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
 type BlogAdjacentNav = {
   previous: { slug: string; title: string } | null;
   next: { slug: string; title: string } | null;
@@ -126,69 +90,6 @@ type BlogAdjacentNav = {
 function cleanCtaButtonLabel(text: string | null) {
   if (!text) return '';
   return text.replace(/\s*[→➡➜]+$/u, '').trim();
-}
-
-function hasMissingColumn(error: unknown, columnName: string) {
-  if (!(error instanceof Error)) {
-    return false;
-  }
-
-  return error.message.includes(columnName)
-    || error.message.includes(`column \`${columnName}\` does not exist`)
-    || error.message.includes(`column: '${columnName}'`)
-    || error.message.includes(`column: "${columnName}"`);
-}
-
-function hasUnknownBlogField(error: unknown, fieldName: string) {
-  return error instanceof Error
-    && (error.message.includes(`Unknown field \`${fieldName}\``)
-      || error.message.includes(`Unknown argument \`${fieldName}\``));
-}
-
-function isMissingBlogOptionalColumn(error: unknown) {
-  return hasMissingColumn(error, 'Blog.readTime')
-    || hasMissingColumn(error, 'Blog.faqSchema')
-    || hasMissingColumn(error, 'Blog.author')
-    || hasMissingColumn(error, 'readTime')
-    || hasMissingColumn(error, 'faqSchema')
-    || hasMissingColumn(error, 'author')
-    || hasUnknownBlogField(error, 'readTime')
-    || hasUnknownBlogField(error, 'faqSchema')
-    || hasUnknownBlogField(error, 'author');
-}
-
-function parseFAQSchema(faqSchema: unknown): FAQItem[] {
-  if (faqSchema === undefined || faqSchema === null || faqSchema === '') {
-    return [];
-  }
-
-  const toFAQItems = (value: unknown): FAQItem[] => {
-    if (!Array.isArray(value)) {
-      return [];
-    }
-
-    return value.filter((item): item is FAQItem => {
-      return typeof item === 'object'
-        && item !== null
-        && typeof (item as { question?: unknown }).question === 'string'
-        && typeof (item as { answer?: unknown }).answer === 'string';
-    });
-  };
-
-  if (typeof faqSchema === 'string') {
-    if (!faqSchema.trim()) {
-      return [];
-    }
-
-    try {
-      const parsed = JSON.parse(faqSchema);
-      return toFAQItems(parsed);
-    } catch {
-      return [];
-    }
-  }
-
-  return toFAQItems(faqSchema);
 }
 
 export const revalidate = 60;
@@ -226,61 +127,47 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
       throw error;
     }
 
-    // First fallback: keep readTime + faqSchema and only skip author selection
-    try {
-      const noAuthorBlog = await prisma.blog.findFirst({
-        where,
-        select: {
-          ...blogDetailNoAuthorSelect,
-          relatedArticles: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-          relatedTo: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-        },
-      });
+    let missingFields = getMissingBlogOptionalFields(error);
 
-      if (!noAuthorBlog) {
-        return null;
+    while (true) {
+      try {
+        const fallbackBlog = await prisma.blog.findFirst({
+          where,
+          select: {
+            ...omitBlogOptionalFields(blogDetailSelect, missingFields),
+            relatedArticles: {
+              where: { isActive: true },
+              select: relatedBlogSelect,
+            },
+            relatedTo: {
+              where: { isActive: true },
+              select: relatedBlogSelect,
+            },
+          },
+        });
+
+        if (!fallbackBlog) {
+          return null;
+        }
+
+        blog = withMissingBlogOptionalFields(fallbackBlog, missingFields);
+        break;
+      } catch (innerError) {
+        if (!isMissingBlogOptionalColumn(innerError)) {
+          throw innerError;
+        }
+
+        const nextMissingFields = Array.from(new Set([
+          ...missingFields,
+          ...getMissingBlogOptionalFields(innerError),
+        ]));
+
+        if (nextMissingFields.length === missingFields.length) {
+          throw innerError;
+        }
+
+        missingFields = nextMissingFields;
       }
-
-      blog = {
-        ...noAuthorBlog,
-        author: null,
-      };
-    } catch (innerError) {
-      if (!isMissingBlogOptionalColumn(innerError)) {
-        throw innerError;
-      }
-
-      const fallbackBlog = await prisma.blog.findFirst({
-        where,
-        select: {
-          ...blogDetailFallbackSelect,
-          relatedArticles: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-          relatedTo: {
-            where: { isActive: true },
-            select: relatedBlogSelect,
-          },
-        },
-      });
-
-      if (!fallbackBlog) {
-        return null;
-      }
-
-      blog = {
-        ...fallbackBlog,
-        readTime: null,
-        faqSchema: null,
-        author: null,
-      };
     }
   }
 
@@ -291,6 +178,7 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
 
   return {
     ...blog,
+    faqSchema: normalizeFAQSchema(blog.faqSchema),
     relatedArticles: uniqueRelated
   };
 }
@@ -298,7 +186,7 @@ async function getBlog(slug: string, includeInactive = false): Promise<BlogWithR
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ preview?: string | string[] }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
   const searchParams = await props.searchParams;
   const includeInactive = await isAdminPreviewEnabled(searchParams.preview);
@@ -307,21 +195,46 @@ export async function generateMetadata(props: {
   if (!blog) {
     return {
       title: 'Blog Not Found',
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const metadataDescription = blog.metaDescription ?? blog.excerpt ?? undefined;
+  const metadataImage = blog.coverImage ?? undefined;
+
   return {
     title: blog.metaTitle || blog.title,
-    description: blog.metaDescription || blog.excerpt,
+    description: metadataDescription,
     keywords: blog.metaKeywords
       ? blog.metaKeywords.split(',').map((k: string) => k.trim())
       : [],
 
     openGraph: {
       title: blog.metaTitle || blog.title,
-      description: blog.metaDescription || blog.excerpt,
-      images: [blog.coverImage || ''],
+      description: metadataDescription,
+      images: metadataImage ? [metadataImage] : undefined,
     },
+    alternates: {
+      canonical: `https://www.corewaysolution.com/blog/${blog.slug}`,
+    },
+    robots: includeInactive
+      ? {
+        index: false,
+        follow: false,
+        nocache: true,
+        googleBot: {
+          index: false,
+          follow: false,
+          noimageindex: true,
+        },
+      }
+      : {
+        index: true,
+        follow: true,
+      },
   };
 }
 
@@ -410,7 +323,7 @@ export default async function BlogDetail({
     createdAt: blog.createdAt,
     slug: slug
   });
-  const faqItems = parseFAQSchema(blog.faqSchema);
+  const faqItems = parseFAQItems(blog.faqSchema);
   const faqSchema = faqItems.length > 0 ? getFAQSchema(faqItems) : null;
 
   return (
@@ -462,7 +375,7 @@ export default async function BlogDetail({
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span>{blog.readTime ?? 9} min read</span>
+                <span>{formatReadTimeDisplay(blog.readTime)}</span>
               </div>
             </div>
           </div>
@@ -479,16 +392,15 @@ export default async function BlogDetail({
             </div>
 
             {/* Dynamic CTA Section */}
+           {/*
             {(blog.ctaTitle || blog.ctaButton1Text) && (
               <div className="mt-14 mb-10">
                 <div className="relative group overflow-hidden rounded-[2.5rem]">
 
                   <div className="relative bg-[#0E0918] rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
-                    {/* Dynamic Background Patterns */}
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse" />
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
 
-                    {/* SVG Decorative Grid */}
                     <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
 
                     <div className="relative z-10 px-8 py-16 md:px-20 md:py-24 text-center max-w-5xl mx-auto flex flex-col items-center">
@@ -513,7 +425,6 @@ export default async function BlogDetail({
                               className="group/btn relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 bg-purple-600 rounded-2xl hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] active:scale-95 min-w-[220px]"
                             >
                               <span className="relative z-10 text-base md:text-lg">{cleanCtaButtonLabel(blog.ctaButton1Text)}</span>
-                              {/* <ArrowRight className="w-6 h-6 ml-2 group-hover/btn:translate-x-1.5 transition-transform duration-300" /> */}
                             </Link>
                           )}
                           {blog.ctaButton2Text && (
@@ -531,6 +442,7 @@ export default async function BlogDetail({
                 </div>
               </div>
             )}
+            */}
 
             {faqItems.length > 0 && (
               <section className="mt-14 mb-10 rounded-2xl border border-purple-100 bg-gradient-to-b from-purple-50/70 to-white p-6 md:p-8">
@@ -563,13 +475,13 @@ export default async function BlogDetail({
                     href={`/blog/${adjacentBlogs.previous.slug}`}
                     className="group rounded-xl border border-gray-200 bg-white p-5 hover:border-purple-300 hover:shadow-sm transition-all"
                   >
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-purple-700 mb-2">
+                    <span className="inline-flex items-center gap-2  text-sm font-medium text-purple-700 mb-2 md:justify-end">
                       <ArrowLeft className="w-4 h-4" />
                       Previous Blog
                     </span>
-                    <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h4 className="text-sm  font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {adjacentBlogs.previous.title}
-                    </h3>
+                    </h4>
                   </Link>
                 ) : (
                   <div className="hidden md:block" />
@@ -584,7 +496,7 @@ export default async function BlogDetail({
                       Next Blog
                       <ArrowRight className="w-4 h-4" />
                     </span>
-                    <h4 className="text-sm md:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h4 className="text-sm  font-semibold text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {adjacentBlogs.next.title}
                     </h4>
                   </Link>

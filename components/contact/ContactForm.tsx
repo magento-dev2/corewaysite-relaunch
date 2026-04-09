@@ -2,26 +2,25 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Send, CheckCircle, ShieldCheck, Lock, X } from 'lucide-react';
+import { Send, CheckCircle, ShieldCheck, Lock, X, ArrowLeft } from 'lucide-react';
 import { useRecaptcha } from '@/contexts/RecaptchaContext';
 
 export default function ContactForm() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<'business' | 'job'>('business');
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     company: '',
     designation: '',
     country: '',
     subject: '',
     message: '',
     ndaAccepted: false,
-
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [emailSaved, setEmailSaved] = useState(false);
   const [error, setError] = useState('');
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -43,33 +42,44 @@ export default function ContactForm() {
     };
   }, []);
 
-
   const { executeRecaptcha, resetRecaptcha } = useRecaptcha();
 
-  const handleTabChange = (tab: 'business' | 'job') => {
-    if (tab === 'job') {
-      router.push('/careers');
-    } else {
-      setActiveTab(tab);
-    }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value, type } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox'
+        ? (e.target as HTMLInputElement).checked
+        : value,
+    });
   };
-
-const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-) => {
-  const { name, value, type } = e.target;
-
-  setFormData({
-    ...formData,
-    [name]: type === 'checkbox'
-      ? (e.target as HTMLInputElement).checked
-      : value,
-  });
-};
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (step === 1) {
+      if (formData.email) {
+        setIsSubmitting(true);
+        try {
+          await fetch('/api/contact-list', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: formData.email }),
+          });
+        } catch {
+          // Non-blocking
+        } finally {
+          setIsSubmitting(false);
+        }
+        setEmailSaved(true);
+        setStep(2);
+      }
+      return;
+    }
+
     setIsSubmitting(true);
     setError('');
 
@@ -101,10 +111,10 @@ const handleChange = (
 
       // Success
       setIsSuccess(true);
+
       setFormData({
         name: '',
         email: '',
-        phone: '',
         company: '',
         designation: '',
         country: '',
@@ -112,6 +122,7 @@ const handleChange = (
         message: '',
         ndaAccepted: false,
       });
+      setStep(1);
 
       // Reset reCAPTCHA
       resetRecaptcha();
@@ -128,42 +139,35 @@ const handleChange = (
   return (
     <section className="w-full">
       <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-        {/* TABS */}
+        {/* TABS (removed "Apply for Job") */}
         <div className="flex border-b border-gray-200">
           <button
-            onClick={() => handleTabChange('business')}
-            className={`flex-1 px-8 py-4 font-semibold text-base transition-all relative ${activeTab === 'business'
-              ? 'bg-purple-600 text-white'
-              : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-              }`}
+            type="button"
+            className="flex-1 px-8 py-4 font-semibold text-base transition-all relative bg-purple-600 text-white"
             style={{
               borderTopLeftRadius: '1rem',
-              // clipPath: activeTab === 'business' ? 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' : 'none'
-            }}
-          >
-            Business Inquiry
-          </button>
-
-          <button
-            onClick={() => handleTabChange('job')}
-            className={`cursor-pointer flex-1 px-8 py-4 font-semibold text-base transition-all flex items-center justify-center gap-2 ${activeTab === 'job'
-              ? 'bg-purple-600 text-white'
-              : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-              }`}
-            style={{
               borderTopRightRadius: '1rem',
             }}
           >
-            Apply for Job <span>→</span>
+            Business Inquiry
           </button>
         </div>
 
         {/* FORM CONTENT */}
         <div className="p-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Tell Us About Your Project
+            How Can We Help You?
           </h2>
 
+          {emailSaved && step === 2 && (
+            <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start space-x-3">
+              <CheckCircle className="text-blue-500 shrink-0 mt-0.5" size={20} />
+              <div>
+                <p className="text-blue-800 font-semibold text-sm">We've received your email!</p>
+                <p className="text-blue-700 text-sm mt-0.5">We'll get back to you shortly. Meanwhile, please share a few more details below so we can assist you better.</p>
+              </div>
+            </div>
+          )}
 
           {isSuccess && (
             <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
@@ -179,37 +183,9 @@ const handleChange = (
           )}
 
           <form onSubmit={handleSubmit} className="">
-            {/* Row 1: Full Name & Company */}
-            <div className="grid md:grid-cols-2 gap-5 mb-5">
-              <div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
-                  placeholder="Full Name *"
-                />
-              </div>
-
-              <div>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
-                  placeholder="Company"
-                />
-              </div>
-            </div>
-
-            {/* Row 2: Email & Designation */}
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
+            {/* Step 1: Email Only */}
+            {step === 1 && (
+              <div className="mb-5">
                 <input
                   type="email"
                   id="email"
@@ -220,126 +196,131 @@ const handleChange = (
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                   placeholder="Email *"
                 />
+                <p className="text-gray-400 text-[10px] mb-5 mt-1">
+                  *For faster processing, please use your company email.
+                </p>
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  >
+                    <span>{isSubmitting ? 'Saving...' : 'Next Step'}</span>
+                  </button>
+                </div>
               </div>
-              <div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
+            )}
 
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
-                  placeholder="Phone"
-                />
-              </div>
+            {/* Step 2: Remaining Fields */}
+            {step === 2 && (
+              <>
+                {/* Step 2 Back Button with context */}
+                <div className="mb-4">
+                  <button
+                    type="button"
+                    onClick={() => { setStep(1); setEmailSaved(false); }}
+                    className="text-purple-600 hover:text-purple-800 font-semibold text-sm flex items-center gap-1 transition-colors"
+                  >
+                    <ArrowLeft size={16} /> Back to Email
+                  </button>
+                </div>
 
-            </div>
-            <p className='text-gray-400 text-[10px] mb-5 mt-1 '>*For faster processing, please use your company email.</p>
+                {/* Display locked email field to show context securely */}
+                <div className="mb-5">
+                  <p className="text-sm text-gray-500 mb-1">Your Email</p>
+                  <p className="font-medium text-gray-900 bg-gray-50 px-4 py-3 rounded-lg border border-gray-200">
+                    {formData.email}
+                  </p>
+                </div>
 
+                {/* Row 1: Full Name & Company */}
+                <div className="grid md:grid-cols-2 gap-5 mb-5">
+                  <div>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                      placeholder="Full Name *"
+                    />
+                  </div>
 
+                  <div>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                      placeholder="Company"
+                    />
+                  </div>
+                </div>
 
-            {/* Row 3: Phone & Country */}
-            {/* <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
-                  placeholder="Phone *"
-                />
-              </div>
+                {/* Message */}
+                <div className="mb-5">
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
+                    placeholder="Brief your Requirement *"
+                  />
+                </div>
 
-              <div>
-                <select
-                  id="country"
-                  name="country"
-                  required
-                  value={formData.country}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all appearance-none cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'right 1rem center',
-                  }}
-                >
-                  <option value="">Country *</option>
-                  <option value="US">United States</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="CA">Canada</option>
-                  <option value="AU">Australia</option>
-                  <option value="IN">India</option>
-                  <option value="DE">Germany</option>
-                  <option value="FR">France</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div> */}
+                {/* NDA Checkbox */}
+                <div className="mb-5 flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="ndaAccepted"
+                    name="ndaAccepted"
+                    checked={formData.ndaAccepted}
+                    onChange={handleChange}
+                    className="mt-1 h-5 w-5 cursor-pointer rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
 
-            {/* Message */}
-            <div className='mb-5'>
-              <textarea
-                id="message"
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
-                placeholder="Brief your Requirement *"
-              />
-            </div>
+                  <label htmlFor="ndaAccepted" className="text-sm text-gray-600 cursor-pointer">
+                    All shared details are confidential and protected under NDA.
+                  </label>
+                </div>
 
-{/* NDA Checkbox */}
-<div className="mb-5 flex items-start gap-3">
-  <input
-    type="checkbox"
-    id="ndaAccepted"
-    name="ndaAccepted"
-    checked={formData.ndaAccepted}
-    onChange={handleChange}
-    className="mt-1 h-5 w-5 cursor-pointer rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-  />
+                {/* Submit Button */}
+                <div className="mb-5">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
+                  >
+                    <span>{isSubmitting ? 'Sending...' : 'Send to Our Experts'}</span>
+                    {!isSubmitting && <Send size={20} />}
+                  </button>
+                </div>
 
-  <label htmlFor="ndaAccepted" className="text-sm text-gray-600 cursor-pointer">
-    All shared details are confidential and
-    protected under NDA.
-  </label>
-</div>
-
-            {/* Submit Button */}
-            <div className='mb-5'>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600 flex items-center justify-center space-x-2"
-              >
-                <span>{isSubmitting ? 'Sending...' : 'Send to Our Experts'}</span>
-                {!isSubmitting && <Send size={20} />}
-              </button>
-            </div>
-
-            {/* Privacy Policy */}
-            <p className="text-gray-600 text-sm text-center">
-              By submitting this form, you agree to our{' '}
-              <a href="/privacy-policy" className="text-purple-600 font-semibold underline hover:text-purple-700">
-                Privacy Policy
-              </a>
-            </p>
-
-
+                {/* Privacy Policy */}
+                <p className="text-gray-600 text-sm text-center">
+                  By submitting this form, you agree to our{' '}
+                  <a href="/privacy-policy" className="text-purple-600 font-semibold underline hover:text-purple-700">
+                    Privacy Policy
+                  </a>
+                </p>
+              </>
+            )}
           </form>
 
           <div className="flex justify-center relative mt-4">
             {/* Trigger Text */}
             <button
+              type="button"
               onClick={() => setOpen(!open)}
-              className="text-sm cursor-pointer  text-purple-600  font-semibold underline hover:text-purple-700 justify-center flex items-center gap-1"
+              className="text-sm cursor-pointer text-purple-600 font-semibold underline hover:text-purple-700 justify-center flex items-center gap-1"
             >
               <Lock size={14} />
               Safe & Confidential
@@ -349,10 +330,11 @@ const handleChange = (
             {open && (
               <div
                 ref={boxRef}
-                className="absolute left-26 bottom-6 w-80 bg-white shadow-xl rounded-xl border  border-gray-200 p-4 z-30"
+                className="absolute left-26 bottom-6 w-80 bg-white shadow-xl rounded-xl border border-gray-200 p-4 z-30"
               >
                 {/* Close Button */}
                 <button
+                  type="button"
                   onClick={() => setOpen(false)}
                   className="absolute top-2 cursor-pointer right-2 text-gray-500 hover:text-gray-700"
                 >
@@ -368,9 +350,7 @@ const handleChange = (
             )}
           </div>
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
+import { parseFAQItems, serializeFAQItems, type FAQItem } from '@/lib/faq-schema';
+import { normalizeReadTimeValue, toReadTimeInput } from '@/lib/read-time';
 
 export default function EditBlog() {
     const router = useRouter();
@@ -15,10 +17,6 @@ export default function EditBlog() {
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
     type RelatedArticle = { id: string };
-    type FAQItem = {
-        question: string;
-        answer: string;
-    };
     type BlogFormData = {
         title: string;
         author: string;
@@ -63,49 +61,11 @@ export default function EditBlog() {
     });
     const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
 
-    const parseFaqSchema = useCallback((value: unknown): FAQItem[] => {
-        if (!value) {
-            return [];
-        }
-
-        let parsed: unknown = value;
-
-        if (typeof value === 'string') {
-            try {
-                parsed = JSON.parse(value);
-            } catch {
-                return [];
-            }
-        }
-
-        if (!Array.isArray(parsed)) {
-            return [];
-        }
-
-        return parsed.filter((item): item is FAQItem => {
-            return typeof item === 'object'
-                && item !== null
-                && typeof (item as { question?: unknown }).question === 'string'
-                && typeof (item as { answer?: unknown }).answer === 'string';
-        });
-    }, []);
-
-    const serializeFaqItems = useCallback((items: FAQItem[]) => {
-        const validItems = items
-            .map((item) => ({
-                question: item.question.trim(),
-                answer: item.answer.trim(),
-            }))
-            .filter((item) => item.question && item.answer);
-
-        return validItems.length > 0 ? JSON.stringify(validItems) : '';
-    }, []);
-
     const updateFaqItems = (items: FAQItem[]) => {
         setFaqItems(items);
         setFormData((prev) => ({
             ...prev,
-            faqSchema: serializeFaqItems(items),
+            faqSchema: serializeFAQItems(items),
         }));
     };
 
@@ -117,21 +77,21 @@ export default function EditBlog() {
                 const res = await fetch(`/api/blogs/${id}`);
                 if (res.ok) {
                     const data = await res.json();
-                    const parsedFaqItems = parseFaqSchema(data.faqSchema);
+                    const parsedFaqItems = parseFAQItems(data.faqSchema);
                     setFormData({
                         title: data.title,
                         author: data.author || '',
                         slug: data.slug,
                         excerpt: data.excerpt || '',
                         coverImage: data.coverImage || '',
-                        readTime: String(data.readTime ?? 9),
+                        readTime: toReadTimeInput(data.readTime),
                         content: data.content,
                         isActive: data.isActive ?? true,
                         relatedArticleIds: data.relatedArticles?.map((article: RelatedArticle) => article.id) || [],
                         metaTitle: data.metaTitle || '',
                         metaDescription: data.metaDescription || '',
                         metaKeywords: data.metaKeywords || '',
-                        faqSchema: serializeFaqItems(parsedFaqItems),
+                        faqSchema: serializeFAQItems(parsedFaqItems),
                         ctaTitle: data.ctaTitle || '',
                         ctaDescription: data.ctaDescription || '',
                         ctaButton1Text: data.ctaButton1Text || '',
@@ -153,7 +113,7 @@ export default function EditBlog() {
         };
 
         fetchBlog();
-    }, [id, router, parseFaqSchema, serializeFaqItems]);
+    }, [id, router]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -163,7 +123,10 @@ export default function EditBlog() {
             const res = await fetch(`/api/blogs/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    readTime: normalizeReadTimeValue(formData.readTime),
+                }),
             });
 
             if (res.ok) {
@@ -246,14 +209,14 @@ export default function EditBlog() {
 
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">Read Time (minutes)</label>
-                        <input
-                            type="number"
-                            min="1"
-                            value={formData.readTime}
-                            onChange={(e) => setFormData({ ...formData, readTime: e.target.value })}
-                            className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
-                            placeholder="9"
-                        />
+                            <input
+                                type="number"
+                                min="1"
+                                value={formData.readTime}
+                                onChange={(e) => setFormData({ ...formData, readTime: toReadTimeInput(e.target.value.replace(/[^\d]/g, '')) })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="9"
+                            />
                     </div>
 
                     <div className="space-y-2">
@@ -380,7 +343,12 @@ export default function EditBlog() {
                     {/* FAQ Section Settings */}
                     <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 space-y-4">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                            <div>
+                                <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                                <p className="text-sm text-gray-600 mt-1">
+                                    These FAQ items will be shown on the frontend blog page under the article.
+                                </p>
+                            </div>
                             <button
                                 type="button"
                                 onClick={() => updateFaqItems([...faqItems, { question: '', answer: '' }])}
@@ -390,8 +358,12 @@ export default function EditBlog() {
                             </button>
                         </div>
 
+                        <div className="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-medium text-purple-700 border border-purple-200">
+                            {faqItems.length} FAQ {faqItems.length === 1 ? 'item' : 'items'} ready for frontend
+                        </div>
+
                         {faqItems.length === 0 && (
-                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields.</p>
+                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields for the frontend FAQ section.</p>
                         )}
 
                         <div className="space-y-4">

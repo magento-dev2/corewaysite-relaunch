@@ -14,7 +14,7 @@ model Blog {
   content         String
   excerpt         String?
   coverImage      String?
-  readTime        Int?      @default(9)
+  readTime        String?   @default("9 min read")
   faqSchema       String?
   publishedAt     DateTime?
   createdAt       DateTime  @default(now())
@@ -97,4 +97,16 @@ model JobPosition {
   isActive         Boolean  @default(true)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+}
+
+model ContactList {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  name        String?
+  company     String?
+  message     String?
+  ndaAccepted Boolean  @default(false)
+  status      String   @default("email_only")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

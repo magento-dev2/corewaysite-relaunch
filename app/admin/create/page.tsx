@@ -5,14 +5,12 @@ import { useRouter } from 'next/navigation';
 import { Save } from 'lucide-react';
 import Editor from '@/components/admin/Editor';
 import RelatedArticlesSelector from '@/components/admin/RelatedArticlesSelector';
+import { serializeFAQItems, type FAQItem } from '@/lib/faq-schema';
+import { normalizeReadTimeValue, toReadTimeInput } from '@/lib/read-time';
 
 export default function CreateBlog() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    type FAQItem = {
-        question: string;
-        answer: string;
-    };
     type BlogFormData = {
         title: string;
         author: string;
@@ -57,22 +55,11 @@ export default function CreateBlog() {
     });
     const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
 
-    const serializeFaqItems = (items: FAQItem[]) => {
-        const validItems = items
-            .map((item) => ({
-                question: item.question.trim(),
-                answer: item.answer.trim(),
-            }))
-            .filter((item) => item.question && item.answer);
-
-        return validItems.length > 0 ? JSON.stringify(validItems) : '';
-    };
-
     const updateFaqItems = (items: FAQItem[]) => {
         setFaqItems(items);
         setFormData((prev) => ({
             ...prev,
-            faqSchema: serializeFaqItems(items),
+            faqSchema: serializeFAQItems(items),
         }));
     };
 
@@ -84,7 +71,10 @@ export default function CreateBlog() {
             const res = await fetch('/api/blogs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    readTime: normalizeReadTimeValue(formData.readTime),
+                }),
             });
 
             if (res.ok) {
@@ -167,14 +157,14 @@ export default function CreateBlog() {
 
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">Read Time (minutes)</label>
-                        <input
-                            type="number"
-                            min="1"
-                            value={formData.readTime}
-                            onChange={(e) => setFormData({ ...formData, readTime: e.target.value })}
-                            className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
-                            placeholder="9"
-                        />
+                            <input
+                                type="number"
+                                min="1"
+                                value={formData.readTime}
+                                onChange={(e) => setFormData({ ...formData, readTime: toReadTimeInput(e.target.value.replace(/[^\d]/g, '')) })}
+                                className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
+                                placeholder="9"
+                            />
                     </div>
 
                     <div className="space-y-2">
@@ -300,7 +290,12 @@ export default function CreateBlog() {
                     {/* FAQ Section Settings */}
                     <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 space-y-4">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                            <div>
+                                <h2 className="text-lg font-semibold text-blue-900">FAQ Section Settings</h2>
+                                <p className="text-sm text-gray-600 mt-1">
+                                    These FAQ items will be shown on the frontend blog page under the article.
+                                </p>
+                            </div>
                             <button
                                 type="button"
                                 onClick={() => updateFaqItems([...faqItems, { question: '', answer: '' }])}
@@ -310,8 +305,12 @@ export default function CreateBlog() {
                             </button>
                         </div>
 
+                        <div className="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-medium text-purple-700 border border-purple-200">
+                            {faqItems.length} FAQ {faqItems.length === 1 ? 'item' : 'items'} ready for frontend
+                        </div>
+
                         {faqItems.length === 0 && (
-                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields.</p>
+                            <p className="text-sm text-gray-600">No FAQ items added yet. Click &quot;Add More&quot; to add question and answer fields for the frontend FAQ section.</p>
                         )}
 
                         <div className="space-y-4">
