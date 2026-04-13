@@ -92,6 +92,11 @@ function cleanCtaButtonLabel(text: string | null) {
   return text.replace(/\s*[→➡➜]+$/u, '').trim();
 }
 
+function normalizeDisplayDashes(text: string | null | undefined) {
+  if (!text) return text ?? null;
+  return text.replace(/(?:—|&mdash;|&#8212;|&#x2014;)/gi, '-');
+}
+
 export const revalidate = 60;
 
 async function isAdminPreviewEnabled(preview?: string | string[]) {
@@ -361,7 +366,7 @@ export default async function BlogDetail({
             </h1>
             {blog.excerpt && (
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                {blog.excerpt}
+                {normalizeDisplayDashes(blog.excerpt)}
               </p>
             )}
             <div className="flex flex-wrap items-center gap-6 text-gray-300">
@@ -458,10 +463,10 @@ export default async function BlogDetail({
                       className="group rounded-xl border border-gray-200 bg-white px-5 py-4 open:border-purple-300 open:shadow-sm transition-colors"
                     >
                       <summary className="cursor-pointer list-none font-semibold text-gray-900 pr-8 relative">
-                        {item.question}
+                        {normalizeDisplayDashes(item.question)}
                         <span className="absolute right-0 top-0 text-purple-600 transition-transform duration-200 group-open:rotate-45">+</span>
                       </summary>
-                      <p className="mt-3 text-gray-700 leading-relaxed">{item.answer}</p>
+                      <p className="mt-3 text-gray-700 leading-relaxed">{normalizeDisplayDashes(item.answer)}</p>
                     </details>
                   ))}
                 </div>

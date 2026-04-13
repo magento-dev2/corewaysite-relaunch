@@ -16,6 +16,11 @@ type BlogListItem = {
   createdAt: Date;
 };
 
+function normalizeDisplayDashes(text: string | null | undefined) {
+  if (!text) return text ?? null;
+  return text.replace(/—/g, '-');
+}
+
 function hasMissingColumn(error: unknown, columnName: string) {
   if (!(error instanceof Error)) {
     return false;
@@ -130,10 +135,10 @@ export default async function BlogListing(props: {
                     <span>{blog.author || 'Alpesh'}</span>
                   </div>
                   <h2 className="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors line-clamp-2">
-                    {blog.title}
+                    {normalizeDisplayDashes(blog.title)}
                   </h2>
                   <p className="text-gray-400 text-sm line-clamp-3 mb-6 flex-1">
-                    {blog.excerpt}
+                    {normalizeDisplayDashes(blog.excerpt)}
                   </p>
                   <div className="flex items-center gap-2 text-purple-400 font-medium text-sm group-hover:gap-3 transition-all">
                     Read Article <ArrowRight size={16} />

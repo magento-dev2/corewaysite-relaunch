@@ -8,6 +8,10 @@ interface BlockRendererProps {
     content: string;
 }
 
+function normalizeDisplayDashes(text: string) {
+    return text.replace(/(?:—|&mdash;|&#8212;|&#x2014;)/gi, '-');
+}
+
 function cleanHtmlCtaButtonArrows(html: string) {
     if (!html) return '';
     return html.replace(
@@ -18,7 +22,7 @@ function cleanHtmlCtaButtonArrows(html: string) {
 
 function processHtml(html: string) {
     if (!html) return '';
-    return cleanHtmlCtaButtonArrows(html)
+    return cleanHtmlCtaButtonArrows(normalizeDisplayDashes(html))
         .replace(/src=["']assets\//g, 'src="/assets/')
         .replace(/class="([^"]*)"/g, (match, classNames) => {
             let style = '';
@@ -154,17 +158,17 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
 
                         switch (block.level) {
                             case 1:
-                                return <h1 key={block.id} {...headingProps}>{block.content}</h1>;
+                                return <h1 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h1>;
                             case 2:
-                                return <h2 key={block.id} {...headingProps}>{block.content}</h2>;
+                                return <h2 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h2>;
                             case 3:
-                                return <h3 key={block.id} {...headingProps}>{block.content}</h3>;
+                                return <h3 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h3>;
                             case 4:
-                                return <h4 key={block.id} {...headingProps}>{block.content}</h4>;
+                                return <h4 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h4>;
                             case 5:
-                                return <h5 key={block.id} {...headingProps}>{block.content}</h5>;
+                                return <h5 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h5>;
                             case 6:
-                                return <h6 key={block.id} {...headingProps}>{block.content}</h6>;
+                                return <h6 key={block.id} {...headingProps}>{normalizeDisplayDashes(block.content)}</h6>;
                             default:
                                 return null;
                         }
@@ -172,7 +176,7 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                     case 'paragraph':
                         return (
                             <p key={block.id} className="text-gray-300 text-lg leading-relaxed">
-                                {block.content}
+                                {normalizeDisplayDashes(block.content)}
                             </p>
                         );
 
@@ -191,7 +195,7 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                                 </div>
                                 {block.caption && (
                                     <figcaption className="text-center text-gray-400 text-sm mt-3">
-                                        {block.caption}
+                                        {normalizeDisplayDashes(block.caption)}
                                     </figcaption>
                                 )}
                             </figure>
@@ -211,11 +215,11 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                         return (
                             <blockquote key={block.id} className="border-l-4 border-purple-500 pl-6 py-4 my-6 bg-white/5 rounded-r-lg">
                                 <p className="text-white text-xl italic leading-relaxed mb-2">
-                                    &ldquo;{block.content}&rdquo;
+                                    &ldquo;{normalizeDisplayDashes(block.content)}&rdquo;
                                 </p>
                                 {block.author && (
                                     <cite className="text-gray-400 text-sm not-italic">
-                                        — {block.author}
+                                        - {normalizeDisplayDashes(block.author)}
                                     </cite>
                                 )}
                             </blockquote>
@@ -230,7 +234,7 @@ export default function BlockRenderer({ content }: BlockRendererProps) {
                                     } list-inside`}
                             >
                                 {block.items.map((item, index) => (
-                                    <li key={index}>{item}</li>
+                                    <li key={index}>{normalizeDisplayDashes(item)}</li>
                                 ))}
                             </ListTag>
                         );
