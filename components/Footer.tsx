@@ -31,8 +31,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#0E0918] border-t border-white/10 ">
       <div className="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               {/* <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
                 C
@@ -79,14 +79,14 @@ export default function Footer() {
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <div key={category} className="break-words">
               <h3 className="text-white font-semibold mb-4">{category}</h3>
               <ul className="space-y-3">
                 {links.map(({ name, url }) => (
                   <li key={name}>
                     <a
                       href={url}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-gray-400 hover:text-white transition-colors text-sm break-all"
                     >
                       {name}
                     </a>
