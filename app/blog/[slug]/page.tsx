@@ -568,11 +568,11 @@ export default async function BlogDetail({
           </article>
 
           {/* Sidebar */}
-          {blog.showRelatedArticles !== false && (
+          {blog.showRelatedArticles && (
             <aside className="lg:col-span-4">
               <div className="sticky top-24 space-y-8">
                 {/* Related Articles */}
-                {blog.showRelatedArticles !== false && relatedBlogs.length > 0 && (
+                {blog.showRelatedArticles && relatedBlogs.length > 0 && (
                   <div className="bg-gray-50 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
                     <div className="space-y-6">
