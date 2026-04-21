@@ -47,6 +47,7 @@ type BlogWithRelations = {
   ctaButton1Link: string | null;
   ctaButton2Text: string | null;
   ctaButton2Link: string | null;
+  showRelatedArticles: boolean | null;
   relatedArticles: RelatedBlog[];
   relatedTo?: RelatedBlog[];
 };
@@ -80,6 +81,7 @@ const blogDetailSelect = {
   ctaButton1Link: true,
   ctaButton2Text: true,
   ctaButton2Link: true,
+  showRelatedArticles: true,
 } as const;
 
 type BlogAdjacentNav = {
@@ -389,15 +391,15 @@ export default async function BlogDetail({
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-12 gap-12">
+        <div className={blog.showRelatedArticles !== false ? "grid lg:grid-cols-12 gap-12" : "max-w-7xl mx-auto"}>
           {/* Article Content */}
-          <article className="lg:col-span-8">
+          <article className={blog.showRelatedArticles !== false ? "lg:col-span-8" : "w-full"}>
             <div className="prose prose-lg max-w-none text-black prose-headings:text-gray-900 prose-a:text-purple-600 hover:prose-a:text-purple-700 prose-strong:text-gray-900">
               <BlockRenderer content={blog.content} />
             </div>
 
             {/* Dynamic CTA Section */}
-           {/*
+            {/*
             {(blog.ctaTitle || blog.ctaButton1Text) && (
               <div className="mt-14 mb-10">
                 <div className="relative group overflow-hidden rounded-[2.5rem]">
@@ -514,6 +516,43 @@ export default async function BlogDetail({
             {/* Share Buttons */}
             <ShareButtons slug={slug} title={blog.title} />
 
+            {/* Bottom Related Articles Section */}
+            {blog.showRelatedArticles !== false && relatedBlogs.length > 0 && (
+              <section className="mt-16 border-t border-gray-100 pt-16">
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900">Related Articles</h3>
+                  <Link href="/blog" className="text-purple-600 hover:text-purple-700 font-medium flex items-center gap-2 group">
+                    View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {relatedBlogs.map((post) => (
+                    <Link
+                      key={post.id}
+                      href={`/blog/${post.slug}`}
+                      className="group block"
+                    >
+                      {post.coverImage && (
+                        <div className="relative aspect-[16/10] overflow-hidden rounded-xl mb-4">
+                          <img
+                            src={post.coverImage.startsWith('assets/') ? `/${post.coverImage}` : post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
+                      <h4 className="font-bold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2 leading-snug mb-2">
+                        {post.title}
+                      </h4>
+                      <p className="text-sm text-gray-500 italic">
+                        {new Date(post.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+
 
             {/* Newsletter Subscription */}
             <div className="mt-16 bg-orange-50 border-l-4 border-purple-600 p-8 rounded-r-lg">
@@ -529,47 +568,49 @@ export default async function BlogDetail({
           </article>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-4">
-            <div className="sticky top-24 space-y-8">
-              {/* Related Articles */}
-              {relatedBlogs.length > 0 && (
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
-                  <div className="space-y-6">
-                    {relatedBlogs.map((post) => (
-                      <Link
-                        key={post.id}
-                        href={`/blog/${post.slug}`}
-                        className="block group"
-                      >
-                        {post.coverImage && (
-                          <div className="relative overflow-hidden rounded-lg mb-3">
-                            <img
-                              src={post.coverImage.startsWith('assets/') ? `/${post.coverImage}` : post.coverImage}
-                              alt={post.title}
-                              className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                        )}
+          {blog.showRelatedArticles !== false && (
+            <aside className="lg:col-span-4">
+              <div className="sticky top-24 space-y-8">
+                {/* Related Articles */}
+                {blog.showRelatedArticles !== false && relatedBlogs.length > 0 && (
+                  <div className="bg-gray-50 rounded-lg p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
+                    <div className="space-y-6">
+                      {relatedBlogs.map((post) => (
+                        <Link
+                          key={post.id}
+                          href={`/blog/${post.slug}`}
+                          className="block group"
+                        >
+                          {post.coverImage && (
+                            <div className="relative overflow-hidden rounded-lg mb-3">
+                              <img
+                                src={post.coverImage.startsWith('assets/') ? `/${post.coverImage}` : post.coverImage}
+                                alt={post.title}
+                                className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          )}
 
-                        <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors mb-2 leading-snug">
-                          {post.title}
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          {new Date(post.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                        </p>
-                      </Link>
-                    ))}
+                          <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors mb-2 leading-snug">
+                            {post.title}
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            {new Date(post.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* CTA Card */}
-              <CalendlyCTA />
+                {/* CTA Card */}
+                <CalendlyCTA />
 
 
-            </div>
-          </aside>
+              </div>
+            </aside>
+          )}
         </div>
       </div>
     </div>

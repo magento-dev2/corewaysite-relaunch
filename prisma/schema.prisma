@@ -30,6 +30,7 @@ model Blog {
   ctaButton2Text  String?
   ctaButton2Link  String?
   author          String?
+  showRelatedArticles Boolean @default(true)
   relatedArticles Blog[]    @relation("RelatedBlogs")
   relatedTo       Blog[]    @relation("RelatedBlogs")
 }

@@ -33,6 +33,7 @@ const blogListSelect = {
   ctaButton1Link: true,
   ctaButton2Text: true,
   ctaButton2Link: true,
+  showRelatedArticles: true,
 } as const;
 
 function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
@@ -209,6 +210,7 @@ export async function POST(request: Request) {
       ctaButton1Link: body.ctaButton1Link,
       ctaButton2Text: body.ctaButton2Text,
       ctaButton2Link: body.ctaButton2Link,
+      showRelatedArticles: body.showRelatedArticles ?? true,
     };
 
     let blog;

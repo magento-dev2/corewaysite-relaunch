@@ -9,3 +9,17 @@ export const prisma =
     });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+
+// Verify connection and log status
+prisma.$connect()
+    .then(() => {
+        console.log('-----------------------------------------------');
+        console.log('🚀 Database connected successfully: coreway');
+        console.log('-----------------------------------------------');
+    })
+    .catch((err) => {
+        console.error('-----------------------------------------------');
+        console.error('❌ Database connection failed!');
+        console.error('Error:', err.message);
+        console.error('-----------------------------------------------');
+    });

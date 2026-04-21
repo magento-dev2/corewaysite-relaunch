@@ -40,6 +40,7 @@ const blogEditSelect = {
     ctaButton1Link: true,
     ctaButton2Text: true,
     ctaButton2Link: true,
+    showRelatedArticles: true,
 } as const;
 
 function normalizeBlogFaqSchema<T extends { faqSchema?: string | null }>(blog: T): T {
@@ -140,7 +141,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         const { id } = await params;
         const body = await request.json();
         const { title, slug, content, excerpt, coverImage, readTime, faqSchema, author, metaTitle, metaDescription, metaKeywords, relatedArticleIds, isActive,
-            ctaTitle, ctaDescription, ctaButton1Text, ctaButton1Link, ctaButton2Text, ctaButton2Link
+            ctaTitle, ctaDescription, ctaButton1Text, ctaButton1Link, ctaButton2Text, ctaButton2Link, showRelatedArticles
         } = body;
 
         const baseData = {
@@ -161,6 +162,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
             ctaButton1Link,
             ctaButton2Text,
             ctaButton2Link,
+            showRelatedArticles: showRelatedArticles ?? true,
             relatedArticles: relatedArticleIds !== undefined
                 ? { set: relatedArticleIds.map((articleId: string) => ({ id: articleId })) }
                 : undefined,

@@ -20,6 +20,7 @@ export default function CreateBlog() {
         readTime: string;
         content: string;
         isActive: boolean;
+        showRelatedArticles: boolean;
         relatedArticleIds: string[];
         metaTitle: string;
         metaDescription: string;
@@ -41,6 +42,7 @@ export default function CreateBlog() {
         readTime: '9',
         content: '',
         isActive: true,
+        showRelatedArticles: true,
         relatedArticleIds: [] as string[],
         metaTitle: '',
         metaDescription: '',
@@ -175,12 +177,31 @@ export default function CreateBlog() {
                         />
                     </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-700">Related Articles</label>
-                        <RelatedArticlesSelector
-                            selectedIds={formData.relatedArticleIds}
-                            onChange={(ids) => setFormData({ ...formData, relatedArticleIds: ids })}
-                        />
+                    <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                            <label className="text-sm font-medium text-gray-700">Related Articles</label>
+                            <div className="flex items-center gap-3">
+                                <button
+                                    type="button"
+                                    onClick={() => setFormData({ ...formData, showRelatedArticles: !formData.showRelatedArticles })}
+                                    className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${formData.showRelatedArticles
+                                        ? 'bg-purple-600 text-white'
+                                        : 'bg-gray-200 text-gray-600'
+                                        }`}
+                                >
+                                    {formData.showRelatedArticles ? '✓ Section Enabled' : '✗ Section Disabled'}
+                                </button>
+                            </div>
+                        </div>
+                        {formData.showRelatedArticles && (
+                            <RelatedArticlesSelector
+                                selectedIds={formData.relatedArticleIds}
+                                onChange={(ids) => setFormData({ ...formData, relatedArticleIds: ids })}
+                            />
+                        )}
+                        {!formData.showRelatedArticles && (
+                            <p className="text-sm text-gray-400 italic">Related articles section is disabled for this post.</p>
+                        )}
                     </div>
 
                     {/* SEO Settings */}

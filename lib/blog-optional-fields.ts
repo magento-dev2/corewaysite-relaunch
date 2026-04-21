@@ -1,6 +1,6 @@
-export type BlogOptionalField = 'readTime' | 'faqSchema' | 'author';
+export type BlogOptionalField = 'readTime' | 'faqSchema' | 'author' | 'showRelatedArticles';
 
-const BLOG_OPTIONAL_FIELDS: BlogOptionalField[] = ['readTime', 'faqSchema', 'author'];
+const BLOG_OPTIONAL_FIELDS: BlogOptionalField[] = ['readTime', 'faqSchema', 'author', 'showRelatedArticles'];
 
 function hasMissingColumn(error: unknown, columnName: string) {
   if (!(error instanceof Error)) {
