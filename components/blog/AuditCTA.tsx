@@ -24,24 +24,24 @@ export default function AuditCTA() {
         <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           Tell us about your business. We will send you a written report showing exactly where AI and custom software can save you time and money — within 24 hours. No sales call required.
         </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button 
+
+        <div className="flex flex-col items-center justify-center gap-2">
+          <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-audit-modal'))}
             className="cursor-pointer group bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all font-medium text-lg flex items-center space-x-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105"
           >
             <span>Get My Free Audit Report</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </button>
-          
-          <a 
-            href="/assets/sample-audit-report.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="cursor-pointer group bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-purple-500/50 transition-all font-medium text-lg flex items-center space-x-2"
+
+          <a
+            href="/assets/sample-audit-report.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-2 text-sm font-medium hover:underline underline-offset-4"
           >
-            <FileText size={20} className="text-purple-400" />
-            <span>View Sample PDF</span>
+            <FileText size={16} />
+            <span>View a Sample Audit Report</span>
           </a>
         </div>
 
