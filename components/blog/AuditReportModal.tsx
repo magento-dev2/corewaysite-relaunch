@@ -63,9 +63,9 @@ export default function AuditReportModal() {
                 </div>
 
                 {/* Close Button */}
-                <button 
+                <button
                     onClick={() => setIsOpen(false)}
-                    className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10 p-2 bg-black/10 rounded-full hover:bg-black/20"
+                    className="absolute cursor-pointer top-4 right-4 text-white/80 hover:text-white transition-colors z-10 p-2 bg-black/10 rounded-full hover:bg-black/20"
                 >
                     <X size={20} />
                 </button>
@@ -104,7 +104,7 @@ export default function AuditReportModal() {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="flex items-center justify-center gap-2 px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-purple-200 active:scale-95 disabled:opacity-70 disabled:active:scale-100"
+                                        className="cursor-pointer flex items-center justify-center gap-2 px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-purple-200 active:scale-95 disabled:opacity-70 disabled:active:scale-100  "
                                     >
                                         {isSubmitting ? (
                                             <Loader2 size={20} className="animate-spin" />

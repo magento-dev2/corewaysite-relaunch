@@ -8,6 +8,20 @@ export default function NavigationLoader() {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  // Show loader on initial page mount (covers full reloads)
+  useEffect(() => {
+    setIsLoading(true);
+    setProgress(30);
+    
+    // Simulate initial loading completion
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setProgress(0);
+    }, 1200); 
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     // Reset loading state when pathname changes (navigation complete)
     const frame = window.requestAnimationFrame(() => {
@@ -79,6 +93,21 @@ export default function NavigationLoader() {
         url.origin === currentUrl.origin
         && (url.pathname !== currentUrl.pathname || url.search !== currentUrl.search)
       ) {
+        // SPECIAL CASE: For blog posts, force a full page reload to ensure CMS scripts run correctly
+        if (url.pathname.startsWith('/blog/')) {
+          setIsLoading(true);
+          setProgress(10);
+          
+          // Small delay to allow the loader to appear before the browser starts reloading
+          setTimeout(() => {
+            window.location.assign(link.href);
+          }, 100);
+          
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         setIsLoading(true);

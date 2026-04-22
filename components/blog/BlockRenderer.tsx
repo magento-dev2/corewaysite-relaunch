@@ -68,14 +68,7 @@ function HtmlBlock({ html, className }: { html: string; className?: string }) {
                 return;
             }
 
-            // 2. Force reload for blog-to-blog links if current page has scripts
-            const hasScripts = html.includes('<script');
-            if (hasScripts && (href?.startsWith('/blog/') || href?.includes(window.location.origin + '/blog/'))) {
-                e.preventDefault();
-                e.stopPropagation();
-                window.location.assign(href);
-                return;
-            }
+            // (Forced reloads for blog links are now handled globally in NavigationLoader.tsx)
 
             // 3. Ensure PDF links open in new tab
             if (href?.endsWith('.pdf')) {
