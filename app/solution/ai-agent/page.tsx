@@ -14,6 +14,7 @@ import sampleFAQs from '@/data/faqs.json';
 import whyCorewayData from '@/data/why-coreway.json';
 import SubHeader from "@/components/SubHeader";
 import CategoryGrid from "@/components/category/CategoryGrid";
+import AuditCTA from "@/components/blog/AuditCTA";
 
 export default function AIAgentPage() {
   const subHeaderItems = [
@@ -88,6 +89,7 @@ export default function AIAgentPage() {
         />
 
         <CategoryGrid items={solutions} columns={3} />
+        <AuditCTA />
 
         <WhyCorewaySection
           badge={whyCorewayData["ai-agent"].badge}
@@ -106,6 +108,7 @@ export default function AIAgentPage() {
           contactText="Still have questions?"
           contactButtonText="Contact Our Team"
         />
+
 
 
         <PageCTA

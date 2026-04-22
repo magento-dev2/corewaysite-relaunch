@@ -51,6 +51,46 @@ function HtmlBlock({ html, className }: { html: string; className?: string }) {
     useEffect(() => {
         if (!containerRef.current) return;
 
+        const handleGlobalClick = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            const link = target.closest('a');
+            
+            if (!link || !containerRef.current?.contains(link)) return;
+
+            const href = link.getAttribute('href');
+            const openModal = link.getAttribute('data-open-modal');
+
+            // 1. Intercept audit report triggers
+            if (openModal === 'audit' || href === '/free-audit' || href?.endsWith('/free-audit')) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.dispatchEvent(new CustomEvent('open-audit-modal'));
+                return;
+            }
+
+            // 2. Force reload for blog-to-blog links if current page has scripts
+            const hasScripts = html.includes('<script');
+            if (hasScripts && (href?.startsWith('/blog/') || href?.includes(window.location.origin + '/blog/'))) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.assign(href);
+                return;
+            }
+
+            // 3. Ensure PDF links open in new tab
+            if (href?.endsWith('.pdf')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        };
+
+        // Use capture phase to beat Next.js router listeners
+        document.addEventListener('click', handleGlobalClick, true);
+
+        // Add data-no-loader to audit links
+        const auditLinks = containerRef.current.querySelectorAll('a[href="/free-audit"]');
+        auditLinks.forEach(link => link.setAttribute('data-no-loader', 'true'));
+
         const form = containerRef.current.querySelector('form');
         if (!form) return;
 
@@ -109,7 +149,59 @@ function HtmlBlock({ html, className }: { html: string; className?: string }) {
         };
 
         form.addEventListener('submit', handleSubmit);
-        return () => form.removeEventListener('submit', handleSubmit);
+
+        // Manually execute scripts in the injected HTML
+        const scripts = containerRef.current.querySelectorAll('script');
+        scripts.forEach(script => {
+            if (script.src) {
+                const newScript = document.createElement('script');
+                newScript.src = script.src;
+                newScript.async = false;
+                document.head.appendChild(newScript);
+            } else {
+                try {
+                    // Use window.eval to ensure functions are defined globally
+                    const scriptContent = script.textContent || '';
+                    if (scriptContent.trim()) {
+                        (window as any).eval(scriptContent);
+                    }
+                } catch (e) {
+                    console.error('Error executing internal script:', e);
+                }
+            }
+        });
+
+        // Initialize ROI calculator with multiple attempts to ensure DOM is ready
+        const initROI = () => {
+            if (typeof (window as any).cwUpdateROI === 'function') {
+                try {
+                    (window as any).cwUpdateROI();
+                } catch (e) {
+                    // If it fails, try a manual sync
+                    const mainU = document.getElementById('cw-users') as HTMLSelectElement;
+                    const sbU = document.getElementById('sb-users') as HTMLSelectElement;
+                    if (mainU && sbU) {
+                        sbU.value = mainU.value;
+                        const event = new Event('change', { bubbles: true });
+                        mainU.dispatchEvent(event);
+                    }
+                }
+            } else {
+                const selects = containerRef.current?.querySelectorAll('select');
+                selects?.forEach(s => s.dispatchEvent(new Event('change', { bubbles: true })));
+            }
+        };
+
+        initROI();
+        const timer1 = setTimeout(initROI, 100);
+        const timer2 = setTimeout(initROI, 500);
+
+        return () => {
+            form.removeEventListener('submit', handleSubmit);
+            document.removeEventListener('click', handleGlobalClick, true);
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+        };
     }, [html]);
 
     return (
