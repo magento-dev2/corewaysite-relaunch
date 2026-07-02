@@ -48,6 +48,7 @@ export async function GET() {
 
     // Solutions - AI & Consulting
     { url: `${baseUrl}/solution/ai-consulting`, priority: 0.9, changeFreq: 'weekly' },
+    { url: `${baseUrl}/solution/ai-evaluation`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/ai-integration-services`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/ai-agent`, priority: 0.9, changeFreq: 'weekly' },
     { url: `${baseUrl}/solution/ai-agent/rag-chatbot-pdf`, priority: 0.9, changeFreq: 'weekly' },

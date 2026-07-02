@@ -214,6 +214,7 @@ export default function Navbar() {
                       columns={item.columns}
                       isOpen={activeMenu === item.id}
                       menuLabel={item.label}
+                      onClose={handleCloseMenu}
                     />
                   )}
                 </div>

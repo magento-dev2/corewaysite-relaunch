@@ -200,6 +200,11 @@
               "description": "Strategic AI guidance"
             },
             {
+              "label": "AI Evaluation",
+              "href": "/solution/ai-evaluation",
+              "description": "AI quality and evaluation services"
+            },
+            {
               "label": "AI Integration Services",
               "href": "/solution/ai-integration-services",
               "description": "Integrate AI into your systems"

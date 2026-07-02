@@ -42,6 +42,7 @@ interface MegaMenuProps {
   columns: MegaMenuColumn[];
   isOpen: boolean;
   menuLabel?: string;
+  onClose?: () => void;
 }
 
 const iconMap: Record<string, any> = {
@@ -84,7 +85,7 @@ const iconMap: Record<string, any> = {
   radio: Radio             // IoT / MQTT
 };
 
-export default function MegaMenu({ columns, isOpen, menuLabel }: MegaMenuProps) {
+export default function MegaMenu({ columns, isOpen, menuLabel, onClose }: MegaMenuProps) {
   if (!isOpen) return null;
 
   return (
@@ -96,6 +97,7 @@ export default function MegaMenu({ columns, isOpen, menuLabel }: MegaMenuProps) 
               <Link
                 href="#"
                 className="group flex items-center space-x-2 text-white hover:text-purple-400 transition-colors"
+                onClick={onClose}
               >
                 <span className="text-base font-medium">All {menuLabel}</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -118,6 +120,7 @@ export default function MegaMenu({ columns, isOpen, menuLabel }: MegaMenuProps) 
                           <Link
                             href={item.href}
                             className="group flex items-start space-x-3 transition-all"
+                            onClick={onClose}
                           >
                             {Icon && (
                               <div className="mt-0.5 flex-shrink-0">
