@@ -23,7 +23,8 @@ import {
   ScanEye,
   Code,
   ShieldCheck,
-  Users
+  Users,
+  ListChecks
 } from "lucide-react";
 
 interface MegaMenuItem {
@@ -67,6 +68,7 @@ const iconMap: Record<string, any> = {
   "file-text": FileText,
   "message-square": MessageSquare,
   "scan-eye": ScanEye,
+  "list-checks": ListChecks,
 
   // Infrastructure & Security
   code: Code,
