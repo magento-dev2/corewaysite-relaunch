@@ -58,7 +58,7 @@ export default function CookieConsent() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+                    className="fixed bottom-0 left-0 right-0 z-[99999] p-4 md:p-6"
                 >
                     <div className="">
                         <div className="relative bg-gradient-to-br from-[#1a1325] to-[#0E0918] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
