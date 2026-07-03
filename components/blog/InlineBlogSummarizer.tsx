@@ -84,7 +84,7 @@ export default function InlineBlogSummarizer() {
               key={option.id}
               onClick={() => handleAction(option)}
               title={option.name}
-              className="cursor-pointer group relative flex items-center justify-center w-[48px] h-[48px] rounded-xl border border-gray-200 bg-white hover:border-green-500 hover:shadow-sm transition-all duration-200 p-1"
+              className="cursor-pointer group relative flex items-center justify-center w-[48px] h-[48px] rounded-xl border border-gray-200 bg-white hover:border-purple-500 hover:shadow-sm transition-all duration-200 p-1"
             >
               {copiedId === option.id ? (
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
