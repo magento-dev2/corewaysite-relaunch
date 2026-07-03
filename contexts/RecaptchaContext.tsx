@@ -42,10 +42,11 @@ export function RecaptchaProvider({ children }: RecaptchaProviderProps) {
     return (
         <RecaptchaContext.Provider value={{ executeRecaptcha, resetRecaptcha }}>
             {children}
-            {/* Invisible reCAPTCHA - badge will appear at bottom right */}
+            {/* Invisible reCAPTCHA - badge set to appear at bottom left */}
             <ReCAPTCHA
                 ref={recaptchaRef}
                 size="invisible"
+                badge="bottomleft"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
             />
         </RecaptchaContext.Provider>

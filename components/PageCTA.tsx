@@ -29,7 +29,7 @@ export default function PageCTA({
 }: PageCTAProps) {
   const pathname = usePathname(); // ✅ detect current page
 const isModalPage = 
-  pathname === "/" || pathname === "/solution/analytics" || pathname === "/solution/mobile-application" || pathname === "/ai-data/aws-s3-optimization"  || pathname === "/insights";
+  pathname === "/" || pathname === "/solution/analytics" || pathname === "/solution/mobile-application" || pathname === "/solution/ai-evaluation" || pathname === "/ai-data/aws-s3-optimization"  || pathname === "/insights";
 
   const [open, setOpen] = useState(false);
   const [rootEl, setRootEl] = useState<HTMLElement | null>(null);

@@ -71,6 +71,7 @@ export const metadata: Metadata = {
 };
 
 import JsonLd from '@/components/JsonLd';
+import AskAIFloatingWidget from '@/components/AskAIFloatingWidget';
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -125,6 +126,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <PostHogProvider>
             <PostHogPageView />
             <LayoutWrapper>{children}</LayoutWrapper>
+            <AskAIFloatingWidget />
           </PostHogProvider>
         </div>
 

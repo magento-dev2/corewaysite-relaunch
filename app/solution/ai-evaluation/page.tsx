@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { PopupModal } from "react-calendly";
 import PageCTA from "@/components/PageCTA";
 import FAQ from "@/components/FAQ";
 import { gsap } from "gsap";
@@ -9,6 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
+import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
@@ -93,14 +96,14 @@ const services = [
 ];
 
 const models = [
-  { name: "OpenAI" },
-  { name: "Claude" },
-  { name: "Gemini" },
-  { name: "Llama" },
-  { name: "DeepSeek" },
-  { name: "Qwen" },
-  { name: "Mistral" },
-  { name: "Ollama" },
+  { name: "OpenAI", image: "/assets/Ai-icon/openai-dark.png" },
+  { name: "Claude", image: "/assets/Ai-icon/claude.png" },
+  { name: "Gemini", image: "/assets/Ai-icon/google-gemini.png" },
+  { name: "Llama", image: "/assets/Ai-icon/meta-color.png" },
+  { name: "DeepSeek", image: "/assets/Ai-icon/deepseek.png" },
+  { name: "Qwen", image: "/assets/Ai-icon/qwen.png" },
+  { name: "Mistral", image: "/assets/Ai-icon/mistral-ai.png" },
+  { name: "Ollama", image: "/assets/Ai-icon/ollama-dark.png" },
 ];
 
 const process = [
@@ -260,10 +263,14 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
   );
 }
 
-function ModelChip({ name }: { name: string }) {
+function ModelChip({ name, image }: { name: string; image?: string }) {
   return (
     <div className="model-chip flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-3.5 transition-colors duration-200 hover:bg-white/10 hover:border-purple-500/50">
-      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500" />
+      {image ? (
+        <Image src={image} alt={name} width={16} height={16} className="w-4 h-4 object-contain" />
+      ) : (
+        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500" />
+      )}
       <span className="font-mono text-sm text-gray-300">{name}</span>
     </div>
   );
@@ -317,6 +324,18 @@ export default function AIEvaluationLandingPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLElement>(null);
+
+  const [open, setOpen] = useState(false);
+  const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el =
+      document.getElementById("__next") ??
+      document.getElementById("root") ??
+      document.body;
+
+    setRootEl(el);
+  }, []);
   const modelsRef = useRef<HTMLElement>(null);
   const whyRef = useRef<HTMLElement>(null);
   const deliverablesRef = useRef<HTMLElement>(null);
@@ -325,7 +344,7 @@ export default function AIEvaluationLandingPage() {
     const ctx = gsap.context(() => {
       // Hero
       if (heroRef.current) {
-        gsap.fromTo(heroRef.current.children, 
+        gsap.fromTo(heroRef.current.children,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out" }
         );
@@ -361,7 +380,7 @@ export default function AIEvaluationLandingPage() {
       // Process
       const steps = gsap.utils.toArray<HTMLElement>('.process-step');
       steps.forEach((step) => {
-        gsap.fromTo(step, 
+        gsap.fromTo(step,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", scrollTrigger: { trigger: step, start: "top 85%", toggleActions: "play none none reverse" } }
         );
@@ -433,19 +452,19 @@ export default function AIEvaluationLandingPage() {
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="/contact"
+            <Link
+              href="/start-ai-evaluation"
               className="group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all bg-gradient-to-r from-purple-500 to-violet-600 text-white hover:from-purple-600 hover:to-violet-700 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105"
             >
               <span>Start AI Evaluation</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-            <a
-              href="/contact"
-              className="group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50"
+            </Link>
+            <button
+              onClick={() => setOpen(true)}
+              className="cursor-pointer group px-8 py-4 rounded-lg font-medium text-lg flex items-center space-x-2 transition-all bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-purple-500/50"
             >
               <span>Book Consultation</span>
-            </a>
+            </button>
           </div>
 
           <div className="stat-grid mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
@@ -596,8 +615,17 @@ export default function AIEvaluationLandingPage() {
         description="Let's benchmark your AI application before it reaches production."
         primaryButtonText="Start AI Evaluation"
         secondaryButtonText="Book Consultation"
-        primaryButtonlink="/contact"
+        primaryButtonlink="/start-ai-evaluation"
       />
+
+      {rootEl && (
+        <PopupModal
+          url="https://calendly.com/alpeshr2689/30min"
+          onModalClose={() => setOpen(false)}
+          open={open}
+          rootElement={rootEl}
+        />
+      )}
     </div>
   );
 }
