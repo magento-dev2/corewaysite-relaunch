@@ -69,7 +69,7 @@ export default function AskAIFloatingWidget() {
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
-    
+
     // Initial check
     handleScroll();
 
@@ -118,13 +118,13 @@ export default function AskAIFloatingWidget() {
   return (
     <div
       ref={widgetRef}
-      className={`fixed right-6 z-[9999] flex flex-col items-end transition-all duration-300 ease-in-out ${
-        isAtBottom ? "bottom-20" : "bottom-4"
-      }`}
+      className={`fixed right-6 z-[9999] transition-all duration-300 ease-in-out ${isAtBottom ? "bottom-20" : "bottom-4"
+        }`}
     >
       {/* The Popup Menu */}
       <div
-        className={`mb-4 w-[240px] sm:w-[280px] max-w-[calc(100vw-3rem)] overflow-hidden rounded-2xl border border-white/10 bg-[#120C1C]/95 backdrop-blur-xl shadow-2xl transition-all duration-300 ease-in-out origin-bottom-right ${
+        style={{ bottom: "56px" }}
+        className={`absolute right-0 w-[240px] sm:w-[280px] max-w-[calc(100vw-3rem)] overflow-hidden rounded-2xl border border-white/10 bg-[#120C1C]/95 backdrop-blur-xl shadow-2xl transition-all duration-300 ease-in-out origin-bottom-right ${
           isOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4 pointer-events-none"
         }`}
       >

@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import BlockRenderer from '@/components/blog/BlockRenderer';
+import InlineBlogSummarizer from '@/components/blog/InlineBlogSummarizer';
 import CalendlyCTA from '../CalendlyCTA';
 import ShareButtons from './ShareButtons';
 import { getBlogPostingSchema, getFAQSchema, schemaToJsonLd } from '@/lib/schema';
@@ -390,10 +391,11 @@ export default async function BlogDetail({
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 pb-16 pt-4">
         <div className={blog.showRelatedArticles !== false ? "grid lg:grid-cols-12 gap-12" : "max-w-7xl mx-auto"}>
           {/* Article Content */}
           <article className={blog.showRelatedArticles !== false ? "lg:col-span-8" : "w-full"}>
+            <InlineBlogSummarizer />
             <div className="prose prose-lg max-w-none text-black prose-headings:text-gray-900 prose-a:text-purple-600 hover:prose-a:text-purple-700 prose-strong:text-gray-900">
               <BlockRenderer content={blog.content} />
             </div>
