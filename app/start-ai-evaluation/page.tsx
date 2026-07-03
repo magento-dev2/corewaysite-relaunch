@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Bot, Sparkles, Building2, Mail, Loader2, Database, AlertTriangle, FileText, CalendarDays, Search, Globe, Cloud, Server, MoreHorizontal } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -64,6 +64,33 @@ export default function StartAIEvaluationPage() {
     company: "",
   });
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Load saved progress on mount
+  useEffect(() => {
+    setIsMounted(true);
+    const savedData = localStorage.getItem("ai_eval_form_data");
+    const savedStep = localStorage.getItem("ai_eval_step");
+    if (savedData) {
+      try {
+        setFormData(JSON.parse(savedData));
+      } catch (e) {
+        console.error("Failed to parse saved form data", e);
+      }
+    }
+    if (savedStep) {
+      setStep(parseInt(savedStep, 10));
+    }
+  }, []);
+
+  // Save progress on change
+  useEffect(() => {
+    if (isMounted && !isSuccess) {
+      localStorage.setItem("ai_eval_form_data", JSON.stringify(formData));
+      localStorage.setItem("ai_eval_step", step.toString());
+    }
+  }, [formData, step, isMounted, isSuccess]);
+
   const isStepValid = () => {
     if (step === 1) return formData.building !== "" && formData.models.length > 0;
     if (step === 2) return formData.concern !== "" && formData.volume !== "";
@@ -105,10 +132,14 @@ export default function StartAIEvaluationPage() {
 
       if (response.ok) {
         setIsSuccess(true);
+        localStorage.removeItem("ai_eval_form_data");
+        localStorage.removeItem("ai_eval_step");
       } else {
         // If it fails, we still want to show the success screen in dev or handle it
         console.error("Submission failed");
         setIsSuccess(true);
+        localStorage.removeItem("ai_eval_form_data");
+        localStorage.removeItem("ai_eval_step");
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -357,6 +388,7 @@ export default function StartAIEvaluationPage() {
                       <input
                         type="email"
                         required
+                        autoComplete="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all"
@@ -374,6 +406,7 @@ export default function StartAIEvaluationPage() {
                       <input
                         type="text"
                         required
+                        autoComplete="organization"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all"
